@@ -8,6 +8,8 @@ Project-authored source is distributed under GNU GPL version 3, subject to the s
 
 The application retains the internal name **Workspace391** and version **3.9.1-local.1** in its launchers, protocol identifiers, source inventories, and compatibility records. Those identifiers are part of the existing implementation. The public project name is **Blockchain Mail**.
 
+**To open:** choose **Code → Download ZIP**, extract `Blockchain-Mail-main.zip`, then double-click **Open Workspace.vbs**. The application prepares its full system automatically on first opening. See Section 3 for the documented installation and source-access procedure.
+
 ## 1. Scope, result, and interpretation
 
 Blockchain Mail provides one compose workflow for mail delivered on the current computer and mail addressed to another admitted computer in a private Torus group. An account opens its mailbox, receives an assigned `mail@127…` identity, chooses **New message**, enters the recipient's complete assigned address, optionally attaches files, and presses **Send**. The application derives the destination from a signed directory. Users do not select a local, Tor, or Internet transport to send private group mail.[^routing]
@@ -40,49 +42,61 @@ The executable implementation lives primarily in `app/src/*.mjs` and `app/web/*`
 
 ## 3. Installation and normal operation
 
-### 3.1 Verified portable distribution
+### 3.1 Open the application
 
-The GitHub repository provides the full checkout described in Section 3.2. A separately supplied `W391.zip` portable distribution uses the workflow below; its verified artifact identity and acceptance evidence are recorded in Section 16. The [packaging tools](build-tools/README.md) provide the source for building the short-path portable wrapper.
+The repository's **Code → Download ZIP** download is prepared for Windows Explorer. The downloaded ZIP exposes short launcher, documentation, build-tool, and license paths; the complete published application and source inventory are carried in `Payload.dat`. No application files are discarded to shorten the archive. The [packaging tools](build-tools/README.md) describe the wrapper and its reproducible source boundary.
 
-1. Extract `W391.zip` into a new directory, preferably under a short Windows working root such as `D:\Codex`.
-2. Open the extracted `W391` folder and double-click **Open Workspace.vbs**.
-3. Allow the bundle to prepare its complete application on first opening.
-4. Create a protected workspace or unlock an existing protected workspace with its original four recovery words.
-5. Save newly generated recovery words separately and privately.
-6. Open the mailbox. Tor and a new standalone private group start automatically when the protected launcher supplies the Tor configuration.
-7. Copy the account's displayed assigned address when sharing it with another group member.
+1. On [GitHub](https://github.com/LKVexa/Blockchain-Mail), choose **Code → Download ZIP**.
+2. Extract the downloaded `Blockchain-Mail-main.zip` into a new directory.
+3. Open the extracted `Blockchain-Mail-main` folder and double-click **Open Workspace.vbs**.
+4. Allow the application to prepare its complete `system` folder on first opening.
+5. Create a protected workspace or unlock an existing protected workspace with its original four recovery words.
+6. Save newly generated recovery words separately and privately.
+7. Open the mailbox. Tor and a new standalone private group start automatically when the protected launcher supplies the Tor configuration.
+8. Copy the account's displayed assigned address when sharing it with another group member.
 
-The short outer bundle addresses Windows Explorer's ZIP/path limitations without discarding the full application. It contains a preparation wrapper and an embedded payload. The preparation code validates archive paths, file identities, and content hashes before publishing the application directory. Repeated preparation recognizes an existing prepared application and preserves its private state. The current evidence records 30 passing extractor checks, including rejection of path traversal, alternate streams, collisions, private-state injection, incorrect hashes, and pre-existing destinations.[^release]
+**Open Workspace.vbs** is the ordinary opening workflow for both a downloaded ZIP and a Git checkout. [Start-Mail.cmd](Start-Mail.cmd) invokes the same preparation and application launcher with a visible console. After preparation, ordinary reopening uses the existing `system` folder and preserves its private state. The previous separately supplied `W391.zip` follows the same opening workflow from its extracted `W391` folder; its historical artifact identity and acceptance evidence are recorded in Section 16.
 
-The desktop launcher requires Windows x64, Windows PowerShell 5.x, and an installed Microsoft Edge WebView2 runtime. The complete portable payload supplies its pinned Node runtime, console SDK assets, and Tor runtime. Normal opening does not require a separate Tor installation or a manually chosen mail-transport port. An occupied local application port is reported; the launcher does not solve a collision by terminating an unrelated process.
+`Payload.dat` is a ZIP-formatted, exact-byte application payload read by the bundled preparation code. The wrapper validates its hash, archive paths, complete file inventory, and each file's content hash before atomically publishing `system`. It uses extended Windows paths for the application corpus rather than requiring Explorer to extract its deeply nested source paths. The Git archive export allowlist keeps those deeply nested tracked files out of **Code → Download ZIP**; the complete editable source remains available both inside the prepared payload and through Git. Historical extractor evidence records 30 passing checks, including rejection of path traversal, alternate streams, collisions, private-state injection, incorrect hashes, and pre-existing destinations.[^release]
 
-### 3.2 Source checkout
+Use a new extraction destination for a changed payload. The launcher preserves an existing `system` folder and refuses to replace it when its preparation marker belongs to a different payload. It does not migrate or delete an existing vault as part of extraction. Keep private `system/state`, `system/network-state`, and `system/console/workspace` contents on their original computer; do not publish them or copy them into another person's application distribution.
 
-This repository includes the pinned runtime and SDK assets needed by the workspace launcher, together with their component notices. On Windows, clone with long-path support and without newline conversion so the sealed files retain their exact bytes:
+The desktop launcher requires Windows x64, Windows PowerShell 5.x, and an installed Microsoft Edge WebView2 runtime. The complete payload supplies its pinned Node runtime, console SDK assets, and Tor runtime. Normal opening does not require a separate Tor installation or a manually chosen mail-transport port. An occupied local application port is reported; the launcher does not solve a collision by terminating an unrelated process.
+
+### 3.2 Source access and development
+
+A downloaded ZIP exposes the complete application source at `system/` after preparation. Researchers who want to inspect or test the source without opening the protected workspace can run preparation alone from the extracted download directory:
+
+```powershell
+powershell.exe -NoProfile -STA -ExecutionPolicy Bypass -File .\Start.ps1 -PrepareOnly
+& .\system\runtime\node.exe .\system\app\tools\check-package.mjs
+```
+
+The preparation-only command creates and verifies the application folder without opening the mailbox or creating an operator vault. In the technical sections below, application component paths such as `app/src/store.mjs` are relative to that application folder; a downloaded preparation therefore exposes this example at `system/app/src/store.mjs`. The payload carries the complete published source/runtime baseline, including the project documentation, preferred-source archives, license records, and build tools. The raw tracked source is also retained in the Git repository for browser inspection, version history, and conventional development. GitHub's ZIP export rules affect archive contents, not tracked source availability.
+
+A Git clone includes the raw tracked application tree as well as the ready preparation wrapper. On Windows, use long-path support and disable newline conversion so the raw sealed source retains its exact bytes:
 
 ```powershell
 git clone --config core.longpaths=true --config core.autocrlf=false https://github.com/LKVexa/Blockchain-Mail.git D:\Codex\Blockchain-Mail
 Set-Location D:\Codex\Blockchain-Mail
-& .\runtime\node.exe .\app\tools\check-package.mjs
-.\Start-Workspace.cmd
+.\Start-Mail.cmd
 ```
 
-Use a fresh destination. For Windows Explorer downloads, prefer the short-path portable release bundle rather than attempting to extract the entire source-tree ZIP through Explorer. The [packaging tools](build-tools/README.md) provide editable extractor and launcher sources. The repository preserves the optional recovered native utility's [known source-availability limitation](native/NATIVE-INTEGRATION.md); this is separate from ordinary private mail.
-
-The full workspace entry points are [Start-Workspace.cmd](Start-Workspace.cmd) and [Start-Workspace.vbs](Start-Workspace.vbs), backed by [Start-Workspace.ps1](Start-Workspace.ps1). Opening them requires the matching sealed runtime and native assets listed in [INTEGRATED_BUILD.json](INTEGRATED_BUILD.json). A source checkout is not assumed to be launchable merely because its JavaScript files are present. Check that the required assets and licenses are included, verify the inventory, and use the documented launcher rather than bypassing its gate.
+Use a fresh destination. **Start-Mail.cmd** and **Open Workspace.vbs** both open the prepared `system` application in a Git checkout, using the same workflow as a ZIP download. The original sealed `Start-Workspace` launchers remain available as source artifacts for deliberate expert work on the raw checkout. A researcher must state whether a test or modification targets the raw checkout or the prepared `system` tree; editing one does not modify the other. The [packaging tools](build-tools/README.md) describe explicit `-ProjectRoot` and `--root` arguments for that distinction. The optional recovered native utility's [known source-availability limitation](native/NATIVE-INTEGRATION.md) remains separate from ordinary private mail.
 
 The application package declares Node **24.19.0 or later**, uses the built-in SQLite and cryptographic APIs, and declares no npm package dependencies for its standalone server/test path. Its `npm` scripts are convenience aliases; installing a new dependency tree is not a substitute for the supplied runtime or integrity manifests. Historical framework source and vendored compiled browser assets are preserved, but the supported standalone mail path is the checked-in JavaScript implementation.[^runtime]
 
-For a checkout with the matching supplied runtime, a regression run from the `app` directory is:
+For a prepared download, a regression run is:
 
 ```powershell
-Set-Location .\app
-& '..\runtime\node.exe' tools/run-tests.mjs
+& .\system\runtime\node.exe .\system\app\tools\run-tests.mjs
 ```
 
-For a researcher using a separately managed compatible Node runtime, the equivalent command is `node tools/run-tests.mjs` from `app`. Record the actual Node version, platform, architecture, and dependency/runtime hashes. A result under another environment is a new observation, not an automatic extension of the published Windows result.
+For a researcher using a separately managed compatible Node runtime, the equivalent command is `node tools/run-tests.mjs` from the intended application's `app` directory. Record the actual Node version, platform, architecture, source root, and dependency/runtime hashes. A result under another environment is a new observation, not an automatic extension of the published Windows result.
 
-The package inventory can be checked through `app/tools/check-package.mjs`; inspect its invocation help/source and run it against the intended application root. Tests create disposable working state and write evidence under `app/evidence/runs`. Production service startup is different: recovery material is provided through the protected launcher's process-owned input channel, not as a normal command-line argument. The expert CLI in `app/src/main.mjs` supports protected initialization, serving, verification, checkpoints, restore, status, and stop. Read that interface before automating it, and keep recovery words out of shell history and shared logs.
+The package inventory can be checked through `app/tools/check-package.mjs`; inspect its invocation help/source and run it against the intended application root. Tests create disposable working state and write evidence under `app/evidence/runs`. Generated `system/` and preparation staging folders are ignored by Git because opening the application can create private account, Tor, and browser data there. Do not bypass these exclusions to publish a live application folder.
+
+Production service startup is different: recovery material is provided through the protected launcher's process-owned input channel, not as a normal command-line argument. The expert CLI in `app/src/main.mjs` supports protected initialization, serving, verification, checkpoints, restore, status, and stop. Read that interface before automating it, and keep recovery words out of shell history and shared logs.
 
 ### 3.3 Connecting another computer
 

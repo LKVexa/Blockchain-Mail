@@ -1,0 +1,9 @@
+{
+  "format": "WORKSPACE391-WINDOWS-BUNDLE/1",
+  "payload_sha256": "e4c7493a330ac91d05467de43c0da0a6132fd028dfec5f66c58f92951e7b04aa",
+  "payload_entries": 15125,
+  "extractor_sha256": "e2cb88d4fa60cff2611d6b201eeb304bb02cd218e51ca1c8a112c16a3098872c",
+  "launcher_sha256": "70ea888f85f5945e23ce0045ec1bdc9bba0daccd53d810d12d42fa953055fafd",
+  "source_commit": "46ef49fcaa3f7fa46bb73e044bd8ecd14055953d",
+  "source_files_preserved": 15125
+}

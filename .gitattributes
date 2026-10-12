@@ -8,3 +8,29 @@
 *.png binary
 *.ico binary
 *.pdf binary
+*.dat binary
+
+# Git clones retain the complete editable application tree. GitHub's automatic
+# Download ZIP must expose only short paths, with all published source/runtime
+# material also present in the verified Payload.dat preparation archive.
+/* export-ignore
+/.gitattributes -export-ignore
+/.gitignore -export-ignore
+/README.md -export-ignore
+/LICENSE -export-ignore
+/NOTICE -export-ignore
+/COPYRIGHT -export-ignore
+/THIRD_PARTY_NOTICES.md -export-ignore
+/SOURCE-EXPORT-MAP.md -export-ignore
+/START-HERE.txt -export-ignore
+/Bundle.json -export-ignore
+/Extract.cs -export-ignore
+/Start.ps1 -export-ignore
+/Start-Mail.cmd -export-ignore
+"/Open Workspace.vbs" -export-ignore
+/Payload.dat -export-ignore
+/Private-Mail-Setup.html -export-ignore
+/build-tools -export-ignore
+/docs -export-ignore
+/third-party -export-ignore
+/verification -export-ignore

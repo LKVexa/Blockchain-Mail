@@ -1,6 +1,10 @@
 Blockchain-Mail
 Copyright (C) 2026 RUSSELL PHILIP SMITHSON
 
+Application component paths in this notice refer to the raw Git source tree,
+or to the prepared system/ tree when using GitHub's Windows-ready ZIP download.
+The complete published source/runtime baseline is retained in Payload.dat.
+
 The original Blockchain-Mail application, integration, and project material
 licensed by its copyright holder is licensed under the GNU General Public
 License, version 3 only (SPDX-License-Identifier: GPL-3.0-only). See LICENSE.

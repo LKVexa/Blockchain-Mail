@@ -8,6 +8,8 @@
 /app/evidence/runs/
 /dist/
 /test-fixture/
+/system/
+/system.prepare-*/
 /.env
 /.env.*
 *.workspace-key.json

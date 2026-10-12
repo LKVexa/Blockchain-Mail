@@ -1,5 +1,22 @@
 # Blockchain-Mail publication map
 
+## Windows-ready GitHub download
+
+The raw source remains tracked and available in Git. GitHub's ZIP export
+allowlist exposes only short launcher, documentation, license and build-tool
+paths. Payload.dat retains all 15,125 files from published source revision
+46ef49fcaa3f7fa46bb73e044bd8ecd14055953d, with a newly generated complete root
+checksum inventory. First opening prepares these under system/ using the
+verified extended-path extractor. No application file was removed or renamed
+to accommodate Windows Explorer. New wrapper files and updated installation
+documentation accompany the payload separately. The source-availability
+limitation for the optional native utility below remains explicit.
+
+The generated system/ tree and preparation staging directories are excluded
+from Git because later opening creates private vault, Tor and browser state.
+
+## Original source inventory
+
 Audit input: `D:\Codex\2026-10-12\ca\work\Workspace391-Final-Mail.zip`.
 SHA-256: `ecee39c316dbb028a21c98dc24eb809ca69ab34a3529de976a0ce0214bfb2a01`.
 The inner `Workspace391/` payload contains 15,097 files. Use the audited sealed

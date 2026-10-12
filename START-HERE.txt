@@ -1,0 +1,18 @@
+BLOCKCHAIN MAIL
+
+Extract the complete GitHub download, open Blockchain-Mail-main, and
+double-click Open Workspace.vbs.
+
+The application prepares itself on first opening. Use the same shortcut
+to reopen it. Start-Mail.cmd opens the same application with a console.
+
+Keep this folder together, including Payload.dat. No separate installation
+of Tor or Node, administrator setting, or registry change is required.
+Windows x64, Windows PowerShell 5.x, and the Edge WebView2 runtime are required.
+
+For another computer, use a fresh download and connect once with the first
+computer's connection code. Keep your recovery words private.
+
+An older ZIP already on your computer is unchanged. Download the corrected
+ZIP again and extract it into a new folder. Existing mail and private state
+are preserved in their original application folders.
