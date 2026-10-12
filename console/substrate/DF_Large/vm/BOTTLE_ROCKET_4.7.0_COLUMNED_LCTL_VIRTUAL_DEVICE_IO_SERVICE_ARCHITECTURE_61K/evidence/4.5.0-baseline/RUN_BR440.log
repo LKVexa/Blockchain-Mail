@@ -1,0 +1,24 @@
+PASS immutable_root_and_policy
+PASS unsigned_cannot_execute
+PASS signed_without_manifest_cannot_execute
+PASS policy_replay_rejected
+PASS secure_start
+PASS replay_rejected
+PASS authorization_not_sticky
+PASS key_rotation_new_release
+PASS rotation_overlap
+PASS old_release_deauthorized
+PASS revoked_issuer_rejected
+PASS revoked_image_version_rejected
+PASS stale_control_record_rejected
+PASS rollback_version_rejected
+PASS unauthorized_capability_rejected
+PASS expired_manifest_rejected
+PASS bad_signature_rejected
+PASS emergency_recovery
+PASS hardware_anchor_requires_separate_build
+PASS direct_opcode_injection_disabled
+PASS raw_apdu_load_disabled
+PASS security_log_rejection_event
+PASS security_log_bounded
+{"suite":"BR-440","tests":23,"failures":0,"result":"PASS"}

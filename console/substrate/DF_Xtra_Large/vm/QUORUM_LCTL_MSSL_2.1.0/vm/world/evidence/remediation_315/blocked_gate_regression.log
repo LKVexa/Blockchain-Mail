@@ -1,0 +1,22 @@
+test_01_coordinate_and_vertical_authority (__main__.BlockedGateRemediationTests.test_01_coordinate_and_vertical_authority) ... ok
+test_02_narrative_gravity_distance_independent (__main__.BlockedGateRemediationTests.test_02_narrative_gravity_distance_independent) ... ok
+test_03_visual_trace_repeatable (__main__.BlockedGateRemediationTests.test_03_visual_trace_repeatable) ... ok
+test_04_habitat_isolation (__main__.BlockedGateRemediationTests.test_04_habitat_isolation) ... ok
+test_05_resource_governor_replay (__main__.BlockedGateRemediationTests.test_05_resource_governor_replay) ... ok
+test_06_authority_well_arbitration_order_independent (__main__.BlockedGateRemediationTests.test_06_authority_well_arbitration_order_independent) ... ok
+test_07_penteract_version_independent (__main__.BlockedGateRemediationTests.test_07_penteract_version_independent) ... ok
+test_08_fold_scaling_active_set (__main__.BlockedGateRemediationTests.test_08_fold_scaling_active_set) ... ok
+test_09_parallel_fold_equivalence (__main__.BlockedGateRemediationTests.test_09_parallel_fold_equivalence) ... /usr/lib/python3.13/multiprocessing/popen_fork.py:67: DeprecationWarning: This process (pid=21987) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  self.pid = os.fork()
+ok
+test_10_multiworker_lod_equivalence (__main__.BlockedGateRemediationTests.test_10_multiworker_lod_equivalence) ... ok
+test_11_presentation_hot_reload_canonical_invariant (__main__.BlockedGateRemediationTests.test_11_presentation_hot_reload_canonical_invariant) ... ok
+test_12_materialization_readiness (__main__.BlockedGateRemediationTests.test_12_materialization_readiness) ... ok
+test_13_transition_migration (__main__.BlockedGateRemediationTests.test_13_transition_migration) ... ok
+test_14_history_archive_corruption (__main__.BlockedGateRemediationTests.test_14_history_archive_corruption) ... ok
+test_15_multiworker_canonical_conformance (__main__.BlockedGateRemediationTests.test_15_multiworker_canonical_conformance) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.534s
+
+OK

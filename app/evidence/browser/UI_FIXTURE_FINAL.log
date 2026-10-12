@@ -1,0 +1,78 @@
+Local root mounts supplied React-backed GlyphokuStudio True
+Exact 256 accessible cells True
+Default 24 and four speed choices True
+Mock initial frame acknowledgment precedes first advance True
+Pause freezes displayed event counter True
+Single step advances exactly one displayed event while paused True
+Stop shows CANCELLED and does not create a domain True
+Frozen editor is locked and envelope action available True
+READY is explicitly NOT SENT and horizon remains closed True
+Explicit Send alone invokes the delivery endpoint True
+Mock inbox content is safely rendered as text True
+Narrow layout has no document horizontal overflow True
+Sign out removes authenticated state and content True
+No unhandled browser JavaScript errors True
+{
+  "scope": "OFFLINE UI FIXTURE. In-memory mocked fetch only. No browser-to-server requests, no mail delivery, no proof of human attention. Actual localhost navigation blocked by managed policy. Headed Chromium on Xvfb virtual display.",
+  "checks": [
+    {
+      "name": "Local root mounts supplied React-backed GlyphokuStudio",
+      "pass": true
+    },
+    {
+      "name": "Exact 256 accessible cells",
+      "pass": true
+    },
+    {
+      "name": "Default 24 and four speed choices",
+      "pass": true
+    },
+    {
+      "name": "Mock initial frame acknowledgment precedes first advance",
+      "pass": true
+    },
+    {
+      "name": "Pause freezes displayed event counter",
+      "pass": true
+    },
+    {
+      "name": "Single step advances exactly one displayed event while paused",
+      "pass": true
+    },
+    {
+      "name": "Stop shows CANCELLED and does not create a domain",
+      "pass": true
+    },
+    {
+      "name": "Frozen editor is locked and envelope action available",
+      "pass": true
+    },
+    {
+      "name": "READY is explicitly NOT SENT and horizon remains closed",
+      "pass": true
+    },
+    {
+      "name": "Explicit Send alone invokes the delivery endpoint",
+      "pass": true
+    },
+    {
+      "name": "Mock inbox content is safely rendered as text",
+      "pass": true
+    },
+    {
+      "name": "Narrow layout has no document horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "Sign out removes authenticated state and content",
+      "pass": true
+    },
+    {
+      "name": "No unhandled browser JavaScript errors",
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "pass": 14,
+  "fail": 0
+}

@@ -1,0 +1,12 @@
+$ python3 tests/test_420.py
+exit=0
+TEST language_specification PASS
+TEST lexical_version_encoding PASS
+TEST canonical_whitespace_ordering PASS
+
+$ make operational
+exit=0
+$ make sanitize
+exit=0
+$ make size
+exit=0

@@ -1,0 +1,74 @@
+[
+  {
+    "id": "W00",
+    "file": "W00_BIND.md",
+    "workflow_status": "NOT_STARTED",
+    "assessment": "NOT_ASSESSED",
+    "case_count": 8,
+    "source_controls": "NOT_ASSESSED"
+  },
+  {
+    "id": "W01",
+    "file": "W01_CIPHER.md",
+    "workflow_status": "NOT_STARTED",
+    "assessment": "NOT_ASSESSED",
+    "case_count": 8,
+    "source_controls": "NOT_ASSESSED"
+  },
+  {
+    "id": "W02",
+    "file": "W02_PACE.md",
+    "workflow_status": "NOT_STARTED",
+    "assessment": "NOT_ASSESSED",
+    "case_count": 8,
+    "source_controls": "NOT_ASSESSED"
+  },
+  {
+    "id": "W03",
+    "file": "W03_DOMAIN.md",
+    "workflow_status": "NOT_STARTED",
+    "assessment": "NOT_ASSESSED",
+    "case_count": 8,
+    "source_controls": "NOT_ASSESSED"
+  },
+  {
+    "id": "W04",
+    "file": "W04_FREEZE.md",
+    "workflow_status": "NOT_STARTED",
+    "assessment": "NOT_ASSESSED",
+    "case_count": 8,
+    "source_controls": "NOT_ASSESSED"
+  },
+  {
+    "id": "W05",
+    "file": "W05_PERMIT.md",
+    "workflow_status": "NOT_STARTED",
+    "assessment": "NOT_ASSESSED",
+    "case_count": 8,
+    "source_controls": "NOT_ASSESSED"
+  },
+  {
+    "id": "W06",
+    "file": "W06_DELIVER.md",
+    "workflow_status": "NOT_STARTED",
+    "assessment": "NOT_ASSESSED",
+    "case_count": 8,
+    "source_controls": "NOT_ASSESSED"
+  },
+  {
+    "id": "W07",
+    "file": "W07_REFUSE.md",
+    "workflow_status": "NOT_STARTED",
+    "assessment": "NOT_ASSESSED",
+    "case_count": 8,
+    "source_controls": "NOT_ASSESSED"
+  },
+  {
+    "id": "W08",
+    "file": "W08_HORIZON.md",
+    "workflow_status": "NOT_STARTED",
+    "assessment": "NOT_ASSESSED",
+    "case_count": 8,
+    "source_controls": "NOT_ASSESSED"
+  }
+]

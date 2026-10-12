@@ -1,0 +1,2493 @@
+{
+  "archive": "B4PPUPFqdW8lePvv-grok-workspace.zip",
+  "archive_sha256": "28313d7f5e05f5fdea31e2f4e615ead2a84aed4c9ae8bb6a28853a791b8b82fd",
+  "members": [
+    {
+      "path": ".grok/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": ".grok/app-env.json",
+      "size": 76,
+      "compressed_size": 70,
+      "directory": false,
+      "sha256": "62dea7bb1344fbbdca7057eea06791c27b1488f25203d25bcfd8035c44280151"
+    },
+    {
+      "path": ".grok/favicon-16x4.png",
+      "size": 2622,
+      "compressed_size": 2627,
+      "directory": false,
+      "sha256": "82a12586eb67e6c71978753181d7442af411130bdd28e5cecbdaba8cf00831b4"
+    },
+    {
+      "path": ".grok/preview.log",
+      "size": 578,
+      "compressed_size": 238,
+      "directory": false,
+      "sha256": "9d7a829b2097c4557323e5e781af0559c132b597770b65d31cddf69c444aa766"
+    },
+    {
+      "path": ".grok/preview.pid",
+      "size": 5,
+      "compressed_size": 7,
+      "directory": false,
+      "sha256": "2ebec5d935ad817bc895aabd2dd3e3ead26538094e59473e4b6921f0c8ec1437"
+    },
+    {
+      "path": ".grok/references/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": ".grok/references/browser-qa.md",
+      "size": 9097,
+      "compressed_size": 4190,
+      "directory": false,
+      "sha256": "5299e34aa070cd6877d2217df6fe4fa3f7a7db94df03c41ac1402b540b289150"
+    },
+    {
+      "path": ".grok/references/data-and-auth.md",
+      "size": 5614,
+      "compressed_size": 2712,
+      "directory": false,
+      "sha256": "1e8373c5e00108ff8b84014040f5c66d80aa2668f8660139356869c55706ba7a"
+    },
+    {
+      "path": ".grok/references/deploy-target.md",
+      "size": 2435,
+      "compressed_size": 1241,
+      "directory": false,
+      "sha256": "ff612fd0ac29e2d2e8c7ac2864ee92549086baf34fb741fcabfd7de841eebdc8"
+    },
+    {
+      "path": ".grok/references/generated-art.md",
+      "size": 3854,
+      "compressed_size": 1963,
+      "directory": false,
+      "sha256": "7485ecf0311612b97c0e3c24fbfac6bd118b1c82429a3ed2f272214fe6a6d994"
+    },
+    {
+      "path": ".grok/references/hibernate-revive.md",
+      "size": 1796,
+      "compressed_size": 967,
+      "directory": false,
+      "sha256": "12125da78e1932bfbfc29edec96d2c0790f535e6a093d1207fc1da559dd04cc3"
+    },
+    {
+      "path": ".grok/references/scaffold.md",
+      "size": 2282,
+      "compressed_size": 1057,
+      "directory": false,
+      "sha256": "693195c814efb89dbafd1b6db716b6d2ae002f6ccef89605e85ec0e75e88d481"
+    },
+    {
+      "path": ".grok/skills/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": ".grok/skills/auth/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": ".grok/skills/auth/SKILL.md",
+      "size": 6345,
+      "compressed_size": 3062,
+      "directory": false,
+      "sha256": "887ef562db59f644f4353e69aa8cb22a1c212488840a8c274f73c36e97cbbfad"
+    },
+    {
+      "path": ".grok/skills/auth/references/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": ".grok/skills/auth/references/grok-identity.md",
+      "size": 3746,
+      "compressed_size": 1741,
+      "directory": false,
+      "sha256": "f6e944c2b028690382d7fb1d66d34ede55bd5f92257d17f33d48f70e56d92188"
+    },
+    {
+      "path": ".grok/skills/auth/references/per-user-data.md",
+      "size": 2402,
+      "compressed_size": 1218,
+      "directory": false,
+      "sha256": "8538db1b761d2dce033e751eb7513e5d1012998b9d7599f8d1725e3b90830298"
+    },
+    {
+      "path": ".grok/skills/auth/references/prewired-and-env.md",
+      "size": 3392,
+      "compressed_size": 1613,
+      "directory": false,
+      "sha256": "de580b328cc403f6b6d5638764c8f42fa6f17d461969f95eaed913c0a6ddabe5"
+    },
+    {
+      "path": ".grok/skills/auth/references/session-ui.md",
+      "size": 6226,
+      "compressed_size": 2707,
+      "directory": false,
+      "sha256": "02e99184adf8faf70e358312d991a9e57b049816d8005cc34f2239a4e32d9495"
+    },
+    {
+      "path": ".grok/skills/auth/references/sign-in-methods.md",
+      "size": 2892,
+      "compressed_size": 1463,
+      "directory": false,
+      "sha256": "f768048704e997511b46d9f8162bad5bf3faf749977f5fb014c9325e738c0277"
+    },
+    {
+      "path": ".grok/skills/auth/references/wiring.md",
+      "size": 2627,
+      "compressed_size": 1295,
+      "directory": false,
+      "sha256": "75d840d1eedb9ce17fbb3ffd10a09ac9ac90a469f9f185338b14b8079fbb407c"
+    },
+    {
+      "path": ".grok/skills/building-games/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": ".grok/skills/building-games/SKILL.md",
+      "size": 12235,
+      "compressed_size": 5792,
+      "directory": false,
+      "sha256": "527814d9d39d29b7a291cb696eceb6a121b9923e833876bf888916a6a29771d1"
+    },
+    {
+      "path": ".grok/skills/building-games/references/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": ".grok/skills/building-games/references/3d-libs.md",
+      "size": 3092,
+      "compressed_size": 1628,
+      "directory": false,
+      "sha256": "db472820a65a16e4928a68a50fd31885b945ec2f9fa45a17a8152a0d48cf12bf"
+    },
+    {
+      "path": ".grok/skills/building-games/references/ai-pathfinding.md",
+      "size": 9974,
+      "compressed_size": 4574,
+      "directory": false,
+      "sha256": "e815831ca67d68e4bc7a649f63ae129abdd3d996040b2c446c2c574e72c8424b"
+    },
+    {
+      "path": ".grok/skills/building-games/references/audio.md",
+      "size": 9423,
+      "compressed_size": 4081,
+      "directory": false,
+      "sha256": "1de8c85a9fd6cb9594e11b6b1da7e54cdca8de512c0778eb35959f8f0fbe210c"
+    },
+    {
+      "path": ".grok/skills/building-games/references/babylon.md",
+      "size": 16504,
+      "compressed_size": 6855,
+      "directory": false,
+      "sha256": "065934f53c6c8a1d5fd27a98f1311df2b4f2f194eb694355a98cc3c802a3ebd6"
+    },
+    {
+      "path": ".grok/skills/building-games/references/collision-physics.md",
+      "size": 10990,
+      "compressed_size": 4841,
+      "directory": false,
+      "sha256": "af213fa9079d38742fc4d95a9c6a34907b85fb039e6c8cdb058dcbf5c7bd8672"
+    },
+    {
+      "path": ".grok/skills/building-games/references/ecs-architecture.md",
+      "size": 9185,
+      "compressed_size": 4162,
+      "directory": false,
+      "sha256": "6b0de85d73be9725c3989136c968b85ceec70c333cc0ef9993e58aff0f1b0d5f"
+    },
+    {
+      "path": ".grok/skills/building-games/references/game-feel-juice.md",
+      "size": 10693,
+      "compressed_size": 5046,
+      "directory": false,
+      "sha256": "24742ba2d5455f10c85c06ae279c636921f983a696b844a7f2505b988a5bef83"
+    },
+    {
+      "path": ".grok/skills/building-games/references/genres/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": ".grok/skills/building-games/references/genres/board-card-chess.md",
+      "size": 8859,
+      "compressed_size": 3867,
+      "directory": false,
+      "sha256": "c2103f928e917c02729f00696165426ba106d9f235948347147d73ac53a50d65"
+    },
+    {
+      "path": ".grok/skills/building-games/references/genres/endless-runner.md",
+      "size": 6912,
+      "compressed_size": 3171,
+      "directory": false,
+      "sha256": "2c0026ab6e57f6b025fbe3673aab24f7dff0fb70fb89f1b047486f1346049a54"
+    },
+    {
+      "path": ".grok/skills/building-games/references/genres/fps.md",
+      "size": 10039,
+      "compressed_size": 4768,
+      "directory": false,
+      "sha256": "a3df7b29b964c3850e01d10fd4df131d3488f9064acac49ddc34386ec13d1ca2"
+    },
+    {
+      "path": ".grok/skills/building-games/references/genres/platformer-2d.md",
+      "size": 8785,
+      "compressed_size": 3997,
+      "directory": false,
+      "sha256": "2262c7c914409746971a9b1eef445b026011260ddb5a39af2f3904fc44ef8104"
+    },
+    {
+      "path": ".grok/skills/building-games/references/genres/puzzle-match3-tetris.md",
+      "size": 10324,
+      "compressed_size": 4523,
+      "directory": false,
+      "sha256": "1011844cbe7d65184ecbc541ad0f3060b04ee22197d6b6bc22fa671b2329ed47"
+    },
+    {
+      "path": ".grok/skills/building-games/references/genres/racing-kart.md",
+      "size": 9169,
+      "compressed_size": 4191,
+      "directory": false,
+      "sha256": "2afc99aadd556321973c8ae3ef2f8270dd5bb7bb8ad896abcac27c9a7221e0ff"
+    },
+    {
+      "path": ".grok/skills/building-games/references/genres/topdown-twin-stick.md",
+      "size": 7517,
+      "compressed_size": 3572,
+      "directory": false,
+      "sha256": "f1dfeca4990b1fc37a49ca82f1246f5564a4fae24dfc3ac8b1d01f95aab43da6"
+    },
+    {
+      "path": ".grok/skills/building-games/references/genres/tower-defense.md",
+      "size": 7411,
+      "compressed_size": 3404,
+      "directory": false,
+      "sha256": "a52c28421da0d3710c21fa19421a172b0bc75add64b5dee35abd3b8299add76a"
+    },
+    {
+      "path": ".grok/skills/building-games/references/genres/voxel-minecraft.md",
+      "size": 8658,
+      "compressed_size": 3853,
+      "directory": false,
+      "sha256": "cdd5746e5496945694fd8e8d0fed9cf0314d4fae6dc107cfdf44a0824fdebdc6"
+    },
+    {
+      "path": ".grok/skills/building-games/references/input.md",
+      "size": 10311,
+      "compressed_size": 4643,
+      "directory": false,
+      "sha256": "00e030e3a28118bfc9d2f6a633b9d56cc31f60d015181b668dcd09914d15f8ce"
+    },
+    {
+      "path": ".grok/skills/building-games/references/phaser.md",
+      "size": 19739,
+      "compressed_size": 8776,
+      "directory": false,
+      "sha256": "08abc9cb20cfe356e3376f216aef6a62df72e654f542c7770ab69f2cdfc17b2a"
+    },
+    {
+      "path": ".grok/skills/building-games/references/procedural-generation.md",
+      "size": 10441,
+      "compressed_size": 4880,
+      "directory": false,
+      "sha256": "f03bd0390726bc7f823ad15f9309aef5317aa7f27fb7611e6648ec3fa0ca7ace"
+    },
+    {
+      "path": ".grok/skills/building-games/references/save-persistence.md",
+      "size": 9041,
+      "compressed_size": 3915,
+      "directory": false,
+      "sha256": "6751d65f6b0dc76e19be0827286a1753efc8161a3f66a080c8e23999ef5063a4"
+    },
+    {
+      "path": ".grok/skills/building-games/references/threejs-foundational.md",
+      "size": 14380,
+      "compressed_size": 6909,
+      "directory": false,
+      "sha256": "90f75bc167ae9b4e4e980689ad5fdd81ccfc5efef457cdec01234dccd0b8dd8e"
+    },
+    {
+      "path": ".grok/skills/controls/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": ".grok/skills/controls/SKILL.md",
+      "size": 11509,
+      "compressed_size": 5434,
+      "directory": false,
+      "sha256": "85b80f2812d0d141e97dbb294c3678c3192fd051651e9460ed6ca6317d717141"
+    },
+    {
+      "path": ".grok/skills/design-ui/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": ".grok/skills/design-ui/SKILL.md",
+      "size": 5995,
+      "compressed_size": 2997,
+      "directory": false,
+      "sha256": "5ac56024db2287e485d03e208423fad29909d3b323647c5568243bfa96f42acf"
+    },
+    {
+      "path": ".grok/skills/design-ui/references/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": ".grok/skills/design-ui/references/animations.md",
+      "size": 11106,
+      "compressed_size": 3910,
+      "directory": false,
+      "sha256": "33e01727f60c34872f3f0a52c92513f9af1681449ebaa35b51123127c31bf51f"
+    },
+    {
+      "path": ".grok/skills/design-ui/references/performance.md",
+      "size": 2884,
+      "compressed_size": 1165,
+      "directory": false,
+      "sha256": "f4537590cca884143b8e628123810286b4bfef29b9283f900265190bd3d8bd5e"
+    },
+    {
+      "path": ".grok/skills/design-ui/references/refined-ui.md",
+      "size": 20469,
+      "compressed_size": 8742,
+      "directory": false,
+      "sha256": "9abf1b1e34632f0788fec8f49a8ade216a72aab06f6cf18528b6c502c7f5a56d"
+    },
+    {
+      "path": ".grok/skills/design-ui/references/surfaces.md",
+      "size": 6586,
+      "compressed_size": 2735,
+      "directory": false,
+      "sha256": "c2eac605c207ba67b2e3bf6a3918f293a6fe02ce8c72c630a51faceb321b445d"
+    },
+    {
+      "path": ".grok/skills/design-ui/references/typography.md",
+      "size": 3180,
+      "compressed_size": 1462,
+      "directory": false,
+      "sha256": "b91125ab0edf02a7f582bae434ae957af2f6729e7be038304bb2d0c983697eb8"
+    },
+    {
+      "path": ".grok/skills/game-animation-frames/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": ".grok/skills/game-animation-frames/SKILL.md",
+      "size": 4386,
+      "compressed_size": 2144,
+      "directory": false,
+      "sha256": "3840f8166d8784d672531fee4c25b618867820e97ff4faf17135f26399e0e097"
+    },
+    {
+      "path": ".grok/skills/game-asset-core/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": ".grok/skills/game-asset-core/SKILL.md",
+      "size": 3858,
+      "compressed_size": 1961,
+      "directory": false,
+      "sha256": "690bb8a77495bc12c2e95b60d907a1529de87b5f65856281bb67bc67839c4cfc"
+    },
+    {
+      "path": ".grok/skills/game-character-consistency/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": ".grok/skills/game-character-consistency/SKILL.md",
+      "size": 2795,
+      "compressed_size": 1453,
+      "directory": false,
+      "sha256": "5fc49d9364193607cf3bca8f1884a43ccd4d3cbe63df69ef67b9b53346881afd"
+    },
+    {
+      "path": ".grok/skills/game-tilesets/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": ".grok/skills/game-tilesets/SKILL.md",
+      "size": 3028,
+      "compressed_size": 1561,
+      "directory": false,
+      "sha256": "38eb784765e1b5adaee3cca138978be12f968521a80e14f3c83e096b6308e10b"
+    },
+    {
+      "path": ".grok/skills/game-ui-icons/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": ".grok/skills/game-ui-icons/SKILL.md",
+      "size": 2274,
+      "compressed_size": 1222,
+      "directory": false,
+      "sha256": "18fd7d9a86bbba018c2eb05ffbad99bda9a8d876d7f61a80de6e6f7771771028"
+    },
+    {
+      "path": ".grok/skills/generate2dmap/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": ".grok/skills/generate2dmap/LICENSE",
+      "size": 1065,
+      "compressed_size": 639,
+      "directory": false,
+      "sha256": "d63ddc781bf0d15753fe0ba22c7cd5828dabb7776465ea4d4939558d4909b0fa"
+    },
+    {
+      "path": ".grok/skills/generate2dmap/SKILL.md",
+      "size": 7738,
+      "compressed_size": 3507,
+      "directory": false,
+      "sha256": "992eeaa76ce3c06220e58867c9ff7554117c4af703539d7796f048e22b868f17"
+    },
+    {
+      "path": ".grok/skills/generate2dmap/SOURCE.md",
+      "size": 303,
+      "compressed_size": 241,
+      "directory": false,
+      "sha256": "a3667d46be6cda6ec841c482ca371b9bae081445bc9fb15e08e5ef5e22386d31"
+    },
+    {
+      "path": ".grok/skills/generate2dmap/references/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": ".grok/skills/generate2dmap/references/deliverables.md",
+      "size": 7345,
+      "compressed_size": 2527,
+      "directory": false,
+      "sha256": "0513bc2e2b406142f1cab3139e861c1a69de6865b686bde7e7499ba53afc7630"
+    },
+    {
+      "path": ".grok/skills/generate2dmap/references/layered-map-contract.md",
+      "size": 8102,
+      "compressed_size": 3558,
+      "directory": false,
+      "sha256": "0af8127a5188d9d09fcf9913cf2804c5e40eb6b2be422c48d356d22c649b10a2"
+    },
+    {
+      "path": ".grok/skills/generate2dmap/references/map-strategies.md",
+      "size": 26755,
+      "compressed_size": 8570,
+      "directory": false,
+      "sha256": "91659c967efd0edde10ca3bd1cc136b17b7820c0da7279078d5020827935095d"
+    },
+    {
+      "path": ".grok/skills/generate2dmap/references/object-production-gate.md",
+      "size": 3192,
+      "compressed_size": 1396,
+      "directory": false,
+      "sha256": "f26eddd69b5561b6cae7945222e9212f5bf6e534fda427f48a58746238ac8bb8"
+    },
+    {
+      "path": ".grok/skills/generate2dmap/references/pipeline.md",
+      "size": 16554,
+      "compressed_size": 5975,
+      "directory": false,
+      "sha256": "e227cdc348607228f3474fe4ea1d533d65e377dd17e36a8ca61e4708fabc37c0"
+    },
+    {
+      "path": ".grok/skills/generate2dmap/references/prop-pack-contract.md",
+      "size": 9458,
+      "compressed_size": 3926,
+      "directory": false,
+      "sha256": "93be2245aa4f3ff9e591127a7318f34843b6458a85d7c614ca024500d30107f9"
+    },
+    {
+      "path": ".grok/skills/generate2dmap/references/side-scroll-stages.md",
+      "size": 5627,
+      "compressed_size": 2296,
+      "directory": false,
+      "sha256": "0926d20385024052bab2044645f49657552d0bb2f259aa1958a809e3332275b0"
+    },
+    {
+      "path": ".grok/skills/generate2dmap/scripts/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": ".grok/skills/generate2dmap/scripts/compose_layered_preview.py",
+      "size": 5256,
+      "compressed_size": 1829,
+      "directory": false,
+      "sha256": "29d256385961475de142d2701231a9e67c369e5270c193a66df3c51b6c888855"
+    },
+    {
+      "path": ".grok/skills/generate2dmap/scripts/extract_prop_pack.py",
+      "size": 13050,
+      "compressed_size": 3560,
+      "directory": false,
+      "sha256": "c02a2726497e6771e0a5a1e5105591ce98b9f161b8f6a36e04863bf7592f8e36"
+    },
+    {
+      "path": ".grok/skills/generate2dsprite/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": ".grok/skills/generate2dsprite/LICENSE",
+      "size": 1065,
+      "compressed_size": 639,
+      "directory": false,
+      "sha256": "d63ddc781bf0d15753fe0ba22c7cd5828dabb7776465ea4d4939558d4909b0fa"
+    },
+    {
+      "path": ".grok/skills/generate2dsprite/SKILL.md",
+      "size": 21260,
+      "compressed_size": 7877,
+      "directory": false,
+      "sha256": "d620ac32acdb5946a41e41269aefab0b295e8038df57c2e89ce3749415e896e6"
+    },
+    {
+      "path": ".grok/skills/generate2dsprite/SOURCE.md",
+      "size": 303,
+      "compressed_size": 241,
+      "directory": false,
+      "sha256": "a3667d46be6cda6ec841c482ca371b9bae081445bc9fb15e08e5ef5e22386d31"
+    },
+    {
+      "path": ".grok/skills/generate2dsprite/references/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": ".grok/skills/generate2dsprite/references/modes.md",
+      "size": 5799,
+      "compressed_size": 2334,
+      "directory": false,
+      "sha256": "88b75203732cf1e04af8d98427c2ddef617b7bbc1a844841d75efdf4c1359a39"
+    },
+    {
+      "path": ".grok/skills/generate2dsprite/references/prompt-rules.md",
+      "size": 11603,
+      "compressed_size": 4725,
+      "directory": false,
+      "sha256": "6a82348083283a29d86c934a280b0bb80c40f926a1e08582050f6dd9068041f3"
+    },
+    {
+      "path": ".grok/skills/generate2dsprite/scripts/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": ".grok/skills/generate2dsprite/scripts/generate2dsprite.py",
+      "size": 42687,
+      "compressed_size": 11471,
+      "directory": false,
+      "sha256": "681d0885d1813e9d7e1a82dfd340c1c71c8158e57a4c0710516c3f6c2c944a95"
+    },
+    {
+      "path": ".grok/skills/generate2dsprite/scripts/make_layout_guide.py",
+      "size": 3590,
+      "compressed_size": 1178,
+      "directory": false,
+      "sha256": "a1a91b069e998d304b8c37f14ec33c139f50252b5fb04574f4c997d268ec6b58"
+    },
+    {
+      "path": ".grok/skills/imagine-grok-build/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": ".grok/skills/imagine-grok-build/SKILL.md",
+      "size": 12394,
+      "compressed_size": 4975,
+      "directory": false,
+      "sha256": "cae327513b9cfbf1c6c1136533dbf80dddc7493a0e34b57572b84fdc6ff9ef44"
+    },
+    {
+      "path": ".grok/skills/multiplayer-p2p/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": ".grok/skills/multiplayer-p2p/SKILL.md",
+      "size": 5067,
+      "compressed_size": 2549,
+      "directory": false,
+      "sha256": "234ee1648566f808315295b5e5b6bc6b6e2933a183ac1a584dcd243d792a4bf5"
+    },
+    {
+      "path": ".grok/skills/multiplayer-p2p/references/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": ".grok/skills/multiplayer-p2p/references/react-binding.md",
+      "size": 4831,
+      "compressed_size": 2011,
+      "directory": false,
+      "sha256": "77391d4a47f519889386895af34f2c101a089616caddbc47ba0134f068a734c9"
+    },
+    {
+      "path": ".grok/skills/multiplayer-p2p/references/signaling-relay.md",
+      "size": 9150,
+      "compressed_size": 3478,
+      "directory": false,
+      "sha256": "4277bb2f17e208a3d5afe72ef965788876a2935379175a9b0eb20dc2c898766f"
+    },
+    {
+      "path": ".grok/skills/neon/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": ".grok/skills/neon/SKILL.md",
+      "size": 7445,
+      "compressed_size": 3476,
+      "directory": false,
+      "sha256": "87e0fe9b647986787e281930788e1dc110ccb19df4e29854f20f4604c1ae6897"
+    },
+    {
+      "path": ".grok/skills/og/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": ".grok/skills/og/SKILL.md",
+      "size": 6555,
+      "compressed_size": 3078,
+      "directory": false,
+      "sha256": "5c6ff71e42840f38db61fb5173836485de4a53418c99d1f34d77ecefaed46d28"
+    },
+    {
+      "path": ".grok/skills/og/references/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": ".grok/skills/og/references/brand-pass.md",
+      "size": 2568,
+      "compressed_size": 1290,
+      "directory": false,
+      "sha256": "68019a3afe8ae75b94599de354245c9a0d068cae5ff054841ac75cc055058afe"
+    },
+    {
+      "path": ".grok/skills/og/references/custom-card.md",
+      "size": 5988,
+      "compressed_size": 2883,
+      "directory": false,
+      "sha256": "97c0efccce4daf47486f8caa65723db2fd0435ccaa68be90004a6c1ad15cb954"
+    },
+    {
+      "path": ".grok/skills/og/references/favicon-and-icons.md",
+      "size": 1959,
+      "compressed_size": 1110,
+      "directory": false,
+      "sha256": "bc95ed577825a411571f4680f992799a26811dd72af6714375dc49800e216db6"
+    },
+    {
+      "path": ".grok/skills/og/references/og-type-contract.md",
+      "size": 1749,
+      "compressed_size": 886,
+      "directory": false,
+      "sha256": "2743a8a9a6c1eafb8aec5ae8c83f2202533df6a55649582684d2bce18a52ea2f"
+    },
+    {
+      "path": ".grok/skills/og/references/placeholder-card.md",
+      "size": 887,
+      "compressed_size": 547,
+      "directory": false,
+      "sha256": "c21551f098562c8ff49004885596f71848c09af13b19237f1babe820e4f7e957"
+    },
+    {
+      "path": ".grok/skills/og/references/x-banner.md",
+      "size": 2339,
+      "compressed_size": 1204,
+      "directory": false,
+      "sha256": "0f6f5b8c381c40e26514439575a004ef0560b379fd069b76fc940c9f803e0733"
+    },
+    {
+      "path": ".grok/skills/threejs/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": ".grok/skills/threejs/SKILL.md",
+      "size": 3021,
+      "compressed_size": 1535,
+      "directory": false,
+      "sha256": "0fadfe66cf788bce9bcef87a3bc8d6c65e5b6275976b7bee1a914a0d05d6ecc6"
+    },
+    {
+      "path": ".grok/skills/threejs/references/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": ".grok/skills/threejs/references/llms-full.txt",
+      "size": 132250,
+      "compressed_size": 28605,
+      "directory": false,
+      "sha256": "e93ae843c05b2f936efaaa5946d506ca70a7cc15fa2f7adf79f9d4c70659b2cc"
+    },
+    {
+      "path": ".grok/skills/video2dsprite/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": ".grok/skills/video2dsprite/LICENSE",
+      "size": 1065,
+      "compressed_size": 639,
+      "directory": false,
+      "sha256": "d63ddc781bf0d15753fe0ba22c7cd5828dabb7776465ea4d4939558d4909b0fa"
+    },
+    {
+      "path": ".grok/skills/video2dsprite/SKILL.md",
+      "size": 10058,
+      "compressed_size": 4283,
+      "directory": false,
+      "sha256": "09062be6facd6d35373777eb464c32be7e1272030e0b5f1f66b5100e7b3e6f14"
+    },
+    {
+      "path": ".grok/skills/video2dsprite/SOURCE.md",
+      "size": 303,
+      "compressed_size": 241,
+      "directory": false,
+      "sha256": "a3667d46be6cda6ec841c482ca371b9bae081445bc9fb15e08e5ef5e22386d31"
+    },
+    {
+      "path": ".grok/skills/video2dsprite/references/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": ".grok/skills/video2dsprite/references/pipeline.md",
+      "size": 2544,
+      "compressed_size": 1340,
+      "directory": false,
+      "sha256": "d8dcafb959b92c88c754bb784d8da047e4537bde1679875da2ce73463bbe43d0"
+    },
+    {
+      "path": ".grok/skills/video2dsprite/references/prompt-rules.md",
+      "size": 2482,
+      "compressed_size": 1221,
+      "directory": false,
+      "sha256": "b1bee1a50932dc4bb26f499027d4534f556c8ef99c6744877cddc9321d8e2783"
+    },
+    {
+      "path": ".grok/skills/video2dsprite/scripts/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": ".grok/skills/video2dsprite/scripts/video2dsprite.py",
+      "size": 16164,
+      "compressed_size": 5200,
+      "directory": false,
+      "sha256": "5a580ace4b07ef66d3069ad7fca80f744655e9ba17bdea82dfe2717bd4dfedea"
+    },
+    {
+      "path": ".grok/skills/xai-api/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": ".grok/skills/xai-api/SKILL.md",
+      "size": 6618,
+      "compressed_size": 3101,
+      "directory": false,
+      "sha256": "a8f9bb7468305e3ec6377f74a9e5ecc4b0b4a1334596350087b8c32cc9cb45a5"
+    },
+    {
+      "path": ".grok/status",
+      "size": 90,
+      "compressed_size": 89,
+      "directory": false,
+      "sha256": "c90781d5834f236b47eb4e1a0937f62ab2573463184116f613783971a36cc279"
+    },
+    {
+      "path": ".node_modules.lock",
+      "size": 0,
+      "compressed_size": 2,
+      "directory": false,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".prettierrc",
+      "size": 90,
+      "compressed_size": 81,
+      "directory": false,
+      "sha256": "d5f90f76c5b68ce7be5ba077813f97e1983511b8c314764537345a538c1261f4"
+    },
+    {
+      "path": ".project_id",
+      "size": 36,
+      "compressed_size": 38,
+      "directory": false,
+      "sha256": "949573ee8ae946c11eb5bf3db835bb601aa72b4b92973b26aa40210041bac754"
+    },
+    {
+      "path": ".tanstack/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": ".tanstack/tmp/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": ".vercel/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": ".vercel/output/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": ".vercel/output/config.json",
+      "size": 366,
+      "compressed_size": 216,
+      "directory": false,
+      "sha256": "ec7bdc89d3083a035cc6dbe3a8b1bc293075db1c9c9a456ef1db6926e3d2bfe0"
+    },
+    {
+      "path": ".vercel/output/functions/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": ".vercel/output/functions/__server.func/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": ".vercel/output/functions/__server.func/.vc-config.json",
+      "size": 149,
+      "compressed_size": 118,
+      "directory": false,
+      "sha256": "14de6d385da313f4426d4a5a9c3100e8b346ad8ea5f7e7c6b15bcfe363369b64"
+    },
+    {
+      "path": ".vercel/output/functions/__server.func/_chunks/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": ".vercel/output/functions/__server.func/_chunks/ssr-renderer.mjs",
+      "size": 965,
+      "compressed_size": 476,
+      "directory": false,
+      "sha256": "503514aa9d1edc46fbc34a8954079622d54d5f972c783b2c0076e427209719c1"
+    },
+    {
+      "path": ".vercel/output/functions/__server.func/_libs/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": ".vercel/output/functions/__server.func/_libs/@tanstack/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": ".vercel/output/functions/__server.func/_libs/@tanstack/react-router+[...].mjs",
+      "size": 817005,
+      "compressed_size": 172108,
+      "directory": false,
+      "sha256": "d7bea83f798785f01ca4eeadaa966d9b6c8edd22c89f4af23630a1411a2d4801"
+    },
+    {
+      "path": ".vercel/output/functions/__server.func/_libs/@tanstack/router-core+[...].mjs",
+      "size": 29606,
+      "compressed_size": 7967,
+      "directory": false,
+      "sha256": "1881d429045c5c68d464fcb0b8e336fdd8dfa915a39dd973756c7cf659f8a140"
+    },
+    {
+      "path": ".vercel/output/functions/__server.func/_libs/h3+rou3+srvx.mjs",
+      "size": 22573,
+      "compressed_size": 6107,
+      "directory": false,
+      "sha256": "5d9cb7ea25a5aa0eaa4a9563c2589d53d46b707b406f236a394de3a405cc48af"
+    },
+    {
+      "path": ".vercel/output/functions/__server.func/_libs/h3-v2+rou3.mjs",
+      "size": 9830,
+      "compressed_size": 3039,
+      "directory": false,
+      "sha256": "ea4f8f6be308948e62c833f52ab80f7b419ba0de168b80a278be66cecc1b5b17"
+    },
+    {
+      "path": ".vercel/output/functions/__server.func/_libs/lucide-react.mjs",
+      "size": 3577,
+      "compressed_size": 1281,
+      "directory": false,
+      "sha256": "b3be37a8f702a5094f265b175e0ac9da5a1e9501589dcb2eb69f8256395a18e7"
+    },
+    {
+      "path": ".vercel/output/functions/__server.func/_libs/tanstack__history.mjs",
+      "size": 12505,
+      "compressed_size": 3692,
+      "directory": false,
+      "sha256": "406614a370fd8a427bb0a3a77b78b171311e43b75b714d3d6624253a5d50a3f3"
+    },
+    {
+      "path": ".vercel/output/functions/__server.func/_libs/zod.mjs",
+      "size": 167566,
+      "compressed_size": 37357,
+      "directory": false,
+      "sha256": "008a8d90f000a61aaf0ec551f66b0738f2f61840519e58cbfe6c4d2a07ea33f2"
+    },
+    {
+      "path": ".vercel/output/functions/__server.func/_libs/zustand.mjs",
+      "size": 6740,
+      "compressed_size": 2071,
+      "directory": false,
+      "sha256": "463e607a163dae5fd82600e032e7a7368105ea8e4fb90ad450ac606eea9de4df"
+    },
+    {
+      "path": ".vercel/output/functions/__server.func/_runtime.mjs",
+      "size": 1580,
+      "compressed_size": 726,
+      "directory": false,
+      "sha256": "aefa2acac0467f8b79c39ad8f80ac480456390bc0a607251f5e9b860675085d9"
+    },
+    {
+      "path": ".vercel/output/functions/__server.func/_ssr/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": ".vercel/output/functions/__server.func/_ssr/empty-plugin-adapters-D9UWiqvJ.mjs",
+      "size": 230,
+      "compressed_size": 150,
+      "directory": false,
+      "sha256": "ee1957ac485b923838aecb47c3427e91eb7275698cefcda4a6c9018e6cdb1c9e"
+    },
+    {
+      "path": ".vercel/output/functions/__server.func/_ssr/router-sVD1Dwd8.mjs",
+      "size": 13523,
+      "compressed_size": 4523,
+      "directory": false,
+      "sha256": "8f169e342fd5a7ff43476db7bb0ed60d9b56cc7d0425dae8a9d3c9f2e0816caa"
+    },
+    {
+      "path": ".vercel/output/functions/__server.func/_ssr/routes-BEJ91tHp.mjs",
+      "size": 81399,
+      "compressed_size": 22360,
+      "directory": false,
+      "sha256": "138000b51bda8d9d08ec09262022a1db7b1f5c458a30311a5fec3e7d0c63713f"
+    },
+    {
+      "path": ".vercel/output/functions/__server.func/_ssr/ssr.mjs",
+      "size": 67704,
+      "compressed_size": 17584,
+      "directory": false,
+      "sha256": "a8d944c00d10fd638b727053429f9a30af224514e10a417aa52aad2d6ccfdb3e"
+    },
+    {
+      "path": ".vercel/output/functions/__server.func/_ssr/start-5Z2QO8AU.mjs",
+      "size": 140,
+      "compressed_size": 117,
+      "directory": false,
+      "sha256": "2c644f9fa515073658d009ff4f694a224001732f104818e6c80212ff0afc37e8"
+    },
+    {
+      "path": ".vercel/output/functions/__server.func/_tanstack-start-manifest_v-lVLx82J2.mjs",
+      "size": 531,
+      "compressed_size": 307,
+      "directory": false,
+      "sha256": "b04af21777608abec6c6783a4a53e59cbc196e5002076c6aca02d188f5d44ed8"
+    },
+    {
+      "path": ".vercel/output/functions/__server.func/index.mjs",
+      "size": 32288,
+      "compressed_size": 10022,
+      "directory": false,
+      "sha256": "06a253ceb546c564b3ed14eede60470e1bdd544b17e93a1d778431e161c422ae"
+    },
+    {
+      "path": ".vercel/output/nitro.json",
+      "size": 596,
+      "compressed_size": 309,
+      "directory": false,
+      "sha256": "bf39023492ceb4f5a42c8a2e91417b59aeea4a98a6d0a810af58542234f1ac01"
+    },
+    {
+      "path": ".vercel/output/static/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": ".vercel/output/static/__grok/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": ".vercel/output/static/__grok/icon-180.png",
+      "size": 2100,
+      "compressed_size": 1888,
+      "directory": false,
+      "sha256": "3cf5d17d294b51c6cca6c86070309b88554b7ad702b0412e8e2709a01990bc8a"
+    },
+    {
+      "path": ".vercel/output/static/__grok/install/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": ".vercel/output/static/__grok/install/assets/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": ".vercel/output/static/__grok/install/assets/homescreen/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": ".vercel/output/static/__grok/install/assets/homescreen/glass-puzzle.svg",
+      "size": 1811,
+      "compressed_size": 825,
+      "directory": false,
+      "sha256": "a677c9356c23d1e699559ddbffac97cd135c2782cd893fb34f3738f6d11bee17"
+    },
+    {
+      "path": ".vercel/output/static/__grok/install/assets/homescreen/glass-share.svg",
+      "size": 2388,
+      "compressed_size": 1048,
+      "directory": false,
+      "sha256": "efad1b4b507a68c1f1af4aad2c93e8c24076224aa593da86677697f543d026d6"
+    },
+    {
+      "path": ".vercel/output/static/__grok/install/assets/homescreen/logo-grok.svg",
+      "size": 1059,
+      "compressed_size": 602,
+      "directory": false,
+      "sha256": "0654e3e59cce69856f38525cbfe4ab3a9ef52d4b64c8532dd0bc1a3f34fcb5b1"
+    },
+    {
+      "path": ".vercel/output/static/__grok/install/assets/homescreen/ob-ipad.png",
+      "size": 101843,
+      "compressed_size": 93531,
+      "directory": false,
+      "sha256": "4c9b09a4660c662b394597d551a04124293b0e37a7a7c72271dd2948c4499a14"
+    },
+    {
+      "path": ".vercel/output/static/__grok/install/assets/homescreen/ob-phone.png",
+      "size": 103612,
+      "compressed_size": 100291,
+      "directory": false,
+      "sha256": "80e0a5ede614d9b920c67d7cb79c80a79134687b1fc9f560384e896a88e302db"
+    },
+    {
+      "path": ".vercel/output/static/__grok/install/assets/homescreen/plus.svg",
+      "size": 2401,
+      "compressed_size": 863,
+      "directory": false,
+      "sha256": "c2c94be46aa2c3c2fda95d7c6f2fc6d0b656d1f5847828d5d95b5a81a6f4f20d"
+    },
+    {
+      "path": ".vercel/output/static/__grok/install/styles.css",
+      "size": 6717,
+      "compressed_size": 1789,
+      "directory": false,
+      "sha256": "7e8e881302f58e54a9c07e7be395692d3de20fdaa27ce358531cc8dcca472cb6"
+    },
+    {
+      "path": ".vercel/output/static/assets/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": ".vercel/output/static/assets/index-DIU9KdTW.js",
+      "size": 432137,
+      "compressed_size": 135617,
+      "directory": false,
+      "sha256": "55aad5b22cf3f749e7b1f6cf10592fc021a5a3ee4c45f4021dee0e924909f64c"
+    },
+    {
+      "path": ".vercel/output/static/assets/routes-SHDTE2Um.js",
+      "size": 48751,
+      "compressed_size": 17473,
+      "directory": false,
+      "sha256": "1e54bbf85c9548d7813a2040da01a72d334899ebe0a9a22fd17fea9f0c2b7c3e"
+    },
+    {
+      "path": ".vercel/output/static/assets/styles-DwY54LD0.css",
+      "size": 25173,
+      "compressed_size": 5733,
+      "directory": false,
+      "sha256": "e7d1aff95ce700d63c986f01d8c3bedd410c7a2602feb4c85a98f2a03a32c6d1"
+    },
+    {
+      "path": ".vercel/output/static/favicon.svg",
+      "size": 629,
+      "compressed_size": 282,
+      "directory": false,
+      "sha256": "3ebf0b01a07a3947c16f278b4f43a17a1b917d01b47fea34a11565f3c3797acc"
+    },
+    {
+      "path": ".vercel/output/static/og.jpg",
+      "size": 125389,
+      "compressed_size": 125401,
+      "directory": false,
+      "sha256": "a9879b225febad4cf3024f35bd2ed693dd92041102af5369ce2b5b6355753cde"
+    },
+    {
+      "path": ".vercel/output/static/x-banner.jpg",
+      "size": 49045,
+      "compressed_size": 49050,
+      "directory": false,
+      "sha256": "1a66710d7c0f4eb446ec7722a39ce4b2a1ad92310841010d97b592ff21cc6fef"
+    },
+    {
+      "path": "AGENTS.md",
+      "size": 18920,
+      "compressed_size": 8662,
+      "directory": false,
+      "sha256": "e3ab56ff0854fd16b87f55ce7f3d9eaf55005a542d52e5d8237a519288e5762b"
+    },
+    {
+      "path": "artifacts/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": "artifacts/imagine_images/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": "artifacts/imagine_images/7b3fc965-c16c-409e-9ae5-f602dcb406b7.jpg",
+      "size": 622569,
+      "compressed_size": 610829,
+      "directory": false,
+      "sha256": "d9349a2d82fdbe752a68434c82f75caa4be036f875e814ed01dde29763310c48"
+    },
+    {
+      "path": "artifacts/imagine_images/cf8344a0-10da-4427-a566-867bcc4ac918.jpg",
+      "size": 551788,
+      "compressed_size": 540046,
+      "directory": false,
+      "sha256": "c2d91c266713b95e90cf3fdd3bc5236d8036dcdf746917e8f2d33b7c1b89ff53"
+    },
+    {
+      "path": "artifacts/imagine_images/d2f84615-01f4-48df-82e2-cecffefbf465.jpg",
+      "size": 781440,
+      "compressed_size": 769762,
+      "directory": false,
+      "sha256": "d765d667a46eb03fb70c170c7fdf9f79c78a66818b3dc34671ece47bb56467da"
+    },
+    {
+      "path": "attachments/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": "attachments/BEM_PW_P01_1.0.0.zip",
+      "size": 1978084,
+      "compressed_size": 1935220,
+      "directory": false,
+      "sha256": "55deadc107fedfe957dba65489f6a56b9b59d164af1c3961efbf81af69862489"
+    },
+    {
+      "path": "attachments/BEM_PW_P02_1.0.0.zip",
+      "size": 2773032,
+      "compressed_size": 2712105,
+      "directory": false,
+      "sha256": "4ec7a74d9b19ccbf352c25d8797a0d7285b08c8c083f701810dbd3c6e1a098f9"
+    },
+    {
+      "path": "attachments/BEM_PW_P03_1.0.0.zip",
+      "size": 2246160,
+      "compressed_size": 2189871,
+      "directory": false,
+      "sha256": "7823fb20feeac47662486336d0a08337ed5a3d457f1e1b2dc134bd398578ea8c"
+    },
+    {
+      "path": "attachments/BEM_PW_P04_1.0.0.zip",
+      "size": 2504175,
+      "compressed_size": 2440154,
+      "directory": false,
+      "sha256": "6f2292eddd80ba4812903ba4b821acd9150defeaa66d4d8af39ef96187173c89"
+    },
+    {
+      "path": "attachments/BEM_PW_P05_1.0.0.zip",
+      "size": 2246855,
+      "compressed_size": 2196504,
+      "directory": false,
+      "sha256": "8e062f0aac4292fb88ce35754f3bd8012bdeac808acf01d4693a6e95088b725d"
+    },
+    {
+      "path": "attachments/BEM_PW_P06_1.0.0.zip",
+      "size": 2767347,
+      "compressed_size": 2699889,
+      "directory": false,
+      "sha256": "3a68da2c3ea31a413a9c12ef9e103fb15bb9166c2695c51df3e88999b1637926"
+    },
+    {
+      "path": "attachments/BEM_PW_P07_1.0.0.zip",
+      "size": 2241678,
+      "compressed_size": 2186837,
+      "directory": false,
+      "sha256": "a6b25aa8118d850f5aa942b472af987a0eee5790bea3c768995867fee82f35bd"
+    },
+    {
+      "path": "attachments/BEM_PW_P08_1.0.0.zip",
+      "size": 2510246,
+      "compressed_size": 2446065,
+      "directory": false,
+      "sha256": "1e64a76eeec8d1e9fb13621ed5d09c3fc667e3089f2ecf4951969e3c8c17d8d8"
+    },
+    {
+      "path": "attachments/BEM_PW_P09_1.0.0.zip",
+      "size": 3044518,
+      "compressed_size": 2971457,
+      "directory": false,
+      "sha256": "9fe9930340292d0c36cc2bdb2a684f6e5e84963ca0c738969c0b46a60bcedbef"
+    },
+    {
+      "path": "attachments/BEM_PW_P10_1.0.0.zip",
+      "size": 2518719,
+      "compressed_size": 2456983,
+      "directory": false,
+      "sha256": "f93d8c74563a8ab2cee71745ef9df89212205e7caa7f2991db2c35bc3a43770c"
+    },
+    {
+      "path": "attachments/BEM_PW_P11_1.0.0.zip",
+      "size": 2514628,
+      "compressed_size": 2458644,
+      "directory": false,
+      "sha256": "f31836a3a4d93bf04563c4151bddc9d49229809d7aed5dee64e258c5bf9ac941"
+    },
+    {
+      "path": "attachments/BEM_PW_P12_1.0.0.zip",
+      "size": 3046573,
+      "compressed_size": 2973521,
+      "directory": false,
+      "sha256": "a8cfa7810aa976c8fb0abeafe3e096799d74620b4790e0d65a6a257caaed8dc0"
+    },
+    {
+      "path": "attachments/BEM_PW_P13_1.0.0.zip",
+      "size": 1986283,
+      "compressed_size": 1940043,
+      "directory": false,
+      "sha256": "74b588398e79e4a2dde9f1458a328546ce8160736ea63104a0c2ec72f1c3cd80"
+    },
+    {
+      "path": "attachments/BEM_PW_P14_1.0.0.zip",
+      "size": 1730508,
+      "compressed_size": 1687974,
+      "directory": false,
+      "sha256": "47e80cdc8b32cb80a76c84488eb98c3eaa8bc34fb6e14471d68eed7025283fe7"
+    },
+    {
+      "path": "attachments/EXECUTION_WORKFLOW.md",
+      "size": 9325,
+      "compressed_size": 4090,
+      "directory": false,
+      "sha256": "3a46cedc4c3b3d5caa8795ca4df79257bb17f82aee937e1b8b4dcc3c8b97b43e"
+    },
+    {
+      "path": "attachments/Glyphoku.zip",
+      "size": 152236,
+      "compressed_size": 152086,
+      "directory": false,
+      "sha256": "5c921ef8087d559e658e723b6291fe476deda317c2c6ea8f2a038c426e783ac8"
+    },
+    {
+      "path": "attachments/Glyphoku_PW_P01_v1.0.0.zip",
+      "size": 7181781,
+      "compressed_size": 6942221,
+      "directory": false,
+      "sha256": "46aa2e557e80007fb01c53a4943035ce2cc8cef50df0769287d211336cb6fe91"
+    },
+    {
+      "path": "attachments/Glyphoku_PW_P02_v1.0.0.zip",
+      "size": 7224990,
+      "compressed_size": 7013980,
+      "directory": false,
+      "sha256": "9ca3eb5a34bacf134e064969d839529f9282fa06b03f85b2195dbba899452c52"
+    },
+    {
+      "path": "attachments/Glyphoku_PW_P03_v1.0.0.zip",
+      "size": 7228199,
+      "compressed_size": 6948265,
+      "directory": false,
+      "sha256": "ff1aebb2d7901723a3293a4e33603e6ecb9faa025972e887cc9f955fb4936e38"
+    },
+    {
+      "path": "attachments/Glyphoku_PW_P04_v1.0.0.zip",
+      "size": 7199155,
+      "compressed_size": 6956633,
+      "directory": false,
+      "sha256": "6a6742bc704fece952fa2d30e0bc81ffe26dec9581f7af10c96b9526933641e8"
+    },
+    {
+      "path": "attachments/Glyphoku_PW_P05_v1.0.0.zip",
+      "size": 7228878,
+      "compressed_size": 6963275,
+      "directory": false,
+      "sha256": "5c4021fab2c85f6094a39c44f3f0749e23c1fbe0dd3d0da0bc184acc8270d515"
+    },
+    {
+      "path": "attachments/Glyphoku_PW_P06_v1.0.0.zip",
+      "size": 7192412,
+      "compressed_size": 6943510,
+      "directory": false,
+      "sha256": "19ef2dda0859a11d374e6aaf4ddcb03390c27a5f48c5f68eb89eccdc2e5d0899"
+    },
+    {
+      "path": "attachments/Glyphoku_PW_P07_v1.0.0.zip",
+      "size": 7220426,
+      "compressed_size": 6955273,
+      "directory": false,
+      "sha256": "70dcdd60af49e74177208200ca7e199028d9e9004cd091e986182580d412b086"
+    },
+    {
+      "path": "attachments/Glyphoku_PW_P08_v1.0.0.zip",
+      "size": 7199855,
+      "compressed_size": 6949245,
+      "directory": false,
+      "sha256": "4e49acceffa2bb354b153e7d9344feb5e628eb70fa30d904616342c764e28c61"
+    },
+    {
+      "path": "attachments/Glyphoku_PW_P09_v1.0.0.zip",
+      "size": 7225718,
+      "compressed_size": 6940394,
+      "directory": false,
+      "sha256": "027dda8a2fd35fcddde670c0c02fbc1b8d8607fa1fa5ea09524aa53ca0641e82"
+    },
+    {
+      "path": "attachments/Glyphoku_PW_P10_v1.0.0.zip",
+      "size": 7208148,
+      "compressed_size": 6968600,
+      "directory": false,
+      "sha256": "ea0e49342b946da53fef15a78239eb14964519653f62baa2f123b0f4bba3592d"
+    },
+    {
+      "path": "attachments/Glyphoku_PW_P11_v1.0.0.zip",
+      "size": 7236501,
+      "compressed_size": 6964048,
+      "directory": false,
+      "sha256": "49cab4666db0c886540ca7d2df29b4893c72509e85b02b2c1161418bfb6a1a23"
+    },
+    {
+      "path": "attachments/Glyphoku_PW_P12_v1.0.0.zip",
+      "size": 7179152,
+      "compressed_size": 6916341,
+      "directory": false,
+      "sha256": "e2e9302fa22e5a061fa92199578a18c2d2af954387dc111b6b4bbcc12a31070e"
+    },
+    {
+      "path": "attachments/JA21_CYPHER_4.3.3_MARKDOWN_KEY_COMPATIBILITY_FIX.zip",
+      "size": 2006729,
+      "compressed_size": 2000331,
+      "directory": false,
+      "sha256": "1e81d449d18f170de02a98e43d3db2684096cb63c0acdfd052881c3d5cc94d4c"
+    },
+    {
+      "path": "attachments/MASTER_EXECUTION_PROMPT.md",
+      "size": 51426,
+      "compressed_size": 19886,
+      "directory": false,
+      "sha256": "968f0cfe741b7580a0766603faeb0dce0554b2140135a5f9b6bb8ab0669f186b"
+    },
+    {
+      "path": "attachments/MASTER_INDEX.md",
+      "size": 3951,
+      "compressed_size": 1495,
+      "directory": false,
+      "sha256": "627d686d08720b4c64415d2be97d5e4fc443214c4f4fe24692270de54baf8a69"
+    },
+    {
+      "path": "attachments/MASTER_PROMPT (1).md",
+      "size": 8276,
+      "compressed_size": 3755,
+      "directory": false,
+      "sha256": "7013d8b3ea0b8a6d27558477b4f66410537f43d9f6c294c9b0c57b8852a1fbbf"
+    },
+    {
+      "path": "attachments/MASTER_WORKFLOW (1).md",
+      "size": 7120,
+      "compressed_size": 3196,
+      "directory": false,
+      "sha256": "5527228f4d4b6259925b048aab13600846e369d2f844ad43c2da2e39a3cc055a"
+    },
+    {
+      "path": "attachments/Obscura_Master_Prompt_and_Workflow_v1.0.0.md",
+      "size": 203456,
+      "compressed_size": 55032,
+      "directory": false,
+      "sha256": "52a593a2afbedac438cffddc9a8dbf87e32ad5b84345b7e8f7772177bcf580ca"
+    },
+    {
+      "path": "attachments/PenteractBench_0.3.0.html",
+      "size": 76302,
+      "compressed_size": 25664,
+      "directory": false,
+      "sha256": "4d04530f87036641131737b6a60c68ceb80ba5f87d16f79483e79816a82edf69"
+    },
+    {
+      "path": "attachments/START_HERE.md",
+      "size": 4558,
+      "compressed_size": 2222,
+      "directory": false,
+      "sha256": "3c7488b96e285eb432b70953181a650c0ecc3d9459eea9920575d852235eacf7"
+    },
+    {
+      "path": "attachments/Web4 and Blockchain Virtualization.txt",
+      "size": 46978,
+      "compressed_size": 18450,
+      "directory": false,
+      "sha256": "6430546a7be5b16f711b04362d606fee9b452da1e27329d15221978e80692d47"
+    },
+    {
+      "path": "eslint.config.mjs",
+      "size": 1277,
+      "compressed_size": 553,
+      "directory": false,
+      "sha256": "9c79df07c33ff6aa13876bdd1e7e6652aa1ecb377c7b7f029f7915d215ee4488"
+    },
+    {
+      "path": "migrations/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": "migrations/auth/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": "migrations/auth/0001_auth.sql",
+      "size": 2739,
+      "compressed_size": 982,
+      "directory": false,
+      "sha256": "f953cacc448c0c81ae4fe63e66b0e59569e840782ad279fdee201dff529363e9"
+    },
+    {
+      "path": "package-lock.json",
+      "size": 261851,
+      "compressed_size": 55751,
+      "directory": false,
+      "sha256": "68c85563e56ae0f26c8b844bef1b71113e468f2d6d584c0d7a082dce474307be"
+    },
+    {
+      "path": "package.json",
+      "size": 3841,
+      "compressed_size": 1279,
+      "directory": false,
+      "sha256": "f1bb1c9fb7a680f9b2371096572d54226a8fcf066968ec428b8ed6cfbb5edc2a"
+    },
+    {
+      "path": "public/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": "public/__grok/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": "public/__grok/icon-180.png",
+      "size": 2100,
+      "compressed_size": 1888,
+      "directory": false,
+      "sha256": "3cf5d17d294b51c6cca6c86070309b88554b7ad702b0412e8e2709a01990bc8a"
+    },
+    {
+      "path": "public/__grok/install/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": "public/__grok/install/assets/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": "public/__grok/install/assets/homescreen/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": "public/__grok/install/assets/homescreen/glass-puzzle.svg",
+      "size": 1811,
+      "compressed_size": 825,
+      "directory": false,
+      "sha256": "a677c9356c23d1e699559ddbffac97cd135c2782cd893fb34f3738f6d11bee17"
+    },
+    {
+      "path": "public/__grok/install/assets/homescreen/glass-share.svg",
+      "size": 2388,
+      "compressed_size": 1048,
+      "directory": false,
+      "sha256": "efad1b4b507a68c1f1af4aad2c93e8c24076224aa593da86677697f543d026d6"
+    },
+    {
+      "path": "public/__grok/install/assets/homescreen/logo-grok.svg",
+      "size": 1059,
+      "compressed_size": 602,
+      "directory": false,
+      "sha256": "0654e3e59cce69856f38525cbfe4ab3a9ef52d4b64c8532dd0bc1a3f34fcb5b1"
+    },
+    {
+      "path": "public/__grok/install/assets/homescreen/ob-ipad.png",
+      "size": 101843,
+      "compressed_size": 93531,
+      "directory": false,
+      "sha256": "4c9b09a4660c662b394597d551a04124293b0e37a7a7c72271dd2948c4499a14"
+    },
+    {
+      "path": "public/__grok/install/assets/homescreen/ob-phone.png",
+      "size": 103612,
+      "compressed_size": 100291,
+      "directory": false,
+      "sha256": "80e0a5ede614d9b920c67d7cb79c80a79134687b1fc9f560384e896a88e302db"
+    },
+    {
+      "path": "public/__grok/install/assets/homescreen/plus.svg",
+      "size": 2401,
+      "compressed_size": 863,
+      "directory": false,
+      "sha256": "c2c94be46aa2c3c2fda95d7c6f2fc6d0b656d1f5847828d5d95b5a81a6f4f20d"
+    },
+    {
+      "path": "public/__grok/install/styles.css",
+      "size": 6717,
+      "compressed_size": 1789,
+      "directory": false,
+      "sha256": "7e8e881302f58e54a9c07e7be395692d3de20fdaa27ce358531cc8dcca472cb6"
+    },
+    {
+      "path": "public/favicon.svg",
+      "size": 629,
+      "compressed_size": 282,
+      "directory": false,
+      "sha256": "3ebf0b01a07a3947c16f278b4f43a17a1b917d01b47fea34a11565f3c3797acc"
+    },
+    {
+      "path": "public/og.jpg",
+      "size": 125389,
+      "compressed_size": 125401,
+      "directory": false,
+      "sha256": "a9879b225febad4cf3024f35bd2ed693dd92041102af5369ce2b5b6355753cde"
+    },
+    {
+      "path": "public/x-banner.jpg",
+      "size": 49045,
+      "compressed_size": 49050,
+      "directory": false,
+      "sha256": "1a66710d7c0f4eb446ec7722a39ce4b2a1ad92310841010d97b592ff21cc6fef"
+    },
+    {
+      "path": "screenshots/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": "screenshots/.gitkeep",
+      "size": 0,
+      "compressed_size": 2,
+      "directory": false,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "screenshots/app-builder-built-mobile.png",
+      "size": 73705,
+      "compressed_size": 71744,
+      "directory": false,
+      "sha256": "b5e16f44f19139635df66b2952ce8b5aca3e82a01175d4384ccc6f6eb9c3b9e3"
+    },
+    {
+      "path": "screenshots/app-builder-built.json",
+      "size": 1234,
+      "compressed_size": 490,
+      "directory": false,
+      "sha256": "6405ec2259548d1225c7c44e0f1d9c9bd18a6acdb28e0b86a5c4b2aa8e9dda0a"
+    },
+    {
+      "path": "screenshots/app-builder-built.png",
+      "size": 94822,
+      "compressed_size": 89612,
+      "directory": false,
+      "sha256": "2bd0277bbcea7dbf7e1508640a8b79ccb6e14d2a9a11784284098914afca0f75"
+    },
+    {
+      "path": "screenshots/app-builder-preview-mobile.png",
+      "size": 73765,
+      "compressed_size": 71791,
+      "directory": false,
+      "sha256": "4d71b821f18466621556ae6e8596a8e0413d73f0796e022498280138a7e74af9"
+    },
+    {
+      "path": "screenshots/app-builder-preview.json",
+      "size": 1762,
+      "compressed_size": 758,
+      "directory": false,
+      "sha256": "f7d4b5d1f662585c6677455d7d363ad04d1d1eb166b04f369705b4ad0a672f0b"
+    },
+    {
+      "path": "screenshots/app-builder-preview.png",
+      "size": 94880,
+      "compressed_size": 89655,
+      "directory": false,
+      "sha256": "451c36239688cda33bed1f9f8b873b6ca2d182ad68b4e5fd9eeadb7cac4a6c4f"
+    },
+    {
+      "path": "screenshots/dev-baseline.json",
+      "size": 1762,
+      "compressed_size": 758,
+      "directory": false,
+      "sha256": "f7d4b5d1f662585c6677455d7d363ad04d1d1eb166b04f369705b4ad0a672f0b"
+    },
+    {
+      "path": "scripts/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": "scripts/app-env-plugin.mjs",
+      "size": 1278,
+      "compressed_size": 690,
+      "directory": false,
+      "sha256": "92962d2361a98413c0cef80b31266d49b063cf4ecf6421bb99f57f6eef4ed7b6"
+    },
+    {
+      "path": "scripts/brand-check.mjs",
+      "size": 9609,
+      "compressed_size": 3513,
+      "directory": false,
+      "sha256": "318f33ce7b29b55c386cc8847084068777880f795a5082043229bb06686be035"
+    },
+    {
+      "path": "scripts/brand-check.test.mjs",
+      "size": 15084,
+      "compressed_size": 3894,
+      "directory": false,
+      "sha256": "3dada9e907cf63d4127588268f38987e72108639e65a2694aebf4ee35aa9f309"
+    },
+    {
+      "path": "scripts/browser-guard.mjs",
+      "size": 1724,
+      "compressed_size": 910,
+      "directory": false,
+      "sha256": "c6fb865defe5a37bd94e3805b00311d4e8267daf92812e39f62b1213d947265e"
+    },
+    {
+      "path": "scripts/browser-smoke-verdict.mjs",
+      "size": 4663,
+      "compressed_size": 1544,
+      "directory": false,
+      "sha256": "5699614f7fa62515e25ba9cca6397db2770cf6feb9b973f3c19f2915874c53de"
+    },
+    {
+      "path": "scripts/browser-smoke-verdict.test.mjs",
+      "size": 15643,
+      "compressed_size": 3419,
+      "directory": false,
+      "sha256": "48b3924b41d606f94a9b8faae47ff350b84978fdd5ab3f6ca01640ed4c7087d7"
+    },
+    {
+      "path": "scripts/browser-smoke.mjs",
+      "size": 6042,
+      "compressed_size": 2241,
+      "directory": false,
+      "sha256": "2e1cc3136f33bd74b73b4b3dba812e74ac299c24893b9a7c406e9bbeaf46571f"
+    },
+    {
+      "path": "scripts/check-auth-invariant.mjs",
+      "size": 4203,
+      "compressed_size": 1741,
+      "directory": false,
+      "sha256": "d712203c4bc92c197c342e5c91660fc5a141a31171f22f35c505a0bff45f98ee"
+    },
+    {
+      "path": "scripts/check-auth-invariant.test.mjs",
+      "size": 4218,
+      "compressed_size": 1425,
+      "directory": false,
+      "sha256": "75a58f44dffb2fc77eb47473638646f607dba26a68a6900156031c7b6227cf3c"
+    },
+    {
+      "path": "scripts/grok-pwa-plugin.mjs",
+      "size": 6615,
+      "compressed_size": 2313,
+      "directory": false,
+      "sha256": "36331d0bc0664debb5068bd6869d3089dc41555b7770c9ccb577d8845958835c"
+    },
+    {
+      "path": "scripts/grok-pwa-plugin.test.mjs",
+      "size": 22062,
+      "compressed_size": 4411,
+      "directory": false,
+      "sha256": "10b4710896e025591c987ed032e53e91dd193737370fb3062efcea5c2dd26547"
+    },
+    {
+      "path": "scripts/grok-pwa-shared.d.mts",
+      "size": 3206,
+      "compressed_size": 814,
+      "directory": false,
+      "sha256": "f4db33fcf35ef3f25fca05d1b42494b6f607c44a4d728ed3e989e65a3a1ea9d0"
+    },
+    {
+      "path": "scripts/grok-pwa-shared.mjs",
+      "size": 18225,
+      "compressed_size": 5790,
+      "directory": false,
+      "sha256": "99bf3caab5e4c2a30fe748a196cfa4074a9e039efec16f57c83efe325bcadd9e"
+    },
+    {
+      "path": "scripts/install-page.html",
+      "size": 5658,
+      "compressed_size": 1543,
+      "directory": false,
+      "sha256": "5f8fe91f837db8d74d68db5e057948918bd9299e097700e0bd18f1cf5f94e586"
+    },
+    {
+      "path": "scripts/migrate.mjs",
+      "size": 3181,
+      "compressed_size": 1433,
+      "directory": false,
+      "sha256": "e1a31c8046a099df37b4bcbcafa4f4f7d7d18b1f1f0dc6d79676d41c4be976be"
+    },
+    {
+      "path": "scripts/migration-plan.mjs",
+      "size": 1525,
+      "compressed_size": 743,
+      "directory": false,
+      "sha256": "9305d8cfe8cdad73671065d675c89d0f20075d18c756f9aba5043b72e7c19a0d"
+    },
+    {
+      "path": "scripts/migration-plan.test.mjs",
+      "size": 3558,
+      "compressed_size": 1225,
+      "directory": false,
+      "sha256": "9787b5f5f1a7057db94f0a5a8c89abf6ec569fd22d26f99be1c248a2a9f0c082"
+    },
+    {
+      "path": "scripts/preview-thumbnail.mjs",
+      "size": 1762,
+      "compressed_size": 966,
+      "directory": false,
+      "sha256": "fd7263a1dd76f788c2b51e9381e1f1de1a58993fd94e01040285556cd38c0c40"
+    },
+    {
+      "path": "scripts/preview.mjs",
+      "size": 11074,
+      "compressed_size": 4200,
+      "directory": false,
+      "sha256": "b366b1c28844cda81d21e36a88af5f548bdec6a5a4b3000aac12be3ec99cf605"
+    },
+    {
+      "path": "scripts/preview.test.mjs",
+      "size": 9207,
+      "compressed_size": 2530,
+      "directory": false,
+      "sha256": "0105fe41d056ecc22c586a191a9cbd7d0e838b7c878d6993c8c9573c7ea708b1"
+    },
+    {
+      "path": "scripts/register-tests.mjs",
+      "size": 88,
+      "compressed_size": 79,
+      "directory": false,
+      "sha256": "3718c3e94b23e6c7c775cd464893e1d2484ef1fadd10628db85e00c41de0fbdd"
+    },
+    {
+      "path": "scripts/sign-out-plan.mjs",
+      "size": 5971,
+      "compressed_size": 2264,
+      "directory": false,
+      "sha256": "32ae072de23b5138bf849c344caf72ab2dab6cb4617ab9915db4e4f5b9c7e2f0"
+    },
+    {
+      "path": "scripts/sign-out-plan.test.mjs",
+      "size": 8659,
+      "compressed_size": 2209,
+      "directory": false,
+      "sha256": "1942e32f4b6a9d8b62733338b0f0e1a7d84ed278b4e6c4f24fa7616a3abc694e"
+    },
+    {
+      "path": "scripts/test-alias.mjs",
+      "size": 1003,
+      "compressed_size": 419,
+      "directory": false,
+      "sha256": "acee6437fd5225f8a9e703f930f1b31f87fab520c2250a10fe655c1c95271e28"
+    },
+    {
+      "path": "scripts/with-app-env.mjs",
+      "size": 4601,
+      "compressed_size": 2055,
+      "directory": false,
+      "sha256": "a846b68bd3645299c23eef965d9ef226df3a500d345d7576c23f7a2b2ff643c7"
+    },
+    {
+      "path": "scripts/with-app-env.test.mjs",
+      "size": 4466,
+      "compressed_size": 1533,
+      "directory": false,
+      "sha256": "384ea7d0d20f980f733ee38d8f48b0bedd8a4ad39c80ca4792b9aeebcb275851"
+    },
+    {
+      "path": "scripts/write-atomic.mjs",
+      "size": 3607,
+      "compressed_size": 1560,
+      "directory": false,
+      "sha256": "650b62e8aa38697e1b931049025afe3aac829e6761a8aadf428712faef8b1544"
+    },
+    {
+      "path": "scripts/write-atomic.test.mjs",
+      "size": 7505,
+      "compressed_size": 2093,
+      "directory": false,
+      "sha256": "e266ac99149651c368715317820934f0e8942db0fc763725ca4a096bf169ad3b"
+    },
+    {
+      "path": "server/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": "server/middleware/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": "server/middleware/grok-pwa.ts",
+      "size": 3606,
+      "compressed_size": 1495,
+      "directory": false,
+      "sha256": "340f1fed44355a61fefdaf29a752c524ac029afb00bea3f40cc996cdb289d2f8"
+    },
+    {
+      "path": "server/virtual-grok-og-identity.d.ts",
+      "size": 262,
+      "compressed_size": 132,
+      "directory": false,
+      "sha256": "74847f2b2bade154ac07dabb239c4718a745c095df530e78b8f1ef9f053edfa2"
+    },
+    {
+      "path": "src/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": "src/components/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": "src/components/glyphoku/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": "src/components/glyphoku/studio.tsx",
+      "size": 21429,
+      "compressed_size": 5599,
+      "directory": false,
+      "sha256": "8ee2f552adfca28f2fc66370c3a1f605c0d6eb07208f436dc2737e5b77539e64"
+    },
+    {
+      "path": "src/components/obscura/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": "src/components/obscura/lattice-app.tsx",
+      "size": 25444,
+      "compressed_size": 6183,
+      "directory": false,
+      "sha256": "490cc4941df6c1336c6993d218f39e3bf57d0a91d2ad6b2e100daa538211da3c"
+    },
+    {
+      "path": "src/components/obscura/mail-sequence.tsx",
+      "size": 7351,
+      "compressed_size": 2254,
+      "directory": false,
+      "sha256": "5c20be98f208612dad880b43784e78c316bf1aa6296ffc1289e0e47e531ed472"
+    },
+    {
+      "path": "src/components/obscura/stage.tsx",
+      "size": 7798,
+      "compressed_size": 2667,
+      "directory": false,
+      "sha256": "f42b91549fdb3d94ca61a9bd8015fb412ad669b62d9f8adaa32b3e3db9b3ad78"
+    },
+    {
+      "path": "src/components/preview-host-bridge.tsx",
+      "size": 668,
+      "compressed_size": 354,
+      "directory": false,
+      "sha256": "e4277e80ce127e7305057fb280d03d0703c5c7115b17d2e2aecf000e4867555e"
+    },
+    {
+      "path": "src/lib/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": "src/lib/app-data/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": "src/lib/app-data/app-data.test.ts",
+      "size": 15944,
+      "compressed_size": 3272,
+      "directory": false,
+      "sha256": "ec0c40fdaafb4e3d551086de9f9b4a745da7c252f7fbbc5c51a8b1b0a541391e"
+    },
+    {
+      "path": "src/lib/app-data/client.server.ts",
+      "size": 11867,
+      "compressed_size": 3803,
+      "directory": false,
+      "sha256": "ab544af8b5b96e16248fdcf7ce634c132ccd3659c33cf0daa22f6e74ef5a5da0"
+    },
+    {
+      "path": "src/lib/app-data/errors.ts",
+      "size": 1994,
+      "compressed_size": 759,
+      "directory": false,
+      "sha256": "8e0dd8d761b2a5a1cafcb7523e2063151f0b6677837b19c3f6d494af148f3889"
+    },
+    {
+      "path": "src/lib/app-data/index.ts",
+      "size": 598,
+      "compressed_size": 259,
+      "directory": false,
+      "sha256": "72cf57dc1a863f9693d34c11772ba4bae790cc17d9efb1e8619b8a2e6247a7fa"
+    },
+    {
+      "path": "src/lib/app-data/login.ts",
+      "size": 856,
+      "compressed_size": 333,
+      "directory": false,
+      "sha256": "fbc723841bb67148dd9de12ed614ba6c095d799a533309857cc4d202d6be5ad9"
+    },
+    {
+      "path": "src/lib/app-data/readiness-schedule.test.ts",
+      "size": 1146,
+      "compressed_size": 440,
+      "directory": false,
+      "sha256": "97c87401c474b9f87f2e21152fb377744f353736848f0044466ba2e260b06745"
+    },
+    {
+      "path": "src/lib/app-data/readiness-schedule.ts",
+      "size": 506,
+      "compressed_size": 258,
+      "directory": false,
+      "sha256": "3ea7f192220446b08747f3ef76c7d2fe150356470621f2220738b23e7976f683"
+    },
+    {
+      "path": "src/lib/app-data/readiness.ts",
+      "size": 366,
+      "compressed_size": 216,
+      "directory": false,
+      "sha256": "377786c1cf739eb9dc7c8b2bdcd09991686a700375a67a0c6e73b4334d394da1"
+    },
+    {
+      "path": "src/lib/app-data/server-only.ts",
+      "size": 476,
+      "compressed_size": 280,
+      "directory": false,
+      "sha256": "82821474088face6b9fcadad49793629e5f07a16386402b816262a1c070a3210"
+    },
+    {
+      "path": "src/lib/app-data/types.ts",
+      "size": 1361,
+      "compressed_size": 524,
+      "directory": false,
+      "sha256": "65f3c7566db12661ee9d3633eaae66a85505e00f57a61c258fa72bd22881489f"
+    },
+    {
+      "path": "src/lib/app-data/use-connector-readiness.ts",
+      "size": 3892,
+      "compressed_size": 1525,
+      "directory": false,
+      "sha256": "57e6d2b3709be83ac2eed9c42eaa822a067fb5aa44a6098c982892c43f3a4f2f"
+    },
+    {
+      "path": "src/lib/auth/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": "src/lib/auth/client.ts",
+      "size": 9714,
+      "compressed_size": 3738,
+      "directory": false,
+      "sha256": "4bca649afb627b11231a7b31acfcffe9323efddebc05944b2d769d2b8589294f"
+    },
+    {
+      "path": "src/lib/auth/email-password.ts",
+      "size": 442,
+      "compressed_size": 276,
+      "directory": false,
+      "sha256": "9b1da7c786e48adfa9a6f7c485bcf5817cf2075a601d8726a965f11171910354"
+    },
+    {
+      "path": "src/lib/auth/gate-identity.server.ts",
+      "size": 5706,
+      "compressed_size": 1985,
+      "directory": false,
+      "sha256": "96546b8b6910a01163c36c34a0d417d803bec222b93304be764d810838764159"
+    },
+    {
+      "path": "src/lib/auth/gate-identity.test.ts",
+      "size": 14346,
+      "compressed_size": 2723,
+      "directory": false,
+      "sha256": "21202fb2b56ffd10cb9b5bb7d9f305be88cce3902b858f73cea914df05ce2652"
+    },
+    {
+      "path": "src/lib/auth/gate-session-marker.ts",
+      "size": 879,
+      "compressed_size": 537,
+      "directory": false,
+      "sha256": "3dbf8cb789b0288f9d5c53b1515a3e87d265fcb22e11fe28dc3289c4bd7c06eb"
+    },
+    {
+      "path": "src/lib/auth/gate-session.server.ts",
+      "size": 11980,
+      "compressed_size": 3439,
+      "directory": false,
+      "sha256": "68aa500523ca2f0ad5c7ba34372c10aa1851a9774f8567c6b7781af5dd6cf204"
+    },
+    {
+      "path": "src/lib/auth/gates.tsx",
+      "size": 4924,
+      "compressed_size": 2034,
+      "directory": false,
+      "sha256": "39950c211bd4ad4f7129082bf5a43a42ff23975e681b99fd7cfbce372f83a5be"
+    },
+    {
+      "path": "src/lib/auth/isolation.server.ts",
+      "size": 2386,
+      "compressed_size": 1173,
+      "directory": false,
+      "sha256": "a4adf6a5d548e70a0be52d7efdc7433126028908072b47bf9f92135d9ee558a0"
+    },
+    {
+      "path": "src/lib/auth/middleware.ts",
+      "size": 2462,
+      "compressed_size": 1123,
+      "directory": false,
+      "sha256": "8dc37c4e9bd583f175402330d0952ef4d584c7410723cc2649c4046d5084bd80"
+    },
+    {
+      "path": "src/lib/auth/pglite-dialect.ts",
+      "size": 4088,
+      "compressed_size": 1317,
+      "directory": false,
+      "sha256": "bd66925574245cd47cdd98b5c068dd7b4ee4a51c9439e8421dc54c62fe7c4f50"
+    },
+    {
+      "path": "src/lib/auth/popup.server.ts",
+      "size": 6133,
+      "compressed_size": 2557,
+      "directory": false,
+      "sha256": "81f8833d9ab639f76b86f4bb23fed42a04cec4b0c6d90b7a67425a9232c9bb4a"
+    },
+    {
+      "path": "src/lib/auth/preview.ts",
+      "size": 1679,
+      "compressed_size": 901,
+      "directory": false,
+      "sha256": "d52a3654a5cef7e841cbca789fd106dc464ea55db574f02aa5d295b7350f8664"
+    },
+    {
+      "path": "src/lib/auth/provider.tsx",
+      "size": 593,
+      "compressed_size": 361,
+      "directory": false,
+      "sha256": "4cbbc7f8cc1765788ad65455a33f64dcdafc6fe4ed1d13f90ccfa0ba4c13d1f3"
+    },
+    {
+      "path": "src/lib/auth/providers.ts",
+      "size": 1486,
+      "compressed_size": 740,
+      "directory": false,
+      "sha256": "4acefac17931529bdeab053588a917b06e44abdb67a275a2ca1c7841080c6a78"
+    },
+    {
+      "path": "src/lib/auth/server.ts",
+      "size": 12548,
+      "compressed_size": 5130,
+      "directory": false,
+      "sha256": "e0544cadbfa1a09c3cb4cf2a0ec187dbbb2831aebf7de887a3c858abdd72ca43"
+    },
+    {
+      "path": "src/lib/auth/sign-in-gate.test.ts",
+      "size": 854,
+      "compressed_size": 289,
+      "directory": false,
+      "sha256": "2c352588cb6a8f58faf3aecc1d1f418ae827ddbb6a5eca8e56668ec72cd328d2"
+    },
+    {
+      "path": "src/lib/auth/sign-in-gate.ts",
+      "size": 332,
+      "compressed_size": 168,
+      "directory": false,
+      "sha256": "d2c65c20ab50ae41657ceecd61ded005fac29315deace9fc4d966cf56300754c"
+    },
+    {
+      "path": "src/lib/auth/use-current-user.ts",
+      "size": 3315,
+      "compressed_size": 1352,
+      "directory": false,
+      "sha256": "a0cc4bd74b6da5b346b6bafc1aec58b9bf5cc0278264379b737b79a5cff1e482"
+    },
+    {
+      "path": "src/lib/auth/verify.server.ts",
+      "size": 3874,
+      "compressed_size": 1630,
+      "directory": false,
+      "sha256": "42a7d5c1b17027ba004d6524a7f7bb4827b908d75ee3c3aefc940fa9c891c2ee"
+    },
+    {
+      "path": "src/lib/bem-mail.test.ts",
+      "size": 2335,
+      "compressed_size": 869,
+      "directory": false,
+      "sha256": "71ce50abadce4c38712ff63fac16f9357576d8420a3beb69bacd4c60c0c768d4"
+    },
+    {
+      "path": "src/lib/bem-mail.ts",
+      "size": 9637,
+      "compressed_size": 3279,
+      "directory": false,
+      "sha256": "045866112c620fd22c18b3cf61a9f17030ff9143f5846872745c86cf180ea8af"
+    },
+    {
+      "path": "src/lib/corpus.ts",
+      "size": 4626,
+      "compressed_size": 2159,
+      "directory": false,
+      "sha256": "c504d159a388de8bbeedd0bcf059f0b4cff255db41f83eac27dbb401a92115f5"
+    },
+    {
+      "path": "src/lib/db.ts",
+      "size": 9525,
+      "compressed_size": 3739,
+      "directory": false,
+      "sha256": "8decf7689ff4833ad2f6f263eff9041dd2a68ce923824fa1d55ad620dea72e49"
+    },
+    {
+      "path": "src/lib/env.server.ts",
+      "size": 477,
+      "compressed_size": 312,
+      "directory": false,
+      "sha256": "9b834e0978ae76332a65a05f5bc75f80684db8c6aa638916869385c12e3343d5"
+    },
+    {
+      "path": "src/lib/error-component.tsx",
+      "size": 1029,
+      "compressed_size": 529,
+      "directory": false,
+      "sha256": "d219e4297409810a21bd382e60169faf69243d49dafd17cb0ea3a1888082b2f4"
+    },
+    {
+      "path": "src/lib/glyphoku/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": "src/lib/glyphoku/deal.ts",
+      "size": 1275,
+      "compressed_size": 591,
+      "directory": false,
+      "sha256": "7562fe2b4bd005c1eb0e072645d2ee00c3038a1dfbc4084a2a2520a07dff8b2c"
+    },
+    {
+      "path": "src/lib/glyphoku/glyphoku.test.ts",
+      "size": 3640,
+      "compressed_size": 1211,
+      "directory": false,
+      "sha256": "cfbdc2466fe7c68f573ef1fa1644b8ec714facf4455ee82f3598b41f91f8ff45"
+    },
+    {
+      "path": "src/lib/glyphoku/glyphs.ts",
+      "size": 1541,
+      "compressed_size": 642,
+      "directory": false,
+      "sha256": "71f17af2425cbb4dd513f624dcf13da44c4b8aa6c86e928fa6b689f2e05b808a"
+    },
+    {
+      "path": "src/lib/glyphoku/registry.ts",
+      "size": 8148,
+      "compressed_size": 2318,
+      "directory": false,
+      "sha256": "4f0d7d848c284fcd5b239aeeb87fa756f4924418d2e268d69ae6a304d380034f"
+    },
+    {
+      "path": "src/lib/glyphoku/rules.ts",
+      "size": 8653,
+      "compressed_size": 2601,
+      "directory": false,
+      "sha256": "c0237a81a4f01851e3acc548505602b8cf57e47eba4e4f6331c440d9465e6ac9"
+    },
+    {
+      "path": "src/lib/glyphoku/solver.ts",
+      "size": 7059,
+      "compressed_size": 2165,
+      "directory": false,
+      "sha256": "da1029696179dcc451331626b8d4a3fe37849e02537b21dcc540a538e21ba8fd"
+    },
+    {
+      "path": "src/lib/ja21.test.ts",
+      "size": 3346,
+      "compressed_size": 1275,
+      "directory": false,
+      "sha256": "fb052627d464b4c96ec2e51de1c8c7062f997e3fecb340df5a32e46990ecb839"
+    },
+    {
+      "path": "src/lib/ja21.ts",
+      "size": 13318,
+      "compressed_size": 4284,
+      "directory": false,
+      "sha256": "3a08c7e6016f791b2378ce8a55def5842b59f747a92776ab9cf1bfc7dac9e231"
+    },
+    {
+      "path": "src/lib/lattice-store.ts",
+      "size": 19584,
+      "compressed_size": 5274,
+      "directory": false,
+      "sha256": "9d1e034b0678fddf45706cd0ff46305f5a0661ee6d3e649e16c4bc2f2cef7e76"
+    },
+    {
+      "path": "src/lib/multiplayer/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": "src/lib/multiplayer/index.ts",
+      "size": 169,
+      "compressed_size": 123,
+      "directory": false,
+      "sha256": "bcb96816a2135e315078e2e7d0eda5522579b0caf9e768dc6c34294e4fa49137"
+    },
+    {
+      "path": "src/lib/multiplayer/p2p.ts",
+      "size": 20579,
+      "compressed_size": 6380,
+      "directory": false,
+      "sha256": "4d0d2492ac249a2cf267c8d2db7688b5a2c488ab640da7727c0f1b73c2e92f60"
+    },
+    {
+      "path": "src/lib/og/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": "src/lib/og/site.json",
+      "size": 23,
+      "compressed_size": 25,
+      "directory": false,
+      "sha256": "fa84576c342219e2fd8aa7e4767755b756d6c5ee731e4879fb139a0506ca8d37"
+    },
+    {
+      "path": "src/lib/penteract.test.ts",
+      "size": 2484,
+      "compressed_size": 888,
+      "directory": false,
+      "sha256": "6c35e390fdc7beea9b0347342c1d6e514a002506c25605dcd02e231cf1042d64"
+    },
+    {
+      "path": "src/lib/penteract.ts",
+      "size": 8795,
+      "compressed_size": 3281,
+      "directory": false,
+      "sha256": "000a63b1cfa1c90fca70416e03f93d21984ece5f4c16f05cfead353231d5ef6a"
+    },
+    {
+      "path": "src/lib/preview-embedder-origin.ts",
+      "size": 1855,
+      "compressed_size": 663,
+      "directory": false,
+      "sha256": "c2d5e1acc5653ff2abc08a5eeb5feb3331f4e3d7c751ec83d60dee83cf33a6ee"
+    },
+    {
+      "path": "src/lib/preview-host-bridge.ts",
+      "size": 9595,
+      "compressed_size": 3069,
+      "directory": false,
+      "sha256": "63a91311378037680b6be414937295069ec2950520d1dc959741cf430ba6b38b"
+    },
+    {
+      "path": "src/lib/remediation.test.ts",
+      "size": 5562,
+      "compressed_size": 1643,
+      "directory": false,
+      "sha256": "88e6205ded4fd6c83751d4b46ea8366a82678136a3ad94552682e90efbfdc063"
+    },
+    {
+      "path": "src/lib/sha256.ts",
+      "size": 3039,
+      "compressed_size": 1369,
+      "directory": false,
+      "sha256": "6bc91885d04a01f0854df1be919ef816dbd59fc6a66647529ce47d10ea734185"
+    },
+    {
+      "path": "src/routeTree.gen.ts",
+      "size": 1741,
+      "compressed_size": 654,
+      "directory": false,
+      "sha256": "f4a843c61899ede2abbc4a7153e6a00557765f737b724b152463c533c4e0ddb0"
+    },
+    {
+      "path": "src/router.tsx",
+      "size": 272,
+      "compressed_size": 151,
+      "directory": false,
+      "sha256": "b3418d117d99e4e47f8c26f90eaa972b3732214b133a7052591e6b2907090752"
+    },
+    {
+      "path": "src/routes/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": "src/routes/__root.tsx",
+      "size": 1243,
+      "compressed_size": 607,
+      "directory": false,
+      "sha256": "f918daaf9d18d8ce8dbfcdd7e596fa355897913c4cc3aa2ee92f41af9d9be89e"
+    },
+    {
+      "path": "src/routes/index.tsx",
+      "size": 196,
+      "compressed_size": 128,
+      "directory": false,
+      "sha256": "3316b3234798aaa63c637e0463b70bf81d4bd42cad3c02e6825fce1a8fb0e5b1"
+    },
+    {
+      "path": "src/styles.css",
+      "size": 1001,
+      "compressed_size": 520,
+      "directory": false,
+      "sha256": "66eff462017074fe87b4c2344c942500bb68cd584211113daa2f39467ca8aa8c"
+    },
+    {
+      "path": "startup.sh",
+      "size": 155,
+      "compressed_size": 131,
+      "directory": false,
+      "sha256": "051215b13b3cc66d6d3971b206272c2cd90b0444803935620f45c5ae8e6d4412"
+    },
+    {
+      "path": "tsconfig.json",
+      "size": 722,
+      "compressed_size": 372,
+      "directory": false,
+      "sha256": "8abad87a6c62322f1f4fdff02d5f3f764ea10a98c49cfafccdc288a0dced492f"
+    },
+    {
+      "path": "vercel.json",
+      "size": 70,
+      "compressed_size": 62,
+      "directory": false,
+      "sha256": "b621d84931055b57a73e6d4547ab4b161b6bfbf091806354d3f6f67d0f57700f"
+    },
+    {
+      "path": "vite.config.ts",
+      "size": 6750,
+      "compressed_size": 2614,
+      "directory": false,
+      "sha256": "5451c22b17e7d8408674909b3d231f0ae4a4d017b740491ce7df008d961a7eee"
+    }
+  ]
+}

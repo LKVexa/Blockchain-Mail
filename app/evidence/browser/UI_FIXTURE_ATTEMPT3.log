@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/mnt/data/integration_work/ui-fixture-check.py", line 41, in <module>
+    check('Mock initial frame acknowledgment precedes first advance',page.evaluate("()=>{const a=calls.findIndex(x=>x.path.endsWith('/ack')),b=calls.findIndex(x=>x.path.endsWith('/advance'));return a>=0&&b>a;}") )
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/integration_work/ui-fixture-check.py", line 9, in check
+    (OUT/'UI_FIXTURE_FAILURE.json').write_text(json.dumps({'name':name,'body':page.locator('body').inner_text(),'calls':page.evaluate('window.calls'),'errors':errors},indent=2));page.screenshot(path=str(OUT/'UI_FIXTURE_FAILURE.png'),full_page=True);raise AssertionError(name)
+                                                                                                                                                                                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Mock initial frame acknowledgment precedes first advance

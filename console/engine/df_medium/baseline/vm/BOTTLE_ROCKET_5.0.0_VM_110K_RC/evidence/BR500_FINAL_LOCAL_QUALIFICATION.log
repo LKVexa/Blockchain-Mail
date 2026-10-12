@@ -1,0 +1,101 @@
+BOTTLE ROCKET 5.0.0 FINAL LOCAL QUALIFICATION
+--- EVIDENCE VERIFIER ---
+BR-500 evidence verification: PASS packages=15 requirements=96 operational=88 blocked=8 evidence_integrity=PASS strict_gate=BLOCKED
+--- ACCEPTANCE ---
+{"atomic_requirements": 96, "blocked_requirements": 8, "local_blocked_work_packages": 4, "local_operational_work_packages": 11, "operational_requirements": 88, "strict_gate": "BLOCKED"}
+--- RELEASE MANIFEST ---
+{"manifest_sha256": "9f8eca3cf5bcce1cfcf3458f2742150d9b12ec98974a4438d91df99e4909cd09", "result": "PASS", "suite": "BR-500_RELEASE_MANIFEST_VERIFY"}
+{"manifest_sha256": "9f8eca3cf5bcce1cfcf3458f2742150d9b12ec98974a4438d91df99e4909cd09", "private_key_packaged": false, "record": "BOTTLE_ROCKET.ReleaseBundle/5.0.0", "result": "PASS", "signature_bytes": 64}
+--- SECURE EXECUTION ---
+secure=PASS status=0 trap=0 image_version=9 generation=1 issuer_epoch=1
+secure=PASS status=2 trap=0 image_version=9 generation=1 issuer_epoch=1
+R2.low64=42
+--- SIZE/MEMORY ---
+{
+  "brim_bytes": 272,
+  "brim_ceiling": 51200,
+  "debug_executable_bytes": 692872,
+  "production_boundary_ceiling": 110000,
+  "production_runtime_and_authority_source_bytes": 107675,
+  "record": "BOTTLE_ROCKET.SizeQualification/5.0.0",
+  "result": "PASS",
+  "stripped_executable_bytes": 113200
+}
+{
+  "ceiling_bytes": 61000,
+  "compiler_command": "cc -DBR_PRODUCTION -Isrc -std=c11 -Os -Wall -Wextra -Werror -fno-common -fstack-protector-strong -ffreestanding -c src/brvm.c -o .build/brvm-core61.o",
+  "counted_boundary": "stripped relocatable freestanding production execution core compiled solely from src/brvm.c; excludes trust/compiler/HAL/CLI, which remain covered by the separate 110000-byte production runtime-and-authority source boundary",
+  "measurement_note": "Freshly rerun during BR-500 application; measurement tool inherited from 4.9 release engineering.",
+  "raw_object_bytes": 50784,
+  "record": "BOTTLE_ROCKET.Core61/5.0.0",
+  "result": "PASS",
+  "sha256": "41dd384f38bd544fb9eb7edbf30e8a565cc1e2d01c777eea7fc47eaaa336c503",
+  "stripped_core_bytes": 49072
+}
+{
+  "compiler_enforcement": "PASS",
+  "loader_enforcement": "PASS",
+  "measurement_note": "Freshly rerun during BR-500 application; measurement tool inherited from 4.9 release engineering.",
+  "native_brim_bytes": 272,
+  "oversized_rejection": [
+    {
+      "command": "brctl inspect-image <BRIM51_OVERSIZE_51201>",
+      "exit_code": 1
+    },
+    {
+      "command": "bradmin run <BRIM51_OVERSIZE_51201>",
+      "exit_code": 1
+    }
+  ],
+  "profile_ceiling_bytes": 51200,
+  "record": "BOTTLE_ROCKET.BRIM51/5.0.0",
+  "result": "PASS"
+}
+{
+  "idle_vm_bytes": 22304,
+  "maximum_configured_vm_bytes": 4216608,
+  "measurement_note": "Freshly rerun during BR-500 application; measurement tool inherited from 4.9 release engineering.",
+  "peak_rss_max_kib": 7188,
+  "quota_conformance": "PASS via make wide-conformance",
+  "record": "BOTTLE_ROCKET.RuntimeMemory/5.0.0",
+  "result": "PASS",
+  "rss_samples_kib": [
+    7184,
+    7188,
+    7180,
+    7188,
+    7188
+  ],
+  "typical_secure_run_peak_rss_median_kib": 7188,
+  "wide_quota_ceiling_bytes": 4194304,
+  "worst_case_maximum_width_accounted_bytes": 3434272
+}
+--- SANITIZERS ---
+PASS BR-470-09-R03 resource usage
+PASS BR-470-09-R04 image identity
+PASS BR-470-09-R05 build identity
+PASS BR-470-09-R06 diagnostics do not expose key material
+PASS BR-470-10-R01 network absent by default
+PASS BR-470-10-R02 optional extension separately registered
+PASS BR-470-10-R03 network capability gated
+PASS BR-470-10-R04 network packet bound
+PASS BR-470-10-R05 explicit protocol adapter
+PASS BR-470-10-R06 static boundary audit verifies no implicit host networking
+PASS BR-470-11-R01 enumerate available devices
+PASS BR-470-11-R02 versions exposed
+PASS BR-470-11-R03 capabilities exposed
+PASS BR-470-11-R04 limits exposed
+PASS BR-470-11-R05 deterministic discovery ordering
+PASS BR-470-12-R01 calls per execution limited
+PASS BR-470-12-R02 transferred bytes limited
+PASS BR-470-12-R03 storage writes limited
+PASS BR-470-12-R04 entropy requests limited
+PASS BR-470-12-R05 mailbox depth limited
+PASS BR-470-13-R01 legacy service routes through device ABI
+PASS BR-470-13-R02 unauthorized device use traps
+PASS BR-470-13-R03 device input/output bounds safe
+PASS BR-470-13-R04 replay substitutes nondeterministic inputs
+{"suite":"BR-470_DEVICE_IO_CONFORMANCE","requirements":66,"failures":0,"result":"PASS"}
+--- RESULT ---
+LOCAL_RESULT=PASS
+STRICT_GATE=BLOCKED_EXTERNAL

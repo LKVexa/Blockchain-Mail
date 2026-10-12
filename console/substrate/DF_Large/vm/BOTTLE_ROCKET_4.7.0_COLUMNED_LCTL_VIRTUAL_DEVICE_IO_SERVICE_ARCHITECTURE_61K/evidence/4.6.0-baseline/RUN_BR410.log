@@ -1,0 +1,19 @@
+PASS core_selftest
+PASS lc__create_initialize_configure_reset_load_verify_start_step_run_suspend_resume_stop_fault_destroy
+PASS explicit_instance_isolation
+PASS hal_memory_all_16_calls
+PASS hal_deterministic_adapter
+PASS hal_bare_metal_adapter
+PASS hal_smart_card_adapter
+PASS posix_adapter_storage_monotonic
+PASS windows_adapter_portable_contract
+PASS same_brim_three_adapters
+PASS persistence_dual_slot_monotonic_replay
+PASS loader_error_model_abi_isa_integrity_replay
+PASS sandbox_caps_fixed_host_table_bounds_quotas
+PASS per_instance_device_table
+PASS apdu_length_pointer_protocol_rejection
+PASS wide_1048576_bit_stack_roundtrip
+PASS execution_budget_and_cancel
+PASS public_pointer_validation
+{"suite":"BR-410","tests":18,"failures":0,"result":"PASS"}

@@ -1,0 +1,230 @@
+{
+  "kind": "DOCUMENT_AND_SOURCE_PACKAGE_CHECK",
+  "status": "PASS",
+  "created_at": "2026-10-06T21:59:33.972868+00:00",
+  "case_ids": 72,
+  "source_case_records_unchanged": 72,
+  "parent_ids": 18,
+  "historical_bve_controls": 6800,
+  "current_code_digest_matches": 129,
+  "current_document_links_checked": 43,
+  "current_document_links": [
+    {
+      "file": "README.md",
+      "target": "START_HERE.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "docs/INTEGRATION_REPORT.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "docs/PROFILE_CROSSWALK.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "docs/VERIFICATION.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "assessment/INDEX.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "THIRD_PARTY_NOTICES.md",
+      "exists": true
+    },
+    {
+      "file": "START_HERE.md",
+      "target": "docs/VERIFICATION.md",
+      "exists": true
+    },
+    {
+      "file": "START_HERE.md",
+      "target": "docs/RELEASE_DECISION.md",
+      "exists": true
+    },
+    {
+      "file": "docs/INTEGRATION_REPORT.md",
+      "target": "VERIFICATION.md",
+      "exists": true
+    },
+    {
+      "file": "docs/INTEGRATION_REPORT.md",
+      "target": "../assessment/INDEX.md",
+      "exists": true
+    },
+    {
+      "file": "docs/INTEGRATION_REPORT.md",
+      "target": "RELEASE_DECISION.md",
+      "exists": true
+    },
+    {
+      "file": "assessment/W00_RESULT.md",
+      "target": "ACCEPTANCE_CASE_RESULTS.json",
+      "exists": true
+    },
+    {
+      "file": "assessment/W00_RESULT.md",
+      "target": "../provenance/tailored/MASTER_WORKFLOW.md",
+      "exists": true
+    },
+    {
+      "file": "assessment/W08_RESULT.md",
+      "target": "ACCEPTANCE_CASE_RESULTS.json",
+      "exists": true
+    },
+    {
+      "file": "assessment/W08_RESULT.md",
+      "target": "../provenance/tailored/MASTER_WORKFLOW.md",
+      "exists": true
+    },
+    {
+      "file": "assessment/W06_RESULT.md",
+      "target": "ACCEPTANCE_CASE_RESULTS.json",
+      "exists": true
+    },
+    {
+      "file": "assessment/W06_RESULT.md",
+      "target": "../provenance/tailored/MASTER_WORKFLOW.md",
+      "exists": true
+    },
+    {
+      "file": "assessment/W04_RESULT.md",
+      "target": "ACCEPTANCE_CASE_RESULTS.json",
+      "exists": true
+    },
+    {
+      "file": "assessment/W04_RESULT.md",
+      "target": "../provenance/tailored/MASTER_WORKFLOW.md",
+      "exists": true
+    },
+    {
+      "file": "assessment/W01_RESULT.md",
+      "target": "ACCEPTANCE_CASE_RESULTS.json",
+      "exists": true
+    },
+    {
+      "file": "assessment/W01_RESULT.md",
+      "target": "../provenance/tailored/MASTER_WORKFLOW.md",
+      "exists": true
+    },
+    {
+      "file": "assessment/W05_RESULT.md",
+      "target": "ACCEPTANCE_CASE_RESULTS.json",
+      "exists": true
+    },
+    {
+      "file": "assessment/W05_RESULT.md",
+      "target": "../provenance/tailored/MASTER_WORKFLOW.md",
+      "exists": true
+    },
+    {
+      "file": "assessment/INDEX.md",
+      "target": "ACCEPTANCE_CASE_RESULTS.json",
+      "exists": true
+    },
+    {
+      "file": "assessment/INDEX.md",
+      "target": "WORKFLOW_RESULTS.json",
+      "exists": true
+    },
+    {
+      "file": "assessment/INDEX.md",
+      "target": "UPSTREAM_STATUS.json",
+      "exists": true
+    },
+    {
+      "file": "assessment/INDEX.md",
+      "target": "GATES.json",
+      "exists": true
+    },
+    {
+      "file": "assessment/INDEX.md",
+      "target": "CHECKPOINT.json",
+      "exists": true
+    },
+    {
+      "file": "assessment/INDEX.md",
+      "target": "W00_RESULT.md",
+      "exists": true
+    },
+    {
+      "file": "assessment/INDEX.md",
+      "target": "W01_RESULT.md",
+      "exists": true
+    },
+    {
+      "file": "assessment/INDEX.md",
+      "target": "W02_RESULT.md",
+      "exists": true
+    },
+    {
+      "file": "assessment/INDEX.md",
+      "target": "W03_RESULT.md",
+      "exists": true
+    },
+    {
+      "file": "assessment/INDEX.md",
+      "target": "W04_RESULT.md",
+      "exists": true
+    },
+    {
+      "file": "assessment/INDEX.md",
+      "target": "W05_RESULT.md",
+      "exists": true
+    },
+    {
+      "file": "assessment/INDEX.md",
+      "target": "W06_RESULT.md",
+      "exists": true
+    },
+    {
+      "file": "assessment/INDEX.md",
+      "target": "W07_RESULT.md",
+      "exists": true
+    },
+    {
+      "file": "assessment/INDEX.md",
+      "target": "W08_RESULT.md",
+      "exists": true
+    },
+    {
+      "file": "assessment/W03_RESULT.md",
+      "target": "ACCEPTANCE_CASE_RESULTS.json",
+      "exists": true
+    },
+    {
+      "file": "assessment/W03_RESULT.md",
+      "target": "../provenance/tailored/MASTER_WORKFLOW.md",
+      "exists": true
+    },
+    {
+      "file": "assessment/W02_RESULT.md",
+      "target": "ACCEPTANCE_CASE_RESULTS.json",
+      "exists": true
+    },
+    {
+      "file": "assessment/W02_RESULT.md",
+      "target": "../provenance/tailored/MASTER_WORKFLOW.md",
+      "exists": true
+    },
+    {
+      "file": "assessment/W07_RESULT.md",
+      "target": "ACCEPTANCE_CASE_RESULTS.json",
+      "exists": true
+    },
+    {
+      "file": "assessment/W07_RESULT.md",
+      "target": "../provenance/tailored/MASTER_WORKFLOW.md",
+      "exists": true
+    }
+  ],
+  "errors": [],
+  "scope": "Artifact structure, identity and link checks only; not system acceptance, runtime execution, cryptographic certification or external signatures."
+}

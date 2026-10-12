@@ -1,0 +1,7 @@
+COMMAND .build/t470p + static diagnostic-surface audit
+EXIT 0
+===== RUN_BR470_PROD.log sha256=bbe5a1485091eaf810acc4ad2cf6df4a7b37ff44bf6807272f126f7a03c0f5a9 =====
+PASS production_apdu_security_diagnostics
+{"suite":"BR-470-PROD","tests":1,"failures":0,"result":"PASS"}
+===== RUN_STATIC470.log sha256=a90cd31723a077c4516f301472f0af7de9c3f9c104659b55c0d176dd2d3ea9ec =====
+{"failed": [], "failures": 0, "result": "PASS", "suite": "BR-470-STATIC", "tests": 14}

@@ -1,0 +1,35 @@
+ja source 0.3
+module torus.ramws
+use Service
+policy no_network
+
+service TorusRAMWS {
+    message NodeAddress { x: Count, y: Count }
+    message OpenRequest { session_id: Text, node: NodeAddress }
+    message SessionReply { session_id: Text, state: Text, accepted: Flag, obfuscated: Flag, math_context_hash: Text }
+    message TorusMessage { message_id: Text, session_id: Text, source: NodeAddress, destination: NodeAddress, payload: Text }
+    message TorusAck { message_id: Text, session_id: Text, delivered: Flag, hops: Count, path: Text, obfuscated: Flag, math_context_hash: Text }
+    message CloseRequest { session_id: Text }
+    message Failure { code: Text, detail: Text }
+
+    endpoint open(request: OpenRequest) -> Result<SessionReply, Failure>
+        retry max 0
+        idempotency request.session_id
+    endpoint send(request: TorusMessage) -> Result<TorusAck, Failure>
+        retry max 0
+        idempotency request.message_id
+    endpoint close(request: CloseRequest) -> Result<SessionReply, Failure>
+        retry max 0
+        idempotency request.session_id
+
+    protocol Session {
+        state Created
+        state Open
+        state Closed
+        transition open: Created -> Open
+        transition close: Open -> Closed
+    }
+    transport ramws local
+}
+assert protocol.transition.valid == true
+emit json TorusRAMWS.compatibility_report

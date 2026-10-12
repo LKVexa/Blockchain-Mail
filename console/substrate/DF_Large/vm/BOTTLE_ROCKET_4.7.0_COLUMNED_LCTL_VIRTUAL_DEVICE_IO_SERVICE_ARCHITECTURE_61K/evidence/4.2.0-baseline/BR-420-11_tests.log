@@ -1,0 +1,12 @@
+$ python3 tests/test_420.py
+exit=0
+TEST roundtrip_lctl_brir_brim_disassembly PASS
+TEST brim_disassembly_semantic_compare PASS
+TEST roundtrip_binary_provenance PASS
+
+$ make operational
+exit=0
+$ make sanitize
+exit=0
+$ make size
+exit=0

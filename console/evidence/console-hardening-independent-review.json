@@ -1,0 +1,182 @@
+{
+  "schemaVersion": 1,
+  "reviewedAtUtc": "2026-10-11T16:12:10.423Z",
+  "reviewer": "Independent server audit agent",
+  "status": "PASS",
+  "qualification": "SCOPED_SOURCE_REVIEW_AND_TEST_EVIDENCE_VERIFICATION_ONLY",
+  "scope": "Final console URL policy, launcher validation, surfaced WebView2 HTTP/file interception, navigation/download checks, and scoped failure evidence. Read only; no console/window/native engine launched by this reviewer.",
+  "reviewPass": true,
+  "newBlockersWithinReviewedEdits": [],
+  "fullWrappingImplemented": false,
+  "nativeJa21CipherVerified": false,
+  "completeLocalNetworkConfinementVerified": false,
+  "claims": {
+    "sourceHardeningReviewed": true,
+    "purePolicyAndManagedCompileEvidence": "PASS_68_OF_68",
+    "candidateMailServerEditedByThisReview": false,
+    "browserRuntimeExecutedByIndependentReviewer": false,
+    "suppliedNativeExecutableExecutedByIndependentReviewer": false,
+    "networkRequestsMadeByIndependentReviewer": false,
+    "applicationWrapping": "NOT_IMPLEMENTED",
+    "archiveWrapping": "NOT_IMPLEMENTED",
+    "portableConsoleWrapping": "NOT_IMPLEMENTED",
+    "actualVmWrapping": "UNSUPPORTED_BY_THIS_PREFLIGHT",
+    "torusRoutedHttps": "NOT_IMPLEMENTED_OR_VERIFIED",
+    "wholeSystemSecurityCertification": false
+  },
+  "sourceRootRelativeToWork": "incoming-console/JA21-Blank-Console",
+  "sourceHashes": [
+    {
+      "path": "host/JA21VirtualBrowser.cs",
+      "sha256": "fc5380e468069b468f47ec2092931b4193f0c26dae57ba6bcf84d37a2215de0a",
+      "matchesExecutedVerificationSnapshot": true
+    },
+    {
+      "path": "host/LiveWebBridge.cs",
+      "sha256": "bb1083ee0a4c6aeddd03241df93a1bb6af42a460646ac21dfeb931425b63e1ef",
+      "matchesExecutedVerificationSnapshot": true
+    },
+    {
+      "path": "host/Start-Console.ps1",
+      "sha256": "4103a12007a257b42453a56f1e888bb574691a5ab40ab40052fc0005c27c5617",
+      "matchesExecutedVerificationSnapshot": true
+    },
+    {
+      "path": "tools/Test-ConsolePolicy.ps1",
+      "sha256": "e1a3a47aa49dec9b08d02eefcad9f62ae738fd6b5f94870c4f05eec0b551d59a",
+      "matchesExecutedVerificationSnapshot": true
+    },
+    {
+      "path": "tools/CONSOLE_HARDENING.txt",
+      "sha256": "01000da6b2e99e831fbfed68877a0b0dc1b5afee41e58893d96453ae7e84eede",
+      "matchesExecutedVerificationSnapshot": true
+    }
+  ],
+  "checks": [
+    {
+      "id": "CONSOLE-IR-01",
+      "evidence": "host/JA21VirtualBrowser.cs:1198-1237",
+      "verdict": "PASS",
+      "finding": "Console mode exclusively allows configured literal 127.0.0.1 HTTP origins and canonical decimal ports. It checks original authority, rejects credentials/controls/backslashes, and fails closed for absent or invalid origins."
+    },
+    {
+      "id": "CONSOLE-IR-02",
+      "evidence": "host/JA21VirtualBrowser.cs:1187-1189,1256-1259,1306-1308",
+      "verdict": "PASS",
+      "finding": "Full-browser private-host/file environment opt-ins cannot bypass ConsoleMode. The console resolution check validates its literal target without DNS."
+    },
+    {
+      "id": "CONSOLE-IR-03",
+      "evidence": "host/Start-Console.ps1:4-41",
+      "verdict": "PASS",
+      "finding": "Launcher validates start_url and up to 32 origin strings before invoking the host launcher. Only exact about:blank or a configured literal HTTP loopback port is admitted."
+    },
+    {
+      "id": "CONSOLE-IR-04",
+      "evidence": "host/LiveWebBridge.cs:72-78,103-120,213-239",
+      "verdict": "PASS",
+      "finding": "Required request/frame/external-link handlers install before _consolePolicyReady becomes true. Failed installation stops/disposes the live surface; surfaced denied requests receive a 403 response rather than continuing after a log entry."
+    },
+    {
+      "id": "CONSOLE-IR-05",
+      "evidence": "host/LiveWebBridge.cs:234-244",
+      "verdict": "PASS_WITH_API_COVERAGE_LIMIT",
+      "finding": "Wildcard resource-context and request-source-kind filters cover API-surfaced document/worker HTTP/file requests. Frame navigation and external application launch have separate cancellation handlers. This is not a socket firewall."
+    },
+    {
+      "id": "CONSOLE-IR-06",
+      "evidence": "host/LiveWebBridge.cs:142-169,172-211",
+      "verdict": "PASS",
+      "finding": "Popup errors are contained; console permissions, developer tools and default context menus cannot be enabled by broader launch opt-ins. Downloads require allowed HTTP or allowed-origin blob provenance and use the portable download path."
+    },
+    {
+      "id": "CONSOLE-IR-07",
+      "evidence": "host/JA21VirtualBrowser.cs:1377-1385",
+      "verdict": "PASS",
+      "finding": "Native console fallback rechecks policy on each redirected target and explicitly sets req.Proxy=null, preventing inherited proxy routing at this HTTP client boundary."
+    },
+    {
+      "id": "CONSOLE-IR-08",
+      "evidence": "host/LiveWebBridge.cs:90-94,188-192",
+      "verdict": "PASS",
+      "finding": "Console navigation success receipts are emitted only after successful NavigationCompleted; initialization and failed navigation no longer manufacture successful presentation evidence."
+    },
+    {
+      "id": "CONSOLE-IR-09",
+      "evidence": "host/JA21VirtualBrowser.cs:3220-3232,3318-3326",
+      "verdict": "PASS",
+      "finding": "Failure statuses end pending console loading without emitting a success receipt; blanking disposes the previous live surface and ignores callbacks from a replaced surface."
+    },
+    {
+      "id": "CONSOLE-IR-10",
+      "evidence": "tools/Test-ConsolePolicy.ps1; console-hardening-verification.json",
+      "verdict": "PASS_EVIDENCE_INSPECTED",
+      "finding": "Harness executes extracted pure address/navigation/download/launcher validators and compiles five managed source units. All 68 reported cases pass; the five recorded changed-file hashes independently match the reviewed final files."
+    }
+  ],
+  "closedReviewFindings": [
+    {
+      "id": "CONSOLE-FIX-01",
+      "issue": "Native console fallback inherited ambient proxy configuration.",
+      "resolution": "req.Proxy=null is present only in ConsoleMode.",
+      "status": "CLOSED_IN_SOURCE"
+    },
+    {
+      "id": "CONSOLE-FIX-02",
+      "issue": "Failed NavigationCompleted emitted a successful NavigationCommitted receipt.",
+      "resolution": "Console commit emission now requires e.IsSuccess; failed console statuses clear pending loading separately.",
+      "status": "CLOSED_IN_SOURCE"
+    },
+    {
+      "id": "CONSOLE-FIX-03",
+      "issue": "Initialization could report the requested Source as a successful presentation before navigation completion.",
+      "resolution": "Legacy initialization commit is restricted to full-browser mode; console success commits come from successful NavigationCompleted only.",
+      "status": "CLOSED_IN_SOURCE"
+    }
+  ],
+  "verificationEvidence": {
+    "file": "console-hardening-verification.json",
+    "sha256": "c1e16e7b0a2697b760f6a56b2c26f0bc8441e8b5730034497f1aa925db09d9a5",
+    "reportedTotal": 68,
+    "independentlyCountedCases": 68,
+    "independentlyCountedPassingCases": 68,
+    "failed": 0,
+    "sourceSnapshotHashesChecked": 5,
+    "fiveManagedSourceUnitCompileCasePass": true,
+    "sdkVersionReportedByImplementingAgent": "1.0.4191.47",
+    "reexecutedByIndependentReviewer": false,
+    "executionScopeReported": {
+      "native": false,
+      "browser": false,
+      "network": false,
+      "osConfinement": false,
+      "websocketInterception": false
+    }
+  },
+  "residualLimits": [
+    "No browser/window/native-engine run or network capture was performed. Event lifecycle, runtime version admission and source-policy wiring need actual runtime negative tests before deployment qualification.",
+    "WebResourceRequested is not complete WebSocket/WebRTC/DNS-prefetch/browser-background/child-process/OS network confinement. Existing profiles or workers and ambient WebView proxy routing remain unverified; an OS/container rule or fully enforceable network implementation is required for a complete local-only guarantee.",
+    "Pure validator tests operate on supplied Uri strings. Browser normalization before events can canonicalize lexical numeric variants; this review certifies the checked target-policy inputs, not every raw browser input spelling.",
+    "Allowed loopback HTTP traffic is plaintext and the wrapper does not authenticate the identity of the process occupying an allowed local port.",
+    "Application state, recovery material, browser storage, downloads, logs and archive bytes have not been integrated into a JA21 encryption/wrapping pipeline.",
+    "Native JA21 engine/r12 tuple source is absent even after the second ZIP. Added workflow prose proposes future transport contracts but supplies neither cipher source nor executable 8Sphere mathematics.",
+    "The portable console is a Windows application host, not an isolated VM or a verified operating-system sandbox; law/8Sphere diagnostic labels do not supply entropy, consensus or cryptographic proof."
+  ],
+  "primarySources": [
+    {
+      "title": "Microsoft WebView2 WebResourceRequested",
+      "url": "https://learn.microsoft.com/en-us/dotnet/api/microsoft.web.webview2.core.corewebview2.webresourcerequested?view=webview2-dotnet-1.0.4191.47",
+      "supports": "Resource interception API scope and filter requirement."
+    },
+    {
+      "title": "Microsoft custom network request management",
+      "url": "https://learn.microsoft.com/en-us/microsoft-edge/webview2/how-to/webresourcerequested",
+      "supports": "Supplying a response overrides a surfaced request; installing handlers/filters precedes navigation."
+    },
+    {
+      "title": "Microsoft WPF initialization event",
+      "url": "https://learn.microsoft.com/en-us/dotnet/api/microsoft.web.webview2.wpf.webview2.corewebview2initializationcompleted?view=webview2-dotnet-1.0.4022.49",
+      "supports": "Initialization precedes normal use and is not successful navigation evidence."
+    }
+  ]
+}

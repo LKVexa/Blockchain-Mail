@@ -1,0 +1,20 @@
+{
+  "name": "vexa-glyph127-local-post-office",
+  "version": "3.9.1-local.1",
+  "private": true,
+  "type": "module",
+  "description": "Protected local mail, signed ledger and puzzle workspace with independent outer authenticated encryption.",
+  "engines": {
+    "node": ">=24.19.0"
+  },
+  "scripts": {
+    "start": "node src/main.mjs serve-protected --key-stdin 1",
+    "test": "node tools/run-tests.mjs",
+    "check:package": "node tools/check-package.mjs",
+    "check:glyphoku": "node tools/glyphoku-check.mjs",
+    "build:local": "node tools/build.mjs",
+    "verify": "node src/main.mjs verify"
+  },
+  "dependencies": {},
+  "provenance": "Original hosted package and lockfile remain in provenance. A supplied compiled React runtime is vendored with a recorded extraction boundary; no dependency installation is performed."
+}

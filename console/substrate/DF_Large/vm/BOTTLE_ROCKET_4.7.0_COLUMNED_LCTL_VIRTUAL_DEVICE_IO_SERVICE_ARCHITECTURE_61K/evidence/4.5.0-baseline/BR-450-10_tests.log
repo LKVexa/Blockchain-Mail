@@ -1,0 +1,7 @@
+PASS guest_object_write_versioned
+PASS guest_object_read_namespace_integrity
+PASS guest_object_namespace_isolation
+PASS guest_object_tamper_rejected
+PASS guest_object_quota_enforced
+PASS legacy_guest_object_migrates_to_v1
+PASS checkpoint_state_isolated_from_secure_control

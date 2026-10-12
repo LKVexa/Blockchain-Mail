@@ -1,0 +1,43 @@
+Blank console 1.0.2
+
+Double-click Start Console.cmd.
+
+This derivative hardens supported console address/request checks and uses an
+unbranded window title and icon. It starts blank. The existing application
+release and its light/dark control remain separate.
+
+Full JA21/8Sphere application, archive and console wrapping is pending.
+Loopback HTTP remains plaintext; browser storage and logs remain unwrapped.
+Complete WebSocket/browser-background/OS network isolation and desktop
+window launch have not been verified. Read tools/CONSOLE_HARDENING.txt
+and HARDENING_STATUS.json for the supported boundaries and limitations.
+
+The window is a blank, resizable browser surface with no permanent tabs, search
+bar, toolbar or decorative landing screen. Configured integrated workspace pages
+require the live renderer. A temporary loading notice or generic failure notice
+appears while opening them; Try again rechecks the same allowed local address.
+An intentionally selected about:blank remains empty.
+Close it with Alt+F4. Windows' Alt+Space menu can move or resize the window.
+
+This is the empty host prepared for later GFM console integration. It does not
+start the simulation or execute GFM commands. Configure its content later by
+changing start_url in console.json, or by passing -StartUrl to
+host\Start-Console.ps1. The two configured local origins correspond to the
+GFM chat's existing simulator addresses. Console mode refuses
+other HTTP/HTTPS origins through its supported request checks.
+
+The supplied JA21 9.8.7 backup is preserved. This copy starts with a fresh
+workspace and includes the pinned WebView2 adapter, original native engine,
+and VEC1 nodes. Old profiles, downloads, cookies, saved sessions, caches,
+temporary files and mutable evidence are not copied.
+
+The browser box is based on JA21 9.8.7 with a separate console mode. Original
+full-browser launchers remain available for development. The primary console
+launcher uses the blank mode.
+
+Source audit: the supplied backup already lacked 191 legacy reference files
+under DF_Large and DF_Xtra_Large. Its 48 active runtime files and the pinned
+SDK adapter passed their original integrity checks. The original package
+ledger and exact missing-file list are preserved under provenance. The new
+derivative seal covers the files actually present; it does not certify those
+absent legacy references or full VEC1 research-workflow qualification.

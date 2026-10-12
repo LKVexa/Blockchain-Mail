@@ -1,0 +1,81 @@
+WORKSPACE391 PRIVATE MAIL
+
+New message -> recipient's assigned @127 address -> write/attach -> Send.
+The same interface chooses this computer or the signed Torus route automatically.
+Each authenticated account sees its own Inbox, Sent and private delivery attempts.
+
+The fresh portable package is one application with Tor and private mail included.
+Extract W391.zip, open its W391 folder and double-click Open Workspace.vbs.
+The application prepares itself on first opening. In the full workspace folder,
+Start-Workspace.cmd also opens the application. Create or unlock your vault,
+then open your mailbox.
+Tor and the first private network start automatically. Login assigns an available
+@127 address to your account. Use the assigned address shown in the mailbox.
+Existing networks, vaults and message history are preserved.
+
+Add another computer once:
+1. First computer: Settings -> Connected computers -> Connect another computer.
+   Copy its connection code and keep this workspace open.
+2. Other computer: extract the same fresh package into its own folder, create its
+   own vault/recovery words, then open Settings -> Connected computers.
+3. Paste the code and choose Connect this computer. Registration, address-range
+   assignment and signed-directory updates happen inside the application.
+After joining, use New message and Send normally. No registration files need to
+be exchanged. The one-time code identifies the private group this computer joins;
+each code connects one computer. Share it only with the intended computer.
+Connecting and refreshing the signed directory have no fixed waiting deadline.
+Recoverable Tor reachability failures are retried while the workspace stays open.
+Close the workspace to stop waiting. Individual mail delivery attempts still
+have their own connection and transfer limits.
+
+Ordinary mailbox sends are free. No credits, balance or daily credit allowance
+are needed to send local or private Torus mail.
+
+New networks assign addresses such as:
+  mail@127.0.0.1:10000000000000000001
+  mail@127.0.0.2:10000000000000000002
+Copy the recipient's complete assigned address into New message. The part after
+the colon is a private mailbox identifier, not a network port. New identifiers
+have 20 decimal digits; the address format supports up to 32 digits. Each of the
+three octets after 127 may be 0 through 255. Existing assigned addresses,
+including earlier rmail addresses, stay valid.
+
+The signed directory connects each computer's virtual 127 host to that computer's
+Tor onion address and public keys. Mail travels through Tor to that endpoint; the
+receiving computer uses the complete private identifier to find the account's
+own mailbox. This routing happens automatically in the same Send form.
+
+The current application supports up to 256 computers per private group and up to
+64 accounts on each computer. The large address namespace does not remove these
+current registration limits or the need for available storage.
+Keep state/ and network-state/ private on their own computer. Distribute the fresh
+application package; never copy one computer's live vault or Tor identity to another.
+
+The attachment picker has no fixed per-file or total attachment byte ceiling.
+Up to four files per message transfer as bounded encrypted chunks and signed manifests.
+Mailboxes have no fixed storage quota. Available disk space is the practical
+storage limit for messages and files. Received large files save through
+the browser's file picker, without accumulating a whole file in memory. Mailbox JSON
+exports contain attachment references; save the files separately. The private backup
+contains encrypted attachment files as well as database and encrypted credentials.
+
+Tor starts automatically with the protected launcher. The verified Expert Bundle
+15.0.24 is bundled; supplied SOPHIA executables remain unchanged. No separate Tor
+installation or port selection is needed for normal startup or private mail.
+The supplied TORUS RAMWS archive's exact authored topology and standalone readers
+are preserved, hash-checked and used by the new authenticated network adapter.
+The original in-process demo is not used as a remote delivery simulation.
+
+Private network sends are restricted to assigned @127 addresses and local
+compatibility mailboxes. Tor avoids ordinary SMTP port 25 for this private network.
+Both recipients and any forwarding computers must be online. Keep the first
+computer online while a computer joins and while new directory registrations are
+fetched. It also forwards expanded routes when a direct neighboring route is not
+available, so keep it running for normal use of the group. Neighboring computers
+can exchange mail directly if both have the signed registration and are running.
+A confirmed send
+requires the destination's signed durable receipt; checking uncertainty does not
+automatically submit another message. Existing public Internet attempt history remains.
+
+Each computer remains an operator vault. This is node-to-node encryption, not
+recipient-held end-to-end encryption or distributed blockchain consensus.

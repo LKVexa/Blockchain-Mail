@@ -1,0 +1,20 @@
+{
+  "source_controls": 6800,
+  "source_components": 136,
+  "source_parents": 18,
+  "current_bounded_evidence_packets": 9,
+  "historical_only_blocked_records": 28,
+  "states": {
+    "BLOCKED": 37,
+    "NOT_ASSESSED": 6763
+  },
+  "workflow_states": {
+    "NOT_STARTED": 6791,
+    "STOPPED": 9
+  },
+  "controls_passed": 0,
+  "independently_approved": 0,
+  "source_requirements_changed": 0,
+  "candidate_code_tree_sha256": "04fb8e21dece4ae8ee2a7bbeb7666bcc5d563b6ffd6a150761f339b5554c8ac4",
+  "notice": "All source identities are accounted for, not all executed. Nine current packets remain blocked at full acceptance; 28 earlier blocked records require current re-assessment. 6763 controls remain unassessed/unstarted."
+}

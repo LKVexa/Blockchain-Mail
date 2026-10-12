@@ -1,0 +1,56 @@
+{
+  "format": "WORKSPACE391-TORUS-SOURCE/1",
+  "source_archive": "D:/Codex/2026-10-12/usi/outputs/TORUS_RAMWS_0.3.0.zip",
+  "source_archive_sha256": "1d7bf91bea7061cd39a077dcef8c6c12267d085226f823e7454d98a364ce6f93",
+  "archive_manifest_verification": {
+    "files": 49,
+    "matched": 49,
+    "extras": 0,
+    "executed": false
+  },
+  "files": [
+    {
+      "entry": "TORUS_RAMWS_0.3.0/host/lctlc-reader.js",
+      "packaged_path": "provenance/torus-ramws/lctlc-reader.cjs",
+      "bytes": 10844,
+      "sha256": "e758e84c917d2781031031759e8f32e23cc16c7ce10360314b958449b9a6eb87",
+      "modified": false
+    },
+    {
+      "entry": "TORUS_RAMWS_0.3.0/host/jasp-reader.js",
+      "packaged_path": "provenance/torus-ramws/jasp-reader.cjs",
+      "bytes": 9915,
+      "sha256": "08996981c124e04e2b55aefde6baaf15ce932184e266c113dfc2a6afd359bffa",
+      "modified": false
+    },
+    {
+      "entry": "TORUS_RAMWS_0.3.0/languages/lctl/torus.lctlc",
+      "packaged_path": "provenance/torus-ramws/torus.lctlc",
+      "bytes": 5875,
+      "sha256": "f12b430232624da7193041ad9e6116d913b32e0c50bb92d4a200c97bfcf4a6a8",
+      "modified": false
+    },
+    {
+      "entry": "TORUS_RAMWS_0.3.0/languages/ja/torus_ramws.jasp",
+      "packaged_path": "provenance/torus-ramws/torus_ramws.jasp",
+      "bytes": 1361,
+      "sha256": "53df3519bb52b26ddf14b4e1766d269694bce35b154549691281f79b69076452",
+      "modified": false
+    },
+    {
+      "entry": "TORUS_RAMWS_0.3.0/PACKAGE_MANIFEST.json",
+      "packaged_path": "provenance/torus-ramws/PACKAGE_MANIFEST.json",
+      "bytes": 8547,
+      "sha256": "ad9d0c85cccc007d131bf17cbd8ca3b9fb485c6136012975f07ace57fc432e4f",
+      "modified": false
+    },
+    {
+      "entry": "TORUS_RAMWS_0.3.0/languages/ja/reference/LICENSE.txt",
+      "packaged_path": "provenance/torus-ramws/JA-REFERENCE-LICENSE.txt",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "modified": false
+    }
+  ],
+  "scope": "Original bounded topology/JA reference readers and authoring inputs only. Network mail uses the new authenticated Tor peer adapter."
+}

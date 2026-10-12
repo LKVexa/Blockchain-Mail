@@ -1,0 +1,47 @@
+COMMAND .build/t470 + BR-450 monotonic/recovery regression
+EXIT 0
+===== RUN_BR470.log sha256=648701450118bf5746c929982800496df69906dcb5e47b430749665fee16f111 =====
+PASS device_abi_version_ids_caps_flags_order
+PASS generic_device_op_buffers_caps_bounds
+PASS console_clock_entropy_deterministic
+PASS persistent_block_and_monotonic
+PASS bidirectional_owned_mailbox
+PASS calls_bytes_storage_entropy_quotas
+PASS development_apdu_class
+PASS entropy_failure_fail_closed
+PASS optional_wall_clock_extension
+PASS network_absent_by_default
+{"suite":"BR-470","tests":10,"failures":0,"result":"PASS"}
+===== RUN_BR450.log sha256=15ea2ab93c0313855fe40aaab65beac4af2a4b84d972edf6a0c6555c6da2242b =====
+PASS install_generation1
+PASS recover_generation1
+PASS install_generation2
+PASS latest_authenticated_committed_wins
+PASS control_record_v2_signed_binding
+PASS power_loss_mutation_stage_1
+PASS power_loss_mutation_stage_2
+PASS power_loss_mutation_stage_3
+PASS power_loss_mutation_stage_4
+PASS power_loss_mutation_stage_5
+PASS power_loss_mutation_stage_6
+PASS power_loss_mutation_stage_7
+PASS interruption_before_update_keeps_previous_good
+PASS interruption_after_activation_recovers_new
+PASS after_first_successful_boot_recovers_new
+PASS corrupted_control_rejected
+PASS image_control_digest_mismatch_rejected
+PASS pending_control_never_bootable
+PASS truncated_control_rejected
+PASS path_traversal_rejected
+PASS multiple_host_process_lock_exclusion
+PASS restrictive_file_permissions
+PASS storage_erase_status
+PASS symlink_temp_rejected
+PASS guest_object_write_versioned
+PASS guest_object_read_namespace_integrity
+PASS guest_object_namespace_isolation
+PASS guest_object_tamper_rejected
+PASS guest_object_quota_enforced
+PASS legacy_guest_object_migrates_to_v1
+PASS checkpoint_state_isolated_from_secure_control
+{"suite":"BR-450","tests":31,"failures":0,"result":"PASS"}

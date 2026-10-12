@@ -1,0 +1,42 @@
+COMMAND .build/t470p + .build/t470f + APDU corpus
+EXIT 0
+===== RUN_BR470_PROD.log sha256=bbe5a1485091eaf810acc4ad2cf6df4a7b37ff44bf6807272f126f7a03c0f5a9 =====
+PASS production_apdu_security_diagnostics
+{"suite":"BR-470-PROD","tests":1,"failures":0,"result":"PASS"}
+===== RUN_APDU_FUZZ.log sha256=9c06268fccefcfd703ebe21721472a9a2a3d5cfb36e93c7be685a9667a5121e7 =====
+PASS deterministic_apdu_fuzz_512
+{"suite":"BR-470-APDU-FUZZ","tests":512,"failures":0,"result":"PASS"}
+===== RUN_BR440.log sha256=3a9d6140351c3e2f97e7eaff6ebefd5a250e2b78cf8ba78ae2ee7b0dcfa564af =====
+PASS immutable_root_and_policy
+PASS unsigned_cannot_execute
+PASS signed_without_manifest_cannot_execute
+PASS policy_replay_rejected
+PASS secure_start
+PASS replay_rejected
+PASS authorization_not_sticky
+PASS key_rotation_new_release
+PASS rotation_overlap
+PASS old_release_deauthorized
+PASS revoked_issuer_rejected
+PASS revoked_image_version_rejected
+PASS stale_control_record_rejected
+PASS rollback_version_rejected
+PASS unauthorized_capability_rejected
+PASS expired_manifest_rejected
+PASS bad_signature_rejected
+PASS emergency_recovery
+PASS hardware_anchor_requires_separate_build
+PASS direct_opcode_injection_disabled
+PASS raw_apdu_load_disabled
+PASS security_log_rejection_event
+PASS security_log_bounded
+{"suite":"BR-440","tests":23,"failures":0,"result":"PASS"}
+===== APDU_CORPUS.sha256 sha256=9bc2da4cfc0f6463b006408b7875f0b41f27b0e140d4ca19d52bb6f048294b95 =====
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  tests/fuzz/apdu/empty.bin
+0f62e6d38f5034ec17645f25a06298f31359b3af5fd1d21c822ed6a25c48301c  tests/fuzz/apdu/fragment_oversize_claim.bin
+7decb8c80431f9036c1f58e0015cc1182f98ce62e8260b20acbadb2cce5d2ad4  tests/fuzz/apdu/length_mismatch.bin
+c644ca4afdcda845357ecc38e1217a2bedabf462e727039934e43725af2a6858  tests/fuzz/apdu/raw_load_prod.bin
+74f81fe167d99b4cb41d6d0ccda82278caee9f3e2f25d5e5a3936ff3dcec60d0  tests/fuzz/apdu/short_header.bin
+f0a77a2182ed1b8970f01be116012d5162b0cc580fc64fdc0457fa30328dbf89  tests/fuzz/apdu/status_valid.bin
+b59a7228ed0eadf86133c77accad1ccb790b8805b222cdbe67322079bafce092  tests/fuzz/apdu/unknown_command.bin
+398042eaf3e96649f9116d65a3e1593cd9d5e41c098c0a869c2549114f7afe9b  tests/fuzz/apdu/wrong_class.bin

@@ -1,0 +1,86 @@
+COMMAND: make secure-acceptance trust-conformance
+.build/brctl verify-lctlc examples/boot.lctlc
+Columned LCTL semantic verify: PASS
+.build/brctl verify-lctlc src/CORE.lctlc
+Columned LCTL semantic verify: PASS
+.build/brctl lctl-to-brir examples/boot.lctlc deploy/BOTTLE_ROCKET_4.7.0_COLUMNED_LCTL_VIRTUAL_DEVICE_IO_SERVICE_ARCHITECTURE.brir
+LCTL -> BRIR: PASS
+.build/brctl compile-lctlc examples/boot.lctlc deploy/BOTTLE_ROCKET_4.7.0_COLUMNED_LCTL_VIRTUAL_DEVICE_IO_SERVICE_ARCHITECTURE.brimg
+Columned LCTL compile: PASS
+python3 tools/provenance.py examples/boot.lctlc deploy/BOTTLE_ROCKET_4.7.0_COLUMNED_LCTL_VIRTUAL_DEVICE_IO_SERVICE_ARCHITECTURE.brir deploy/BOTTLE_ROCKET_4.7.0_COLUMNED_LCTL_VIRTUAL_DEVICE_IO_SERVICE_ARCHITECTURE.brimg deploy/BOTTLE_ROCKET_4.7.0_COLUMNED_LCTL_VIRTUAL_DEVICE_IO_SERVICE_ARCHITECTURE.provenance.json
+Source/Binary provenance: PASS
+.build/brverify deploy/BOTTLE_ROCKET_4.7.0_COLUMNED_LCTL_VIRTUAL_DEVICE_IO_SERVICE_ARCHITECTURE.brimg examples/boot.lctlc deploy/BOTTLE_ROCKET_4.7.0_COLUMNED_LCTL_VIRTUAL_DEVICE_IO_SERVICE_ARCHITECTURE.brir
+independent BRIM verifier: PASS
+test "$(wc -c < deploy/BOTTLE_ROCKET_4.7.0_COLUMNED_LCTL_VIRTUAL_DEVICE_IO_SERVICE_ARCHITECTURE.brimg)" -le 51200
+.build/brctl verify-secure deploy/BOTTLE_ROCKET_4.7.0_COLUMNED_LCTL_VIRTUAL_DEVICE_IO_SERVICE_ARCHITECTURE.brsb
+secure=PASS status=0 trap=0 image_version=9 generation=1 issuer_epoch=1
+.build/brctl secure-run deploy/BOTTLE_ROCKET_4.7.0_COLUMNED_LCTL_VIRTUAL_DEVICE_IO_SERVICE_ARCHITECTURE.brsb | grep 'R2.low64=42'
+R2.low64=42
+! .build/brctl run deploy/BOTTLE_ROCKET_4.7.0_COLUMNED_LCTL_VIRTUAL_DEVICE_IO_SERVICE_ARCHITECTURE.brimg >/dev/null 2>&1
+.build/br_trust_conformance deploy/BOTTLE_ROCKET_4.7.0_COLUMNED_LCTL_VIRTUAL_DEVICE_IO_SERVICE_ARCHITECTURE.brimg compat/BOTTLE_ROCKET_4.2.0.brimg
+PASS canonical root-issuer-release-image bundle
+PASS Ed25519 secure bundle is deterministic
+PASS monotonic generation bundle
+PASS isolated stale-generation vector
+PASS isolated stale-transaction vector
+PASS isolated stale-version legacy vector
+PASS isolated stale-issuer-epoch vector
+PASS old issuer post-rotation vector
+PASS rotated issuer bundle
+PASS revoked issuer vector
+PASS recovery issuer bundle
+PASS development bundle marked
+PASS wrong-root vector constructed
+PASS expiry vector constructed
+PASS production VM init
+PASS unsigned BRIM cannot execute
+PASS arbitrary injected opcode cannot execute
+PASS raw executable APDU load disabled
+PASS secure bundle executes R2=42
+PASS signature acceptance logged
+PASS capability-log VM loads secure image
+PASS unauthorized capability is denied and logged
+PASS tamper VM init
+PASS tampered BRIM rejected
+PASS malformed/tamper logged
+PASS truncated trust bundle rejected
+PASS development image rejected by production
+PASS untrusted root rejected
+PASS signature rejection logged
+PASS expiry VM init
+PASS expired manifest rejected
+PASS hardware anchor init
+PASS optional hardware trust anchor accepted
+PASS bad anchor init
+PASS wrong hardware trust anchor rejected
+PASS generation advances
+PASS isolated stale image version rejected
+PASS isolated stale generation rejected
+PASS isolated stale transaction sequence rejected
+PASS rollback rejection logged
+PASS signed issuer rotation accepted
+PASS monotonic key epoch applied
+PASS isolated stale issuer epoch rejected
+PASS new issuer accepted after rotation
+PASS old issuer deauthorized after defined zero-overlap period
+PASS signed issuer revocation accepted
+PASS revoked issuer rejected
+PASS revoked issuer logged
+PASS offline recovery authority accepted
+PASS recovery event logged
+PASS recovery issuer can restore authority
+PASS signed image-version revocation accepted
+PASS revoked image version rejected
+PASS stale control record rejected
+PASS secure APDU update stages authenticated candidate
+PASS candidate remains pending until successful first boot
+PASS secure startup promotes-tests-confirms persisted image
+PASS first successful boot commits trust transaction to monotonic anchor
+PASS second secure update is staged without premature monotonic commit
+PASS second candidate survives restart and confirms
+PASS second first-boot confirmation advances monotonic anchor
+PASS stale-state recovery VM init
+PASS stale authenticated control cannot pass monotonic recovery gate
+BR-450 inherited trust conformance: checks=63 failures=0
+
+EXIT_CODE: 0

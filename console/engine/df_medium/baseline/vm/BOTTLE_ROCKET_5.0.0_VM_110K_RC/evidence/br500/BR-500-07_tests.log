@@ -1,0 +1,74 @@
+COMMAND: make device-conformance device-audit
+.build/br_device_conformance
+PASS BR-470-01-R01 stable device IDs
+PASS BR-470-01-R02 device ABI v
+PASS BR-470-01-R03 required capability declared
+PASS BR-470-01-R04 operation numbers bounded
+PASS BR-470-01-R05 input bound declared
+PASS BR-470-01-R06 output bound declared
+PASS BR-470-01-R07 device status namespace
+PASS BR-470-01-R08 determinism declared
+PASS BR-470-02-R01 console input
+PASS BR-470-02-R02 console output
+PASS BR-470-02-R03 console flush
+PASS BR-470-02-R04 console length bounded
+PASS BR-470-02-R05 console capability gate
+PASS BR-470-03-R02 persistent block write
+PASS BR-470-03-R01 persistent block read
+PASS BR-470-03-R03 block sync
+PASS BR-470-03-R04 capacity query=4096
+PASS BR-470-03-R05 block bounds enforced
+PASS BR-470-04-R01 monotonic generation read
+PASS BR-470-04-R02 monotonic commit
+PASS BR-470-04-R03 anti-rollback
+PASS BR-470-05-R01 entropy explicitly nondeterministic
+PASS BR-470-05-R02 entropy capability gated
+PASS BR-470-05-R03 deterministic entropy substitute
+PASS BR-470-05-R04 entropy failure is typed
+PASS BR-470-06-R01 monotonic time
+PASS BR-470-06-R02 wall clock optional/fail closed
+PASS BR-470-06-R03 deterministic replay clock
+PASS BR-470-06-R04 clock capability gate
+PASS BR-470-07-R01 host-to-guest mailbox
+PASS BR-470-07-R04 mailbox owns/copies payloads
+PASS BR-470-07-R02 guest-to-host mailbox
+PASS BR-470-07-R03 mailbox packets bounded
+PASS BR-470-07-R05 no raw host pointers
+PASS BR-470-08-R01 APDU parser rejects class/v
+PASS BR-470-08-R02 strict per-command lengths
+PASS BR-470-08-R03 strict command classes
+PASS BR-470-08-R04 privileged recovery authenticated
+PASS BR-470-08-R05 production/dev APDU separation
+PASS BR-470-08-R06 deterministic malformed APDU fuzz corpus
+PASS BR-470-09-R01 VM summary
+PASS BR-470-09-R02 trap state
+PASS BR-470-09-R03 resource usage
+PASS BR-470-09-R04 image identity
+PASS BR-470-09-R05 build identity
+PASS BR-470-09-R06 diagnostics do not expose key material
+PASS BR-470-10-R01 network absent by default
+PASS BR-470-10-R02 optional extension separately registered
+PASS BR-470-10-R03 network capability gated
+PASS BR-470-10-R04 network packet bound
+PASS BR-470-10-R05 explicit protocol adapter
+PASS BR-470-10-R06 static boundary audit verifies no implicit host networking
+PASS BR-470-11-R01 enumerate available devices
+PASS BR-470-11-R02 versions exposed
+PASS BR-470-11-R03 capabilities exposed
+PASS BR-470-11-R04 limits exposed
+PASS BR-470-11-R05 deterministic discovery ordering
+PASS BR-470-12-R01 calls per execution limited
+PASS BR-470-12-R02 transferred bytes limited
+PASS BR-470-12-R03 storage writes limited
+PASS BR-470-12-R04 entropy requests limited
+PASS BR-470-12-R05 mailbox depth limited
+PASS BR-470-13-R01 legacy service routes through device ABI
+PASS BR-470-13-R02 unauthorized device use traps
+PASS BR-470-13-R03 device input/output bounds safe
+PASS BR-470-13-R04 replay substitutes nondeterministic inputs
+{"suite":"BR-470_DEVICE_IO_CONFORMANCE","requirements":66,"failures":0,"result":"PASS"}
+bash tests/device_boundary_audit.sh
+guest-host device boundary: PASS
+network default/implicit networking audit: PASS
+
+EXIT_CODE: 0

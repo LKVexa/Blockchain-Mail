@@ -1,0 +1,152 @@
+{
+  "version": "3.9.1-local.1",
+  "profile": "GLYPHOKU_VEXA127/2",
+  "parents": [
+    {
+      "parent_id": "P01",
+      "name": "Architectural scope, economic objectives, and policy authority",
+      "status": "LOCAL_IMPLEMENTATION",
+      "detail": "New-profile boundary, single authority, exact parameters and evidence limits; independent policy review pending.",
+      "source_control_assessment": "NOT_ASSESSED_FOR_CURRENT_CANDIDATE",
+      "independent_approval": null
+    },
+    {
+      "parent_id": "P02",
+      "name": "Historical postage baselines and delegated payment authorization",
+      "status": "NOT_SELECTED",
+      "detail": "No Hashcash miner or micropayment authorization added. Puzzle authorization is labeled separately.",
+      "source_control_assessment": "NOT_ASSESSED_FOR_CURRENT_CANDIDATE",
+      "independent_approval": null
+    },
+    {
+      "parent_id": "P03",
+      "name": "Physical crypto stamps and postal delivery integration",
+      "status": "DEFERRED",
+      "detail": "No postal issuance, NFT stamp, CASS or physical delivery provider.",
+      "source_control_assessment": "NOT_ASSESSED_FOR_CURRENT_CANDIDATE",
+      "independent_approval": null
+    },
+    {
+      "parent_id": "P04",
+      "name": "Common virtual-envelope and postage lifecycle contracts",
+      "status": "LOCAL_IMPLEMENTATION",
+      "detail": "Game-tagged envelope, frozen draft, single-use READY/spent state and shared atomic delivery.",
+      "source_control_assessment": "NOT_ASSESSED_FOR_CURRENT_CANDIDATE",
+      "independent_approval": null
+    },
+    {
+      "parent_id": "P05",
+      "name": "UTXO conditional-penalty virtual postage",
+      "status": "DEFERRED",
+      "detail": "No UTXOs, OP_RETURN, public burn or complaint broadcast; game stamp is not a substitute.",
+      "source_control_assessment": "NOT_ASSESSED_FOR_CURRENT_CANDIDATE",
+      "independent_approval": null
+    },
+    {
+      "parent_id": "P06",
+      "name": "ERC-4337 smart accounts and Paymaster sponsorship",
+      "status": "DEFERRED_NATIVE_PROTOCOL",
+      "detail": "Existing local credit/sponsor accounting retained; no ERC-4337 wallet, bundler, EntryPoint or Paymaster deployed.",
+      "source_control_assessment": "NOT_ASSESSED_FOR_CURRENT_CANDIDATE",
+      "independent_approval": null
+    },
+    {
+      "parent_id": "P07",
+      "name": "Consensual paid inbox access and attention rewards",
+      "status": "DEFERRED",
+      "detail": "No EMT/EMC, advertiser funding, Read2Earn or attention reward.",
+      "source_control_assessment": "NOT_ASSESSED_FOR_CURRENT_CANDIDATE",
+      "independent_approval": null
+    },
+    {
+      "parent_id": "P08",
+      "name": "Addressing, interoperability, and message transport",
+      "status": "LOCAL_IMPLEMENTATION",
+      "detail": "Protected literal-loopback HTTP and local mailbox delivery; SMTP is disabled for protected vaults. No public DNS/MX or ENS/DID.",
+      "source_control_assessment": "NOT_ASSESSED_FOR_CURRENT_CANDIDATE",
+      "independent_approval": null
+    },
+    {
+      "parent_id": "P09",
+      "name": "Storage durability, retrieval, and provider exit",
+      "status": "LOCAL_IMPLEMENTATION",
+      "detail": "Encrypted local SQLite objects, signed references and tested backup/restore; no decentralized permanence claim.",
+      "source_control_assessment": "NOT_ASSESSED_FOR_CURRENT_CANDIDATE",
+      "independent_approval": null
+    },
+    {
+      "parent_id": "P10",
+      "name": "MLS and the article-described XMTP cryptographic profile",
+      "status": "DEFERRED_NATIVE_PROTOCOL",
+      "detail": "Ed25519 ledger/stamp signatures and ChaCha20-Poly1305 storage; no MLS/XMTP, post-quantum or end-to-end guarantee.",
+      "source_control_assessment": "NOT_ASSESSED_FOR_CURRENT_CANDIDATE",
+      "independent_approval": null
+    },
+    {
+      "parent_id": "P11",
+      "name": "Waku relay, RLN membership, and stake-based rate limits",
+      "status": "DEFERRED",
+      "detail": "Bounded requests and observer run limits are not RLN membership, proof generation or slashing.",
+      "source_control_assessment": "NOT_ASSESSED_FOR_CURRENT_CANDIDATE",
+      "independent_approval": null
+    },
+    {
+      "parent_id": "P12",
+      "name": "L3 appchain, settlement, and decentralization economics",
+      "status": "DEFERRED_NATIVE_PROTOCOL",
+      "detail": "Single-authority hash-linked local ledger; no L3, sequencer network, Base settlement or token emissions.",
+      "source_control_assessment": "NOT_ASSESSED_FOR_CURRENT_CANDIDATE",
+      "independent_approval": null
+    },
+    {
+      "parent_id": "P13",
+      "name": "ZK Email authentication and selective-disclosure execution",
+      "status": "DEFERRED",
+      "detail": "Exact SHA256 draft/trace commitments only; no DKIM circuit, SNARK or email-driven public contract.",
+      "source_control_assessment": "NOT_ASSESSED_FOR_CURRENT_CANDIDATE",
+      "independent_approval": null
+    },
+    {
+      "parent_id": "P14",
+      "name": "Sybil resistance and reward-abuse controls",
+      "status": "PARTIAL_LOCAL_CONTROLS",
+      "detail": "Authentication, resource caps and one-run/horizon restrictions; no unique-human or economic-deterrence proof.",
+      "source_control_assessment": "NOT_ASSESSED_FOR_CURRENT_CANDIDATE",
+      "independent_approval": null
+    },
+    {
+      "parent_id": "P15",
+      "name": "Griefing, smart-contract resource safety, and trusted-infrastructure abuse",
+      "status": "PARTIAL_LOCAL_CONTROLS",
+      "detail": "Bounded worker/events, transactional rollback, nonce history, stale-run and replay rejection; no HTLC or game-theory guarantee.",
+      "source_control_assessment": "NOT_ASSESSED_FOR_CURRENT_CANDIDATE",
+      "independent_approval": null
+    },
+    {
+      "parent_id": "P16",
+      "name": "Programmable finance within the inbox",
+      "status": "DEFERRED",
+      "detail": "Nonredeemable credits retained, game postage zero cost; no real invoice payments or external transfers.",
+      "source_control_assessment": "NOT_ASSESSED_FOR_CURRENT_CANDIDATE",
+      "independent_approval": null
+    },
+    {
+      "parent_id": "P17",
+      "name": "Correspondence evidence, privacy, erasure, and regulated-domain profiles",
+      "status": "PARTIAL_LOCAL_CONTROLS",
+      "detail": "Encrypted correspondence, signed receipt/event separation and private backup; no legal delivery, GDPR erasure or clinical certification.",
+      "source_control_assessment": "NOT_ASSESSED_FOR_CURRENT_CANDIDATE",
+      "independent_approval": null
+    },
+    {
+      "parent_id": "P18",
+      "name": "Research validation and institutional acceptance",
+      "status": "PARTIAL_EVIDENCE",
+      "detail": "113 executed tests plus bounded HTTP/upgrade/UI records; independent review, source acceptance and production gates not cleared.",
+      "source_control_assessment": "NOT_ASSESSED_FOR_CURRENT_CANDIDATE",
+      "independent_approval": null
+    }
+  ],
+  "scope": "Local implementation dispositions are not source-control acceptance or authorized NOT_APPLICABLE decisions.",
+  "release_scope": "Current local protected profile; historical deferred parent assessments remain distinct from native archive compatibility."
+}

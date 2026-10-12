@@ -1,0 +1,6 @@
+{
+  "name": "vexa127-blockchain-mail", "version": "2.1.0-local.1", "private": true,
+  "type": "module", "engines": {"node": ">=22.16.0"},
+  "scripts": {"start": "node src/main.mjs serve", "test": "node --test tests/*.test.mjs", "verify": "node src/main.mjs verify", "check": "node tools/check-package.mjs"},
+  "dependencies": {}
+}

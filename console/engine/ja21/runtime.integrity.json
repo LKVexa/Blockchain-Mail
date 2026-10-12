@@ -1,0 +1,283 @@
+{
+  "format": "vb-ja21-runtime-seal/4",
+  "product": "JA21 Portable Optical Instrument Desktop",
+  "version": "9.8.7",
+  "files": [
+    {
+      "path": "source/browser.ja",
+      "bytes": 3760,
+      "sha256": "3b647d50066b9bd922e72169fe2c1de7af62d715a3837f24f5c7886d30c276b1"
+    },
+    {
+      "path": "source/renderer.ja",
+      "bytes": 1088,
+      "sha256": "1962e038608858d41ac706afd8a0d34554025b52497ac578dd07401f4d674432"
+    },
+    {
+      "path": "source/web_engine.ja",
+      "bytes": 646,
+      "sha256": "d53a401457966113af9ce93e64b13d4a6f552e6a40a2e735fddc7956a8456614"
+    },
+    {
+      "path": "source/browser.jaui",
+      "bytes": 2711,
+      "sha256": "7cd8f053b2ccc08f0240889d714755871a201060ad1608c335678c6da37c47a4"
+    },
+    {
+      "path": "source/browser.jasec",
+      "bytes": 1681,
+      "sha256": "591a0c038ff327ee3463e8dfc3fb2f97b27bb6222eed158264b44050ebd8b19f"
+    },
+    {
+      "path": "source/browser.jasp",
+      "bytes": 1734,
+      "sha256": "50c397896d6a01987d34ce9e1ecb30861341c1f3678e4750041ba7340e00a814"
+    },
+    {
+      "path": "source/browser.jaops",
+      "bytes": 590,
+      "sha256": "224dee918f5f62d18952deccaf87d315b0b58944f40406f86f1ca641a3658207"
+    },
+    {
+      "path": "source/browser.jxd",
+      "bytes": 6729,
+      "sha256": "1f14e2950b571c0c485ec13a503d0a274ad2ab8a21fbaa8edd22fa82d61179fc"
+    },
+    {
+      "path": "engine/ja21/browser.ir.json",
+      "bytes": 46797,
+      "sha256": "528f5a877be5d12c57c318355579402422a46f04e7bc95e932af00aa8e97f860"
+    },
+    {
+      "path": "engine/ja21/renderer.ir.json",
+      "bytes": 10601,
+      "sha256": "fbb20a43852168723387dd5ea4b2b3b396a429c5ce9a1df1398cc548b3b265fd"
+    },
+    {
+      "path": "engine/ja21/web_engine.ir.json",
+      "bytes": 4007,
+      "sha256": "612f4b8fbf9bdc28d5093b1762ae555b91b09f7b0c3427db7d71cc0c65c01d0f"
+    },
+    {
+      "path": "engine/ja21/corpus.lock.json",
+      "bytes": 55412,
+      "sha256": "9238730509d7784b96dce3b89c5e75a2c0e72a0342fb924a18ce6b092328d64a"
+    },
+    {
+      "path": "engine/ja21/profile.json",
+      "bytes": 9902,
+      "sha256": "27f469d34c1f40c97c91ceca763bcda6ab91e7dfa303706798b15115255e2d75"
+    },
+    {
+      "path": "engine/df_medium/native/win-x64/dfmedium-ja21-web.dll",
+      "bytes": 49664,
+      "sha256": "f069581ae5959e3a11b73a8ee7e54a5f87f97e110904059bf9c61bf00fb69c6a"
+    },
+    {
+      "path": "engine/df_medium/source/brvm.c",
+      "bytes": 56396,
+      "sha256": "6a412aab9147980796c6ce5c61d552bc45dd54e2e328af4fc2b08d41adc9e585"
+    },
+    {
+      "path": "engine/df_medium/source/brvm.h",
+      "bytes": 9671,
+      "sha256": "162f9e73dc4ce14cbea6e75a5b64f676296dbadcb0495581f86b186cd10f7573"
+    },
+    {
+      "path": "engine/df_medium/source/brtrust.c",
+      "bytes": 6953,
+      "sha256": "0aedbbd66c3829b7aecc88ef0f33afde39eecea6ba28a79782bd19c0cb84d349"
+    },
+    {
+      "path": "engine/df_medium/source/brtrust.h",
+      "bytes": 592,
+      "sha256": "52badc964aeb587bc942f99515b3585e6bcd2f2258d8259b555feeec1d7df654"
+    },
+    {
+      "path": "engine/df_medium/source/ja21_webengine.c",
+      "bytes": 27773,
+      "sha256": "5d82192d32ddd6580c85b3afcc8d99c69ddd29b293596e90a070d313d55fed35"
+    },
+    {
+      "path": "engine/df_medium/source/ja21_webengine.h",
+      "bytes": 1723,
+      "sha256": "d851d93cd30b04ca23a41f95138f8420e2574e3287a47b30ef6b13824b7a7eae"
+    },
+    {
+      "path": "engine/df_medium/ENGINE_PROVENANCE.json",
+      "bytes": 1774,
+      "sha256": "f2c36f4a09ec2ea2a7a07805f2426f0d1d19d754e6d8b5d00f7be6a70cb8ebe5"
+    },
+    {
+      "path": "engine/df_medium/DF_Medium.source.zip",
+      "bytes": 1211714,
+      "sha256": "7c57c6ce49f7ff4c492cc53c3177778d04adfa96f3a96525c57c3c9f4ef2cda4"
+    },
+    {
+      "path": "host/JA21VirtualBrowser.cs",
+      "bytes": 233972,
+      "sha256": "1d68ad7c34c46e26c0d87ba8de9f96997c89ffc5819e2bcfbc79608d9d632f0b"
+    },
+    {
+      "path": "host/Vec1Substrate.cs",
+      "bytes": 47749,
+      "sha256": "1a380926f0397ad43dc1c9d7a0cf656adf78067d7daad09be68dd7c6f2176ce8"
+    },
+    {
+      "path": "host/PortableDesktop.cs",
+      "bytes": 10740,
+      "sha256": "8b96cba412ee124cfaf5f27391cc41bc7709fdd82a0e26ca8022928906be0e03"
+    },
+    {
+      "path": "host/LiveWebContracts.cs",
+      "bytes": 7362,
+      "sha256": "a7b98c07283079310b95c8c6338fed1695f781767b932a35536ca4db5c8cbe7a"
+    },
+    {
+      "path": "host/LiveWebBridge.cs",
+      "bytes": 31383,
+      "sha256": "dc12ee733ecee437d463376445e353e14388bf8d5f6f9d4d610a2ed7b01f181d"
+    },
+    {
+      "path": "host/LiveWebBridgeStub.cs",
+      "bytes": 412,
+      "sha256": "a1d1fb06f3e6a593496602713fa74dbc8913cef2ea7b01a471dffe944c9c7673"
+    },
+    {
+      "path": "host/Ensure-WebView2Bridge.ps1",
+      "bytes": 4373,
+      "sha256": "4ea2595c31ce3557376f761ac719f0fa00b35471b0f2469645657ab884e30526"
+    },
+    {
+      "path": "host/Import-WebView2Adapter.ps1",
+      "bytes": 7716,
+      "sha256": "87ed65b27637ef2c6a45017c602f3a4bc3a714a7137c4a49b575ba883ddf1b78"
+    },
+    {
+      "path": "host/Start-JA21Browser.ps1",
+      "bytes": 9763,
+      "sha256": "fa7397e7acd7dd77a0d7d2bef93347203bf2d5647be9b72dfb54ab6ea590ca43"
+    },
+    {
+      "path": "host/Wpf-CompileReferences.ps1",
+      "bytes": 1398,
+      "sha256": "43a31107107b6fd9938f4c02e42190d82543d18a9582bb0aac2ee919e22733fd"
+    },
+    {
+      "path": "host/Start-Console.ps1",
+      "bytes": 3026,
+      "sha256": "4103a12007a257b42453a56f1e888bb574691a5ab40ab40052fc0005c27c5617"
+    },
+    {
+      "path": "Start Console.cmd",
+      "bytes": 66,
+      "sha256": "9f71a4c26c9b250607d4a03c215c648f0719fd9892153db61fe4ef99363187f2"
+    },
+    {
+      "path": "Start Console.vbs",
+      "bytes": 515,
+      "sha256": "42d84baf2b16fc194d6fda257bf5f9a6d4587a12a30c4a793123550180aef297"
+    },
+    {
+      "path": "runtime/webview2-sdk/1.0.4191.47/Microsoft.Web.WebView2.Core.dll",
+      "bytes": 698208,
+      "sha256": "e6f54c8ce208e3797c427d01ad671b47cb25abc85604753d6ec2546d0ffef550"
+    },
+    {
+      "path": "runtime/webview2-sdk/1.0.4191.47/Microsoft.Web.WebView2.Wpf.dll",
+      "bytes": 86368,
+      "sha256": "6942b85a3388ece45febde5584d2bfc035d84315f2dd5a4a47913f01a0193800"
+    },
+    {
+      "path": "runtime/webview2-sdk/1.0.4191.47/WebView2Loader.dll",
+      "bytes": 163680,
+      "sha256": "c66e4a92fdc7a216118e43b7a5024ea2200e8c43f9310bf20d96a0084f82c5bc"
+    },
+    {
+      "path": "runtime/webview2-sdk/1.0.4191.47/PROVISIONED.json",
+      "bytes": 979,
+      "sha256": "b384f49c776b3eaee58bbaff1da36d4a91bb6becb0dd92b0f3fcf18db0e58989"
+    },
+    {
+      "path": "substrate/NODES.json",
+      "bytes": 1361,
+      "sha256": "3261bfb78dee84a96d05a8f9deaa3e0fcfa8949504104a7bb36acc13334fe476"
+    },
+    {
+      "path": "substrate/config/vec1.json",
+      "bytes": 1561,
+      "sha256": "5e985456734972d861326749d0f66ec42f9e6961d7f0ff37a125665765703344"
+    },
+    {
+      "path": "substrate/config/ja21_portable_placement.json",
+      "bytes": 4094,
+      "sha256": "aa67af33176960b23bbe75726baad87295856ca4863d86d138bad4a2c9aa725c"
+    },
+    {
+      "path": "engine/ja21/portable.runtime.json",
+      "bytes": 1881,
+      "sha256": "fd5584e9262311c9b9ceb3ca1d95a58c76f452090cba20efc89635a0fcb94c99"
+    },
+    {
+      "path": "host/portable-env.cmd",
+      "bytes": 1336,
+      "sha256": "b03d847e586593b59f1e595d5b3b4c327e642607541cf18159644ab56db86fae"
+    },
+    {
+      "path": "substrate/config/security_policy.json",
+      "bytes": 417,
+      "sha256": "f34d5b27ed173a2439f0a29e0f624beb3f8c53e54a6afd5951ee96d38398fdb3"
+    },
+    {
+      "path": "substrate/config/CONFIG_SEAL.json",
+      "bytes": 539,
+      "sha256": "68240979bd2b19ec191093e2e831654b9e19afb5271db6b1931a3ff81d7c91f9"
+    },
+    {
+      "path": "substrate/evidence/presenter/CANONICAL_VECTORS.json",
+      "bytes": 6022,
+      "sha256": "5c45b75b3fda0f15853d2fa5afbf462a0fcfe16197a64f01d596536122dafdbd"
+    },
+    {
+      "path": "substrate/vec1/__init__.py",
+      "bytes": 85,
+      "sha256": "652b88f65d4630d5d520479a6ddf326f58d70819e3d8f8ec048a3a2d028c4e00"
+    },
+    {
+      "path": "substrate/vec1/common.py",
+      "bytes": 4619,
+      "sha256": "63b0d45cafbd2e315acbe9fa3f4913f6affac38dbf307ad139f2048540684800"
+    },
+    {
+      "path": "substrate/vec1/core.py",
+      "bytes": 20613,
+      "sha256": "c57551cf271c58aa1df4881867e2e79e71a7a64367cd0fea3e65953a0a0f1e5f"
+    },
+    {
+      "path": "substrate/vec1/ledger.py",
+      "bytes": 2982,
+      "sha256": "d4f265ead24416dec6074975623e4b2060fa18567f8071aeda4a938b0b7d3f17"
+    },
+    {
+      "path": "substrate/vec1/binding.py",
+      "bytes": 3189,
+      "sha256": "8fc7aa4fde22a824524954ad5e025dd45692c222c74c6bccdfab072b4bb8aa68"
+    },
+    {
+      "path": "substrate/vec1/presenter.py",
+      "bytes": 4157,
+      "sha256": "f4950c0d303b5e8c22afb100311d2bd4721f9fabbbb8be272ab6b40f8ae2d702"
+    },
+    {
+      "path": "substrate/vec1/dfbridge.py",
+      "bytes": 4143,
+      "sha256": "169adbdefb403f668746040e16eb743aef91e4466bd486204d2dc3dffb16053d"
+    },
+    {
+      "path": "substrate/vec1/vecctl.py",
+      "bytes": 18319,
+      "sha256": "2d614e6d4e57377dcd5fbf46583beab8a1c7a7b4ff43d0518f053c24071935ff"
+    }
+  ],
+  "console_version": "1.0.2"
+}

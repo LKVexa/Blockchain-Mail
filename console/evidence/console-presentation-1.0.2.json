@@ -1,0 +1,144 @@
+{
+    "schema":  "CONSOLE-PRESENTATION-TESTS/1",
+    "console_version":  "1.0.2",
+    "status":  "PASS",
+    "createdUtc":  "2026-10-11T20:49:41.0709273Z",
+    "scope":  "EXACT_SOURCE_WPF_SDK_COMPILE_AND_PURE_PRESENTATION_MODEL_ONLY",
+    "total":  21,
+    "passed":  21,
+    "failed":  0,
+    "GUI_started":  false,
+    "native_presenter_run":  false,
+    "webview_constructed":  false,
+    "backend_started":  false,
+    "network_requests":  false,
+    "live_render_acceptance":  false,
+    "sourcePins":  [
+                       {
+                           "path":  "host/JA21VirtualBrowser.cs",
+                           "sha256":  "1d68ad7c34c46e26c0d87ba8de9f96997c89ffc5819e2bcfbc79608d9d632f0b"
+                       },
+                       {
+                           "path":  "host/Vec1Substrate.cs",
+                           "sha256":  "1a380926f0397ad43dc1c9d7a0cf656adf78067d7daad09be68dd7c6f2176ce8"
+                       },
+                       {
+                           "path":  "host/PortableDesktop.cs",
+                           "sha256":  "8b96cba412ee124cfaf5f27391cc41bc7709fdd82a0e26ca8022928906be0e03"
+                       },
+                       {
+                           "path":  "host/LiveWebContracts.cs",
+                           "sha256":  "2cc56794befb681eba241afb82ee4a17be3953a3ddbd4838c12729f41de095ae"
+                       },
+                       {
+                           "path":  "host/LiveWebBridge.cs",
+                           "sha256":  "b54fab0c71b3e431a53c5cd5dc2b852c33bee9530f3103077d7581a497857e61"
+                       },
+                       {
+                           "path":  "host/Start-JA21Browser.ps1",
+                           "sha256":  "fa7397e7acd7dd77a0d7d2bef93347203bf2d5647be9b72dfb54ab6ea590ca43"
+                       },
+                       {
+                           "path":  "tools/Test-ConsolePresentation.ps1",
+                           "sha256":  "be963570120185faba565d745496d2a5a804ecf60f142f1071d399241e32ef4b"
+                       },
+                       {
+                           "path":  "tools/CONSOLE_PRESENTATION.txt",
+                           "sha256":  "a8f21bc5202a87de1b163e88ff5774334510ff6d4e274bfd42337e02a11a4128"
+                       },
+                       {
+                           "path":  "READ ME - Console.txt",
+                           "sha256":  "95a743b1030bf478953f9d212d8a7aea87fe1868f613d73c94a3ed50d1002f4e"
+                       },
+                       {
+                           "path":  "tools/Test-ConsoleReadiness.mjs",
+                           "sha256":  "0b881e84daa08c578cbaa1fe5c79e961619cbf101cd49cb94ffb92abadc1cfdc"
+                       }
+                   ],
+    "checks":  [
+                   {
+                       "name":  "Exact five product units compile against pinned standard/composition SDK APIs",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "Complete55file current runtime seal passes actual managedcrypto verifier",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "Fresh model is neither waiting nor ready",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "Begin enables waiting and clears ready",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "Only current generation can commit readiness",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "Readiness completion cannot repeat",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "Failure clears waiting without reporting ready",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "Obsolete failure cannot stop a replacement load",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "Timeout begins at30seconds exactly and redirects cannot extend it",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "A new load after completion receives a new deadline",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "Cancel invalidates pending success/failure and stops waiting",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "Console uses standard WebView2 while full browser retains CompositionControl",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "Status text is attached to transient console notice outside HWND content row",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "Console cannot fall back to inert inspection after live surface creation failure",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "Fixed console status prevents exposing arbitrary engine diagnostics",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "Retry revalidates the same allowed URL and uses the existing navigate gate",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "Presentation probe requires native navigation success and configured request policy",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "Readiness requires mounted protected app and bounds every visited node/control/text sample",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "Policy failures use central idempotent disposal to cancel work and clean owned surface once",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "Original HTTP request deny, frame checks, permissions and devtools restrictions remain",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "Source pins remain unchanged after pure compilation/model checks",
+                       "passed":  true
+                   }
+               ]
+}

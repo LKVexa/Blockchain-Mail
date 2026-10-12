@@ -1,0 +1,3 @@
+COMMAND .build/t460 resource-trap vectors
+EXIT 0
+PASS OOM, width, stack and scratch failures produce deterministic VM traps rather than host failure.

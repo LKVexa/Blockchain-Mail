@@ -1,0 +1,3 @@
+COMMAND: python3 qualification/br500_release_bundle.py --verify
+{"manifest_sha256": "9f8eca3cf5bcce1cfcf3458f2742150d9b12ec98974a4438d91df99e4909cd09", "result": "PASS", "suite": "BR-500_RELEASE_MANIFEST_VERIFY"}
+EXIT_CODE: 0

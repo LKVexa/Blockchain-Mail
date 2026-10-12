@@ -1,0 +1,7 @@
+$ make sanitize
+[exit 0 in 4.408s]
+cc -Isrc -std=c11 -O1 -g -Wall -Wextra -Werror \
+	-fsanitize=address,undefined -fno-omit-frame-pointer \
+	src/brvm.c src/brasm.c tests/test_main.c -o .build/br_tests_san -lcrypto
+ASAN_OPTIONS=detect_leaks=0 .build/br_tests_san
+{"suite":"BOTTLE_ROCKET_3.0.0_MODEL","failures":0,"result":"PASS"}

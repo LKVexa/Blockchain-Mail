@@ -1,0 +1,150 @@
+TAP version 13
+# Subtest: G002 exact played glyph vector, boxes, empty bands and issuance horizon
+ok 1 - G002 exact played glyph vector, boxes, empty bands and issuance horizon
+  ---
+  duration_ms: 117.441881
+  type: 'test'
+  ...
+# Subtest: G003 uniqueness rejects invalid, multiple and incomplete-after-one searches
+ok 2 - G003 uniqueness rejects invalid, multiple and incomplete-after-one searches
+  ---
+  duration_ms: 10.204935
+  type: 'test'
+  ...
+# Subtest: G004 a locally valid but unsatisfiable given set returns COMPLETE_ZERO
+ok 3 - G004 a locally valid but unsatisfiable given set returns COMPLETE_ZERO
+  ---
+  duration_ms: 0.21448
+  type: 'test'
+  ...
+# Subtest: G005 candidate lengths, types, changed givens and 1x16 topology fail before authorization
+ok 4 - G005 candidate lengths, types, changed givens and 1x16 topology fail before authorization
+  ---
+  duration_ms: 0.315631
+  type: 'test'
+  ...
+# Subtest: G006 inclusive event caps count INIT and terminal; cap+1 is never eligible
+ok 5 - G006 inclusive event caps count INIT and terminal; cap+1 is never eligible
+  ---
+  duration_ms: 0.42906
+  type: 'test'
+  ...
+# Subtest: G007 complete trace verifies guesses, retractions and candidate; ordering and event mutation are refused
+ok 6 - G007 complete trace verifies guesses, retractions and candidate; ordering and event mutation are refused
+  ---
+  duration_ms: 136.776587
+  type: 'test'
+  ...
+# Subtest: G008 caller-provided solved grids or a JSON ticket never authorize a domain
+ok 7 - G008 caller-provided solved grids or a JSON ticket never authorize a domain
+  ---
+  duration_ms: 1.441689
+  type: 'test'
+  ...
+# Subtest: G009 duplicate g=2 arrays are refused before the horizon even with a test-only grant
+ok 8 - G009 duplicate g=2 arrays are refused before the horizon even with a test-only grant
+  ---
+  duration_ms: 111.377415
+  type: 'test'
+  ...
+# Subtest: G010 draft v1 hashes exact UTF8, preserves bare CR, normalizes only CRLF, and deduplicates To+Bcc
+ok 9 - G010 draft v1 hashes exact UTF8, preserves bare CR, normalizes only CRLF, and deduplicates To+Bcc
+  ---
+  duration_ms: 1.241941
+  type: 'test'
+  ...
+# Subtest: G011 invalid external addresses, subject injection, blank/oversize bodies and code-unit overflow refuse freeze
+ok 10 - G011 invalid external addresses, subject injection, blank/oversize bodies and code-unit overflow refuse freeze
+  ---
+  duration_ms: 0.795325
+  type: 'test'
+  ...
+# Subtest: G012 malformed registry structures do not default missing spend histories or reset ordinal
+ok 11 - G012 malformed registry structures do not default missing spend histories or reset ordinal
+  ---
+  duration_ms: 0.975104
+  type: 'test'
+  ...
+# Subtest: G013 preparation node/deadline limits are checked inside work, not after an unbounded fill
+ok 12 - G013 preparation node/deadline limits are checked inside work, not after an unbounded fill
+  ---
+  duration_ms: 0.216863
+  type: 'test'
+  ...
+# (node:2227) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: G014 initial frame, final frame and paused commit fences reject premature authority
+ok 13 - G014 initial frame, final frame and paused commit fences reject premature authority
+  ---
+  duration_ms: 476.837792
+  type: 'test'
+  ...
+# Subtest: G015 stop terminates preparation; late worker messages never create a resource
+ok 14 - G015 stop terminates preparation; late worker messages never create a resource
+  ---
+  duration_ms: 206.146332
+  type: 'test'
+  ...
+# Subtest: G016 observer capability, current instance/revision, action and strict input shape are all checked
+ok 15 - G016 observer capability, current instance/revision, action and strict input shape are all checked
+  ---
+  duration_ms: 71.842708
+  type: 'test'
+  ...
+# Subtest: G017 restart never revives an unfinished live capability
+ok 16 - G017 restart never revives an unfinished live capability
+  ---
+  duration_ms: 68.787658
+  type: 'test'
+  ...
+# Subtest: G018-after-glyphoku-object domain mutation fault rolls back registry, account and signed ledger
+ok 17 - G018-after-glyphoku-object domain mutation fault rolls back registry, account and signed ledger
+  ---
+  duration_ms: 252.161004
+  type: 'test'
+  ...
+# Subtest: G018-before-commit domain mutation fault rolls back registry, account and signed ledger
+ok 18 - G018-before-commit domain mutation fault rolls back registry, account and signed ledger
+  ---
+  duration_ms: 244.100364
+  type: 'test'
+  ...
+# Subtest: G019 committed domain acknowledgment loss is recovered by read-only operation lookup
+ok 19 - G019 committed domain acknowledgment loss is recovered by read-only operation lookup
+  ---
+  duration_ms: 366.749469
+  type: 'test'
+  ...
+# Subtest: G020 READY survives backup/restart; altered draft refuses; actual send lost acknowledgment and retries do not duplicate
+ok 20 - G020 READY survives backup/restart; altered draft refuses; actual send lost acknowledgment and retries do not duplicate
+  ---
+  duration_ms: 9440.430642
+  type: 'test'
+  ...
+# Subtest: G021 nonce reuse during second issuance is refused without advancing g or spending
+ok 21 - G021 nonce reuse during second issuance is refused without advancing g or spending
+  ---
+  duration_ms: 1562.578834
+  type: 'test'
+  ...
+# Subtest: G022 ciphertext corruption fails closed without overwriting the encrypted original
+ok 22 - G022 ciphertext corruption fails closed without overwriting the encrypted original
+  ---
+  duration_ms: 287.030312
+  type: 'test'
+  ...
+# Subtest: G023 browser transport rejects a late response after logout and keeps credentials in memory only
+ok 23 - G023 browser transport rejects a late response after logout and keeps credentials in memory only
+  ---
+  duration_ms: 0.699603
+  type: 'test'
+  ...
+1..23
+# tests 23
+# suites 0
+# pass 23
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 13087.330133

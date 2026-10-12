@@ -1,0 +1,85 @@
+{
+  "schema": "BVE/EVIDENCE/1",
+  "control_id": "BVE-C056-K014",
+  "run_id": "LOCAL127-R03",
+  "candidate_version": "2.1.0-local.1",
+  "candidate_code_tree_sha256": "04fb8e21dece4ae8ee2a7bbeb7666bcc5d563b6ffd6a150761f339b5554c8ac4",
+  "source_record_sha256": "9bc5423aa923f9d69f013c8d48619f5350f8bef03db9bfcc85108e0b2799cb77",
+  "source_instruction": {
+    "control_id": "BVE-C056-K014",
+    "original_member": "BVE_PW_1.0.0/P08/C056/K014.md",
+    "sha256": "e329c14d7051e3011dcf4b4a26df3a4103825f517f7879b2cd1d53184612c31e",
+    "preserved_verbatim": true
+  },
+  "evidence_required": {
+    "kind": "boundary or continuity result and reconciliation record",
+    "proposed_location": "evidence/C056/K014/",
+    "required_fields": [
+      "control_id",
+      "candidate_version",
+      "applicability_decision",
+      "method",
+      "input_or_scenario_refs",
+      "expected_result",
+      "observed_result",
+      "artifact_refs_and_digests",
+      "limitations",
+      "executor",
+      "independent_reviewer",
+      "reviewed_at"
+    ]
+  },
+  "method": "Local synthetic implementation tests; additional controlled upgrade or mock DOM fixture where explicitly linked. No independent review performed.",
+  "expected_result": "Handle a message with no attachments or no HTML part.",
+  "observed_result": "Text-only/no-attachment messages and multipart text without HTML are handled; unsupported HTML-only bodies are rejected.",
+  "artifacts": [
+    {
+      "path": "evidence/delivery/TEST_SUMMARY.json",
+      "sha256": "fe6bb6260db17b893df82b9df8df318c804e89318830a68810fa922af4a6eaf4",
+      "tests": [
+        {
+          "name": "T064 boundary ending in two hyphens has a distinct closing delimiter",
+          "outcome": "PASS"
+        },
+        {
+          "name": "T065 MIME boundary transport padding is tolerated",
+          "outcome": "PASS"
+        },
+        {
+          "name": "T067 quoted-printable UTF-8 byte escapes decode exactly",
+          "outcome": "PASS"
+        },
+        {
+          "name": "T038 MIME duplicate From, missing boundary and HTML-only bodies are rejected",
+          "outcome": "PASS"
+        }
+      ]
+    },
+    {
+      "path": "evidence/delivery/TESTS.tap",
+      "sha256": "9d9d90bc034f7b1730b2bbe6642c91ee741097a0030df25dd143d3b37e58ff3c"
+    },
+    {
+      "path": "evidence/continuation/ORACLE.md",
+      "sha256": "a7cbe004ef06274025b00ad5fda56da1df8d49972a99f75863198c94ccd5089a"
+    },
+    {
+      "path": "docs/LOCAL_PROFILE.md",
+      "sha256": "48751269b81fe4562f9447ee783cce9cf5bec0f08917597213005d35c27c5dbc"
+    }
+  ],
+  "environment": {
+    "node": "v22.16.0",
+    "platform": "linux",
+    "arch": "x64",
+    "cpus": 5
+  },
+  "parameters": "LOCAL127_CREDIT_V1; authored lab defaults and fixture parameters in named test files; institutional approval absent.",
+  "executor": "ChatGPT automated test execution in the working container",
+  "independent_reviewer": null,
+  "recorded_at": "2026-10-06T20:43:14.279217+00:00",
+  "limitations": [
+    "The selected text-only subset is an authored local design. Source facet/schema approval and independent review remain missing.",
+    "Actual local implementation tests are separate from source-control acceptance."
+  ]
+}

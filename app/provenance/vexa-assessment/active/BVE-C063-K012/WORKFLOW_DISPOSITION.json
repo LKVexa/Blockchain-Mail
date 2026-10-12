@@ -1,0 +1,91 @@
+{
+  "control_id": "BVE-C063-K012",
+  "run_id": "LOCAL127-R03",
+  "notice": "Per-stage bounded disposition, not a claim that every stage satisfied its original exit condition. No independent review.",
+  "stages": [
+    {
+      "stage": "W01",
+      "original_title": "Bind the source and candidate",
+      "disposition": "RECORDED",
+      "actual_scope_or_blocker": "Exact source record/instruction, unchanged obligations, prior checkpoint and current code identity are retained."
+    },
+    {
+      "stage": "W02",
+      "original_title": "Resolve applicability and permission",
+      "disposition": "PARTIAL",
+      "actual_scope_or_blocker": "User-authorized isolated loopback remediation is bound; institutional component applicability and owner approval remain undecided."
+    },
+    {
+      "stage": "W03",
+      "original_title": "Resolve evidence dependencies and source gaps",
+      "disposition": "PARTIAL",
+      "actual_scope_or_blocker": "Local dependencies and source gaps preserved. Native external-protocol and broader source-profile claims remain unsupported."
+    },
+    {
+      "stage": "W04",
+      "original_title": "Nominal scenario binding",
+      "disposition": "BOUNDED",
+      "actual_scope_or_blocker": "The specific source obligation is mapped to the declared local scenarios, not to an unrestricted protocol claim."
+    },
+    {
+      "stage": "W05",
+      "original_title": "Fixture and prediction",
+      "disposition": "BOUNDED",
+      "actual_scope_or_blocker": "Named executable fixtures contain exact synthetic inputs and expected outcomes; no real correspondence or assets used."
+    },
+    {
+      "stage": "W06",
+      "original_title": "Preregister the decision oracle",
+      "disposition": "PARTIAL",
+      "actual_scope_or_blocker": "Continuation ORACLE.md preceded regression execution. It is an authored laboratory oracle, not the missing independent institutional approval."
+    },
+    {
+      "stage": "W07",
+      "original_title": "Controlled observation",
+      "disposition": "BOUNDED_EXECUTED",
+      "actual_scope_or_blocker": "The cited actual test outcomes support only the subset in EVIDENCE.json; complete source workflow execution is not claimed."
+    },
+    {
+      "stage": "W08",
+      "original_title": "Invariant inspection",
+      "disposition": "PARTIAL",
+      "actual_scope_or_blocker": "Observed outputs reconcile with the bounded fixture assertions; full facet invariants and broader source scope remain review work."
+    },
+    {
+      "stage": "W09",
+      "original_title": "Evaluate the exact control criteria",
+      "disposition": "BLOCKED",
+      "actual_scope_or_blocker": "Full source criteria and mandatory review are not satisfied. No source-control PASS is issued."
+    },
+    {
+      "stage": "W10",
+      "original_title": "Remediate only within approved scope",
+      "disposition": "RECORDED",
+      "actual_scope_or_blocker": "Isolated code changes and before/after failures retained; applicable regressions rerun without source-criterion drift."
+    },
+    {
+      "stage": "W11",
+      "original_title": "Preserve and protect the evidence",
+      "disposition": "RECORDED",
+      "actual_scope_or_blocker": "Hashes, environment, fixture source, actual outcomes and limitations retained. Live keys/test state omitted."
+    },
+    {
+      "stage": "W12",
+      "original_title": "Obtain attributable independent review",
+      "disposition": "BLOCKED",
+      "actual_scope_or_blocker": "No assigned independent reviewer or performed review."
+    },
+    {
+      "stage": "W13",
+      "original_title": "Commit the assessment checkpoint",
+      "disposition": "PROVISIONAL_CHECKPOINT",
+      "actual_scope_or_blocker": "A new R03 record is written separately from immutable archived R02 records; no source snapshot is mutated."
+    },
+    {
+      "stage": "W14",
+      "original_title": "Publish the bounded handoff",
+      "disposition": "BOUNDED_HANDOFF",
+      "actual_scope_or_blocker": "Publish current limitations and next action; no institutional gate or production eligibility is granted."
+    }
+  ]
+}

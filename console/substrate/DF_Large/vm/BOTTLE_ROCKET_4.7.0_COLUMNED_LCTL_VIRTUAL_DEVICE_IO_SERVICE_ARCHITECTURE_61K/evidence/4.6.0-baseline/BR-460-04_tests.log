@@ -1,0 +1,3 @@
+COMMAND .build/t460 (stack allocation/quota vectors)
+EXIT 0
+PASS Stack descriptors allocate backing only for live values and enforce depth/logical-byte ceilings.

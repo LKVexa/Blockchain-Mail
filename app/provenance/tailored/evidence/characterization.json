@@ -1,0 +1,176 @@
+{
+  "schema": "GLYPHOKU_BASELINE_CHARACTERIZATION/1",
+  "node": "v22.16.0",
+  "platform": "linux",
+  "original_code_modified": false,
+  "application_launched": false,
+  "live_journeys_run": false,
+  "rows": [
+    {
+      "id": "PR01",
+      "name": "Raw solved arrays authorize a domain without run/trace identity",
+      "expected_after_integration": {
+        "ok": false
+      },
+      "observed_baseline": {
+        "ok": true,
+        "g": 2
+      },
+      "scope": "SYNTHETIC_IN_MEMORY_CHARACTERIZATION"
+    },
+    {
+      "id": "PR02",
+      "name": "Two copies of the same board authorize an envelope",
+      "expected_after_integration": {
+        "ok": false
+      },
+      "observed_baseline": {
+        "ok": true,
+        "g": 3,
+        "permits": 1
+      },
+      "scope": "SYNTHETIC_IN_MEMORY_CHARACTERIZATION"
+    },
+    {
+      "id": "PR03",
+      "name": "Changed body retaining the old digest reaches a delivery row",
+      "expected_after_integration": {
+        "ok": false
+      },
+      "observed_baseline": {
+        "ok": true,
+        "body": "Changed after freeze; old digest retained"
+      },
+      "scope": "SYNTHETIC_IN_MEMORY_CHARACTERIZATION"
+    },
+    {
+      "id": "PR04",
+      "name": "issuePermit accepts a caller-forged draft bypassing freeze",
+      "expected_after_integration": {
+        "ok": false
+      },
+      "observed_baseline": {
+        "ok": true,
+        "sender": "unregistered@example.com",
+        "recipients": [
+          "outsider@example.com"
+        ]
+      },
+      "scope": "SYNTHETIC_IN_MEMORY_CHARACTERIZATION"
+    },
+    {
+      "id": "PR05",
+      "name": "sendLocal does not resolve recipient membership again",
+      "expected_after_integration": {
+        "ok": false
+      },
+      "observed_baseline": {
+        "ok": true,
+        "mailbox_row": "outsider@example.com",
+        "network_delivery": false
+      },
+      "scope": "SYNTHETIC_IN_MEMORY_CHARACTERIZATION"
+    },
+    {
+      "id": "PR06",
+      "name": "Exact prior permit lookup is blocked by g=3 horizon",
+      "expected_after_integration": {
+        "ok": true,
+        "same_permit": true,
+        "new_issuance": false
+      },
+      "observed_baseline": {
+        "ok": false,
+        "reason": "Issuance is paused at ordinal 3. This profile has measured support only through g=2 (2 puzzles)."
+      },
+      "scope": "SYNTHETIC_IN_MEMORY_CHARACTERIZATION"
+    },
+    {
+      "id": "PR07",
+      "name": "Repeated send is an idempotent no-op",
+      "expected_after_integration": {
+        "ok": true,
+        "delivery_count": 1
+      },
+      "observed_baseline": {
+        "ok": true,
+        "delivery_count": 1
+      },
+      "scope": "SYNTHETIC_IN_MEMORY_CHARACTERIZATION"
+    },
+    {
+      "id": "PR08",
+      "name": "Second domain can consume the envelope ordinal",
+      "expected_after_integration": {
+        "ok": false
+      },
+      "observed_baseline": {
+        "ok": true,
+        "g": 3,
+        "domains": 2
+      },
+      "scope": "SYNTHETIC_IN_MEMORY_CHARACTERIZATION"
+    },
+    {
+      "id": "PR09",
+      "name": "Caller may replace 4x4 boxes with 1x16 boxes",
+      "expected_after_integration": {
+        "ok": false
+      },
+      "observed_baseline": {
+        "ok": true,
+        "valid_under_PLAYED": false
+      },
+      "scope": "SYNTHETIC_IN_MEMORY_CHARACTERIZATION"
+    },
+    {
+      "id": "PR10",
+      "name": "Missing spentPermits can throw at send",
+      "expected_after_integration": {
+        "structured_refusal": true
+      },
+      "observed_baseline": {
+        "threw": "TypeError",
+        "message": "Cannot read properties of undefined (reading 'includes')"
+      },
+      "scope": "SYNTHETIC_IN_MEMORY_CHARACTERIZATION"
+    },
+    {
+      "id": "PR11",
+      "name": "countSolutions accepts a duplicate-filled completed grid",
+      "expected_after_integration": {
+        "valid_input": false,
+        "unique": false
+      },
+      "observed_baseline": {
+        "count": 1,
+        "independent_verification": false
+      },
+      "scope": "SYNTHETIC_IN_MEMORY_CHARACTERIZATION"
+    },
+    {
+      "id": "PR12",
+      "name": "A changed digest is refused by send",
+      "expected_after_integration": {
+        "ok": false
+      },
+      "observed_baseline": {
+        "ok": false,
+        "reason": "This permit is bound to a different frozen draft."
+      },
+      "scope": "SYNTHETIC_IN_MEMORY_CHARACTERIZATION"
+    },
+    {
+      "id": "PR13",
+      "name": "freezeDraft rejects an external recipient",
+      "expected_after_integration": {
+        "ok": false
+      },
+      "observed_baseline": {
+        "ok": false,
+        "reason": "External recipients are refused before any lookup."
+      },
+      "scope": "SYNTHETIC_IN_MEMORY_CHARACTERIZATION"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "G1_DESIGN": {
+    "state": "NOT_EVALUATED",
+    "ready": false,
+    "authority": null,
+    "basis": "Full applicable source-control evidence, institutional selection and independent review remain incomplete."
+  },
+  "G2_TECHNICAL": {
+    "state": "NOT_EVALUATED",
+    "ready": false,
+    "authority": null,
+    "basis": "Full applicable source-control evidence, institutional selection and independent review remain incomplete."
+  },
+  "G3_INTEGRATION": {
+    "state": "NOT_EVALUATED",
+    "ready": false,
+    "authority": null,
+    "basis": "Full applicable source-control evidence, institutional selection and independent review remain incomplete."
+  },
+  "G4_OPERATIONS": {
+    "state": "NOT_EVALUATED",
+    "ready": false,
+    "authority": null,
+    "basis": "Full applicable source-control evidence, institutional selection and independent review remain incomplete."
+  },
+  "G5_ACCEPTANCE": {
+    "state": "NOT_EVALUATED",
+    "ready": false,
+    "authority": null,
+    "basis": "Full applicable source-control evidence, institutional selection and independent review remain incomplete."
+  }
+}

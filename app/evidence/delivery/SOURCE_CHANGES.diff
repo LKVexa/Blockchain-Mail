@@ -1,0 +1,1530 @@
+--- provenance/glyphoku-source/components/glyphoku/studio.tsx
++++ src/components/glyphoku/studio.tsx
+@@ -1,509 +1,69 @@
+-import { useEffect, useRef, useState } from "react";
+-import {
+-  commitDomain,
+-  emptyInstance,
+-  freezeDraft,
+-  issuePermit,
+-  normalizeLabel,
+-  sendLocal,
+-  type FrozenDraft,
+-  type Instance,
+-} from "@/lib/glyphoku/registry";
+-import { dealPlayable } from "@/lib/glyphoku/deal";
+-import { glyphKind, glyphText, glyphsFor } from "@/lib/glyphoku/glyphs";
+-import { PLAYED, issuanceAllowed, puzzlesRequired, verifyCandidate } from "@/lib/glyphoku/rules";
+-import { createSolver, type Solver } from "@/lib/glyphoku/solver";
+-
+-const STORAGE_KEY = "glyphoku-local-127";
+-
+-type Puzzle = { givens: number[]; candidate: number[] | null };
+-type Phase = "LIVE SOLVING" | "VERIFYING" | "FAILED" | "READY" | "SENT";
+-
+-type Run = {
+-  action: "domain" | "envelope";
+-  label: string;
+-  draft: FrozenDraft | null;
+-  puzzles: Puzzle[];
+-  index: number;
+-  phase: Phase;
+-  note: string;
+-};
+-
+-function loadInstance(): Instance {
+-  if (typeof window === "undefined") return emptyInstance();
+-  try {
+-    const raw = window.localStorage.getItem(STORAGE_KEY);
+-    if (!raw) return emptyInstance();
+-    const parsed = JSON.parse(raw) as Instance;
+-    if (
+-      !parsed ||
+-      !Number.isInteger(parsed.g) ||
+-      parsed.g < 1 ||
+-      !Array.isArray(parsed.domains) ||
+-      !Array.isArray(parsed.mailboxes) ||
+-      !Array.isArray(parsed.permits) ||
+-      !Array.isArray(parsed.deliveries)
+-    ) {
+-      window.localStorage.setItem(`${STORAGE_KEY}-quarantine`, raw);
+-      return emptyInstance();
+-    }
+-    return parsed;
+-  } catch {
+-    return emptyInstance();
+-  }
++import React,{useState,useEffect,useLayoutEffect,useRef} from 'react';
++import {freezeDraft,normalizeLabel,type FrozenDraft} from '@/lib/glyphoku/registry';
++import {glyphsFor,glyphText,glyphKind} from '@/lib/glyphoku/glyphs';
++import {eventPolicy,boxOf} from '@/lib/glyphoku/rules';
++import {DeskSession,downloadJson} from '@/lib/glyphoku/client';
++const STORAGE_KEY='glyphoku-local-127';
++const ID=()=>Array.from(crypto.getRandomValues(new Uint8Array(16)),b=>b.toString(16).padStart(2,'0')).join('');
++const EMPTY=Array(256).fill(0);
++/** Same candidate desk/root component, connected to the single local SQL authority. */
++export function GlyphokuStudio(){
++ const [login,setLogin]=useState(''),[connected,setConnected]=useState(false),[state,setState]=useState<any>(null),[run,setRun]=useState<any>(null),[notice,setNotice]=useState('Sign in with the local operator token. No account or game state is stored in this browser.'),[error,setError]=useState(''),[busy,setBusy]=useState(false);
++ const [label,setLabel]=useState('studio'),[to,setTo]=useState(''),[bcc,setBcc]=useState(''),[subject,setSubject]=useState('Bench note'),[body,setBody]=useState('The local board is filed.'),[frozen,setFrozen]=useState<FrozenDraft|null>(null),[speed,setSpeed]=useState(24),[board,setBoard]=useState<number[]>(EMPTY),[kind,setKind]=useState<string[]>([]),[selected,setSelected]=useState<number|null>(null),[events,setEvents]=useState<any[]>([]),[milestones,setMilestones]=useState<string[]>([]),[mail,setMail]=useState<any[]>([]),[verify,setVerify]=useState<any>(null),[legacy,setLegacy]=useState<string|null>(null),[legacyUnavailable,setLegacyUnavailable]=useState(false),[online,setOnline]=useState(true);
++ const session=useRef(new DeskSession()),live=useRef<any>(null),status=useRef<any>(null),stateRef=useRef<any>(null),generation=useRef(0),inflight=useRef(0),speedRef=useRef(24),mounted=useRef(true),commitFlight=useRef(false),seenFrame=useRef(''),boardNode=useRef<HTMLDivElement|null>(null),visible=useRef(true),pausedIntent=useRef(false),needsPoll=useRef(false);
++ const instance=state?.instance,permit=instance?.permits?.[0],owner=instance?.mailboxes?.[0]?.address??'',active=!!run&&!['COMMITTED','FAILED','CANCELLED'].includes(run.phase);
++ function safeError(e:unknown){if(mounted.current&&!String(e).includes('STALE_SESSION')&&!String(e).includes('AbortError')){setError(String((e as Error).message??e));setNotice('No success is inferred from this error. Refresh the committed state before retrying uncertain work.');}}
++ function apply(p:any){if(!mounted.current)return;const previous=status.current?.phase;if(p.phase!==previous&&p.phase==='LIVE SOLVING')setNotice('LIVE SOLVING — actual server steps wait for visible frame acknowledgments. No resource has been issued by this run.');if(p.phase!==previous&&p.phase==='FAILED')setNotice('Run refused. No new resource is inferred; refresh signed state to resolve any interrupted commit.');status.current=p;setRun(p);if(p.frame&&p.frame.id!==seenFrame.current){seenFrame.current=p.frame.id;setBoard(p.frame.board);setKind(p.frame.kind);setEvents(x=>[...x,...p.frame.events].slice(-18));if(p.frame.initial)setMilestones(x=>[...x,`Board ${p.index+1}: initial givens displayed`]);if(p.frame.terminal)setMilestones(x=>[...x,`Board ${p.index+1}: final candidate displayed; waiting for verification`]);}}
++ async function refresh(){const v=await session.current.request('/api/glyphoku/state');if(!mounted.current)return;stateRef.current=v;setState(v);const own=v.instance.mailboxes[0]?.address;if(own)setTo(x=>x||own);return v;}
++ async function guarded(fn:()=>Promise<void>){setBusy(true);setError('');try{await fn();}catch(e){safeError(e);}finally{if(mounted.current)setBusy(false);}}
++ async function signIn(){await guarded(async()=>{session.current.open(login.trim());const v=await refresh();setLogin('');setConnected(true);setNotice(v.active?'A prior run is active. Stop the abandoned run explicitly; a page reload cannot recreate its observer capability.':'Local authority connected. Start with one game for your domain.');});}
++ function disconnect(){generation.current++;const ref=live.current;session.current.cancelAndClose(ref);live.current=null;status.current=null;stateRef.current=null;setConnected(false);setState(null);setRun(null);setBoard(EMPTY);setKind([]);setFrozen(null);setMail([]);setEvents([]);setMilestones([]);setVerify(null);setError('');setNotice('Signed out. Any interrupted operation must be checked by refreshing committed state after sign-in.');}
++ async function runRequest(name:string,extra:any={}){const ref=live.current;if(!ref)return;const epoch=generation.current;inflight.current++;try{const p=await session.current.request('/api/glyphoku/'+name,{...ref,...extra});if(epoch===generation.current){apply(p);if(name==='poll')needsPoll.current=false;}return p;}catch(e){if(epoch===generation.current){needsPoll.current=true;pausedIntent.current=true;}throw e;}finally{inflight.current--;}}
++ async function start(action:'domain'|'envelope'){await guarded(async()=>{const v=stateRef.current;if(!v)throw Error('AUTH');const normalized=normalizeLabel(label);if(action==='domain'&&!normalized.ok)throw Error(normalized.reason);if(action==='envelope'&&!frozen)throw Error('Freeze the exact message first.');generation.current++;const epoch=generation.current;setMilestones([]);setEvents([]);setBoard(EMPTY);seenFrame.current='';pausedIntent.current=false;
++  const h=await session.current.request('/api/glyphoku/start',{action,intent:action==='domain'?{label:normalized.ok?normalized.label:label}:{draft:frozen},instance_id:v.instance_id,expected_revision:v.revision,operation_id:ID()});if(epoch!==generation.current)return;if(h.phase==='COMMITTED'){await refresh();return;}live.current={run_id:h.run_id,observer_key:h.observer_key};boardNode.current?.scrollIntoView({block:'start',behavior:'smooth'});apply({...h,total:action==='domain'?1:2,index:0,paused:false,counts:{events:0,guesses:0,retractions:0,rendered:0}});setNotice('PREPARING — selecting eligible givens within fixed search budgets. No live solution has been replayed.');
++ });}
++ function freeze(){if(!instance)return;const f=freezeDraft({from:owner,to,bcc,subject,body},instance);if(!f.ok){setError(f.code+': '+f.reason);return;}setFrozen(f.draft);setError('');setNotice('Draft frozen. The two-board run will bind this exact v1 digest.');}
++ async function control(action:string){if(!live.current)return;generation.current++;needsPoll.current=false;pausedIntent.current=action!=='resume';await guarded(async()=>{await runRequest('control',{action});if(action==='stop'){setNotice('STOPPED — no issuance. Already committed operations, if any, remain in the signed ledger.');await refresh();}});}
++ async function step(){if(inflight.current||!live.current)return;await guarded(async()=>{pausedIntent.current=true;await runRequest('advance',{count:1,single_step:true});});}
++ async function finish(){if(commitFlight.current||!live.current||status.current?.phase!=='COMMIT_READY'||status.current.paused||pausedIntent.current)return;commitFlight.current=true;const ref=live.current,op=status.current.operation_id,epoch=generation.current;try{const result=await session.current.request('/api/glyphoku/commit',{...ref,operation_id:op});if(epoch!==generation.current)return;apply({...status.current,phase:'COMMITTED',result});await refresh();setNotice(status.current.action==='domain'?'DOMAIN CREATED — one actual mailbox registered in the signed local state.':'ENVELOPE READY — NOT SENT. Review the frozen message and press Send locally.');}catch(e){safeError(e);const p=status.current;if(p)apply({...p,phase:'FAILED',note:'COMMIT_UNCERTAIN'});}finally{commitFlight.current=false;}}
++ async function refreshMail(){const data=await session.current.request('/api/glyphoku/mail');if(mounted.current)setMail(data.messages);}
++ async function send(){await guarded(async()=>{const v=stateRef.current,p=v.instance.permits[0];if(!p)throw Error('NO_PERMIT');const answer=await session.current.request('/api/glyphoku/send',{permit_id:p.id,draft:p.draft,instance_id:v.instance_id,expected_revision:v.revision,operation_id:ID()});await refresh();await refreshMail();setNotice(answer.replayed?'Existing delivery recovered; no duplicate message or charge.':'DELIVERED_LOCAL — one-use permit spent atomically with the actual encrypted email.');});}
++ async function exportTrace(id:string){await guarded(async()=>{const value=await session.current.request('/api/glyphoku/trace?id='+encodeURIComponent(id));if(session.current.active&&mounted.current)downloadJson('glyphoku-'+id+'.json',value);});}
++ useEffect(()=>{mounted.current=true;try{const raw=localStorage.getItem(STORAGE_KEY);if(raw!==null)setLegacy(raw);}catch{setLegacyUnavailable(true);}const onVisibility=()=>{if(document.hidden){visible.current=false;pausedIntent.current=true;if(live.current)void control('hidden');}else visible.current=true;};document.addEventListener('visibilitychange',onVisibility);const onOffline=()=>{setOnline(false);pausedIntent.current=true;if(live.current)void control('pause');};const onOnline=()=>setOnline(true);window.addEventListener('offline',onOffline);window.addEventListener('online',onOnline);
++  return()=>{mounted.current=false;generation.current++;session.current.cancelAndClose(live.current);document.removeEventListener('visibilitychange',onVisibility);window.removeEventListener('offline',onOffline);window.removeEventListener('online',onOnline);};},[]);
++ useEffect(()=>{speedRef.current=speed;},[speed]);
++ useEffect(()=>{const heartbeat=setInterval(()=>{const p=status.current;if(session.current.active&&live.current&&p&&!['COMMITTED','FAILED','CANCELLED'].includes(p.phase)&&!inflight.current)void runRequest('poll').catch(safeError);},10000);return()=>clearInterval(heartbeat);},[]);
++ useEffect(()=>{if(!boardNode.current)return;const observer=new IntersectionObserver(entries=>{const yes=entries[0]?.intersectionRatio>=0.8;visible.current=yes&&!document.hidden;if(!yes&&live.current&&status.current?.phase==='LIVE SOLVING'&&!status.current.paused){pausedIntent.current=true;void control('pause');}},{threshold:[0,0.8,1]});observer.observe(boardNode.current);return()=>observer.disconnect();},[connected]);
++ // The frame is already in React's committed DOM. Two animation frames precede acknowledgment.
++ useLayoutEffect(()=>{const f=run?.frame;if(!f||!connected)return;let cancelled=false,r1=0,r2=0;const acknowledge=()=>{if(cancelled||document.hidden||!visible.current||!live.current)return;void runRequest('ack',{frame_id:f.id,digest:f.digest}).catch(safeError);};r1=requestAnimationFrame(()=>{r2=requestAnimationFrame(acknowledge);});return()=>{cancelled=true;cancelAnimationFrame(r1);cancelAnimationFrame(r2);};},[run?.frame?.id,connected]);
++ useEffect(()=>{const interval=setInterval(()=>{if(!session.current.active||!live.current||inflight.current||commitFlight.current||document.hidden)return;const p=status.current;if(!p||['COMMITTED','FAILED','CANCELLED'].includes(p.phase))return;
++  if(needsPoll.current){void runRequest('poll').catch(safeError);return;}
++  if(p.phase==='COMMIT_READY'){if(visible.current)void finish();return;}
++  if(p.frame){if(visible.current){requestAnimationFrame(()=>requestAnimationFrame(()=>{if(status.current?.frame?.id===p.frame.id&&!inflight.current&&!document.hidden)void runRequest('ack',{frame_id:p.frame.id,digest:p.frame.digest}).catch(safeError);}));}return;}
++  if(p.phase==='LIVE SOLVING'&&!p.paused&&!pausedIntent.current&&visible.current)void runRequest('advance',{count:speedRef.current,single_step:false}).catch(safeError);
++  else if(p.phase==='PREPARING')void runRequest('poll').catch(safeError);
++ },100);return()=>clearInterval(interval);},[]);
++ let candidates:number[]=[];if(selected!==null&&board[selected]===0){const r=selected>>4,c=selected%16,b=boxOf(selected),used=new Set(board.filter((v,i)=>(i>>4)===r||i%16===c||boxOf(i)===b));candidates=Array.from({length:16},(_,i)=>i+1).filter(v=>!used.has(v));}
++ const cap=run?.g&&run.g<=2?eventPolicy(run.g).cap:0,phase=run?.phase??'IDLE';
++ return <main className="desk-shell">
++  <header className="masthead"><div><div className="eyebrow">LK / VEXA · LOCAL RESEARCH BUILD 3.0.0</div><h1>Glyphoku <span>Post Office</span></h1><p>One game for a domain. Two for its envelope. A signed local chain underneath.</p></div><div className="connection"><span className={'status-dot '+(connected?'is-on':'')}></span>{connected?'127.0.0.1 · CONNECTED':'LOCAL ONLY'}<a href="/mail/" target="_blank" rel="noreferrer">Vexa mailbox ↗</a></div></header>
++  {!connected?<section className="login-panel panel"><div className="eyebrow">LOCAL OPERATOR</div><h2>Open your desk</h2><p>Start the server, then read the <code>postmaster@local.test</code> token from <code>state/credentials.secret.json</code> on your own computer. It remains in this page’s memory only.</p><form onSubmit={e=>{e.preventDefault();void signIn();}}><label>Operator token<input data-testid="operator-token" type="password" autoComplete="off" spellCheck={false} value={login} onChange={e=>setLogin(e.target.value)}/></label><button data-testid="connect" disabled={busy||!login.trim()}>Connect to local authority</button></form><p className="muted">No hosted sign-in, public DNS, blockchain RPC, remote scripts, or mining. A local bearer token is not a wallet seed.</p></section>:<>
++   <div className="session-strip"><span>Instance <code>{state?.instance_id?.slice(0,12)}</code></span><span>Revision <b data-testid="revision">{state?.revision}</b></span><span>Next ordinal <b data-testid="ordinal">g = {instance?.g}</b></span><span>Signed block <b>{state?.head?.header?.height}</b></span><button className="quiet" onClick={()=>void guarded(async()=>{await refresh();if(owner)await refreshMail();})}>Refresh committed state</button><button className="quiet" onClick={disconnect}>Sign out</button></div>
++   {state?.active&&!live.current&&<section className="warning">A previous observer is absent. No capability is recovered from JSON or browser storage. <button onClick={()=>void guarded(async()=>{await session.current.request('/api/glyphoku/abandon',{});await refresh();setNotice('Abandoned run stopped. No new issuance.');})}>Stop abandoned run</button></section>}
++   <div className="workspace"><section className="board-panel panel"><div className="section-heading"><div><div className="eyebrow">THE CIPHER DESK</div><h2 data-testid="phase">{phase}</h2></div><span className="tag">16 × 16 / 4 × 4</span></div><div className="board-caption"><span>Board {run?run.index+1:0} / {run?.total??0}</span><span>{run?.paused||pausedIntent.current?'PAUSED':phase==='LIVE SOLVING'?'INCREMENTAL SEARCH':'GIVENS → SEARCH → VERIFY'}</span></div>
++    <div ref={boardNode} className="board" role="grid" aria-label="Live 16 by 16 Glyphoku board" data-testid="board" data-frame-id={run?.frame?.id??seenFrame.current} data-event-seq={run?.counts?.events??0}>{board.map((value,i)=><button key={i} type="button" role="gridcell" title={`Row ${(i>>4)+1}, column ${i%16+1}: ${glyphText(16,value)||'empty'}; ${kind[i]??'empty'}`} aria-label={`Row ${(i>>4)+1} column ${i%16+1} ${glyphText(16,value)||'empty'}`} onClick={()=>setSelected(i)} className={`cell ${glyphKind(glyphText(16,value))} ${kind[i]??''} ${i%4===3&&i%16!==15?'box-right':''} ${Math.floor(i/16)%4===3&&i<240?'box-bottom':''} ${selected===i?'selected':''}`}>{glyphText(16,value)}</button>)}</div>
++    <div className="legend"><span>Bold: given</span><span className="legend-guess">Underline: guess</span><span>Color + shape: cipher family</span></div><p className="candidate-line">{selected===null?'Select a cell to inspect its current candidates.':`r${(selected>>4)+1}c${selected%16+1} · ${board[selected]?'filled':candidates.map(v=>glyphText(16,v)).join(' ')||'contradiction: no candidates'}`}</p>
++    <div className="controls"><label>Events / 100 ms<select aria-label="Events per tick" value={speed} onChange={e=>setSpeed(Number(e.target.value))}>{[1,8,24,40].map(n=><option key={n} value={n}>{n}</option>)}</select></label><button data-testid="pause" disabled={!active||run?.paused} onClick={()=>void control('pause')}>Pause</button><button data-testid="resume" disabled={!active||(!run?.paused&&!pausedIntent.current)} onClick={()=>void control('resume')}>Resume</button><button data-testid="step" disabled={!active||!run?.paused||!!run?.frame||phase!=='LIVE SOLVING'} onClick={()=>void step()}>Single step</button><button data-testid="stop" className="danger" disabled={!active} onClick={()=>void control('stop')}>Stop</button></div>
++    <div className="metrics"><div><strong data-testid="events-count">{run?.counts?.events??0}</strong><span>events / {cap||'—'}</span></div><div><strong data-testid="guess-count">{run?.counts?.guesses??0}</strong><span>guesses</span></div><div><strong data-testid="retract-count">{run?.counts?.retractions??0}</strong><span>retractions</span></div><div><strong>{run?.counts?.rendered??0}</strong><span>render acks</span></div></div><p className="muted">Preparation {run?.preparation_ms??'—'} ms · active search {Math.round(run?.active_ms??0)} ms · paused {Math.round(run?.paused_ms??0)} ms · total {Math.round(run?.elapsed_ms??0)} ms. Complete logical events are retained; a batch is one rendered checkpoint, not one paint per event.</p>
++   </section><aside className="journeys">
++    <section className="panel"><div className="eyebrow">01 / DOMAIN</div><h2>A place for your mail</h2>{owner?<><div className="address" data-testid="owner-address">{owner}</div><p>Created by the first board. This two-journey profile has one generated owner mailbox; its example message is self-addressed.</p></>:<><label>Local label<input value={label} onChange={e=>setLabel(e.target.value)} disabled={active||busy} maxLength={24}/></label><p className="muted">owner@{label||'label'}.glyphoku.localhost</p><button data-testid="create-domain" disabled={active||busy||instance?.g!==1} onClick={()=>void start('domain')}>Solve one board · create domain</button></>}</section>
++    <section className="panel"><div className="eyebrow">02 / ENVELOPE</div><h2>{permit?'Frozen authorization':'Write, freeze, then solve'}</h2>{permit?<><div className={'permit-state '+(permit.state==='READY'?'ready':'delivered')} data-testid="permit-status">{permit.state==='READY'?'ENVELOPE READY — NOT SENT':'DELIVERED_LOCAL'}</div><dl className="draft-summary"><dt>From</dt><dd>{permit.draft.from}</dd><dt>To</dt><dd>{permit.draft.to.join(', ')}</dd><dt>Bcc · sender only</dt><dd>{permit.draft.bcc.join(', ')||'None'}</dd><dt>Subject</dt><dd>{permit.draft.subject}</dd></dl><pre className="body-preview">{permit.draft.body}</pre><div className="digest"><b>Frozen SHA-256</b><code>{permit.draftDigest}</code></div><button data-testid="send-locally" disabled={busy} onClick={()=>void send()}>{permit.state==='READY'?'Send locally · consume permit':'Recover existing delivery receipt'}</button></>:<><fieldset disabled={!owner||active||busy||!!frozen}><label>To<input value={to} onChange={e=>setTo(e.target.value)} spellCheck={false}/></label><label>Bcc<input value={bcc} onChange={e=>setBcc(e.target.value)} spellCheck={false}/></label><label>Subject<input value={subject} onChange={e=>setSubject(e.target.value)} maxLength={120}/></label><label>Message<textarea aria-label="Message" rows={4} value={body} onChange={e=>setBody(e.target.value)} maxLength={4000}/></label></fieldset>{frozen?<><div className="digest"><b>Frozen SHA-256</b><code>{frozen.digest}</code></div><button data-testid="create-envelope" disabled={active||busy||instance?.g!==2} onClick={()=>void start('envelope')}>Solve two boards · prepare envelope</button><button className="quiet" disabled={active||busy} onClick={()=>setFrozen(null)}>Edit before starting</button></>:<button data-testid="freeze" disabled={!owner||busy||active} onClick={freeze}>Freeze exact draft</button>}</>}
++     {instance?.g>=3&&<p className="horizon" data-testid="horizon">ISSUANCE PAUSED AT g ≥ 3. Send, recovery and reading remain available. There is no hidden third game or automatic reset.</p>}</section>
++   </aside></div>
++   <section className="feedback panel" aria-live="polite"><div className="eyebrow">CURRENT OUTCOME</div><p data-testid="notice">{notice}</p>{run?.note&&<p className="warning">{run.note}</p>}{!online&&<p className="warning">Browser reports offline. Search paused; no automatic send retry.</p>}</section>
++   <div className="evidence-row"><section className="panel"><div className="section-heading"><h2>Local inbox</h2><button className="quiet" disabled={!owner||busy} onClick={()=>void guarded(refreshMail)}>Read actual mailbox</button></div><div data-testid="inbox">{mail.length?mail.map(m=><article className="message" key={m.id}><span className="tag">{m.folder}</span><h3>{m.subject}</h3><p className="muted">{m.from} → {m.to.join(', ')}</p><pre>{m.body}</pre><small>Message {m.message_id}</small></article>):<p>No messages fetched. READY alone does not deliver email.</p>}</div></section><section className="panel"><div className="section-heading"><h2>Evidence & ledger</h2><button className="quiet" onClick={()=>void guarded(async()=>setVerify(await session.current.request('/api/admin/verify',{})))}>Verify signed state</button></div>{verify&&<pre className="verify-result" data-testid="verification">{JSON.stringify(verify,null,2)}</pre>}<ol>{milestones.map((m,i)=><li key={i}>{m}</li>)}</ol>{state?.operations?.map((op:any)=><div className="receipt" key={op.id}><b>{op.kind.toUpperCase()}</b><span>revision {op.result.revision} · {op.boards.length} boards</span><button className="quiet" onClick={()=>void exportTrace(op.id)}>Export receipt / trace</button></div>)}<details><summary>Recent search events</summary><pre className="event-log">{events.map(e=>`${e.seq} ${e.type} ${e.cell===null?'':`r${(e.cell>>4)+1}c${e.cell%16+1} ${glyphText(16,e.oldValue)||'·'}→${glyphText(16,e.newValue)||'·'}`} ${e.rule}`).join('\n')}</pre></details></section></div>
++  </>}
++  {error&&<section className="error" role="alert" data-testid="error">{error}</section>}{legacyUnavailable&&<section className="warning">Browser storage is unavailable. Legacy bytes could not be inspected and were not changed. This server instance is a separate authority; no import is attempted.</section>}{legacy!==null&&<section className="warning"><b>Legacy browser registry detected.</b> Its bytes are not trusted as issuance authority and have not been overwritten or imported. <button className="quiet" onClick={()=>downloadJson('legacy-glyphoku-preserved.json',{storageKey:STORAGE_KEY,raw:legacy,status:'UNASSESSED_NOT_IMPORTED'})}>Export original bytes</button></section>}
++  <footer><div className="cipher-strip">{glyphsFor(16).join('  ')}</div><p>Single local operator. Signed hash-linked blocks, not distributed consensus. Game permits are not money. Server-held storage encryption is not end-to-end encryption. Render acknowledgments demonstrate a cooperative client protocol, not human attention.</p><p>Glyphoku source desk + Vexa127 mail authority · no browser-state reset · no external delivery.</p></footer>
++ </main>;
+ }
+-
+-function cellClass(index: number, solverKind: string, glyph: string): string {
+-  const order = PLAYED.order;
+-  const col = index % order;
+-  const row = Math.floor(index / order);
+-  const thickR = col % PLAYED.boxCols === PLAYED.boxCols - 1 && col !== order - 1;
+-  const thickB = row % PLAYED.boxRows === PLAYED.boxRows - 1 && row !== order - 1;
+-  const ink = glyphKind(glyph);
+-  const tone = ink === "letter" ? "text-moss" : ink === "symbol" ? "text-seal" : "text-fg";
+-  const mark = solverKind === "guess" ? "underline decoration-2 decoration-seal" : solverKind === "given" ? "font-semibold" : "";
+-  return `grid h-6 w-6 place-items-center font-serif text-[13px] leading-none sm:h-7 sm:w-7 ${thickR ? "border-r-2 border-r-fg" : "border-r border-r-line"} ${thickB ? "border-b-2 border-b-fg" : "border-b border-b-line"} ${tone} ${mark}`;
+-}
+-
+-export function GlyphokuStudio() {
+-  const [instance, setInstance] = useState<Instance>(emptyInstance);
+-  const [ready, setReady] = useState(false);
+-  const [label, setLabel] = useState("studio");
+-  const [to, setTo] = useState("");
+-  const [subject, setSubject] = useState("Bench note");
+-  const [body, setBody] = useState("The local board is filed.");
+-  const [run, setRun] = useState<Run | null>(null);
+-  const [board, setBoard] = useState<number[]>(Array.from({ length: PLAYED.order * PLAYED.order }, () => 0));
+-  const [kind, setKind] = useState<string[]>(Array.from({ length: PLAYED.order * PLAYED.order }, () => "empty"));
+-  const [lastEvent, setLastEvent] = useState("Idle");
+-  const [paused, setPaused] = useState(false);
+-  const [speed, setSpeed] = useState(24);
+-  const [composing, setComposing] = useState(false);
+-  const [counts, setCounts] = useState({ guesses: 0, retractions: 0 });
+-  const solverRef = useRef<Solver | null>(null);
+-  const runRef = useRef<Run | null>(null);
+-  const instanceRef = useRef(instance);
+-  const pausedRef = useRef(false);
+-  const speedRef = useRef(1);
+-  const stepping = useRef(false);
+-
+-  useEffect(() => {
+-    setInstance(loadInstance());
+-    setReady(true);
+-  }, []);
+-
+-  useEffect(() => {
+-    if (!ready) return;
+-    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(instance));
+-    instanceRef.current = instance;
+-  }, [instance, ready]);
+-
+-  useEffect(() => {
+-    pausedRef.current = paused;
+-  }, [paused]);
+-
+-  useEffect(() => {
+-    speedRef.current = speed;
+-  }, [speed]);
+-
+-  function paint(solver: Solver, eventLabel: string) {
+-    const snap = solver.snapshot();
+-    setBoard(snap.board);
+-    setKind(snap.kind);
+-    setLastEvent(eventLabel);
+-  }
+-
+-  function beginPuzzle(nextRun: Run, givens: number[], resetCounts: boolean) {
+-    const solver = createSolver(givens, PLAYED);
+-    solverRef.current = solver;
+-    const init = solver.step();
+-    paint(solver, init ? `${init.type} · givens on the grid before search` : "INIT");
+-    runRef.current = nextRun;
+-    setRun(nextRun);
+-    setPaused(false);
+-    if (resetCounts) setCounts({ guesses: 0, retractions: 0 });
+-  }
+-
+-  function finishSolved() {
+-    const solver = solverRef.current;
+-    const current = runRef.current;
+-    if (!solver || !current) return;
+-    const snap = solver.snapshot();
+-    const puzzle = current.puzzles[current.index];
+-    if (!puzzle) return;
+-    const verdict = verifyCandidate(puzzle.givens, snap.board, PLAYED);
+-    if (!verdict.ok) {
+-      const failed = { ...current, phase: "FAILED" as const, note: verdict.reason };
+-      runRef.current = failed;
+-      setRun(failed);
+-      solverRef.current = null;
+-      return;
+-    }
+-    const puzzles = current.puzzles.slice();
+-    puzzles[current.index] = { givens: puzzle.givens, candidate: snap.board };
+-    if (current.index + 1 < puzzles.length) {
+-      const advanced: Run = { ...current, puzzles, index: current.index + 1, phase: "LIVE SOLVING", note: "Next board in this batch." };
+-      beginPuzzle(advanced, puzzles[current.index + 1]!.givens, false);
+-      return;
+-    }
+-    if (current.action === "domain") {
+-      const result = commitDomain(
+-        instanceRef.current,
+-        current.label,
+-        puzzles.map((item) => ({ givens: item.givens, candidate: item.candidate! })),
+-      );
+-      if (!result.ok) {
+-        const failed = { ...current, puzzles, phase: "FAILED" as const, note: result.reason };
+-        runRef.current = failed;
+-        setRun(failed);
+-        return;
+-      }
+-      setInstance(result.instance);
+-      setTo(result.mailbox.address);
+-      const done: Run = { ...current, puzzles, phase: "READY", note: `Domain created: ${result.domain.address}` };
+-      runRef.current = done;
+-      setRun(done);
+-      solverRef.current = null;
+-      return;
+-    }
+-    if (!current.draft) return;
+-    const result = issuePermit(
+-      instanceRef.current,
+-      current.draft,
+-      puzzles.map((item) => ({ givens: item.givens, candidate: item.candidate! })),
+-    );
+-    if (!result.ok) {
+-      const failed = { ...current, puzzles, phase: "FAILED" as const, note: result.reason };
+-      runRef.current = failed;
+-      setRun(failed);
+-      return;
+-    }
+-    setInstance(result.instance);
+-    const done: Run = { ...current, puzzles, phase: "READY", note: "ENVELOPE READY — NOT SENT" };
+-    runRef.current = done;
+-    setRun(done);
+-    solverRef.current = null;
+-  }
+-
+-  function stepOnce(): boolean {
+-    const solver = solverRef.current;
+-    if (!solver || !runRef.current || runRef.current.phase !== "LIVE SOLVING") return true;
+-    const event = solver.step();
+-    if (!event) return true;
+-    paint(solver, `${event.type} · ${event.rule} · depth ${event.depth} · node ${event.nodes}`);
+-    if (event.type === "GUESS") setCounts((current) => ({ ...current, guesses: current.guesses + 1 }));
+-    if (event.type === "RETRACT") setCounts((current) => ({ ...current, retractions: current.retractions + 1 }));
+-    if (event.type === "SEARCH_SOLVED") {
+-      const verifying = { ...runRef.current, phase: "VERIFYING" as const, note: "Checking givens, rows, columns, and boxes." };
+-      runRef.current = verifying;
+-      setRun(verifying);
+-      finishSolved();
+-      return true;
+-    }
+-    if (event.type === "SEARCH_EXHAUSTED") {
+-      const failed = { ...runRef.current, phase: "FAILED" as const, note: "The search ended without a candidate. Nothing was issued." };
+-      runRef.current = failed;
+-      setRun(failed);
+-      solverRef.current = null;
+-      return true;
+-    }
+-    return false;
+-  }
+-
+-  const stepRef = useRef<() => boolean>(() => true);
+-  stepRef.current = stepOnce;
+-
+-  useEffect(() => {
+-    const id = window.setInterval(() => {
+-      if (pausedRef.current || stepping.current) return;
+-      if (!solverRef.current || runRef.current?.phase !== "LIVE SOLVING") return;
+-      const count = speedRef.current;
+-      for (let i = 0; i < count; i++) {
+-        if (stepRef.current()) break;
+-      }
+-    }, 100);
+-    const onHide = () => {
+-      if (document.hidden) setPaused(true);
+-    };
+-    document.addEventListener("visibilitychange", onHide);
+-    return () => {
+-      window.clearInterval(id);
+-      document.removeEventListener("visibilitychange", onHide);
+-    };
+-  }, []);
+-
+-  function startDomain() {
+-    const allowed = issuanceAllowed(instance.g);
+-    if (!allowed.ok) {
+-      setLastEvent(allowed.reason);
+-      return;
+-    }
+-    if (runRef.current?.phase === "LIVE SOLVING") return;
+-    const named = normalizeLabel(label);
+-    if (!named.ok) {
+-      setLastEvent(named.reason);
+-      return;
+-    }
+-    const seed = crypto.getRandomValues(new Uint32Array(1))[0]!;
+-    const ordinal = instance.g;
+-    setComposing(true);
+-    setLastEvent("Composing the hard 16×16 cipher…");
+-    window.setTimeout(() => {
+-      try {
+-        const count = puzzlesRequired(ordinal);
+-        const puzzles: Puzzle[] = [];
+-        for (let i = 0; i < count; i++) puzzles.push({ givens: dealPlayable(ordinal, seed + i + 1), candidate: null });
+-        beginPuzzle(
+-          { action: "domain", label: named.label, draft: null, puzzles, index: 0, phase: "LIVE SOLVING", note: "Hard cipher. A finished animation does not create the domain." },
+-          puzzles[0]!.givens,
+-          true,
+-        );
+-      } catch (error) {
+-        setLastEvent(error instanceof Error ? error.message : "The dealer paused.");
+-      } finally {
+-        setComposing(false);
+-      }
+-    }, 40);
+-  }
+-
+-  function startEnvelope() {
+-    const allowed = issuanceAllowed(instance.g);
+-    if (!allowed.ok) {
+-      setLastEvent(allowed.reason);
+-      return;
+-    }
+-    const sender = instance.mailboxes[0]?.address;
+-    if (!sender) {
+-      setLastEvent("Create a local domain before an envelope.");
+-      return;
+-    }
+-    const frozenDraft = freezeDraft({ from: sender, to, bcc: "", subject, body }, instance);
+-    if (!frozenDraft.ok) {
+-      setLastEvent(frozenDraft.reason);
+-      return;
+-    }
+-    const seed = crypto.getRandomValues(new Uint32Array(1))[0]!;
+-    const ordinal = instance.g;
+-    setComposing(true);
+-    setLastEvent("Composing the hard 16×16 cipher…");
+-    window.setTimeout(() => {
+-      try {
+-        const count = puzzlesRequired(ordinal);
+-        const puzzles: Puzzle[] = [];
+-        for (let i = 0; i < count; i++) puzzles.push({ givens: dealPlayable(ordinal, seed + i + 17), candidate: null });
+-        beginPuzzle(
+-          {
+-            action: "envelope",
+-            label: "",
+-            draft: frozenDraft.draft,
+-            puzzles,
+-            index: 0,
+-            phase: "LIVE SOLVING",
+-            note: "The draft is frozen. This cipher is harder than the domain. Solving does not send it.",
+-          },
+-          puzzles[0]!.givens,
+-          true,
+-        );
+-      } catch (error) {
+-        setLastEvent(error instanceof Error ? error.message : "The dealer paused.");
+-      } finally {
+-        setComposing(false);
+-      }
+-    }, 40);
+-  }
+-
+-  function stopRun() {
+-    solverRef.current = null;
+-    if (runRef.current) {
+-      const stopped = { ...runRef.current, phase: "FAILED" as const, note: "Stopped. No resource was issued." };
+-      runRef.current = stopped;
+-      setRun(stopped);
+-    }
+-  }
+-
+-  const gate = issuanceAllowed(instance.g);
+-  const mailbox = instance.mailboxes[0]?.address ?? "";
+-  const openPermit = instance.permits.find((permit) => permit.state === "READY" && permit.draft);
+-
+-  return (
+-    <main className="mx-auto max-w-5xl px-4 py-6 md:px-8 md:py-10">
+-      <header className="border-b border-line pb-6">
+-        <p className="font-mono text-xs tracking-widest text-seal">GLYPHOKU · LOCAL 127 · NOT A CURRENCY</p>
+-        <h1 className="mt-2 font-serif text-5xl">Watch the board, then the registry moves</h1>
+-        <p className="mt-3 max-w-2xl text-muted">
+-          The computer solves a 16×16 Glyphoku cipher: digits, letters, and symbols, each once in every row, column, and box. This is the hard band, not a numeral sudoku. The first domain takes one board. The next envelope takes two.
+-        </p>
+-      </header>
+-
+-      <dl className="mt-6 grid grid-cols-2 gap-3 font-mono text-xs sm:grid-cols-4">
+-        <div className="border border-line px-3 py-2">
+-          <dt className="text-muted">Next ordinal</dt>
+-          <dd className="text-lg text-fg">g={instance.g}</dd>
+-        </div>
+-        <div className="border border-line px-3 py-2">
+-          <dt className="text-muted">Puzzles required</dt>
+-          <dd className="text-lg text-fg">{gate.ok ? gate.puzzles : "paused"}</dd>
+-        </div>
+-        <div className="border border-line px-3 py-2">
+-          <dt className="text-muted">Domains</dt>
+-          <dd className="text-lg text-fg">{instance.domains.length}</dd>
+-        </div>
+-        <div className="border border-line px-3 py-2">
+-          <dt className="text-muted">Inbox</dt>
+-          <dd className="text-lg text-fg">{instance.deliveries.length}</dd>
+-        </div>
+-      </dl>
+-
+-      <section className="mt-6 grid gap-6 lg:grid-cols-[auto_1fr]">
+-        <div>
+-          <div className="overflow-x-auto">
+-            <div
+-              className="inline-grid border-2 border-fg bg-surface"
+-              role="grid"
+-              aria-label="Glyphoku cipher"
+-              style={{ gridTemplateColumns: `repeat(${PLAYED.order}, 1.75rem)` }}
+-            >
+-              {board.map((value, index) => {
+-                const glyph = glyphText(PLAYED.order, value);
+-                return (
+-                  <div key={index} role="gridcell" className={cellClass(index, kind[index] ?? "empty", glyph)} aria-label={`row ${Math.floor(index / PLAYED.order) + 1} column ${(index % PLAYED.order) + 1} ${glyph || "empty"}`}>
+-                    {glyph}
+-                  </div>
+-                );
+-              })}
+-            </div>
+-          </div>
+-          <p className="mt-2 max-w-md font-mono text-xs text-muted">
+-            {glyphsFor(PLAYED.order).map((glyph) => (
+-              <span key={glyph} className={glyphKind(glyph) === "letter" ? "mr-1 text-moss" : glyphKind(glyph) === "symbol" ? "mr-1 text-seal" : "mr-1 text-fg"}>{glyph}</span>
+-            ))}
+-            <span className="text-muted">Given is heavy. A guess is underlined.</span>
+-          </p>
+-          <p className="mt-2 min-h-11 font-mono text-xs text-fg">{lastEvent}</p>
+-          <p className="font-mono text-xs text-muted">Guesses {counts.guesses} · Retractions {counts.retractions}</p>
+-          <div className="mt-2 flex flex-wrap gap-2">
+-            <button type="button" className="min-h-11 border border-line px-3 font-mono text-xs" onClick={() => setPaused((value) => !value)}>
+-              {paused ? "Resume" : "Pause"}
+-            </button>
+-            <button
+-              type="button"
+-              className="min-h-11 border border-line px-3 font-mono text-xs"
+-              onClick={() => {
+-                stepping.current = true;
+-                setPaused(true);
+-                stepOnce();
+-                stepping.current = false;
+-              }}
+-            >
+-              Single step
+-            </button>
+-            <button type="button" className="min-h-11 border border-line px-3 font-mono text-xs" onClick={stopRun}>
+-              Stop
+-            </button>
+-            <label className="flex min-h-11 items-center gap-2 font-mono text-xs text-muted">
+-              Speed
+-              <select className="min-h-11 border border-line bg-bg px-2 text-fg" value={speed} onChange={(event) => setSpeed(Number(event.target.value))}>
+-                <option value={1}>1×</option>
+-                <option value={8}>8×</option>
+-                <option value={24}>24×</option>
+-                <option value={40}>40×</option>
+-              </select>
+-            </label>
+-          </div>
+-          {run && (
+-            <p className="mt-3 text-sm text-muted">
+-              {run.phase} · puzzle {run.index + 1} of {run.puzzles.length}. {run.note}
+-            </p>
+-          )}
+-        </div>
+-
+-        <div className="grid content-start gap-6">
+-          <section className="border border-line bg-surface p-4">
+-            <h2 className="font-serif text-2xl">Create a local domain</h2>
+-            <p className="mt-2 text-sm text-muted">The name stays inside this browser. It is not a public registration.</p>
+-            <label className="mt-3 grid gap-1 font-mono text-xs text-muted">
+-              Label
+-              <input className="min-h-11 border border-line bg-bg px-3 font-mono text-sm text-fg" value={label} onChange={(event) => setLabel(event.target.value)} />
+-            </label>
+-            <button type="button" className="mt-3 min-h-11 bg-seal px-4 font-mono text-xs text-seal-ink disabled:opacity-40" disabled={!gate.ok || composing || run?.phase === "LIVE SOLVING"} onClick={startDomain}>
+-              Solve & Create Domain
+-            </button>
+-            {instance.domains[0] && <p className="mt-3 font-mono text-xs text-moss">{instance.domains[0].address}</p>}
+-            {mailbox && <p className="font-mono text-xs text-muted">{mailbox}</p>}
+-          </section>
+-
+-          <section className="border border-line bg-surface p-4">
+-            <h2 className="font-serif text-2xl">Freeze a message</h2>
+-            <p className="mt-2 text-sm text-muted">Solving issues one permit. It stays unsent until you press send.</p>
+-            <label className="mt-3 grid gap-1 font-mono text-xs text-muted">
+-              To
+-              <input className="min-h-11 border border-line bg-bg px-3 font-mono text-sm text-fg" value={to} onChange={(event) => setTo(event.target.value)} placeholder={mailbox || "owner@studio.glyphoku.localhost"} />
+-            </label>
+-            <label className="mt-3 grid gap-1 font-mono text-xs text-muted">
+-              Subject
+-              <input className="min-h-11 border border-line bg-bg px-3 text-sm text-fg" value={subject} maxLength={120} onChange={(event) => setSubject(event.target.value)} />
+-            </label>
+-            <label className="mt-3 grid gap-1 font-mono text-xs text-muted">
+-              Body
+-              <textarea className="min-h-24 border border-line bg-bg px-3 py-2 text-sm text-fg" value={body} maxLength={4000} onChange={(event) => setBody(event.target.value)} />
+-            </label>
+-            <button type="button" className="mt-3 min-h-11 bg-seal px-4 font-mono text-xs text-seal-ink disabled:opacity-40" disabled={!mailbox || !gate.ok || composing || run?.phase === "LIVE SOLVING"} onClick={startEnvelope}>
+-              Solve for Envelope
+-            </button>
+-            {openPermit && (
+-              <div className="mt-4 border border-seal px-3 py-3">
+-                <p className="font-mono text-xs text-seal">ENVELOPE READY — NOT SENT</p>
+-                <p className="mt-2 text-sm">{openPermit.draft.subject}</p>
+-                <p className="text-sm text-muted">{openPermit.draft.from} → {openPermit.draft.to.join(", ")}</p>
+-                <button
+-                  type="button"
+-                  className="mt-3 min-h-11 border border-line px-4 font-mono text-xs"
+-                  onClick={() => {
+-                    setInstance((current) => {
+-                      const permit = current.permits.find((item) => item.state === "READY");
+-                      if (!permit) return current;
+-                      const result = sendLocal(current, permit.id, permit.draft);
+-                      if (!result.ok) {
+-                        setLastEvent(result.reason);
+-                        return current;
+-                      }
+-                      setLastEvent(result.instance === current ? "Already delivered." : "DELIVERED LOCAL");
+-                      setRun((active) => (active ? { ...active, phase: "SENT", note: "Delivered to the local inbox." } : active));
+-                      return result.instance;
+-                    });
+-                  }}
+-                >
+-                  Send Local Email
+-                </button>
+-              </div>
+-            )}
+-          </section>
+-        </div>
+-      </section>
+-
+-      <section className="mt-8">
+-        <h2 className="font-serif text-2xl">Local inbox</h2>
+-        {instance.deliveries.length === 0 ? (
+-          <p className="mt-2 text-sm text-muted">Nothing delivered. A queued flag is not a message.</p>
+-        ) : (
+-          <ul className="mt-3 grid gap-3">
+-            {instance.deliveries.map((message) => (
+-              <li key={message.id} className="border border-line px-3 py-3">
+-                <p className="font-mono text-xs text-muted">{message.from} → {message.mailbox}</p>
+-                <p className="mt-1 font-serif text-xl">{message.subject}</p>
+-                <p className="mt-1 text-sm">{message.body}</p>
+-              </li>
+-            ))}
+-          </ul>
+-        )}
+-      </section>
+-
+-      <footer className="mt-10 border-t border-line py-6 font-mono text-xs text-muted">
+-        <p>
+-          16×16 cipher, hard band. Speed only changes pacing. Ordinals after g=2 are paused. The 4,800 source controls stay NOT_ASSESSED. No public DNS, no coin.
+-        </p>
+-        {!gate.ok && <p className="mt-2 text-seal">{gate.reason}</p>}
+-      </footer>
+-    </main>
+-  );
+-}
+--- provenance/glyphoku-source/lib/glyphoku/deal.ts
++++ src/lib/glyphoku/deal.ts
+@@ -1,38 +1,21 @@
+-import { createSolver } from "./solver";
+-import { dealGivens, topologyFor } from "./rules";
+-
+-/** Keep the hardest cipher that still finishes: the most guesses under the event cap. */
+-export function dealPlayable(ordinal: number, seed: number): number[] {
+-  const cap = ordinal === 1 ? 12000 : 18000;
+-  const minimumGuesses = ordinal === 1 ? 8 : 12;
+-  const topology = topologyFor(ordinal);
+-  let best: { givens: number[]; guesses: number } | null = null;
+-  for (let attempt = 0; attempt < 4; attempt++) {
+-    let givens: number[];
+-    try {
+-      givens = dealGivens(ordinal, (seed + attempt * 97) >>> 0);
+-    } catch {
+-      continue;
+-    }
+-    const solver = createSolver(givens, topology);
+-    let events = 0;
+-    let guesses = 0;
+-    let solved = false;
+-    for (;;) {
+-      const event = solver.step();
+-      if (!event) break;
+-      events++;
+-      if (event.type === "GUESS") guesses++;
+-      if (event.type === "SEARCH_SOLVED") {
+-        solved = true;
+-        break;
+-      }
+-      if (events > cap) break;
+-    }
+-    if (solved && guesses >= minimumGuesses && (!best || guesses > best.guesses)) {
+-      best = { givens, guesses };
+-    }
++import {createSolver} from './solver.ts';
++import {dealGivens,PLAYED,eventPolicy,PREPARATION,spendWork,type DealBudget,analyzeSolutions} from './rules.ts';
++/** Preparation can score hidden runs for selection, but returns givens and metrics, NEVER a solution/trace. */
++export function prepareBoard(g:number,seed:number,shared?:DealBudget){
++ const start=Date.now(),budget=shared??{deadline:start+PREPARATION.wallMs,nodeLimit:PREPARATION.nodeLimit,nodes:0},policy=eventPolicy(g);
++ let refused=0;
++ for(let attempt=0;attempt<PREPARATION.attempts;attempt++){
++  spendWork(budget);let givens:number[];
++  try{givens=dealGivens(g,(seed+attempt*97)>>>0,PLAYED,budget);}catch(e){if((e as Error).message==='PREPARATION_BUDGET_EXCEEDED')throw e;refused++;continue;}
++  const solver=createSolver(givens,PLAYED);let events=0,guesses=0,retractions=0,solved=false;
++  while(events<policy.cap){spendWork(budget);const ev=solver.step();if(!ev)break;events++;if(ev.type==='GUESS')guesses++;if(ev.type==='RETRACT')retractions++;if(ev.type==='SEARCH_SOLVED'){solved=true;break;}if(ev.type==='SEARCH_EXHAUSTED')break;}
++  if(solved&&guesses>=policy.minGuesses&&retractions>=policy.minRetractions){
++   const unique=analyzeSolutions(givens,PLAYED,{nodeLimit:PREPARATION.uniquenessNodes,deadline:budget.deadline,consume:n=>spendWork(budget,n)});
++   if(unique.status!=='COMPLETE_ONE'){refused++;continue;}
++   return {givens,selection:{events,guesses,retractions,attempts:attempt+1,refused,preparation_ms:Date.now()-start,work_nodes:budget.nodes},uniqueness:unique};
+   }
+-  if (!best) throw new Error("No 16×16 cipher in the hard band finished inside the solver budget.");
+-  return best.givens;
++  refused++;
++ }
++ throw new Error('PREPARATION_NO_ELIGIBLE_BOARD');
+ }
++export function dealPlayable(g:number,seed:number):number[]{return prepareBoard(g,seed).givens;}
+--- provenance/glyphoku-source/lib/glyphoku/registry.ts
++++ src/lib/glyphoku/registry.ts
+@@ -1,227 +1,114 @@
+-import { issuanceAllowed, inBand, verifyCandidate, topologyFor, type Topology } from "./rules";
+-import { sha256 } from "../sha256.ts";
+-
+-export type Domain = { id: string; label: string; address: string; ordinal: number };
+-export type Mailbox = { id: string; domainId: string; address: string; role: "owner" };
+-export type Permit = {
+-  id: string;
+-  ordinal: number;
+-  sender: string;
+-  draftDigest: string;
+-  recipients: string[];
+-  bcc: string[];
+-  state: "READY" | "QUEUED" | "DELIVERED_LOCAL";
+-  draft: FrozenDraft;
+-};
+-export type Delivery = {
+-  id: string;
+-  permitId: string;
+-  mailbox: string;
+-  from: string;
+-  to: string[];
+-  subject: string;
+-  body: string;
+-};
+-
+-export type Instance = {
+-  g: number;
+-  domains: Domain[];
+-  mailboxes: Mailbox[];
+-  permits: Permit[];
+-  deliveries: Delivery[];
+-  spentPermits: string[];
+-};
+-
+-export type FrozenDraft = {
+-  from: string;
+-  to: string[];
+-  bcc: string[];
+-  subject: string;
+-  body: string;
+-  digest: string;
+-};
+-
+-export function emptyInstance(): Instance {
+-  return { g: 1, domains: [], mailboxes: [], permits: [], deliveries: [], spentPermits: [] };
++import {issuanceAllowed,inBand,verifyCandidate,PLAYED,exactTopology,eventPolicy,type Topology} from './rules.ts';
++import {sha256} from '../sha256.ts';
++export const PROFILE='GLYPHOKU_VEXA127/2';
++export class RegistryError extends Error{code:string;constructor(code:string,message:string){super(message);this.code=code;}}
++export function requireRule(ok:unknown,code:string,message:string):asserts ok{if(!ok)throw new RegistryError(code,message);}
++export type Domain={id:string;label:string;address:string;ordinal:number};
++export type Mailbox={id:string;domainId:string;address:string;role:'owner'};
++export type FrozenDraft={from:string;to:string[];bcc:string[];subject:string;body:string;digest:string};
++export type Permit={id:string;ordinal:number;sender:string;draftDigest:string;recipients:string[];bcc:string[];state:'READY'|'DELIVERED_LOCAL';draft:FrozenDraft};
++export type Delivery={id:string;permitId:string;mailbox:string;from:string;to:string[];subject:string;body:string};
++export type Instance={g:number;domains:Domain[];mailboxes:Mailbox[];permits:Permit[];deliveries:Delivery[];spentPermits:string[]};
++export type Registry={schema:'GLYPHOKU_LOCAL_REGISTRY/2';profile:typeof PROFILE;instanceId:string;revision:number;instance:Instance;completedOperations:Operation[];consumedChallenges:string[]};
++export type Operation={id:string;kind:'domain'|'envelope'|'send';intentDigest:string;runId:string|null;result:any;boards:any[]};
++export function emptyInstance():Instance{return {g:1,domains:[],mailboxes:[],permits:[],deliveries:[],spentPermits:[]};}
++export function emptyRegistry(instanceId:string):Registry{return {schema:'GLYPHOKU_LOCAL_REGISTRY/2',profile:PROFILE,instanceId,revision:0,instance:emptyInstance(),completedOperations:[],consumedChallenges:[]};}
++export function hexDigest(value:string):string{return Array.from(sha256(new TextEncoder().encode(value)),x=>x.toString(16).padStart(2,'0')).join('');}
++export function plain(o:unknown):o is Record<string,unknown>{return !!o&&typeof o==='object'&&!Array.isArray(o)&&(Object.getPrototypeOf(o)===Object.prototype||Object.getPrototypeOf(o)===null);}
++export function exactKeys(o:unknown,keys:string[],code='SCHEMA'):asserts o is Record<string,any>{requireRule(plain(o)&&Object.keys(o).length===keys.length&&keys.every(k=>Object.hasOwn(o,k)),code,'Object fields do not match the selected schema.');}
++const LABEL=/^[a-z0-9](?:[a-z0-9-]{0,22}[a-z0-9])?$/;
++const RESERVED=new Set(['localhost','mail','www','glyphoku']);
++export function normalizeLabel(raw:string){if(typeof raw!=='string')return {ok:false as const,code:'INVALID_LABEL',reason:'Label must be a string.'};const label=raw.trim().toLowerCase();if(!LABEL.test(label)||RESERVED.has(label))return {ok:false as const,code:'INVALID_LABEL',reason:'Use an unreserved label of 1–24 letters, digits or internal hyphens.'};return {ok:true as const,label};}
++export function domainAddress(label:string){return `${label}.glyphoku.localhost`;}
++export function resolveMailbox(raw:string,instance:Instance){
++ if(typeof raw!=='string')return {ok:false as const,code:'UNKNOWN_LOCAL_MAILBOX',reason:'A mailbox address must be a string.'};const address=raw.trim().toLowerCase();
++ if(!/^[a-z0-9][a-z0-9._+-]{0,63}@[a-z0-9](?:[a-z0-9-]{0,22}[a-z0-9])?\.glyphoku\.localhost$/.test(address))return {ok:false as const,code:'EXTERNAL_RECIPIENT',reason:'External addresses are refused without DNS or MX lookup.'};
++ if(!Array.isArray(instance.mailboxes)||!instance.mailboxes.some(m=>m.address===address))return {ok:false as const,code:'UNKNOWN_LOCAL_MAILBOX',reason:'Mailbox is not registered on this local instance.'};return {ok:true as const,address};
+ }
+-
+-const LABEL = /^[a-z0-9](?:[a-z0-9-]{0,22}[a-z0-9])?$/;
+-const RESERVED = new Set(["localhost", "mail", "www", "glyphoku"]);
+-
+-export function normalizeLabel(raw: string): { ok: true; label: string } | { ok: false; reason: string } {
+-  const label = raw.trim().toLowerCase();
+-  if (!LABEL.test(label)) return { ok: false, reason: "Use a short lowercase label: letters, digits, and internal hyphens." };
+-  if (RESERVED.has(label)) return { ok: false, reason: "That label is reserved." };
+-  return { ok: true, label };
++export function canonicalDraft(d:Pick<FrozenDraft,'from'|'to'|'bcc'|'subject'|'body'>){return JSON.stringify({from:d.from,to:d.to,bcc:d.bcc,subject:d.subject,body:d.body});}
++function splitAddresses(s:string){return [...new Set(s.split(/[,\s]+/).map(x=>x.trim().toLowerCase()).filter(Boolean))];}
++export function freezeDraft(input:{from:string;to:string;bcc:string;subject:string;body:string},instance:Instance){
++ try{exactKeys(input,['from','to','bcc','subject','body'],'DRAFT_SCHEMA');for(const k of Object.keys(input))requireRule(typeof input[k as keyof typeof input]==='string','DRAFT_SCHEMA','Every draft field must be text.');
++ requireRule(!/[\r\n]/.test(input.subject),'SUBJECT','Subject cannot contain a line break.');
++ const subject=input.subject.trim(),body=input.body.replace(/\r\n/g,'\n'),to=splitAddresses(input.to),bcc=splitAddresses(input.bcc);
++ requireRule(subject.length>=1&&subject.length<=120,'SUBJECT','Subject must contain 1–120 JavaScript code units.');requireRule(body.trim().length>0&&body.length<=4000,'BODY','Body must contain text and be at most 4,000 JavaScript code units.');
++ requireRule(to.length>0&&to.length<=8&&bcc.length<=8&&new Set([...to,...bcc]).size<=8,'RECIPIENTS','Use 1–8 unique local recipients and at least one To address.');
++ requireRule(instance.mailboxes.some(m=>m.address===input.from),'UNKNOWN_LOCAL_MAILBOX','Sender must be an existing normalized mailbox.');
++ for(const a of [...to,...bcc]){const r=resolveMailbox(a,instance);if(!r.ok)throw new RegistryError(r.code,r.reason);}
++ const data={from:input.from,to:[...to],bcc:[...bcc],subject,body};const draft:FrozenDraft={...data,digest:hexDigest(canonicalDraft(data))};Object.freeze(draft.to);Object.freeze(draft.bcc);Object.freeze(draft);return {ok:true as const,draft};
++ }catch(e){return {ok:false as const,code:(e as RegistryError).code??'DRAFT_SCHEMA',reason:(e as Error).message};}
+ }
+-
+-export function domainAddress(label: string): string {
+-  return `${label}.glyphoku.localhost`;
++export function validateFrozen(d:FrozenDraft,instance:Instance):FrozenDraft{
++ exactKeys(d,['from','to','bcc','subject','body','digest'],'DRAFT_SCHEMA');
++ requireRule(Array.isArray(d.to)&&Array.isArray(d.bcc)&&d.to.every((x:unknown)=>typeof x==='string')&&d.bcc.every((x:unknown)=>typeof x==='string'),'DRAFT_SCHEMA','Recipients must be text arrays.');
++ requireRule(typeof d.digest==='string'&&/^[a-f0-9]{64}$/.test(d.digest),'DRAFT_DIGEST_MISMATCH','Invalid draft digest.');
++ const v=freezeDraft({from:d.from,to:d.to.join(','),bcc:d.bcc.join(','),subject:d.subject,body:d.body},instance);if(!v.ok)throw new RegistryError(v.code,v.reason);
++ requireRule(v.draft.digest===d.digest&&canonicalDraft(v.draft)===canonicalDraft(d),'DRAFT_DIGEST_MISMATCH','Frozen bytes or digest changed.');return v.draft;
+ }
+-
+-function digest(value: string): string {
+-  const bytes = new TextEncoder().encode(value);
+-  return [...sha256(bytes)].map((byte) => byte.toString(16).padStart(2, "0")).join("");
++export function stableObject(value:any):string{if(value===null||typeof value!=='object')return JSON.stringify(value);if(Array.isArray(value))return '['+value.map(stableObject).join(',')+']';return '{'+Object.keys(value).sort().map(k=>JSON.stringify(k)+':'+stableObject(value[k])).join(',')+'}';}
++export function projectRecipients(d:FrozenDraft){return [...new Set([...d.to,...d.bcc])];}
++export type Puzzle={givens:readonly number[];candidate:readonly number[]};
++const grants=new WeakMap<object,{action:string;g:number;intent:string;batch:string}>();
++/** The server owns the returned issuer; no HTTP request accepts a grant or raw proof. */
++export function createRunAuthority(){return {issue(action:'domain'|'envelope',g:number,intent:string,puzzles:Puzzle[]){const ticket=Object.freeze({});grants.set(ticket,{action,g,intent,batch:hexDigest(JSON.stringify(puzzles))});return ticket;},revoke(ticket:object){grants.delete(ticket);}};}
++function validateBatch(instance:Instance,action:'domain'|'envelope',intent:string,puzzles:Puzzle[],t:Topology,ticket?:object){
++ requireRule(exactTopology(t),'INVALID_TOPOLOGY','Played topology cannot be overridden.');
++ const allowed=issuanceAllowed(instance.g);if(!allowed.ok)throw new RegistryError(allowed.code,allowed.reason);
++ requireRule((instance.g===1&&action==='domain')||(instance.g===2&&action==='envelope'),'WRONG_ACTION_FOR_ORDINAL','g=1 is reserved for the domain; g=2 for its envelope.');
++ requireRule(Array.isArray(puzzles)&&puzzles.length===allowed.puzzles,'WRONG_BATCH_LENGTH',`g=${instance.g} requires exactly ${allowed.puzzles} boards.`);
++ const seen=new Set<string>();for(const p of puzzles){exactKeys(p,['givens','candidate'],'INVALID_CANDIDATE');const v=verifyCandidate(p.givens,p.candidate,PLAYED);if(!v.ok)throw new RegistryError(v.code,v.reason);requireRule(inBand(instance.g,p.givens),'OUT_OF_BAND','Givens are outside this ordinal’s empty-cell band.');const fingerprint=hexDigest(JSON.stringify(p.givens));requireRule(!seen.has(fingerprint),'DUPLICATE_CHALLENGE','The batch repeats a challenge.');seen.add(fingerprint);}
++ const a=ticket&&grants.get(ticket);requireRule(a&&a.action===action&&a.g===instance.g&&a.intent===intent&&a.batch===hexDigest(JSON.stringify(puzzles)),'REPLAY_NOT_AUTHORIZED','A current completed server-owned run is required; raw arrays are not authority.');
+ }
+-
+-export function freezeDraft(input: { from: string; to: string; bcc: string; subject: string; body: string }, instance: Instance): { ok: true; draft: FrozenDraft } | { ok: false; reason: string } {
+-  if (/[\r\n]/.test(input.subject)) return { ok: false, reason: "The subject cannot contain a line break." };
+-  const subject = input.subject.trim();
+-  const body = input.body.replace(/\r\n/g, "\n");
+-  if (subject.length < 1 || subject.length > 120) return { ok: false, reason: "Subject must be 1 to 120 characters." };
+-  if (body.trim().length < 1 || body.length > 4000) return { ok: false, reason: "Body must be present and at most 4000 characters." };
+-  const to = splitAddresses(input.to);
+-  const bcc = splitAddresses(input.bcc);
+-  if (to.length === 0) return { ok: false, reason: "Name at least one local recipient." };
+-  const all = [...to, ...bcc];
+-  for (const address of all) {
+-    const found = resolveMailbox(address, instance);
+-    if (!found.ok) return found;
+-  }
+-  if (!instance.mailboxes.some((box) => box.address === input.from)) {
+-    return { ok: false, reason: "The sender is not a local mailbox on this instance." };
+-  }
+-  const draft: FrozenDraft = {
+-    from: input.from,
+-    to,
+-    bcc,
+-    subject,
+-    body,
+-    digest: digest(JSON.stringify({ from: input.from, to, bcc, subject, body })),
+-  };
+-  return { ok: true, draft };
++function failure(e:unknown){return {ok:false as const,code:(e as RegistryError).code??'SCHEMA',reason:(e as Error).message};}
++export function commitDomain(instance:Instance,labelRaw:string,puzzles:Puzzle[],t:Topology=PLAYED,ticket?:object){try{
++ const label=normalizeLabel(labelRaw);if(!label.ok)throw new RegistryError(label.code,label.reason);requireRule(!instance.domains.some(d=>d.label===label.label),'DUPLICATE_DOMAIN','This local domain already exists.');validateBatch(instance,'domain',label.label,puzzles,t,ticket);
++ const domain:Domain={id:'dom-1',label:label.label,address:domainAddress(label.label),ordinal:1};const mailbox:Mailbox={id:'box-1',domainId:domain.id,address:`owner@${domain.address}`,role:'owner'};
++ return {ok:true as const,instance:{...instance,g:2,domains:[domain],mailboxes:[mailbox]},domain,mailbox};
++ }catch(e){return failure(e);}}
++export function issuePermit(instance:Instance,raw:FrozenDraft,puzzles:Puzzle[],t:Topology=PLAYED,ticket?:object){try{
++ const draft=validateFrozen(raw,instance);validateBatch(instance,'envelope',draft.digest,puzzles,t,ticket);
++ const permit:Permit={id:'env-1',ordinal:2,sender:draft.from,draftDigest:draft.digest,recipients:[...draft.to],bcc:[...draft.bcc],state:'READY',draft:JSON.parse(JSON.stringify(draft))};
++ return {ok:true as const,instance:{...instance,g:3,permits:[permit]},permit};
++ }catch(e){return failure(e);}}
++export function sendLocal(instance:Instance,id:string,raw:FrozenDraft){try{
++ const draft=validateFrozen(raw,instance),permit=instance.permits.find(p=>p.id===id);requireRule(permit,'NO_PERMIT','No such permit.');validateFrozen(permit.draft,instance);
++ requireRule(permit.sender===draft.from&&permit.draftDigest===draft.digest&&canonicalDraft(permit.draft)===canonicalDraft(draft)&&JSON.stringify(permit.recipients)===JSON.stringify(draft.to)&&JSON.stringify(permit.bcc)===JSON.stringify(draft.bcc),'DRAFT_DIGEST_MISMATCH','Permit does not bind this exact frozen message.');
++ requireRule(Array.isArray(instance.spentPermits),'STORE_CORRUPT','Spend journal is missing.');
++ const recipients=projectRecipients(draft),rows:Delivery[]=recipients.map((mailbox,i)=>({id:`${id}-${i}`,permitId:id,mailbox,from:draft.from,to:[...draft.to],subject:draft.subject,body:draft.body}));
++ if(permit.state==='DELIVERED_LOCAL'){requireRule(instance.spentPermits.filter(x=>x===id).length===1&&stableObject(instance.deliveries.filter(x=>x.permitId===id))===stableObject(rows),'STORE_CORRUPT','Delivered permit and journal disagree.');return {ok:true as const,instance,replayed:true};}
++ requireRule(permit.state==='READY'&&!instance.spentPermits.includes(id)&&!instance.deliveries.some(x=>x.permitId===id),'INVALID_PERMIT_STATE','Only a consistent READY permit can be spent.');
++ return {ok:true as const,instance:{...instance,spentPermits:[...instance.spentPermits,id],permits:instance.permits.map(p=>p.id===id?{...p,state:'DELIVERED_LOCAL' as const}:p),deliveries:[...instance.deliveries,...rows]},replayed:false};
++ }catch(e){return failure(e);}}
++export function validateRegistry(value:unknown):asserts value is Registry{
++ exactKeys(value,['schema','profile','instanceId','revision','instance','completedOperations','consumedChallenges'],'STORE_CORRUPT');const w=value;
++ requireRule(w.schema==='GLYPHOKU_LOCAL_REGISTRY/2'&&w.profile===PROFILE,'UNSUPPORTED_SCHEMA','Registry profile/schema differs.');requireRule(typeof w.instanceId==='string'&&/^[a-f0-9]{32}$/.test(w.instanceId)&&Number.isSafeInteger(w.revision)&&w.revision>=0&&w.revision<=3,'STORE_CORRUPT','Invalid instance identity/revision.');
++ exactKeys(w.instance,['g','domains','mailboxes','permits','deliveries','spentPermits'],'STORE_CORRUPT');const s=w.instance as Instance;
++ for(const k of ['domains','mailboxes','permits','deliveries','spentPermits'] as const)requireRule(Array.isArray(s[k]),'STORE_CORRUPT','Missing registry array.');
++ requireRule(s.domains.length<=1&&s.mailboxes.length===s.domains.length&&s.permits.length<=s.domains.length&&s.spentPermits.length<=s.permits.length&&s.deliveries.length<=8,'STORE_CORRUPT','Resource counts exceed the two-journey profile.');
++ requireRule(s.g===1+s.domains.length+s.permits.length,'STORE_CORRUPT','Ordinal disagrees with issuance history.');
++ for(const d of s.domains){exactKeys(d,['id','label','address','ordinal'],'STORE_CORRUPT');const n=normalizeLabel(d.label);requireRule(n.ok&&n.label===d.label&&d.id==='dom-1'&&d.ordinal===1&&d.address===domainAddress(d.label),'STORE_CORRUPT','Domain is malformed.');}
++ for(const m of s.mailboxes){exactKeys(m,['id','domainId','address','role'],'STORE_CORRUPT');const d=s.domains.find(d=>d.id===m.domainId);requireRule(d&&m.id==='box-1'&&m.role==='owner'&&m.address===`owner@${d.address}`,'STORE_CORRUPT','Mailbox/domain relationship invalid.');}
++ for(const p of s.permits){exactKeys(p,['id','ordinal','sender','draftDigest','recipients','bcc','state','draft'],'STORE_CORRUPT');validateFrozen(p.draft,s);requireRule(p.id==='env-1'&&p.ordinal===2&&p.sender===p.draft.from&&p.draftDigest===p.draft.digest&&JSON.stringify(p.recipients)===JSON.stringify(p.draft.to)&&JSON.stringify(p.bcc)===JSON.stringify(p.draft.bcc),'STORE_CORRUPT','Permit/draft relationship invalid.');requireRule(p.state==='READY'||p.state==='DELIVERED_LOCAL','STORE_CORRUPT','Unsupported permit state.');if(p.state==='READY')requireRule(!s.spentPermits.length&&!s.deliveries.length,'STORE_CORRUPT','READY cannot have deliveries or a spend.');else{const checked=sendLocal(s,p.id,p.draft);requireRule(checked.ok,'STORE_CORRUPT','Delivered permit/spend/rows disagree.');}}
++ requireRule(s.permits.length>0||(!s.deliveries.length&&!s.spentPermits.length),'STORE_CORRUPT','Orphan delivery/spend.');
++ for(const row of s.deliveries){exactKeys(row,['id','permitId','mailbox','from','to','subject','body'],'STORE_CORRUPT');requireRule(!Object.hasOwn(row,'bcc'),'STORE_CORRUPT','Recipient projection includes Bcc.');}
++ requireRule(Array.isArray(w.completedOperations)&&w.completedOperations.length===w.revision&&Array.isArray(w.consumedChallenges),'STORE_CORRUPT','Operation/revision journal invalid.');
++ requireRule(w.completedOperations.length===s.domains.length+s.permits.length+(s.spentPermits.length?1:0),'STORE_CORRUPT','Missing or extra completed operation.');
++ const ids=new Set<string>(),runs=new Set<string>();let boardCount=0;const fingerprints:string[]=[];
++ for(let j=0;j<w.completedOperations.length;j++){const op=w.completedOperations[j];exactKeys(op,['id','kind','intentDigest','runId','result','boards'],'STORE_CORRUPT');requireRule(typeof op.id==='string'&&/^[a-zA-Z0-9._:-]{8,96}$/.test(op.id)&&!ids.has(op.id),'STORE_CORRUPT','Invalid/duplicate operation ID.');ids.add(op.id);
++ requireRule(op.kind===['domain','envelope','send'][j]&&typeof op.intentDigest==='string'&&/^[a-f0-9]{64}$/.test(op.intentDigest)&&plain(op.result)&&Array.isArray(op.boards),'STORE_CORRUPT','Operation type, digest or result invalid.');
++ requireRule(op.result.operation_id===op.id&&op.result.revision===j+1&&op.result.g===Math.min(j+2,3)&&Number.isInteger(op.result.block_height)&&op.result.block_height>0,'STORE_CORRUPT','Operation receipt relation invalid.');
++ if(j===0)requireRule(op.result.status==='DOMAIN_CREATED'&&stableObject(op.result.domain)===stableObject(s.domains[0])&&stableObject(op.result.mailbox)===stableObject(s.mailboxes[0]),'STORE_CORRUPT','Domain receipt mismatch.');
++ if(j===1)requireRule(op.result.status==='READY'&&op.result.not_sent===true&&op.result.permit_id===s.permits[0].id&&op.result.draft_digest===s.permits[0].draftDigest&&op.result.stamp_id===op.runId,'STORE_CORRUPT','Envelope receipt mismatch.');
++ if(j===2)requireRule(op.result.status==='DELIVERED_LOCAL'&&op.result.permit_id===s.permits[0].id&&op.result.stamp_id===w.completedOperations[1].runId&&op.result.cost===0&&op.result.payer==='GAME'&&typeof op.result.message_id==='string'&&/^[a-f0-9]{32}$/.test(op.result.message_id)&&Array.isArray(op.result.deliveries)&&op.result.deliveries.length===projectRecipients(s.permits[0].draft).length+1,'STORE_CORRUPT','Send receipt mismatch.');
++ if(j<2){requireRule(typeof op.runId==='string'&&/^[a-f0-9]{32}$/.test(op.runId)&&!runs.has(op.runId)&&op.boards.length===2**j,'STORE_CORRUPT','Run/batch receipt invalid.');runs.add(op.runId);for(const b of op.boards){exactKeys(b,['fingerprint','givens','candidate','events','event_count','guesses','retractions','traceDigest','candidateDigest','uniqueness','selection','initial_frame_ack','terminal_frame_ack','rendered_checkpoints'],'STORE_CORRUPT');
++ const policy=eventPolicy(j+1);requireRule(verifyCandidate(b.givens,b.candidate,PLAYED).ok&&inBand(j+1,b.givens),'STORE_CORRUPT','Stored puzzle is invalid.');requireRule(b.fingerprint===hexDigest(JSON.stringify(b.givens))&&b.candidateDigest===hexDigest(JSON.stringify(b.candidate)),'STORE_CORRUPT','Stored puzzle digest mismatch.');
++ requireRule(Array.isArray(b.events)&&Number.isSafeInteger(b.event_count)&&b.events.length===b.event_count&&b.event_count>1&&b.event_count<=policy.cap&&b.guesses>=policy.minGuesses&&b.retractions>=policy.minRetractions,'STORE_CORRUPT','Stored event counters invalid.');
++ let guesses=0,retractions=0;for(let k=0;k<b.events.length;k++){const e=b.events[k];exactKeys(e,['seq','type','cell','oldValue','newValue','rule','depth','nodes'],'STORE_CORRUPT');requireRule(e.seq===k+1&&['INIT','ASSIGN','GUESS','CONTRADICTION','RETRACT','SEARCH_SOLVED','SEARCH_EXHAUSTED'].includes(e.type)&&(e.cell===null||(Number.isInteger(e.cell)&&e.cell>=0&&e.cell<256&&b.givens[e.cell]===0))&&Number.isInteger(e.depth)&&e.depth>=0&&Number.isInteger(e.nodes)&&e.nodes>=0&&typeof e.rule==='string','STORE_CORRUPT','Stored event shape/sequence invalid.');if(e.type==='GUESS')guesses++;if(e.type==='RETRACT')retractions++;}
++ requireRule(b.events[0].type==='INIT'&&b.events.at(-1).type==='SEARCH_SOLVED'&&guesses===b.guesses&&retractions===b.retractions&&b.traceDigest===hexDigest(stableObject(b.events)),'STORE_CORRUPT','Stored trace commitment or counters mismatch.');
++ requireRule(plain(b.uniqueness)&&b.uniqueness.status==='COMPLETE_ONE'&&b.uniqueness.complete===true&&b.uniqueness.found===1&&Number.isInteger(b.uniqueness.nodes)&&b.uniqueness.nodes>0&&plain(b.selection)&&b.selection.events===b.event_count&&b.selection.guesses===guesses&&b.selection.retractions===retractions,'STORE_CORRUPT','Stored preparation/uniqueness evidence invalid.');
++ requireRule(b.initial_frame_ack===true&&b.terminal_frame_ack===true&&Number.isInteger(b.rendered_checkpoints)&&b.rendered_checkpoints>=2&&b.rendered_checkpoints<=b.event_count,'STORE_CORRUPT','Stored observer checkpoints invalid.');fingerprints.push(b.fingerprint);boardCount++;}}
++ else requireRule(op.runId===null&&!op.boards.length,'STORE_CORRUPT','Send is not a new game.');
++ }
++ requireRule(w.consumedChallenges.length===boardCount&&new Set(w.consumedChallenges).size===boardCount&&JSON.stringify(w.consumedChallenges)===JSON.stringify(fingerprints),'STORE_CORRUPT','Consumed challenge journal disagrees.');
++ requireRule(new TextEncoder().encode(JSON.stringify(w)).length<=8*1024*1024,'STORE_CAPACITY','Registry exceeds the explicit 8 MiB bound.');
+ }
+-
+-function splitAddresses(raw: string): string[] {
+-  return [...new Set(raw.split(/[,\s]+/).map((part) => part.trim().toLowerCase()).filter(Boolean))];
+-}
+-
+-export function resolveMailbox(address: string, instance: Instance): { ok: true; address: string } | { ok: false; reason: string } {
+-  const normalized = address.trim().toLowerCase();
+-  if (!normalized.endsWith(".glyphoku.localhost")) {
+-    return { ok: false, reason: "External recipients are refused before any lookup." };
+-  }
+-  if (!instance.mailboxes.some((box) => box.address === normalized)) {
+-    return { ok: false, reason: "That mailbox is not on this local registry." };
+-  }
+-  return { ok: true, address: normalized };
+-}
+-
+-export function commitDomain(
+-  instance: Instance,
+-  labelRaw: string,
+-  puzzles: { givens: readonly number[]; candidate: readonly number[] }[],
+-  topology: Topology = topologyFor(instance.g),
+-): { ok: true; instance: Instance; domain: Domain; mailbox: Mailbox } | { ok: false; reason: string } {
+-  const allowed = issuanceAllowed(instance.g);
+-  if (!allowed.ok) return allowed;
+-  const label = normalizeLabel(labelRaw);
+-  if (!label.ok) return label;
+-  if (instance.domains.some((domain) => domain.label === label.label)) {
+-    return { ok: false, reason: "That local domain already exists." };
+-  }
+-  if (puzzles.length !== allowed.puzzles) {
+-    return { ok: false, reason: `Ordinal ${instance.g} requires ${allowed.puzzles} verified puzzles.` };
+-  }
+-  for (const puzzle of puzzles) {
+-    const verdict = verifyCandidate(puzzle.givens, puzzle.candidate, topology);
+-    if (!verdict.ok) return verdict;
+-    if (!inBand(instance.g, puzzle.givens, topology)) {
+-      return { ok: false, reason: "A puzzle is outside the certified score band." };
+-    }
+-  }
+-  const domain: Domain = {
+-    id: `dom-${instance.domains.length + 1}`,
+-    label: label.label,
+-    address: domainAddress(label.label),
+-    ordinal: instance.g,
+-  };
+-  const mailbox: Mailbox = {
+-    id: `box-${instance.mailboxes.length + 1}`,
+-    domainId: domain.id,
+-    address: `owner@${domain.address}`,
+-    role: "owner",
+-  };
+-  return {
+-    ok: true,
+-    domain,
+-    mailbox,
+-    instance: {
+-      ...instance,
+-      g: instance.g + 1,
+-      domains: [...instance.domains, domain],
+-      mailboxes: [...instance.mailboxes, mailbox],
+-    },
+-  };
+-}
+-
+-export function issuePermit(
+-  instance: Instance,
+-  draft: FrozenDraft,
+-  puzzles: { givens: readonly number[]; candidate: readonly number[] }[],
+-  topology: Topology = topologyFor(instance.g),
+-): { ok: true; instance: Instance; permit: Permit } | { ok: false; reason: string } {
+-  const allowed = issuanceAllowed(instance.g);
+-  if (!allowed.ok) return allowed;
+-  if (puzzles.length !== allowed.puzzles) {
+-    return { ok: false, reason: `Ordinal ${instance.g} requires ${allowed.puzzles} verified puzzles.` };
+-  }
+-  for (const puzzle of puzzles) {
+-    const verdict = verifyCandidate(puzzle.givens, puzzle.candidate, topology);
+-    if (!verdict.ok) return verdict;
+-    if (!inBand(instance.g, puzzle.givens, topology)) {
+-      return { ok: false, reason: "A puzzle is outside the certified score band." };
+-    }
+-  }
+-  const existing = instance.permits.find((permit) => permit.draftDigest === draft.digest && permit.sender === draft.from);
+-  if (existing) return { ok: true, instance, permit: existing };
+-  const permit: Permit = {
+-    id: `env-${instance.permits.length + 1}`,
+-    ordinal: instance.g,
+-    sender: draft.from,
+-    draftDigest: draft.digest,
+-    recipients: draft.to,
+-    bcc: draft.bcc,
+-    state: "READY",
+-    draft,
+-  };
+-  return {
+-    ok: true,
+-    permit,
+-    instance: { ...instance, g: instance.g + 1, permits: [...instance.permits, permit] },
+-  };
+-}
+-
+-export function sendLocal(
+-  instance: Instance,
+-  permitId: string,
+-  draft: FrozenDraft,
+-): { ok: true; instance: Instance } | { ok: false; reason: string } {
+-  const permit = instance.permits.find((item) => item.id === permitId);
+-  if (!permit) return { ok: false, reason: "No envelope permit." };
+-  if (permit.draftDigest !== draft.digest || permit.sender !== draft.from) {
+-    return { ok: false, reason: "This permit is bound to a different frozen draft." };
+-  }
+-  if (instance.spentPermits.includes(permit.id) || permit.state !== "READY") {
+-    return { ok: true, instance };
+-  }
+-  const recipients = [...new Set([...permit.recipients, ...permit.bcc])];
+-  const deliveries: Delivery[] = recipients.map((mailbox, index) => ({
+-    id: `${permit.id}-${index}`,
+-    permitId: permit.id,
+-    mailbox,
+-    from: draft.from,
+-    to: draft.to,
+-    subject: draft.subject,
+-    body: draft.body,
+-  }));
+-  return {
+-    ok: true,
+-    instance: {
+-      ...instance,
+-      spentPermits: [...instance.spentPermits, permit.id],
+-      permits: instance.permits.map((item) => (item.id === permit.id ? { ...item, state: "DELIVERED_LOCAL" as const } : item)),
+-      deliveries: [...instance.deliveries, ...deliveries],
+-    },
+-  };
+-}
+--- provenance/glyphoku-source/lib/glyphoku/rules.ts
++++ src/lib/glyphoku/rules.ts
+@@ -1,246 +1,78 @@
+-/** Glyphoku houses: each glyph once per row, column, and box. */
+-
+-export type Topology = {
+-  order: number;
+-  boxRows: number;
+-  boxCols: number;
+-};
+-
+-/** The desk plays the 16×16 cipher. Smaller rungs are easier and are not dealt. */
+-export const PLAYED: Topology = { order: 16, boxRows: 4, boxCols: 4 };
+-
+-export const HORIZON_G = 2;
+-
+-export function topologyFor(_ordinal: number): Topology {
+-  return PLAYED;
++/** Locked Glyphoku 16x16 policy. Search uncertainty is never unique-completion evidence. */
++export type Topology = {order:number;boxRows:number;boxCols:number};
++export const PLAYED:Readonly<Topology> = Object.freeze({order:16,boxRows:4,boxCols:4});
++export const HORIZON_G=2;
++export const PREPARATION=Object.freeze({wallMs:45000,nodeLimit:25000000,attempts:64,uniquenessNodes:250000,fillNodes:100000});
++export function topologyFor(_g:number):Topology{return PLAYED;}
++export function cellCount(t:Topology):number{return t.order*t.order;}
++export function exactTopology(t:Topology):boolean{return !!t&&t.order===16&&t.boxRows===4&&t.boxCols===4;}
++export function puzzlesRequired(g:number):number{if(!Number.isInteger(g)||g<1||g>12)throw new Error('INVALID_ORDINAL');return 2**(g-1);}
++export function issuanceAllowed(g:number):{ok:true;puzzles:number}|{ok:false;code:string;reason:string}{
++ if(!Number.isInteger(g)||g<1)return {ok:false,code:'INVALID_ORDINAL',reason:'Ordinal must be a positive integer.'};
++ if(g>HORIZON_G)return {ok:false,code:'ISSUANCE_PAUSED',reason:`Issuance is paused at g=${g}. Existing permits and mail remain usable; this profile stops after g=2.`};
++ return {ok:true,puzzles:puzzlesRequired(g)};
+ }
+-
+-export function cellCount(topology: Topology): number {
+-  return topology.order * topology.order;
++export function scoreBand(g:number){if(g===1)return {low:124,high:132};if(g===2)return {low:133,high:140};throw new Error('ISSUANCE_PAUSED');}
++export function eventPolicy(g:number){scoreBand(g);return {cap:g===1?12000:18000,minGuesses:g===1?8:12,minRetractions:g===1?0:1};}
++export function boxOf(i:number,t:Topology=PLAYED){return Math.floor(Math.floor(i/t.order)/t.boxRows)*(t.order/t.boxCols)+Math.floor((i%t.order)/t.boxCols);}
++export function validateGivens(g:readonly number[],t:Topology=PLAYED):{ok:true}|{ok:false;code:string;reason:string}{
++ if(!exactTopology(t))return {ok:false,code:'INVALID_TOPOLOGY',reason:'Only the 16x16, 4x4-box profile is admitted.'};
++ if(!Array.isArray(g)||g.length!==256)return {ok:false,code:'INVALID_GIVEN',reason:'Exactly 256 givens are required.'};
++ const rows=new Uint32Array(16),cols=new Uint32Array(16),boxes=new Uint32Array(16);
++ for(let i=0;i<256;i++){const v=g[i];if(!Number.isInteger(v)||v!<0||v!>16)return {ok:false,code:'INVALID_GIVEN',reason:'Given values must be integer indexes 0..16.'};if(!v)continue;
++ const r=i>>4,c=i%16,b=boxOf(i),bit=1<<(v-1);if((rows[r]!|cols[c]!|boxes[b]!)&bit)return {ok:false,code:'INVALID_GIVEN',reason:'A given repeats in a row, column or box.'};rows[r]!|=bit;cols[c]!|=bit;boxes[b]!|=bit;}
++ return {ok:true};
+ }
+-
+-export function puzzlesRequired(ordinal: number): number {
+-  if (!Number.isInteger(ordinal) || ordinal < 1 || ordinal > 12) {
+-    throw new Error("ordinal is outside the exact integer range");
+-  }
+-  return 2 ** (ordinal - 1);
++export function inBand(g:number,givens:readonly number[],t:Topology=PLAYED):boolean{if(!validateGivens(givens,t).ok)return false;const b=scoreBand(g),n=givens.filter(x=>x===0).length;return n>=b.low&&n<=b.high;}
++export function verifyCandidate(givens:readonly number[],candidate:readonly number[],t:Topology=PLAYED):{ok:true}|{ok:false;code:string;reason:string}{
++ const input=validateGivens(givens,t);if(!input.ok)return input;
++ if(!Array.isArray(candidate)||candidate.length!==256)return {ok:false,code:'INVALID_CANDIDATE',reason:'Exactly 256 candidate cells are required.'};
++ for(let i=0;i<256;i++){if(!Number.isInteger(candidate[i])||candidate[i]!<1||candidate[i]!>16)return {ok:false,code:'INVALID_CANDIDATE',reason:'Candidate values must be integer indexes 1..16.'};if(givens[i]!==0&&candidate[i]!==givens[i])return {ok:false,code:'GIVEN_CHANGED',reason:'A given was changed.'};}
++ const check=validateGivens(candidate,t);return check.ok?check:{ok:false,code:'INVALID_CANDIDATE',reason:check.reason};
+ }
+-
+-export function issuanceAllowed(ordinal: number): { ok: true; puzzles: number } | { ok: false; reason: string } {
+-  if (!Number.isInteger(ordinal) || ordinal < 1) return { ok: false, reason: "Ordinal is not a positive integer." };
+-  if (ordinal > HORIZON_G) {
+-    return {
+-      ok: false,
+-      reason: `Issuance is paused at ordinal ${ordinal}. This profile has measured support only through g=${HORIZON_G} (${puzzlesRequired(HORIZON_G)} puzzles).`,
+-    };
+-  }
+-  return { ok: true, puzzles: puzzlesRequired(ordinal) };
++export function popcount(x:number){x>>>=0;x-=x>>>1&0x55555555;x=(x&0x33333333)+(x>>>2&0x33333333);return (((x+(x>>>4))&0x0f0f0f0f)*0x01010101)>>>24;}
++export type SearchResult={status:'COMPLETE_ZERO'|'COMPLETE_ONE'|'AT_LEAST_TWO'|'INVALID_INPUT'|'BUDGET_EXHAUSTED';found:number;nodes:number;complete:boolean;reason?:string};
++export type SearchBudget={nodeLimit?:number;deadline?:number;consume?:(n:number)=>void};
++export function analyzeSolutions(givens:readonly number[],t:Topology=PLAYED,budget:SearchBudget={}):SearchResult{
++ const valid=validateGivens(givens,t);if(!valid.ok)return {status:'INVALID_INPUT',found:0,nodes:0,complete:false,reason:valid.reason};
++ const nodeLimit=budget.nodeLimit??250000,deadline=budget.deadline??Infinity;
++ if(!Number.isSafeInteger(nodeLimit)||nodeLimit<0)return {status:'INVALID_INPUT',found:0,nodes:0,complete:false,reason:'Invalid node limit'};
++ const rows=new Uint32Array(16),cols=new Uint32Array(16),boxes=new Uint32Array(16),empties:number[]=[];
++ for(let i=0;i<256;i++){const v=givens[i]!;if(!v)empties.push(i);else{const bit=1<<(v-1);rows[i>>4]!|=bit;cols[i%16]!|=bit;boxes[boxOf(i)]!|=bit;}}
++ let found=0,nodes=0,exhausted=false;
++ function walk(cursor:number):void{
++  if(exhausted||found>=2)return;
++  if(nodes>=nodeLimit||Date.now()>deadline){exhausted=true;return;}nodes++;budget.consume?.(1);
++  if(cursor===empties.length){found++;return;}
++  let best=cursor,bestCount=17;
++  for(let j=cursor;j<empties.length;j++){const i=empties[j]!,count=popcount(65535&~(rows[i>>4]!|cols[i%16]!|boxes[boxOf(i)]!));if(count<bestCount){best=j;bestCount=count;if(count<=1)break;}}
++  if(bestCount===0)return;
++  [empties[cursor],empties[best]]=[empties[best]!,empties[cursor]!];
++  const i=empties[cursor]!,r=i>>4,c=i%16,b=boxOf(i);let mask=65535&~(rows[r]!|cols[c]!|boxes[b]!);
++  while(mask&&!exhausted&&found<2){const bit=mask&-mask;mask^=bit;rows[r]!|=bit;cols[c]!|=bit;boxes[b]!|=bit;walk(cursor+1);rows[r]!^=bit;cols[c]!^=bit;boxes[b]!^=bit;}
++  [empties[cursor],empties[best]]=[empties[best]!,empties[cursor]!];
++ }
++ walk(0);return {status:found>=2?'AT_LEAST_TWO':exhausted?'BUDGET_EXHAUSTED':found===1?'COMPLETE_ONE':'COMPLETE_ZERO',found,nodes,complete:!exhausted&&found<2};
+ }
+-
+-/** Empty cells on the 16×16 cipher. g=2 sits above g=1, at the rulebook's hard line. */
+-export function scoreBand(ordinal: number): { low: number; high: number } {
+-  if (ordinal === 1) return { low: 124, high: 132 };
+-  if (ordinal === 2) return { low: 133, high: 140 };
+-  throw new Error("no certified score band for this ordinal");
++/** Compatibility helper. Unknown/invalid is deliberately non-unique. */
++export function countSolutions(g:readonly number[],t:Topology=PLAYED,_limit=2):number{const r=analyzeSolutions(g,t);return r.status==='COMPLETE_ONE'?1:r.status==='COMPLETE_ZERO'?0:2;}
++export function seededRandom(seed:number){let s=seed>>>0||1;return()=>{s=(Math.imul(s,1664525)+1013904223)>>>0;return s/4294967296;};}
++export function shuffled<T>(a:readonly T[],rng:()=>number):T[]{const out=[...a];for(let i=out.length-1;i>0;i--){const j=Math.floor(rng()*(i+1));[out[i],out[j]]=[out[j]!,out[i]!];}return out;}
++export type DealBudget={deadline:number;nodeLimit:number;nodes:number};
++export function spendWork(b:DealBudget,n=1){b.nodes+=n;if(b.nodes>b.nodeLimit||Date.now()>b.deadline)throw new Error('PREPARATION_BUDGET_EXCEEDED');}
++/** Randomized MRV full-grid construction; recursion and wall time are explicitly bounded. */
++function fill(rng:()=>number,budget:DealBudget):number[]{
++ const board=Array(256).fill(0),rows=new Uint32Array(16),cols=new Uint32Array(16),boxes=new Uint32Array(16);
++ let fillNodes=0;function walk(left:number):boolean{spendWork(budget);if(++fillNodes>PREPARATION.fillNodes)throw new Error('PREPARATION_FILL_LIMIT');if(!left)return true;let best=-1,mask=0,min=17;
++  for(let i=0;i<256;i++)if(!board[i]){const m=65535&~(rows[i>>4]!|cols[i%16]!|boxes[boxOf(i)]!),c=popcount(m);if(c<min){min=c;mask=m;best=i;if(c<=1)break;}}
++  if(!min||best<0)return false;const bits:number[]=[];while(mask){const bit=mask&-mask;mask^=bit;bits.push(bit);}const r=best>>4,c=best%16,b=boxOf(best);
++  for(const bit of shuffled(bits,rng)){board[best]=32-Math.clz32(bit);rows[r]!|=bit;cols[c]!|=bit;boxes[b]!|=bit;if(walk(left-1))return true;board[best]=0;rows[r]!^=bit;cols[c]!^=bit;boxes[b]!^=bit;}return false;
++ }
++ if(!walk(256))throw new Error('PREPARATION_NO_FILL');return board;
+ }
+-
+-export function inBand(ordinal: number, givens: readonly number[], topology: Topology = topologyFor(ordinal)): boolean {
+-  const band = scoreBand(ordinal);
+-  const empty = givens.filter((value) => value === 0).length;
+-  return empty >= band.low && empty <= band.high && givens.length === cellCount(topology);
++export function dealGivens(g:number,seed:number,t:Topology=PLAYED,shared?:DealBudget):number[]{
++ if(!exactTopology(t))throw new Error('INVALID_TOPOLOGY');const band=scoreBand(g),rng=seededRandom(seed),budget=shared??{deadline:Date.now()+PREPARATION.wallMs,nodeLimit:PREPARATION.nodeLimit,nodes:0};
++ const givens=fill(rng,budget);let empty=0;
++ for(const i of shuffled(Array.from({length:256},(_,i)=>i),rng)){spendWork(budget);if(empty>=band.high)break;const v=givens[i]!;givens[i]=0;const r=analyzeSolutions(givens,PLAYED,{nodeLimit:PREPARATION.uniquenessNodes,deadline:budget.deadline,consume:n=>spendWork(budget,n)});if(r.status==='COMPLETE_ONE')empty++;else givens[i]=v;}
++ if(empty<band.low)throw new Error('PREPARATION_NO_BAND');return givens;
+ }
+-
+-function boxOf(index: number, topology: Topology): number {
+-  const row = Math.floor(index / topology.order);
+-  const col = index % topology.order;
+-  const boxRow = Math.floor(row / topology.boxRows);
+-  const boxCol = Math.floor(col / topology.boxCols);
+-  const boxesAcross = topology.order / topology.boxCols;
+-  return boxRow * boxesAcross + boxCol;
+-}
+-
+-export function verifyCandidate(
+-  givens: readonly number[],
+-  candidate: readonly number[],
+-  topology: Topology = PLAYED,
+-): { ok: true } | { ok: false; reason: string } {
+-  const n = cellCount(topology);
+-  if (givens.length !== n || candidate.length !== n) return { ok: false, reason: "Grid size does not match the topology." };
+-  const rows = Array.from({ length: topology.order }, () => new Set<number>());
+-  const cols = Array.from({ length: topology.order }, () => new Set<number>());
+-  const boxes = Array.from({ length: topology.order }, () => new Set<number>());
+-  for (let index = 0; index < n; index++) {
+-    const given = givens[index]!;
+-    const value = candidate[index]!;
+-    if (!Number.isInteger(value) || value < 1 || value > topology.order) return { ok: false, reason: "A cell is outside the glyph set." };
+-    if (given !== 0 && given !== value) return { ok: false, reason: "A given glyph was changed." };
+-    const row = Math.floor(index / topology.order);
+-    const col = index % topology.order;
+-    const box = boxOf(index, topology);
+-    if (rows[row]!.has(value) || cols[col]!.has(value) || boxes[box]!.has(value)) {
+-      return { ok: false, reason: "A row, column, or box repeats a glyph." };
+-    }
+-    rows[row]!.add(value);
+-    cols[col]!.add(value);
+-    boxes[box]!.add(value);
+-  }
+-  return { ok: true };
+-}
+-
+-function popcount(value: number): number {
+-  let x = value >>> 0;
+-  x -= (x >>> 1) & 0x55555555;
+-  x = (x & 0x33333333) + ((x >>> 2) & 0x33333333);
+-  return (((x + (x >>> 4)) & 0x0f0f0f0f) * 0x01010101) >>> 24;
+-}
+-
+-/** Unique-completion count. Stops at 2. A search that runs away is treated as not unique. */
+-export function countSolutions(givens: readonly number[], topology: Topology = PLAYED, limit = 2): number {
+-  const n = topology.order;
+-  const full = (1 << n) - 1;
+-  const rows = Array(n).fill(0);
+-  const cols = Array(n).fill(0);
+-  const boxes = Array(n).fill(0);
+-  const empties: number[] = [];
+-  for (let index = 0; index < givens.length; index++) {
+-    const value = givens[index]!;
+-    const row = Math.floor(index / n);
+-    const col = index % n;
+-    const box = boxOf(index, topology);
+-    if (value === 0) empties.push(index);
+-    else {
+-      const bit = 1 << (value - 1);
+-      rows[row] |= bit;
+-      cols[col] |= bit;
+-      boxes[box] |= bit;
+-    }
+-  }
+-  let found = 0;
+-  let nodes = 0;
+-  const walk = (cursor: number): void => {
+-    if (found >= limit || nodes > 250000) return;
+-    if (cursor === empties.length) {
+-      found++;
+-      return;
+-    }
+-    nodes++;
+-    let best = cursor;
+-    let bestBits = 99;
+-    for (let look = cursor; look < empties.length; look++) {
+-      const index = empties[look]!;
+-      const row = Math.floor(index / n);
+-      const col = index % n;
+-      const box = boxOf(index, topology);
+-      const bits = popcount(full & ~(rows[row]! | cols[col]! | boxes[box]!));
+-      if (bits < bestBits) {
+-        bestBits = bits;
+-        best = look;
+-        if (bits <= 1) break;
+-      }
+-    }
+-    if (bestBits === 0) return;
+-    if (best !== cursor) {
+-      const swap = empties[cursor]!;
+-      empties[cursor] = empties[best]!;
+-      empties[best] = swap;
+-    }
+-    const index = empties[cursor]!;
+-    const row = Math.floor(index / n);
+-    const col = index % n;
+-    const box = boxOf(index, topology);
+-    let mask = full & ~(rows[row]! | cols[col]! | boxes[box]!);
+-    while (mask) {
+-      const bit = mask & -mask;
+-      mask ^= bit;
+-      rows[row] |= bit;
+-      cols[col] |= bit;
+-      boxes[box] |= bit;
+-      walk(cursor + 1);
+-      rows[row] ^= bit;
+-      cols[col] ^= bit;
+-      boxes[box] ^= bit;
+-      if (found >= limit) return;
+-    }
+-  };
+-  walk(0);
+-  return nodes > 250000 && found < 1 ? 2 : found;
+-}
+-
+-function random(seed: number): () => number {
+-  let state = seed >>> 0 || 1;
+-  return () => {
+-    state = (Math.imul(state, 1664525) + 1013904223) >>> 0;
+-    return state / 4294967296;
+-  };
+-}
+-
+-function shuffled<T>(values: T[], rng: () => number): T[] {
+-  const copy = values.slice();
+-  for (let i = copy.length - 1; i > 0; i--) {
+-    const j = Math.floor(rng() * (i + 1));
+-    const swap = copy[i]!;
+-    copy[i] = copy[j]!;
+-    copy[j] = swap;
+-  }
+-  return copy;
+-}
+-
+-function candidatesOf(board: readonly number[], index: number, topology: Topology): number[] {
+-  if (board[index] !== 0) return [];
+-  const used = new Set<number>();
+-  const row = Math.floor(index / topology.order);
+-  const col = index % topology.order;
+-  const box = boxOf(index, topology);
+-  for (let i = 0; i < board.length; i++) {
+-    const value = board[i]!;
+-    if (value === 0) continue;
+-    const sameRow = Math.floor(i / topology.order) === row;
+-    const sameCol = i % topology.order === col;
+-    const sameBox = boxOf(i, topology) === box;
+-    if (sameRow || sameCol || sameBox) used.add(value);
+-  }
+-  const out: number[] = [];
+-  for (let value = 1; value <= topology.order; value++) if (!used.has(value)) out.push(value);
+-  return out;
+-}
+-
+-function fill(topology: Topology, rng: () => number): number[] | null {
+-  const board = Array.from({ length: cellCount(topology) }, () => 0);
+-  const walk = (index: number): boolean => {
+-    if (index === board.length) return true;
+-    let next = index;
+-    while (next < board.length && board[next] !== 0) next++;
+-    if (next === board.length) return true;
+-    for (const value of shuffled(candidatesOf(board, next, topology), rng)) {
+-      board[next] = value;
+-      if (walk(next + 1)) return true;
+-      board[next] = 0;
+-    }
+-    return false;
+-  };
+-  return walk(0) ? board : null;
+-}
+-
+-/**
+- * Deal a unique 16×16 cipher at the hard end of the ordinal's band.
+- * The finished grid used to punch givens is discarded.
+- */
+-export function dealGivens(ordinal: number, seed: number, topology: Topology = topologyFor(ordinal)): number[] {
+-  const band = scoreBand(ordinal);
+-  const rng = random(seed || 1);
+-  const solved = fill(topology, rng);
+-  if (!solved) throw new Error("the dealer could not fill a cipher");
+-  const givens = solved.slice();
+-  let empty = 0;
+-  for (const index of shuffled(givens.map((_, cell) => cell), rng)) {
+-    if (empty >= band.high) break;
+-    const saved = givens[index]!;
+-    givens[index] = 0;
+-    if (countSolutions(givens, topology, 2) !== 1) givens[index] = saved;
+-    else empty++;
+-  }
+-  if (!inBand(ordinal, givens, topology)) {
+-    throw new Error("the dealer could not reach the hard cipher band");
+-  }
+-  return givens;
+-}
+--- provenance/glyphoku-source/lib/glyphoku/solver.ts
++++ src/lib/glyphoku/solver.ts
+@@ -1,4 +1,4 @@
+-import { cellCount, verifyCandidate, type Topology } from "./rules";
++import { cellCount, verifyCandidate, validateGivens, boxOf, type Topology } from "./rules.ts";
+ 
+ export type SolveEventType =
+   | "INIT"
+@@ -30,7 +30,8 @@
+  */
+ export function createSolver(givens: readonly number[], topology: Topology) {
+   const n = cellCount(topology);
+-  if (givens.length !== n) throw new Error("givens do not match the topology");
++  const valid = validateGivens(givens, topology);
++  if (!valid.ok) throw new Error(valid.code+": "+valid.reason);
+   const board = givens.slice();
+   const kind: Kind[] = givens.map((value) => (value === 0 ? "empty" : "given"));
+   const root: Placement[] = [];
+@@ -41,30 +42,18 @@
+   let phase: "init" | "search" | "contradict" | "retry" | "done" = "init";
+   let outcome: "solved" | "exhausted" | null = null;
+ 
+-  function candidates(index: number): number[] {
+-    if (board[index] !== 0) return [];
+-    const used = new Set<number>();
+-    const row = Math.floor(index / topology.order);
+-    const col = index % topology.order;
+-    const box =
+-      Math.floor(row / topology.boxRows) * (topology.order / topology.boxCols) +
+-      Math.floor(col / topology.boxCols);
+-    for (let i = 0; i < n; i++) {
+-      const value = board[i]!;
+-      if (!value) continue;
+-      const r = Math.floor(i / topology.order);
+-      const c = i % topology.order;
+-      const b =
+-        Math.floor(r / topology.boxRows) * (topology.order / topology.boxCols) + Math.floor(c / topology.boxCols);
+-      if (r === row || c === col || b === box) used.add(value);
+-    }
+-    const values: number[] = [];
+-    for (let value = topology.order; value >= 1; value--) if (!used.has(value)) values.push(value);
++  const rows = new Uint32Array(16), cols = new Uint32Array(16), boxes = new Uint32Array(16);
++  for(let i=0;i<n;i++) if(board[i]) { const bit=1<<(board[i]!-1); rows[i>>4]!|=bit; cols[i%16]!|=bit; boxes[boxOf(i)]!|=bit; }
++  function candidates(index:number):number[]{
++    if(board[index]!==0)return [];
++    const mask=65535 & ~(rows[index>>4]! | cols[index%16]! | boxes[boxOf(index)]!);
++    const values:number[]=[]; for(let value=16;value>=1;value--)if(mask & (1<<(value-1)))values.push(value);
+     return values;
+   }
+ 
+   function place(cell: number, value: number, placementKind: "derived" | "guess", into: Placement[]) {
+     board[cell] = value;
++    const bit=1<<(value-1); rows[cell>>4]!|=bit; cols[cell%16]!|=bit; boxes[boxOf(cell)]!|=bit;
+     kind[cell] = placementKind;
+     into.push({ cell, value });
+   }
+@@ -92,6 +81,7 @@
+ 
+   return {
+     givens: givens.slice(),
++    candidates,
+     snapshot() {
+       return { board: board.slice(), kind: kind.slice(), depth: stack.length, nodes, outcome };
+     },
+@@ -123,6 +113,7 @@
+           stack.pop();
+           return event("RETRACT", frame.cell, 0, 0, "BACKTRACK");
+         }
++        const bit=1<<(last.value-1); rows[last.cell>>4]!^=bit; cols[last.cell%16]!^=bit; boxes[boxOf(last.cell)]!^=bit;
+         board[last.cell] = 0;
+         kind[last.cell] = "empty";
+         if (frame.placed.length === 0) {
+--- provenance/vexa-source/http.mjs
++++ src/http.mjs
+@@ -1,10 +1,14 @@
+ import http from 'node:http';import fs from 'node:fs';import path from 'node:path';
++import {GlyphokuService,CONFIG} from './glyphoku-service.mjs';
++import {RegistryError} from '../desk/modules/lib/glyphoku/registry.js';
+ import {MailError,demand,DEFAULTS,PROFILE,BRANCHES}from './policy.mjs';import {VERSION}from './store.mjs';import {networkPolicy}from './guard.mjs';import {toEml}from './mime.mjs';
++const DESK=path.resolve(import.meta.dirname,'../desk');
+ const WEB=path.resolve(import.meta.dirname,'../web');
+ const headers={'Content-Security-Policy':"default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'self' data:; font-src 'none'; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'",'X-Content-Type-Options':'nosniff','X-Frame-Options':'DENY','Referrer-Policy':'no-referrer','Cross-Origin-Opener-Policy':'same-origin','Cross-Origin-Resource-Policy':'same-origin','Cache-Control':'no-store'};
+ function readBody(req){return new Promise((resolve,reject)=>{const chunks=[];let bytes=0;req.on('data',b=>{bytes+=b.length;if(bytes>1200000){reject(new MailError('SIZE','Request too large',413));req.destroy();return}chunks.push(b)});req.on('end',()=>{try{resolve(JSON.parse(Buffer.concat(chunks).toString('utf8')||'{}'))}catch{reject(new MailError('JSON','Malformed JSON'))}});req.on('error',reject)})}
+-export async function startHttp(store,{port=8787,host='127.0.0.1',smtpPort=2525,onShutdown=()=>{}}={}){
+- demand(host==='127.0.0.1','BIND','Only literal 127.0.0.1 is allowed');let boundPort;const sockets=new Set();
++export async function startHttp(store,{port=8787,host='127.0.0.1',smtpPort=2525,onShutdown=()=>{},glyphokuOptions={}}={}){
++ demand(host==='127.0.0.1','BIND','Only literal 127.0.0.1 is allowed');let boundPort;const sockets=new Set(),glyphoku=new GlyphokuService(store,glyphokuOptions);
++ const deskFiles=new Map();function catalog(dir){for(const d of fs.readdirSync(dir,{withFileTypes:true})){const f=path.join(dir,d.name);if(d.isDirectory())catalog(f);else if(d.isFile()&&/\.(html|css|js|json)$/.test(f))deskFiles.set('/desk/'+path.relative(DESK,f).replaceAll('\\','/'),f);}}if(fs.existsSync(DESK))catalog(DESK);
+  const server=http.createServer({maxHeaderSize:16384,requestTimeout:15000,headersTimeout:10000},async(req,res)=>{
+   const send=(status,data,type='application/json')=>{if(res.destroyed||res.writableEnded)return;res.writeHead(status,{...headers,'Content-Type':type});res.end(type==='application/json'?JSON.stringify(data):data)};
+   try{
+@@ -13,11 +17,16 @@
+    demand(!['cross-site','same-site'].includes(req.headers['sec-fetch-site']),'CROSS_SITE','Cross-site request refused',403);
+    demand(req.method==='GET'||req.method==='POST','METHOD','Method not allowed',405);
+    const u=new URL(req.url,'http://127.0.0.1:'+boundPort),r=u.pathname;
+-   if(req.method==='GET'&&['/','/app.js','/session.mjs','/styles.css'].includes(r)){const file=r==='/'?'index.html':r.slice(1);return send(200,fs.readFileSync(path.join(WEB,file)),r==='/'?'text/html; charset=utf-8':(r.endsWith('.js')||r.endsWith('.mjs'))?'text/javascript; charset=utf-8':'text/css; charset=utf-8')}
+-   if(req.method==='GET'&&r==='/health')return send(200,{ok:true,version:VERSION,profile:PROFILE,host:'127.0.0.1',http_port:boundPort,smtp_port:smtpPort,network:networkPolicy});
++   if(req.method==='GET'&&(r==='/'||deskFiles.has(r))){const file=r==='/'?path.join(DESK,'index.html'):deskFiles.get(r);demand(fs.existsSync(file),'NOT_FOUND','Local UI build unavailable',404);return send(200,fs.readFileSync(file),file.endsWith('.html')?'text/html; charset=utf-8':file.endsWith('.css')?'text/css; charset=utf-8':'text/javascript; charset=utf-8');}
++   if(req.method==='GET'&&['/mail/','/app.js','/session.mjs','/styles.css'].includes(r)){const file=r==='/mail/'?'index.html':r.slice(1);return send(200,fs.readFileSync(path.join(WEB,file)),r==='/mail/'?'text/html; charset=utf-8':(r.endsWith('.js')||r.endsWith('.mjs'))?'text/javascript; charset=utf-8':'text/css; charset=utf-8')}
++   if(req.method==='GET'&&r==='/health')return send(200,{ok:true,version:VERSION,profile:PROFILE,host:'127.0.0.1',http_port:boundPort,smtp_port:smtpPort,network:networkPolicy,glyphoku:CONFIG});
+    const bearer=req.headers.authorization;demand(typeof bearer==='string'&&bearer.startsWith('Bearer '),'AUTH','Bearer token required',401);const tok=bearer.slice(7);store.authenticate(tok);
+    if(req.method==='GET'){
+     if(r==='/api/mailbox-page')return send(200,store.page(tok,{folder:u.searchParams.get('folder')??'INBOX',limit:u.searchParams.has('limit')?Number(u.searchParams.get('limit')):25,before:u.searchParams.get('before'),head:u.searchParams.get('head')}));
++    if(r==='/api/glyphoku/mail')return send(200,glyphoku.mail(tok));
++    if(r==='/api/glyphoku/state')return send(200,glyphoku.view(tok));
++    if(r==='/api/glyphoku/operation')return send(200,glyphoku.operation(tok,u.searchParams.get('id')));
++    if(r==='/api/glyphoku/trace')return send(200,glyphoku.trace(tok,u.searchParams.get('id')));
+     if(r==='/api/me')return send(200,store.me(tok));
+     if(r==='/api/messages')return send(200,store.list(tok,u.searchParams.get('folder')??'INBOX'));
+     if(r==='/api/directory')return send(200,store.directory(tok));
+@@ -30,6 +39,11 @@
+     if(match){const m=store.message(tok,match[1]);if(match[2]==='eml'){res.setHeader('Content-Disposition','attachment; filename="'+m.message_id+'.eml"');return send(200,toEml(m),'application/octet-stream')}if(match[2]==='attachment'){const a=m.attachments[Number(match[3])];demand(a,'NOT_FOUND','Attachment not found',404);res.setHeader('Content-Disposition',"attachment; filename*=UTF-8''"+encodeURIComponent(a.name));return send(200,Buffer.from(a.data,'base64'),'application/octet-stream')}return send(200,m)}
+    }else{
+     demand((req.headers['content-type']??'').split(';')[0]==='application/json'&&req.headers['x-bve-request']==='1','CONTENT_TYPE','JSON and X-BVE-Request: 1 are required',415);const input=await readBody(req);demand(input&&typeof input==='object'&&!Array.isArray(input),'JSON','Expected a JSON object');
++    const games={'start':'start','poll':'poll','ack':'ack','advance':'advance','control':'control','commit':'commit','send':'send'};
++    const gameName=r.startsWith('/api/glyphoku/')?r.slice('/api/glyphoku/'.length):null;
++    if(gameName&&Object.hasOwn(games,gameName))return send(200,glyphoku[games[gameName]](tok,input));
++    if(r==='/api/glyphoku/abandon')return send(200,glyphoku.abandon(tok));
++    if(r==='/api/glyphoku/credential')return send(200,glyphoku.credential(tok));
+     if(r==='/api/quote')return send(200,store.quote(tok,input));
+     if(r==='/api/stamps')return send(201,store.issue(tok,input));
+     if(r==='/api/send')return send(201,store.send(tok,input));
+@@ -47,9 +61,9 @@
+     if(r==='/api/admin/shutdown'){store.operator(tok,store.state());send(200,{stopping:true});setTimeout(onShutdown,100);return}
+    }
+    send(404,{error:'NOT_FOUND',message:'No such endpoint'});
+-  }catch(e){if(e instanceof MailError)send(e.http,{error:e.code,message:e.message});else send(500,{error:'INTERNAL',message:'Operation failed; no success claimed. Inspect local verification.'})}
++  }catch(e){if(e instanceof RegistryError)send(409,{error:e.code,message:e.message});else if(e instanceof MailError)send(e.http,{error:e.code,message:e.message});else send(500,{error:'INTERNAL',message:'Operation failed; no success claimed. Inspect local verification.'})}
+  });
+  server.on('connection',s=>{sockets.add(s);s.on('close',()=>sockets.delete(s))});server.maxConnections=32;server.keepAliveTimeout=5000;server.on('clientError',(_,s)=>s.end('HTTP/1.1 400 Bad Request\r\nConnection: close\r\n\r\n'));
+- await new Promise((resolve,reject)=>{server.once('error',reject);server.listen(port,host,resolve)});boundPort=server.address().port;
+- return {server,port:boundPort,close:()=>new Promise(resolve=>{for(const s of sockets)s.destroy();server.close(resolve)})};
++ try{await new Promise((resolve,reject)=>{server.once('error',reject);server.listen(port,host,resolve)});}catch(e){glyphoku.close();throw e;}boundPort=server.address().port;
++ return {server,port:boundPort,close:()=>new Promise(resolve=>{glyphoku.close();for(const s of sockets)s.destroy();server.close(resolve)})};
+ }
+--- provenance/vexa-source/main.mjs
++++ src/main.mjs
+@@ -7,7 +7,7 @@
+  }}throw new Error('Could not acquire state lock')}
+ export async function serve({root=path.join(ROOT,'state'),httpPort=8787,smtpPort=2525}={}){
+  const release=lock(root);let store,smtp,web,stopping=false;const stop=async()=>{if(stopping)return;stopping=true;await Promise.all([web?.close(),smtp?.close()]);store?.close();try{fs.unlinkSync(path.join(root,'listener.json'))}catch{}release()};
+- try{store=new Store(root);smtp=await startSmtp(store,{port:smtpPort});web=await startHttp(store,{port:httpPort,smtpPort:smtp.port,onShutdown:stop});const info={version:VERSION,profile:'LOCAL127_CREDIT_V1',pid:process.pid,http:{host:'127.0.0.1',port:web.port},smtp:{host:'127.0.0.1',port:smtp.port},chain_id:store.state().chain_id};fs.writeFileSync(path.join(root,'listener.json'),JSON.stringify(info,null,2),{mode:0o600});return {...info,stop,store}}catch(e){await stop();throw e}
++ try{store=new Store(root);smtp=await startSmtp(store,{port:smtpPort});web=await startHttp(store,{port:httpPort,smtpPort:smtp.port,onShutdown:stop});const info={version:VERSION,profile:'LOCAL127_CREDIT_V1',glyphoku_profile:'GLYPHOKU_VEXA127/2',pid:process.pid,http:{host:'127.0.0.1',port:web.port},smtp:{host:'127.0.0.1',port:smtp.port},chain_id:store.state().chain_id};fs.writeFileSync(path.join(root,'listener.json'),JSON.stringify(info,null,2),{mode:0o600});return {...info,stop,store}}catch(e){await stop();throw e}
+ }
+ function args(argv){const out={command:argv[0]??'serve'};for(let i=1;i<argv.length;i+=2){demand(argv[i]?.startsWith('--')&&argv[i+1]!==undefined,'ARGS','Options require values');const key=argv[i].slice(2);demand(['state','http-port','smtp-port','checkpoint','source','destination'].includes(key),'ARGS','Unknown option: '+key);out[key]=argv[i+1]}return out}
+ export async function main(argv=process.argv.slice(2)){
+@@ -20,7 +20,7 @@
+  demand(a.command==='serve','ARGS','Use serve|init|status|verify|checkpoint|restore|stop');
+  const parsePort=(p,def)=>{const n=p===undefined?def:Number(p);demand(Number.isInteger(n)&&n>=0&&n<=65535,'PORT','Invalid port');return n};
+  const running=await serve({root:state,httpPort:parsePort(a['http-port']??process.env.VEXA127_HTTP_PORT,8787),smtpPort:parsePort(a['smtp-port']??process.env.VEXA127_SMTP_PORT,2525)});
+- console.log('VEXA127 '+VERSION+' — local authority blockchain mail\nWeb: http://127.0.0.1:'+running.http.port+'\nSMTP: 127.0.0.1:'+running.smtp.port+' (AUTH PLAIN; @local.test only)\nCredentials: '+path.join(state,'credentials.secret.json')+'\nChain: '+running.chain_id+'\nUse Ctrl+C to stop. No Internet delivery, mining, real money, or external DNS.');
++ console.log('VEXAGLYPH127 '+VERSION+' — game-gated local authority blockchain mail\nWeb: http://127.0.0.1:'+running.http.port+'\nSMTP: 127.0.0.1:'+running.smtp.port+' (AUTH PLAIN; @local.test only)\nCredentials: '+path.join(state,'credentials.secret.json')+'\nChain: '+running.chain_id+'\nUse Ctrl+C to stop. No Internet delivery, mining, real money, or external DNS.');
+  process.once('SIGINT',running.stop);process.once('SIGTERM',running.stop);
+ }
+ if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)){installGuard();main().catch(e=>{console.error('START/COMMAND FAILED ['+(e.code??'ERROR')+']: '+e.message);if(e.code==='EADDRINUSE'||e.code==='EACCES')console.error('Port unavailable. Choose explicit alternate ports with VEXA127_HTTP_PORT and VEXA127_SMTP_PORT. No existing process was stopped.');process.exitCode=1})}
+--- provenance/vexa-source/policy.mjs
++++ src/policy.mjs
+@@ -6,6 +6,7 @@
+ export function boundedInt(x,min,max,name){demand(Number.isSafeInteger(x)&&x>=min&&x<=max,'PARAMETER',name+' outside permitted integer range');return x}
+ export function requestId(x){demand(typeof x==='string'&&/^[A-Za-z0-9._:-]{8,96}$/.test(x),'REQUEST_ID','Use an 8–96 character request ID');return x}
+ export function payload(input,from,state){
++ demand(!state.accounts[from]?.glyphoku,'GAME_GATE_REQUIRED','Game mailboxes send only with the game-bound one-use permit',403);
+  demand(input&&typeof input==='object'&&!Array.isArray(input),'PAYLOAD','Expected object');
+  demand(!('now' in input)||input.now===undefined,'CLIENT_CLOCK','Client clock overrides are not accepted');
+  demand(Array.isArray(input.to)&&input.to.length>0&&input.to.length<=DEFAULTS.max_recipients,'RECIPIENTS','Provide 1–8 recipients');
+--- provenance/vexa-source/store.mjs
++++ src/store.mjs
+@@ -6,7 +6,8 @@
+ import {PROFILE,DEFAULTS,BRANCHES,MailError,demand,address,boundedInt,requestId,payload,expand,held} from './policy.mjs';
+ import {frameObject,readObject} from './framing.mjs';
+ import {parseMail} from './mime.mjs';
+-export const VERSION='2.1.0-local.1';
++import {checkGlyphoku} from './glyphoku-persistence.mjs';
++export const VERSION='3.0.0-local.1';
+ const BLOCK_DOMAIN='VEXA127-BLOCK/1', STAMP_DOMAIN='VEXA127-STAMP/1';
+ const ZERO='0'.repeat(64);
+ function readJSON(f){return JSON.parse(fs.readFileSync(f,'utf8'))}
+@@ -47,7 +48,7 @@
+  operator(tok,s){const a=this.authenticate(tok,s);demand(s.accounts[a].role==='operator','ROLE','Operator role required',403);return a}
+  integrityHead(s){const h=this.head();demand(h&&h.header.state_root===hash(canonical(s))&&s.authority===this.key.publicKey&&verifySignature(BLOCK_DOMAIN,h.header,h.signature,this.key.publicKey),'INTEGRITY','State or authority changed outside the chain',503);return h}
+  invariants(s){
+-  demand(s.schema===1&&s.profile===PROFILE,'SCHEMA','Unsupported state');let value=s.sponsor.balance;
++  demand(s.schema===1&&s.profile===PROFILE,'SCHEMA','Unsupported state');if(s.glyphoku)checkGlyphoku(this,s);let value=s.sponsor.balance;
+   for(const a of Object.values(s.accounts)){demand(Number.isSafeInteger(a.balance)&&a.balance>=0,'BALANCE','Invalid account balance');value+=a.balance}
+   for(const st of Object.values(s.stamps))if(st.status==='RESERVED')value+=st.envelope.cost;
+   demand(value+s.burned===s.issued&&Number.isSafeInteger(s.issued)&&s.sponsor.balance>=0&&s.burned>=0,'CONSERVATION','Credit supply does not reconcile');
+@@ -90,21 +91,28 @@
+   const logical=Buffer.byteLength(canonical(p));demand(s.messages.length+p.to.length+1<=DEFAULTS.max_messages,'MESSAGE_CAPACITY','Message capacity reached',507);
+   const copies=[...p.to,a];for(const rcpt of new Set(copies)){const used=s.messages.filter(m=>m.mailbox===rcpt).reduce((n,m)=>n+m.bytes,0),count=copies.filter(x=>x===rcpt).length;demand(used+logical*count<=s.accounts[rcpt].quota,'QUOTA','Recipient or Sent quota exceeded',409)}
+   let signed=input.stamp;if(signed){demand(signed.envelope&&signed.signature,'STAMP','Malformed stamp');const e=signed.envelope;demand(e.mechanism===PROFILE,'UNSUPPORTED_BRANCH','Unknown or disabled postage mechanism',422);demand(verifySignature(STAMP_DOMAIN,e,signed.signature,this.key.publicKey),'STAMP_SIGNATURE','Invalid stamp signature',403);const st=s.stamps[e.id];demand(st&&st.status==='RESERVED','STAMP_USED','Stamp unavailable or already consumed',409);demand(canonical(st.envelope)===canonical(e)&&st.signature===signed.signature,'STAMP','Stamp record mismatch');demand(e.chain_id===s.chain_id&&e.from===a&&e.digest===hash(canonical(p))&&canonical(e.to)===canonical(p.to),'STAMP_BINDING','Stamp does not authorize this envelope',403);demand(now<e.expires_at,'STAMP_EXPIRED','Stamp expired; use explicit cancellation/refund',409)}else{signed=this.reserve(s,a,p,now,events,input.max_cost)}
++  const delivered=this.deliverMessage(s,a,p,now,events,signed);
++  return this.remember(s,a,input.request_id,digest,delivered);
++ })}
++ deliverMessage(s,a,p,now,events,signed,{recipients=p.to,forceInbox=false}={}){
++  const copies=[...recipients,a];const logical=Buffer.byteLength(canonical(p));
+   const stamp=signed.envelope;const message_id=id(),framed=frameObject({v:2,from:p.from,to:p.to,subject:p.subject,body:p.body});
+-  const encrypted=seal({version:1,frame:framed.text,attachments:p.attachments,raw:p.raw},this.key.sealKey,s.chain_id+'|'+message_id,this.nonceFactory());const encoded=canonical(encrypted);const blob_id=hash(encoded);
++  const objectNonce=this.nonceFactory();demand(!s.glyphoku?.nonces.includes(Buffer.from(objectNonce).toString('base64')),'NONCE_REUSE','Mail nonce matches retained game-registry nonce history',503);
++  const encrypted=seal({version:1,frame:framed.text,attachments:p.attachments,raw:p.raw},this.key.sealKey,s.chain_id+'|'+message_id,objectNonce);const encoded=canonical(encrypted);const blob_id=hash(encoded);
+   this.db.prepare('INSERT INTO objects VALUES(?,?,?)').run(blob_id,encrypted.nonce,encoded);this.fault('after-object');
+-  const deliveries=[];for(let n=0;n<copies.length;n++){const folder=n===copies.length-1?'Sent':held(p)?'Quarantine':'INBOX';const m={id:id(),message_id,mailbox:copies[n],folder,from:a,to:p.to,blob_id,bytes:logical,created:now,stamp_id:stamp.id};s.messages.push(m);deliveries.push({id:m.id,mailbox:m.mailbox,folder})}
++  const deliveries=[];for(let n=0;n<copies.length;n++){const folder=n===copies.length-1?'Sent':(!forceInbox&&held(p))?'Quarantine':'INBOX';const m={id:id(),message_id,mailbox:copies[n],folder,from:a,to:p.to,blob_id,bytes:logical,created:now,stamp_id:stamp.id};s.messages.push(m);deliveries.push({id:m.id,mailbox:m.mailbox,folder})}
+   s.stamps[stamp.id].status='CONSUMED';s.burned+=stamp.cost;
+   events.push({type:'STAMP_CONSUMED',stamp_id:stamp.id,cost:stamp.cost},{type:'MESSAGE_COMMITTED',message_id,blob_id,from:hash(a),to:p.to.map(hash),deliveries:deliveries.map(d=>({id:d.id,mailbox:hash(d.mailbox),folder:d.folder}))});
+-  return this.remember(s,a,input.request_id,digest,{message_id,stamp_id:stamp.id,cost:stamp.cost,payer:stamp.payer,deliveries,status:'COMMITTED'});
+- })}
+- cancel(tok,stampId){return this.mutate(tok,(s,a,now,events)=>{const st=s.stamps[stampId];demand(st&&st.envelope.from===a,'NOT_FOUND','Unknown stamp',404);if(st.status==='CANCELLED'||st.status==='EXPIRED')return {status:st.status,replayed:true};demand(st.status==='RESERVED','STAMP_USED','Consumed stamps cannot be refunded',409);st.status=now>=st.envelope.expires_at?'EXPIRED':'CANCELLED';if(st.envelope.payer==='SPONSOR')s.sponsor.balance+=st.envelope.cost;else s.accounts[a].balance+=st.envelope.cost;events.push({type:'STAMP_REFUNDED',stamp_id:stampId,cost:st.envelope.cost,status:st.status});return {status:st.status}})}
++  return {message_id,stamp_id:stamp.id,cost:stamp.cost,payer:stamp.payer,deliveries,status:'COMMITTED'};
++ }
++
++ cancel(tok,stampId){return this.mutate(tok,(s,a,now,events)=>{const st=s.stamps[stampId];demand(st&&st.envelope.from===a,'NOT_FOUND','Unknown stamp',404);demand(st.envelope.mechanism===PROFILE,'GLYPHOKU_PERMIT_REQUIRED','Game permits cannot be cancelled through credit APIs',403);if(st.status==='CANCELLED'||st.status==='EXPIRED')return {status:st.status,replayed:true};demand(st.status==='RESERVED','STAMP_USED','Consumed stamps cannot be refunded',409);st.status=now>=st.envelope.expires_at?'EXPIRED':'CANCELLED';if(st.envelope.payer==='SPONSOR')s.sponsor.balance+=st.envelope.cost;else s.accounts[a].balance+=st.envelope.cost;events.push({type:'STAMP_REFUNDED',stamp_id:stampId,cost:st.envelope.cost,status:st.status});return {status:st.status}})}
+  preferences(tok,input){return this.mutate(tok,(s,a,now,events)=>{const account=s.accounts[a];if(input.daily!==undefined)account.daily=boundedInt(input.daily,0,1000,'daily');if(input.accept!==undefined){demand(typeof input.accept==='boolean','POLICY','accept must be boolean');account.accept=input.accept}if(input.blocked!==undefined){demand(Array.isArray(input.blocked)&&input.blocked.length<=64,'POLICY','Invalid block list');account.blocked=[...new Set(input.blocked.map(address))]}events.push({type:'PREFERENCES',actor:hash(a),daily:account.daily,accept:account.accept,blocked:account.blocked.map(hash)});return {ok:true}})}
+  createAccount(tok,input){return this.mutate(tok,(s,a,now,events)=>{const name=address(input.address);demand(!s.accounts[name]&&!s.aliases[name],'EXISTS','Address exists',409);demand(Object.keys(s.accounts).length<DEFAULTS.max_mailboxes,'CAPACITY','Mailbox capacity reached',409);const t=token(),balance=boundedInt(input.credits??100,0,100000,'credits');s.accounts[name]={role:'user',tokenHash:hash(t),balance,quota:DEFAULTS.mailbox_quota_bytes,daily:DEFAULTS.daily_allowance,accept:true,blocked:[]};s.issued+=balance;events.push({type:'MAILBOX_CREATED',address:hash(name),credits:balance});return {address:name,token:t}},{admin:true})}
+  credit(tok,input){requestId(input.request_id);return this.mutate(tok,(s,a,now,events)=>{const target=input.address==='SPONSOR'?'SPONSOR':address(input.address);const amount=boundedInt(input.amount,1,100000,'amount'),digest=hash(canonical({type:'CREDIT',target,amount}));const old=this.lookupReplay(s,a,input.request_id,digest);if(old)return old;demand(target==='SPONSOR'||s.accounts[target],'NO_MAILBOX','Unknown mailbox',404);demand(s.issued+amount<=1e9,'SUPPLY','Local-credit supply cap reached');if(target==='SPONSOR')s.sponsor.balance+=amount;else s.accounts[target].balance+=amount;s.issued+=amount;events.push({type:'CREDITS_ISSUED',actor:hash(a),target:hash(target),amount});return this.remember(s,a,input.request_id,digest,{ok:true,target,amount})},{admin:true})}
+  sponsor(tok,input){return this.mutate(tok,(s,a,now,events)=>{s.sponsor.daily=boundedInt(input.daily,0,100,'daily');events.push({type:'LOCAL_SPONSOR_POLICY',daily:s.sponsor.daily});return {ok:true}},{admin:true})}
+  alias(tok,input){return this.mutate(tok,(s,a,now,events)=>{const name=address(input.alias);demand(!s.accounts[name],'EXISTS','Cannot shadow mailbox');demand(Array.isArray(input.targets)&&input.targets.length>=1&&input.targets.length<=8,'ALIAS','Expected 1–8 targets');s.aliases[name]=input.targets.map(address);expand([name],s);events.push({type:'ALIAS_SET',alias:hash(name),targets:s.aliases[name].map(hash)});return {ok:true}},{admin:true})}
+- rotateToken(tok){return this.mutate(tok,(s,a,now,events)=>{const t=token();s.accounts[a].tokenHash=hash(t);events.push({type:'TOKEN_ROTATED',actor:hash(a)});return {token:t}})}
++ rotateToken(tok){return this.mutate(tok,(s,a,now,events)=>{demand(!s.accounts[a].glyphoku,'GLYPHOKU_ACCOUNT','Game mailbox credential rotation requires a reviewed registry migration',403);const t=token();s.accounts[a].tokenHash=hash(t);events.push({type:'TOKEN_ROTATED',actor:hash(a)});return {token:t}})}
+  getObject(s,row){const blob=this.db.prepare('SELECT json FROM objects WHERE id=?').get(row.blob_id);demand(blob&&hash(blob.json)===row.blob_id,'OBJECT_INTEGRITY','Encrypted object missing or changed',503);try{const data=unseal(JSON.parse(blob.json),this.key.sealKey,s.chain_id+'|'+row.message_id),f=readObject(data.frame);demand(f.ok,'FRAME','Object frame invalid',503);demand(f.record.from===row.from&&canonical(f.record.to)===canonical(row.to),'OBJECT_BINDING','Object metadata mismatch',503);return {from:f.record.from,to:f.record.to,subject:f.record.subject,body:f.record.body,attachments:data.attachments,raw:data.raw}}catch(e){if(e instanceof MailError)throw e;throw new MailError('OBJECT_AUTHENTICATION','Encrypted object authentication failed',503)}}
+  me(tok){const s=this.state();this.integrityHead(s);const a=this.authenticate(tok,s),box=s.accounts[a],now=this.time(s),day=String(Math.floor(now/86400000));return {address:a,role:box.role,balance:box.balance,quota:box.quota,daily:box.daily,used_today:s.allowance[a+'|'+day]??0,accept:box.accept,blocked:box.blocked,used_bytes:s.messages.filter(m=>m.mailbox===a).reduce((n,m)=>n+m.bytes,0),profile:PROFILE,version:VERSION,stamps:Object.values(s.stamps).filter(st=>st.envelope.from===a&&st.status==='RESERVED').map(st=>({id:st.envelope.id,cost:st.envelope.cost,expires_at:st.envelope.expires_at}))}}
+  list(tok,folder='INBOX'){const s=this.state();this.integrityHead(s);const a=this.authenticate(tok,s);demand(['INBOX','Sent','Quarantine','Trash'].includes(folder),'FOLDER','Unknown folder');return s.messages.filter(m=>m.mailbox===a&&m.folder===folder).slice(-100).reverse().map(m=>({...m,subject:this.getObject(s,m).subject}))}
+@@ -133,7 +141,7 @@
+  checkpoint(){const s=this.state();const h=this.integrityHead(s);return {format:'VEXA127-CHECKPOINT/1',chain_id:h.header.chain_id,height:h.header.height,hash:h.hash,authority:this.key.publicKey}}
+  verify(checkpoint=null){const errors=[];let prev=null,count=0;try{const s=this.state();this.invariants(s);demand(s.authority===this.key.publicKey,'AUTHORITY','Authority mismatch');const rows=this.db.prepare('SELECT height,hash,json FROM blocks ORDER BY height').all();for(const row of rows){const b=JSON.parse(row.json),h=b.header;demand(row.height===count&&h.height===count&&row.hash===b.hash,'BLOCK_ORDER','Block numbering or index mismatch');demand(h.chain_id===s.chain_id&&h.previous===(prev?prev.hash:ZERO),'CHAIN','Broken previous-block link');demand(h.authority===hash(this.key.publicKey)&&verifySignature(BLOCK_DOMAIN,h,b.signature,this.key.publicKey),'SIGNATURE','Block signature invalid');demand(h.events_root===merkle(b.events),'EVENTS','Event Merkle root mismatch');demand(b.hash===hash(BLOCK_DOMAIN+'\n'+canonical(h)+'\n'+b.signature),'HASH','Block digest mismatch');demand(Number.isSafeInteger(h.timestamp)&&(!prev||h.timestamp>=prev.header.timestamp),'TIME','Block clock ordering invalid');prev=b;count++}demand(prev&&prev.header.state_root===hash(canonical(s)),'STATE','State root mismatch');
+    if(checkpoint){demand(checkpoint.format==='VEXA127-CHECKPOINT/1'&&checkpoint.chain_id===s.chain_id&&checkpoint.authority===this.key.publicKey,'CHECKPOINT','Checkpoint authority/chain mismatch');const b=this.db.prepare('SELECT hash FROM blocks WHERE height=?').get(checkpoint.height);demand(b&&b.hash===checkpoint.hash,'ROLLBACK','Pinned checkpoint not present in this chain')}
+-   const referenced=new Set();for(const row of s.messages){this.getObject(s,row);referenced.add(row.blob_id);const st=s.stamps[row.stamp_id];demand(st&&st.status==='CONSUMED','STAMP_REFERENCE','Delivery without consumed stamp')}
++   const referenced=new Set();if(s.glyphoku)referenced.add(checkGlyphoku(this,s));for(const row of s.messages){this.getObject(s,row);referenced.add(row.blob_id);const st=s.stamps[row.stamp_id];demand(st&&st.status==='CONSUMED','STAMP_REFERENCE','Delivery without consumed stamp')}
+    for(const st of Object.values(s.stamps)){demand(verifySignature(STAMP_DOMAIN,st.envelope,st.signature,this.key.publicKey),'STAMP_SIGNATURE','Stored stamp invalid');demand(st.envelope.chain_id===s.chain_id,'STAMP_CHAIN','Stamp chain mismatch')}
+    demand(this.db.prepare('SELECT count(*) n FROM objects').get().n===referenced.size,'ORPHAN_OBJECT','Unreferenced or missing encrypted object');
+   }catch(e){errors.push(e.message)}return {ok:errors.length===0,blocks_checked:count,errors,scope:'Local authority signatures, links, event roots, current state root, supply, object hashes/authentication, and optional external checkpoint; not distributed consensus or legal proof.'}}

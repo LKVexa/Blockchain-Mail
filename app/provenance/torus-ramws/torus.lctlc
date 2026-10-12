@@ -1,0 +1,57 @@
+LCTLC/1.0
+# 3 x 3 virtual torus. Node and link fields use supplied LCTL-C topology rows.
+# x/y and MESSAGE transport/payload/protection/math are local host backend parameters.
+# A single unused QREG satisfies the supplied canonical LCTL verifier admission rule.
+@unit id=torus.ramws version=0.3.0 profile=distributed entry=F0000:C9999 target=local-reference backend=none network=deny replay=deterministic-seeded precision=f64 error_budget=0 resource_ceiling="q<=1;distributed=logical;physical=false" admission=q1-q6 state=sealed
+@defaults qspace=H basis=computational regime=exact assume=finite_dimension error=exact conf=1.0
+@frame id=F0000 parent=ROOT module=torus.ramws
+ID│LANE│OP│OUT│CTRL│IN│ARG│META
+D0001 │ alloc │ QREG │ q │ _ │ _ │ 1 │ _
+N00 │ topology │ NODE │ _ │ _ │ _ │ id=n00;class=emulated_cpu;x=0;y=0 │ _
+N01 │ topology │ NODE │ _ │ _ │ _ │ id=n01;class=emulated_cpu;x=0;y=1 │ _
+N02 │ topology │ NODE │ _ │ _ │ _ │ id=n02;class=emulated_cpu;x=0;y=2 │ _
+N10 │ topology │ NODE │ _ │ _ │ _ │ id=n10;class=emulated_cpu;x=1;y=0 │ _
+N11 │ topology │ NODE │ _ │ _ │ _ │ id=n11;class=emulated_cpu;x=1;y=1 │ _
+N12 │ topology │ NODE │ _ │ _ │ _ │ id=n12;class=emulated_cpu;x=1;y=2 │ _
+N20 │ topology │ NODE │ _ │ _ │ _ │ id=n20;class=emulated_cpu;x=2;y=0 │ _
+N21 │ topology │ NODE │ _ │ _ │ _ │ id=n21;class=emulated_cpu;x=2;y=1 │ _
+N22 │ topology │ NODE │ _ │ _ │ _ │ id=n22;class=emulated_cpu;x=2;y=2 │ _
+E001 │ topology │ LINK │ _ │ _ │ _ │ src=n00;dst=n10;type=classical;latency=0;bandwidth=1000000 │ _
+E002 │ topology │ LINK │ _ │ _ │ _ │ src=n00;dst=n20;type=classical;latency=0;bandwidth=1000000 │ _
+E003 │ topology │ LINK │ _ │ _ │ _ │ src=n00;dst=n01;type=classical;latency=0;bandwidth=1000000 │ _
+E004 │ topology │ LINK │ _ │ _ │ _ │ src=n00;dst=n02;type=classical;latency=0;bandwidth=1000000 │ _
+E005 │ topology │ LINK │ _ │ _ │ _ │ src=n01;dst=n11;type=classical;latency=0;bandwidth=1000000 │ _
+E006 │ topology │ LINK │ _ │ _ │ _ │ src=n01;dst=n21;type=classical;latency=0;bandwidth=1000000 │ _
+E007 │ topology │ LINK │ _ │ _ │ _ │ src=n01;dst=n02;type=classical;latency=0;bandwidth=1000000 │ _
+E008 │ topology │ LINK │ _ │ _ │ _ │ src=n01;dst=n00;type=classical;latency=0;bandwidth=1000000 │ _
+E009 │ topology │ LINK │ _ │ _ │ _ │ src=n02;dst=n12;type=classical;latency=0;bandwidth=1000000 │ _
+E010 │ topology │ LINK │ _ │ _ │ _ │ src=n02;dst=n22;type=classical;latency=0;bandwidth=1000000 │ _
+E011 │ topology │ LINK │ _ │ _ │ _ │ src=n02;dst=n00;type=classical;latency=0;bandwidth=1000000 │ _
+E012 │ topology │ LINK │ _ │ _ │ _ │ src=n02;dst=n01;type=classical;latency=0;bandwidth=1000000 │ _
+E013 │ topology │ LINK │ _ │ _ │ _ │ src=n10;dst=n20;type=classical;latency=0;bandwidth=1000000 │ _
+E014 │ topology │ LINK │ _ │ _ │ _ │ src=n10;dst=n00;type=classical;latency=0;bandwidth=1000000 │ _
+E015 │ topology │ LINK │ _ │ _ │ _ │ src=n10;dst=n11;type=classical;latency=0;bandwidth=1000000 │ _
+E016 │ topology │ LINK │ _ │ _ │ _ │ src=n10;dst=n12;type=classical;latency=0;bandwidth=1000000 │ _
+E017 │ topology │ LINK │ _ │ _ │ _ │ src=n11;dst=n21;type=classical;latency=0;bandwidth=1000000 │ _
+E018 │ topology │ LINK │ _ │ _ │ _ │ src=n11;dst=n01;type=classical;latency=0;bandwidth=1000000 │ _
+E019 │ topology │ LINK │ _ │ _ │ _ │ src=n11;dst=n12;type=classical;latency=0;bandwidth=1000000 │ _
+E020 │ topology │ LINK │ _ │ _ │ _ │ src=n11;dst=n10;type=classical;latency=0;bandwidth=1000000 │ _
+E021 │ topology │ LINK │ _ │ _ │ _ │ src=n12;dst=n22;type=classical;latency=0;bandwidth=1000000 │ _
+E022 │ topology │ LINK │ _ │ _ │ _ │ src=n12;dst=n02;type=classical;latency=0;bandwidth=1000000 │ _
+E023 │ topology │ LINK │ _ │ _ │ _ │ src=n12;dst=n10;type=classical;latency=0;bandwidth=1000000 │ _
+E024 │ topology │ LINK │ _ │ _ │ _ │ src=n12;dst=n11;type=classical;latency=0;bandwidth=1000000 │ _
+E025 │ topology │ LINK │ _ │ _ │ _ │ src=n20;dst=n00;type=classical;latency=0;bandwidth=1000000 │ _
+E026 │ topology │ LINK │ _ │ _ │ _ │ src=n20;dst=n10;type=classical;latency=0;bandwidth=1000000 │ _
+E027 │ topology │ LINK │ _ │ _ │ _ │ src=n20;dst=n21;type=classical;latency=0;bandwidth=1000000 │ _
+E028 │ topology │ LINK │ _ │ _ │ _ │ src=n20;dst=n22;type=classical;latency=0;bandwidth=1000000 │ _
+E029 │ topology │ LINK │ _ │ _ │ _ │ src=n21;dst=n01;type=classical;latency=0;bandwidth=1000000 │ _
+E030 │ topology │ LINK │ _ │ _ │ _ │ src=n21;dst=n11;type=classical;latency=0;bandwidth=1000000 │ _
+E031 │ topology │ LINK │ _ │ _ │ _ │ src=n21;dst=n22;type=classical;latency=0;bandwidth=1000000 │ _
+E032 │ topology │ LINK │ _ │ _ │ _ │ src=n21;dst=n20;type=classical;latency=0;bandwidth=1000000 │ _
+E033 │ topology │ LINK │ _ │ _ │ _ │ src=n22;dst=n02;type=classical;latency=0;bandwidth=1000000 │ _
+E034 │ topology │ LINK │ _ │ _ │ _ │ src=n22;dst=n12;type=classical;latency=0;bandwidth=1000000 │ _
+E035 │ topology │ LINK │ _ │ _ │ _ │ src=n22;dst=n20;type=classical;latency=0;bandwidth=1000000 │ _
+E036 │ topology │ LINK │ _ │ _ │ _ │ src=n22;dst=n21;type=classical;latency=0;bandwidth=1000000 │ _
+M0001 │ message │ MESSAGE │ _ │ _ │ _ │ src=n00;dst=n22;bytes=5;transport=ramws;payload=hello;protection=cypher;math=8s-image-v2 │ _
+C9999 │ main │ NOP │ _ │ _ │ _ │ _ │ _
+@end

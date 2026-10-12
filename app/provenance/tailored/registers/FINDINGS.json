@@ -1,0 +1,219 @@
+[
+  {
+    "id": "F01",
+    "title": "Live-run authorization is not bound",
+    "basis": "CONFIRMED_PROBE",
+    "workflows": [
+      "W01",
+      "W02",
+      "W03",
+      "W05"
+    ],
+    "source": "src/lib/glyphoku/registry.ts:110-188",
+    "probe": "PR01",
+    "observation": "commitDomain accepts a valid candidate and in-band givens without a live run, event trace, action binding or render observation. A completed synthetic grid produced a domain in the in-memory probe.",
+    "required_resolution": "Put a one-use, action/revision/profile-bound run coordinator in front of the sole mutation boundary; do not accept arbitrary final grids or replay records as authorization.",
+    "remediation_status": "OPEN"
+  },
+  {
+    "id": "F02",
+    "title": "Duplicate boards count as two fresh boards",
+    "basis": "CONFIRMED_PROBE",
+    "workflows": [
+      "W01",
+      "W05"
+    ],
+    "source": "src/lib/glyphoku/registry.ts:158-193",
+    "probe": "PR02",
+    "observation": "Two copies of the same g=2 givens/candidate pair issued one READY envelope. Batch length is checked; distinctness and prior-use provenance are not.",
+    "required_resolution": "Bind each board fingerprint and batch index; reject duplicates and cross-action reuse, then persist consumed authorization identifiers with the resource.",
+    "remediation_status": "OPEN"
+  },
+  {
+    "id": "F03",
+    "title": "Draft integrity is asserted by the caller",
+    "basis": "CONFIRMED_PROBE",
+    "workflows": [
+      "W04",
+      "W05",
+      "W06"
+    ],
+    "source": "src/lib/glyphoku/registry.ts:67-92,158-193,195-234",
+    "probe": "PR03/PR04",
+    "observation": "Changing the body while retaining the old digest was accepted by sendLocal and stored in a delivery row. issuePermit also accepted an unregistered sender and external recipient in a caller-forged FrozenDraft. TypeScript annotations do not perform runtime validation.",
+    "required_resolution": "Centralize canonicalization and digest recomputation, copy frozen data, and validate the full draft and sender at issue/send. Compare against the recorded permit content, not only a supplied digest string.",
+    "remediation_status": "OPEN"
+  },
+  {
+    "id": "F04",
+    "title": "Send does not re-resolve recipient membership",
+    "basis": "CONFIRMED_PROBE",
+    "workflows": [
+      "W06",
+      "W07"
+    ],
+    "source": "src/lib/glyphoku/registry.ts:195-234",
+    "probe": "PR05",
+    "observation": "A synthetic READY permit edited to name outsider@example.com generated a local delivery row with that mailbox string. No network mail was sent; this is a registry-integrity failure, not a demonstrated SMTP relay.",
+    "required_resolution": "Revalidate every unique recipient in the current locked instance immediately before spending; reject the whole transition when any membership or authorized-recipient binding differs.",
+    "remediation_status": "OPEN"
+  },
+  {
+    "id": "F05",
+    "title": "Horizon masks exact permit retry",
+    "basis": "CONFIRMED_PROBE",
+    "workflows": [
+      "W05",
+      "W08"
+    ],
+    "source": "src/lib/glyphoku/registry.ts:158-177",
+    "probe": "PR06",
+    "observation": "After issuance advances g to 3, calling issuePermit with the identical draft returns the horizon refusal before reaching its existing-permit lookup. The original W05 promise is not true on this path.",
+    "required_resolution": "Separate exact read-only operation retrieval from new issuance, or perform validated idempotency lookup before the new-issuance gate. Never create a replacement or reset g.",
+    "remediation_status": "OPEN"
+  },
+  {
+    "id": "F06",
+    "title": "Invalid storage may become an empty writable instance",
+    "basis": "STATIC_AND_PROBE",
+    "workflows": [
+      "W00",
+      "W03",
+      "W07"
+    ],
+    "source": "src/components/glyphoku/studio.tsx:32-53,90-99; src/lib/glyphoku/registry.ts:190-206",
+    "probe": "PR10",
+    "observation": "loadInstance validates only selected top-level fields, not spentPermits or nested relations. Syntactically invalid JSON falls through catch to emptyInstance without quarantine. A structurally rejected value is copied to one overwriteable quarantine key, then empty state can be persisted. Missing spentPermits caused sendLocal to throw in the probe.",
+    "required_resolution": "Version and validate the complete schema; distinguish absent storage from corrupt storage; preserve raw bytes without overwriting them; require recovery before writes; return structured failures rather than TypeError.",
+    "remediation_status": "OPEN"
+  },
+  {
+    "id": "F07",
+    "title": "UI success precedes coordinated persistence",
+    "basis": "STATIC_GAP",
+    "workflows": [
+      "W00",
+      "W03",
+      "W05",
+      "W06",
+      "W07"
+    ],
+    "source": "src/components/glyphoku/studio.tsx:95-99,149-185,461-473",
+    "probe": "NOT_RUN_IN_BROWSER",
+    "observation": "Registry transitions update React state and an effect writes localStorage later. There is no reviewed exclusive cross-tab writer, registry revision, atomic receipt boundary, write error handling or read-back decision. Inbox/send labels therefore do not establish successful persistence.",
+    "required_resolution": "Centralize all mutations under an exclusive origin lock, re-read/revalidate, persist one snapshot plus receipt, read back, then render success. Treat ambiguous acknowledgment as recovery-needed, not a new send.",
+    "remediation_status": "OPEN"
+  },
+  {
+    "id": "F08",
+    "title": "Composition/cancellation lacks a full lifecycle fence",
+    "basis": "STATIC_GAP",
+    "workflows": [
+      "W02",
+      "W04"
+    ],
+    "source": "src/components/glyphoku/studio.tsx:235-321,438-450",
+    "probe": "NOT_RUN_IN_BROWSER",
+    "observation": "Recipient, subject and body controls remain editable during solving. Preparation is synchronous inside a delayed callback; stopRun does not invalidate that callback with a run generation token. Long preparation can block interaction.",
+    "required_resolution": "Freeze or separate the active composer; use cancellable bounded preparation and a generation/run fence at each asynchronous result; cancel on stop/unmount and reject late commits.",
+    "remediation_status": "OPEN"
+  },
+  {
+    "id": "F09",
+    "title": "Event processing is not per-event visual evidence",
+    "basis": "STATIC_GAP",
+    "workflows": [
+      "W02"
+    ],
+    "source": "src/components/glyphoku/studio.tsx:109-125,188-224; src/lib/glyphoku/solver.ts:12-21",
+    "probe": "NOT_RUN_IN_BROWSER",
+    "observation": "The timer processes up to speed events synchronously while updating React state. The UI stores only a latest-event label and aggregate guesses/retractions, not a complete bounded audit trace or render acknowledgments. Separate DOM paints for every logical event were not observed.",
+    "required_resolution": "Keep 24 logical events/tick, distinguish event records from rendered checkpoints, provide bounded trace/step access and initial/final paint gates, and test the headed view.",
+    "remediation_status": "OPEN"
+  },
+  {
+    "id": "F10",
+    "title": "Dealer budget and uniqueness outcomes need hardening",
+    "basis": "STATIC_AND_PROBE",
+    "workflows": [
+      "W01",
+      "W02"
+    ],
+    "source": "src/lib/glyphoku/deal.ts:5-35; src/lib/glyphoku/rules.ts:98-167,207-248",
+    "probe": "PR11",
+    "observation": "dealPlayable handles SEARCH_SOLVED before its events>cap check, and does not explicitly require g=2 retractions. countSolutions can return one after its node budget is exceeded if one solution was found, despite incomplete enumeration; it also returns one for a completed duplicate-filled grid. fill has no explicit node/deadline bound.",
+    "required_resolution": "Return typed complete/incomplete uniqueness results, validate givens, make caps inclusive with no cap+1 acceptance, enforce retractions, and bound/cancel preparation. The uniqueness exhaustion path is a static finding; no budget-exhaustion seed was measured here.",
+    "remediation_status": "OPEN"
+  },
+  {
+    "id": "F11",
+    "title": "Caller can substitute a different box geometry",
+    "basis": "CONFIRMED_PROBE",
+    "workflows": [
+      "W01",
+      "W03",
+      "W05"
+    ],
+    "source": "src/lib/glyphoku/registry.ts:110-131,158-175; src/lib/glyphoku/rules.ts:64-89",
+    "probe": "PR09",
+    "observation": "A Latin-square candidate invalid under PLAYED was accepted for a domain when the caller supplied 1x16 boxes. The in-band test checks cell count rather than the required topology identity.",
+    "required_resolution": "Require the exact profile topology at the issuance boundary and validate topology before helper searches. Utility topology support cannot override the played profile.",
+    "remediation_status": "OPEN"
+  },
+  {
+    "id": "F12",
+    "title": "A second domain can consume the only envelope ordinal",
+    "basis": "CONFIRMED_PROBE",
+    "workflows": [
+      "W03",
+      "W05"
+    ],
+    "source": "src/components/glyphoku/studio.tsx:235-266,428; src/lib/glyphoku/registry.ts:110-150",
+    "probe": "PR08",
+    "observation": "After creating one domain, another domain with two boards is accepted and moves g to 3. This prevents the requested domain-then-envelope journey. The series refinement reserves g=2 for that envelope rather than changing the horizon.",
+    "required_resolution": "Enforce the selected action lifecycle in both UI admission and registry transition. Preserve already-existing incompatible states read-only; do not erase them to produce the happy path.",
+    "remediation_status": "OPEN"
+  },
+  {
+    "id": "F13",
+    "title": "Local mailbox labels do not enforce local hosting",
+    "basis": "STATIC_CONFIGURATION",
+    "workflows": [
+      "W00",
+      "W07"
+    ],
+    "source": "package.json:scripts.dev; vite.config.ts:145-183; src/routes/__root.tsx:1-36",
+    "probe": "NO_NETWORK_CAPTURE",
+    "observation": "The dev command and config bind 0.0.0.0:8080; preview is configured for 127.0.0.1:8081. Root auth/provider, preview bridge, PWA and server plugins remain in the app. No browser/process network capture was taken.",
+    "required_resolution": "Add a separately selected literal-loopback runtime profile, preserve the hosted preview contract distinctly, and inspect activated browser/server dependencies. Do not certify egress denial from source labels.",
+    "remediation_status": "OPEN"
+  },
+  {
+    "id": "F14",
+    "title": "The aggregate test script assumes a POSIX shell",
+    "basis": "STATIC_CONFIGURATION",
+    "workflows": [
+      "W00",
+      "W07"
+    ],
+    "source": "package.json:scripts.test; scripts/with-app-env.mjs:108-136",
+    "probe": "WINDOWS_NOT_RUN",
+    "observation": "The npm test string uses semicolons, $?, shell assignments and a POSIX if expression. Its portability to ordinary Windows cmd.exe is not established. The direct Node Glyphoku test command did run on Linux.",
+    "required_resolution": "Use direct Node test invocations or a reviewed cross-platform Node runner; verify Windows launch and exit propagation separately, without installing runtimes or bypassing OS security automatically.",
+    "remediation_status": "OPEN"
+  },
+  {
+    "id": "F15",
+    "title": "Legacy test/sample claims cannot certify the revision",
+    "basis": "EVIDENCE_BOUNDARY",
+    "workflows": [
+      "W07",
+      "W08"
+    ],
+    "source": "src/lib/glyphoku/glyphoku.test.ts:20-85; source-series/MASTER_PROMPT.md; source-series/W07_REFUSE.md",
+    "probe": "BASELINE_3_PASS",
+    "observation": "The three existing tests passed but omit the demonstrated gaps. Original W07 asks to use the post-send g=3 instance for validators that should be reached at g=1/g=2, allowing horizon refusal to mask defects. Historical timings and the 4,800-control declaration are not a new assessment.",
+    "required_resolution": "Use validator-specific preconditions and exact refusal reasons; measure new timings separately; preserve source assessments as NOT_ASSESSED and keep baseline/test-plan/implementation results distinct.",
+    "remediation_status": "OPEN"
+  }
+]

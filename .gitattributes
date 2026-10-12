@@ -1,0 +1,10 @@
+# Preserve the sealed application and runtime bytes on every checkout.
+# CRLF/LF normalization would invalidate the published integrity inventories.
+* -text
+*.exe binary
+*.dll binary
+*.zip binary
+*.gz binary
+*.png binary
+*.ico binary
+*.pdf binary

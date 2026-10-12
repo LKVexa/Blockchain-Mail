@@ -1,0 +1,79 @@
+{
+  "schema": "BVE/CONTROL_ASSESSMENT/1",
+  "control_id": "BVE-C135-K016",
+  "component_id": "BVE-C135",
+  "parent_id": "P18",
+  "source_control_sha256": "19f76e9ab8905796d3caae32f851a3dedcc8e406e4f415e6b48b1efc634d09c3",
+  "source_gate": "G2_TECHNICAL",
+  "candidate_parent_disposition": "LOCAL_CORE_PARTIAL",
+  "candidate_version": "2.1.0-local.1",
+  "candidate_code_tree_sha256": "04fb8e21dece4ae8ee2a7bbeb7666bcc5d563b6ffd6a150761f339b5554c8ac4",
+  "run_id": "LOCAL127-R03",
+  "revision": 3,
+  "mode": "REMEDIATE_AND_VERIFY",
+  "component_selection": "UNDECIDED",
+  "applicability": "UNDECIDED",
+  "status": "BLOCKED",
+  "workflow_execution": "STOPPED",
+  "named_owner": null,
+  "independent_reviewer": null,
+  "reviewed_at": null,
+  "actual_evidence_refs": [
+    {
+      "path": "evidence/delivery/TEST_SUMMARY.json",
+      "sha256": "fe6bb6260db17b893df82b9df8df318c804e89318830a68810fa922af4a6eaf4",
+      "tests": [
+        {
+          "name": "T032 private SQLite backup restores to a new location, preserving chain and mail",
+          "outcome": "PASS"
+        },
+        {
+          "name": "T058 candidate schema-2 export preserves mail and refuses source/path mutation",
+          "outcome": "PASS"
+        }
+      ]
+    },
+    {
+      "path": "evidence/delivery/TESTS.tap",
+      "sha256": "9d9d90bc034f7b1730b2bbe6642c91ee741097a0030df25dd143d3b37e58ff3c"
+    },
+    {
+      "path": "evidence/continuation/ORACLE.md",
+      "sha256": "a7cbe004ef06274025b00ad5fda56da1df8d49972a99f75863198c94ccd5089a"
+    },
+    {
+      "path": "docs/UPGRADE_COMPATIBILITY.md",
+      "sha256": "06b2f4fd364bda7171f02dde487c43771aaa48fd8496484db3a464680a84d2b9"
+    },
+    {
+      "path": "evidence/delivery/UPGRADE_SUMMARY.json",
+      "sha256": "46846a819539c40bbe5b9d815b871d5d8d999854b1a929e1738129c0cc2b96bb"
+    }
+  ],
+  "observed_result": {
+    "kind": "BOUNDED_CONTINUATION_EVIDENCE",
+    "scope": "The separate actual 2.0.0-to-2.1.0 exercise reconciles eight messages/attachments, balances, old checkpoint, retry and old reserved stamp, then restores nine deliveries.",
+    "test_outcomes": [
+      {
+        "name": "T032 private SQLite backup restores to a new location, preserving chain and mail",
+        "outcome": "PASS"
+      },
+      {
+        "name": "T058 candidate schema-2 export preserves mail and refuses source/path mutation",
+        "outcome": "PASS"
+      }
+    ],
+    "complete_source_criterion_claimed": false
+  },
+  "risk_exception": null,
+  "blocking_issues": [
+    "Source component/applicability decisions and required independent review remain unassigned.",
+    "Only the documented same-format synthetic upgrade is validated. Original Grok live-mail import, arbitrary user data, Windows migration and institutional review remain open."
+  ],
+  "limitations": [
+    "Only the documented same-format synthetic upgrade is validated. Original Grok live-mail import, arbitrary user data, Windows migration and institutional review remain open.",
+    "Actual local implementation tests are separate from source-control acceptance."
+  ],
+  "next_action": "Have an authorized independent reviewer inspect the preserved exact criterion, current artifact and cited fixtures; close the listed scope/oracle gaps before any full-control PASS.",
+  "evidence_validity": "CURRENT_BOUNDED_PREDICATES_ONLY"
+}

@@ -1,0 +1,11 @@
+$ python3 tests/test_420.py
+exit=0
+TEST source_to_binary_provenance_manifest PASS
+TEST source_hash_embedded_header_prefix PASS
+
+$ make operational
+exit=0
+$ make sanitize
+exit=0
+$ make size
+exit=0

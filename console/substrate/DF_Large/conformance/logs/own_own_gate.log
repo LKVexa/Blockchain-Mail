@@ -1,0 +1,4 @@
+$ make size
+[exit 0 in 0.012s]
+production_exec_source_bytes=60945 ceiling_lt=61000 boundary=runtime_c_h+all_adapters+authoritative_BOOT_LCTL
+repository_build_spec_bytes=73919 informational_only=1

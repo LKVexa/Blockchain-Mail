@@ -1,0 +1,3 @@
+COMMAND .build/t460 (representation/COW vectors)
+EXIT 0
+PASS Canonical descriptor forms and COW are source-audited and exercised by BR-460 vectors.

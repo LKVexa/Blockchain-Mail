@@ -1,0 +1,14 @@
+$ python3 tests/test_420.py
+exit=0
+TEST native_opcode_direct PASS
+TEST native_operands_immediate_mode_width_capability PASS
+TEST native_memory_region PASS
+TEST native_service_identifier PASS
+TEST native_control_flow_destination PASS
+
+$ make operational
+exit=0
+$ make sanitize
+exit=0
+$ make size
+exit=0

@@ -1,0 +1,13 @@
+$ python3 tests/test_420.py
+exit=0
+TEST acceptance_hidden_semantic_metadata_eliminated PASS
+TEST acceptance_independent_brim_verifier PASS
+TEST acceptance_independent_rejects_invalid_brim PASS
+TEST acceptance_every_production_brim_tagged_verified_lctl PASS
+
+$ make operational
+exit=0
+$ make sanitize
+exit=0
+$ make size
+exit=0

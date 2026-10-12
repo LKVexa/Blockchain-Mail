@@ -1,0 +1,98 @@
+COMMAND: make persistence-conformance persistence-audit
+.build/brctl verify-lctlc examples/boot.lctlc
+Columned LCTL semantic verify: PASS
+.build/brctl verify-lctlc src/CORE.lctlc
+Columned LCTL semantic verify: PASS
+.build/brctl lctl-to-brir examples/boot.lctlc deploy/BOTTLE_ROCKET_4.7.0_COLUMNED_LCTL_VIRTUAL_DEVICE_IO_SERVICE_ARCHITECTURE.brir
+LCTL -> BRIR: PASS
+.build/brctl compile-lctlc examples/boot.lctlc deploy/BOTTLE_ROCKET_4.7.0_COLUMNED_LCTL_VIRTUAL_DEVICE_IO_SERVICE_ARCHITECTURE.brimg
+Columned LCTL compile: PASS
+python3 tools/provenance.py examples/boot.lctlc deploy/BOTTLE_ROCKET_4.7.0_COLUMNED_LCTL_VIRTUAL_DEVICE_IO_SERVICE_ARCHITECTURE.brir deploy/BOTTLE_ROCKET_4.7.0_COLUMNED_LCTL_VIRTUAL_DEVICE_IO_SERVICE_ARCHITECTURE.brimg deploy/BOTTLE_ROCKET_4.7.0_COLUMNED_LCTL_VIRTUAL_DEVICE_IO_SERVICE_ARCHITECTURE.provenance.json
+Source/Binary provenance: PASS
+.build/brverify deploy/BOTTLE_ROCKET_4.7.0_COLUMNED_LCTL_VIRTUAL_DEVICE_IO_SERVICE_ARCHITECTURE.brimg examples/boot.lctlc deploy/BOTTLE_ROCKET_4.7.0_COLUMNED_LCTL_VIRTUAL_DEVICE_IO_SERVICE_ARCHITECTURE.brir
+independent BRIM verifier: PASS
+test "$(wc -c < deploy/BOTTLE_ROCKET_4.7.0_COLUMNED_LCTL_VIRTUAL_DEVICE_IO_SERVICE_ARCHITECTURE.brimg)" -le 51200
+.build/br_persistence_conformance deploy/BOTTLE_ROCKET_4.7.0_COLUMNED_LCTL_VIRTUAL_DEVICE_IO_SERVICE_ARCHITECTURE.brimg
+PASS build generation-1 secure bundle
+PASS build generation-2 secure bundle
+PASS deterministic persistence adapter initializes
+PASS initial image update creates pending candidate
+PASS first boot confirms generation 1
+PASS legacy 4.4 CRC state migrates only through signed-image re-verification
+PASS storage status reports durable image slot
+PASS flush and sync primitives succeed
+PASS atomic replace primitive succeeds
+PASS BRCR control record has magic and format version
+PASS control binds active slot generation transaction and issuer epoch
+PASS control records signed slot length/status
+PASS control binds image digest and authenticated-state algorithm
+PASS authenticated control rejects adversarial edit even with valid CRC
+PASS image/control digest mismatch rejected
+PASS power loss before candidate write keeps generation 1
+PASS torn candidate write keeps generation 1
+PASS loss after candidate write before flush keeps generation 1
+PASS loss before candidate sync keeps generation 1
+PASS loss after candidate sync before reread keeps generation 1
+PASS torn control-record staging write keeps generation 1
+PASS loss before control rename keeps generation 1
+PASS loss after atomic control rename recovers generation 2
+PASS candidate prepared for first-boot interruption
+PASS crash point during first boot reaches TESTING state
+PASS restart from TESTING rolls back to previous-good image
+PASS candidate prepared for post-run interruption
+PASS candidate completes first run before confirmation
+PASS crash after run but before confirmation rolls back conservatively
+PASS candidate prepared for confirmed boot
+PASS successful first boot commits generation 2
+PASS crash/restart after confirmed boot preserves generation 2
+PASS valid candidate control staged
+PASS corrupted candidate is never accepted as active
+PASS previous-good image remains recoverable after candidate failure
+PASS recovery baseline loads committed state
+PASS first additional committed control saved
+PASS second additional committed control saved
+PASS highest authenticated committed generation wins
+PASS guest-data VM recovers executable state
+PASS guest object stored separately from executable slots
+PASS namespaced guest object reads back
+PASS wrong guest namespace is rejected
+PASS guest persistence quota enforced
+PASS versioned guest-data migration succeeds
+PASS future guest-data format rejected
+PASS guest-data HMAC rejects tampered newest record and falls back safely
+PASS filesystem test directory created
+PASS POSIX adapter canonicalizes persistence prefix
+PASS state authentication key uses restrictive permissions
+PASS process storage lock acquired
+PASS second adapter cannot acquire concurrent update lock
+PASS storage lock released
+PASS symlink-backed persistence object rejected
+PASS temporary-file write plus atomic replace and parent sync succeeds
+PASS filesystem storage status reports exact replaced length
+PASS parent acquires update lock before process-race test
+PASS independent host process is excluded by lockfile
+PASS truncated persistence controls fail closed
+BR-450 persistence conformance: checks=59 failures=0
+sh tests/persistence_audit.sh
+PASS HAL exposes flush
+PASS HAL exposes sync
+PASS HAL exposes atomic replace
+PASS HAL exposes status
+PASS HAL exposes authenticated-state primitive
+PASS image/stage/guest storage namespaces are distinct
+PASS transaction recovery states are versioned
+PASS BRCR control record exists
+PASS control and guest records use cryptographic state authentication
+PASS legacy 4.4 persistence migration gate is explicit
+PASS filesystem opens reject symlink traversal
+PASS filesystem persistence enforces restrictive permissions
+PASS filesystem persistence canonicalizes parent paths
+PASS filesystem persistence performs durable file sync
+PASS filesystem persistence uses atomic rename
+PASS filesystem persistence uses nonblocking exclusive process lock
+PASS filesystem persistence syncs parent directory metadata
+PASS guest-data persistence API includes migration
+PASS legacy single commit primitive removed from HAL
+BR-450 persistence boundary audit: PASS
+
+EXIT_CODE: 0

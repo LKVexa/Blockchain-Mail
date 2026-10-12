@@ -1,0 +1,3 @@
+COMMAND .build/t460 (scratch exhaustion vector)
+EXIT 0
+PASS Scratch uses one lazy bounded reusable arena; exhaustion traps safely.

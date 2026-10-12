@@ -1,0 +1,2 @@
+PASS production_apdu_security_diagnostics
+{"suite":"BR-470-PROD","tests":1,"failures":0,"result":"PASS"}

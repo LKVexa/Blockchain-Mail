@@ -1,0 +1,25 @@
+{
+  "schema": "WORKSPACE-NATIVE-ADAPTER/1",
+  "architecture": "x64",
+  "framework": "NET_FRAMEWORK_4_8",
+  "adapter": {
+    "path": "NativeCipherAdapter.exe",
+    "sha256": "3377fad2cf8700c465e5032d58d9144d00c757ccf0b086a817356b023a558b9c",
+    "bytes": 29696
+  },
+  "source": {
+    "path": "NativeCipherAdapter.cs",
+    "sha256": "9f26f05257de7346de8352bbbfc877c8693435a2cdf4e455d78afe9f3d592fb4",
+    "bytes": 33852
+  },
+  "engine": {
+    "path": "engine/portal-cypher-windows-amd64.exe",
+    "sha256": "17004f15b0689090169593ee0fc7268457a918c7c259483f0a7713d46d0ea5fe",
+    "bytes": 2542080
+  },
+  "tuple": {
+    "path": "engine/r12_tuple.json",
+    "sha256": "4b0ff9c6d460d1dc8485015d38d95c03bf92cbad2666b771791a13dfb33de688",
+    "bytes": 284
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "control_id": "BVE-C124-K045",
+  "component_id": "BVE-C124",
+  "component_name": "Personal-data placement and visibility register",
+  "parent_id": "P17",
+  "sequence": 45,
+  "title": "Observability without excess disclosure",
+  "section": "D — Reproducibility, operations, and acceptance",
+  "gate": "G4_OPERATIONS",
+  "specificity": "INSTITUTIONAL",
+  "requirement": "Select metrics, reason codes, and diagnostic records sufficient to explain Personal-data placement and visibility register without unnecessarily disclosing message content, secrets, or identity linkage.",
+  "verification_procedure": "Inspect successful and failed assessment paths, including temporary artifacts and exports; verify each retained field has an approved purpose and access boundary.",
+  "pass_criteria": "Consequential decisions remain diagnosable while disallowed private material is absent or explicitly restricted. Absence of telemetry is not interpreted as absence of failure.",
+  "evidence_required": {
+    "kind": "telemetry specification and redaction inspection",
+    "proposed_location": "evidence/C124/K045/",
+    "required_fields": [
+      "control_id",
+      "candidate_version",
+      "applicability_decision",
+      "method",
+      "input_or_scenario_refs",
+      "expected_result",
+      "observed_result",
+      "artifact_refs_and_digests",
+      "limitations",
+      "executor",
+      "independent_reviewer",
+      "reviewed_at"
+    ]
+  },
+  "accountable_owner_role": "Records governance, privacy engineering, and domain assurance",
+  "independent_reviewer_role": "Independent technical verifier; domain specialist where applicable",
+  "applicability_rule": "Assess when BVE-C124 is selected and the stated surface exists; otherwise require an approved, reasoned NOT_APPLICABLE decision. Missing specification, unavailable evidence, or a failed test is not non-applicability.",
+  "status": "NOT_ASSESSED",
+  "applicability": "UNDECIDED",
+  "assigned_owner": null,
+  "assigned_reviewer": null,
+  "actual_evidence_refs": [],
+  "observed_result": null,
+  "acceptance_decision": null,
+  "assessed_at": null,
+  "blocking_issues": [],
+  "provenance": {
+    "control_basis": "PROPOSED_ENGINEERING_CONTROL",
+    "component_basis": "D",
+    "source_role": "Context for the mechanism; not evidence that this control is source-prescribed, implemented, or passed.",
+    "article_section": "9.3",
+    "article_line_ranges": [
+      [
+        134,
+        136
+      ],
+      [
+        45,
+        47
+      ]
+    ],
+    "parent_context_line_ranges": [
+      [
+        134,
+        136
+      ],
+      [
+        45,
+        47
+      ]
+    ],
+    "register_version": "1.0.0"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "format": "df-medium-ja21-web-engine/1",
+  "version": "8.0.2",
+  "source_archive_sha256": "7c57c6ce49f7ff4c492cc53c3177778d04adfa96f3a96525c57c3c9f4ef2cda4",
+  "windows_dll_sha256": "f069581ae5959e3a11b73a8ee7e54a5f87f97e110904059bf9c61bf00fb69c6a",
+  "baseline_verify": "20 passed / 0 failed / 0 skipped",
+  "linux_native_selftest": "PASS",
+  "engine_boundary": "DF_Medium VM owns HTML/CSS/resource/layout/scene semantics; WPF is presenter only",
+  "ja21_web_engine_source_sha256": "d53a401457966113af9ce93e64b13d4a6f552e6a40a2e735fddc7956a8456614",
+  "ja21_web_engine_ir_sha256": "6f7c25656abc1a01accd27e3693836e77f9439ecb8265cfcf07e8af887c8d7b2",
+  "native_profile_binding": "dfweb_profile_hash_get returns ja21_web_engine_source_sha256",
+  "native_selftest": "PASS: base selftest + relative CSS/image/video/link resolution",
+  "baseline_extract": "365 files byte-identical to members of supplied DF_Medium archive",
+  "native_engine_change": "none in the shipped DLL; 8.0.3 repairs link targets in the presenter and stages an engine-side HTML character-reference patch (engine/df_medium/patches) for the next native Windows rebuild",
+  "package_version": "8.0.3",
+  "staged_engine_patch": {
+    "file": "engine/df_medium/patches/8.0.3-html-character-references.patch",
+    "patched_source": "engine/df_medium/patches/ja21_webengine.8.0.3.c",
+    "status": "verified on Linux gcc (ASan+UBSan clean, dfweb_selftest PASS); Windows DLL not rebuilt",
+    "fixes": [
+      "attribute values (href/src/style/...) HTML character references decoded",
+      "text decoder read past buffer end on truncated &amp;/&lt;/&gt;/&quot;",
+      "numeric (&#NN; &#xHH;) and common named references in text and title",
+      "<title> text no longer emitted as body content"
+    ]
+  }
+}

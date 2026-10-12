@@ -1,0 +1,19 @@
+$ python3 tests/test_420.py
+exit=0
+TEST reject_bad_opcode PASS
+TEST reject_operand_count PASS
+TEST reject_operand_type_register_bounds PASS
+TEST reject_memory_bounds PASS
+TEST reject_immediate_bounds PASS
+TEST reject_branch_target PASS
+TEST reject_capability_excess PASS
+TEST reject_stack_underflow PASS
+TEST reject_mode PASS
+TEST reject_unreachable PASS
+
+$ make operational
+exit=0
+$ make sanitize
+exit=0
+$ make size
+exit=0

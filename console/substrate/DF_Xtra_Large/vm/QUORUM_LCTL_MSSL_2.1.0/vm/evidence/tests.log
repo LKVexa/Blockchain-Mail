@@ -1,0 +1,25 @@
+test_01_lctl_canonical_verifier (__main__.QVMTests.test_01_lctl_canonical_verifier) ... ok
+test_02_compile_determinism (__main__.QVMTests.test_02_compile_determinism) ... ok
+test_03_signature_verify (__main__.QVMTests.test_03_signature_verify) ... ok
+test_04_signature_tamper_rejected (__main__.QVMTests.test_04_signature_tamper_rejected) ... ok
+test_05_revoked_key_rejected (__main__.QVMTests.test_05_revoked_key_rejected) ... ok
+test_06_rollback_rejected (__main__.QVMTests.test_06_rollback_rejected) ... ok
+test_07_core_execution (__main__.QVMTests.test_07_core_execution) ... ok
+test_08_deterministic_replay (__main__.QVMTests.test_08_deterministic_replay) ... ok
+test_09_memory_capability (__main__.QVMTests.test_09_memory_capability) ... ok
+test_10_stack_underflow (__main__.QVMTests.test_10_stack_underflow) ... ok
+test_11_stack_overflow (__main__.QVMTests.test_11_stack_overflow) ... ok
+test_12_div_zero (__main__.QVMTests.test_12_div_zero) ... ok
+test_13_oob_memory (__main__.QVMTests.test_13_oob_memory) ... ok
+test_14_step_limit (__main__.QVMTests.test_14_step_limit) ... ok
+test_15_wide_word_boundary (__main__.QVMTests.test_15_wide_word_boundary) ... ok
+test_16_all_24_opcodes_compile_and_execute (__main__.QVMTests.test_16_all_24_opcodes_compile_and_execute) ... ok
+test_17_persistence_roundtrip_and_fallback (__main__.QVMTests.test_17_persistence_roundtrip_and_fallback) ... ok
+test_18_apdu_contract (__main__.QVMTests.test_18_apdu_contract) ... ok
+test_19_multiple_instances_isolated (__main__.QVMTests.test_19_multiple_instances_isolated) ... ok
+test_20_image_limits (__main__.QVMTests.test_20_image_limits) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.717s
+
+OK

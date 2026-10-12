@@ -1,0 +1,18 @@
+{
+  "run_id": "VG127-20261006-01",
+  "created_at": "2026-10-06T21:55:18.357612+00:00",
+  "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+  "last_activity": "Delivered local integration; actual runtime evidence collected; full-source and production acceptance blocked",
+  "live_user_state": "NONE_ACCESSED",
+  "synthetic_final_state": "Disposable test databases cleaned; traces/receipts retained without keys",
+  "pending_capabilities": "NONE_VALID_AFTER_TEST_TEARDOWN",
+  "resume_rules": [
+    "Verify archive, source, code and profile digests.",
+    "Choose an authorized synthetic state and literal origin.",
+    "Do not replay unknown sends or resource issuance. Retrieve an existing operation by original ID when state is retained.",
+    "Do not restore solver capabilities across restart.",
+    "Perform actual approved target-browser/Windows tests and independent profile review before acceptance."
+  ],
+  "next_action": "Authorized target-browser verification of initial/final visibility, pause, reload, concurrent tabs and exact-send behavior without policy bypass",
+  "source_control_credit": false
+}

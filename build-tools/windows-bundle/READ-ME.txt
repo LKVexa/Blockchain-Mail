@@ -1,0 +1,19 @@
+WORKSPACE391
+
+Extract W391.zip, then double-click Open Workspace.vbs.
+Start-Workspace.cmd also opens the same application.
+
+The first opening prepares the bundled application automatically and checks
+every file. Allow a short time for preparation. Subsequent openings reuse the
+same system folder, keeping your account, mail and Tor identity.
+
+Keep this whole folder together. Payload.dat is the complete verified application;
+the launcher handles its long reference-file paths so Windows' ZIP viewer does not
+need to extract them. No extra program, administrator setting or registry change
+is required. Use the launcher again to reopen the same workspace.
+
+For a second computer, use a fresh copy of this download and connect once using
+the first computer's connection code. Never copy a live system/state or
+system/network-state folder to another computer.
+
+Existing application folders and their private data are preserved.

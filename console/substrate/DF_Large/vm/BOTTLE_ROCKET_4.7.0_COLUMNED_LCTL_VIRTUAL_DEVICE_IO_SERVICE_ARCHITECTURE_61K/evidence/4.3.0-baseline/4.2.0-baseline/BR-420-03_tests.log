@@ -1,0 +1,12 @@
+$ python3 tests/test_420.py
+exit=0
+TEST type_wide_scalar_address_register PASS
+TEST type_cap_instruction_service_constant PASS
+TEST type_immutable_mutable_objects PASS
+
+$ make operational
+exit=0
+$ make sanitize
+exit=0
+$ make size
+exit=0

@@ -1,0 +1,3 @@
+COMMAND .build/t460 (constant-pool vectors)
+EXIT 0
+PASS Immutable zero/one and bounded constant-pool entries are shared/deduplicated.

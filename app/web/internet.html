@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Internet email · Workspace</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/internet.css">
+  <script type="module" src="/internet.mjs"></script>
+</head>
+<body>
+  <div id="login" class="login">
+    <section class="login-card" aria-labelledby="login-heading">
+      <div class="login-heading"><span class="eyebrow">INTERNET EMAIL</span><button type="button" data-theme-toggle>Dark theme</button></div>
+      <h1 id="login-heading">Open your mailbox.</h1>
+      <p class="lead">Your first connection reserves an available mail address in the workspace’s signed ledger. Send email directly to a recipient’s mail server.</p>
+      <div class="chip">Direct delivery through DNS MX</div>
+      <form id="login-form">
+        <label for="token">Mailbox access token</label>
+        <input id="token" type="password" autocomplete="off" required placeholder="Enter your mailbox access token">
+        <button class="primary" id="connect" type="submit">Connect</button>
+        <p id="login-status" class="feedback" role="status" aria-live="polite"></p>
+      </form>
+      <details class="setup-help"><summary>How do I connect?</summary><p class="muted">Use your mailbox access token, or unlock the protected workspace using your recovery words to fill its default mailbox token.</p><button type="button" id="fill-token">Use workspace mailbox</button></details>
+      <p class="muted">Your token stays in this page’s memory. Signing out clears it.</p>
+      <div class="login-links"><a href="/">Workspace</a><a href="/mail/">Local mailbox</a></div>
+    </section>
+  </div>
+
+  <div id="shell" hidden>
+    <a class="skip-link" href="#content">Skip to Internet email</a>
+    <aside>
+      <a class="workspace-link" href="/">Workspace <span aria-hidden="true">↗</span></a>
+      <div class="eyebrow">CORRESPONDENCE</div>
+      <nav class="internet-nav" aria-label="Workspace email"><a href="/mail/">Local mailbox</a><a href="/internet/" aria-current="page">Internet email</a></nav>
+      <div class="aside-bottom"><div class="chip">Mailbox connection</div><div id="identity"></div><button id="logout" type="button">Sign out</button></div>
+    </aside>
+    <main id="content" tabindex="-1">
+      <header><div><div class="eyebrow">DIRECT INTERNET EMAIL</div><h1>Internet email</h1><p class="header-subtitle">Your sender. Their mail server.</p></div><div class="header-actions"><button type="button" data-theme-toggle>Dark theme</button><button id="refresh" type="button">Refresh</button></div></header>
+      <section class="assigned-mailbox panel" aria-labelledby="assigned-address-label">
+        <label id="assigned-address-label" for="assigned-address">Your email address</label>
+        <input id="assigned-address" type="text" readonly autocomplete="off" aria-describedby="assignment-status">
+        <p id="assignment-status" class="field-help"></p>
+      </section>
+      <section class="connection-banner" aria-label="Sending status"><span class="status-dot" id="status-dot" aria-hidden="true"></span><div><strong id="connection-state">Checking sender…</strong><p id="connection-detail">Loading your email settings.</p></div></section>
+      <p id="sender-warning" class="feedback" data-kind="uncertain" role="status"></p>
+      <p id="page-status" class="feedback" role="status" aria-live="polite"></p>
+
+      <div class="internet-grid">
+        <section class="panel sender-panel" aria-labelledby="sender-title">
+          <div class="section-heading"><span class="section-number" aria-hidden="true">1</span><div><h2 id="sender-title">Email settings</h2><p class="muted">Your assigned address is ready to use after connecting.</p></div></div>
+          <details class="sender-settings"><summary>Sender and connection settings</summary>
+          <form id="config-form">
+            <label for="sender">Sender address</label>
+            <input id="sender" type="text" readonly autocomplete="off" maxlength="254" placeholder="mail@127.0.0.1" aria-describedby="sender-help">
+            <p id="sender-help" class="field-help">Sending uses your assigned email address.</p>
+            <label for="helo">Mail server name</label>
+            <input id="helo" type="text" autocomplete="off" maxlength="253" placeholder="mail.yourdomain.com or [127.0.0.1]" aria-describedby="helo-help">
+            <p id="helo-help" class="field-help">Your server’s announced name or an address such as [127.0.0.1]. If blank, your sender’s host will be used; numeric hosts are enclosed in brackets.</p>
+            <label class="check-label" for="enabled"><input id="enabled" type="checkbox"><span>Enable Internet sending</span></label>
+            <button type="submit" id="save-config">Save sender settings</button>
+            <p id="config-status" class="feedback" role="status" aria-live="polite"></p>
+          </form>
+          </details>
+          <details class="sending-details"><summary>What helps mail get accepted?</summary><p>Your network needs outbound connections to mail servers on port 25. Residential and hosting networks sometimes block this port. The recipient’s server must support a verified secure connection using STARTTLS.</p><p>You can send from your local mailbox. Receiving servers decide whether to accept a local sender, and replies cannot reach a local address through the Internet.</p><p>A public domain you control is recommended for acceptance and replies. This build does not sign DKIM. Authorize your sending public IP in SPF and set matching forward/reverse DNS; recipients may still reject mail. These records are managed with your domain and network providers.</p><p>The message goes directly to the mail server found in the recipient domain’s DNS MX records. A receiving server may place accepted mail in spam. See <a href="https://support.google.com/mail/answer/81126?hl=en">Google’s sender requirements</a>.</p></details>
+        </section>
+
+        <section class="panel compose-panel" aria-labelledby="compose-title">
+          <div class="section-heading"><span class="section-number" aria-hidden="true">2</span><div><h2 id="compose-title">Write a message</h2><p class="muted">One recipient per message. Plain text email.</p></div></div>
+          <form id="compose-form">
+            <label for="recipient">To</label><input id="recipient" type="email" required maxlength="254" autocomplete="off" placeholder="recipient@example.com">
+            <label for="subject">Subject</label><input id="subject" required maxlength="512" placeholder="Your subject">
+            <label for="message-body">Message</label><textarea id="message-body" required rows="8" maxlength="131072" placeholder="Write your message…"></textarea>
+            <p class="field-help" id="compose-help">Save and enable your sender before sending.</p>
+            <div class="actions"><button class="primary" type="submit" id="send" disabled>Review and send</button><button type="button" id="new-message">New message</button></div>
+            <p id="send-status" class="feedback" role="status" aria-live="polite"></p>
+          </form>
+        </section>
+      </div>
+
+      <section class="panel outbox-panel" aria-labelledby="outbox-title">
+        <div class="outbox-heading"><div><h2 id="outbox-title">Send history</h2><p class="muted">“Recipient server accepted” confirms server acceptance. It does not prove inbox delivery.</p></div><span id="outbox-count" class="chip">0 messages</span></div>
+        <div id="outbox" class="outbox-list"><p class="empty">Your Internet sends will appear here.</p></div>
+      </section>
+      <footer>Message content and send history remain in your protected workspace. Internet email leaves your computer and is subject to the recipient server’s policies.</footer>
+    </main>
+  </div>
+
+  <dialog id="confirm-send" aria-labelledby="confirm-title">
+    <form id="confirm-form">
+      <div class="dialog-title"><h2 id="confirm-title">Send this email?</h2><button type="button" id="confirm-close" aria-label="Close send review">✕</button></div>
+      <dl class="send-review"><div><dt>From</dt><dd id="review-from"></dd></div><div><dt>To</dt><dd id="review-to"></dd></div><div><dt>Subject</dt><dd id="review-subject"></dd></div></dl>
+      <p class="muted">Your workspace will connect directly to the recipient’s mail server. After sending starts, this draft is kept unchanged so checking the attempt cannot create a second message.</p>
+      <div class="actions"><button type="button" id="confirm-cancel">Keep editing</button><button type="submit" class="primary" id="confirm-submit">Send email</button></div>
+    </form>
+  </dialog>
+</body>
+</html>

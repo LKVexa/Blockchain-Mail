@@ -1,0 +1,27 @@
+.build/brctl verify-lctlc examples/boot.lctlc
+Columned LCTL semantic verify: PASS
+.build/brctl verify-lctlc src/CORE.lctlc
+Columned LCTL semantic verify: PASS
+.build/brctl lctl-to-brir examples/boot.lctlc deploy/BOTTLE_ROCKET_4.7.0_COLUMNED_LCTL_VIRTUAL_DEVICE_IO_SERVICE_ARCHITECTURE.brir
+LCTL -> BRIR: PASS
+.build/brctl compile-lctlc examples/boot.lctlc deploy/BOTTLE_ROCKET_4.7.0_COLUMNED_LCTL_VIRTUAL_DEVICE_IO_SERVICE_ARCHITECTURE.brimg
+Columned LCTL compile: PASS
+python3 tools/provenance.py examples/boot.lctlc deploy/BOTTLE_ROCKET_4.7.0_COLUMNED_LCTL_VIRTUAL_DEVICE_IO_SERVICE_ARCHITECTURE.brir deploy/BOTTLE_ROCKET_4.7.0_COLUMNED_LCTL_VIRTUAL_DEVICE_IO_SERVICE_ARCHITECTURE.brimg deploy/BOTTLE_ROCKET_4.7.0_COLUMNED_LCTL_VIRTUAL_DEVICE_IO_SERVICE_ARCHITECTURE.provenance.json
+Source/Binary provenance: PASS
+.build/brverify deploy/BOTTLE_ROCKET_4.7.0_COLUMNED_LCTL_VIRTUAL_DEVICE_IO_SERVICE_ARCHITECTURE.brimg examples/boot.lctlc deploy/BOTTLE_ROCKET_4.7.0_COLUMNED_LCTL_VIRTUAL_DEVICE_IO_SERVICE_ARCHITECTURE.brir
+independent BRIM verifier: PASS
+test "$(wc -c < deploy/BOTTLE_ROCKET_4.7.0_COLUMNED_LCTL_VIRTUAL_DEVICE_IO_SERVICE_ARCHITECTURE.brimg)" -le 51200
+stripped_executable_bytes=113200
+debug_executable_bytes=692872
+brim_bytes=272 ceiling=51200
+{"record":"BOTTLE_ROCKET.ResourceGeometry/4.7.0","word_bytes":131072,"vm_struct_bytes":22304,"word_descriptor_bytes":24,"register_descriptor_bytes":384,"stack_descriptor_bytes":6144,"legacy_dense_register_bytes":2097152,"legacy_dense_stack_bytes":33554432,"legacy_scratch_bytes":262144,"zero_init_wide_heap_bytes":0,"vm_wide_ceiling":4194304,"register_ceiling":131072,"stack_byte_ceiling":1048576,"scratch_byte_ceiling":262144,"device_buffer_ceiling":4096}
+production_runtime_and_authority_source_bytes=107675 ceiling=110000
+independent_verifier_source_bytes=6266
+qualification_test_source_bytes=10257
+isa_abi_conformance_source_bytes=10328
+python3 qualification/br490_core61.py
+{"ceiling_bytes": 61000, "compiler_command": "cc -DBR_PRODUCTION -Isrc -std=c11 -Os -Wall -Wextra -Werror -fno-common -fstack-protector-strong -ffreestanding -c src/brvm.c -o .build/brvm-core61.o", "counted_boundary": "stripped relocatable freestanding production execution core compiled solely from src/brvm.c; excludes trust/compiler/HAL/CLI, which remain covered by the separate 110000-byte production runtime-and-authority source boundary", "raw_object_bytes": 50784, "record": "BOTTLE_ROCKET.Core61/4.9.0", "result": "PASS", "sha256": "41dd384f38bd544fb9eb7edbf30e8a565cc1e2d01c777eea7fc47eaaa336c503", "stripped_core_bytes": 49072}
+python3 qualification/br490_brim51.py
+{"compiler_enforcement": "PASS", "loader_enforcement": "PASS", "native_brim_bytes": 272, "oversized_rejection": [{"command": "brctl inspect-image <BRIM51_OVERSIZE_51201>", "exit_code": 1}, {"command": "bradmin run <BRIM51_OVERSIZE_51201>", "exit_code": 1}], "profile_ceiling_bytes": 51200, "record": "BOTTLE_ROCKET.BRIM51/4.9.0", "result": "PASS"}
+python3 qualification/br490_memory.py
+{"idle_vm_bytes": 22304, "maximum_configured_vm_bytes": 4216608, "peak_rss_max_kib": 7188, "quota_conformance": "PASS via make wide-conformance", "record": "BOTTLE_ROCKET.RuntimeMemory/4.9.0", "result": "PASS", "rss_samples_kib": [7184, 7188, 7180, 7188, 7188], "typical_secure_run_peak_rss_median_kib": 7188, "wide_quota_ceiling_bytes": 4194304, "worst_case_maximum_width_accounted_bytes": 3434272}

@@ -1,0 +1,99 @@
+{
+  "schema": "BVE/CONTROL_ASSESSMENT/1",
+  "control_id": "BVE-C063-K012",
+  "component_id": "BVE-C063",
+  "parent_id": "P09",
+  "source_control_sha256": "31ee775624c70a8572eb28c57a85a9feb7848e05392363f279e3fa2ad0127ee7",
+  "source_gate": "G2_TECHNICAL",
+  "candidate_parent_disposition": "LOCAL_CORE_PARTIAL",
+  "candidate_version": "2.1.0-local.1",
+  "candidate_code_tree_sha256": "04fb8e21dece4ae8ee2a7bbeb7666bcc5d563b6ffd6a150761f339b5554c8ac4",
+  "run_id": "LOCAL127-R03",
+  "revision": 3,
+  "mode": "REMEDIATE_AND_VERIFY",
+  "component_selection": "UNDECIDED",
+  "applicability": "UNDECIDED",
+  "status": "BLOCKED",
+  "workflow_execution": "STOPPED",
+  "named_owner": null,
+  "independent_reviewer": null,
+  "reviewed_at": null,
+  "actual_evidence_refs": [
+    {
+      "path": "evidence/delivery/TEST_SUMMARY.json",
+      "sha256": "fe6bb6260db17b893df82b9df8df318c804e89318830a68810fa922af4a6eaf4",
+      "tests": [
+        {
+          "name": "T073 mailbox pages enumerate 105 messages exactly once, including beyond legacy cap",
+          "outcome": "PASS"
+        },
+        {
+          "name": "T078 page HTTP route preserves ownership and errors on invalid limits",
+          "outcome": "PASS"
+        },
+        {
+          "name": "T006 send commits stamp, encrypted object, Sent and INBOX atomically",
+          "outcome": "PASS"
+        },
+        {
+          "name": "T007 attachment bytes survive encryption and full mailbox export",
+          "outcome": "PASS"
+        },
+        {
+          "name": "T008 invalid token, cross-mailbox read and user admin escalation rejected",
+          "outcome": "PASS"
+        }
+      ]
+    },
+    {
+      "path": "evidence/delivery/TESTS.tap",
+      "sha256": "9d9d90bc034f7b1730b2bbe6642c91ee741097a0030df25dd143d3b37e58ff3c"
+    },
+    {
+      "path": "evidence/continuation/ORACLE.md",
+      "sha256": "a7cbe004ef06274025b00ad5fda56da1df8d49972a99f75863198c94ccd5089a"
+    },
+    {
+      "path": "docs/API.md",
+      "sha256": "e597b599aefea17f39bff9add5a621d6c1bb2675b8d22f3b0cf8fed523ceb2d9"
+    }
+  ],
+  "observed_result": {
+    "kind": "BOUNDED_CONTINUATION_EVIDENCE",
+    "scope": "Authenticated mailbox IDs resolve to the proper owner and retained encrypted objects; the API returns the owner-scoped first page.",
+    "test_outcomes": [
+      {
+        "name": "T073 mailbox pages enumerate 105 messages exactly once, including beyond legacy cap",
+        "outcome": "PASS"
+      },
+      {
+        "name": "T078 page HTTP route preserves ownership and errors on invalid limits",
+        "outcome": "PASS"
+      },
+      {
+        "name": "T006 send commits stamp, encrypted object, Sent and INBOX atomically",
+        "outcome": "PASS"
+      },
+      {
+        "name": "T007 attachment bytes survive encryption and full mailbox export",
+        "outcome": "PASS"
+      },
+      {
+        "name": "T008 invalid token, cross-mailbox read and user admin escalation rejected",
+        "outcome": "PASS"
+      }
+    ],
+    "complete_source_criterion_claimed": false
+  },
+  "risk_exception": null,
+  "blocking_issues": [
+    "Source component/applicability decisions and required independent review remain unassigned.",
+    "No decentralized index or multi-provider routing is implemented. Full source-scope approval remains unresolved."
+  ],
+  "limitations": [
+    "No decentralized index or multi-provider routing is implemented. Full source-scope approval remains unresolved.",
+    "Actual local implementation tests are separate from source-control acceptance."
+  ],
+  "next_action": "Have an authorized independent reviewer inspect the preserved exact criterion, current artifact and cited fixtures; close the listed scope/oracle gaps before any full-control PASS.",
+  "evidence_validity": "CURRENT_BOUNDED_PREDICATES_ONLY"
+}

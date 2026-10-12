@@ -1,0 +1,31 @@
+Console presentation derivative 1.0.2 (base browser 9.8.7)
+
+Configured console pages require live Microsoft Edge WebView2. The console uses
+the standard WPF WebView2 host; full-browser mode retains CompositionControl.
+Console mode cannot substitute static HTML inspection for a missing live engine.
+An intentionally selected about:blank remains empty.
+
+A transient native notice occupies a separate row outside the WebView HWND:
+loading, generic failure, and a keyboard-accessible Try again control when a
+previous allowed local workspace URL is available. Recovery disposes only the
+owned live surface and rechecks the same URL through the original origin policy.
+It does not enable broader origins, devtools, permissions, or private-host bypass.
+
+A monotonic 30-second watchdog includes initialization, navigation and presentation
+availability. Redirects cannot extend a pending deadline. Only one SDK DOM probe
+can be pending. It requires the integrated protected workspace interface and an
+actual mounted desk or mailbox with its login handler. It then checks at most512
+DOM nodes,128 control candidates and128 characters per text sample after successful
+native navigation, ignoring stale generations. An error page, empty mount or
+uninitialized mailbox is not readiness. It reports rendered availability of the
+configured workspace routes, including while the protected unlock dialog is open.
+It is not authentication, attention proof,
+request enforcement, or a native key-injection interface.
+
+Validation: exact five source units compile against the sealed SDK; pure state and
+source checks plus the original local-origin policy cases are recorded separately.
+Native runtime/visible rendering acceptance requires separate current-source
+evidence. No operating-system, WebSocket, browser-background, memory or profile
+encryption claim is added. The complete8Sphere master law remains unresolved.
+
+Prior1.0.1 metadata and evidence are preserved as provenance, not current acceptance.

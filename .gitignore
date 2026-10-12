@@ -1,0 +1,20 @@
+# Operator-private state must never be published.
+/state/
+/network-state/
+/work/
+/console/workspace/
+/app/state/
+/app/work/
+/app/evidence/runs/
+/dist/
+/test-fixture/
+/.env
+/.env.*
+*.workspace-key.json
+**/hs_ed25519_secret_key
+**/control_auth_cookie
+**/workspace-owner.lock
+**/peer-endpoint.json
+**/node_modules/
+**/.DS_Store
+**/Thumbs.db

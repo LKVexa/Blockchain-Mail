@@ -1,0 +1,100 @@
+{
+  "version": 1,
+  "signature_primary_fingerprint": "EF6E286DDA85EA2A4BA7DE684E2C6E8793298290",
+  "signature_verified": true,
+  "verification_tool": "OpenPGP.js 6.3.2",
+  "verification": {
+    "version": 1,
+    "signature_verified": true,
+    "signature_primary_fingerprint": "EF6E286DDA85EA2A4BA7DE684E2C6E8793298290",
+    "signing_subkey_id": "316c1facd62d07d9",
+    "verification_tool": "OpenPGP.js 6.3.2",
+    "verification_module_sha256": "4ccebb735be5fc2efb47d2f1fdce0d622db555aeeea4b24857d80e842118123d",
+    "bundle_sha256": "e9dc6ccc93cd6afa507193f4de284d6424233ff5102155cd2c94b259e8a22b65",
+    "signature_sha256": "d8e61708a643903505fc10233341720688dea9d6e5bc594bed9d69c259edad06",
+    "keyring_sha256": "c2ed2cb463bf384630f2c746448399ab944c3aeade4619f940f07372a57780d7",
+    "verified_utc": "2026-10-12T17:24:45.377Z"
+  },
+  "bundle_name": "current.tar.gz",
+  "bundle_sha256": "e9dc6ccc93cd6afa507193f4de284d6424233ff5102155cd2c94b259e8a22b65",
+  "signature_sha256": "d8e61708a643903505fc10233341720688dea9d6e5bc594bed9d69c259edad06",
+  "keyring_sha256": "c2ed2cb463bf384630f2c746448399ab944c3aeade4619f940f07372a57780d7",
+  "verified_utc": "2026-10-12T17:27:20.2263456Z",
+  "files": [
+    {
+      "path": "data/geoip",
+      "bytes": 9725448,
+      "sha256": "e55526d2991de956cbc403e7bfab372f633b8472fb3926592826e2db5cf3418e"
+    },
+    {
+      "path": "data/geoip6",
+      "bytes": 16271359,
+      "sha256": "2e3af25ccfcd2b317539f5cd61260302dbd11331ce31b6e1bfe91ebe102e38a9"
+    },
+    {
+      "path": "data/torrc-defaults",
+      "bytes": 928,
+      "sha256": "0f5205266ccb37da3d8d6a4f5c52862e42dac9f1dc2650be60cad523fa6ee964"
+    },
+    {
+      "path": "docs/conjure.txt",
+      "bytes": 127227,
+      "sha256": "0522541e3505d6669334f6eb488d4fde9c4af2234daec13170a0cf4d46d99e92"
+    },
+    {
+      "path": "docs/libevent.txt",
+      "bytes": 4528,
+      "sha256": "ff02effc9b331edcdac387d198691bfa3e575e7d244ad10cb826aa51ef085670"
+    },
+    {
+      "path": "docs/lyrebird.txt",
+      "bytes": 282585,
+      "sha256": "2331e6517a15ce87e2a1d2838c314ca1b8f3c7a347ac28d370a7fccdb5964f40"
+    },
+    {
+      "path": "docs/openssl.txt",
+      "bytes": 10175,
+      "sha256": "7d5450cb2d142651b8afa315b5f238efc805dad827d91ba367d8516bc9d49e7a"
+    },
+    {
+      "path": "docs/tor.txt",
+      "bytes": 21086,
+      "sha256": "5dc29ea302cc75db6db4a7c88d7b5d4638b4e0f5f1d2e6d21ce71f707470b766"
+    },
+    {
+      "path": "docs/zlib.txt",
+      "bytes": 1002,
+      "sha256": "e32ff4e00d9d94930537635291da39e7e612703334bf6fde8c7f1686fe8a45a2"
+    },
+    {
+      "path": "tor/pluggable_transports/conjure-client.exe",
+      "bytes": 13140480,
+      "sha256": "6d3bca367226caf0cd065ced8b031b482b5cd5c3889bce886f2e903197b9b43b"
+    },
+    {
+      "path": "tor/pluggable_transports/lyrebird.exe",
+      "bytes": 17957376,
+      "sha256": "6e218e85f9a7ae2481f5402ded822471a9a9d0c7e66b05db3842b93fa5c1f02e"
+    },
+    {
+      "path": "tor/pluggable_transports/pt_config.json",
+      "bytes": 2668,
+      "sha256": "3f11d303c30191b3b1d382b9badd882d87fd87550d061f7d25a1b31226fc9b75"
+    },
+    {
+      "path": "tor/pluggable_transports/README.CONJURE.md",
+      "bytes": 2750,
+      "sha256": "f7e9211dd0e0089c93a0a84329fed41b2ac7b988531475b5eb2c86d38ad64d6c"
+    },
+    {
+      "path": "tor/tor-gencert.exe",
+      "bytes": 6201856,
+      "sha256": "a5f7e058734574e40a68745a80f92ad0a7d51e95992e1b957c6f8562e2e76ee5"
+    },
+    {
+      "path": "tor/tor.exe",
+      "bytes": 10227200,
+      "sha256": "90bbdcafd586feea608a5e9b7d3959f4ee194f7770755cfde8fab240e9773ad1"
+    }
+  ]
+}

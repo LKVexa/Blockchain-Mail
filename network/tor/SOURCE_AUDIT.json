@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "source_directory": "D:/SOPHIA_DeepML_Tor_Integration/bin",
+  "executed": false,
+  "publisher_signature_verified": false,
+  "static_tor_version": "0.4.9.7",
+  "provided": [
+    {
+      "path": "tor.exe",
+      "authenticode": "NotSigned",
+      "bytes": 10190848,
+      "sha256": "1aa9781b60de51adba6bf368069916c53a6b40f186707deae65b4bc152cc0838"
+    },
+    {
+      "path": "lyrebird.exe",
+      "authenticode": "NotSigned",
+      "bytes": 18298368,
+      "sha256": "a7e388ec939025ae5bdad82181fd1f6b928cafa2743bf30850038761bd3a95e2"
+    },
+    {
+      "path": "conjure-client.exe",
+      "authenticode": "NotSigned",
+      "bytes": 15671808,
+      "sha256": "c7afa249ca53e40dc6e738b5d0bcec6a97c195ed8254a899d6c3712f1c9c3404"
+    }
+  ],
+  "note": "Supplied hashes match the existing SOPHIA kit record. Strict OpenPGP verification of its matching 15.0.12 archive with the current official WKD key did not succeed: the May 2026 release predates the retained August 2026 self-certification. No clock, key-binding, or signature bypass was used. The provided binaries were preserved and not executed. The installed runtime is the separately verified official 15.0.24 Expert Bundle.",
+  "official_urls": [
+    "https://blog.torproject.org/new-release-tor-browser-15012/",
+    "https://download.torproject.org/tor/",
+    "https://support.torproject.org/tor-browser/getting-started/verifying-tor-browser/",
+    "https://community.torproject.org/onion-services/setup/",
+    "https://spec.torproject.org/control-spec/commands.html"
+  ],
+  "installed_bundle": "tor-expert-bundle-windows-x86_64-15.0.24.tar.gz",
+  "installed_bundle_url": "https://dist.torproject.org/torbrowser/15.0.24/tor-expert-bundle-windows-x86_64-15.0.24.tar.gz",
+  "installed_bundle_sha256": "e9dc6ccc93cd6afa507193f4de284d6424233ff5102155cd2c94b259e8a22b65",
+  "openpgp_package": {
+    "module_sha256": "4ccebb735be5fc2efb47d2f1fdce0d622db555aeeea4b24857d80e842118123d",
+    "version": "6.3.2",
+    "name": "openpgp",
+    "package_integrity_verified": true,
+    "npm_integrity": "sha512-wcZTzHz41LV8Y48zH/JlD1JT8YdNmpWOuMAjQ/podvvCwsjBEU37K3znJh4UQcj3hksE5z9TzvhbUbwzsGvlLQ=="
+  }
+}

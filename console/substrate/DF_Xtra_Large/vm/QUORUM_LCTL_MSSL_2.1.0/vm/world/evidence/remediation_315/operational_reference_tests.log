@@ -1,0 +1,35 @@
+test_01_canonical_revisions_snapshot_verifier (__main__.OperationalReferenceTests.test_01_canonical_revisions_snapshot_verifier) ... ok
+test_02_transaction_rollback_and_stale (__main__.OperationalReferenceTests.test_02_transaction_rollback_and_stale) ... ok
+test_03_semantic_graph_content_store_optional_pack (__main__.OperationalReferenceTests.test_03_semantic_graph_content_store_optional_pack) ... ok
+test_04_reference_roundtrip_atomic_typed_stale (__main__.OperationalReferenceTests.test_04_reference_roundtrip_atomic_typed_stale) ... ok
+test_05_knowledge_locality (__main__.OperationalReferenceTests.test_05_knowledge_locality) ... ok
+test_06_c2_fold_properties_targeting (__main__.OperationalReferenceTests.test_06_c2_fold_properties_targeting) ... ok
+test_07_lod_hysteresis_debt_and_barrier (__main__.OperationalReferenceTests.test_07_lod_hysteresis_debt_and_barrier) ... ok
+test_08_persistence_capabilities_relationships_retire (__main__.OperationalReferenceTests.test_08_persistence_capabilities_relationships_retire) ... ok
+test_09_causal_slice_compaction (__main__.OperationalReferenceTests.test_09_causal_slice_compaction) ... ok
+test_10_ecology_conservation (__main__.OperationalReferenceTests.test_10_ecology_conservation) ... ok
+test_11_economy_explicit_transitions_and_conservation (__main__.OperationalReferenceTests.test_11_economy_explicit_transitions_and_conservation) ... ok
+test_12_law_reputation (__main__.OperationalReferenceTests.test_12_law_reputation) ... ok
+test_13_weather_environment (__main__.OperationalReferenceTests.test_13_weather_environment) ... ok
+test_14_narrative_reservation_info_delay (__main__.OperationalReferenceTests.test_14_narrative_reservation_info_delay) ... ok
+test_15_materialization_readiness_warmstart (__main__.OperationalReferenceTests.test_15_materialization_readiness_warmstart) ... ok
+test_16_presentation_canonical_invariant_frame_view (__main__.OperationalReferenceTests.test_16_presentation_canonical_invariant_frame_view) ... ok
+test_17_checkpoint_save_load (__main__.OperationalReferenceTests.test_17_checkpoint_save_load) ... ok
+test_18_transition_conservation_migration (__main__.OperationalReferenceTests.test_18_transition_conservation_migration) ... ok
+test_19_shell_traversal (__main__.OperationalReferenceTests.test_19_shell_traversal) ... ok
+test_20_penteract_validation_reduce (__main__.OperationalReferenceTests.test_20_penteract_validation_reduce) ... ok
+test_21_well_budget_migrate_retire (__main__.OperationalReferenceTests.test_21_well_budget_migrate_retire) ... ok
+test_22_archive_rehydrate_provenance (__main__.OperationalReferenceTests.test_22_archive_rehydrate_provenance) ... ok
+test_23_scheduler_resource_abi (__main__.OperationalReferenceTests.test_23_scheduler_resource_abi) ... ok
+test_24_frontier_grammar_expansion_history_stability (__main__.OperationalReferenceTests.test_24_frontier_grammar_expansion_history_stability) ... ok
+test_25_generational_succession_identity (__main__.OperationalReferenceTests.test_25_generational_succession_identity) ... ok
+test_26_autonomous_long_age (__main__.OperationalReferenceTests.test_26_autonomous_long_age) ... ok
+test_27_damaged_pack_isolation (__main__.OperationalReferenceTests.test_27_damaged_pack_isolation) ... ok
+test_28_frame_cycle_rejected (__main__.OperationalReferenceTests.test_28_frame_cycle_rejected) ... ok
+test_29_transition_cancel (__main__.OperationalReferenceTests.test_29_transition_cancel) ... ok
+test_30_canonical_state_excludes_presentation (__main__.OperationalReferenceTests.test_30_canonical_state_excludes_presentation) ... ok
+
+----------------------------------------------------------------------
+Ran 30 tests in 0.086s
+
+OK

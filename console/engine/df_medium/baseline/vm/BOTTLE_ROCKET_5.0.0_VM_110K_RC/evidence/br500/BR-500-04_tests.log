@@ -1,0 +1,30 @@
+COMMAND: make test isa-conformance
+.build/br_tests
+{"suite":"BOTTLE_ROCKET_4.7.0_DEVICE_IO_AUTHORITY","failures":0,"result":"PASS"}
+.build/brctl verify-lctlc examples/boot.lctlc
+Columned LCTL semantic verify: PASS
+.build/brctl verify-lctlc src/CORE.lctlc
+Columned LCTL semantic verify: PASS
+.build/brctl lctl-to-brir examples/boot.lctlc deploy/BOTTLE_ROCKET_4.7.0_COLUMNED_LCTL_VIRTUAL_DEVICE_IO_SERVICE_ARCHITECTURE.brir
+LCTL -> BRIR: PASS
+.build/brctl compile-lctlc examples/boot.lctlc deploy/BOTTLE_ROCKET_4.7.0_COLUMNED_LCTL_VIRTUAL_DEVICE_IO_SERVICE_ARCHITECTURE.brimg
+Columned LCTL compile: PASS
+python3 tools/provenance.py examples/boot.lctlc deploy/BOTTLE_ROCKET_4.7.0_COLUMNED_LCTL_VIRTUAL_DEVICE_IO_SERVICE_ARCHITECTURE.brir deploy/BOTTLE_ROCKET_4.7.0_COLUMNED_LCTL_VIRTUAL_DEVICE_IO_SERVICE_ARCHITECTURE.brimg deploy/BOTTLE_ROCKET_4.7.0_COLUMNED_LCTL_VIRTUAL_DEVICE_IO_SERVICE_ARCHITECTURE.provenance.json
+Source/Binary provenance: PASS
+.build/brverify deploy/BOTTLE_ROCKET_4.7.0_COLUMNED_LCTL_VIRTUAL_DEVICE_IO_SERVICE_ARCHITECTURE.brimg examples/boot.lctlc deploy/BOTTLE_ROCKET_4.7.0_COLUMNED_LCTL_VIRTUAL_DEVICE_IO_SERVICE_ARCHITECTURE.brir
+independent BRIM verifier: PASS
+test "$(wc -c < deploy/BOTTLE_ROCKET_4.7.0_COLUMNED_LCTL_VIRTUAL_DEVICE_IO_SERVICE_ARCHITECTURE.brimg)" -le 51200
+.build/bradmin keygen .build/k.private .build/k.public
+Ed25519 host-evaluation key generation: PASS
+.build/bradmin sign-image deploy/BOTTLE_ROCKET_4.7.0_COLUMNED_LCTL_VIRTUAL_DEVICE_IO_SERVICE_ARCHITECTURE.brimg .build/signed.brimg .build/k.private
+BOTTLE ROCKET signed image: PASS
+.build/bradmin verify-image .build/signed.brimg .build/k.public
+status=0 trap=0 ip=0 image_version=9 result=PASS
+.build/brverify .build/signed.brimg examples/boot.lctlc deploy/BOTTLE_ROCKET_4.7.0_COLUMNED_LCTL_VIRTUAL_DEVICE_IO_SERVICE_ARCHITECTURE.brir
+independent BRIM verifier: PASS
+.build/bradmin run-signed .build/signed.brimg .build/k.public | grep 'R2.low64=42'
+R2.low64=42
+.build/br_isa_conformance .build/signed.brimg
+{"suite":"BR-430_ISA_ABI_CONFORMANCE","opcodes":32,"services":20,"required_traps":14,"isa":"4.1","abi":"1.0","failures":0,"result":"PASS"}
+
+EXIT_CODE: 0

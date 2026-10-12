@@ -1,0 +1,613 @@
+{
+  "kind": "EXECUTED_LOCAL_TESTS",
+  "started_at": "2026-10-06T21:49:51.478Z",
+  "finished_at": "2026-10-06T21:50:08.669Z",
+  "command": [
+    "/opt/nvm/versions/node/v22.16.0/bin/node",
+    "--test",
+    "--test-reporter=tap",
+    "tests/continuation.test.mjs",
+    "tests/glyphoku-core.test.mjs",
+    "tests/glyphoku-http.test.mjs",
+    "tests/glyphoku-integration.test.mjs",
+    "tests/glyphoku-journey.test.mjs",
+    "tests/glyphoku-upgrade.test.mjs",
+    "tests/network.test.mjs",
+    "tests/store.test.mjs",
+    "tests/ui-state.test.mjs"
+  ],
+  "environment": {
+    "node": "v22.16.0",
+    "platform": "linux",
+    "arch": "x64",
+    "cpus": 5
+  },
+  "exit_code": 0,
+  "signal": null,
+  "error": null,
+  "counts": {
+    "tests": 113,
+    "pass": 113,
+    "fail": 0
+  },
+  "tests": [
+    {
+      "name": "T061 empty first Subject does not allow a duplicate security header",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T062 near-match text/plain media type is refused",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T063 near-match multipart/mixed media type is refused",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T064 boundary ending in two hyphens has a distinct closing delimiter",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T065 MIME boundary transport padding is tolerated",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T066 quoted-printable rejects unencoded non-ASCII rather than corrupting it",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T067 quoted-printable UTF-8 byte escapes decode exactly",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T068 directory fails closed on changed signed state",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T069 ledger fails closed on changed signed state",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T070 exportMailbox fails closed on changed signed state",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T071 quarantine fails closed on changed signed state",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T072 checkpoint fails closed on a changed current-state root",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T073 mailbox pages enumerate 105 messages exactly once, including beyond legacy cap",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T074 pagination refuses cursors after any signed-head change",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T075 pagination cursor cannot cross mailbox ownership",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T076 pagination validates folder, limits, paired cursor fields and authentication",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T077 empty page response is bounded and has a verified head",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T078 page HTTP route preserves ownership and errors on invalid limits",
+      "outcome": "PASS"
+    },
+    {
+      "name": "G002 exact played glyph vector, boxes, empty bands and issuance horizon",
+      "outcome": "PASS"
+    },
+    {
+      "name": "G003 uniqueness rejects invalid, multiple and incomplete-after-one searches",
+      "outcome": "PASS"
+    },
+    {
+      "name": "G004 a locally valid but unsatisfiable given set returns COMPLETE_ZERO",
+      "outcome": "PASS"
+    },
+    {
+      "name": "G005 candidate lengths, types, changed givens and 1x16 topology fail before authorization",
+      "outcome": "PASS"
+    },
+    {
+      "name": "G006 inclusive event caps count INIT and terminal; cap+1 is never eligible",
+      "outcome": "PASS"
+    },
+    {
+      "name": "G007 complete trace verifies guesses, retractions and candidate; ordering and event mutation are refused",
+      "outcome": "PASS"
+    },
+    {
+      "name": "G008 caller-provided solved grids or a JSON ticket never authorize a domain",
+      "outcome": "PASS"
+    },
+    {
+      "name": "G009 duplicate g=2 arrays are refused before the horizon even with a test-only grant",
+      "outcome": "PASS"
+    },
+    {
+      "name": "G010 draft v1 hashes exact UTF8, preserves bare CR, normalizes only CRLF, and deduplicates To+Bcc",
+      "outcome": "PASS"
+    },
+    {
+      "name": "G011 invalid external addresses, subject injection, blank/oversize bodies and code-unit overflow refuse freeze",
+      "outcome": "PASS"
+    },
+    {
+      "name": "G012 malformed registry structures do not default missing spend histories or reset ordinal",
+      "outcome": "PASS"
+    },
+    {
+      "name": "G013 preparation node/deadline limits are checked inside work, not after an unbounded fill",
+      "outcome": "PASS"
+    },
+    {
+      "name": "G024 actual HTTP three-board journey, frozen send, concurrent retries, origin guard and occupied-port refusal",
+      "outcome": "PASS"
+    },
+    {
+      "name": "G014 initial frame, final frame and paused commit fences reject premature authority",
+      "outcome": "PASS"
+    },
+    {
+      "name": "G015 stop terminates preparation; late worker messages never create a resource",
+      "outcome": "PASS"
+    },
+    {
+      "name": "G016 observer capability, current instance/revision, action and strict input shape are all checked",
+      "outcome": "PASS"
+    },
+    {
+      "name": "G017 restart never revives an unfinished live capability",
+      "outcome": "PASS"
+    },
+    {
+      "name": "G018-after-glyphoku-object domain mutation fault rolls back registry, account and signed ledger",
+      "outcome": "PASS"
+    },
+    {
+      "name": "G018-before-commit domain mutation fault rolls back registry, account and signed ledger",
+      "outcome": "PASS"
+    },
+    {
+      "name": "G019 committed domain acknowledgment loss is recovered by read-only operation lookup",
+      "outcome": "PASS"
+    },
+    {
+      "name": "G020 READY survives backup/restart; altered draft refuses; actual send lost acknowledgment and retries do not duplicate",
+      "outcome": "PASS"
+    },
+    {
+      "name": "G021 nonce reuse during second issuance is refused without advancing g or spending",
+      "outcome": "PASS"
+    },
+    {
+      "name": "G022 ciphertext corruption fails closed without overwriting the encrypted original",
+      "outcome": "PASS"
+    },
+    {
+      "name": "G023 browser transport rejects a late response after logout and keeps credentials in memory only",
+      "outcome": "PASS"
+    },
+    {
+      "name": "G026 mail encryption cannot reuse a retired game-registry nonce under the shared storage key",
+      "outcome": "PASS"
+    },
+    {
+      "name": "G001 real server-owned solver -> domain -> two fresh boards -> READY -> atomic actual mail -> idempotent retry",
+      "outcome": "PASS"
+    },
+    {
+      "name": "G025 preserved 2.1.0 mail, credits, reserved stamp and checkpoint survive game-layer integration",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T039 HTTP anonymous denial, exact Host and cross-origin protection",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T040 HTTP rejects missing CSRF marker, wrong type, null and malformed JSON",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T041 HTTP send, separate recipient login, receipt and attachment download",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T042 HTTP concurrent duplicate submissions produce exactly one delivery",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T043 static UI is local, CSP protected and does not expose state files",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T044 SMTP requires authentication before MAIL and validates AUTH identity",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T045 SMTP authenticated sender binding, no external relay and DATA sequencing",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T046 SMTP byte fragmentation, dot unstuffing, UTF-8 and persistent replay",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T047 SMTP MIME attachment round trip and forged header rejection",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T048 SMTP line and declared message size limits fail closed",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T049 occupied port fails startup and releases only its own lock",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T050 live state lock refuses second writer without age-based deletion",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T051 actual runtime denies DNS, external TCP, UDP, child execution and wildcard bind",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T052 guarded CLI starts, serves loopback health, restarts and verifies disk state",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T055 abrupt process death before SQLite commit recovers without partial mail or debit",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T001 genesis: signed chain, current state and credit supply reconcile",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T002 candidate VEM-OBJECT/2 framing preserves UTF-8 and rejects tampering",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T003 Ed25519 domain separation and changed payload rejection",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T004 authenticated encryption rejects tag and context mutation",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T005 canonical encoding and Merkle order are deterministic and scoped",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T006 send commits stamp, encrypted object, Sent and INBOX atomically",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T007 attachment bytes survive encryption and full mailbox export",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T008 invalid token, cross-mailbox read and user admin escalation rejected",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T009 duplicate request after reopen returns original receipt without charging",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T010 request ID reuse with changed message is a conflict",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T011 explicit reservation and consumption use two blocks and one debit",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T012 consumed stamp cannot authorize a second delivery or refund",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T013 stamp payload and recipient binding reject altered content",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T014 stamp signature and disabled mechanism are rejected",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T015 another authority stamp is not valid on this chain",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T016 exact stamp expiry boundary fails closed; explicit refund once",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T017 cancel reserved stamp refunds payer and prevents later consumption",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T018 daily delegation and authorized maximum cannot be exceeded",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T019 client time override is rejected and authority rollback blocks mutation",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T020 day rollover resets allowance without restoring consumed credit",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T021 local sponsor quota and user accounting remain distinct",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T022 insufficient funds and disabled recipient cause no partial delivery",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T023 block list rejects authenticated unwanted sender",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T024 expanded aliases deduplicate; cyclic aliases rollback",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T025 unsafe attachment names, noncanonical base64 and large bodies rejected",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T026 self-mail quota counts both Sent and received copies",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T027-after-object injected interruption rolls back object, postage and delivery",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T027-before-commit injected interruption rolls back object, postage and delivery",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T028 lost response after commit is recovered by same request ID",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T029 forced encryption nonce collision rolls back second transaction",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T030 object corruption and unauthorized state mutation are detected",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T031 block event mutation is detected by Merkle verification",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T032 private SQLite backup restores to a new location, preserving chain and mail",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T033 pinned later checkpoint detects restoration of an older valid prefix",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T034 changed backup and unsafe manifest paths are refused before restore",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T035 token rotation revokes old bearer; only one local issuance on replay",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T036 suspicious text held for review; user cannot release its quarantine",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T037 MIME round trip handles Unicode text and binary attachment",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T038 MIME duplicate From, missing boundary and HTML-only bodies are rejected",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T053 API raw export cannot contradict authenticated content or sender",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T054 missing database is not silently replaced with a new chain",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T056 body or recipient policy changes do not rebind an outstanding stamp",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T057 corrupted signed header causes reopen to fail rather than repair history",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T058 candidate schema-2 export preserves mail and refuses source/path mutation",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T059 consumed stamp remains unusable after database reopen with a new request ID",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T079 packaged UI discards an attachment download completed after logout",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T080 packaged UI rejects old attachment preparation after an identity change",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T081 logout aborts outstanding packaged API requests and rejects a late response",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T082 current-session attachment downloads remain usable",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T083 new session requests are independent of invalidated controllers",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T084 a draft uses an immutable form snapshot during file preparation",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T085 session changes do not surface obsolete errors on the login screen",
+      "outcome": "PASS"
+    },
+    {
+      "name": "T086 browser source does not persist access tokens in web storage",
+      "outcome": "PASS"
+    }
+  ],
+  "candidate_hashes": {
+    "src/components/glyphoku/studio.tsx": "87b6a12f1b519c93d962413aa8dbca774083d45b1a0284d764beba04f3a141ed",
+    "src/components/obscura/lattice-app.tsx": "490cc4941df6c1336c6993d218f39e3bf57d0a91d2ad6b2e100daa538211da3c",
+    "src/components/obscura/mail-sequence.tsx": "5c20be98f208612dad880b43784e78c316bf1aa6296ffc1289e0e47e531ed472",
+    "src/components/obscura/stage.tsx": "f42b91549fdb3d94ca61a9bd8015fb412ad669b62d9f8adaa32b3e3db9b3ad78",
+    "src/components/preview-host-bridge.tsx": "e4277e80ce127e7305057fb280d03d0703c5c7115b17d2e2aecf000e4867555e",
+    "src/crypto.mjs": "4d16745915a30af917aca0b78a01d473307c6df161f126f6df9f04bebbde63d0",
+    "src/framing.mjs": "db72b1294bd0465110b09613248f1a9a596559b45d513f5c1036fb37d5098214",
+    "src/glyphoku-persistence.mjs": "90e4dd81d7f3017258106f50c0d8a63137c215a1b45b237be62ea242af02f52f",
+    "src/glyphoku-service.mjs": "fde15cae26d9d0037d357a82275aa689a6a15f48a83b62ccfb99d705e2e69d2c",
+    "src/glyphoku-worker.mjs": "e8ff11279973dc2ec96d5e7a7cb03631237ac198e521b10cca01a0fad30c4302",
+    "src/guard.mjs": "5d60b80c53e180fe22280e34e4597dca08d8b2e25c9925c1565a3bb13bad388b",
+    "src/http.mjs": "51b39d42b297f365d6e9a2d5712ed2fe8348c8556676868133904d896abaa5d0",
+    "src/lib/app-data/app-data.test.ts": "ec0c40fdaafb4e3d551086de9f9b4a745da7c252f7fbbc5c51a8b1b0a541391e",
+    "src/lib/app-data/client.server.ts": "ab544af8b5b96e16248fdcf7ce634c132ccd3659c33cf0daa22f6e74ef5a5da0",
+    "src/lib/app-data/errors.ts": "8e0dd8d761b2a5a1cafcb7523e2063151f0b6677837b19c3f6d494af148f3889",
+    "src/lib/app-data/index.ts": "72cf57dc1a863f9693d34c11772ba4bae790cc17d9efb1e8619b8a2e6247a7fa",
+    "src/lib/app-data/login.ts": "fbc723841bb67148dd9de12ed614ba6c095d799a533309857cc4d202d6be5ad9",
+    "src/lib/app-data/readiness-schedule.test.ts": "97c87401c474b9f87f2e21152fb377744f353736848f0044466ba2e260b06745",
+    "src/lib/app-data/readiness-schedule.ts": "3ea7f192220446b08747f3ef76c7d2fe150356470621f2220738b23e7976f683",
+    "src/lib/app-data/readiness.ts": "377786c1cf739eb9dc7c8b2bdcd09991686a700375a67a0c6e73b4334d394da1",
+    "src/lib/app-data/server-only.ts": "82821474088face6b9fcadad49793629e5f07a16386402b816262a1c070a3210",
+    "src/lib/app-data/types.ts": "65f3c7566db12661ee9d3633eaae66a85505e00f57a61c258fa72bd22881489f",
+    "src/lib/app-data/use-connector-readiness.ts": "57e6d2b3709be83ac2eed9c42eaa822a067fb5aa44a6098c982892c43f3a4f2f",
+    "src/lib/auth/client.ts": "4bca649afb627b11231a7b31acfcffe9323efddebc05944b2d769d2b8589294f",
+    "src/lib/auth/email-password.ts": "9b1da7c786e48adfa9a6f7c485bcf5817cf2075a601d8726a965f11171910354",
+    "src/lib/auth/gate-identity.server.ts": "96546b8b6910a01163c36c34a0d417d803bec222b93304be764d810838764159",
+    "src/lib/auth/gate-identity.test.ts": "21202fb2b56ffd10cb9b5bb7d9f305be88cce3902b858f73cea914df05ce2652",
+    "src/lib/auth/gate-session-marker.ts": "3dbf8cb789b0288f9d5c53b1515a3e87d265fcb22e11fe28dc3289c4bd7c06eb",
+    "src/lib/auth/gate-session.server.ts": "68aa500523ca2f0ad5c7ba34372c10aa1851a9774f8567c6b7781af5dd6cf204",
+    "src/lib/auth/gates.tsx": "39950c211bd4ad4f7129082bf5a43a42ff23975e681b99fd7cfbce372f83a5be",
+    "src/lib/auth/isolation.server.ts": "a4adf6a5d548e70a0be52d7efdc7433126028908072b47bf9f92135d9ee558a0",
+    "src/lib/auth/middleware.ts": "8dc37c4e9bd583f175402330d0952ef4d584c7410723cc2649c4046d5084bd80",
+    "src/lib/auth/pglite-dialect.ts": "bd66925574245cd47cdd98b5c068dd7b4ee4a51c9439e8421dc54c62fe7c4f50",
+    "src/lib/auth/popup.server.ts": "81f8833d9ab639f76b86f4bb23fed42a04cec4b0c6d90b7a67425a9232c9bb4a",
+    "src/lib/auth/preview.ts": "d52a3654a5cef7e841cbca789fd106dc464ea55db574f02aa5d295b7350f8664",
+    "src/lib/auth/provider.tsx": "4cbbc7f8cc1765788ad65455a33f64dcdafc6fe4ed1d13f90ccfa0ba4c13d1f3",
+    "src/lib/auth/providers.ts": "4acefac17931529bdeab053588a917b06e44abdb67a275a2ca1c7841080c6a78",
+    "src/lib/auth/server.ts": "e0544cadbfa1a09c3cb4cf2a0ec187dbbb2831aebf7de887a3c858abdd72ca43",
+    "src/lib/auth/sign-in-gate.test.ts": "2c352588cb6a8f58faf3aecc1d1f418ae827ddbb6a5eca8e56668ec72cd328d2",
+    "src/lib/auth/sign-in-gate.ts": "d2c65c20ab50ae41657ceecd61ded005fac29315deace9fc4d966cf56300754c",
+    "src/lib/auth/use-current-user.ts": "a0cc4bd74b6da5b346b6bafc1aec58b9bf5cc0278264379b737b79a5cff1e482",
+    "src/lib/auth/verify.server.ts": "42a7d5c1b17027ba004d6524a7f7bb4827b908d75ee3c3aefc940fa9c891c2ee",
+    "src/lib/bem-mail.test.ts": "71ce50abadce4c38712ff63fac16f9357576d8420a3beb69bacd4c60c0c768d4",
+    "src/lib/bem-mail.ts": "045866112c620fd22c18b3cf61a9f17030ff9143f5846872745c86cf180ea8af",
+    "src/lib/corpus.ts": "c504d159a388de8bbeedd0bcf059f0b4cff255db41f83eac27dbb401a92115f5",
+    "src/lib/db.ts": "8decf7689ff4833ad2f6f263eff9041dd2a68ce923824fa1d55ad620dea72e49",
+    "src/lib/env.server.ts": "9b834e0978ae76332a65a05f5bc75f80684db8c6aa638916869385c12e3343d5",
+    "src/lib/error-component.tsx": "d219e4297409810a21bd382e60169faf69243d49dafd17cb0ea3a1888082b2f4",
+    "src/lib/glyphoku/client.ts": "fa77efeada5c59175f7ba08496fb76cc1064d9ab5fcc749eeb198f6cdb9297a8",
+    "src/lib/glyphoku/deal.ts": "e621d0f058b6be4e3a8c993d97ca83f68ab0a12d9f23c5fd122a1562f5f0159d",
+    "src/lib/glyphoku/glyphoku.test.ts": "cfbdc2466fe7c68f573ef1fa1644b8ec714facf4455ee82f3598b41f91f8ff45",
+    "src/lib/glyphoku/glyphs.ts": "71f17af2425cbb4dd513f624dcf13da44c4b8aa6c86e928fa6b689f2e05b808a",
+    "src/lib/glyphoku/registry.ts": "53dbbc8a918da02a3cd227e561d8d29dcfc8975c2b853b5d78cf019f0006b46f",
+    "src/lib/glyphoku/rules.ts": "8df383af50d9dda491f67b8945da0b632b81991c4e60fa632ce680bd260b5853",
+    "src/lib/glyphoku/solver.ts": "b488fe728bbc82b41131157ea7708f4d718cb3b43a51f5f0231e4cb2a0059b6b",
+    "src/lib/glyphoku/trace.ts": "b74924ea32e0abb907ad3086ef5bc251f2b5691052448e73c5f849d2abf42c59",
+    "src/lib/ja21.test.ts": "fb052627d464b4c96ec2e51de1c8c7062f997e3fecb340df5a32e46990ecb839",
+    "src/lib/ja21.ts": "3a08c7e6016f791b2378ce8a55def5842b59f747a92776ab9cf1bfc7dac9e231",
+    "src/lib/lattice-store.ts": "9d1e034b0678fddf45706cd0ff46305f5a0661ee6d3e649e16c4bc2f2cef7e76",
+    "src/lib/multiplayer/index.ts": "bcb96816a2135e315078e2e7d0eda5522579b0caf9e768dc6c34294e4fa49137",
+    "src/lib/multiplayer/p2p.ts": "4d0d2492ac249a2cf267c8d2db7688b5a2c488ab640da7727c0f1b73c2e92f60",
+    "src/lib/og/site.json": "fa84576c342219e2fd8aa7e4767755b756d6c5ee731e4879fb139a0506ca8d37",
+    "src/lib/penteract.test.ts": "6c35e390fdc7beea9b0347342c1d6e514a002506c25605dcd02e231cf1042d64",
+    "src/lib/penteract.ts": "000a63b1cfa1c90fca70416e03f93d21984ece5f4c16f05cfead353231d5ef6a",
+    "src/lib/preview-embedder-origin.ts": "c2d5e1acc5653ff2abc08a5eeb5feb3331f4e3d7c751ec83d60dee83cf33a6ee",
+    "src/lib/preview-host-bridge.ts": "63a91311378037680b6be414937295069ec2950520d1dc959741cf430ba6b38b",
+    "src/lib/remediation.test.ts": "88e6205ded4fd6c83751d4b46ea8366a82678136a3ad94552682e90efbfdc063",
+    "src/lib/sha256.ts": "6bc91885d04a01f0854df1be919ef816dbd59fc6a66647529ce47d10ea734185",
+    "src/local.tsx": "6e9209f458f94e47f2d5709af24d39955ff1f049e50e9b42075407020412b0aa",
+    "src/main.mjs": "1464cfc440b0afc7f44eb9b8873ba5c2650884aa952bca6060810d281e0385d6",
+    "src/mime.mjs": "f35e1acb1c512948dac0194fe97b5b62d7c6ab1426e232c37071fce55b287fdf",
+    "src/policy.mjs": "640674e8c275233f051e59e751c7155cb72d09a26db3ac85a65307f9c4c80d28",
+    "src/routeTree.gen.ts": "f4a843c61899ede2abbc4a7153e6a00557765f737b724b152463c533c4e0ddb0",
+    "src/router.tsx": "b3418d117d99e4e47f8c26f90eaa972b3732214b133a7052591e6b2907090752",
+    "src/routes/__root.tsx": "f918daaf9d18d8ce8dbfcdd7e596fa355897913c4cc3aa2ee92f41af9d9be89e",
+    "src/routes/index.tsx": "3316b3234798aaa63c637e0463b70bf81d4bd42cad3c02e6825fce1a8fb0e5b1",
+    "src/sha256.mjs": "dc96824652f7d81c983e5eae1abd16db9a07cb757b88d6df7b1e5b9bf35800e4",
+    "src/smtp.mjs": "fa8397c881c56afe63e3a59cbb12f32f3e709e0db7f119e4ba89365cdbdece1e",
+    "src/store.mjs": "d003e7d7ddecce945a61e1874de52bca092be1eba8c2446ed276db5181118631",
+    "src/styles.css": "66eff462017074fe87b4c2344c942500bb68cd584211113daa2f39467ca8aa8c",
+    "desk/index.html": "199815ac6b41dddb862f9d78973270bffefdbe0b47a26e154e7db8538a72b290",
+    "desk/modules/components/glyphoku/studio.js": "08dee44c05e3a88c2e2255e52ec1fc923bb954de8cee17d9695f997d7dda30fe",
+    "desk/modules/lib/glyphoku/client.js": "b15049f7950ead52abb77a2745413813509016ca6a599e87df6abd3ad5245bf1",
+    "desk/modules/lib/glyphoku/deal.js": "f7117d7cd5f85961a762b0faf921624d0a15d23f2f78cd5f933c11030478b627",
+    "desk/modules/lib/glyphoku/glyphs.js": "ec534169b3f50aef97ff7ec590ad29fc04607aa0c48e181783750253b538b629",
+    "desk/modules/lib/glyphoku/registry.js": "69492ecffb155b1e275d8e3eba3dfc8e5ffef1023ff779aab4b5b579c798945f",
+    "desk/modules/lib/glyphoku/rules.js": "7296dab71ed429c9ef3d8fc580d6676b4e092748390b83e0e3fa755a5759a1ab",
+    "desk/modules/lib/glyphoku/solver.js": "2a51103fed2ab2692fbd8623a3189d53b8f6513ec2cc8bf3e77717a2bcc2e65f",
+    "desk/modules/lib/glyphoku/trace.js": "c173e5d72f7b9d67a3cd763ffda572242374adea2180e7984f56f9ef8bea6510",
+    "desk/modules/lib/sha256.js": "134323645cf0a2b7f7975b6eff5b37cdc07da18489ac85119908ade77b989d13",
+    "desk/modules/local.js": "9d2e7000b17b44f64fd51d61ee34f8b041a55f2d2380702faadc4b47a40ebdac",
+    "desk/styles.css": "5902d7451e4cbac755c8e73793516dc855e06f755621dbdb67de328d6a198066",
+    "desk/vendor/LICENSE.react.txt": "a0bc85b100f4632ad2f1af5720d9a5cc1fe1a98eafaa122c26cada4a7d3ef034",
+    "desk/vendor/react-runtime.js": "103cf071291bb733fac46079aaf7caa38348b56a8408ae6f46ad52188c67be1a",
+    "tests/continuation.test.mjs": "c942f7f8830abbabe00d14633e580a309a78a1cabf159058c6d100d05043b3b9",
+    "tests/glyphoku-core.test.mjs": "4192bc40f3a8a091089af46ea717507c883a6570f4880b83dbec6052dbc677ba",
+    "tests/glyphoku-helper.mjs": "55fc2aa9eb2bba82ee4c1773baf2390c7819bdef3285fc55866dda7d938d867f",
+    "tests/glyphoku-http.test.mjs": "c3aca515580ce58f9c89c5c0197fa7a30999e6d53800ac8801f52eb4090a3ff9",
+    "tests/glyphoku-integration.test.mjs": "26ef6223d44691e7794dc2ed24f1a5b20edc4b9a068fe9b8ab77e9d55db8dd53",
+    "tests/glyphoku-journey.test.mjs": "a186ceb8a39397d26bdbe02392f8f7661f1ab9ca8fbebca9f18d4889400dcd2e",
+    "tests/glyphoku-upgrade.test.mjs": "ae1cad1b35a795654ff831c7e9d01f359110ef05d7080c2e354d305eda287674",
+    "tests/network.test.mjs": "33e2ede45115001b6497749fc8bd53bc08f1b2fea015d21a97a5859d6809b183",
+    "tests/store.test.mjs": "a62373e0559db4d518df4628c94f1d44ffb2dbc76b47d2c3b01ea1e615af9495",
+    "tests/ui-state.test.mjs": "c460573d47ddc19762b536b4eeab5a7e03bf1b96475a1007a8bf227d19ffd819",
+    "tools/backtest.mjs": "78215e1dd055e5b8461a082d34adb06a30b8bce1dc48fcfef85be4d8c07e7adf",
+    "tools/build.mjs": "98e774b1b5cd9034e722fd260fd9164287ae438b7ab43260df535f0540d947c0",
+    "tools/check-package.mjs": "6a727a0ea1be3411edde153c70ef4728bbd4b446de54729dd4ba79ede2d929dc",
+    "tools/demo.mjs": "8b5eafce3148b8cb7cac82cd1e30113059cfb582d4df51a0da06c1d4bdf69d51",
+    "tools/dispatch.cmd": "8cef92fcdd51d949d2a72a530517b827f55736ebf0e4956818f1cb11a993ca39",
+    "tools/export-legacy.mjs": "606cce4267cd8a0d8a070ca520f213924b0f0fdf1f7213a7d1d535e77baa760a",
+    "tools/glyphoku-check.mjs": "b5a75d9f66d413a25515755a6aedea3bd38ccf19e8563f4c4d152fa00f09851d",
+    "tools/glyphoku-ui-fixture.py": "66f1db1dd8e714e9652250b0ae9c86694b79974518544dffe437c02560d2283f",
+    "tools/glyphoku-upgrade-check.mjs": "fa9896a87d2791435c11120071e324db081030b53c1aff49242ce4ea0a1acac9",
+    "tools/intake-audit.py": "9b5083659415ef5de6c85461cd29d47e766b27dafa1eee76b4f84eed7f257ac1",
+    "tools/launch.mjs": "d30c8e1e71507182095f2aa0d122a352052cec8a099c51c5580ef3e2e9d3be1f",
+    "tools/preflight.mjs": "c8a4c22f5303907132e8ead4a06ef149bab15ffc549d1ee3843ff6a43f40ca76",
+    "tools/run-tests.mjs": "8b3e0156f97465ffe417a4fab4c688b32b8c2837a718bc01d263b7cc962ccbc1",
+    "tools/ui-fixture-check.py": "3e3c41dbfbab89e7c9aa575696d20f0d3012a2f621086c11d2f2ace7d5857b82",
+    "tools/upgrade-check.mjs": "f91503a8c5520585f451de4dba681aaf33018cb163e68337e14c1631a16b0eb4",
+    "web/app.js": "518c89032a3bc6840ebe66a3a76a37882a1632dfbc7537f43569d44c9bb9559e",
+    "web/index.html": "d03dcf2abd70367cd2c395580b3879f5e48cabad3e532cb586648d333b523731",
+    "web/session.mjs": "09fc99f33ec987535994232bda18a4444962e80e412ecd6e32ae332015c331d7",
+    "web/styles.css": "ce508d9edd4dd0aeda5a39eb4b3ffcf9522165959c2fc487feb1c406dd395787"
+  },
+  "scope": "Local synthetic implementation tests. Not completion of the 6800 institutional controls; not Windows execution unless platform says win32."
+}

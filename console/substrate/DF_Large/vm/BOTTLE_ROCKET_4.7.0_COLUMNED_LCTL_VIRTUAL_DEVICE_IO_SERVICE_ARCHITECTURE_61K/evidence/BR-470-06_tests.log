@@ -1,0 +1,19 @@
+COMMAND .build/t470 + .build/t470x optional wall-clock extension
+EXIT 0
+===== RUN_BR470.log sha256=648701450118bf5746c929982800496df69906dcb5e47b430749665fee16f111 =====
+PASS device_abi_version_ids_caps_flags_order
+PASS generic_device_op_buffers_caps_bounds
+PASS console_clock_entropy_deterministic
+PASS persistent_block_and_monotonic
+PASS bidirectional_owned_mailbox
+PASS calls_bytes_storage_entropy_quotas
+PASS development_apdu_class
+PASS entropy_failure_fail_closed
+PASS optional_wall_clock_extension
+PASS network_absent_by_default
+{"suite":"BR-470","tests":10,"failures":0,"result":"PASS"}
+===== RUN_BR470_FILE.log sha256=42fc2163c12694cd55b6481599eb91a898342a958b5c1bbbda2adfae46f4a986 =====
+PASS posix_optional_wall_clock_extension
+{"suite":"BR-470-FILE","tests":1,"failures":0,"result":"PASS"}
+===== RUN_STATIC470.log sha256=a90cd31723a077c4516f301472f0af7de9c3f9c104659b55c0d176dd2d3ea9ec =====
+{"failed": [], "failures": 0, "result": "PASS", "suite": "BR-470-STATIC", "tests": 14}

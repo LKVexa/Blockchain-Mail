@@ -1,0 +1,18 @@
+COMMAND: make image spec-sync
+.build/brctl verify-lctlc examples/boot.lctlc
+Columned LCTL semantic verify: PASS
+.build/brctl verify-lctlc src/CORE.lctlc
+Columned LCTL semantic verify: PASS
+.build/brctl lctl-to-brir examples/boot.lctlc deploy/BOTTLE_ROCKET_4.7.0_COLUMNED_LCTL_VIRTUAL_DEVICE_IO_SERVICE_ARCHITECTURE.brir
+LCTL -> BRIR: PASS
+.build/brctl compile-lctlc examples/boot.lctlc deploy/BOTTLE_ROCKET_4.7.0_COLUMNED_LCTL_VIRTUAL_DEVICE_IO_SERVICE_ARCHITECTURE.brimg
+Columned LCTL compile: PASS
+python3 tools/provenance.py examples/boot.lctlc deploy/BOTTLE_ROCKET_4.7.0_COLUMNED_LCTL_VIRTUAL_DEVICE_IO_SERVICE_ARCHITECTURE.brir deploy/BOTTLE_ROCKET_4.7.0_COLUMNED_LCTL_VIRTUAL_DEVICE_IO_SERVICE_ARCHITECTURE.brimg deploy/BOTTLE_ROCKET_4.7.0_COLUMNED_LCTL_VIRTUAL_DEVICE_IO_SERVICE_ARCHITECTURE.provenance.json
+Source/Binary provenance: PASS
+.build/brverify deploy/BOTTLE_ROCKET_4.7.0_COLUMNED_LCTL_VIRTUAL_DEVICE_IO_SERVICE_ARCHITECTURE.brimg examples/boot.lctlc deploy/BOTTLE_ROCKET_4.7.0_COLUMNED_LCTL_VIRTUAL_DEVICE_IO_SERVICE_ARCHITECTURE.brir
+independent BRIM verifier: PASS
+test "$(wc -c < deploy/BOTTLE_ROCKET_4.7.0_COLUMNED_LCTL_VIRTUAL_DEVICE_IO_SERVICE_ARCHITECTURE.brimg)" -le 51200
+python3 tests/spec_sync.py
+BR-470 specification synchronization: PASS isa=4.1 abi=1.0 devices=8 opcodes=32 services=20 traps=14
+
+EXIT_CODE: 0

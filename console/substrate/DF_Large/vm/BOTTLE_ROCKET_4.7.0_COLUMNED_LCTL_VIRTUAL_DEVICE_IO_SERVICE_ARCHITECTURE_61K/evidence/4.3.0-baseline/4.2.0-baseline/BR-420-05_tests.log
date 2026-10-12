@@ -1,0 +1,14 @@
+$ python3 tests/test_420.py
+exit=0
+TEST cfg_construct_validate_branches PASS
+TEST cfg_loop_budget_policy PASS
+TEST cfg_reject_unbounded_loop_policy PASS
+TEST cfg_call_validation_reject_unsupported PASS
+TEST cfg_return_validation_reject_unsupported PASS
+
+$ make operational
+exit=0
+$ make sanitize
+exit=0
+$ make size
+exit=0

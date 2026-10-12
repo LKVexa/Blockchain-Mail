@@ -1,0 +1,33 @@
+TAP version 13
+# (node:3819) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: G001 real server-owned solver -> domain -> two fresh boards -> READY -> atomic actual mail -> idempotent retry
+not ok 1 - G001 real server-owned solver -> domain -> two fresh boards -> READY -> atomic actual mail -> idempotent retry
+  ---
+  duration_ms: 295.764226
+  type: 'test'
+  location: '/mnt/data/VexaGlyph127_3.0.0/tests/glyphoku-journey.test.mjs:2:1'
+  failureType: 'testCodeFailure'
+  error: 'Noncanonical value'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    canonical (file:///mnt/data/VexaGlyph127_3.0.0/src/crypto.mjs:7:9)
+    file:///mnt/data/VexaGlyph127_3.0.0/src/crypto.mjs:6:134
+    Array.map (<anonymous>)
+    canonical (file:///mnt/data/VexaGlyph127_3.0.0/src/crypto.mjs:6:105)
+    file:///mnt/data/VexaGlyph127_3.0.0/src/crypto.mjs:6:134
+    Array.map (<anonymous>)
+    canonical (file:///mnt/data/VexaGlyph127_3.0.0/src/crypto.mjs:6:105)
+    file:///mnt/data/VexaGlyph127_3.0.0/src/crypto.mjs:6:134
+    Array.map (<anonymous>)
+    canonical (file:///mnt/data/VexaGlyph127_3.0.0/src/crypto.mjs:6:105)
+  ...
+1..1
+# tests 1
+# suites 0
+# pass 0
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 362.612834

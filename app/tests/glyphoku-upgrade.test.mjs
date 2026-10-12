@@ -1,0 +1,2 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {spawnSync} from 'node:child_process';
+test('G025 preserved 2.1.0 mail, credits, reserved stamp and checkpoint survive game-layer integration',()=>{const r=spawnSync(process.execPath,['tools/glyphoku-upgrade-check.mjs'],{cwd:new URL('..',import.meta.url),encoding:'utf8',timeout:60000});assert.equal(r.status,0,r.stdout+r.stderr);assert.match(r.stdout,/"status": "PASS"/);});

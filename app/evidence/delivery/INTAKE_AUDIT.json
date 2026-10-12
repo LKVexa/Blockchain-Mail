@@ -1,0 +1,279 @@
+{
+  "kind": "READ_ONLY_ARCHIVE_AUDIT",
+  "status": "PASS",
+  "created_at": "2026-10-06T21:48:11.017817+00:00",
+  "input_archives": [
+    {
+      "file": "Glyphoku_VEM_Candidate_Tailored_PW_v1.1.0(1).zip",
+      "sha256_before": "166203094bd3af4408791a513c264293ab21a3d76f067656055c1eb508e32873",
+      "sha256_after": "166203094bd3af4408791a513c264293ab21a3d76f067656055c1eb508e32873",
+      "members": 50,
+      "expanded_bytes": 457073,
+      "nested": [],
+      "status": "PASS"
+    },
+    {
+      "file": "B4PPUPFqdW8lePvv-grok-workspace(1).zip",
+      "sha256_before": "28313d7f5e05f5fdea31e2f4e615ead2a84aed4c9ae8bb6a28853a791b8b82fd",
+      "sha256_after": "28313d7f5e05f5fdea31e2f4e615ead2a84aed4c9ae8bb6a28853a791b8b82fd",
+      "members": 366,
+      "expanded_bytes": 129679987,
+      "nested": [
+        {
+          "member": "attachments/BEM_PW_P01_1.0.0.zip",
+          "bytes": 1978084,
+          "sha256": "55deadc107fedfe957dba65489f6a56b9b59d164af1c3961efbf81af69862489",
+          "execution": "EXCLUDED"
+        },
+        {
+          "member": "attachments/BEM_PW_P02_1.0.0.zip",
+          "bytes": 2773032,
+          "sha256": "4ec7a74d9b19ccbf352c25d8797a0d7285b08c8c083f701810dbd3c6e1a098f9",
+          "execution": "EXCLUDED"
+        },
+        {
+          "member": "attachments/BEM_PW_P03_1.0.0.zip",
+          "bytes": 2246160,
+          "sha256": "7823fb20feeac47662486336d0a08337ed5a3d457f1e1b2dc134bd398578ea8c",
+          "execution": "EXCLUDED"
+        },
+        {
+          "member": "attachments/BEM_PW_P04_1.0.0.zip",
+          "bytes": 2504175,
+          "sha256": "6f2292eddd80ba4812903ba4b821acd9150defeaa66d4d8af39ef96187173c89",
+          "execution": "EXCLUDED"
+        },
+        {
+          "member": "attachments/BEM_PW_P05_1.0.0.zip",
+          "bytes": 2246855,
+          "sha256": "8e062f0aac4292fb88ce35754f3bd8012bdeac808acf01d4693a6e95088b725d",
+          "execution": "EXCLUDED"
+        },
+        {
+          "member": "attachments/BEM_PW_P06_1.0.0.zip",
+          "bytes": 2767347,
+          "sha256": "3a68da2c3ea31a413a9c12ef9e103fb15bb9166c2695c51df3e88999b1637926",
+          "execution": "EXCLUDED"
+        },
+        {
+          "member": "attachments/BEM_PW_P07_1.0.0.zip",
+          "bytes": 2241678,
+          "sha256": "a6b25aa8118d850f5aa942b472af987a0eee5790bea3c768995867fee82f35bd",
+          "execution": "EXCLUDED"
+        },
+        {
+          "member": "attachments/BEM_PW_P08_1.0.0.zip",
+          "bytes": 2510246,
+          "sha256": "1e64a76eeec8d1e9fb13621ed5d09c3fc667e3089f2ecf4951969e3c8c17d8d8",
+          "execution": "EXCLUDED"
+        },
+        {
+          "member": "attachments/BEM_PW_P09_1.0.0.zip",
+          "bytes": 3044518,
+          "sha256": "9fe9930340292d0c36cc2bdb2a684f6e5e84963ca0c738969c0b46a60bcedbef",
+          "execution": "EXCLUDED"
+        },
+        {
+          "member": "attachments/BEM_PW_P10_1.0.0.zip",
+          "bytes": 2518719,
+          "sha256": "f93d8c74563a8ab2cee71745ef9df89212205e7caa7f2991db2c35bc3a43770c",
+          "execution": "EXCLUDED"
+        },
+        {
+          "member": "attachments/BEM_PW_P11_1.0.0.zip",
+          "bytes": 2514628,
+          "sha256": "f31836a3a4d93bf04563c4151bddc9d49229809d7aed5dee64e258c5bf9ac941",
+          "execution": "EXCLUDED"
+        },
+        {
+          "member": "attachments/BEM_PW_P12_1.0.0.zip",
+          "bytes": 3046573,
+          "sha256": "a8cfa7810aa976c8fb0abeafe3e096799d74620b4790e0d65a6a257caaed8dc0",
+          "execution": "EXCLUDED"
+        },
+        {
+          "member": "attachments/BEM_PW_P13_1.0.0.zip",
+          "bytes": 1986283,
+          "sha256": "74b588398e79e4a2dde9f1458a328546ce8160736ea63104a0c2ec72f1c3cd80",
+          "execution": "EXCLUDED"
+        },
+        {
+          "member": "attachments/BEM_PW_P14_1.0.0.zip",
+          "bytes": 1730508,
+          "sha256": "47e80cdc8b32cb80a76c84488eb98c3eaa8bc34fb6e14471d68eed7025283fe7",
+          "execution": "EXCLUDED"
+        },
+        {
+          "member": "attachments/Glyphoku.zip",
+          "bytes": 152236,
+          "sha256": "5c921ef8087d559e658e723b6291fe476deda317c2c6ea8f2a038c426e783ac8",
+          "execution": "EXCLUDED"
+        },
+        {
+          "member": "attachments/Glyphoku_PW_P01_v1.0.0.zip",
+          "bytes": 7181781,
+          "sha256": "46aa2e557e80007fb01c53a4943035ce2cc8cef50df0769287d211336cb6fe91",
+          "execution": "EXCLUDED"
+        },
+        {
+          "member": "attachments/Glyphoku_PW_P02_v1.0.0.zip",
+          "bytes": 7224990,
+          "sha256": "9ca3eb5a34bacf134e064969d839529f9282fa06b03f85b2195dbba899452c52",
+          "execution": "EXCLUDED"
+        },
+        {
+          "member": "attachments/Glyphoku_PW_P03_v1.0.0.zip",
+          "bytes": 7228199,
+          "sha256": "ff1aebb2d7901723a3293a4e33603e6ecb9faa025972e887cc9f955fb4936e38",
+          "execution": "EXCLUDED"
+        },
+        {
+          "member": "attachments/Glyphoku_PW_P04_v1.0.0.zip",
+          "bytes": 7199155,
+          "sha256": "6a6742bc704fece952fa2d30e0bc81ffe26dec9581f7af10c96b9526933641e8",
+          "execution": "EXCLUDED"
+        },
+        {
+          "member": "attachments/Glyphoku_PW_P05_v1.0.0.zip",
+          "bytes": 7228878,
+          "sha256": "5c4021fab2c85f6094a39c44f3f0749e23c1fbe0dd3d0da0bc184acc8270d515",
+          "execution": "EXCLUDED"
+        },
+        {
+          "member": "attachments/Glyphoku_PW_P06_v1.0.0.zip",
+          "bytes": 7192412,
+          "sha256": "19ef2dda0859a11d374e6aaf4ddcb03390c27a5f48c5f68eb89eccdc2e5d0899",
+          "execution": "EXCLUDED"
+        },
+        {
+          "member": "attachments/Glyphoku_PW_P07_v1.0.0.zip",
+          "bytes": 7220426,
+          "sha256": "70dcdd60af49e74177208200ca7e199028d9e9004cd091e986182580d412b086",
+          "execution": "EXCLUDED"
+        },
+        {
+          "member": "attachments/Glyphoku_PW_P08_v1.0.0.zip",
+          "bytes": 7199855,
+          "sha256": "4e49acceffa2bb354b153e7d9344feb5e628eb70fa30d904616342c764e28c61",
+          "execution": "EXCLUDED"
+        },
+        {
+          "member": "attachments/Glyphoku_PW_P09_v1.0.0.zip",
+          "bytes": 7225718,
+          "sha256": "027dda8a2fd35fcddde670c0c02fbc1b8d8607fa1fa5ea09524aa53ca0641e82",
+          "execution": "EXCLUDED"
+        },
+        {
+          "member": "attachments/Glyphoku_PW_P10_v1.0.0.zip",
+          "bytes": 7208148,
+          "sha256": "ea0e49342b946da53fef15a78239eb14964519653f62baa2f123b0f4bba3592d",
+          "execution": "EXCLUDED"
+        },
+        {
+          "member": "attachments/Glyphoku_PW_P11_v1.0.0.zip",
+          "bytes": 7236501,
+          "sha256": "49cab4666db0c886540ca7d2df29b4893c72509e85b02b2c1161418bfb6a1a23",
+          "execution": "EXCLUDED"
+        },
+        {
+          "member": "attachments/Glyphoku_PW_P12_v1.0.0.zip",
+          "bytes": 7179152,
+          "sha256": "e2e9302fa22e5a061fa92199578a18c2d2af954387dc111b6b4bbcc12a31070e",
+          "execution": "EXCLUDED"
+        },
+        {
+          "member": "attachments/JA21_CYPHER_4.3.3_MARKDOWN_KEY_COMPATIBILITY_FIX.zip",
+          "bytes": 2006729,
+          "sha256": "1e81d449d18f170de02a98e43d3db2684096cb63c0acdfd052881c3d5cc94d4c",
+          "execution": "EXCLUDED"
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "file": "Vexa127_Local_Blockchain_Email_2.1.0.zip",
+      "sha256_before": "deb12a5877685a700ab4b34ac2c3a9570e9cd3be56d45a710dc85113399d430d",
+      "sha256_after": "deb12a5877685a700ab4b34ac2c3a9570e9cd3be56d45a710dc85113399d430d",
+      "members": 7048,
+      "expanded_bytes": 47715566,
+      "nested": [
+        {
+          "member": "Vexa127_2.1.0/evidence/history/R01_assessment_snapshot.zip",
+          "bytes": 6446885,
+          "sha256": "7f9b5b4ed2ddd3bf25794a1a635a77a694fcb2f66e938da8ab48db62cb788a49",
+          "execution": "EXCLUDED"
+        },
+        {
+          "member": "Vexa127_2.1.0/evidence/history/R02_RELEASE_RECORDS.zip",
+          "bytes": 7595946,
+          "sha256": "b0631f16e46c16f64bc40256922473edff133b5bca7ebb47e3d1d2ae25907911",
+          "execution": "EXCLUDED"
+        },
+        {
+          "member": "Vexa127_2.1.0/provenance/BASELINE_CODE.zip",
+          "bytes": 257059,
+          "sha256": "9ad77ea9e7fc93175b7feac06aa50a840effd1b89184e4670fd0ae5533c0488c",
+          "execution": "EXCLUDED"
+        },
+        {
+          "member": "Vexa127_2.1.0/provenance/CONTINUATION_INSTRUCTIONS.zip",
+          "bytes": 85930,
+          "sha256": "1b11f256c88bd5798319c51c2b83d79cee64c2e887710fa57a48a34e119c8df5",
+          "execution": "EXCLUDED"
+        },
+        {
+          "member": "Vexa127_2.1.0/provenance/PRIOR_RELEASE_CODE.zip",
+          "bytes": 58949,
+          "sha256": "fed9d0aff8a18bc65a2fe2c090eb5f9d2eac86b4cdcd7f025e881a19b47be198",
+          "execution": "EXCLUDED"
+        }
+      ],
+      "status": "PASS"
+    }
+  ],
+  "rejection_fixtures": [
+    {
+      "case": "traversal",
+      "expected": "REJECT",
+      "observed": "REJECT",
+      "status": "PASS"
+    },
+    {
+      "case": "absolute",
+      "expected": "REJECT",
+      "observed": "REJECT",
+      "status": "PASS"
+    },
+    {
+      "case": "drive",
+      "expected": "REJECT",
+      "observed": "REJECT",
+      "status": "PASS"
+    },
+    {
+      "case": "backslash",
+      "expected": "REJECT",
+      "observed": "REJECT",
+      "status": "PASS"
+    },
+    {
+      "case": "case collision",
+      "expected": "REJECT",
+      "observed": "REJECT",
+      "status": "PASS"
+    },
+    {
+      "case": "symlink",
+      "expected": "REJECT",
+      "observed": "REJECT",
+      "status": "PASS"
+    },
+    {
+      "case": "expansion",
+      "expected": "REJECT",
+      "observed": "REJECT",
+      "status": "PASS"
+    }
+  ],
+  "scope": "Archive structure/digest verification, not execution or approval of nested documents."
+}

@@ -1,0 +1,128 @@
+{
+  "schema": "BVE/CONTROL_ASSESSMENT/1",
+  "control_id": "BVE-C124-K045",
+  "component_id": "BVE-C124",
+  "parent_id": "P17",
+  "source_control_sha256": "136eee285934b095724aeb70ff1b31b9c55cca08116b1fabe5bf4ca04cfde202",
+  "source_gate": "G4_OPERATIONS",
+  "candidate_parent_disposition": "LOCAL_CORE_PARTIAL",
+  "candidate_version": "2.1.0-local.1",
+  "candidate_code_tree_sha256": "04fb8e21dece4ae8ee2a7bbeb7666bcc5d563b6ffd6a150761f339b5554c8ac4",
+  "run_id": "LOCAL127-R03",
+  "revision": 3,
+  "mode": "REMEDIATE_AND_VERIFY",
+  "component_selection": "UNDECIDED",
+  "applicability": "UNDECIDED",
+  "status": "BLOCKED",
+  "workflow_execution": "STOPPED",
+  "named_owner": null,
+  "independent_reviewer": null,
+  "reviewed_at": null,
+  "actual_evidence_refs": [
+    {
+      "path": "evidence/delivery/TEST_SUMMARY.json",
+      "sha256": "fe6bb6260db17b893df82b9df8df318c804e89318830a68810fa922af4a6eaf4",
+      "tests": [
+        {
+          "name": "T068 directory fails closed on changed signed state",
+          "outcome": "PASS"
+        },
+        {
+          "name": "T069 ledger fails closed on changed signed state",
+          "outcome": "PASS"
+        },
+        {
+          "name": "T070 exportMailbox fails closed on changed signed state",
+          "outcome": "PASS"
+        },
+        {
+          "name": "T071 quarantine fails closed on changed signed state",
+          "outcome": "PASS"
+        },
+        {
+          "name": "T072 checkpoint fails closed on a changed current-state root",
+          "outcome": "PASS"
+        },
+        {
+          "name": "T079 packaged UI discards an attachment download completed after logout",
+          "outcome": "PASS"
+        },
+        {
+          "name": "T085 session changes do not surface obsolete errors on the login screen",
+          "outcome": "PASS"
+        },
+        {
+          "name": "T086 browser source does not persist access tokens in web storage",
+          "outcome": "PASS"
+        }
+      ]
+    },
+    {
+      "path": "evidence/delivery/TESTS.tap",
+      "sha256": "9d9d90bc034f7b1730b2bbe6642c91ee741097a0030df25dd143d3b37e58ff3c"
+    },
+    {
+      "path": "evidence/continuation/ORACLE.md",
+      "sha256": "a7cbe004ef06274025b00ad5fda56da1df8d49972a99f75863198c94ccd5089a"
+    },
+    {
+      "path": "docs/DATA_PLACEMENT.md",
+      "sha256": "3094287e32b7ca831606bf8a7d0aaa26740a0a1c534067e79d32104c1d310335"
+    },
+    {
+      "path": "evidence/delivery/OFFLINE_DOM_SUMMARY.json",
+      "sha256": "66d2a541910f913958f4697560b9c023900b85d2002526f256ce4040a20e7070",
+      "scope": "Mock DOM responses only; no actual browser network delivery."
+    }
+  ],
+  "observed_result": {
+    "kind": "BOUNDED_CONTINUATION_EVIDENCE",
+    "scope": "State-derived read/export/checkpoint paths reject tested state-root mutation. Late UI data is suppressed and tokens are not put in browser persistent storage.",
+    "test_outcomes": [
+      {
+        "name": "T068 directory fails closed on changed signed state",
+        "outcome": "PASS"
+      },
+      {
+        "name": "T069 ledger fails closed on changed signed state",
+        "outcome": "PASS"
+      },
+      {
+        "name": "T070 exportMailbox fails closed on changed signed state",
+        "outcome": "PASS"
+      },
+      {
+        "name": "T071 quarantine fails closed on changed signed state",
+        "outcome": "PASS"
+      },
+      {
+        "name": "T072 checkpoint fails closed on a changed current-state root",
+        "outcome": "PASS"
+      },
+      {
+        "name": "T079 packaged UI discards an attachment download completed after logout",
+        "outcome": "PASS"
+      },
+      {
+        "name": "T085 session changes do not surface obsolete errors on the login screen",
+        "outcome": "PASS"
+      },
+      {
+        "name": "T086 browser source does not persist access tokens in web storage",
+        "outcome": "PASS"
+      }
+    ],
+    "complete_source_criterion_claimed": false
+  },
+  "risk_exception": null,
+  "blocking_issues": [
+    "Source component/applicability decisions and required independent review remain unassigned.",
+    "Read integrity is only supporting evidence, not a complete telemetry-purpose/data-minimization approval. No reviewer-approved retention/field-purpose inventory or universal deletion claim."
+  ],
+  "limitations": [
+    "Read integrity is only supporting evidence, not a complete telemetry-purpose/data-minimization approval. No reviewer-approved retention/field-purpose inventory or universal deletion claim.",
+    "Actual local implementation tests are separate from source-control acceptance."
+  ],
+  "next_action": "Have an authorized independent reviewer inspect the preserved exact criterion, current artifact and cited fixtures; close the listed scope/oracle gaps before any full-control PASS.",
+  "evidence_validity": "CURRENT_BOUNDED_PREDICATES_ONLY"
+}

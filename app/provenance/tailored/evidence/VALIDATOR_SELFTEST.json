@@ -1,0 +1,109 @@
+{
+  "schema": "GLYPHOKU_VALIDATOR_SELFTEST/1",
+  "scope": "Package-integrity validator only; not application acceptance, browser execution or Windows execution. Path-with-spaces case ran on Linux.",
+  "cases": [
+    {
+      "case": "pristine_path_with_spaces",
+      "expected_exit_code": 0,
+      "observed_exit_code": 0,
+      "status": "PASS",
+      "errors": [],
+      "stderr": ""
+    },
+    {
+      "case": "modified_dossier",
+      "expected_exit_code": 1,
+      "observed_exit_code": 1,
+      "status": "PASS",
+      "errors": [
+        "Size mismatch: W01_CIPHER.md",
+        "Hash mismatch: W01_CIPHER.md",
+        "Checksum-list mismatch: W01_CIPHER.md"
+      ],
+      "stderr": ""
+    },
+    {
+      "case": "missing_dossier",
+      "expected_exit_code": 1,
+      "observed_exit_code": 1,
+      "status": "PASS",
+      "errors": [
+        "Missing regular file: W03_DOMAIN.md",
+        "ENOENT: no such file or directory, open '/tmp/glyphoku validator dtfb4yrc/package with spaces/W03_DOMAIN.md'"
+      ],
+      "stderr": ""
+    },
+    {
+      "case": "unlisted_file",
+      "expected_exit_code": 1,
+      "observed_exit_code": 1,
+      "status": "PASS",
+      "errors": [
+        "Unlisted payload: unlisted.txt"
+      ],
+      "stderr": ""
+    },
+    {
+      "case": "unsafe_manifest_path",
+      "expected_exit_code": 1,
+      "observed_exit_code": 1,
+      "status": "PASS",
+      "errors": [
+        "Unsafe relative path: ../outside.txt"
+      ],
+      "stderr": ""
+    },
+    {
+      "case": "changed_original_even_with_new_manifest",
+      "expected_exit_code": 1,
+      "observed_exit_code": 1,
+      "status": "PASS",
+      "errors": [
+        "Original source copy changed: source-series/MASTER_PROMPT.md"
+      ],
+      "stderr": ""
+    },
+    {
+      "case": "broken_link_even_with_new_manifest",
+      "expected_exit_code": 1,
+      "observed_exit_code": 1,
+      "status": "PASS",
+      "errors": [
+        "Broken local link in README.md: absent.md"
+      ],
+      "stderr": ""
+    },
+    {
+      "case": "false_execution_status_even_with_new_manifest",
+      "expected_exit_code": 1,
+      "observed_exit_code": 1,
+      "status": "PASS",
+      "errors": [
+        "Acceptance plan presented as executed/source-certified: GV110-W00-T01"
+      ],
+      "stderr": ""
+    },
+    {
+      "case": "unknown_argument",
+      "expected_exit_code": 1,
+      "observed_exit_code": 1,
+      "status": "PASS",
+      "errors": [
+        "Unknown or incomplete argument: --invented-option"
+      ],
+      "stderr": ""
+    },
+    {
+      "case": "wrong_target_file",
+      "expected_exit_code": 1,
+      "observed_exit_code": 1,
+      "status": "PASS",
+      "errors": [
+        "Target differs from bound baseline: src/lib/glyphoku/registry.ts"
+      ],
+      "stderr": ""
+    }
+  ],
+  "passed": 10,
+  "failed": 0
+}

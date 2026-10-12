@@ -1,0 +1,2 @@
+$ sha256sum -c --quiet SHA256SUMS
+[exit 0 in 0.009s]

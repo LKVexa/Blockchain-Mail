@@ -1,0 +1,4 @@
+$ sh validation/VERIFY_ALL.sh
+[exit 0 in 16.2s]
+PASS: MSSL seals and repository hashes verified (438 MSSL documents)
+PASS: all Columned LCTL plans lowered and canonical-verified

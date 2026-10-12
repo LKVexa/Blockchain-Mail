@@ -1,0 +1,48 @@
+{
+  "schema": "WORKSPACE391-FREE-TORUS-SOURCE-VERIFICATION/1",
+  "created_utc": "2026-10-12T21:08:13.433Z",
+  "status": "PASS",
+  "scope": "Source regression and native compilation/policy checks; desktop and packaged real-Tor acceptance are recorded separately",
+  "features": {
+    "new_address_prefix": "mail@",
+    "old_rmail_addresses_preserved": true,
+    "credits_required_for_ordinary_mail": false,
+    "one_send_interface": true,
+    "private_identifier_digits": 32,
+    "automatic_identifier_digits": 20,
+    "operational_computers_per_group": 256,
+    "accounts_per_computer": 64,
+    "attachments_fixed_byte_size_cap": false,
+    "mailbox_fixed_storage_quota": false,
+    "connection_handshake_fixed_deadline": false
+  },
+  "tests": {
+    "tests": 437,
+    "pass": 436,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 1
+  },
+  "test_started_at": "2026-10-12T21:05:20.023Z",
+  "test_finished_at": "2026-10-12T21:07:22.039Z",
+  "native_checks": {
+    "status": "PASS",
+    "total": 47,
+    "passed": 47,
+    "failed": 0,
+    "GUI_started": false
+  },
+  "source_pins": {
+    "INTEGRATED_BUILD.json": "f56344d5d683c8ee5548c3a86fed3641a368410dd89be6cc578ca45b6dd16d7d",
+    "app/SHA256SUMS.txt": "b80070fa82f1a15a805001d35f8774a3a8ac629cca3a4c1af6708a26c1a2bc7a",
+    "app/src/torus-mail.mjs": "2890440f4b3deb0372914d5b1013418935ca05e131f1c8ae43fabd92615b39b0",
+    "app/src/torus-peer.mjs": "d104dfb134769262bc607b00eee25e78aae88fc5030e7ea455df484bda21cc28",
+    "app/src/torus-onboarding.mjs": "90473cae3cc3de78df047d0110c6edd7919be369465ed1f1988b0305cd0b0e57",
+    "app/src/policy.mjs": "8939756c53ec815ee17dce3bd6422176deebf9251973d2db210e63d40a90b977",
+    "app/src/store.mjs": "a742fa425c78066d1dace59b4eab3dfe49a573bc51e375fe70767206cbe6be13",
+    "app/web/app.js": "cbd072e5f05c985f36d3722e233a387ae1f8aa254682cff41fccf3fc35de3232",
+    "app/web/index.html": "d2f46299dd7402419f303c9c453320730e44d5e486430c39ca7535c16c04d304",
+    "app/src/local127-assignment.mjs": "6b581f08ee6470317f172af89caab469ecc72beeb7307b5781cdf05524b5baa6"
+  },
+  "private_user_state_included": false
+}

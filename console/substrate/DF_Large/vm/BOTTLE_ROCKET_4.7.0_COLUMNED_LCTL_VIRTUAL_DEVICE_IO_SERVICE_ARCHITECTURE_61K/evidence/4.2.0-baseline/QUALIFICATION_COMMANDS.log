@@ -1,0 +1,343 @@
+$ cc --version
+exit=0 elapsed_ns=3517516
+cc (Debian 14.2.0-19) 14.2.0
+Copyright (C) 2024 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+
+
+$ ld --version
+exit=0 elapsed_ns=3829896
+GNU ld (GNU Binutils for Debian) 2.44
+Copyright (C) 2025 Free Software Foundation, Inc.
+This program is free software; you may redistribute it under the terms of
+the GNU General Public License version 3 or (at your option) a later version.
+This program has absolutely no warranty.
+
+
+$ openssl version
+exit=0 elapsed_ns=6769870
+OpenSSL 3.5.5 27 Jan 2026 (Library: OpenSSL 3.5.5 27 Jan 2026)
+
+
+$ make clean
+exit=0 elapsed_ns=10066509
+make[1]: Entering directory '/mnt/data/br420out/BOTTLE_ROCKET_4.2.0_COLUMNED_LCTL_NATIVE_SEMANTIC_AUTHORITY_61K'
+rm -rf .build
+make[1]: Leaving directory '/mnt/data/br420out/BOTTLE_ROCKET_4.2.0_COLUMNED_LCTL_NATIVE_SEMANTIC_AUTHORITY_61K'
+
+
+$ make all
+exit=0 elapsed_ns=4503783145
+make[1]: Entering directory '/mnt/data/br420out/BOTTLE_ROCKET_4.2.0_COLUMNED_LCTL_NATIVE_SEMANTIC_AUTHORITY_61K'
+mkdir -p .build
+cc -Isrc -Iadapters -std=c11 -O2 -Wall -Wextra -Werror -fno-common -fstack-protector-strong -c src/brvm.c -o .build/brvm.o
+ar rcs .build/libbrvm_core.a .build/brvm.o
+cc -Isrc -Iadapters -std=c11 -O2 -Wall -Wextra -Werror -fno-common -fstack-protector-strong src/brvm.c adapters/br_posix_adapter.c host/brctl.c -o .build/brctl -lcrypto
+cc -Isrc -Iadapters -std=c11 -O2 -Wall -Wextra -Werror -fno-common -fstack-protector-strong src/brvm.c adapters/br_memory_adapter.c adapters/br_posix_adapter.c adapters/br_windows_adapter.c tests/test_410.c -o .build/br_tests -lcrypto
+cc -Isrc -Iadapters -std=c11 -O2 -Wall -Wextra -Werror -fno-common -fstack-protector-strong src/brvm.c tools/br_sizes.c -o .build/br_sizes
+cc -Isrc -Iadapters -std=c11 -O2 -Wall -Wextra -Werror -fno-common -fstack-protector-strong src/brvm.c tools/br_bench.c -o .build/br_bench
+make[1]: Leaving directory '/mnt/data/br420out/BOTTLE_ROCKET_4.2.0_COLUMNED_LCTL_NATIVE_SEMANTIC_AUTHORITY_61K'
+
+
+$ make image
+exit=0 elapsed_ns=3332334477
+make[1]: Entering directory '/mnt/data/br420out/BOTTLE_ROCKET_4.2.0_COLUMNED_LCTL_NATIVE_SEMANTIC_AUTHORITY_61K'
+python3 tools/lctl420.py check src/BOOT.lctlc --executable; python3 tools/lctl420.py check src/CORE.lctlc
+{"exec_rows": 6, "rows": 6, "sha256": "8d4b642915ad32935c2faaed8dc184ae3ea1bc2dec64b33adef4590f096ade5d", "source": "src/BOOT.lctlc", "status": "PASS"}
+{"exec_rows": 0, "rows": 14, "sha256": "af269d3cd9e6dd66596308de2efb772865c924fcae290fc1857aeb1af5f729fb", "source": "src/CORE.lctlc", "status": "PASS"}
+mkdir -p deploy; python3 tools/lctl420.py compile src/BOOT.lctlc deploy/BOTTLE_ROCKET_SIM_CORE_4.2.0.brimg --factory --manifest deploy/BOTTLE_ROCKET_SIM_CORE_4.2.0.provenance.json --brir-out deploy/BOTTLE_ROCKET_SIM_CORE_4.2.0.brir.json; python3 tools/brim_verify.py deploy/BOTTLE_ROCKET_SIM_CORE_4.2.0.brimg --manifest deploy/BOTTLE_ROCKET_SIM_CORE_4.2.0.provenance.json
+{"brim_sha256": "5fb13ad12b8e3e8791b57969d6d27731cba8d15836bd1ad54f667ceca55b6507", "brir_sha256": "6aecd5c324b793a22ef3c9075a488f6644f82337062b2015ae335cb7f0a1f310", "compiler_version": "br-lctlc/4.2.0", "header_source_hash_prefix": "8d4b642915ad3293", "image_version": 8, "instruction_count": 6, "isa_version": "BR/1", "language_version": "columned-lctl/4.2", "payload_sha256": "8900e287560b1d8ae5360227e93eb3aec4f7c682b89e1ff4461bc6f26ee6968d", "record": "BR.Provenance", "requested_caps": 3, "signed": false, "source": "src/BOOT.lctlc", "source_sha256": "8d4b642915ad32935c2faaed8dc184ae3ea1bc2dec64b33adef4590f096ade5d", "v": "4.2.0", "verifier_version": "br-lctlv/4.2.0"}
+{"checks": {"capabilities": true, "cfg": true, "header": true, "instruction_semantics": true, "manifest": true, "native_lctl_tag": true, "payload_sha256": true, "stack": true}, "image": "deploy/BOTTLE_ROCKET_SIM_CORE_4.2.0.brimg", "instructions": 6, "requested_caps": 3, "sha256": "5fb13ad12b8e3e8791b57969d6d27731cba8d15836bd1ad54f667ceca55b6507", "signed": false, "status": "PASS"}
+make[1]: Leaving directory '/mnt/data/br420out/BOTTLE_ROCKET_4.2.0_COLUMNED_LCTL_NATIVE_SEMANTIC_AUTHORITY_61K'
+
+
+$ make clean
+exit=0 elapsed_ns=2870924
+make[1]: Entering directory '/mnt/data/br420out/BOTTLE_ROCKET_4.2.0_COLUMNED_LCTL_NATIVE_SEMANTIC_AUTHORITY_61K'
+rm -rf .build
+make[1]: Leaving directory '/mnt/data/br420out/BOTTLE_ROCKET_4.2.0_COLUMNED_LCTL_NATIVE_SEMANTIC_AUTHORITY_61K'
+
+
+$ make all
+exit=0 elapsed_ns=3377532238
+make[1]: Entering directory '/mnt/data/br420out/BOTTLE_ROCKET_4.2.0_COLUMNED_LCTL_NATIVE_SEMANTIC_AUTHORITY_61K'
+mkdir -p .build
+cc -Isrc -Iadapters -std=c11 -O2 -Wall -Wextra -Werror -fno-common -fstack-protector-strong -c src/brvm.c -o .build/brvm.o
+ar rcs .build/libbrvm_core.a .build/brvm.o
+cc -Isrc -Iadapters -std=c11 -O2 -Wall -Wextra -Werror -fno-common -fstack-protector-strong src/brvm.c adapters/br_posix_adapter.c host/brctl.c -o .build/brctl -lcrypto
+cc -Isrc -Iadapters -std=c11 -O2 -Wall -Wextra -Werror -fno-common -fstack-protector-strong src/brvm.c adapters/br_memory_adapter.c adapters/br_posix_adapter.c adapters/br_windows_adapter.c tests/test_410.c -o .build/br_tests -lcrypto
+cc -Isrc -Iadapters -std=c11 -O2 -Wall -Wextra -Werror -fno-common -fstack-protector-strong src/brvm.c tools/br_sizes.c -o .build/br_sizes
+cc -Isrc -Iadapters -std=c11 -O2 -Wall -Wextra -Werror -fno-common -fstack-protector-strong src/brvm.c tools/br_bench.c -o .build/br_bench
+make[1]: Leaving directory '/mnt/data/br420out/BOTTLE_ROCKET_4.2.0_COLUMNED_LCTL_NATIVE_SEMANTIC_AUTHORITY_61K'
+
+
+$ make image
+exit=0 elapsed_ns=2429771832
+make[1]: Entering directory '/mnt/data/br420out/BOTTLE_ROCKET_4.2.0_COLUMNED_LCTL_NATIVE_SEMANTIC_AUTHORITY_61K'
+python3 tools/lctl420.py check src/BOOT.lctlc --executable; python3 tools/lctl420.py check src/CORE.lctlc
+{"exec_rows": 6, "rows": 6, "sha256": "8d4b642915ad32935c2faaed8dc184ae3ea1bc2dec64b33adef4590f096ade5d", "source": "src/BOOT.lctlc", "status": "PASS"}
+{"exec_rows": 0, "rows": 14, "sha256": "af269d3cd9e6dd66596308de2efb772865c924fcae290fc1857aeb1af5f729fb", "source": "src/CORE.lctlc", "status": "PASS"}
+mkdir -p deploy; python3 tools/lctl420.py compile src/BOOT.lctlc deploy/BOTTLE_ROCKET_SIM_CORE_4.2.0.brimg --factory --manifest deploy/BOTTLE_ROCKET_SIM_CORE_4.2.0.provenance.json --brir-out deploy/BOTTLE_ROCKET_SIM_CORE_4.2.0.brir.json; python3 tools/brim_verify.py deploy/BOTTLE_ROCKET_SIM_CORE_4.2.0.brimg --manifest deploy/BOTTLE_ROCKET_SIM_CORE_4.2.0.provenance.json
+{"brim_sha256": "5fb13ad12b8e3e8791b57969d6d27731cba8d15836bd1ad54f667ceca55b6507", "brir_sha256": "6aecd5c324b793a22ef3c9075a488f6644f82337062b2015ae335cb7f0a1f310", "compiler_version": "br-lctlc/4.2.0", "header_source_hash_prefix": "8d4b642915ad3293", "image_version": 8, "instruction_count": 6, "isa_version": "BR/1", "language_version": "columned-lctl/4.2", "payload_sha256": "8900e287560b1d8ae5360227e93eb3aec4f7c682b89e1ff4461bc6f26ee6968d", "record": "BR.Provenance", "requested_caps": 3, "signed": false, "source": "src/BOOT.lctlc", "source_sha256": "8d4b642915ad32935c2faaed8dc184ae3ea1bc2dec64b33adef4590f096ade5d", "v": "4.2.0", "verifier_version": "br-lctlv/4.2.0"}
+{"checks": {"capabilities": true, "cfg": true, "header": true, "instruction_semantics": true, "manifest": true, "native_lctl_tag": true, "payload_sha256": true, "stack": true}, "image": "deploy/BOTTLE_ROCKET_SIM_CORE_4.2.0.brimg", "instructions": 6, "requested_caps": 3, "sha256": "5fb13ad12b8e3e8791b57969d6d27731cba8d15836bd1ad54f667ceca55b6507", "signed": false, "status": "PASS"}
+make[1]: Leaving directory '/mnt/data/br420out/BOTTLE_ROCKET_4.2.0_COLUMNED_LCTL_NATIVE_SEMANTIC_AUTHORITY_61K'
+
+
+$ make operational
+exit=0 elapsed_ns=11176123390
+make[1]: Entering directory '/mnt/data/br420out/BOTTLE_ROCKET_4.2.0_COLUMNED_LCTL_NATIVE_SEMANTIC_AUTHORITY_61K'
+! grep -En '#include <(stdio|unistd|fcntl|sys/|openssl)|\b(fopen|fread|fwrite|open|read|write|rename|unlink|fsync|getenv|isatty|EVP_|RAND_)\b' src/brvm.c
+.build/br_tests
+PASS core_selftest
+PASS lifecycle_create_initialize_configure_reset_load_verify_start_step_run_suspend_resume_stop_fault_destroy
+PASS explicit_instance_isolation
+PASS hal_memory_all_16_calls
+PASS hal_deterministic_adapter
+PASS hal_bare_metal_adapter
+PASS hal_smart_card_adapter
+PASS posix_adapter_storage_monotonic
+PASS windows_adapter_portable_contract
+PASS same_brim_three_adapters
+PASS persistence_dual_slot_monotonic_replay
+PASS loader_error_model_abi_isa_integrity_replay
+PASS sandbox_caps_fixed_host_table_bounds_quotas
+PASS per_instance_device_table
+PASS apdu_length_pointer_protocol_rejection
+PASS wide_1048576_bit_stack_roundtrip
+PASS execution_budget_and_cancel
+PASS public_pointer_validation
+{"suite":"BR-410","tests":18,"failures":0,"result":"PASS"}
+python3 tools/lctl420.py check src/BOOT.lctlc --executable; python3 tools/lctl420.py check src/CORE.lctlc
+{"exec_rows": 6, "rows": 6, "sha256": "8d4b642915ad32935c2faaed8dc184ae3ea1bc2dec64b33adef4590f096ade5d", "source": "src/BOOT.lctlc", "status": "PASS"}
+{"exec_rows": 0, "rows": 14, "sha256": "af269d3cd9e6dd66596308de2efb772865c924fcae290fc1857aeb1af5f729fb", "source": "src/CORE.lctlc", "status": "PASS"}
+mkdir -p deploy; python3 tools/lctl420.py compile src/BOOT.lctlc deploy/BOTTLE_ROCKET_SIM_CORE_4.2.0.brimg --factory --manifest deploy/BOTTLE_ROCKET_SIM_CORE_4.2.0.provenance.json --brir-out deploy/BOTTLE_ROCKET_SIM_CORE_4.2.0.brir.json; python3 tools/brim_verify.py deploy/BOTTLE_ROCKET_SIM_CORE_4.2.0.brimg --manifest deploy/BOTTLE_ROCKET_SIM_CORE_4.2.0.provenance.json
+{"brim_sha256": "5fb13ad12b8e3e8791b57969d6d27731cba8d15836bd1ad54f667ceca55b6507", "brir_sha256": "6aecd5c324b793a22ef3c9075a488f6644f82337062b2015ae335cb7f0a1f310", "compiler_version": "br-lctlc/4.2.0", "header_source_hash_prefix": "8d4b642915ad3293", "image_version": 8, "instruction_count": 6, "isa_version": "BR/1", "language_version": "columned-lctl/4.2", "payload_sha256": "8900e287560b1d8ae5360227e93eb3aec4f7c682b89e1ff4461bc6f26ee6968d", "record": "BR.Provenance", "requested_caps": 3, "signed": false, "source": "src/BOOT.lctlc", "source_sha256": "8d4b642915ad32935c2faaed8dc184ae3ea1bc2dec64b33adef4590f096ade5d", "v": "4.2.0", "verifier_version": "br-lctlv/4.2.0"}
+{"checks": {"capabilities": true, "cfg": true, "header": true, "instruction_semantics": true, "manifest": true, "native_lctl_tag": true, "payload_sha256": true, "stack": true}, "image": "deploy/BOTTLE_ROCKET_SIM_CORE_4.2.0.brimg", "instructions": 6, "requested_caps": 3, "sha256": "5fb13ad12b8e3e8791b57969d6d27731cba8d15836bd1ad54f667ceca55b6507", "signed": false, "status": "PASS"}
+test "$(wc -c < deploy/BOTTLE_ROCKET_SIM_CORE_4.2.0.brimg)" -le 51200
+python3 tools/lctl420.py compile src/BOOT.lctlc .build/a.brimg --factory --manifest .build/a.prov --brir-out .build/a.brir >/dev/null
+python3 tools/lctl420.py compile src/BOOT.lctlc .build/b.brimg --factory --manifest .build/b.prov --brir-out .build/b.brir >/dev/null
+cmp .build/a.brimg .build/b.brimg; cmp .build/a.prov .build/b.prov; cmp .build/a.brir .build/b.brir
+python3 tools/lctl420.py provenance src/BOOT.lctlc deploy/BOTTLE_ROCKET_SIM_CORE_4.2.0.brimg deploy/BOTTLE_ROCKET_SIM_CORE_4.2.0.provenance.json; python3 tools/lctl420.py roundtrip src/BOOT.lctlc .build/rt.brimg --factory
+{"checks": {"brim_sha256": true, "brir_sha256": true, "compiler_version": true, "header_source_hash_prefix": true, "isa_version": true, "language_version": true, "source_sha256": true, "verifier_version": true}, "status": "PASS"}
+{"brim_sha256": "5fb13ad12b8e3e8791b57969d6d27731cba8d15836bd1ad54f667ceca55b6507", "instructions": 6, "source_sha256": "8d4b642915ad32935c2faaed8dc184ae3ea1bc2dec64b33adef4590f096ade5d", "status": "PASS"}
+python3 tools/brim_verify.py .build/rt.brimg
+{"checks": {"capabilities": true, "cfg": true, "header": true, "instruction_semantics": true, "native_lctl_tag": true, "payload_sha256": true, "stack": true}, "image": ".build/rt.brimg", "instructions": 6, "requested_caps": 3, "sha256": "5fb13ad12b8e3e8791b57969d6d27731cba8d15836bd1ad54f667ceca55b6507", "signed": false, "status": "PASS"}
+.build/brctl run deploy/BOTTLE_ROCKET_SIM_CORE_4.2.0.brimg; .build/br_sizes; python3 tests/test_420.py
+{"status":2,"trap":0,"R2":42}
+{"record":"BOTTLE_ROCKET.RuntimeMemoryMeasurement","word_bits":1048576,"word_bytes":131072,"register_count":16,"register_requested_bytes":2097152,"register_usable_bytes":2101232,"stack_words":256,"stack_requested_bytes":33554432,"stack_usable_bytes":33558512,"scratch_words":2,"scratch_requested_bytes":262144,"scratch_usable_bytes":266232,"fragment_requested_bytes":51200,"fragment_usable_bytes":51208,"vm_inline_bytes":8792,"heap_requested_bytes":35964928,"heap_usable_bytes":35977184,"allocator_overhead_bytes":12256,"rss_before_init_kib":1528,"rss_idle_kib":1912,"native_stack_limit_bytes":8388608}
+TEST language_specification PASS
+TEST lexical_version_encoding PASS
+TEST canonical_whitespace_ordering PASS
+TEST native_opcode_direct PASS
+TEST native_operands_immediate_mode_width_capability PASS
+TEST native_memory_region PASS
+TEST native_service_identifier PASS
+TEST native_control_flow_destination PASS
+TEST type_wide_scalar_address_register PASS
+TEST type_cap_instruction_service_constant PASS
+TEST type_immutable_mutable_objects PASS
+TEST reject_bad_opcode PASS
+TEST reject_operand_count PASS
+TEST reject_operand_type_register_bounds PASS
+TEST reject_memory_bounds PASS
+TEST reject_immediate_bounds PASS
+TEST reject_branch_target PASS
+TEST reject_capability_excess PASS
+TEST reject_stack_underflow PASS
+TEST reject_mode PASS
+TEST reject_unreachable PASS
+TEST cfg_loop_budget_policy PASS
+TEST cfg_reject_unbounded_loop_policy PASS
+TEST cfg_call_validation_reject_unsupported PASS
+TEST cfg_return_validation_reject_unsupported PASS
+TEST cfg_construct_validate_branches PASS
+TEST capability_state_declared_derived PASS
+TEST capability_reject_undeclared_state PASS
+TEST capability_reject_undeclared_device PASS
+TEST capability_privileged_instruction_declared PASS
+TEST capability_reject_undeclared_privileged PASS
+TEST brir_canonical_opcode_operands_types_immediates PASS
+TEST brir_explicit_capability_provenance PASS
+TEST brir_explicit_cfg_edges PASS
+TEST brir_deterministic_serialization PASS
+TEST brir_safe_optimization PASS
+TEST pipeline_parse_verify_brir_lower_serialize_hash_deterministic PASS
+TEST pipeline_invalid_fails_before_image PASS
+TEST pipeline_sign_artifact PASS
+TEST source_to_binary_provenance_manifest PASS
+TEST source_hash_embedded_header_prefix PASS
+TEST spec_compiler_sync PASS
+TEST header_opcode_sync PASS
+TEST runtime_opcode_version_sync PASS
+TEST independent_verifier_sync PASS
+TEST documentation_tests_sync PASS
+{"brim_sha256": "5fb13ad12b8e3e8791b57969d6d27731cba8d15836bd1ad54f667ceca55b6507", "instructions": 6, "source_sha256": "8d4b642915ad32935c2faaed8dc184ae3ea1bc2dec64b33adef4590f096ade5d", "status": "PASS"}
+TEST roundtrip_lctl_brir_brim_disassembly PASS
+TEST brim_disassembly_semantic_compare PASS
+TEST roundtrip_binary_provenance PASS
+TEST acceptance_hidden_semantic_metadata_eliminated PASS
+TEST acceptance_independent_brim_verifier PASS
+TEST acceptance_independent_rejects_invalid_brim PASS
+TEST acceptance_every_production_brim_tagged_verified_lctl PASS
+{"names": ["language_specification", "lexical_version_encoding", "canonical_whitespace_ordering", "native_opcode_direct", "native_operands_immediate_mode_width_capability", "native_memory_region", "native_service_identifier", "native_control_flow_destination", "type_wide_scalar_address_register", "type_cap_instruction_service_constant", "type_immutable_mutable_objects", "reject_bad_opcode", "reject_operand_count", "reject_operand_type_register_bounds", "reject_memory_bounds", "reject_immediate_bounds", "reject_branch_target", "reject_capability_excess", "reject_stack_underflow", "reject_mode", "reject_unreachable", "cfg_loop_budget_policy", "cfg_reject_unbounded_loop_policy", "cfg_call_validation_reject_unsupported", "cfg_return_validation_reject_unsupported", "cfg_construct_validate_branches", "capability_state_declared_derived", "capability_reject_undeclared_state", "capability_reject_undeclared_device", "capability_privileged_instruction_declared", "capability_reject_undeclared_privileged", "brir_canonical_opcode_operands_types_immediates", "brir_explicit_capability_provenance", "brir_explicit_cfg_edges", "brir_deterministic_serialization", "brir_safe_optimization", "pipeline_parse_verify_brir_lower_serialize_hash_deterministic", "pipeline_invalid_fails_before_image", "pipeline_sign_artifact", "source_to_binary_provenance_manifest", "source_hash_embedded_header_prefix", "spec_compiler_sync", "header_opcode_sync", "runtime_opcode_version_sync", "independent_verifier_sync", "documentation_tests_sync", "roundtrip_lctl_brir_brim_disassembly", "brim_disassembly_semantic_compare", "roundtrip_binary_provenance", "acceptance_hidden_semantic_metadata_eliminated", "acceptance_independent_brim_verifier", "acceptance_independent_rejects_invalid_brim", "acceptance_every_production_brim_tagged_verified_lctl"], "status": "PASS", "tests": 53}
+rm -f .build/k .build/p .build/s.brimg .build/state* .build/alt*; .build/brctl keygen .build/k .build/p
+.build/brctl sign-image deploy/BOTTLE_ROCKET_SIM_CORE_4.2.0.brimg .build/s.brimg .build/k; python3 tools/brim_verify.py .build/s.brimg
+{"checks": {"capabilities": true, "cfg": true, "header": true, "instruction_semantics": true, "native_lctl_tag": true, "payload_sha256": true, "stack": true}, "image": ".build/s.brimg", "instructions": 6, "requested_caps": 3, "sha256": "fb5d93d711622e7b942efae48b609459f954044ffefd5dbac70988bd0bcb7eac", "signed": true, "status": "PASS"}
+.build/brctl verify-image .build/s.brimg .build/p && .build/brctl run-signed .build/s.brimg .build/p
+{"image_version":8,"bytes":240,"status":0,"trap":0}
+{"image_version":8,"bytes":240,"status":2,"trap":0}
+{ printf 'LCTLC/1.1\n@unit id=br.alt version=4.2.0 language=columned-lctl/4.2 isa=BR/1 termination=halt br_image_version=9 br_request_caps=CONTROL\n@defaults mode=WRAP width=WIDE region=MEM\n@frame id=F parent=ROOT module=br.alt\nID│LANE│OP│OUT│CTRL│IN│ARG│META\n'; i=0; while [ $i -lt 255 ]; do printf 'N%03d│exec│NOP│_│C0:CONTROL│_│_│src=alt:%s\n' $i $i; i=$((i+1)); done; printf 'H│exec│HALT│_│C0:CONTROL│_│_│src=alt:halt\n@end\n'; } > .build/alt.lctlc
+python3 tools/lctl420.py compile .build/alt.lctlc .build/alt.brimg --manifest .build/alt.prov; .build/brctl sign-image .build/alt.brimg .build/alt.signed .build/k
+{"brim_sha256": "a9f05af61f41478ec83dcb74f2abae1a1b9f336cfbb89fd047366c6ede63a68d", "brir_sha256": "55a1a30f0c70ad76ed517ebf02a8b10f744c8cc1513e20b78e177b14ab70ceb9", "compiler_version": "br-lctlc/4.2.0", "header_source_hash_prefix": "97627c8a2cf028e5", "image_version": 9, "instruction_count": 1, "isa_version": "BR/1", "language_version": "columned-lctl/4.2", "payload_sha256": "5e9a5de4a59a7c3c9ba8846060ba77ab402e3088658aa705e1a64e796f6cd5cf", "record": "BR.Provenance", "requested_caps": 1, "signed": false, "source": ".build/alt.lctlc", "source_sha256": "97627c8a2cf028e5dab7d6247c27750eb1774e7847c49dd34851b41557a48dda", "v": "4.2.0", "verifier_version": "br-lctlv/4.2.0"}
+python3 tools/brim_verify.py .build/alt.signed; .build/brctl update .build/alt.signed .build/p --state .build/state; .build/brctl recover-state .build/state .build/p
+{"checks": {"capabilities": true, "cfg": true, "header": true, "instruction_semantics": true, "native_lctl_tag": true, "payload_sha256": true, "stack": true}, "image": ".build/alt.signed", "instructions": 1, "requested_caps": 1, "sha256": "d197551049942ccb49c0e1dce171bc6b57b2728e50480592efd9dd9315fe1662", "signed": true, "status": "PASS"}
+{"update":"PASS","version":9,"generation":1}
+{"generation":1,"image_version":9,"txid":1,"slot":1}
+printf '010800000200000000000000\n' | .build/brctl serve --state .build/state .build/p | grep '^9000'
+9000020000000000
+! .build/brctl update .build/s.brimg .build/p --state .build/state
+rm -f .build/k .build/p .build/s.brimg .build/alt* .build/state*
+make[1]: Leaving directory '/mnt/data/br420out/BOTTLE_ROCKET_4.2.0_COLUMNED_LCTL_NATIVE_SEMANTIC_AUTHORITY_61K'
+
+
+$ make sanitize
+exit=0 elapsed_ns=2388720239
+make[1]: Entering directory '/mnt/data/br420out/BOTTLE_ROCKET_4.2.0_COLUMNED_LCTL_NATIVE_SEMANTIC_AUTHORITY_61K'
+cc -Isrc -Iadapters -std=c11 -O1 -g -Wall -Wextra -Werror -fsanitize=address,undefined src/brvm.c adapters/br_memory_adapter.c adapters/br_posix_adapter.c adapters/br_windows_adapter.c tests/test_410.c -o .build/san -lcrypto
+ASAN_OPTIONS=detect_leaks=0 .build/san
+PASS core_selftest
+PASS lifecycle_create_initialize_configure_reset_load_verify_start_step_run_suspend_resume_stop_fault_destroy
+PASS explicit_instance_isolation
+PASS hal_memory_all_16_calls
+PASS hal_deterministic_adapter
+PASS hal_bare_metal_adapter
+PASS hal_smart_card_adapter
+PASS posix_adapter_storage_monotonic
+PASS windows_adapter_portable_contract
+PASS same_brim_three_adapters
+PASS persistence_dual_slot_monotonic_replay
+PASS loader_error_model_abi_isa_integrity_replay
+PASS sandbox_caps_fixed_host_table_bounds_quotas
+PASS per_instance_device_table
+PASS apdu_length_pointer_protocol_rejection
+PASS wide_1048576_bit_stack_roundtrip
+PASS execution_budget_and_cancel
+PASS public_pointer_validation
+{"suite":"BR-410","tests":18,"failures":0,"result":"PASS"}
+make[1]: Leaving directory '/mnt/data/br420out/BOTTLE_ROCKET_4.2.0_COLUMNED_LCTL_NATIVE_SEMANTIC_AUTHORITY_61K'
+
+
+$ make size
+exit=0 elapsed_ns=8353090
+make[1]: Entering directory '/mnt/data/br420out/BOTTLE_ROCKET_4.2.0_COLUMNED_LCTL_NATIVE_SEMANTIC_AUTHORITY_61K'
+production_source_bytes=60937 ceiling_lt=61000 boundary=src+adapters+spec+Makefile
+make[1]: Leaving directory '/mnt/data/br420out/BOTTLE_ROCKET_4.2.0_COLUMNED_LCTL_NATIVE_SEMANTIC_AUTHORITY_61K'
+
+
+$ make core-scan
+exit=0 elapsed_ns=4455671
+make[1]: Entering directory '/mnt/data/br420out/BOTTLE_ROCKET_4.2.0_COLUMNED_LCTL_NATIVE_SEMANTIC_AUTHORITY_61K'
+! grep -En '#include <(stdio|unistd|fcntl|sys/|openssl)|\b(fopen|fread|fwrite|open|read|write|rename|unlink|fsync|getenv|isatty|EVP_|RAND_)\b' src/brvm.c
+make[1]: Leaving directory '/mnt/data/br420out/BOTTLE_ROCKET_4.2.0_COLUMNED_LCTL_NATIVE_SEMANTIC_AUTHORITY_61K'
+
+
+$ /opt/pyvenv/bin/python3 tests/test_420.py
+exit=0 elapsed_ns=3120744551
+TEST language_specification PASS
+TEST lexical_version_encoding PASS
+TEST canonical_whitespace_ordering PASS
+TEST native_opcode_direct PASS
+TEST native_operands_immediate_mode_width_capability PASS
+TEST native_memory_region PASS
+TEST native_service_identifier PASS
+TEST native_control_flow_destination PASS
+TEST type_wide_scalar_address_register PASS
+TEST type_cap_instruction_service_constant PASS
+TEST type_immutable_mutable_objects PASS
+TEST reject_bad_opcode PASS
+TEST reject_operand_count PASS
+TEST reject_operand_type_register_bounds PASS
+TEST reject_memory_bounds PASS
+TEST reject_immediate_bounds PASS
+TEST reject_branch_target PASS
+TEST reject_capability_excess PASS
+TEST reject_stack_underflow PASS
+TEST reject_mode PASS
+TEST reject_unreachable PASS
+TEST cfg_loop_budget_policy PASS
+TEST cfg_reject_unbounded_loop_policy PASS
+TEST cfg_call_validation_reject_unsupported PASS
+TEST cfg_return_validation_reject_unsupported PASS
+TEST cfg_construct_validate_branches PASS
+TEST capability_state_declared_derived PASS
+TEST capability_reject_undeclared_state PASS
+TEST capability_reject_undeclared_device PASS
+TEST capability_privileged_instruction_declared PASS
+TEST capability_reject_undeclared_privileged PASS
+TEST brir_canonical_opcode_operands_types_immediates PASS
+TEST brir_explicit_capability_provenance PASS
+TEST brir_explicit_cfg_edges PASS
+TEST brir_deterministic_serialization PASS
+TEST brir_safe_optimization PASS
+TEST pipeline_parse_verify_brir_lower_serialize_hash_deterministic PASS
+TEST pipeline_invalid_fails_before_image PASS
+TEST pipeline_sign_artifact PASS
+TEST source_to_binary_provenance_manifest PASS
+TEST source_hash_embedded_header_prefix PASS
+TEST spec_compiler_sync PASS
+TEST header_opcode_sync PASS
+TEST runtime_opcode_version_sync PASS
+TEST independent_verifier_sync PASS
+TEST documentation_tests_sync PASS
+{"brim_sha256": "5fb13ad12b8e3e8791b57969d6d27731cba8d15836bd1ad54f667ceca55b6507", "instructions": 6, "source_sha256": "8d4b642915ad32935c2faaed8dc184ae3ea1bc2dec64b33adef4590f096ade5d", "status": "PASS"}
+TEST roundtrip_lctl_brir_brim_disassembly PASS
+TEST brim_disassembly_semantic_compare PASS
+TEST roundtrip_binary_provenance PASS
+TEST acceptance_hidden_semantic_metadata_eliminated PASS
+TEST acceptance_independent_brim_verifier PASS
+TEST acceptance_independent_rejects_invalid_brim PASS
+TEST acceptance_every_production_brim_tagged_verified_lctl PASS
+{"names": ["language_specification", "lexical_version_encoding", "canonical_whitespace_ordering", "native_opcode_direct", "native_operands_immediate_mode_width_capability", "native_memory_region", "native_service_identifier", "native_control_flow_destination", "type_wide_scalar_address_register", "type_cap_instruction_service_constant", "type_immutable_mutable_objects", "reject_bad_opcode", "reject_operand_count", "reject_operand_type_register_bounds", "reject_memory_bounds", "reject_immediate_bounds", "reject_branch_target", "reject_capability_excess", "reject_stack_underflow", "reject_mode", "reject_unreachable", "cfg_loop_budget_policy", "cfg_reject_unbounded_loop_policy", "cfg_call_validation_reject_unsupported", "cfg_return_validation_reject_unsupported", "cfg_construct_validate_branches", "capability_state_declared_derived", "capability_reject_undeclared_state", "capability_reject_undeclared_device", "capability_privileged_instruction_declared", "capability_reject_undeclared_privileged", "brir_canonical_opcode_operands_types_immediates", "brir_explicit_capability_provenance", "brir_explicit_cfg_edges", "brir_deterministic_serialization", "brir_safe_optimization", "pipeline_parse_verify_brir_lower_serialize_hash_deterministic", "pipeline_invalid_fails_before_image", "pipeline_sign_artifact", "source_to_binary_provenance_manifest", "source_hash_embedded_header_prefix", "spec_compiler_sync", "header_opcode_sync", "runtime_opcode_version_sync", "independent_verifier_sync", "documentation_tests_sync", "roundtrip_lctl_brir_brim_disassembly", "brim_disassembly_semantic_compare", "roundtrip_binary_provenance", "acceptance_hidden_semantic_metadata_eliminated", "acceptance_independent_brim_verifier", "acceptance_independent_rejects_invalid_brim", "acceptance_every_production_brim_tagged_verified_lctl"], "status": "PASS", "tests": 53}
+
+
+$ /opt/pyvenv/bin/python3 tools/lctl420.py check src/BOOT.lctlc --executable
+exit=0 elapsed_ns=610674479
+{"exec_rows": 6, "rows": 6, "sha256": "8d4b642915ad32935c2faaed8dc184ae3ea1bc2dec64b33adef4590f096ade5d", "source": "src/BOOT.lctlc", "status": "PASS"}
+
+
+$ /opt/pyvenv/bin/python3 tools/lctl420.py check src/CORE.lctlc
+exit=0 elapsed_ns=599715009
+{"exec_rows": 0, "rows": 14, "sha256": "af269d3cd9e6dd66596308de2efb772865c924fcae290fc1857aeb1af5f729fb", "source": "src/CORE.lctlc", "status": "PASS"}
+
+
+$ /opt/pyvenv/bin/python3 tools/brim_verify.py /mnt/data/br420out/BOTTLE_ROCKET_4.2.0_COLUMNED_LCTL_NATIVE_SEMANTIC_AUTHORITY_61K/deploy/BOTTLE_ROCKET_SIM_CORE_4.2.0.brimg --manifest /mnt/data/br420out/BOTTLE_ROCKET_4.2.0_COLUMNED_LCTL_NATIVE_SEMANTIC_AUTHORITY_61K/deploy/BOTTLE_ROCKET_SIM_CORE_4.2.0.provenance.json
+exit=0 elapsed_ns=595987192
+{"checks": {"capabilities": true, "cfg": true, "header": true, "instruction_semantics": true, "manifest": true, "native_lctl_tag": true, "payload_sha256": true, "stack": true}, "image": "/mnt/data/br420out/BOTTLE_ROCKET_4.2.0_COLUMNED_LCTL_NATIVE_SEMANTIC_AUTHORITY_61K/deploy/BOTTLE_ROCKET_SIM_CORE_4.2.0.brimg", "instructions": 6, "requested_caps": 3, "sha256": "5fb13ad12b8e3e8791b57969d6d27731cba8d15836bd1ad54f667ceca55b6507", "signed": false, "status": "PASS"}
+
+
+$ /opt/pyvenv/bin/python3 tools/lctl420.py provenance src/BOOT.lctlc /mnt/data/br420out/BOTTLE_ROCKET_4.2.0_COLUMNED_LCTL_NATIVE_SEMANTIC_AUTHORITY_61K/deploy/BOTTLE_ROCKET_SIM_CORE_4.2.0.brimg /mnt/data/br420out/BOTTLE_ROCKET_4.2.0_COLUMNED_LCTL_NATIVE_SEMANTIC_AUTHORITY_61K/deploy/BOTTLE_ROCKET_SIM_CORE_4.2.0.provenance.json
+exit=0 elapsed_ns=600599421
+{"checks": {"brim_sha256": true, "brir_sha256": true, "compiler_version": true, "header_source_hash_prefix": true, "isa_version": true, "language_version": true, "source_sha256": true, "verifier_version": true}, "status": "PASS"}
+
+
+$ /mnt/data/br420out/BOTTLE_ROCKET_4.2.0_COLUMNED_LCTL_NATIVE_SEMANTIC_AUTHORITY_61K/.build/brctl inspect-image /mnt/data/br420out/BOTTLE_ROCKET_4.2.0_COLUMNED_LCTL_NATIVE_SEMANTIC_AUTHORITY_61K/deploy/BOTTLE_ROCKET_SIM_CORE_4.2.0.brimg
+exit=0 elapsed_ns=2029486
+{"format":"BRIM/1","version":8,"requested_caps":3,"instructions":6,"data_bytes":0,"signed":false,"bytes":176}
+
+
+$ /mnt/data/br420out/BOTTLE_ROCKET_4.2.0_COLUMNED_LCTL_NATIVE_SEMANTIC_AUTHORITY_61K/.build/br_sizes
+exit=0 elapsed_ns=14552119
+{"record":"BOTTLE_ROCKET.RuntimeMemoryMeasurement","word_bits":1048576,"word_bytes":131072,"register_count":16,"register_requested_bytes":2097152,"register_usable_bytes":2101232,"stack_words":256,"stack_requested_bytes":33554432,"stack_usable_bytes":33558512,"scratch_words":2,"scratch_requested_bytes":262144,"scratch_usable_bytes":266232,"fragment_requested_bytes":51200,"fragment_usable_bytes":51208,"vm_inline_bytes":8792,"heap_requested_bytes":35964928,"heap_usable_bytes":35977184,"allocator_overhead_bytes":12256,"rss_before_init_kib":1528,"rss_idle_kib":1912,"native_stack_limit_bytes":8388608}
+
+
+$ /mnt/data/br420out/BOTTLE_ROCKET_4.2.0_COLUMNED_LCTL_NATIVE_SEMANTIC_AUTHORITY_61K/.build/br_bench
+exit=0 elapsed_ns=176111181
+{"record":"BOTTLE_ROCKET.PerformanceBaseline","instructions_per_second":133798958.354,"arithmetic_ops_per_second":81192.864,"load_store_ops_per_second":821314.921,"load_store_mean_ns":1217.560,"branch_ops_per_second":68426840.214,"branch_mean_ns":14.614}
+
+
+$ /opt/pyvenv/bin/python3 tools/lctl420.py check /mnt/data/br420out/BOTTLE_ROCKET_4.2.0_COLUMNED_LCTL_NATIVE_SEMANTIC_AUTHORITY_61K/.build/legacy.lctlc --executable
+exit=1 elapsed_ns=619838716
+ERROR: unsupported/missing LCTLC/1.1
+

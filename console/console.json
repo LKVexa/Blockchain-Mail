@@ -1,0 +1,7 @@
+{
+  "start_url": "about:blank",
+  "local_origins": [
+    "http://127.0.0.1:8788",
+    "http://127.0.0.1:8791"
+  ]
+}

@@ -1,0 +1,2 @@
+$ sha256sum -c --quiet RELEASE_CONTENTS.sha256
+[exit 0 in 0.019s]

@@ -1,0 +1,205 @@
+[
+  {
+    "control_id": "BVE-C001-K001",
+    "source_path": "P01/C001/K001.md",
+    "sha256": "082b8547c0a3024337384f2ce4dd5c588ab4081e1a8a3efffc1e6824368882fb",
+    "utf8_bytes": 28338,
+    "workflow_stages": 14
+  },
+  {
+    "control_id": "BVE-C001-K041",
+    "source_path": "P01/C001/K041.md",
+    "sha256": "861d4c222a1488480b8270b84d52e0b0af9b381bc2143398e8c06d18c05af2fd",
+    "utf8_bytes": 28244,
+    "workflow_stages": 14
+  },
+  {
+    "control_id": "BVE-C001-K042",
+    "source_path": "P01/C001/K042.md",
+    "sha256": "dc2b1cb2428f33e5efcdf5d484a72806c541998cd0fb6bcb39e7a62c707d5ec1",
+    "utf8_bytes": 28451,
+    "workflow_stages": 14
+  },
+  {
+    "control_id": "BVE-C020-K013",
+    "source_path": "P04/C020/K013.md",
+    "sha256": "8de14a1544d53ebb77736bc07eac95e184a5361c6f3044cc7ce1886e42ee42a9",
+    "utf8_bytes": 29099,
+    "workflow_stages": 14
+  },
+  {
+    "control_id": "BVE-C021-K012",
+    "source_path": "P04/C021/K012.md",
+    "sha256": "bdfb9c4d1a0ce6d0575d275e7e3f58e7a0a93c8dc5d48b4237c9125e3fe5da8a",
+    "utf8_bytes": 29094,
+    "workflow_stages": 14
+  },
+  {
+    "control_id": "BVE-C021-K013",
+    "source_path": "P04/C021/K013.md",
+    "sha256": "c6d1bf3dc23e6ab546f1b262ac2fd9212781ef1fdf7612d639773e2a880b88e3",
+    "utf8_bytes": 29160,
+    "workflow_stages": 14
+  },
+  {
+    "control_id": "BVE-C021-K017",
+    "source_path": "P04/C021/K017.md",
+    "sha256": "e3d9d74f069ef7e090260f3164166b6256a327193720eb47aaed2e50ab98c3c6",
+    "utf8_bytes": 29099,
+    "workflow_stages": 14
+  },
+  {
+    "control_id": "BVE-C021-K025",
+    "source_path": "P04/C021/K025.md",
+    "sha256": "39e9b6c50ea69dcb1443d3642700d7343e2ef55343f62955eb457e76dfaa2559",
+    "utf8_bytes": 29110,
+    "workflow_stages": 14
+  },
+  {
+    "control_id": "BVE-C023-K017",
+    "source_path": "P04/C023/K017.md",
+    "sha256": "f3f4c89be0c6532a0364c7a0e8e7d58f63a10ad56397d5a7da4b8ea81247dd10",
+    "utf8_bytes": 28998,
+    "workflow_stages": 14
+  },
+  {
+    "control_id": "BVE-C023-K024",
+    "source_path": "P04/C023/K024.md",
+    "sha256": "5169acc66805844cbc9d27f5420feb6635635decd7f9781a03875aa77d385ca9",
+    "utf8_bytes": 29010,
+    "workflow_stages": 14
+  },
+  {
+    "control_id": "BVE-C023-K025",
+    "source_path": "P04/C023/K025.md",
+    "sha256": "ca628c5611fc75d7c36f844db5e74355c9a0005dbb89d35a4b3a84ec0991a569",
+    "utf8_bytes": 29069,
+    "workflow_stages": 14
+  },
+  {
+    "control_id": "BVE-C023-K028",
+    "source_path": "P04/C023/K028.md",
+    "sha256": "4a8b2406fef9d7265e0da296acd7a8e9fae488359331b0f4a7bba24fbeacbc30",
+    "utf8_bytes": 28941,
+    "workflow_stages": 14
+  },
+  {
+    "control_id": "BVE-C023-K029",
+    "source_path": "P04/C023/K029.md",
+    "sha256": "5fe88ef6fdd9cd0b11e684fd201523237e31ecf103f828bee3d5c59d4c6daeb7",
+    "utf8_bytes": 29054,
+    "workflow_stages": 14
+  },
+  {
+    "control_id": "BVE-C023-K030",
+    "source_path": "P04/C023/K030.md",
+    "sha256": "3616d00df97cf3eb76c241e12305ced1c88446789efcc06aca8fb657cbad3d22",
+    "utf8_bytes": 28910,
+    "workflow_stages": 14
+  },
+  {
+    "control_id": "BVE-C063-K041",
+    "source_path": "P09/C063/K041.md",
+    "sha256": "8ee685c887550b1e9ac742e16b48370e63d48023582c443538eed818027e2c14",
+    "utf8_bytes": 28457,
+    "workflow_stages": 14
+  },
+  {
+    "control_id": "BVE-C071-K013",
+    "source_path": "P10/C071/K013.md",
+    "sha256": "89e1a7c1a47931c81339601b952c19d44a1f0984b0f413cfafa1304859c4023d",
+    "utf8_bytes": 28871,
+    "workflow_stages": 14
+  },
+  {
+    "control_id": "BVE-C072-K013",
+    "source_path": "P10/C072/K013.md",
+    "sha256": "26cc93a6d719e031301cae32b3563f809661295559ce15b591486f74b4be6cd8",
+    "utf8_bytes": 28924,
+    "workflow_stages": 14
+  },
+  {
+    "control_id": "BVE-C113-K029",
+    "source_path": "P15/C113/K029.md",
+    "sha256": "5bb45bee5490e78fb123f3901169f277f28532d125fb31abac0d8b3b682aa312",
+    "utf8_bytes": 29220,
+    "workflow_stages": 14
+  },
+  {
+    "control_id": "BVE-C124-K011",
+    "source_path": "P17/C124/K011.md",
+    "sha256": "9e09c4bd8b519e46bc6877a5c4e85c4cc6f0bb6a83d99614bdc5d29fe266467f",
+    "utf8_bytes": 29803,
+    "workflow_stages": 14
+  },
+  {
+    "control_id": "BVE-C132-K012",
+    "source_path": "P18/C132/K012.md",
+    "sha256": "b8fbc2fe69a2aaa655c8fc4700f9e248ff9adc5ae67a21a0586d0ab9caa2b91e",
+    "utf8_bytes": 29317,
+    "workflow_stages": 14
+  },
+  {
+    "control_id": "BVE-C132-K018",
+    "source_path": "P18/C132/K018.md",
+    "sha256": "77373c2f4d7915e4540f790b81ec2e0e8bde8eb594150c2924fa459fce2dc460",
+    "utf8_bytes": 29142,
+    "workflow_stages": 14
+  },
+  {
+    "control_id": "BVE-C132-K024",
+    "source_path": "P18/C132/K024.md",
+    "sha256": "3ade641d44ab018d94695332a5229f7b40b88d8fef21355f444e4b946fd174e9",
+    "utf8_bytes": 29154,
+    "workflow_stages": 14
+  },
+  {
+    "control_id": "BVE-C132-K028",
+    "source_path": "P18/C132/K028.md",
+    "sha256": "fb6ba93d7f2ba5f3c3113a99e035c96bba12a82e298a2e8189ae7ef04f82103e",
+    "utf8_bytes": 29126,
+    "workflow_stages": 14
+  },
+  {
+    "control_id": "BVE-C134-K016",
+    "source_path": "P18/C134/K016.md",
+    "sha256": "5278d4edec1c24ccae763b465d51615721a9d26b7f80c9b9606cbf5577becbfa",
+    "utf8_bytes": 29134,
+    "workflow_stages": 14
+  },
+  {
+    "control_id": "BVE-C134-K030",
+    "source_path": "P18/C134/K030.md",
+    "sha256": "cb72db986e354f9eeb0d414e7fd689b1cb03cb7f51c58f0a0bc226c2e510b8ce",
+    "utf8_bytes": 29198,
+    "workflow_stages": 14
+  },
+  {
+    "control_id": "BVE-C135-K012",
+    "source_path": "P18/C135/K012.md",
+    "sha256": "cc7e3dec606a62979649be20bd717e69e244bdc9c2f5710665903833618f72ad",
+    "utf8_bytes": 29144,
+    "workflow_stages": 14
+  },
+  {
+    "control_id": "BVE-C135-K016",
+    "source_path": "P18/C135/K016.md",
+    "sha256": "2e4ff68faf6f946f946608809f1b2b9bedd25ff51198896d529d13e797c16863",
+    "utf8_bytes": 29269,
+    "workflow_stages": 14
+  },
+  {
+    "control_id": "BVE-C135-K022",
+    "source_path": "P18/C135/K022.md",
+    "sha256": "2c54f52aec93aeb1e5c471fdbefec265abee3df051295439eb978876e6fe60a0",
+    "utf8_bytes": 29105,
+    "workflow_stages": 14
+  },
+  {
+    "control_id": "BVE-C136-K048",
+    "source_path": "P18/C136/K048.md",
+    "sha256": "a9586d6160763477087f72c5a97768cfc2e12eb51018194852956103b4506ad8",
+    "utf8_bytes": 28699,
+    "workflow_stages": 14
+  }
+]

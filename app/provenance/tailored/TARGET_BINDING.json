@@ -1,0 +1,218 @@
+{
+  "schema": "GLYPHOKU_CANDIDATE_BINDING/1",
+  "series_version": "1.1.0",
+  "prepared": "2026-10-06",
+  "profile": "GLYPHOKU_VEM_127/1",
+  "integration_policy_revision": "1.1.0",
+  "delivery_mode": "PROMPT_WORKFLOW_AUTHORING",
+  "candidate": {
+    "filename": "B4PPUPFqdW8lePvv-grok-workspace.zip",
+    "sha256": "28313d7f5e05f5fdea31e2f4e615ead2a84aed4c9ae8bb6a28853a791b8b82fd",
+    "archive_members": 366,
+    "regular_files": 291,
+    "uncompressed_bytes": 129679987
+  },
+  "source_series": {
+    "filename": "ksxPB5t2PsP8KCqy-grok-workspace.zip",
+    "sha256": "3f2774b3f6b447af05b87d357b15c0aadf0838442dbdf0f57f252a8ba2b929df",
+    "version": "1.0.0",
+    "markdown_files": 12
+  },
+  "referenced_conversation": {
+    "url": "https://chatgpt.com/c/6ac52929-1378-83e8-b4e3-26dd5fd3f04d",
+    "retrieval_status": "LOGIN_PAGE_ONLY",
+    "transcript_verified": false,
+    "relationship_to_candidate": "NOT_INDEPENDENTLY_VERIFIED"
+  },
+  "target_files": [
+    {
+      "path": "package.json",
+      "sha256": "f1bb1c9fb7a680f9b2371096572d54226a8fcf066968ec428b8ed6cfbb5edc2a",
+      "size": 3841
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "68c85563e56ae0f26c8b844bef1b71113e468f2d6d584c0d7a082dce474307be",
+      "size": 261851
+    },
+    {
+      "path": "vite.config.ts",
+      "sha256": "5451c22b17e7d8408674909b3d231f0ae4a4d017b740491ce7df008d961a7eee",
+      "size": 6750
+    },
+    {
+      "path": "src/routes/index.tsx",
+      "sha256": "3316b3234798aaa63c637e0463b70bf81d4bd42cad3c02e6825fce1a8fb0e5b1",
+      "size": 196
+    },
+    {
+      "path": "src/routes/__root.tsx",
+      "sha256": "f918daaf9d18d8ce8dbfcdd7e596fa355897913c4cc3aa2ee92f41af9d9be89e",
+      "size": 1243
+    },
+    {
+      "path": "src/components/glyphoku/studio.tsx",
+      "sha256": "8ee2f552adfca28f2fc66370c3a1f605c0d6eb07208f436dc2737e5b77539e64",
+      "size": 21429
+    },
+    {
+      "path": "src/lib/glyphoku/registry.ts",
+      "sha256": "4f0d7d848c284fcd5b239aeeb87fa756f4924418d2e268d69ae6a304d380034f",
+      "size": 8148
+    },
+    {
+      "path": "src/lib/glyphoku/rules.ts",
+      "sha256": "c0237a81a4f01851e3acc548505602b8cf57e47eba4e4f6331c440d9465e6ac9",
+      "size": 8653
+    },
+    {
+      "path": "src/lib/glyphoku/deal.ts",
+      "sha256": "7562fe2b4bd005c1eb0e072645d2ee00c3038a1dfbc4084a2a2520a07dff8b2c",
+      "size": 1275
+    },
+    {
+      "path": "src/lib/glyphoku/solver.ts",
+      "sha256": "da1029696179dcc451331626b8d4a3fe37849e02537b21dcc540a538e21ba8fd",
+      "size": 7059
+    },
+    {
+      "path": "src/lib/glyphoku/glyphs.ts",
+      "sha256": "71f17af2425cbb4dd513f624dcf13da44c4b8aa6c86e928fa6b689f2e05b808a",
+      "size": 1541
+    },
+    {
+      "path": "src/lib/glyphoku/glyphoku.test.ts",
+      "sha256": "cfbdc2466fe7c68f573ef1fa1644b8ec714facf4455ee82f3598b41f91f8ff45",
+      "size": 3640
+    },
+    {
+      "path": "src/lib/sha256.ts",
+      "sha256": "6bc91885d04a01f0854df1be919ef816dbd59fc6a66647529ce47d10ea734185",
+      "size": 3039
+    },
+    {
+      "path": "scripts/register-tests.mjs",
+      "sha256": "3718c3e94b23e6c7c775cd464893e1d2484ef1fadd10628db85e00c41de0fbdd",
+      "size": 88
+    },
+    {
+      "path": "scripts/test-alias.mjs",
+      "sha256": "acee6437fd5225f8a9e703f930f1b31f87fab520c2250a10fe655c1c95271e28",
+      "size": 1003
+    },
+    {
+      "path": "scripts/with-app-env.mjs",
+      "sha256": "a846b68bd3645299c23eef965d9ef226df3a500d345d7576c23f7a2b2ff643c7",
+      "size": 4601
+    },
+    {
+      "path": "src/lib/bem-mail.ts",
+      "sha256": "045866112c620fd22c18b3cf61a9f17030ff9143f5846872745c86cf180ea8af",
+      "size": 9637
+    },
+    {
+      "path": "src/components/obscura/mail-sequence.tsx",
+      "sha256": "5c20be98f208612dad880b43784e78c316bf1aa6296ffc1289e0e47e531ed472",
+      "size": 7351
+    }
+  ],
+  "observed": {
+    "root_route": "src/routes/index.tsx -> GlyphokuStudio",
+    "storage_key": "glyphoku-local-127",
+    "dev_host": "0.0.0.0",
+    "dev_port": 8080,
+    "preview_host": "127.0.0.1",
+    "preview_port": 8081,
+    "mail_transport": "IN_BROWSER_REGISTRY",
+    "existing_glyphoku_tests": {
+      "run": true,
+      "passed": 3,
+      "failed": 0,
+      "node": "v22.16.0",
+      "platform": "linux",
+      "duration_ms": 20422.7652
+    },
+    "characterization_probes": 13,
+    "headed_browser_tests": "NOT_RUN",
+    "full_build": "NOT_RUN",
+    "windows_execution": "NOT_RUN"
+  },
+  "locked_parameters": {
+    "topology": {
+      "order": 16,
+      "boxRows": 4,
+      "boxCols": 4
+    },
+    "glyphs": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "★",
+      "◆",
+      "♠",
+      "♣",
+      "♥"
+    ],
+    "horizon_g": 2,
+    "puzzles_formula": "2^(g-1)",
+    "g1_empty_band": [
+      124,
+      132
+    ],
+    "g2_empty_band": [
+      133,
+      140
+    ],
+    "event_caps": {
+      "1": 12000,
+      "2": 18000
+    },
+    "minimum_guesses": {
+      "1": 8,
+      "2": 12
+    },
+    "minimum_retractions": {
+      "1": 0,
+      "2": 1
+    },
+    "tick_ms": 100,
+    "default_events_per_tick": 24,
+    "speed_options": [
+      1,
+      8,
+      24,
+      40
+    ]
+  },
+  "authored_policy_clarifications": [
+    "g=1 domain then g=2 envelope in this two-journey profile; pre-existing incompatible states are preserved read-only",
+    "Exact existing-operation retrieval is read-only and remains permitted at g=3",
+    "Total per-board event cap counts INIT and terminal event; no cap+1 acceptance",
+    "24 events/tick is logical solver throughput, not a guarantee of 24 separate DOM paints",
+    "Hash/receipt bindings protect the cooperative application path, not against a malicious same-origin operator"
+  ],
+  "implementation_status": "NOT_STARTED",
+  "workflow_assessment": "NOT_ASSESSED",
+  "upstream_controls": {
+    "count_claimed_by_source": 4800,
+    "individual_inventory_performed": false,
+    "assessment": "NOT_ASSESSED"
+  },
+  "nested_parent_archives": "OUTER_MEMBERS_HASHED_NOT_EXPANDED_NOT_EXECUTED",
+  "source_archive_modified": false,
+  "candidate_archive_modified": false,
+  "resolved_runtime_paths": {
+    "authorized_target_root": null,
+    "evidence_root": null,
+    "browser_origin": null,
+    "approved_node_runtime": null
+  }
+}

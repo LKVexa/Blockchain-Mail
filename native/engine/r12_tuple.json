@@ -1,0 +1,14 @@
+{
+  "vector": "v0000001",
+  "face": "phi_cc12_kat",
+  "sequence": 1,
+  "depth": 1,
+  "rho": "rho.cc12.kat",
+  "operator": "permute",
+  "omega": "OMEGA_CC12_PFF",
+  "state": "candidate",
+  "error": "error0",
+  "theta": "theta0000001",
+  "confidence": 1.0,
+  "status": "experimental"
+}

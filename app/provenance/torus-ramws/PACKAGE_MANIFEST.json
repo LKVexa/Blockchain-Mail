@@ -1,0 +1,254 @@
+{
+  "schema": "torus.ramws.package-manifest/0.3",
+  "release": "TORUS_RAMWS_0.3.0",
+  "file_count": 49,
+  "bytes": 531991,
+  "self_excluded": true,
+  "files": [
+    {
+      "path": "generated/demo.json",
+      "bytes": 11543,
+      "sha256": "75dc7165639e8c5d3a829aeb69df84df567e2231f7db40002e3a07aa1262e6e5"
+    },
+    {
+      "path": "generated/denials.json",
+      "bytes": 726,
+      "sha256": "e37e8867888cafac9530cc202dfe65256276c891bb203a6e9852c7ad3e56e8a6"
+    },
+    {
+      "path": "generated/reroute.json",
+      "bytes": 11591,
+      "sha256": "6a89697c5a9d342042acf0b15cd1e44ab58022c65163e418c9e61ca723aa8749"
+    },
+    {
+      "path": "generated/TEST_RESULTS.txt",
+      "bytes": 6480,
+      "sha256": "9fcec548daa11834aa9f2635c7a3ac56c3d355966b4e31b19096028a22aadd3e"
+    },
+    {
+      "path": "generated/validation.json",
+      "bytes": 4349,
+      "sha256": "8aae887d996b800d6130bcb6bfeddc1224277746aba8c2f4e163ee418c4510fd"
+    },
+    {
+      "path": "host/jasp-reader.js",
+      "bytes": 9915,
+      "sha256": "08996981c124e04e2b55aefde6baaf15ce932184e266c113dfc2a6afd359bffa"
+    },
+    {
+      "path": "host/lctlc-reader.js",
+      "bytes": 10844,
+      "sha256": "e758e84c917d2781031031759e8f32e23cc16c7ce10360314b958449b9a6eb87"
+    },
+    {
+      "path": "host/tests/jasp-reader.test.js",
+      "bytes": 4985,
+      "sha256": "e3adb431071b41c50ba821baa32713783c0c322c5f79d5cddccd182e6202ac18"
+    },
+    {
+      "path": "host/tests/torus.test.js",
+      "bytes": 12242,
+      "sha256": "24e085806d5b421336c8feb6e7f8aa49260cae9d33912f628ce4db1463fc9857"
+    },
+    {
+      "path": "host/torus.js",
+      "bytes": 18570,
+      "sha256": "ddd881c89c4f8e7cc54240f6e924869ab4d01a62aa7e14d6f5844d3821e50b3a"
+    },
+    {
+      "path": "languages/ja/provenance.json",
+      "bytes": 3119,
+      "sha256": "df00fcb3d195f861b7e570722362b02c7be2f35568fc09ad2bcc4507a1065d82"
+    },
+    {
+      "path": "languages/ja/README.md",
+      "bytes": 3367,
+      "sha256": "46f795ad1d0dca5d576407e91c1d73cdef71ead73d9795df014f29de9ed98ffd"
+    },
+    {
+      "path": "languages/ja/reference/COMPILER_CONTRACT.md",
+      "bytes": 899,
+      "sha256": "1fc1a6ef3c0c68c617f3fc11180729a1cc152b8572dade3c03d9064a8a151777"
+    },
+    {
+      "path": "languages/ja/reference/GRAMMAR_SPECIFICATION.md",
+      "bytes": 807,
+      "sha256": "c7d8366c9f7e4789376420dd7dcd0e425131c2a502fab94df20b50df6744a721"
+    },
+    {
+      "path": "languages/ja/reference/JA_SERVICE_PROTOCOL.ebnf",
+      "bytes": 2251,
+      "sha256": "d0564aac12f5d59fc33e51d56bcec96fa2e1afd86a9406ff146e614ed8df976f"
+    },
+    {
+      "path": "languages/ja/reference/LANGUAGE_SPECIFICATION.md",
+      "bytes": 1494,
+      "sha256": "2cef8af0a80e847d24249af1c529b192b6f7ef8749dee999a7169de5b4b65da5"
+    },
+    {
+      "path": "languages/ja/reference/LICENSE.txt",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "languages/ja/reference/RUNTIME_CONTRACT.md",
+      "bytes": 700,
+      "sha256": "7421cc74275d0af8e31bc9e5d6159cc263418074daab3d0c5a525369f09a95e0"
+    },
+    {
+      "path": "languages/ja/torus_ramws.jasp",
+      "bytes": 1361,
+      "sha256": "53df3519bb52b26ddf14b4e1766d269694bce35b154549691281f79b69076452"
+    },
+    {
+      "path": "languages/lctl/torus.lctlc",
+      "bytes": 5875,
+      "sha256": "f12b430232624da7193041ad9e6116d913b32e0c50bb92d4a200c97bfcf4a6a8"
+    },
+    {
+      "path": "languages/lctl/validation.json",
+      "bytes": 1649,
+      "sha256": "7f505ff8862c468c41fdf6ac64da1bebd9fa71197a2322df24d203fea49abdca"
+    },
+    {
+      "path": "math/demo_profile.json",
+      "bytes": 1004,
+      "sha256": "e3327dc48e6fe2c78cbd7c3498b910895e344b0c0dcfaf424ae48de20dff26d6"
+    },
+    {
+      "path": "math/eight-s.js",
+      "bytes": 14414,
+      "sha256": "8c5ab80c0ba84acf94cd7954c1ff82e3d4c07387949194eeb137304f2b3c679e"
+    },
+    {
+      "path": "math/equation-reference.txt",
+      "bytes": 6341,
+      "sha256": "d44369ab73f4eae944e1afa410bdf11eb06f6ac08db18082246a67947159c7b6"
+    },
+    {
+      "path": "math/reference/updated_math.avif",
+      "bytes": 35958,
+      "sha256": "68c476dd4889673962a2f91e131e2fe1bd5aa5fdfaf32f272e00de7c213391fd"
+    },
+    {
+      "path": "math/reference/updated_math.png",
+      "bytes": 167854,
+      "sha256": "aff15eafa80547c884765f4423d1ed7c7a68d7d843c4416adea339a3abff918e"
+    },
+    {
+      "path": "math/tests/eight-s.test.js",
+      "bytes": 8255,
+      "sha256": "7cd9d17ffecfee25ae3c0e4096d84b466de07d9486894fff2b33fa0b31c0a6ea"
+    },
+    {
+      "path": "protection/frame-protector.js",
+      "bytes": 9839,
+      "sha256": "1b12c0325f5fcf8d8961d3622c196bdcf641dafcd3a93e395f2c1d98ed7a509a"
+    },
+    {
+      "path": "protection/key-format.js",
+      "bytes": 3732,
+      "sha256": "18e620f9bdd5006ccbcfd9bffd6e5e15332527925f95831fb8b7009a3683f3b5"
+    },
+    {
+      "path": "protection/README.md",
+      "bytes": 5208,
+      "sha256": "f900bb1ccdf6fa41ad1d30006516465f3dbbbb810e12ce15242cd6e8ed6e5d6a"
+    },
+    {
+      "path": "protection/reference/main.go",
+      "bytes": 22042,
+      "sha256": "bd4a4840492518bf4451a0ffbbdcc8b5a4a750ade40f92cd0d4a76aacc8a5667"
+    },
+    {
+      "path": "protection/reference/main_test.go",
+      "bytes": 1107,
+      "sha256": "b97f8e40a7f520fc495b199a0ccb9f2c4a95c025a8dfe06ee6cd866468943b8a"
+    },
+    {
+      "path": "protection/tests/protection.test.js",
+      "bytes": 11678,
+      "sha256": "a4827745111e944794a1b490141ed674fc74b979d7b841b1639d033fec8e045b"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3806,
+      "sha256": "d0a64343253da8703ef4342589c40adefe530da12ec45807f2300a4061bc3f4c"
+    },
+    {
+      "path": "sources/attachment_provenance.json",
+      "bytes": 1595,
+      "sha256": "ba3c445a0034319c2ef21f0e7e12e8a3fc7ff362eaf79d18e0772e6b5744197b"
+    },
+    {
+      "path": "sources/corpus_manifest_recheck.json",
+      "bytes": 8996,
+      "sha256": "bdbf0a5f16bfc94ade5ebcce4aaf33807675e71676050b847e4289e127afc783"
+    },
+    {
+      "path": "sources/cypher_reference_manifest.json",
+      "bytes": 4381,
+      "sha256": "22590eaaa3c9b37069650929d95c903d8809144bd2520d02ba93caeb6c73ddc1"
+    },
+    {
+      "path": "sources/CYPHER_SOURCE_AUDIT.txt",
+      "bytes": 5971,
+      "sha256": "f9f02e985657ebc573d79bed6c705f36d4bfeb8a7e9989e97ef9209dcf27ed78"
+    },
+    {
+      "path": "sources/source_registry.json",
+      "bytes": 11986,
+      "sha256": "431367ee17696a4e3004a94864a3f5eec82f99a92013de6c3e7ee66d0b36805a"
+    },
+    {
+      "path": "transport/README.md",
+      "bytes": 1973,
+      "sha256": "ebcc15f0cce7d92589d63865de957c360db674c55a6fa9464fe2f6387997503e"
+    },
+    {
+      "path": "transport/tests/virtual-websocket.test.js",
+      "bytes": 11443,
+      "sha256": "a4701e46f2877ddaf078372a3d17799cd15e01505f134f78668790fc180e950b"
+    },
+    {
+      "path": "transport/vendor/hermit/LICENSE",
+      "bytes": 306,
+      "sha256": "63748d1e0d8ac97258b42b6631100fed0ddcae97ebfb0274697e4623ffabaa09"
+    },
+    {
+      "path": "transport/vendor/hermit/protocol/codec.js",
+      "bytes": 16891,
+      "sha256": "265aedca8ddda85ba81dba51b11ad57cd1e95bad233ecc10fbef1b18d5d762b8"
+    },
+    {
+      "path": "transport/vendor/hermit/protocol/envelope.schema.json",
+      "bytes": 15343,
+      "sha256": "340a0f34cc69c546ce8091a029b5509e53d32d3b1977db15fac132cadf8aa4d4"
+    },
+    {
+      "path": "transport/vendor/hermit/protocol/protocol-meta.json",
+      "bytes": 2531,
+      "sha256": "0a33802714673bb7b717259468f60e6faa9b18246448da70abf272a2fa356983"
+    },
+    {
+      "path": "transport/vendor/hermit/ram/ledger.js",
+      "bytes": 14128,
+      "sha256": "bfe17c63e3fed0e55c52887691c23e0d1ea5e6b9cbb53050a485c865ff24f2ce"
+    },
+    {
+      "path": "transport/vendor/hermit/ram/traffic.js",
+      "bytes": 1076,
+      "sha256": "619eca5045136d3bafaecd8f3891d33a3db59bb6ae312ad01c351f218e1c8d8c"
+    },
+    {
+      "path": "transport/vendor/hermit/SOURCE_MANIFEST.json",
+      "bytes": 1288,
+      "sha256": "87edcf5fcc949b95a573c8f188e46829c1012ac9081ab5f8d81b97d66aab53f8"
+    },
+    {
+      "path": "transport/virtual-websocket.js",
+      "bytes": 18720,
+      "sha256": "166a7ad745aa81120a8b34ce8dfe6f10cef83e639c3799ec6667612bb577bf18"
+    }
+  ]
+}

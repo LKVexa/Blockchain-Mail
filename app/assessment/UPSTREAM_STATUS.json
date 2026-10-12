@@ -1,0 +1,41 @@
+{
+  "source_bve": {
+    "parents": 18,
+    "components": 136,
+    "controls": 6800,
+    "unique_ids_preserved": 6800,
+    "source_snapshot": "provenance/vexa-assessment/CONTROL_RESULTS.jsonl",
+    "sha256": "3be59b783ea840852f8f819ace71ce7ca76276cca94a7c77e704c659d3e78ea8",
+    "historical_summary": {
+      "source_controls": 6800,
+      "source_components": 136,
+      "source_parents": 18,
+      "current_bounded_evidence_packets": 9,
+      "historical_only_blocked_records": 28,
+      "states": {
+        "BLOCKED": 37,
+        "NOT_ASSESSED": 6763
+      },
+      "workflow_states": {
+        "NOT_STARTED": 6791,
+        "STOPPED": 9
+      },
+      "controls_passed": 0,
+      "independently_approved": 0,
+      "source_requirements_changed": 0,
+      "candidate_code_tree_sha256": "04fb8e21dece4ae8ee2a7bbeb7666bcc5d563b6ffd6a150761f339b5554c8ac4",
+      "notice": "All source identities are accounted for, not all executed. Nine current packets remain blocked at full acceptance; 28 earlier blocked records require current re-assessment. 6763 controls remain unassessed/unstarted."
+    },
+    "current_candidate_full_control_passes": 0,
+    "current_candidate_full_control_assessments": "NOT_EXECUTED_AS_A_6800_ITEM_PROGRAM",
+    "historical_evidence_validity": "Requires current-candidate coverage review; no automatic carry-forward"
+  },
+  "tailored_reference": {
+    "earlier_source_controls_referenced": 4800,
+    "independently_executed_4800_record_program": false,
+    "scope": "The number is a tailored-source reference, not an additional executed or independently inventoried assessment set."
+  },
+  "source_acceptance_cases_preserved": 72,
+  "source_control_credit": false,
+  "independent_approvals": 0
+}

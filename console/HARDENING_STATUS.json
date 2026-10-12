@@ -1,0 +1,25 @@
+{
+  "console_version": "1.0.2",
+  "release_class": "CONSOLE_HARDENING_PREVIEW",
+  "application_pipeline": "NOT_IMPLEMENTED",
+  "portable_archive_encryption": "NOT_IMPLEMENTED",
+  "portable_console_wrapping": "NOT_IMPLEMENTED",
+  "master_law_cipher_update": "NOT_IMPLEMENTED",
+  "master_law_runtime": "SUPPLIED_CONTRACT_REVIEWED_NUMERICAL_MODEL_INCOMPLETE",
+  "native_cipher_engine_source": "NOT_SUPPLIED",
+  "whole_os_or_vm_wrapping": "NOT_IMPLEMENTED",
+  "unverified_boundaries": [
+    "WebSockets",
+    "browser background traffic",
+    "DNS prefetch",
+    "operating-system sockets",
+    "working memory",
+    "WebView2 persistent state encryption"
+  ],
+  "existing_workspace_release": "3.7.0-local.1 remains separate and unchanged",
+  "presentation_derivative": "STANDARD_WPF_LIVE_RENDERER_REQUIRED_WITH_GENERIC_RECOVERY_NOTICE",
+  "presentation_evidence": "evidence/console-presentation-1.0.2.json",
+  "policy_evidence": "evidence/console-policy-1.0.2.json",
+  "protection_note": "Prior console1.0.1 boundary limitations retained; integrated workspace protection is assessed separately",
+  "readiness_evidence": "evidence/console-readiness-1.0.2.json"
+}

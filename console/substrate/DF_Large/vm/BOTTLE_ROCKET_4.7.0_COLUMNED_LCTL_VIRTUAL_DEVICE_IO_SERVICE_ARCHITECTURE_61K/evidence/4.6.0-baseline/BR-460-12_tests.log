@@ -1,0 +1,3 @@
+COMMAND .build/t460 + memory measurement + performance median + make size
+EXIT 0
+PASS Idle wide-state preallocation is eliminated and target arithmetic/load-store performance improves. NOP/branch dispatch regression is disclosed in DELTA.json and is not hidden.

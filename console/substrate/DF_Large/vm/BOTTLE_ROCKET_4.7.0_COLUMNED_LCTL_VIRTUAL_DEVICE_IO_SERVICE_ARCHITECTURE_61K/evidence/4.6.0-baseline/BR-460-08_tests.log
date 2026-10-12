@@ -1,0 +1,3 @@
+COMMAND .build/t460 + make size
+EXIT 0
+PASS Heap, word width, stack, scratch, image and device-buffer ceilings are explicit and bounded.

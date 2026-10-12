@@ -1,0 +1,63 @@
+{
+  "control_id": "BVE-C135-K016",
+  "component_id": "BVE-C135",
+  "component_name": "Interoperability, migration, and shutdown exercises",
+  "parent_id": "P18",
+  "sequence": 16,
+  "title": "Migration completeness — nominal evidence",
+  "section": "B — Component-specific technical controls",
+  "gate": "G2_TECHNICAL",
+  "specificity": "COMPONENT_SPECIFIC",
+  "requirement": "Validate a complete supported migration.",
+  "verification_procedure": "Use a documented fixture or analytical worked example satisfying the preceding specification. Verify compliance with this approved rule: Reconcile messages, attachments, keys, identities, and evidence before and after migration. Capture inputs, intermediate observations where relevant, and final outcome.",
+  "pass_criteria": "The stated nominal scenario reaches its specified result, all applicable facet invariants hold, and an independent reviewer can reproduce the calculation or inspect the execution evidence.",
+  "evidence_required": {
+    "kind": "nominal scenario result with reproducible inputs",
+    "proposed_location": "evidence/C135/K016/",
+    "required_fields": [
+      "control_id",
+      "candidate_version",
+      "applicability_decision",
+      "method",
+      "input_or_scenario_refs",
+      "expected_result",
+      "observed_result",
+      "artifact_refs_and_digests",
+      "limitations",
+      "executor",
+      "independent_reviewer",
+      "reviewed_at"
+    ]
+  },
+  "accountable_owner_role": "Independent architecture, security, research, and release reviewers",
+  "independent_reviewer_role": "Independent technical verifier; domain specialist where applicable",
+  "applicability_rule": "Assess when BVE-C135 is selected and the stated surface exists; otherwise require an approved, reasoned NOT_APPLICABLE decision. Missing specification, unavailable evidence, or a failed test is not non-applicability.",
+  "status": "NOT_ASSESSED",
+  "applicability": "UNDECIDED",
+  "assigned_owner": null,
+  "assigned_reviewer": null,
+  "actual_evidence_refs": [],
+  "observed_result": null,
+  "acceptance_decision": null,
+  "assessed_at": null,
+  "blocking_issues": [],
+  "provenance": {
+    "control_basis": "PROPOSED_ENGINEERING_CONTROL",
+    "component_basis": "D",
+    "source_role": "Context for the mechanism; not evidence that this control is source-prescribed, implemented, or passed.",
+    "article_section": "Cross-cutting; conclusion",
+    "article_line_ranges": [
+      [
+        137,
+        140
+      ]
+    ],
+    "parent_context_line_ranges": [
+      [
+        137,
+        140
+      ]
+    ],
+    "register_version": "1.0.0"
+  }
+}

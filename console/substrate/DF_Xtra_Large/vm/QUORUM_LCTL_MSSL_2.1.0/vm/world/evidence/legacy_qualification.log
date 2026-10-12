@@ -1,0 +1,12 @@
+{
+  "status": "OPERATIONAL",
+  "full_gate": "PARTIAL",
+  "checks": 6,
+  "requirements": 582,
+  "counts": {
+    "OPERATIONAL": 241,
+    "PARTIAL": 315,
+    "BLOCKED": 26
+  },
+  "golden_executed": 21
+}

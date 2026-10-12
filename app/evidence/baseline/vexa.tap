@@ -1,0 +1,532 @@
+TAP version 13
+# (node:1068) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: T061 empty first Subject does not allow a duplicate security header
+ok 1 - T061 empty first Subject does not allow a duplicate security header
+  ---
+  duration_ms: 1.298246
+  type: 'test'
+  ...
+# Subtest: T062 near-match text/plain media type is refused
+ok 2 - T062 near-match text/plain media type is refused
+  ---
+  duration_ms: 0.194389
+  type: 'test'
+  ...
+# Subtest: T063 near-match multipart/mixed media type is refused
+ok 3 - T063 near-match multipart/mixed media type is refused
+  ---
+  duration_ms: 0.157245
+  type: 'test'
+  ...
+# Subtest: T064 boundary ending in two hyphens has a distinct closing delimiter
+ok 4 - T064 boundary ending in two hyphens has a distinct closing delimiter
+  ---
+  duration_ms: 0.667586
+  type: 'test'
+  ...
+# Subtest: T065 MIME boundary transport padding is tolerated
+ok 5 - T065 MIME boundary transport padding is tolerated
+  ---
+  duration_ms: 0.276863
+  type: 'test'
+  ...
+# Subtest: T066 quoted-printable rejects unencoded non-ASCII rather than corrupting it
+ok 6 - T066 quoted-printable rejects unencoded non-ASCII rather than corrupting it
+  ---
+  duration_ms: 0.221771
+  type: 'test'
+  ...
+# Subtest: T067 quoted-printable UTF-8 byte escapes decode exactly
+ok 7 - T067 quoted-printable UTF-8 byte escapes decode exactly
+  ---
+  duration_ms: 0.247148
+  type: 'test'
+  ...
+# Subtest: T068 directory fails closed on changed signed state
+ok 8 - T068 directory fails closed on changed signed state
+  ---
+  duration_ms: 11.318666
+  type: 'test'
+  ...
+# Subtest: T069 ledger fails closed on changed signed state
+ok 9 - T069 ledger fails closed on changed signed state
+  ---
+  duration_ms: 5.624115
+  type: 'test'
+  ...
+# Subtest: T070 exportMailbox fails closed on changed signed state
+ok 10 - T070 exportMailbox fails closed on changed signed state
+  ---
+  duration_ms: 4.378909
+  type: 'test'
+  ...
+# Subtest: T071 quarantine fails closed on changed signed state
+ok 11 - T071 quarantine fails closed on changed signed state
+  ---
+  duration_ms: 4.08449
+  type: 'test'
+  ...
+# Subtest: T072 checkpoint fails closed on a changed current-state root
+ok 12 - T072 checkpoint fails closed on a changed current-state root
+  ---
+  duration_ms: 2.600747
+  type: 'test'
+  ...
+# Subtest: T073 mailbox pages enumerate 105 messages exactly once, including beyond legacy cap
+ok 13 - T073 mailbox pages enumerate 105 messages exactly once, including beyond legacy cap
+  ---
+  duration_ms: 593.298031
+  type: 'test'
+  ...
+# Subtest: T074 pagination refuses cursors after any signed-head change
+ok 14 - T074 pagination refuses cursors after any signed-head change
+  ---
+  duration_ms: 7.557047
+  type: 'test'
+  ...
+# Subtest: T075 pagination cursor cannot cross mailbox ownership
+ok 15 - T075 pagination cursor cannot cross mailbox ownership
+  ---
+  duration_ms: 4.31231
+  type: 'test'
+  ...
+# Subtest: T076 pagination validates folder, limits, paired cursor fields and authentication
+ok 16 - T076 pagination validates folder, limits, paired cursor fields and authentication
+  ---
+  duration_ms: 4.323997
+  type: 'test'
+  ...
+# Subtest: T077 empty page response is bounded and has a verified head
+ok 17 - T077 empty page response is bounded and has a verified head
+  ---
+  duration_ms: 3.03168
+  type: 'test'
+  ...
+# Subtest: T078 page HTTP route preserves ownership and errors on invalid limits
+ok 18 - T078 page HTTP route preserves ownership and errors on invalid limits
+  ---
+  duration_ms: 40.230572
+  type: 'test'
+  ...
+# (node:1069) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: T039 HTTP anonymous denial, exact Host and cross-origin protection
+ok 19 - T039 HTTP anonymous denial, exact Host and cross-origin protection
+  ---
+  duration_ms: 40.780923
+  type: 'test'
+  ...
+# Subtest: T040 HTTP rejects missing CSRF marker, wrong type, null and malformed JSON
+ok 20 - T040 HTTP rejects missing CSRF marker, wrong type, null and malformed JSON
+  ---
+  duration_ms: 17.34458
+  type: 'test'
+  ...
+# Subtest: T041 HTTP send, separate recipient login, receipt and attachment download
+ok 21 - T041 HTTP send, separate recipient login, receipt and attachment download
+  ---
+  duration_ms: 23.712584
+  type: 'test'
+  ...
+# Subtest: T042 HTTP concurrent duplicate submissions produce exactly one delivery
+ok 22 - T042 HTTP concurrent duplicate submissions produce exactly one delivery
+  ---
+  duration_ms: 25.382394
+  type: 'test'
+  ...
+# Subtest: T043 static UI is local, CSP protected and does not expose state files
+ok 23 - T043 static UI is local, CSP protected and does not expose state files
+  ---
+  duration_ms: 7.429067
+  type: 'test'
+  ...
+# Subtest: T044 SMTP requires authentication before MAIL and validates AUTH identity
+ok 24 - T044 SMTP requires authentication before MAIL and validates AUTH identity
+  ---
+  duration_ms: 48.064462
+  type: 'test'
+  ...
+# Subtest: T045 SMTP authenticated sender binding, no external relay and DATA sequencing
+ok 25 - T045 SMTP authenticated sender binding, no external relay and DATA sequencing
+  ---
+  duration_ms: 48.628413
+  type: 'test'
+  ...
+# Subtest: T046 SMTP byte fragmentation, dot unstuffing, UTF-8 and persistent replay
+ok 26 - T046 SMTP byte fragmentation, dot unstuffing, UTF-8 and persistent replay
+  ---
+  duration_ms: 141.897644
+  type: 'test'
+  ...
+# Subtest: T047 SMTP MIME attachment round trip and forged header rejection
+ok 27 - T047 SMTP MIME attachment round trip and forged header rejection
+  ---
+  duration_ms: 50.153387
+  type: 'test'
+  ...
+# Subtest: T048 SMTP line and declared message size limits fail closed
+ok 28 - T048 SMTP line and declared message size limits fail closed
+  ---
+  duration_ms: 46.702281
+  type: 'test'
+  ...
+# Subtest: T049 occupied port fails startup and releases only its own lock
+ok 29 - T049 occupied port fails startup and releases only its own lock
+  ---
+  duration_ms: 3.855057
+  type: 'test'
+  ...
+# Subtest: T050 live state lock refuses second writer without age-based deletion
+ok 30 - T050 live state lock refuses second writer without age-based deletion
+  ---
+  duration_ms: 0.493907
+  type: 'test'
+  ...
+# Subtest: T051 actual runtime denies DNS, external TCP, UDP, child execution and wildcard bind
+ok 31 - T051 actual runtime denies DNS, external TCP, UDP, child execution and wildcard bind
+  ---
+  duration_ms: 28.563768
+  type: 'test'
+  ...
+# Subtest: T052 guarded CLI starts, serves loopback health, restarts and verifies disk state
+ok 32 - T052 guarded CLI starts, serves loopback health, restarts and verifies disk state
+  ---
+  duration_ms: 245.174276
+  type: 'test'
+  ...
+# Subtest: T055 abrupt process death before SQLite commit recovers without partial mail or debit
+ok 33 - T055 abrupt process death before SQLite commit recovers without partial mail or debit
+  ---
+  duration_ms: 40.742626
+  type: 'test'
+  ...
+# (node:1070) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: T001 genesis: signed chain, current state and credit supply reconcile
+ok 34 - T001 genesis: signed chain, current state and credit supply reconcile
+  ---
+  duration_ms: 14.52789
+  type: 'test'
+  ...
+# Subtest: T002 candidate VEM-OBJECT/2 framing preserves UTF-8 and rejects tampering
+ok 35 - T002 candidate VEM-OBJECT/2 framing preserves UTF-8 and rejects tampering
+  ---
+  duration_ms: 1.383583
+  type: 'test'
+  ...
+# Subtest: T003 Ed25519 domain separation and changed payload rejection
+ok 36 - T003 Ed25519 domain separation and changed payload rejection
+  ---
+  duration_ms: 1.510031
+  type: 'test'
+  ...
+# Subtest: T004 authenticated encryption rejects tag and context mutation
+ok 37 - T004 authenticated encryption rejects tag and context mutation
+  ---
+  duration_ms: 1.653175
+  type: 'test'
+  ...
+# Subtest: T005 canonical encoding and Merkle order are deterministic and scoped
+ok 38 - T005 canonical encoding and Merkle order are deterministic and scoped
+  ---
+  duration_ms: 0.199818
+  type: 'test'
+  ...
+# Subtest: T006 send commits stamp, encrypted object, Sent and INBOX atomically
+ok 39 - T006 send commits stamp, encrypted object, Sent and INBOX atomically
+  ---
+  duration_ms: 11.363613
+  type: 'test'
+  ...
+# Subtest: T007 attachment bytes survive encryption and full mailbox export
+ok 40 - T007 attachment bytes survive encryption and full mailbox export
+  ---
+  duration_ms: 7.973888
+  type: 'test'
+  ...
+# Subtest: T008 invalid token, cross-mailbox read and user admin escalation rejected
+ok 41 - T008 invalid token, cross-mailbox read and user admin escalation rejected
+  ---
+  duration_ms: 6.724987
+  type: 'test'
+  ...
+# Subtest: T009 duplicate request after reopen returns original receipt without charging
+ok 42 - T009 duplicate request after reopen returns original receipt without charging
+  ---
+  duration_ms: 10.138476
+  type: 'test'
+  ...
+# Subtest: T010 request ID reuse with changed message is a conflict
+ok 43 - T010 request ID reuse with changed message is a conflict
+  ---
+  duration_ms: 6.641171
+  type: 'test'
+  ...
+# Subtest: T011 explicit reservation and consumption use two blocks and one debit
+ok 44 - T011 explicit reservation and consumption use two blocks and one debit
+  ---
+  duration_ms: 12.141293
+  type: 'test'
+  ...
+# Subtest: T012 consumed stamp cannot authorize a second delivery or refund
+ok 45 - T012 consumed stamp cannot authorize a second delivery or refund
+  ---
+  duration_ms: 8.983343
+  type: 'test'
+  ...
+# Subtest: T013 stamp payload and recipient binding reject altered content
+ok 46 - T013 stamp payload and recipient binding reject altered content
+  ---
+  duration_ms: 7.112615
+  type: 'test'
+  ...
+# Subtest: T014 stamp signature and disabled mechanism are rejected
+ok 47 - T014 stamp signature and disabled mechanism are rejected
+  ---
+  duration_ms: 6.64014
+  type: 'test'
+  ...
+# Subtest: T015 another authority stamp is not valid on this chain
+ok 48 - T015 another authority stamp is not valid on this chain
+  ---
+  duration_ms: 8.804488
+  type: 'test'
+  ...
+# Subtest: T016 exact stamp expiry boundary fails closed; explicit refund once
+ok 49 - T016 exact stamp expiry boundary fails closed; explicit refund once
+  ---
+  duration_ms: 8.687563
+  type: 'test'
+  ...
+# Subtest: T017 cancel reserved stamp refunds payer and prevents later consumption
+ok 50 - T017 cancel reserved stamp refunds payer and prevents later consumption
+  ---
+  duration_ms: 8.178855
+  type: 'test'
+  ...
+# Subtest: T018 daily delegation and authorized maximum cannot be exceeded
+ok 51 - T018 daily delegation and authorized maximum cannot be exceeded
+  ---
+  duration_ms: 6.580251
+  type: 'test'
+  ...
+# Subtest: T019 client time override is rejected and authority rollback blocks mutation
+ok 52 - T019 client time override is rejected and authority rollback blocks mutation
+  ---
+  duration_ms: 2.943528
+  type: 'test'
+  ...
+# Subtest: T020 day rollover resets allowance without restoring consumed credit
+ok 53 - T020 day rollover resets allowance without restoring consumed credit
+  ---
+  duration_ms: 9.270132
+  type: 'test'
+  ...
+# Subtest: T021 local sponsor quota and user accounting remain distinct
+ok 54 - T021 local sponsor quota and user accounting remain distinct
+  ---
+  duration_ms: 9.684139
+  type: 'test'
+  ...
+# Subtest: T022 insufficient funds and disabled recipient cause no partial delivery
+ok 55 - T022 insufficient funds and disabled recipient cause no partial delivery
+  ---
+  duration_ms: 6.131382
+  type: 'test'
+  ...
+# Subtest: T023 block list rejects authenticated unwanted sender
+ok 56 - T023 block list rejects authenticated unwanted sender
+  ---
+  duration_ms: 3.307361
+  type: 'test'
+  ...
+# Subtest: T024 expanded aliases deduplicate; cyclic aliases rollback
+ok 57 - T024 expanded aliases deduplicate; cyclic aliases rollback
+  ---
+  duration_ms: 6.046455
+  type: 'test'
+  ...
+# Subtest: T025 unsafe attachment names, noncanonical base64 and large bodies rejected
+ok 58 - T025 unsafe attachment names, noncanonical base64 and large bodies rejected
+  ---
+  duration_ms: 3.327681
+  type: 'test'
+  ...
+# Subtest: T026 self-mail quota counts both Sent and received copies
+ok 59 - T026 self-mail quota counts both Sent and received copies
+  ---
+  duration_ms: 3.2194
+  type: 'test'
+  ...
+# Subtest: T027-after-object injected interruption rolls back object, postage and delivery
+ok 60 - T027-after-object injected interruption rolls back object, postage and delivery
+  ---
+  duration_ms: 4.424246
+  type: 'test'
+  ...
+# Subtest: T027-before-commit injected interruption rolls back object, postage and delivery
+ok 61 - T027-before-commit injected interruption rolls back object, postage and delivery
+  ---
+  duration_ms: 3.640448
+  type: 'test'
+  ...
+# Subtest: T028 lost response after commit is recovered by same request ID
+ok 62 - T028 lost response after commit is recovered by same request ID
+  ---
+  duration_ms: 5.078943
+  type: 'test'
+  ...
+# Subtest: T029 forced encryption nonce collision rolls back second transaction
+ok 63 - T029 forced encryption nonce collision rolls back second transaction
+  ---
+  duration_ms: 6.102167
+  type: 'test'
+  ...
+# Subtest: T030 object corruption and unauthorized state mutation are detected
+ok 64 - T030 object corruption and unauthorized state mutation are detected
+  ---
+  duration_ms: 6.043781
+  type: 'test'
+  ...
+# Subtest: T031 block event mutation is detected by Merkle verification
+ok 65 - T031 block event mutation is detected by Merkle verification
+  ---
+  duration_ms: 2.673987
+  type: 'test'
+  ...
+# Subtest: T032 private SQLite backup restores to a new location, preserving chain and mail
+ok 66 - T032 private SQLite backup restores to a new location, preserving chain and mail
+  ---
+  duration_ms: 12.799453
+  type: 'test'
+  ...
+# Subtest: T033 pinned later checkpoint detects restoration of an older valid prefix
+ok 67 - T033 pinned later checkpoint detects restoration of an older valid prefix
+  ---
+  duration_ms: 8.87981
+  type: 'test'
+  ...
+# Subtest: T034 changed backup and unsafe manifest paths are refused before restore
+ok 68 - T034 changed backup and unsafe manifest paths are refused before restore
+  ---
+  duration_ms: 3.705084
+  type: 'test'
+  ...
+# Subtest: T035 token rotation revokes old bearer; only one local issuance on replay
+ok 69 - T035 token rotation revokes old bearer; only one local issuance on replay
+  ---
+  duration_ms: 5.66119
+  type: 'test'
+  ...
+# Subtest: T036 suspicious text held for review; user cannot release its quarantine
+ok 70 - T036 suspicious text held for review; user cannot release its quarantine
+  ---
+  duration_ms: 8.117603
+  type: 'test'
+  ...
+# Subtest: T037 MIME round trip handles Unicode text and binary attachment
+ok 71 - T037 MIME round trip handles Unicode text and binary attachment
+  ---
+  duration_ms: 1.008283
+  type: 'test'
+  ...
+# Subtest: T038 MIME duplicate From, missing boundary and HTML-only bodies are rejected
+ok 72 - T038 MIME duplicate From, missing boundary and HTML-only bodies are rejected
+  ---
+  duration_ms: 0.304955
+  type: 'test'
+  ...
+# Subtest: T053 API raw export cannot contradict authenticated content or sender
+ok 73 - T053 API raw export cannot contradict authenticated content or sender
+  ---
+  duration_ms: 3.209305
+  type: 'test'
+  ...
+# Subtest: T054 missing database is not silently replaced with a new chain
+ok 74 - T054 missing database is not silently replaced with a new chain
+  ---
+  duration_ms: 2.010438
+  type: 'test'
+  ...
+# Subtest: T056 body or recipient policy changes do not rebind an outstanding stamp
+ok 75 - T056 body or recipient policy changes do not rebind an outstanding stamp
+  ---
+  duration_ms: 6.512409
+  type: 'test'
+  ...
+# Subtest: T057 corrupted signed header causes reopen to fail rather than repair history
+ok 76 - T057 corrupted signed header causes reopen to fail rather than repair history
+  ---
+  duration_ms: 2.591995
+  type: 'test'
+  ...
+# Subtest: T058 candidate schema-2 export preserves mail and refuses source/path mutation
+ok 77 - T058 candidate schema-2 export preserves mail and refuses source/path mutation
+  ---
+  duration_ms: 20.216282
+  type: 'test'
+  ...
+# Subtest: T059 consumed stamp remains unusable after database reopen with a new request ID
+ok 78 - T059 consumed stamp remains unusable after database reopen with a new request ID
+  ---
+  duration_ms: 10.924107
+  type: 'test'
+  ...
+# Subtest: T079 packaged UI discards an attachment download completed after logout
+ok 79 - T079 packaged UI discards an attachment download completed after logout
+  ---
+  duration_ms: 3.338267
+  type: 'test'
+  ...
+# Subtest: T080 packaged UI rejects old attachment preparation after an identity change
+ok 80 - T080 packaged UI rejects old attachment preparation after an identity change
+  ---
+  duration_ms: 0.985279
+  type: 'test'
+  ...
+# Subtest: T081 logout aborts outstanding packaged API requests and rejects a late response
+ok 81 - T081 logout aborts outstanding packaged API requests and rejects a late response
+  ---
+  duration_ms: 1.392487
+  type: 'test'
+  ...
+# Subtest: T082 current-session attachment downloads remain usable
+ok 82 - T082 current-session attachment downloads remain usable
+  ---
+  duration_ms: 1.304765
+  type: 'test'
+  ...
+# Subtest: T083 new session requests are independent of invalidated controllers
+ok 83 - T083 new session requests are independent of invalidated controllers
+  ---
+  duration_ms: 0.415289
+  type: 'test'
+  ...
+# Subtest: T084 a draft uses an immutable form snapshot during file preparation
+ok 84 - T084 a draft uses an immutable form snapshot during file preparation
+  ---
+  duration_ms: 0.759823
+  type: 'test'
+  ...
+# Subtest: T085 session changes do not surface obsolete errors on the login screen
+ok 85 - T085 session changes do not surface obsolete errors on the login screen
+  ---
+  duration_ms: 0.975354
+  type: 'test'
+  ...
+# Subtest: T086 browser source does not persist access tokens in web storage
+ok 86 - T086 browser source does not persist access tokens in web storage
+  ---
+  duration_ms: 0.232617
+  type: 'test'
+  ...
+1..86
+# tests 86
+# suites 0
+# pass 86
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 841.017051

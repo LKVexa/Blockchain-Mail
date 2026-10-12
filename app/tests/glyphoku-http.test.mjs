@@ -1,0 +1,2 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {integrationCheck} from '../tools/glyphoku-check.mjs';
+test('G024 actual HTTP three-board journey, frozen send, concurrent retries, origin guard and occupied-port refusal',async()=>{const r=await integrationCheck();assert.equal(r.counts.fail,0,r.error??JSON.stringify(r.checks.filter(x=>x.outcome==='FAIL')));assert.equal(r.counts.pass,19);});

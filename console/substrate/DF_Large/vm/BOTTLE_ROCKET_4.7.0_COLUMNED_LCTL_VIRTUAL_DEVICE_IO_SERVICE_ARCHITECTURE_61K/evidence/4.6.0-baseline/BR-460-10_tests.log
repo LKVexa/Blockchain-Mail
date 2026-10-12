@@ -1,0 +1,3 @@
+COMMAND .build/t460 + tests/test_460_toolchain.py + performance median
+EXIT 0
+PASS Small/zero/one/sparse paths plus immediate constant folding are active. Portable scalar limbs are retained instead of non-portable vector intrinsics.

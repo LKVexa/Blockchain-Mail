@@ -1,0 +1,209 @@
+[
+  {
+    "id": "W00",
+    "workflow_status": "BLOCKED",
+    "assessment": "INCONCLUSIVE",
+    "implementation_activity": "PERFORMED_WITH_BOUNDED_EVIDENCE",
+    "observed": "Read/hash/archive audit; preserve both baselines; local profile explicitly rebound; immutable candidate and runtime records created.",
+    "source_case_ids": [
+      "GV110-W00-T01",
+      "GV110-W00-T02",
+      "GV110-W00-T03",
+      "GV110-W00-T04",
+      "GV110-W00-T05",
+      "GV110-W00-T06",
+      "GV110-W00-T07",
+      "GV110-W00-T08"
+    ],
+    "acceptance_blockers": [
+      "Profile rebind and independent acceptance review pending",
+      "Required actual headed target-browser acceptance unavailable"
+    ],
+    "source_controls": "NOT_ASSESSED",
+    "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d"
+  },
+  {
+    "id": "W01",
+    "workflow_status": "BLOCKED",
+    "assessment": "INCONCLUSIVE",
+    "implementation_activity": "PERFORMED_WITH_BOUNDED_EVIDENCE",
+    "observed": "Exact topology, bounded complete-uniqueness result, live given-only verifier and opaque issuance grant implemented; G002–G013 exercised.",
+    "source_case_ids": [
+      "GV110-W01-T01",
+      "GV110-W01-T02",
+      "GV110-W01-T03",
+      "GV110-W01-T04",
+      "GV110-W01-T05",
+      "GV110-W01-T06",
+      "GV110-W01-T07",
+      "GV110-W01-T08"
+    ],
+    "acceptance_blockers": [
+      "Profile rebind and independent acceptance review pending",
+      "Required actual headed target-browser acceptance unavailable"
+    ],
+    "source_controls": "NOT_ASSESSED",
+    "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d"
+  },
+  {
+    "id": "W02",
+    "workflow_status": "BLOCKED",
+    "assessment": "INCONCLUSIVE",
+    "implementation_activity": "PERFORMED_WITH_BOUNDED_EVIDENCE",
+    "observed": "Real frame-producing solver and pace/cancellation UI implemented; G014/G015/G017/G023 and offline UI checks executed; actual headed target journey blocked.",
+    "source_case_ids": [
+      "GV110-W02-T01",
+      "GV110-W02-T02",
+      "GV110-W02-T03",
+      "GV110-W02-T04",
+      "GV110-W02-T05",
+      "GV110-W02-T06",
+      "GV110-W02-T07",
+      "GV110-W02-T08"
+    ],
+    "acceptance_blockers": [
+      "Profile rebind and independent acceptance review pending",
+      "Required actual headed target-browser acceptance unavailable"
+    ],
+    "source_controls": "NOT_ASSESSED",
+    "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d"
+  },
+  {
+    "id": "W03",
+    "workflow_status": "BLOCKED",
+    "assessment": "INCONCLUSIVE",
+    "implementation_activity": "PERFORMED_WITH_BOUNDED_EVIDENCE",
+    "observed": "One-board domain/account/registry/ledger atomic transaction implemented; commit-fault/restart/ack-loss experiments executed.",
+    "source_case_ids": [
+      "GV110-W03-T01",
+      "GV110-W03-T02",
+      "GV110-W03-T03",
+      "GV110-W03-T04",
+      "GV110-W03-T05",
+      "GV110-W03-T06",
+      "GV110-W03-T07",
+      "GV110-W03-T08"
+    ],
+    "acceptance_blockers": [
+      "Profile rebind and independent acceptance review pending",
+      "Required actual headed target-browser acceptance unavailable"
+    ],
+    "source_controls": "NOT_ASSESSED",
+    "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d"
+  },
+  {
+    "id": "W04",
+    "workflow_status": "BLOCKED",
+    "assessment": "INCONCLUSIVE",
+    "implementation_activity": "PERFORMED_WITH_BOUNDED_EVIDENCE",
+    "observed": "Exact frozen-draft canonical bytes, UTF-8 hash comparison, type/range/local-membership checks and locked editor implemented and tested.",
+    "source_case_ids": [
+      "GV110-W04-T01",
+      "GV110-W04-T02",
+      "GV110-W04-T03",
+      "GV110-W04-T04",
+      "GV110-W04-T05",
+      "GV110-W04-T06",
+      "GV110-W04-T07",
+      "GV110-W04-T08"
+    ],
+    "acceptance_blockers": [
+      "Profile rebind and independent acceptance review pending",
+      "Required actual headed target-browser acceptance unavailable"
+    ],
+    "source_controls": "NOT_ASSESSED",
+    "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d"
+  },
+  {
+    "id": "W05",
+    "workflow_status": "BLOCKED",
+    "assessment": "INCONCLUSIVE",
+    "implementation_activity": "PERFORMED_WITH_BOUNDED_EVIDENCE",
+    "observed": "Two fresh live receipts create signed zero-cost game stamp and READY at g=3; no email before Send; duplicate/nonce/restart checks executed.",
+    "source_case_ids": [
+      "GV110-W05-T01",
+      "GV110-W05-T02",
+      "GV110-W05-T03",
+      "GV110-W05-T04",
+      "GV110-W05-T05",
+      "GV110-W05-T06",
+      "GV110-W05-T07",
+      "GV110-W05-T08"
+    ],
+    "acceptance_blockers": [
+      "Profile rebind and independent acceptance review pending",
+      "Required actual headed target-browser acceptance unavailable"
+    ],
+    "source_controls": "NOT_ASSESSED",
+    "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d"
+  },
+  {
+    "id": "W06",
+    "workflow_status": "BLOCKED",
+    "assessment": "INCONCLUSIVE",
+    "implementation_activity": "PERFORMED_WITH_BOUNDED_EVIDENCE",
+    "observed": "Exact explicit send shares real Vexa delivery transaction; content, recipient dedup, Inbox/Sent, same-operation retries and lost acknowledgments tested.",
+    "source_case_ids": [
+      "GV110-W06-T01",
+      "GV110-W06-T02",
+      "GV110-W06-T03",
+      "GV110-W06-T04",
+      "GV110-W06-T05",
+      "GV110-W06-T06",
+      "GV110-W06-T07",
+      "GV110-W06-T08"
+    ],
+    "acceptance_blockers": [
+      "Profile rebind and independent acceptance review pending",
+      "Required actual headed target-browser acceptance unavailable"
+    ],
+    "source_controls": "NOT_ASSESSED",
+    "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d"
+  },
+  {
+    "id": "W07",
+    "workflow_status": "BLOCKED",
+    "assessment": "INCONCLUSIVE",
+    "implementation_activity": "PERFORMED_WITH_BOUNDED_EVIDENCE",
+    "observed": "Corruption, replay, stale sessions, capacities, source preservation and tested boundaries assessed; browser-origin/Web Locks/platform obligations not simulated as acceptance.",
+    "source_case_ids": [
+      "GV110-W07-T01",
+      "GV110-W07-T02",
+      "GV110-W07-T03",
+      "GV110-W07-T04",
+      "GV110-W07-T05",
+      "GV110-W07-T06",
+      "GV110-W07-T07",
+      "GV110-W07-T08"
+    ],
+    "acceptance_blockers": [
+      "Profile rebind and independent acceptance review pending",
+      "Required actual headed target-browser acceptance unavailable"
+    ],
+    "source_controls": "NOT_ASSESSED",
+    "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d"
+  },
+  {
+    "id": "W08",
+    "workflow_status": "BLOCKED",
+    "assessment": "INCONCLUSIVE",
+    "implementation_activity": "PERFORMED_WITH_BOUNDED_EVIDENCE",
+    "observed": "No new g=3 issuance; mailbox remains usable; reports, crosswalk, code diff and checkpoint supplied; no production/source gate promotion.",
+    "source_case_ids": [
+      "GV110-W08-T01",
+      "GV110-W08-T02",
+      "GV110-W08-T03",
+      "GV110-W08-T04",
+      "GV110-W08-T05",
+      "GV110-W08-T06",
+      "GV110-W08-T07",
+      "GV110-W08-T08"
+    ],
+    "acceptance_blockers": [
+      "Profile rebind and independent acceptance review pending",
+      "Required actual headed target-browser acceptance unavailable"
+    ],
+    "source_controls": "NOT_ASSESSED",
+    "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d"
+  }
+]

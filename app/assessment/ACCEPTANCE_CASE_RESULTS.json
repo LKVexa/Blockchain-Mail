@@ -1,0 +1,2377 @@
+{
+  "run_id": "VG127-20261006-01",
+  "count": 72,
+  "source_profile": "GLYPHOKU_VEM_127/1",
+  "current_profile": "GLYPHOKU_VEXA127/2",
+  "case_results": [
+    {
+      "source_case": {
+        "id": "GV110-W00-T01",
+        "workflow": "W00",
+        "title": "Candidate identity",
+        "level": "STATIC",
+        "precondition": "Unmodified extracted candidate and supplied archives.",
+        "stimulus": "Compare both archive digests and all selected target-file hashes; inspect route and imports.",
+        "expected": "Identities match, or a reviewed rebind records every changed file before any mutation.",
+        "required_evidence": "Hash report, actual root and scope decision.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "104802c90850808264cbc5d02b55076fea7f61af9de74c11fdc50755303c7c80",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "evidence/delivery/INTAKE_AUDIT.json"
+      ],
+      "evidence_paths": [
+        "evidence/delivery/INTAKE_AUDIT.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W00-T02",
+        "workflow": "W00",
+        "title": "Archive and source preservation",
+        "level": "STATIC",
+        "precondition": "Archives remain read-only; a disposable intake destination exists.",
+        "stimulus": "Check traversal, absolute/drive paths, symlinks, case collisions and bounded expansion; inventory nested ZIPs without executing them.",
+        "expected": "Unsafe inputs fail closed; originals remain byte-identical; nested packs are excluded from execution.",
+        "required_evidence": "Archive inventory, rejection fixtures and before/after original hashes.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "01d761ce90d9e0440c81721976fb7c22f63b4b6c7e112da272135faa3b38ee4b",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "evidence/delivery/INTAKE_AUDIT.json"
+      ],
+      "evidence_paths": [
+        "evidence/delivery/INTAKE_AUDIT.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W00-T03",
+        "workflow": "W00",
+        "title": "Single authority",
+        "level": "STATIC",
+        "precondition": "Current Glyphoku, BEM/Obscura and storage paths have been inspected.",
+        "stimulus": "Trace route -> studio -> registry -> storage and inspect the proposed diff.",
+        "expected": "Exactly one Glyphoku registry/store; no BEM authority merge or second transport; helper modules have explicit responsibilities.",
+        "required_evidence": "Import map, storage ownership table and diff review.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "54039577e1b94a0414daa08f4a9b6ea902b9bbe27ec9763d0945e47f0a032558",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "docs/PROFILE_CROSSWALK.md"
+      ],
+      "evidence_paths": [
+        "docs/PROFILE_CROSSWALK.md"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W00-T04",
+        "workflow": "W00",
+        "title": "Literal-loopback host",
+        "level": "INTEGRATION",
+        "precondition": "Reviewed local execution profile with approved fixed port.",
+        "stimulus": "Start that profile, inspect effective argv/config and its actual listener; challenge occupied port.",
+        "expected": "Listener is the approved literal 127.0.0.1 address; no wildcard bind or silent port fallback.",
+        "required_evidence": "Process identity, listener capture and failed-port log.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "6c0044ae58c8163f8fc4cd51fea0ca9e363e026dfb503ef88bf4b1199f226d2b",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "evidence/delivery/HTTP_SUMMARY.json"
+      ],
+      "evidence_paths": [
+        "evidence/delivery/HTTP_SUMMARY.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W00-T05",
+        "workflow": "W00",
+        "title": "Runtime and dependency pinning",
+        "level": "STATIC",
+        "precondition": "Approved Node path and supplied lockfile.",
+        "stimulus": "Record versions/digests; check required engines and run the direct baseline test command.",
+        "expected": "No unnoticed runtime or lockfile upgrade; unavailable prerequisites are BLOCKED, not auto-installed.",
+        "required_evidence": "Runtime/lockfile record and exact baseline command/exit output.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "3f8e149587f88a4267438b13404b90b0ac8885f33fe8029f7d260c2ad2f88461",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "evidence/baseline/glyphoku.tap",
+        "provenance/RUNTIME_PIN.json"
+      ],
+      "evidence_paths": [
+        "evidence/baseline/glyphoku.tap",
+        "provenance/RUNTIME_PIN.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W00-T06",
+        "workflow": "W00",
+        "title": "Origin-bound data",
+        "level": "INTEGRATION",
+        "precondition": "Synthetic browser profiles at two distinct origins.",
+        "stimulus": "Create a harmless fixture at one origin, inspect the other, then follow only the authorized export/import path.",
+        "expected": "No assumption of shared localStorage; no automatic overwrite, disappearance-as-corruption claim or silent cross-origin merge.",
+        "required_evidence": "Origin identifiers and separate pre/post data snapshots.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "e7b2eabdce7eaac0778c35ccce2b9cc518075988cd1dd2d4ad7335b2031a851f",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "docs/PROFILE_CROSSWALK.md"
+      ],
+      "evidence_paths": [
+        "docs/PROFILE_CROSSWALK.md"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review",
+        "Two-origin legacy migration experiment not performed"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W00-T07",
+        "workflow": "W00",
+        "title": "Real-data exclusion",
+        "level": "STATIC",
+        "precondition": "Existing candidate may contain user changes or mail.",
+        "stimulus": "Review working copy and evidence destinations before test setup.",
+        "expected": "Only synthetic fixture state is used; original source and any live mail remain intact.",
+        "required_evidence": "Authorization scope, working-copy inventory and preservation record.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "9fde969cac1476350047527022d4e46a4f3d35f6a801a9e51ee6b5553ad02e24",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "docs/THREAT_MODEL.md"
+      ],
+      "evidence_paths": [
+        "docs/THREAT_MODEL.md"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W00-T08",
+        "workflow": "W00",
+        "title": "Mutation prerequisites",
+        "level": "CONTRACT",
+        "precondition": "Proposed schema, lock and operation contracts are available.",
+        "stimulus": "Review complete validation, single-writer design, migration, budgets and failure outcomes.",
+        "expected": "No journey starts until these contracts and bounded parameter choices are explicit; missing lock/storage policy blocks mutation.",
+        "required_evidence": "Approved integration contract, unresolved decisions and initial checkpoint.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "9cf1e5b904f861e767457e3ecc847a205ad63394579516a9511ce9d400eeb31b",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "evidence/INPUT_BINDING.json"
+      ],
+      "evidence_paths": [
+        "evidence/INPUT_BINDING.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W01-T01",
+        "workflow": "W01",
+        "title": "Exact played alphabet and bands",
+        "level": "UNIT",
+        "precondition": "Fresh g=1 and g=2 test contexts.",
+        "stimulus": "Inspect glyphs, order and boxes; deal bounded fixtures and count blanks.",
+        "expected": "Exact ordered 16-symbol alphabet, 256 cells, 4x4 boxes and the 124-132 / 133-140 bands.",
+        "required_evidence": "Glyph vector, topology and per-board empty counts.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "9d9a67b892b96c48e03d37b20de4c1ef2d95f62eb21b5e289b6c78dcf98448bf",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "G002"
+      ],
+      "evidence_paths": [
+        "evidence/delivery/TEST_SUMMARY.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W01-T02",
+        "workflow": "W01",
+        "title": "Complete uniqueness result",
+        "level": "UNIT",
+        "precondition": "Valid, invalid, ambiguous and budget-exhausted givens fixtures.",
+        "stimulus": "Run the independent uniqueness checker, including a case capped after one completion.",
+        "expected": "Only complete valid enumeration with exactly one solution is eligible; invalid/ambiguous/incomplete search is refused.",
+        "required_evidence": "Typed result, node budget, completion flag and fixture provenance.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "bc152bcebf682be785cbb28ebbcc5e4f7b4e9492ab9187d85c508bdca1e06b41",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "G003",
+        "G004"
+      ],
+      "evidence_paths": [
+        "evidence/delivery/TEST_SUMMARY.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W01-T03",
+        "workflow": "W01",
+        "title": "Grid and topology rejection",
+        "level": "UNIT",
+        "precondition": "An eligible g=1 or g=2 context before horizon.",
+        "stimulus": "Submit changed givens, duplicate values, bad lengths, nonintegers and a 1x16-box Latin square.",
+        "expected": "Each fails its grid/topology validator without creating a resource; supplied topology cannot override PLAYED.",
+        "required_evidence": "Exact validator reason and unchanged state hash.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "ce295a21709cc02ef0abb8ab795490e38e6d67a11c25bdc4537c69bd82a0b378",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "G005"
+      ],
+      "evidence_paths": [
+        "evidence/delivery/TEST_SUMMARY.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W01-T04",
+        "workflow": "W01",
+        "title": "Inclusive event budget",
+        "level": "UNIT",
+        "precondition": "Instrumented deterministic stepper boundary fixtures.",
+        "stimulus": "Exercise cap-1, cap and cap+1 terminal events for both ordinals.",
+        "expected": "INIT and terminal events count; cap+1 never succeeds; the instrumentation is test-only.",
+        "required_evidence": "Event counts, terminal order and expected-versus-observed assertions.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "a353c356674317999f4b7fd263316b72f61286a5963dfc3d8ef9c27e51254fde",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "G006"
+      ],
+      "evidence_paths": [
+        "evidence/delivery/TEST_SUMMARY.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W01-T05",
+        "workflow": "W01",
+        "title": "Required live trace characteristics",
+        "level": "UNIT",
+        "precondition": "Distinct accepted candidate boards for g=1 and g=2.",
+        "stimulus": "Verify event sequence, initial givens, replay integrity, terminal result and per-board GUESS/RETRACT counts.",
+        "expected": "At least 8/12 guesses, at least one g=2 retraction, no given mutation, and a final board matching independent verification.",
+        "required_evidence": "Per-board trace digest, counters and candidate digest.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "4557e353cdc386e38c0dab36a2d5ddb74c8b1b14c0de07935debd22903b905c2",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "G007",
+        "G001"
+      ],
+      "evidence_paths": [
+        "evidence/delivery/TEST_SUMMARY.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W01-T06",
+        "workflow": "W01",
+        "title": "Duplicate and reused challenge",
+        "level": "UNIT",
+        "precondition": "g=2 instance and a run with two board slots.",
+        "stimulus": "Submit identical arrays as both boards, copied objects, and a previously used domain challenge.",
+        "expected": "Duplicate/reused challenge refusal; two array entries do not count as fresh work.",
+        "required_evidence": "Board fingerprints, consumed-set evidence and no mutation.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "e002d1a80981b5e0b61218acd1644fbd8766520b7bd2be2f152fe400ffdb5c3f",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "G009",
+        "G001"
+      ],
+      "evidence_paths": [
+        "evidence/delivery/TEST_SUMMARY.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W01-T07",
+        "workflow": "W01",
+        "title": "Action/revision/replay binding",
+        "level": "INTEGRATION",
+        "precondition": "Live coordinator plus stale, cancelled and historical-run fixtures.",
+        "stimulus": "Change action, draft/label intent, profile, instance, revision or run identity; submit raw solved arrays or replay.",
+        "expected": "No resource is issued outside the exact current eligible run; reload cannot revive an unfinished authorization.",
+        "required_evidence": "Bound intent, rejected handle/receipt and unchanged registry.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "32bffd022292159a494bceb4d89ec08fbc347420fc47be185005a2eb4116ec02",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "G016",
+        "G019"
+      ],
+      "evidence_paths": [
+        "evidence/delivery/TEST_SUMMARY.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W01-T08",
+        "workflow": "W01",
+        "title": "Bounded cancellable preparation",
+        "level": "INTEGRATION",
+        "precondition": "Recorded preparation deadline/node limits and worker or yielding job.",
+        "stimulus": "Force fill, uniqueness or playable-selection exhaustion; cancel during preparation.",
+        "expected": "Structured failure or cancellation; no easier board, cap increase, late commit or unbounded UI-blocking loop.",
+        "required_evidence": "Budget settings, cancellation acknowledgment and state snapshot.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "5c5c44dc8a787377b46801efa5ee4b60de1fc29126709842445c7a0cd07da5bb",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "G013",
+        "G015"
+      ],
+      "evidence_paths": [
+        "evidence/delivery/TEST_SUMMARY.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W02-T01",
+        "workflow": "W02",
+        "title": "Givens rendered first",
+        "level": "HEADED",
+        "precondition": "Empty synthetic instance and a new domain action.",
+        "stimulus": "Observe initial committed board before allowing the first search mutation.",
+        "expected": "Givens and blanks are visible; domain count remains zero; initial paint acknowledgment precedes live steps.",
+        "required_evidence": "Screenshot/video checkpoint and event/paint timestamps.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "5eebe647505635de04ea080b5d597730b2e764f56f3c87e3b7c4f0d3e43b5b30",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "UI_FIXTURE",
+        "G014"
+      ],
+      "evidence_paths": [
+        "evidence/delivery/TEST_SUMMARY.json",
+        "evidence/delivery/UI_FIXTURE_REPORT.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review",
+        "Actual headed server journey not executed; mocked fixture is insufficient"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W02-T02",
+        "workflow": "W02",
+        "title": "24x default and invariant pace changes",
+        "level": "HEADED",
+        "precondition": "Desk freshly loaded with a bound profile.",
+        "stimulus": "Inspect 24 default and 1/8/24/40 options; change speed during a supported live run.",
+        "expected": "Only pacing changes; g, bands, topology, intent and permit eligibility remain fixed.",
+        "required_evidence": "Control state plus before/after policy digest.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "a07e7de16cbec209be61fa1b1e7922dc2306afd8e640fcbebccf6804d5801686",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "UI_FIXTURE"
+      ],
+      "evidence_paths": [
+        "evidence/delivery/UI_FIXTURE_REPORT.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review",
+        "Actual headed server journey not executed; mocked fixture is insufficient"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W02-T03",
+        "workflow": "W02",
+        "title": "Real events and final display fence",
+        "level": "HEADED",
+        "precondition": "Eligible live run with bounded event recording.",
+        "stimulus": "Follow guesses/retractions, inspect event log and stop at terminal candidate before commit.",
+        "expected": "Logical events are recorded without gaps; final visible candidate matches verification; no claim of one paint per event.",
+        "required_evidence": "Event trace, rendered checkpoints, final-frame acknowledgment and commit time.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "fc7cb03dbea3c7d1079b5aa9981352e410969f4c829758f47858a217338d442b",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "G007",
+        "G014"
+      ],
+      "evidence_paths": [
+        "evidence/delivery/TEST_SUMMARY.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review",
+        "Actual headed server journey not executed; mocked fixture is insufficient"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W02-T04",
+        "workflow": "W02",
+        "title": "Pause, resume and single-step",
+        "level": "HEADED",
+        "precondition": "A live run paused at a recorded sequence number.",
+        "stimulus": "Wait while paused, perform one single step, then resume.",
+        "expected": "Pause changes no board; single step advances one logical event; resume continues the same bound run.",
+        "required_evidence": "Before/after board and event counters with pause interval.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "00f519789db75a3aae190a516edbe272eb321832e2d3ec0f7cac955e0e9868e5",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "UI_FIXTURE",
+        "G014"
+      ],
+      "evidence_paths": [
+        "evidence/delivery/TEST_SUMMARY.json",
+        "evidence/delivery/UI_FIXTURE_REPORT.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review",
+        "Actual headed server journey not executed; mocked fixture is insufficient"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W02-T05",
+        "workflow": "W02",
+        "title": "Stop fences every phase",
+        "level": "HEADED",
+        "precondition": "Runs stopped during PREPARING, LIVE SOLVING and VERIFYING.",
+        "stimulus": "Stop and then deliver a delayed preparation/solver result in the controlled fixture.",
+        "expected": "All late results are rejected; no resource or permit appears after cancellation.",
+        "required_evidence": "Generation/run IDs, stop acknowledgment and unchanged committed state.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "4aad01e64ff4328d0ed21b2ee09f5fb42ded7ec28a8ebfa03cf3e17e3af423f2",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "UI_FIXTURE",
+        "G015"
+      ],
+      "evidence_paths": [
+        "evidence/delivery/TEST_SUMMARY.json",
+        "evidence/delivery/UI_FIXTURE_REPORT.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review",
+        "Actual headed server journey not executed; mocked fixture is insufficient"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W02-T06",
+        "workflow": "W02",
+        "title": "Visibility, unmount and backlog",
+        "level": "HEADED",
+        "precondition": "Live view with a bounded event queue.",
+        "stimulus": "Hide tab, unmount observer and simulate a full backlog in separate attempts.",
+        "expected": "Supported pause/cancel policy prevents unobserved authorization; events are not silently dropped.",
+        "required_evidence": "Visibility lifecycle, queue bound, sequence continuity and refusal/pause evidence.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "053c929889cd9b9bea6d30e89f335b0a39f9da0492f259e0a53ccf80dfbace17",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "G017",
+        "G023",
+        "UI_FIXTURE"
+      ],
+      "evidence_paths": [
+        "evidence/delivery/TEST_SUMMARY.json",
+        "evidence/delivery/UI_FIXTURE_REPORT.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review",
+        "Actual headed server journey not executed; mocked fixture is insufficient"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W02-T07",
+        "workflow": "W02",
+        "title": "Frozen active composition",
+        "level": "HEADED",
+        "precondition": "Envelope intent prepared from the existing mailbox.",
+        "stimulus": "Try editing To/subject/body during preparation, solve, verification and READY review.",
+        "expected": "Active draft is locked and immutable; review shows its complete frozen contents, not a different editable draft.",
+        "required_evidence": "Control disabled/read-only state and canonical draft digest.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "4ca201d773b1adc9f26f77f2484e98855b96ffe8e7c2bcdf73ad9b526a6f146b",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "UI_FIXTURE",
+        "G010"
+      ],
+      "evidence_paths": [
+        "evidence/delivery/TEST_SUMMARY.json",
+        "evidence/delivery/UI_FIXTURE_REPORT.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review",
+        "Actual headed server journey not executed; mocked fixture is insufficient"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W02-T08",
+        "workflow": "W02",
+        "title": "Timing and usable observation",
+        "level": "HEADED",
+        "precondition": "Supported desktop and narrow viewport with 24x selected.",
+        "stimulus": "Record preparation, active/paused/visible time, events and checkpoints; inspect keyboard/scroll access to the 16x16 grid.",
+        "expected": "Measured fields are distinct and accurately labeled; board controls remain usable; no imported timing sample is presented as measured.",
+        "required_evidence": "Viewport captures and phase-specific measurement record.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "b167ec0c5c738bca066ce3c43300c3fa5d8ef7cca2ab59d1cafc741dace8bb48",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "evidence/delivery/HTTP_SUMMARY.json"
+      ],
+      "evidence_paths": [
+        "evidence/delivery/HTTP_SUMMARY.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review",
+        "Actual headed server journey not executed; mocked fixture is insufficient"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W03-T01",
+        "workflow": "W03",
+        "title": "One-board domain commit",
+        "level": "HEADED",
+        "precondition": "Fresh compatible instance at g=1.",
+        "stimulus": "Request label studio, observe its eligible one-board live run and complete the coordinated transition.",
+        "expected": "One studio.glyphoku.localhost domain, one owner mailbox, g=2 and exactly one accepted operation receipt.",
+        "required_evidence": "Live trace, receipt and committed before/after snapshots.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "124d4b0849564b5772bf8eb50cb19598ff4d05d131bf4ac839995b056e2334f8",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "G001"
+      ],
+      "evidence_paths": [
+        "evidence/delivery/TEST_SUMMARY.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review",
+        "Actual headed server journey not executed; mocked fixture is insufficient"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W03-T02",
+        "workflow": "W03",
+        "title": "Label validation before work",
+        "level": "UNIT",
+        "precondition": "Fresh and existing-label fixtures before the relevant horizon check.",
+        "stimulus": "Try reserved, malformed and duplicate labels; observe whether preparation starts.",
+        "expected": "Specific label/duplicate refusal occurs before unnecessary dealing; no renamed fallback or extra domain.",
+        "required_evidence": "Refusal code, dealer invocation count and state hash.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "f788f328eed7652761ad01bcd6c80303d2172b2640233f1adb67bcb1e96695fe",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "G016"
+      ],
+      "evidence_paths": [
+        "evidence/delivery/TEST_SUMMARY.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W03-T03",
+        "workflow": "W03",
+        "title": "Wrong domain batch length",
+        "level": "UNIT",
+        "precondition": "g=1 valid label and authorization test boundary.",
+        "stimulus": "Try zero and two boards where one is required.",
+        "expected": "Wrong-batch-length refusal and no ordinal/resource change.",
+        "required_evidence": "Batch size and unchanged registry snapshot.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "0c1a8d5d175f8e04bec7e009e7d176d41eb325b2d13ce1dc9ff306d378ab966a",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "G008"
+      ],
+      "evidence_paths": [
+        "evidence/delivery/TEST_SUMMARY.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W03-T04",
+        "workflow": "W03",
+        "title": "Final candidate binding",
+        "level": "INTEGRATION",
+        "precondition": "Valid live domain run and independent final verifier.",
+        "stimulus": "Alter a given, a candidate cell or the candidate digest before commit.",
+        "expected": "Domain transition is denied even after animation termination; the final visible grid must match the verified candidate.",
+        "required_evidence": "Visible/final digests, verifier reason and no domain write.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "cd8b899fd312589d48ba63dec613e74568406e35e554bb970fa3cf4895100a44",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "G005",
+        "G014"
+      ],
+      "evidence_paths": [
+        "evidence/delivery/TEST_SUMMARY.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W03-T05",
+        "workflow": "W03",
+        "title": "Reserve envelope ordinal",
+        "level": "INTEGRATION",
+        "precondition": "One committed domain at g=2.",
+        "stimulus": "Request a second new domain through UI and the mutation API.",
+        "expected": "Wrong-action-for-ordinal refusal with g=2 preserved for the envelope; no hidden horizon extension.",
+        "required_evidence": "Admission response, zero new dealer work and unchanged counts.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "3095aa7ebead26244b95b3bd378bd45269e43ca4b82ab8eb9a6bf5dc7605004c",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "G001"
+      ],
+      "evidence_paths": [
+        "evidence/delivery/TEST_SUMMARY.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W03-T06",
+        "workflow": "W03",
+        "title": "Persist before success",
+        "level": "FAULT",
+        "precondition": "Eligible g=1 transition and controlled storage failure hooks.",
+        "stimulus": "Fail the snapshot write or read-back before domain success is announced.",
+        "expected": "No false created label; prior bytes remain intact or an ambiguous write is recovery-needed and reconciled by operation ID.",
+        "required_evidence": "Storage fault timeline, UI state and before/after bytes.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "479240b06df0f6e35553dc489ad2ee5e58e4b21bd7b1712b1909a3a09391fea3",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "G018",
+        "G019"
+      ],
+      "evidence_paths": [
+        "evidence/delivery/TEST_SUMMARY.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W03-T07",
+        "workflow": "W03",
+        "title": "Reload and read without work",
+        "level": "HEADED",
+        "precondition": "Successfully committed domain on the approved origin.",
+        "stimulus": "Reload and read the owner mailbox.",
+        "expected": "Same domain/mailbox and g=2 survive; mailbox read starts no puzzle.",
+        "required_evidence": "Same-origin reload snapshot and dealer invocation count.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "5d4715709606a8daa524f20536dc46c41846d1d16e3eff9348acaa24875fb80e",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "G025"
+      ],
+      "evidence_paths": [
+        "evidence/delivery/TEST_SUMMARY.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review",
+        "Actual headed server journey not executed; mocked fixture is insufficient"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W03-T08",
+        "workflow": "W03",
+        "title": "Racing domain submissions",
+        "level": "CONCURRENCY",
+        "precondition": "Two contexts share a synthetic origin and the same current revision.",
+        "stimulus": "Race duplicate operation IDs and distinct domain intents.",
+        "expected": "Only one new transition commits; exact retry retrieves it, incompatible contender is refused as stale or wrong action.",
+        "required_evidence": "Lock/revision timeline, receipts and final resource counts.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "30886d261e76fc2d575875ab76b9c80323c3161287bb57aee1faff0229c72ea2",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "G016",
+        "G019"
+      ],
+      "evidence_paths": [
+        "evidence/delivery/TEST_SUMMARY.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W04-T01",
+        "workflow": "W04",
+        "title": "Canonical draft reference vector",
+        "level": "UNIT",
+        "precondition": "Existing owner mailbox at g=2 and fixed synthetic input.",
+        "stimulus": "Freeze twice using subject spaces, CRLF body and duplicated/mixed-case recipient input.",
+        "expected": "Canonical bytes/digest are stable and match an independent SHA-256 implementation.",
+        "required_evidence": "Exact test preimage bytes, canonical object and two equal digests.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "c7692cac0f2ff61fc521a4a21fb67bbb6ca932f3540dc8875ef3971ae6626430",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "G010"
+      ],
+      "evidence_paths": [
+        "evidence/delivery/TEST_SUMMARY.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W04-T02",
+        "workflow": "W04",
+        "title": "Subject/body boundary checks",
+        "level": "UNIT",
+        "precondition": "Valid local sender/recipient fixture.",
+        "stimulus": "Test empty/whitespace content, lengths at and around limits and CR/LF in subject.",
+        "expected": "Only the documented string-length and normalization policy is accepted; no solver starts for invalid input.",
+        "required_evidence": "Boundary matrix and pre-deal rejection evidence.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "a0f9bdebc3a89d9fdf7394728b219203f1c43492b44b4ce83176814426901915",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "G011"
+      ],
+      "evidence_paths": [
+        "evidence/delivery/TEST_SUMMARY.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W04-T03",
+        "workflow": "W04",
+        "title": "Local sender/recipient authority",
+        "level": "UNIT",
+        "precondition": "Valid g=2 registry.",
+        "stimulus": "Freeze with external recipient, unknown local mailbox and unregistered sender.",
+        "expected": "Specific local-membership refusal before preparation or DNS/MX work.",
+        "required_evidence": "Refusal codes, dealer/network invocation counts and state hash.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "57f854ff54f29a3d6121b2037a95e9e4f7491dcd3a08db772cc68f45f1cf1437",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "G011"
+      ],
+      "evidence_paths": [
+        "evidence/delivery/TEST_SUMMARY.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W04-T04",
+        "workflow": "W04",
+        "title": "Deep frozen data ownership",
+        "level": "UNIT",
+        "precondition": "A frozen draft with caller-owned recipient arrays or copied structures.",
+        "stimulus": "Mutate caller-held input/arrays after freeze and after permit construction.",
+        "expected": "Recorded canonical message and authorized recipient scope do not change through aliasing.",
+        "required_evidence": "Before/after bytes and reference/mutation assertions.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "aa54c8ebf05330f29aead6996600da0c743c893c00fbdc2ec6d6f88609268b02",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "G010"
+      ],
+      "evidence_paths": [
+        "evidence/delivery/TEST_SUMMARY.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W04-T05",
+        "workflow": "W04",
+        "title": "Stale digest cannot authorize edited body",
+        "level": "UNIT",
+        "precondition": "Valid frozen draft and isolated issuance/send fixtures.",
+        "stimulus": "Change body/subject/recipient values while retaining the original digest.",
+        "expected": "Digest/canonical-content mismatch is rejected at issue and at send with no committed rows.",
+        "required_evidence": "Expected rejection at each boundary and state hashes.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "9ada9dcbccb95a5894049493c24379cee2bbc4a4ebc410daa80f3ff71254cc59",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "G010",
+        "G020"
+      ],
+      "evidence_paths": [
+        "evidence/delivery/TEST_SUMMARY.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W04-T06",
+        "workflow": "W04",
+        "title": "Unicode and canonicalization version",
+        "level": "UNIT",
+        "precondition": "Non-ASCII, surrogate-pair, bare-CR and reordered-recipient vectors.",
+        "stimulus": "Freeze and compare results under the documented v1 contract.",
+        "expected": "Code-unit limits and order sensitivity are explicit; no silent Unicode normalization, sorting or version change.",
+        "required_evidence": "Canonical vectors and version decision.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "6b8189466db2d373d90ab8f0204f66ab93f75cff060a488ef63c2d2cc28d8f1d",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "G010",
+        "G011"
+      ],
+      "evidence_paths": [
+        "evidence/delivery/TEST_SUMMARY.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W04-T07",
+        "workflow": "W04",
+        "title": "Bcc/recipient projection",
+        "level": "UNIT",
+        "precondition": "Explicitly labeled synthetic multi-mailbox fixture; baseline UI has no Bcc field.",
+        "stimulus": "Create To/Bcc overlap and inspect each delivery projection.",
+        "expected": "One row per unique recipient; unrelated recipients do not receive Bcc list disclosure through the projection; no claim of multi-user security.",
+        "required_evidence": "Synthetic-fixture declaration and per-recipient projection assertions.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "ef216cdb9cb48cd0eb79813589054ea6313d67a5891a7fc6bab90c4bad8b2135",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "G010",
+        "G001"
+      ],
+      "evidence_paths": [
+        "evidence/delivery/TEST_SUMMARY.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W04-T08",
+        "workflow": "W04",
+        "title": "Changed draft requires distinct authorization",
+        "level": "HEADED",
+        "precondition": "Active frozen envelope run or READY permit, then g=3 state.",
+        "stimulus": "Attempt to alter its active draft or start a new message authorization.",
+        "expected": "Active draft cannot silently change; different new draft cannot use old permit and is paused for new issuance at g=3.",
+        "required_evidence": "Review display, digest comparison and horizon reason.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "6ce5ebbba95900824136baad11d99a23cf176c785a9d5f870d69682fce3793fd",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "G020",
+        "UI_FIXTURE"
+      ],
+      "evidence_paths": [
+        "evidence/delivery/TEST_SUMMARY.json",
+        "evidence/delivery/UI_FIXTURE_REPORT.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review",
+        "Actual headed server journey not executed; mocked fixture is insufficient"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W05-T01",
+        "workflow": "W05",
+        "title": "Exactly two fresh boards issue READY",
+        "level": "HEADED",
+        "precondition": "One domain at g=2 and a verified frozen self-message.",
+        "stimulus": "Play two distinct fresh boards to independently verified completion.",
+        "expected": "One READY permit bound to sender/draft/recipients, g=3, zero delivery rows, READY—NOT SENT shown.",
+        "required_evidence": "Per-board traces, permit object, receipt and state snapshot.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "1f7c4c73691e1edec65e60094f02b4ea4daf9b424f577ded2906b5e074b6e409",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "G001"
+      ],
+      "evidence_paths": [
+        "evidence/delivery/TEST_SUMMARY.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review",
+        "Actual headed server journey not executed; mocked fixture is insufficient"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W05-T02",
+        "workflow": "W05",
+        "title": "Wrong count and duplicate batch",
+        "level": "UNIT",
+        "precondition": "g=2 before new issuance.",
+        "stimulus": "Try one/three boards and two copies of one otherwise valid board.",
+        "expected": "Correct count/distinctness failure, no permit or ordinal change.",
+        "required_evidence": "Specific reason for each case and unchanged snapshot.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "d956589d7bbfcfddbe041da5908fbf609b04ebdb03476818670967b14e9dc91e",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "G009"
+      ],
+      "evidence_paths": [
+        "evidence/delivery/TEST_SUMMARY.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W05-T03",
+        "workflow": "W05",
+        "title": "No hidden/replayed authorization",
+        "level": "INTEGRATION",
+        "precondition": "g=2 with valid grids but no eligible live handle.",
+        "stimulus": "Submit a hidden completed solution, prior trace, cancelled run or stale handle.",
+        "expected": "No issuance; mathematical validity alone is insufficient.",
+        "required_evidence": "Coordinator refusal, input provenance and no resource mutation.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "ffabd69a71d00921c5208e5446c5a8df07df365d3917dcfa6e9864ca98ab6d6e",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "G008",
+        "G014"
+      ],
+      "evidence_paths": [
+        "evidence/delivery/TEST_SUMMARY.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W05-T04",
+        "workflow": "W05",
+        "title": "Revalidate frozen intent at issue",
+        "level": "UNIT",
+        "precondition": "Valid g=2 run and frozen draft.",
+        "stimulus": "Alter sender, recipients, digest, object shape or membership before issue.",
+        "expected": "Only the exact canonical local intent is eligible; forged FrozenDraft is refused.",
+        "required_evidence": "Canonical comparison and refusal/membership evidence.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "1a4ee91ed7074a779883856a254475563d9112b689000df3922da13daebea711",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "G010",
+        "G020"
+      ],
+      "evidence_paths": [
+        "evidence/delivery/TEST_SUMMARY.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W05-T05",
+        "workflow": "W05",
+        "title": "Exact retry after horizon",
+        "level": "INTEGRATION",
+        "precondition": "A previously accepted envelope now at g=3.",
+        "stimulus": "Retrieve/retry the exact completed operation through the documented idempotent interface.",
+        "expected": "Same permit/receipt is returned, with no new board, resource, revision or g increment.",
+        "required_evidence": "Prior/new IDs, state identity and zero dealer calls.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "68875ae9e17b8aedc7cb4ee8d744f184b3d2023c7fd67bdaed47633e03db5480",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "G019",
+        "G020"
+      ],
+      "evidence_paths": [
+        "evidence/delivery/TEST_SUMMARY.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W05-T06",
+        "workflow": "W05",
+        "title": "Different draft at g=3",
+        "level": "INTEGRATION",
+        "precondition": "Completed issuance at g=3 and another frozen message.",
+        "stimulus": "Request new issuance for a different intent.",
+        "expected": "Issuance-paused refusal; no misleading old-permit match or replacement.",
+        "required_evidence": "Intent digests, horizon response and unchanged counts.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "1c4658c9f48e4a9a76a4b8fcba1068490e83927724ad6bbc2a8d75f22e7ba481",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "G001"
+      ],
+      "evidence_paths": [
+        "evidence/delivery/TEST_SUMMARY.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W05-T07",
+        "workflow": "W05",
+        "title": "Duplicate completion callbacks",
+        "level": "CONCURRENCY",
+        "precondition": "Two verified-result callbacks for the same action arrive near-simultaneously.",
+        "stimulus": "Submit both through the shared coordinator; also try a conflicting operation ID.",
+        "expected": "At most one new permit and one ordinal increment; exact duplicate retrieves prior receipt; conflicting/stale intent is denied.",
+        "required_evidence": "Lock/revision timeline and final permits/receipts.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "e4d97f3cdbc14a21fefc566eb804dca43c6c685b1b6b71f865acecebc8adad9b",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "G019"
+      ],
+      "evidence_paths": [
+        "evidence/delivery/TEST_SUMMARY.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W05-T08",
+        "workflow": "W05",
+        "title": "READY survives reload without send",
+        "level": "HEADED",
+        "precondition": "A committed READY permit at g=3.",
+        "stimulus": "Reload the same origin and inspect its frozen message review.",
+        "expected": "Permit remains READY, no automatic delivery, no revived live run and no reset of the horizon.",
+        "required_evidence": "Post-reload snapshot, review screenshot and zero delivery count.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "35e3984fcf0d641450b221db6443828b48db3fe13efa36322090f8761730c950",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "G020"
+      ],
+      "evidence_paths": [
+        "evidence/delivery/TEST_SUMMARY.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review",
+        "Actual headed server journey not executed; mocked fixture is insufficient"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W06-T01",
+        "workflow": "W06",
+        "title": "Explicit exact-permit send",
+        "level": "HEADED",
+        "precondition": "A persisted READY permit for the frozen self-message.",
+        "stimulus": "Click Send for that specific permit ID after reviewing full content.",
+        "expected": "Exactly the reviewed bytes enter the owner inbox; permit becomes DELIVERED_LOCAL and spent once.",
+        "required_evidence": "Button/permit correlation, receipt and stored message bytes.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "49d70dba95675359e9afe03ad02da9632941ecacb217953ec31cbb466efc1393",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "G001",
+        "G024"
+      ],
+      "evidence_paths": [
+        "evidence/delivery/TEST_SUMMARY.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review",
+        "Actual headed server journey not executed; mocked fixture is insufficient"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W06-T02",
+        "workflow": "W06",
+        "title": "Per-recipient de-duplication",
+        "level": "UNIT",
+        "precondition": "Synthetic multi-mailbox fixture with To/Bcc overlap.",
+        "stimulus": "Send one permit through the real transition adapter.",
+        "expected": "Exactly one row per distinct authorized local mailbox, no duplicate from list overlap.",
+        "required_evidence": "Authorized set, resulting row keys and counts.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "ac75608464e608e5552178f00a012bdaa0bf997892d50d2f9bd587c29d1bb70a",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "G010",
+        "G001"
+      ],
+      "evidence_paths": [
+        "evidence/delivery/TEST_SUMMARY.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W06-T03",
+        "workflow": "W06",
+        "title": "Repeat send before/after reload",
+        "level": "INTEGRATION",
+        "precondition": "Already delivered permit and consistent committed store.",
+        "stimulus": "Repeat the same send in current context and again after same-origin reload.",
+        "expected": "Same completed result with unchanged delivery count, revision policy and g; no new game.",
+        "required_evidence": "Before/after snapshot, operation ID and dealer calls.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "ed0af20690d8b922470d572de8d92ea7d7efeb3c5100b68df6923795a3f42b45",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "G020",
+        "G024"
+      ],
+      "evidence_paths": [
+        "evidence/delivery/TEST_SUMMARY.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W06-T04",
+        "workflow": "W06",
+        "title": "Edited content or mismatched sender",
+        "level": "UNIT",
+        "precondition": "Valid READY and delivered fixtures.",
+        "stimulus": "Try different digest, changed content with old digest, or wrong sender.",
+        "expected": "Binding failure before any new delivery or spend mutation.",
+        "required_evidence": "Refusal reason and unchanged state at each permit state.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "7c86025a1e2e1739fbbb10e26f7a825ac1615f330b5498855742f7265a5dcb54",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "G020"
+      ],
+      "evidence_paths": [
+        "evidence/delivery/TEST_SUMMARY.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W06-T05",
+        "workflow": "W06",
+        "title": "Recipient re-resolution at send",
+        "level": "UNIT",
+        "precondition": "READY permit whose current registry or stored recipient scope is altered in a synthetic test.",
+        "stimulus": "Remove a recipient mailbox, insert an external string or change the authorized list.",
+        "expected": "Whole send is refused; no partial rows or spent permit.",
+        "required_evidence": "Current membership, rejection and zero transition.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "446268c54535cc745e0f9f9a438e310635407177f52b673ed86868bcfa379a31",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "G011",
+        "G020"
+      ],
+      "evidence_paths": [
+        "evidence/delivery/TEST_SUMMARY.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W06-T06",
+        "workflow": "W06",
+        "title": "Write/acknowledgment fault",
+        "level": "FAULT",
+        "precondition": "READY permit and storage adapter with controllable write/read-back failures.",
+        "stimulus": "Fail before write, after write or on acknowledgment; retry by exact operation ID.",
+        "expected": "No false success or duplicate spend; uncertainty is reconciled without creating another message.",
+        "required_evidence": "Fault/receipt timeline and final consistent snapshot.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "620f269306936e3916794c5f5326ac18946d86185eac489fd72fa5de73b1c0a5",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "G018",
+        "G020"
+      ],
+      "evidence_paths": [
+        "evidence/delivery/TEST_SUMMARY.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W06-T07",
+        "workflow": "W06",
+        "title": "Invalid permit/spend states",
+        "level": "UNIT",
+        "precondition": "Missing permit, unsupported QUEUED, invalid state and inconsistent spent/delivery fixtures.",
+        "stimulus": "Attempt send through the validated adapter.",
+        "expected": "Structured refusal/recovery-needed state, not silent success or invented queue completion.",
+        "required_evidence": "State-validation diagnostics and unchanged bytes.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "0c794732a930fc5ce5b02f6129d564bfb7b810f8b93bf19a17d0b22114fb7f0d",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "G012",
+        "G020"
+      ],
+      "evidence_paths": [
+        "evidence/delivery/TEST_SUMMARY.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W06-T08",
+        "workflow": "W06",
+        "title": "Persisted inbox read is not issuance",
+        "level": "HEADED",
+        "precondition": "Successful g=3 local delivery.",
+        "stimulus": "Read the recipient inbox, reload and read again.",
+        "expected": "Frozen subject/body remain visible and persisted; no puzzle or ordinal advance.",
+        "required_evidence": "Inbox and stored row snapshots, g and zero dealer work.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "da081f0c840a947899017518b4adac789f5b483f8e43ccd96239f31de915dc83",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "G025",
+        "G020"
+      ],
+      "evidence_paths": [
+        "evidence/delivery/TEST_SUMMARY.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review",
+        "Actual headed server journey not executed; mocked fixture is insufficient"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W07-T01",
+        "workflow": "W07",
+        "title": "Validators are not masked by horizon",
+        "level": "REGRESSION",
+        "precondition": "Saved isolated g=1/g=2 fixtures for each negative validator.",
+        "stimulus": "Rerun all relevant bad-grid, label, batch, draft and recipient cases at the correct precondition.",
+        "expected": "Each reaches and fails its intended validator; ISSUANCE_PAUSED alone never passes another negative case.",
+        "required_evidence": "Per-case g, exact reason and before/after hashes.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "43b5ebe1ee07098ce8dc1179de7933b576d40232162e00ed9445d5ff00a1f815",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "G009"
+      ],
+      "evidence_paths": [
+        "evidence/delivery/TEST_SUMMARY.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W07-T02",
+        "workflow": "W07",
+        "title": "Malformed JSON preservation",
+        "level": "FAULT",
+        "precondition": "Raw syntactically invalid storage and separately invalid top-level JSON fixtures.",
+        "stimulus": "Load, reload and attempt a permitted UI mutation.",
+        "expected": "Original bytes are preserved; mutation blocked; no automatic empty-instance overwrite, even if quarantine/export fails.",
+        "required_evidence": "Raw-byte hashes, recovery display and attempted-write log.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "400ed32b9348c800e538e839bffa0278e3ff65b40584f1c83b4423df6247f5bf",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "G022"
+      ],
+      "evidence_paths": [
+        "evidence/delivery/TEST_SUMMARY.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review",
+        "Original browser JSON/quarantine/Web Locks failure mode not replaced by server fault evidence"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W07-T03",
+        "workflow": "W07",
+        "title": "Nested schema and relation validation",
+        "level": "UNIT",
+        "precondition": "Fixtures missing spentPermits or containing duplicate IDs, orphan rows, invalid g/state/digest relationships.",
+        "stimulus": "Load each through the real validation boundary.",
+        "expected": "Structured corruption/incompatibility result; no uncaught TypeError or invented defaults that reopen spend.",
+        "required_evidence": "Schema diagnostics and unchanged raw state.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "6638c63873ffb5f73b96503e91ee49ab2525e4765bf6e393f5d6a02e7e074121",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "G012",
+        "G020"
+      ],
+      "evidence_paths": [
+        "evidence/delivery/TEST_SUMMARY.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W07-T04",
+        "workflow": "W07",
+        "title": "Cross-tab send race",
+        "level": "CONCURRENCY",
+        "precondition": "Two contexts share one origin, instance and READY permit.",
+        "stimulus": "Trigger simultaneous sends and delayed reads/writes under the selected lock.",
+        "expected": "One consistent final snapshot and one delivery per recipient; all cooperating writers share the same lock.",
+        "required_evidence": "Timeline with context IDs, revisions, receipts and final rows.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "84a0abf6676703443b8c774ba7ab776de13db9b4f53df0155e6018e3119e9e97",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "G024"
+      ],
+      "evidence_paths": [
+        "evidence/delivery/TEST_SUMMARY.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W07-T05",
+        "workflow": "W07",
+        "title": "Stale-tab rollback prevention",
+        "level": "CONCURRENCY",
+        "precondition": "A newer committed revision plus a stale tab snapshot.",
+        "stimulus": "Attempt to write the stale state or revive a spent permit through normal application code.",
+        "expected": "Stale mutation denied; newer spend preserved. Manual hostile storage rollback is documented as outside the threat model, not falsely proven impossible.",
+        "required_evidence": "Revision checks, refusal and explicit residual-limit statement.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "e0c87a0df4c187169e108e9cd351e48095b0c640ed8f35fa2af40ee497daa7b3",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "G016",
+        "G020"
+      ],
+      "evidence_paths": [
+        "evidence/delivery/TEST_SUMMARY.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W07-T06",
+        "workflow": "W07",
+        "title": "Storage/lock unavailable",
+        "level": "FAULT",
+        "precondition": "Quota exhaustion, denied storage, missing Web Locks and failed migration-backup fixtures.",
+        "stimulus": "Attempt domain/permit/send transitions separately.",
+        "expected": "Fail closed or read-only; no optimistic success, hidden unsafe lock fallback or source-byte destruction.",
+        "required_evidence": "Fault matrix, UI diagnostics and surviving bytes.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "00719ef6823e6c324ec9cde67b2f27ee1aa6a686efe04ddfa8818d14c8aad9a8",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "docs/PROFILE_CROSSWALK.md"
+      ],
+      "evidence_paths": [
+        "docs/PROFILE_CROSSWALK.md"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review",
+        "Original browser JSON/quarantine/Web Locks failure mode not replaced by server fault evidence"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W07-T07",
+        "workflow": "W07",
+        "title": "Runtime external-network boundary",
+        "level": "INTEGRATION",
+        "precondition": "Approved literal-loopback profile in a network-restricted synthetic environment.",
+        "stimulus": "Capture browser requests plus relevant process sockets/DNS while exercising required journeys.",
+        "expected": "No runtime external dependency or external mail lookup; activated auth/PWA/preview paths are either local and tested or disabled by the explicit profile.",
+        "required_evidence": "Browser/process network records and effective configuration.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "6033edbb455c7decc3e13466c481be3ee6a731a43245f085cfdb7d328a18b647",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "evidence/delivery/HTTP_SUMMARY.json",
+        "docs/THREAT_MODEL.md"
+      ],
+      "evidence_paths": [
+        "docs/THREAT_MODEL.md",
+        "evidence/delivery/HTTP_SUMMARY.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W07-T08",
+        "workflow": "W07",
+        "title": "Cross-platform and unchanged-neighbor regression",
+        "level": "REGRESSION",
+        "precondition": "Approved dependencies/runtimes and clean test copies.",
+        "stimulus": "Run typecheck, full relevant tests, build and normal-user Windows launch/error paths; inspect neighboring module diffs.",
+        "expected": "Actual results recorded; missing environments BLOCKED/NOT_RUN; no unrelated BEM/JA21/Penteract changes or source-control PASS propagation.",
+        "required_evidence": "Commands, exit codes, Windows diagnostics and scoped diff.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "867674421f9a17d8e3364337dbaa679598ad8b5f17d78ea368ffba848b5ef901",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "evidence/delivery/TEST_SUMMARY.json"
+      ],
+      "evidence_paths": [
+        "evidence/delivery/TEST_SUMMARY.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W08-T01",
+        "workflow": "W08",
+        "title": "New issuance remains paused at g=3",
+        "level": "HEADED",
+        "precondition": "A valid completed envelope issuance at g=3.",
+        "stimulus": "Try another domain and another new envelope through UI and API.",
+        "expected": "No new game, resource, horizon lift or hidden smaller puzzle; a clear paused reason is displayed.",
+        "required_evidence": "Horizon state, attempted action and unchanged resource counts.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "24cc37ddd8f6470435df342383261f20ba9771c763c5437e7eeac64e5c6e41a2",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "G001",
+        "G024",
+        "UI_FIXTURE"
+      ],
+      "evidence_paths": [
+        "evidence/delivery/TEST_SUMMARY.json",
+        "evidence/delivery/UI_FIXTURE_REPORT.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review",
+        "Actual headed server journey not executed; mocked fixture is insufficient"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W08-T02",
+        "workflow": "W08",
+        "title": "Existing resources remain usable",
+        "level": "INTEGRATION",
+        "precondition": "Separate persisted g=3 READY and DELIVERED fixtures from real accepted test runs.",
+        "stimulus": "Retrieve prior permit, send the existing READY message once, retry exact send and read inbox.",
+        "expected": "These existing operations remain available without new issuance or puzzles.",
+        "required_evidence": "Operation/receipt identities and unchanged g.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "b27337e070b4a0ac661844257971a2bc23e8bf35723ad11af1e64df306e2c535",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "G001",
+        "G025"
+      ],
+      "evidence_paths": [
+        "evidence/delivery/TEST_SUMMARY.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W08-T03",
+        "workflow": "W08",
+        "title": "Measurements are scoped and honest",
+        "level": "REPORT",
+        "precondition": "Actual measurement records, including failures/timeouts.",
+        "stimulus": "Separate preparation, active solver, visible, paused and total time; report event and checkpoint counts.",
+        "expected": "Only measured samples are summarized; no historical sample or nominal 240 events/s is presented as guaranteed wall time.",
+        "required_evidence": "Sample table, sample sizes and excluded/failed attempt reasons.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "1be94516c2cd2cb62e41596bcdef7407661e4bcec21197e26f448c84a714350a",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "docs/VERIFICATION.md"
+      ],
+      "evidence_paths": [
+        "docs/VERIFICATION.md"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W08-T04",
+        "workflow": "W08",
+        "title": "Upstream assessment boundary",
+        "level": "STATIC",
+        "precondition": "Unchanged source-series records and authored local matrix.",
+        "stimulus": "Review every report for claimed control completion and parent installation.",
+        "expected": "All 4,800 source assessments remain NOT_ASSESSED absent separate per-ID evidence; 72 local cases are not a replacement inventory.",
+        "required_evidence": "Scope/status report and parent-pack non-execution record.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "daf88b1d22be6b0f351ebaf6083e063292c875cd6eb77b323e50be0f7914f1f8",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "assessment/UPSTREAM_STATUS.json"
+      ],
+      "evidence_paths": [
+        "assessment/UPSTREAM_STATUS.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W08-T05",
+        "workflow": "W08",
+        "title": "Diff and provenance handoff",
+        "level": "STATIC",
+        "precondition": "Reviewed completed or partial implementation workspace.",
+        "stimulus": "Hash final files, compare with baseline and list changes, outputs and evidence.",
+        "expected": "Original archives preserved; all edits attributable; no invented modified build or silently updated binding.",
+        "required_evidence": "Scoped diff, before/after hashes and artifact manifest.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "2879115879f326c1a907f620b7abdd98161d3d863cd07864be9ba338ce02338d",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "evidence/delivery/SOURCE_CHANGES.diff"
+      ],
+      "evidence_paths": [
+        "evidence/delivery/SOURCE_CHANGES.diff"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W08-T06",
+        "workflow": "W08",
+        "title": "Recovery checkpoint",
+        "level": "INTEGRATION",
+        "precondition": "Committed resources plus a deliberately interrupted uncommitted run.",
+        "stimulus": "Restart from the checkpoint and reconcile the store.",
+        "expected": "Committed operation receipts are retrieved; unfinished live tickets cancelled; no duplicate issuance/spend or guessed result.",
+        "required_evidence": "Checkpoint, restart log and reconciled state.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "9ce443d694a1ac41ac9fe4ec7d41ea63faf13a0be572f3e66af77002b190c5e7",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "assessment/CHECKPOINT.json"
+      ],
+      "evidence_paths": [
+        "assessment/CHECKPOINT.json"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W08-T07",
+        "workflow": "W08",
+        "title": "Evidence-backed release decision",
+        "level": "REPORT",
+        "precondition": "All workflow logs, 72 case results and finding dispositions.",
+        "stimulus": "Evaluate mandatory gates and missing/inconsistent evidence.",
+        "expected": "Release only with all mandatory passes and no unresolved blocker; otherwise an explicit partial/blocked decision with no fabricated approval.",
+        "required_evidence": "Signed/reviewer-attributed decision when available; absent reviewers remain unresolved.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "43a5f7ddd475ce169aec8e4bd144f4c8060506c9c9248a6ebd2184eb555d3509",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "docs/RELEASE_DECISION.md"
+      ],
+      "evidence_paths": [
+        "docs/RELEASE_DECISION.md"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review"
+      ]
+    },
+    {
+      "source_case": {
+        "id": "GV110-W08-T08",
+        "workflow": "W08",
+        "title": "Operator handoff and limitations",
+        "level": "REPORT",
+        "precondition": "Actual implemented behavior and measured platform results.",
+        "stimulus": "Write normal-user start, recovery, origin, freeze/send, horizon and shutdown instructions.",
+        "expected": "Instructions match the delivered diff; Windows/unobserved areas are labeled; browser-storage and same-origin trust limits are plain.",
+        "required_evidence": "Operator runbook, known limitations and next permitted checkpoint.",
+        "status": "NOT_RUN",
+        "observed": null,
+        "evidence_paths": [],
+        "source_control_credit": false
+      },
+      "source_record_sha256": "94dc3b5284d12e41fd2f4d5dda82cc5a22c8987fd975e64c2b00ae8df71bbaf0",
+      "current_profile": "GLYPHOKU_VEXA127/2",
+      "candidate_code_tree_sha256": "638ef8266ea2b1f492e9804c6b49eb44bc525ed8ee0108fa730a8fb64e4f205d",
+      "case_status": "BLOCKED",
+      "observed_scope": "Bounded candidate evidence is available at the indicated references; it is not the complete untouched GLYPHOKU_VEM_127/1 acceptance experiment. Exact source criteria are preserved above.",
+      "coverage_refs": [
+        "START_HERE.md"
+      ],
+      "evidence_paths": [
+        "START_HERE.md"
+      ],
+      "source_control_credit": false,
+      "independent_reviewer": null,
+      "blocking_issues": [
+        "Explicit server-profile rebind needs acceptance review"
+      ]
+    }
+  ],
+  "warning": "BLOCKED is full-source acceptance, not a failure of every attached bounded implementation test. Coverage references identify related tests, not a claim of complete case coverage."
+}

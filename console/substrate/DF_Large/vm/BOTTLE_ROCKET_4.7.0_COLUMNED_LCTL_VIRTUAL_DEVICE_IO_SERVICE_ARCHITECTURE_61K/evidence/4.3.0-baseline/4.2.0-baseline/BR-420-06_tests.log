@@ -1,0 +1,14 @@
+$ python3 tests/test_420.py
+exit=0
+TEST capability_state_declared_derived PASS
+TEST capability_reject_undeclared_state PASS
+TEST capability_reject_undeclared_device PASS
+TEST capability_privileged_instruction_declared PASS
+TEST capability_reject_undeclared_privileged PASS
+
+$ make operational
+exit=0
+$ make sanitize
+exit=0
+$ make size
+exit=0

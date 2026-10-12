@@ -1,0 +1,63 @@
+{
+  "control_id": "BVE-C136-K041",
+  "component_id": "BVE-C136",
+  "component_name": "Reproducible specifications and institutional release review",
+  "parent_id": "P18",
+  "sequence": 41,
+  "title": "Reproducible candidate identity",
+  "section": "D — Reproducibility, operations, and acceptance",
+  "gate": "G4_OPERATIONS",
+  "specificity": "INSTITUTIONAL",
+  "requirement": "Identify the exact candidate artifacts used to assess Reproducible specifications and institutional release review: specifications, executable code or model where applicable, configuration, and fixture versions.",
+  "verification_procedure": "Record artifact digests and declared build or analysis inputs; reproduce the relevant artifact or explain nondeterministic outputs with a stable verification target.",
+  "pass_criteria": "Another reviewer can identify the same candidate. Document-only or analytical evidence is labeled as such and does not imply a working implementation.",
+  "evidence_required": {
+    "kind": "candidate manifest and reproduction record",
+    "proposed_location": "evidence/C136/K041/",
+    "required_fields": [
+      "control_id",
+      "candidate_version",
+      "applicability_decision",
+      "method",
+      "input_or_scenario_refs",
+      "expected_result",
+      "observed_result",
+      "artifact_refs_and_digests",
+      "limitations",
+      "executor",
+      "independent_reviewer",
+      "reviewed_at"
+    ]
+  },
+  "accountable_owner_role": "Independent architecture, security, research, and release reviewers",
+  "independent_reviewer_role": "Independent technical verifier; domain specialist where applicable",
+  "applicability_rule": "Assess when BVE-C136 is selected and the stated surface exists; otherwise require an approved, reasoned NOT_APPLICABLE decision. Missing specification, unavailable evidence, or a failed test is not non-applicability.",
+  "status": "NOT_ASSESSED",
+  "applicability": "UNDECIDED",
+  "assigned_owner": null,
+  "assigned_reviewer": null,
+  "actual_evidence_refs": [],
+  "observed_result": null,
+  "acceptance_decision": null,
+  "assessed_at": null,
+  "blocking_issues": [],
+  "provenance": {
+    "control_basis": "PROPOSED_ENGINEERING_CONTROL",
+    "component_basis": "D",
+    "source_role": "Context for the mechanism; not evidence that this control is source-prescribed, implemented, or passed.",
+    "article_section": "Cross-cutting; conclusion",
+    "article_line_ranges": [
+      [
+        137,
+        140
+      ]
+    ],
+    "parent_context_line_ranges": [
+      [
+        137,
+        140
+      ]
+    ],
+    "register_version": "1.0.0"
+  }
+}

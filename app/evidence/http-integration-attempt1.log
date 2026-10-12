@@ -1,0 +1,11 @@
+(node:3793) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "counts": {
+    "checks": 8,
+    "pass": 8,
+    "fail": 1
+  },
+  "error": "Error: /api/glyphoku/commit {\"status\":500,\"data\":{\"error\":\"INTERNAL\",\"message\":\"Operation failed; no success claimed. Inspect local verification.\"}}\n    at api (file:///mnt/data/VexaGlyph127_3.0.0/tools/glyphoku-check.mjs:9:96)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async game (file:///mnt/data/VexaGlyph127_3.0.0/tools/glyphoku-check.mjs:19:709)\n    at async integrationCheck (file:///mnt/data/VexaGlyph127_3.0.0/tools/glyphoku-check.mjs:20:15)\n    at async file:///mnt/data/VexaGlyph127_3.0.0/tools/glyphoku-check.mjs:37:98",
+  "evidence": "/mnt/data/VexaGlyph127_3.0.0/evidence/runs/glyphoku-http-1791322826851"
+}

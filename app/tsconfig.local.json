@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "allowImportingTsExtensions": true,
+    "baseUrl": ".",
+    "paths": { "@/*": ["./src/*"] },
+    "typeRoots": ["../node_modules/@types"]
+  },
+  "include": [
+    "src/lib/glyphoku/*.ts",
+    "src/lib/sha256.ts",
+    "src/components/glyphoku/studio.tsx",
+    "src/local.tsx"
+  ]
+}

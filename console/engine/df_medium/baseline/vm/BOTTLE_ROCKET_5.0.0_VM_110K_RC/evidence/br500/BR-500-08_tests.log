@@ -1,0 +1,64 @@
+COMMAND: make wide-conformance
+.build/br_wide_conformance
+PASS BR-460-01-R01 dense representation
+PASS BR-460-01-R02 sparse representation
+PASS BR-460-01-R03 small-value representation
+PASS BR-460-01-R04 zero singleton/no heap
+PASS BR-460-01-R05 copy-on-write share
+PASS BR-460-03-R03 copy-on-write detach
+PASS BR-460-01-R06 immutable constant representation
+PASS BR-460-02-R01 limbs allocated on demand
+PASS BR-460-02-R02 small integer avoids 128KiB
+PASS BR-460-02-R03 representation grows with significant bits
+PASS BR-460-02-R04 normalization shrinks to small form
+PASS BR-460-03-R01 register bank stores descriptors
+PASS BR-460-03-R02 reference-count ownership header
+PASS BR-460-03-R04 zero-init no physical wide allocation
+PASS BR-460-03-R05 reset/destroy ownership deterministic
+PASS BR-460-04-R01 stack contains descriptors
+PASS BR-460-04-R02 no 256-wide-word preallocation
+PASS BR-460-04-R03 push shares value lazily
+PASS BR-460-04-R04 pop transfers ownership
+PASS BR-460-04-R05 stack byte quota enforced
+PASS BR-460-05-R01 deduplicated constants
+PASS BR-460-05-R02 constant immutable
+PASS BR-460-05-R03 shared zero/one
+PASS BR-460-05-R04 bounded economical constant pool
+PASS BR-460-06-R01 scratch allocated and retained for reuse
+PASS BR-460-06-R02 bounded scratch arena
+PASS BR-460-06-R03 deterministic two-slot allocation
+PASS BR-460-06-R04 power-of-two arena avoids arbitrary fragmentation
+PASS BR-460-06-R05 scratch exhaustion fails safely
+PASS BR-460-07-R01 limb add/sub carry
+PASS BR-460-07-R02 size-selected multiplication fast path
+PASS BR-460-07-R03 small-divisor fast path
+PASS BR-460-07-R04 modular remainder algorithm
+PASS BR-460-07-R05 result normalized
+PASS BR-460-07-R06 small arithmetic skips unused upper limbs
+PASS BR-460-08-R01 per-VM byte ceiling
+PASS BR-460-08-R02 per-register maximum
+PASS BR-460-08-R03 stack byte ceiling
+PASS BR-460-08-R04 scratch byte ceiling
+PASS BR-460-08-R05 image ceiling retained
+PASS BR-460-08-R06 device-buffer ceiling
+PASS BR-460-09-R01 OOM has explicit typed trap
+PASS BR-460-09-R02 word-width excess traps
+PASS BR-460-09-R03 stack quota traps
+PASS BR-460-09-R04 scratch quota traps
+PASS BR-460-10-R01 small-integer fast path
+PASS BR-460-10-R02 zero fast path
+PASS BR-460-10-R03 one fast path
+PASS BR-460-10-R04 sparse high-bit fast path
+PASS BR-460-10-R05 portable scalar limbs; no required vector ISA
+PASS BR-460-10-R06 constant-expression folding verified by toolchain acceptance target
+PASS BR-460-11-R01 allocation strategy preserves observable result
+PASS BR-460-11-R02 arithmetic result stable
+PASS BR-460-11-R03 trap behavior stable
+PASS BR-460-11-R04 instruction count/path stable
+PASS BR-460-12-R01 simple workload avoids ~36MB architectural allocation
+PASS BR-460-12-R02 full 1,048,576-bit addressable width retained
+PASS BR-460-12-R03 configured memory limits enforced
+PASS BR-460-12-R04 performance improvement measured by benchmark artifact with semantic regression suite
+{"suite":"BR-460_WIDE_STATE_CONFORMANCE","requirements":59,"failures":0,"result":"PASS"}
+
+EXIT_CODE: 0

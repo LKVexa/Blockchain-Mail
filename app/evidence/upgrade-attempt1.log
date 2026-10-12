@@ -1,0 +1,52 @@
+(node:4376) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "kind": "EXECUTED_SYNTHETIC_UPGRADE",
+  "from": "2.1.0-local.1",
+  "to": "3.0.0-local.1",
+  "status": "PASS",
+  "environment": {
+    "node": "v22.16.0",
+    "platform": "linux",
+    "arch": "x64"
+  },
+  "observations": [
+    {
+      "check": "Pinned old checkpoint verifies after opening the new server",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Eight messages and attachment bytes remain identical",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Issued, burned and owner credit balances are preserved",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Old request retry adds no cost or copy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Old reservation is consumed once without another debit",
+      "outcome": "PASS"
+    },
+    {
+      "check": "New game domain joins the same chain without changing old mail",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Combined backup restores nine legacy messages and the game domain",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Incomplete pre-restart run capability is not revived",
+      "outcome": "PASS"
+    }
+  ],
+  "source_store_sha256": "691fd958591f5d36d008616a2988f3dddcda53088d4e2ecfd9d017eadab21d0c",
+  "target_store_sha256": "9871452be85619fd57f939899d3ec9aa962ccc3576e1d7ee9a81087741aa29e3",
+  "scope": "Eight synthetic legacy messages plus a reserved stamp, then new game-domain issuance and backup/restore. API observer only; no browser delivery, Windows execution, power-loss guarantee or downgrade compatibility.",
+  "finished_at": "2026-10-06T21:47:39.233Z"
+}
+Evidence: /mnt/data/VexaGlyph127_3.0.0/evidence/runs/glyphoku-upgrade-1791323258354

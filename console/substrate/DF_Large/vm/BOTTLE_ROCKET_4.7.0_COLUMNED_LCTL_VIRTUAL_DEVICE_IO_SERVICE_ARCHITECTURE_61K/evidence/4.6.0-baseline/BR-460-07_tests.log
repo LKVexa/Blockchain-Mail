@@ -1,0 +1,3 @@
+COMMAND .build/t460 + .build/t430 arithmetic vectors
+EXIT 0
+PASS Arithmetic uses active-limb algorithms plus size-sensitive small paths and canonical normalization.

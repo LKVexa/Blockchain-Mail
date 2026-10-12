@@ -1,0 +1,3 @@
+$ sh validation/VERIFY_L4_L9_OPEN_GATES.sh
+[exit 0 in 0.051s]
+PASS: L4-L9 gates OPEN; L4-L8 module reference profiles 66/66; L9 local/offline scenarios 5/5; native core index 66/66

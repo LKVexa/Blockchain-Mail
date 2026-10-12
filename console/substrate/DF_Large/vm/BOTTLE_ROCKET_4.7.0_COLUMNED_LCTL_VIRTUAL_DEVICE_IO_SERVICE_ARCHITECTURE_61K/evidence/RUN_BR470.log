@@ -1,0 +1,11 @@
+PASS device_abi_version_ids_caps_flags_order
+PASS generic_device_op_buffers_caps_bounds
+PASS console_clock_entropy_deterministic
+PASS persistent_block_and_monotonic
+PASS bidirectional_owned_mailbox
+PASS calls_bytes_storage_entropy_quotas
+PASS development_apdu_class
+PASS entropy_failure_fail_closed
+PASS optional_wall_clock_extension
+PASS network_absent_by_default
+{"suite":"BR-470","tests":10,"failures":0,"result":"PASS"}

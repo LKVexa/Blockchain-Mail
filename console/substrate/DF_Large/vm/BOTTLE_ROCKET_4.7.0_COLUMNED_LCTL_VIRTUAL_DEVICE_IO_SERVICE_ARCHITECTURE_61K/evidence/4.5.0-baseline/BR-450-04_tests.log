@@ -1,0 +1,3 @@
+PASS control_record_v2_signed_binding
+PASS image_control_digest_mismatch_rejected
+PASS BR-440 secure-boot regression 23/23

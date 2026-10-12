@@ -1,0 +1,2 @@
+PASS posix_optional_wall_clock_extension
+{"suite":"BR-470-FILE","tests":1,"failures":0,"result":"PASS"}

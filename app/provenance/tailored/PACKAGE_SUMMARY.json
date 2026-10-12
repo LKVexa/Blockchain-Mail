@@ -1,0 +1,21 @@
+{
+  "schema": "GLYPHOKU_TAILORED_SERIES/1",
+  "version": "1.1.0",
+  "profile": "GLYPHOKU_VEM_127/1",
+  "master_documents": 2,
+  "workflow_dossiers": 9,
+  "new_acceptance_scenarios": 72,
+  "findings": 15,
+  "original_source_markdown_files": 12,
+  "baseline_existing_tests": {
+    "passed": 3,
+    "failed": 0
+  },
+  "characterization_probes": 13,
+  "candidate_application_modified": false,
+  "application_build_produced": false,
+  "revised_workflows_executed": 0,
+  "headed_journeys_run": 0,
+  "source_controls_assessed": 0,
+  "referenced_chat_transcript_verified": false
+}

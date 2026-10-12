@@ -1,0 +1,18 @@
+JA21 Blank Virtual Console 1.0.0 — based on JA21 9.8.7
+
+Windows PowerShell / WPF compilation: passed.
+Runtime integrity and native engine / SDK provenance: passed.
+Existing browser suite: 173 passed, 2 platform skips.
+Existing VEC1 control-plane suite: 29 passed, 1 platform skip.
+Headless console checks: 12 passed.
+Local-origin policy cases: 16 passed.
+
+The final output was instantiated without showing a native desktop window.
+Its actual content tree contains only Grid and Border layout containers.
+No tabs, text fields, buttons, menus, popups, or text labels are rendered.
+An offscreen 760 x 640 rendering was inspected.
+
+Desktop launcher interaction and later live GFM integration were not exercised.
+The source backup had 191 absent legacy references. See the preserved source
+audit and original package ledger under provenance. No missing references
+were fabricated, and full VEC1 research-workflow qualification is not claimed.

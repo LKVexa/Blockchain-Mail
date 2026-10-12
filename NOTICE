@@ -1,0 +1,73 @@
+Blockchain-Mail
+Copyright (C) 2026 RUSSELL PHILIP SMITHSON
+
+The original Blockchain-Mail application, integration, and project material
+licensed by its copyright holder is licensed under the GNU General Public
+License, version 3 only (SPDX-License-Identifier: GPL-3.0-only). See LICENSE.
+This grant does not replace the licenses of separately identified third-party
+components, or transfer their copyrights to the project author.
+
+Existing authorship, copyright, license, and provenance records are preserved.
+The supplied HERMIT framing implementation retains its historical attribution:
+Copyright (c) 2026 David Paul Russell. Its provenance is recorded under
+app/provenance/hermit-ramws/. Existing Russell Philip Smithson DF notices are
+preserved under console/; the project license grants rights in the copyright
+holder's own supplied work previously carrying a rights-reserved placeholder.
+Those placeholders do not remove licenses of embedded third-party material.
+
+The console shell and retained Apache-licensed JA21 reference material carry
+Apache License 2.0 notices. Keep console/LICENSE, console/NOTICE,
+console/licenses/JA21-Corpora-Apache-2.0.txt, and the applicable source notices.
+The preserved TORUS reference license is at
+app/provenance/torus-ramws/JA-REFERENCE-LICENSE.txt. This reference license does
+not imply that every other file from its source archive is Apache-licensed.
+
+React, ReactDOM, and Scheduler retain their MIT license and attribution:
+Copyright (c) Meta Platforms, Inc. and affiliates.
+See app/desk/vendor/LICENSE.react.txt and app/THIRD_PARTY_NOTICES.md.
+The retained bundle and extraction provenance document the exact vendor bytes.
+
+Node.js 24.19.0 is included as a separately licensed runtime. Its license and
+complete bundled dependency notices are at runtime/Node-LICENSE.txt.
+The current runtime pin is app/RUNTIME_PIN.json; older provenance pins describe
+earlier builds. Node.js and its dependencies are not relicensed by this notice.
+
+The separately licensed Tor Expert Bundle is included under network/tor/runtime/.
+Tor uses the three-clause BSD license and retains the copyrights of Roger
+Dingledine, Nick Mathewson, The Tor Project, Inc., and the other named authors.
+Keep the complete runtime/docs/tor.txt, libevent.txt, openssl.txt, zlib.txt,
+conjure.txt, and lyrebird.txt notices. These include the individual licenses and
+attributions of the bundled libraries and pluggable transports. Version and
+publisher-verification provenance is at network/tor/verified-runtime.json.
+
+Tor's geoip and geoip6 files contain the IPFire Project Location Database export
+generated 2026-09-23, converted using Tor's geoip-db-tool. These data retain
+Creative Commons Attribution-ShareAlike 4.0 (CC BY-SA 4.0) terms and their original
+headers: https://location.ipfire.org/ and
+https://creativecommons.org/licenses/by-sa/4.0/ . They are not project GPL code.
+
+The OpenPGP.js 6.3.2 verification library is separately licensed under GNU LGPL
+version 3 or later. See network/tor/vendor/OPENPGP-LICENSE and the supplied
+preferred-source archive openpgpjs-v6.3.2.zip, including its source, package
+manifest, dependency lockfile, build scripts, and original license.
+This vendor's later-version permission is not a later-version permission for
+the project's GPL-3.0-only grant. Provide its complete preferred source and
+build material with the binary distribution as described in SOURCE-EXPORT-MAP.md.
+
+The Microsoft.Web.WebView2 SDK 1.0.4191.47 files are distributed under its exact
+BSD three-clause license: Copyright (C) Microsoft Corporation. All rights
+reserved. Keep the accompanying SDK LICENSE.txt and NOTICE.txt, including the
+ANTLR Project notices. The operating system's separately installed WebView2
+Runtime is not included in this package. SDK provenance is in PROVISIONED.json.
+
+Earlier app and console notices describe earlier packages without these bundled
+runtimes or SDK files. They are retained as historical notices; this distribution
+includes the Node, Tor, and WebView2 SDK files identified above.
+
+The optional recovered native/engine/portal-cypher-windows-amd64.exe is a
+user-supplied outer-package utility. Its preferred source was not present in
+the recovered material, as recorded in native/NATIVE-INTEGRATION.md. The
+copyright holder's current license grant does not make that missing source
+available. This distribution does not claim to contain the preferred source
+of that executable. Ordinary mail uses the separate source-present vault,
+channel, signature and delivery implementations.

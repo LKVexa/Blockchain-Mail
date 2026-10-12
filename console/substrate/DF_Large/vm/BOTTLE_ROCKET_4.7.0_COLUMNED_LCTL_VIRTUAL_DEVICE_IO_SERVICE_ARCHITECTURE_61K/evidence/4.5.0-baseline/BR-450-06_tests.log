@@ -1,0 +1,4 @@
+PASS power_loss_mutation_stage_1..7
+PASS interruption_before_update_keeps_previous_good
+PASS interruption_after_activation_recovers_new
+PASS after_first_successful_boot_recovers_new

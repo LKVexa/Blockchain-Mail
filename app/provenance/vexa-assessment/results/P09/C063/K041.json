@@ -1,0 +1,40 @@
+{
+  "schema": "BVE/CONTROL_ASSESSMENT/1",
+  "control_id": "BVE-C063-K041",
+  "component_id": "BVE-C063",
+  "parent_id": "P09",
+  "source_control_sha256": "c6c2738c2bc17fe73e54b3fefc204cd2c5bb9bbe717ad347879e852c7aa436da",
+  "source_gate": "G4_OPERATIONS",
+  "candidate_parent_disposition": "LOCAL_CORE_PARTIAL",
+  "candidate_version": "2.1.0-local.1",
+  "candidate_code_tree_sha256": "04fb8e21dece4ae8ee2a7bbeb7666bcc5d563b6ffd6a150761f339b5554c8ac4",
+  "run_id": "LOCAL127-R03",
+  "revision": 3,
+  "mode": "REMEDIATE_AND_VERIFY",
+  "component_selection": "UNDECIDED",
+  "applicability": "UNDECIDED",
+  "status": "BLOCKED",
+  "workflow_execution": "NOT_STARTED",
+  "named_owner": null,
+  "independent_reviewer": null,
+  "reviewed_at": null,
+  "actual_evidence_refs": [],
+  "observed_result": null,
+  "risk_exception": null,
+  "blocking_issues": [
+    "Prior 2.0.0 bounded evidence is preserved, not automatically promoted to a current 2.1.0 source-criterion assessment.",
+    "Full scope/independent review remained unresolved in the prior release."
+  ],
+  "limitations": [
+    "Original source control preserved unchanged. No blanket PASS from shared tests."
+  ],
+  "next_action": "Reassess the exact original control against the changed candidate and retained historical evidence; do not inherit PASS from a suite rerun.",
+  "evidence_validity": "HISTORICAL_ONLY_REASSESSMENT_REQUIRED",
+  "previous_assessment": {
+    "archive": "evidence/history/R02_RELEASE_RECORDS.zip",
+    "sha256": "b0631f16e46c16f64bc40256922473edff133b5bca7ebb47e3d1d2ae25907911",
+    "member": "assessment/results/P09/C063/K041.json",
+    "candidate_version": "2.0.0-local.1",
+    "source_result": "BLOCKED"
+  }
+}

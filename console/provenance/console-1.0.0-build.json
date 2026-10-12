@@ -1,0 +1,28 @@
+{
+  "product": "JA21 Blank Virtual Console",
+  "console_version": "1.0.0",
+  "base_browser_version": "9.8.7",
+  "starts_blank": true,
+  "visible_tabs": false,
+  "search_bar": false,
+  "buttons": false,
+  "default_size": [
+    760,
+    640
+  ],
+  "minimum_size": [
+    420,
+    360
+  ],
+  "original_backup_preserved": true,
+  "simulation_integration": "Prepared empty host; not yet combined with GFM simulation",
+  "source_integrity": "Active runtime verified; 191 pre-existing absent legacy references recorded in provenance/source-audit.json",
+  "validation": {
+    "windows_compilation": "passed",
+    "legacy_tests_passed": 202,
+    "legacy_tests_skipped": 3,
+    "headless_console_checks": 12,
+    "origin_policy_cases": 16,
+    "desktop_window_launch_tested": false
+  }
+}

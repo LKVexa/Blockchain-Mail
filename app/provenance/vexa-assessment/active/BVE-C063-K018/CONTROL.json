@@ -1,0 +1,63 @@
+{
+  "control_id": "BVE-C063-K018",
+  "component_id": "BVE-C063",
+  "component_name": "Mailbox indexing and retrieval service",
+  "parent_id": "P09",
+  "sequence": 18,
+  "title": "Access filtering — boundary or continuity evidence",
+  "section": "B — Component-specific technical controls",
+  "gate": "G2_TECHNICAL",
+  "specificity": "COMPONENT_SPECIFIC",
+  "requirement": "Apply access revocation consistently to cached results.",
+  "verification_procedure": "Exercise the stated edge, transition, recovery, uncertainty, or sensitivity case using the original approved oracle. Compare before-and-after state or conclusions; retain ordering, timing, and version context where relevant.",
+  "pass_criteria": "The edge-case outcome follows the approved specification, preserves required invariants, and exposes unresolved or partial outcomes instead of fabricating certainty. Any changed assumption is reviewed.",
+  "evidence_required": {
+    "kind": "boundary or continuity result and reconciliation record",
+    "proposed_location": "evidence/C063/K018/",
+    "required_fields": [
+      "control_id",
+      "candidate_version",
+      "applicability_decision",
+      "method",
+      "input_or_scenario_refs",
+      "expected_result",
+      "observed_result",
+      "artifact_refs_and_digests",
+      "limitations",
+      "executor",
+      "independent_reviewer",
+      "reviewed_at"
+    ]
+  },
+  "accountable_owner_role": "Storage engineering and service continuity",
+  "independent_reviewer_role": "Independent technical verifier; domain specialist where applicable",
+  "applicability_rule": "Assess when BVE-C063 is selected and the stated surface exists; otherwise require an approved, reasoned NOT_APPLICABLE decision. Missing specification, unavailable evidence, or a failed test is not non-applicability.",
+  "status": "NOT_ASSESSED",
+  "applicability": "UNDECIDED",
+  "assigned_owner": null,
+  "assigned_reviewer": null,
+  "actual_evidence_refs": [],
+  "observed_result": null,
+  "acceptance_decision": null,
+  "assessed_at": null,
+  "blocking_issues": [],
+  "provenance": {
+    "control_basis": "PROPOSED_ENGINEERING_CONTROL",
+    "component_basis": "D",
+    "source_role": "Context for the mechanism; not evidence that this control is source-prescribed, implemented, or passed.",
+    "article_section": "5.2–5.3",
+    "article_line_ranges": [
+      [
+        76,
+        80
+      ]
+    ],
+    "parent_context_line_ranges": [
+      [
+        76,
+        80
+      ]
+    ],
+    "register_version": "1.0.0"
+  }
+}

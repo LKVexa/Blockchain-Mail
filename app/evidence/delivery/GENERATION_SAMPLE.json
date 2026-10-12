@@ -1,0 +1,158 @@
+{
+  "kind": "EXECUTED_BOUNDED_RANDOM_SEED_PREPARATION_SAMPLE",
+  "created_at": "2026-10-06T21:55:57.519Z",
+  "node": "v22.16.0",
+  "samples": [
+    {
+      "g": 1,
+      "seed": 2514426830,
+      "elapsed_ms": 82,
+      "outcome": "ELIGIBLE",
+      "code": null,
+      "boards": [
+        {
+          "fingerprint": "4340f18e7ed3978c5310c95ceda3bc32b385968b053699c61b3d13d648b24a44",
+          "blanks": 132,
+          "selection": {
+            "events": 772,
+            "guesses": 17,
+            "retractions": 316,
+            "attempts": 2,
+            "refused": 1,
+            "preparation_ms": 46,
+            "work_nodes": 23025
+          },
+          "uniqueness": {
+            "status": "COMPLETE_ONE",
+            "found": 1,
+            "nodes": 275,
+            "complete": true
+          }
+        }
+      ]
+    },
+    {
+      "g": 2,
+      "seed": 3597068900,
+      "elapsed_ms": 714,
+      "outcome": "ELIGIBLE",
+      "code": null,
+      "boards": [
+        {
+          "fingerprint": "9defd8088194d18d056b15707639b411a1f3789d905d371eef956271e8002082",
+          "blanks": 140,
+          "selection": {
+            "events": 8288,
+            "guesses": 148,
+            "retractions": 4037,
+            "attempts": 1,
+            "refused": 0,
+            "preparation_ms": 34,
+            "work_nodes": 28765
+          },
+          "uniqueness": {
+            "status": "COMPLETE_ONE",
+            "found": 1,
+            "nodes": 1864,
+            "complete": true
+          }
+        },
+        {
+          "fingerprint": "79ca4f61f6b337f6fc889f578969c2f821237e4e0c166b5cb2a72632e4fe874f",
+          "blanks": 140,
+          "selection": {
+            "events": 12039,
+            "guesses": 259,
+            "retractions": 5886,
+            "attempts": 5,
+            "refused": 4,
+            "preparation_ms": 644,
+            "work_nodes": 1441939
+          },
+          "uniqueness": {
+            "status": "COMPLETE_ONE",
+            "found": 1,
+            "nodes": 5904,
+            "complete": true
+          }
+        }
+      ]
+    },
+    {
+      "g": 1,
+      "seed": 4204594751,
+      "elapsed_ms": 64,
+      "outcome": "ELIGIBLE",
+      "code": null,
+      "boards": [
+        {
+          "fingerprint": "b8c9cc1b4286eb2220755514b9205d31cfa767e5751518e0b3d33c69369f507c",
+          "blanks": 132,
+          "selection": {
+            "events": 284,
+            "guesses": 11,
+            "retractions": 73,
+            "attempts": 1,
+            "refused": 0,
+            "preparation_ms": 29,
+            "work_nodes": 14890
+          },
+          "uniqueness": {
+            "status": "COMPLETE_ONE",
+            "found": 1,
+            "nodes": 581,
+            "complete": true
+          }
+        }
+      ]
+    },
+    {
+      "g": 2,
+      "seed": 2711880513,
+      "elapsed_ms": 867,
+      "outcome": "ELIGIBLE",
+      "code": null,
+      "boards": [
+        {
+          "fingerprint": "a4e649a63d20860e418d92298864bb60242202c2710e3da4eb6dd79f79057b4c",
+          "blanks": 140,
+          "selection": {
+            "events": 13404,
+            "guesses": 189,
+            "retractions": 6585,
+            "attempts": 2,
+            "refused": 1,
+            "preparation_ms": 74,
+            "work_nodes": 75861
+          },
+          "uniqueness": {
+            "status": "COMPLETE_ONE",
+            "found": 1,
+            "nodes": 1025,
+            "complete": true
+          }
+        },
+        {
+          "fingerprint": "00d815dce7a4176a2c75f748f3005e26c6e61083d91deda3bb61ec916b816b5c",
+          "blanks": 140,
+          "selection": {
+            "events": 16600,
+            "guesses": 218,
+            "retractions": 8176,
+            "attempts": 9,
+            "refused": 8,
+            "preparation_ms": 756,
+            "work_nodes": 1445552
+          },
+          "uniqueness": {
+            "status": "COMPLETE_ONE",
+            "found": 1,
+            "nodes": 2708,
+            "complete": true
+          }
+        }
+      ]
+    }
+  ],
+  "scope": "Four unselected random seed batches; hidden bounded preparation only. No visible solving, issuance, unbiased-distribution claim or general latency/success guarantee."
+}

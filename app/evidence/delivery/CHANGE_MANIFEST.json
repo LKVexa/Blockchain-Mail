@@ -1,0 +1,125 @@
+{
+  "created_at": "2026-10-06T21:55:18.357612+00:00",
+  "changes": [
+    {
+      "baseline": "provenance/glyphoku-source/components/glyphoku/studio.tsx",
+      "target": "src/components/glyphoku/studio.tsx",
+      "before_sha256": "8ee2f552adfca28f2fc66370c3a1f605c0d6eb07208f436dc2737e5b77539e64",
+      "after_sha256": "87b6a12f1b519c93d962413aa8dbca774083d45b1a0284d764beba04f3a141ed",
+      "disposition": "CHANGED"
+    },
+    {
+      "baseline": "provenance/glyphoku-source/lib/glyphoku/deal.ts",
+      "target": "src/lib/glyphoku/deal.ts",
+      "before_sha256": "7562fe2b4bd005c1eb0e072645d2ee00c3038a1dfbc4084a2a2520a07dff8b2c",
+      "after_sha256": "e621d0f058b6be4e3a8c993d97ca83f68ab0a12d9f23c5fd122a1562f5f0159d",
+      "disposition": "CHANGED"
+    },
+    {
+      "baseline": "provenance/glyphoku-source/lib/glyphoku/registry.ts",
+      "target": "src/lib/glyphoku/registry.ts",
+      "before_sha256": "4f0d7d848c284fcd5b239aeeb87fa756f4924418d2e268d69ae6a304d380034f",
+      "after_sha256": "53dbbc8a918da02a3cd227e561d8d29dcfc8975c2b853b5d78cf019f0006b46f",
+      "disposition": "CHANGED"
+    },
+    {
+      "baseline": "provenance/glyphoku-source/lib/glyphoku/rules.ts",
+      "target": "src/lib/glyphoku/rules.ts",
+      "before_sha256": "c0237a81a4f01851e3acc548505602b8cf57e47eba4e4f6331c440d9465e6ac9",
+      "after_sha256": "8df383af50d9dda491f67b8945da0b632b81991c4e60fa632ce680bd260b5853",
+      "disposition": "CHANGED"
+    },
+    {
+      "baseline": "provenance/glyphoku-source/lib/glyphoku/solver.ts",
+      "target": "src/lib/glyphoku/solver.ts",
+      "before_sha256": "da1029696179dcc451331626b8d4a3fe37849e02537b21dcc540a538e21ba8fd",
+      "after_sha256": "b488fe728bbc82b41131157ea7708f4d718cb3b43a51f5f0231e4cb2a0059b6b",
+      "disposition": "CHANGED"
+    },
+    {
+      "baseline": "provenance/vexa-source/http.mjs",
+      "target": "src/http.mjs",
+      "before_sha256": "77aea930201aebc5a91a82f3c17aa2b37773800a34bfb8fe2a1c5fd01dafa30d",
+      "after_sha256": "51b39d42b297f365d6e9a2d5712ed2fe8348c8556676868133904d896abaa5d0",
+      "disposition": "CHANGED"
+    },
+    {
+      "baseline": "provenance/vexa-source/main.mjs",
+      "target": "src/main.mjs",
+      "before_sha256": "ba630a062f22ae13931ecaa4c9427243b942f32522e37515af2924fc0a3b5704",
+      "after_sha256": "1464cfc440b0afc7f44eb9b8873ba5c2650884aa952bca6060810d281e0385d6",
+      "disposition": "CHANGED"
+    },
+    {
+      "baseline": "provenance/vexa-source/policy.mjs",
+      "target": "src/policy.mjs",
+      "before_sha256": "c264f3846fa54aa9e2301ca3694b3992e2017576226ba2fde58fe5167c26f1a4",
+      "after_sha256": "640674e8c275233f051e59e751c7155cb72d09a26db3ac85a65307f9c4c80d28",
+      "disposition": "CHANGED"
+    },
+    {
+      "baseline": "provenance/vexa-source/store.mjs",
+      "target": "src/store.mjs",
+      "before_sha256": "691fd958591f5d36d008616a2988f3dddcda53088d4e2ecfd9d017eadab21d0c",
+      "after_sha256": "d003e7d7ddecce945a61e1874de52bca092be1eba8c2446ed276db5181118631",
+      "disposition": "CHANGED"
+    }
+  ],
+  "new_active_files": [
+    "src/glyphoku-service.mjs",
+    "src/glyphoku-worker.mjs",
+    "src/local.tsx",
+    "src/glyphoku-persistence.mjs",
+    "src/lib/glyphoku/trace.ts",
+    "src/lib/glyphoku/client.ts",
+    "desk/index.html",
+    "desk/styles.css",
+    "desk/modules/local.js",
+    "desk/vendor/LICENSE.react.txt",
+    "desk/vendor/react-runtime.js",
+    "desk/modules/lib/sha256.js",
+    "desk/modules/lib/glyphoku/glyphs.js",
+    "desk/modules/lib/glyphoku/registry.js",
+    "desk/modules/lib/glyphoku/client.js",
+    "desk/modules/lib/glyphoku/rules.js",
+    "desk/modules/lib/glyphoku/deal.js",
+    "desk/modules/lib/glyphoku/solver.js",
+    "desk/modules/lib/glyphoku/trace.js",
+    "desk/modules/components/glyphoku/studio.js",
+    "web/session.mjs",
+    "web/index.html",
+    "web/styles.css",
+    "web/app.js",
+    "tools/demo.mjs",
+    "tools/intake-audit.py",
+    "tools/ui-fixture-check.py",
+    "tools/build.mjs",
+    "tools/export-legacy.mjs",
+    "tools/preflight.mjs",
+    "tools/dispatch.cmd",
+    "tools/glyphoku-check.mjs",
+    "tools/run-tests.mjs",
+    "tools/glyphoku-upgrade-check.mjs",
+    "tools/check-package.mjs",
+    "tools/launch.mjs",
+    "tools/backtest.mjs",
+    "tools/glyphoku-ui-fixture.py",
+    "tools/upgrade-check.mjs",
+    "scripts/register-tests.mjs",
+    "scripts/test-alias.mjs",
+    "tests/ui-state.test.mjs",
+    "tests/glyphoku-integration.test.mjs",
+    "tests/glyphoku-helper.mjs",
+    "tests/glyphoku-core.test.mjs",
+    "tests/glyphoku-upgrade.test.mjs",
+    "tests/store.test.mjs",
+    "tests/continuation.test.mjs",
+    "tests/glyphoku-journey.test.mjs",
+    "tests/glyphoku-http.test.mjs",
+    "tests/network.test.mjs",
+    "package.json",
+    "SETUP_RUNTIME.ps1",
+    "SETUP_RUNTIME.cmd",
+    "START.sh"
+  ]
+}

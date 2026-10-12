@@ -1,0 +1,6 @@
+PASS recover_generation1
+PASS latest_authenticated_committed_wins
+PASS corrupted_control_rejected
+PASS image_control_digest_mismatch_rejected
+PASS pending_control_never_bootable
+PASS truncated_control_rejected

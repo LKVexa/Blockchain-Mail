@@ -1,0 +1,11 @@
+{
+  "version": "22.16.0",
+  "role": "Tested Linux reproduction version and optional explicit Windows installer pin; not latest/supported/security-release recommendation. Production review remains blocked.",
+  "source": "https://nodejs.org/download/release/v22.16.0/SHASUMS256.txt",
+  "retrieved": "2026-10-06",
+  "archive": "node-v22.16.0-win-x64.zip",
+  "archive_sha256": "21c2d9735c80b8f86dab19305aa6a9f6f59bbc808f68de3eef09d5832e3bfbbd",
+  "node_exe_sha256": "c5ff4c736112dd483c750fd4149d30c8a116db1a49b8b3ec88be4b65e6c86c19",
+  "windows_execution": "NOT_RUN",
+  "verification": "Official HTTPS checksum values cross-checked and pinned; OpenPGP verification NOT_PERFORMED."
+}

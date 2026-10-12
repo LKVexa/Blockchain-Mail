@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Workspace391 private mail</title>
+<style>
+body{font:17px/1.6 system-ui,sans-serif;max-width:820px;margin:48px auto;padding:0 24px;color:#182235;background:#f5f7fb}
+article{padding:28px;background:white;border-radius:16px}h1{line-height:1.2}li{margin:12px 0}code{font-size:.95em}aside{padding:16px;background:#eaf0fc;border-radius:10px}h2{margin-top:28px}
+</style>
+<article>
+<h1>Workspace391 private mail</h1>
+<p>One application includes the mailbox, private mail server and Tor connection. Once computers belong to the same private network, sending to another computer works like sending any email: choose <b>New message</b>, enter its assigned <code>@127</code> address, write your message, attach files, and press <b>Send</b>. The application chooses the route automatically.</p>
+<h2>Open your mailbox</h2>
+<ol>
+<li>Extract <b>W391.zip</b> into its own folder under <code>D:\Codex</code>. Open its <b>W391</b> folder and double-click <b>Open Workspace.vbs</b>. It prepares the application on first opening.</li>
+<li>Create your vault and save its recovery words privately. If you already have a protected workspace, unlock it with its original recovery words.</li>
+<li>Open your mailbox. Tor and the first private network start automatically. Login assigns your account an available <code>@127</code> address, shown beside your mailbox.</li>
+</ol>
+<p>The package includes its Tor runtime. Normal startup needs no separate Tor installation or port selection. Existing networks, accounts and mail history are preserved.</p>
+<h2>Add another computer once</h2>
+<ol>
+<li>On the first computer, open <b>Settings → Connected computers → Connect another computer</b>. Choose <b>Copy connection code</b>.</li>
+<li>Open the same application on the other computer, with its own vault and recovery words. Open <b>Settings → Connected computers</b>.</li>
+<li>Paste the code into <b>Connection code from the first computer</b> and choose <b>Connect this computer</b>. The application completes registration, assigns the computer's address range and updates its signed directory.</li>
+</ol>
+<aside>This one-time pairing tells the application which private group to join. Each code connects one computer. Share it only with the intended computer and keep the first workspace open while it joins. No registration files need to be exchanged.</aside>
+<p>Connecting and refreshing the signed directory have no fixed waiting deadline. The application retries recoverable Tor reachability failures while it stays open. Close the workspace to stop waiting. Individual mail delivery attempts still have their own connection and transfer limits.</p>
+<p>Distribute the fresh application package. Keep each computer's live <code>state</code> and <code>network-state</code> folders on that computer. Recovery words, mailbox access tokens and Tor secret keys stay private.</p>
+<h2>Send mail and files</h2>
+<p>Copy the complete assigned address displayed in the recipient's mailbox into <b>New message</b>. A new address looks like <code>mail@127.0.0.2:10000000000000000002</code>. There is one Send form for mail on your computer and mail to other connected computers. Ordinary mailbox sends are free: no credits, balance or credit allowance are needed.</p>
+<p>The digits after the colon identify a private mailbox. They are not a network port, and you do not need to choose them. The application assigns 20-digit identifiers automatically; the format supports up to 32 digits. Each of the three numbers after <code>127</code> can be 0 through 255. Existing assigned addresses, including earlier rmail addresses, remain valid.</p>
+<p>The signed computer directory maps the virtual host, such as <code>127.0.0.2</code>, to that computer's Tor onion address and public keys. Tor carries the mail there, and the complete private identifier selects the account's own mailbox. The application handles this automatically when you press <b>Send</b>.</p>
+<p>Each account sees only its own Inbox, Sent history and delivery attempts. Sent shows progress; <b>Recipient mailbox received</b> means the receiving computer saved the message and returned its signed receipt. <b>Check send attempt</b> checks that receipt without sending a duplicate.</p>
+<p>Mailboxes have no fixed storage quota, and the normal attachment picker has no fixed file-size or total attachment byte limit. Available disk space is the practical limit for messages and files. Each message supports up to four files. Files transfer in encrypted chunks and received files save through the browser's file picker, so a complete file need not fit in memory. Mailbox exports contain attachment references; save the files separately. A private backup includes the encrypted attachment files.</p>
+<h2>Keep the computers available</h2>
+<p>The current private group supports up to <b>256 computers</b>, with up to <b>64 accounts per computer</b>. Its larger address format does not remove these current registration limits or the need for available storage.</p>
+<p>Keep the first computer running for normal group use. It handles new registrations and directory updates, and forwards expanded routes when a direct neighboring route is unavailable. The receiving computer and any forwarding computers must also have Workspace391 running. Neighboring computers can exchange mail directly when both are running and already have the signed registrations.</p>
+<p>Tor starts and stops with the workspace. This network exchanges private mail between assigned <code>@127</code> mailboxes. Each computer remains an operator-controlled vault, with authenticated encryption between computers.</p>
+</article>
+</html>

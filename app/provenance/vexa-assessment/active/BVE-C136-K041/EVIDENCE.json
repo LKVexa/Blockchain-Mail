@@ -1,0 +1,85 @@
+{
+  "schema": "BVE/EVIDENCE/1",
+  "control_id": "BVE-C136-K041",
+  "run_id": "LOCAL127-R03",
+  "candidate_version": "2.1.0-local.1",
+  "candidate_code_tree_sha256": "04fb8e21dece4ae8ee2a7bbeb7666bcc5d563b6ffd6a150761f339b5554c8ac4",
+  "source_record_sha256": "1b3586c6754f51f4ad7e0579178c43c44533c5b94bbdeb92b932eb5d9d85ac09",
+  "source_instruction": {
+    "control_id": "BVE-C136-K041",
+    "original_member": "BVE_PW_1.0.0/P18/C136/K041.md",
+    "sha256": "9036c11e31f40e7148f93c33502478bf6ad1707a6fe83e83eed9a8cef2f8ec04",
+    "preserved_verbatim": true
+  },
+  "evidence_required": {
+    "kind": "candidate manifest and reproduction record",
+    "proposed_location": "evidence/C136/K041/",
+    "required_fields": [
+      "control_id",
+      "candidate_version",
+      "applicability_decision",
+      "method",
+      "input_or_scenario_refs",
+      "expected_result",
+      "observed_result",
+      "artifact_refs_and_digests",
+      "limitations",
+      "executor",
+      "independent_reviewer",
+      "reviewed_at"
+    ]
+  },
+  "method": "Local synthetic implementation tests; additional controlled upgrade or mock DOM fixture where explicitly linked. No independent review performed.",
+  "expected_result": "Identify the exact candidate artifacts used to assess Reproducible specifications and institutional release review: specifications, executable code or model where applicable, configuration, and fixture versions.",
+  "observed_result": "Source/candidate/workflow digests are rebound; actual final-source tests and local service startup are recorded.",
+  "artifacts": [
+    {
+      "path": "evidence/delivery/TEST_SUMMARY.json",
+      "sha256": "fe6bb6260db17b893df82b9df8df318c804e89318830a68810fa922af4a6eaf4",
+      "tests": [
+        {
+          "name": "T043 static UI is local, CSP protected and does not expose state files",
+          "outcome": "PASS"
+        },
+        {
+          "name": "T052 guarded CLI starts, serves loopback health, restarts and verifies disk state",
+          "outcome": "PASS"
+        }
+      ]
+    },
+    {
+      "path": "evidence/delivery/TESTS.tap",
+      "sha256": "9d9d90bc034f7b1730b2bbe6642c91ee741097a0030df25dd143d3b37e58ff3c"
+    },
+    {
+      "path": "evidence/continuation/ORACLE.md",
+      "sha256": "a7cbe004ef06274025b00ad5fda56da1df8d49972a99f75863198c94ccd5089a"
+    },
+    {
+      "path": "provenance/CANDIDATE_MANIFEST.json",
+      "sha256": "154bc1a3ceef940dd4141610454d233f5faa6a9e0c69b2db9947eb96eac1fe5d"
+    },
+    {
+      "path": "provenance/CONTINUATION_INPUTS.json",
+      "sha256": "4ba02ff7018a8da4d05bb63613f03b0e4ac8336f5e5a85861ae94ce091ab5dd5"
+    },
+    {
+      "path": "evidence/delivery/EVIDENCE_BINDING.json",
+      "sha256": "f1de02995778460255a954106fac5a814e38f1dc6bc2bc5df795307001a0c4ce"
+    }
+  ],
+  "environment": {
+    "node": "v22.16.0",
+    "platform": "linux",
+    "arch": "x64",
+    "cpus": 5
+  },
+  "parameters": "LOCAL127_CREDIT_V1; authored lab defaults and fixture parameters in named test files; institutional approval absent.",
+  "executor": "ChatGPT automated test execution in the working container",
+  "independent_reviewer": null,
+  "recorded_at": "2026-10-06T20:43:14.279217+00:00",
+  "limitations": [
+    "Hash identity is not publisher authentication, native Windows execution, full dependency audit or independent approval. Fresh-archive reproduction is reported separately at delivery.",
+    "Actual local implementation tests are separate from source-control acceptance."
+  ]
+}

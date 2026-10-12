@@ -1,0 +1,3 @@
+PASS install_generation1
+PASS install_generation2
+PASS power_loss_mutation_stage_1..7

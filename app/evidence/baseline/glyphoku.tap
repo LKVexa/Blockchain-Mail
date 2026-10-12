@@ -1,0 +1,30 @@
+TAP version 13
+# (node:1050) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: the cipher alphabet is glyphs, and the hard bands step up
+ok 1 - the cipher alphabet is glyphs, and the hard bands step up
+  ---
+  duration_ms: 0.775796
+  type: 'test'
+  ...
+# Subtest: a dealt cipher is a hard 16×16 with a real search
+ok 2 - a dealt cipher is a hard 16×16 with a real search
+  ---
+  duration_ms: 379.215546
+  type: 'test'
+  ...
+# Subtest: domain, envelope, and the refusal cases still hold on the cipher
+ok 3 - domain, envelope, and the refusal cases still hold on the cipher
+  ---
+  duration_ms: 9106.582575
+  type: 'test'
+  ...
+1..3
+# tests 3
+# suites 0
+# pass 3
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 9674.960032

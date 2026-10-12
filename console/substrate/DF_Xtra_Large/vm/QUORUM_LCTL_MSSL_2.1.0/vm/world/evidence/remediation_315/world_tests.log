@@ -1,0 +1,30 @@
+test_01_demo_world_deterministic (__main__.WorldRuntimeTests.test_01_demo_world_deterministic) ... ok
+test_02_fold_near_identity (__main__.WorldRuntimeTests.test_02_fold_near_identity) ... ok
+test_03_fold_far_bounded (__main__.WorldRuntimeTests.test_03_fold_far_bounded) ... ok
+test_04_no_unload_identity (__main__.WorldRuntimeTests.test_04_no_unload_identity) ... ok
+test_05_lod_reduces_with_distance (__main__.WorldRuntimeTests.test_05_lod_reduces_with_distance) ... ok
+test_06_tick_replay_determinism (__main__.WorldRuntimeTests.test_06_tick_replay_determinism) ... ok
+test_07_ledger_chain (__main__.WorldRuntimeTests.test_07_ledger_chain) ... ok
+test_08_frontier_expansion_is_deterministic (__main__.WorldRuntimeTests.test_08_frontier_expansion_is_deterministic) ... ok
+test_09_expansion_preserves_unaffected_regions (__main__.WorldRuntimeTests.test_09_expansion_preserves_unaffected_regions) ... ok
+test_10_archive_rehydrate_preserves_region_entities (__main__.WorldRuntimeTests.test_10_archive_rehydrate_preserves_region_entities) ... ok
+test_11_archive_protected_obligation_rejected (__main__.WorldRuntimeTests.test_11_archive_protected_obligation_rejected) ... ok
+test_12_knowledge_is_observer_local (__main__.WorldRuntimeTests.test_12_knowledge_is_observer_local) ... ok
+test_13_role_succession_preserves_distinct_identity (__main__.WorldRuntimeTests.test_13_role_succession_preserves_distinct_identity) ... ok
+test_14_transaction_idempotence (__main__.WorldRuntimeTests.test_14_transaction_idempotence) ... ok
+test_15_partition_migration_preserves_entity_state (__main__.WorldRuntimeTests.test_15_partition_migration_preserves_entity_state) ... ok
+test_16_save_load_roundtrip (__main__.WorldRuntimeTests.test_16_save_load_roundtrip) ... ok
+test_17_save_tamper_rejected (__main__.WorldRuntimeTests.test_17_save_tamper_rejected) ... ok
+test_18_command_replay (__main__.WorldRuntimeTests.test_18_command_replay) ... ok
+test_19_authority_well_determinism (__main__.WorldRuntimeTests.test_19_authority_well_determinism) ... ok
+test_20_world_lctl_program_verifies_and_runs (__main__.WorldRuntimeTests.test_20_world_lctl_program_verifies_and_runs) ... ok
+test_21_world_service_capability (__main__.WorldRuntimeTests.test_21_world_service_capability) ... ok
+test_22_world_service_requires_init (__main__.WorldRuntimeTests.test_22_world_service_requires_init) ... ok
+test_23_world_vm_state_hash_changes_with_canonical_world (__main__.WorldRuntimeTests.test_23_world_vm_state_hash_changes_with_canonical_world) ... ok
+test_24_ecology_and_economy_evolve_offscreen (__main__.WorldRuntimeTests.test_24_ecology_and_economy_evolve_offscreen) ... ok
+test_25_fold_monotonic_samples (__main__.WorldRuntimeTests.test_25_fold_monotonic_samples) ... ok
+
+----------------------------------------------------------------------
+Ran 25 tests in 1.109s
+
+OK

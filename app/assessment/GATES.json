@@ -1,0 +1,41 @@
+{
+  "profile": "GLYPHOKU_VEXA127/2",
+  "gates": [
+    {
+      "gate": "G1_DESIGN",
+      "status": "NOT_EVALUATED",
+      "eligibility": "BLOCKED",
+      "independent_approval": null,
+      "basis": "Full original requirements, profile rebind and headed target-browser acceptance not satisfied by bounded implementation tests."
+    },
+    {
+      "gate": "G2_TECHNICAL",
+      "status": "NOT_EVALUATED",
+      "eligibility": "BLOCKED",
+      "independent_approval": null,
+      "basis": "Full original requirements, profile rebind and headed target-browser acceptance not satisfied by bounded implementation tests."
+    },
+    {
+      "gate": "G3_INTEGRATION",
+      "status": "NOT_EVALUATED",
+      "eligibility": "BLOCKED",
+      "independent_approval": null,
+      "basis": "Full original requirements, profile rebind and headed target-browser acceptance not satisfied by bounded implementation tests."
+    },
+    {
+      "gate": "G4_OPERATIONS",
+      "status": "NOT_EVALUATED",
+      "eligibility": "BLOCKED",
+      "independent_approval": null,
+      "basis": "Full original requirements, profile rebind and headed target-browser acceptance not satisfied by bounded implementation tests."
+    },
+    {
+      "gate": "G5_ACCEPTANCE",
+      "status": "NOT_EVALUATED",
+      "eligibility": "BLOCKED",
+      "independent_approval": null,
+      "basis": "Full original requirements, profile rebind and headed target-browser acceptance not satisfied by bounded implementation tests."
+    }
+  ],
+  "production_release": "BLOCKED"
+}

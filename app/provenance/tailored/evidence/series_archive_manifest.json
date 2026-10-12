@@ -1,0 +1,96 @@
+{
+  "archive": "ksxPB5t2PsP8KCqy-grok-workspace.zip",
+  "archive_sha256": "3f2774b3f6b447af05b87d357b15c0aadf0838442dbdf0f57f252a8ba2b929df",
+  "members": [
+    {
+      "path": "glyphoku-vem-1.0.0/",
+      "size": 0,
+      "compressed_size": 0,
+      "directory": true
+    },
+    {
+      "path": "glyphoku-vem-1.0.0/MASTER_PROMPT.md",
+      "size": 5500,
+      "compressed_size": 2712,
+      "directory": false,
+      "sha256": "0cf50aeeccd9c0d6da346af85b9a2ac9bd9ecff17749d214340bb4d200db89df"
+    },
+    {
+      "path": "glyphoku-vem-1.0.0/MASTER_WORKFLOW.md",
+      "size": 2468,
+      "compressed_size": 1301,
+      "directory": false,
+      "sha256": "78f6471ee43c6dc333f211ba00361a8587877f46b06afb681d042240a2a0439f"
+    },
+    {
+      "path": "glyphoku-vem-1.0.0/START_HERE.md",
+      "size": 1628,
+      "compressed_size": 886,
+      "directory": false,
+      "sha256": "b5694932150984f2ba6dbfa8bf5668945a5a074033a485f313b5bf89894c06fc"
+    },
+    {
+      "path": "glyphoku-vem-1.0.0/W00_BIND.md",
+      "size": 876,
+      "compressed_size": 486,
+      "directory": false,
+      "sha256": "7b8e40796bf7115cb207a06fd746c9024629f084e71c570ab962ec469d10b77d"
+    },
+    {
+      "path": "glyphoku-vem-1.0.0/W01_CIPHER.md",
+      "size": 976,
+      "compressed_size": 590,
+      "directory": false,
+      "sha256": "cf178a04d0c14b4bba3f6853503ee9dbf09b5b6cb738890eaf0b195464c67979"
+    },
+    {
+      "path": "glyphoku-vem-1.0.0/W02_PACE.md",
+      "size": 989,
+      "compressed_size": 574,
+      "directory": false,
+      "sha256": "dd12494eb7abd31b324c8893ff6a97727a44d6c4be7075ffcee7ff3be7427462"
+    },
+    {
+      "path": "glyphoku-vem-1.0.0/W03_DOMAIN.md",
+      "size": 931,
+      "compressed_size": 533,
+      "directory": false,
+      "sha256": "73886ae7b9752b54bacd2387b845dd51c2908e307502ff21647eb0c62fc5fe7a"
+    },
+    {
+      "path": "glyphoku-vem-1.0.0/W04_FREEZE.md",
+      "size": 935,
+      "compressed_size": 555,
+      "directory": false,
+      "sha256": "ad70b10b50da758249c4a6c070e3fc22d41bb49e7990811deda140331a10c576"
+    },
+    {
+      "path": "glyphoku-vem-1.0.0/W05_PERMIT.md",
+      "size": 951,
+      "compressed_size": 558,
+      "directory": false,
+      "sha256": "05803ec9f635ecc8729f4dfae441c9d053c7ec13e7b01f69d7f22c4d3457e67f"
+    },
+    {
+      "path": "glyphoku-vem-1.0.0/W06_DELIVER.md",
+      "size": 775,
+      "compressed_size": 435,
+      "directory": false,
+      "sha256": "17cd400840930b88b6d37b3a61f3ba60bb64056fc21255c662a027db12478090"
+    },
+    {
+      "path": "glyphoku-vem-1.0.0/W07_REFUSE.md",
+      "size": 870,
+      "compressed_size": 497,
+      "directory": false,
+      "sha256": "4f2d0f38dc1911dec7008be96a978cda80a10ef50ea7b0b581223a7ed4412411"
+    },
+    {
+      "path": "glyphoku-vem-1.0.0/W08_HORIZON.md",
+      "size": 923,
+      "compressed_size": 591,
+      "directory": false,
+      "sha256": "2194a00839e386b53462692f52895ca1e7eb4dee38cbede419c4e750e2c36921"
+    }
+  ]
+}

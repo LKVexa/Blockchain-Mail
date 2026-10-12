@@ -1,0 +1,2736 @@
+[
+  {
+    "component_id": "BVE-C001",
+    "parent_id": "P01",
+    "name": "Protocol and deployment boundary",
+    "source_basis": "D",
+    "proposed_source_remit": "Define whether the product is an SMTP overlay, wallet-native messaging network, physical-postal bridge, or explicitly composed combination; identify external dependencies.",
+    "source_validation_focus": "Every communication path has named operators, dependencies, and failure boundaries.",
+    "candidate_parent_disposition": "LOCAL_CORE_PARTIAL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "BLOCKED": 3,
+      "NOT_ASSESSED": 47
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 3,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C002",
+    "parent_id": "P01",
+    "name": "Recipient-cost and sender-cost accounting",
+    "source_basis": "D",
+    "proposed_source_remit": "Represent the cognitive, computational, storage, and processing costs discussed by the article; separate postage, network execution, and operational costs.",
+    "source_validation_focus": "Cost claims identify the payer, unit, workload, and omitted externalities.",
+    "candidate_parent_disposition": "LOCAL_CORE_PARTIAL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C003",
+    "parent_id": "P01",
+    "name": "Cryptoeconomic admission objectives",
+    "source_basis": "E",
+    "proposed_source_remit": "Translate the article's financial or computational admission premise into testable objectives for permitted traffic, unwanted traffic, and economically constrained access.",
+    "source_validation_focus": "No anti-spam guarantee is accepted without an explicit adversary and workload.",
+    "candidate_parent_disposition": "LOCAL_CORE_PARTIAL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C004",
+    "parent_id": "P01",
+    "name": "Sender classes and recipient policy domains",
+    "source_basis": "D",
+    "proposed_source_remit": "Separate consensual commercial traffic, ordinary correspondence, enterprise notifications, and suspected abuse so one economic policy is not silently applied to all traffic.",
+    "source_validation_focus": "Each class has explicit consent, postage, quota, and rejection semantics.",
+    "candidate_parent_disposition": "LOCAL_CORE_PARTIAL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C005",
+    "parent_id": "P01",
+    "name": "Threat assumptions and trust allocation",
+    "source_basis": "D",
+    "proposed_source_remit": "Document the assumed behavior of senders, recipients, wallet owners, relay nodes, issuers, bundlers, storage operators, and external postal-data providers.",
+    "source_validation_focus": "Malicious recipients and infrastructure operators are considered alongside malicious senders.",
+    "candidate_parent_disposition": "LOCAL_CORE_PARTIAL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C006",
+    "parent_id": "P01",
+    "name": "Policy governance and parameter ownership",
+    "source_basis": "D",
+    "proposed_source_remit": "Assign authority for prices, subsidies, quotas, penalties, identity requirements, and protocol-profile changes; record review and change procedures.",
+    "source_validation_focus": "Each financially consequential parameter has an owner, rationale, and change history.",
+    "candidate_parent_disposition": "LOCAL_CORE_PARTIAL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C007",
+    "parent_id": "P02",
+    "name": "Hashcash computational-postage reference",
+    "source_basis": "E",
+    "proposed_source_remit": "Retain the SHA-1 header-and-nonce construction as the article's historical comparison, rather than making it an assumed production requirement.",
+    "source_validation_focus": "Missing mathematics and hardware-dependent timing claims are identified before reuse.",
+    "candidate_parent_disposition": "LOCAL_ADAPTATION_ONLY",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C008",
+    "parent_id": "P02",
+    "name": "Historical stamp verification and replay checks",
+    "source_basis": "E",
+    "proposed_source_remit": "Decompose the described recipient, date, hash-condition, and previously-used-stamp checks into a reference validation pipeline.",
+    "source_validation_focus": "The comparison distinguishes hash validity, freshness, recipient binding, and reuse.",
+    "candidate_parent_disposition": "LOCAL_ADAPTATION_ONLY",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C009",
+    "parent_id": "P02",
+    "name": "Hardware inequality and outsourced-computation model",
+    "source_basis": "E",
+    "proposed_source_remit": "Evaluate the article's low-power-device and botnet objections through explicitly chosen device classes and attacker cost-ownership assumptions.",
+    "source_validation_focus": "Legitimate-device burden is not equated with the attacker's effective resource cost.",
+    "candidate_parent_disposition": "LOCAL_ADAPTATION_ONLY",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C010",
+    "parent_id": "P02",
+    "name": "Delegated micropayment authorization",
+    "source_basis": "E",
+    "proposed_source_remit": "Define preauthorized postage allowances, spending thresholds, and revocation behavior for the automated-payment mechanism described in the article.",
+    "source_validation_focus": "Automation cannot exceed the stated user or enterprise authorization boundary.",
+    "candidate_parent_disposition": "LOCAL_ADAPTATION_ONLY",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C011",
+    "parent_id": "P02",
+    "name": "Mental-transaction-cost evaluation",
+    "source_basis": "D",
+    "proposed_source_remit": "Test whether automated allowances reduce approval friction while preserving comprehensible budgets, overruns, revocation, and user consent.",
+    "source_validation_focus": "Reduced prompt frequency is not treated as proof that all cognitive costs disappear.",
+    "candidate_parent_disposition": "LOCAL_ADAPTATION_ONLY",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C012",
+    "parent_id": "P03",
+    "name": "Physical-stamp and digital-twin binding",
+    "source_basis": "E",
+    "proposed_source_remit": "Define the correspondence between a physical postal indicium and its blockchain representation, including identity, issuance, and provenance records.",
+    "source_validation_focus": "A digital asset claim states exactly which physical object or event it represents.",
+    "candidate_parent_disposition": "DEFERRED_EXTERNAL_PROTOCOL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C013",
+    "parent_id": "P03",
+    "name": "ERC-721 crypto-stamp asset contract",
+    "source_basis": "E",
+    "proposed_source_remit": "Specify the optional NFT collectible/provenance contract described in the postal examples without requiring NFTs for ordinary email postage.",
+    "source_validation_focus": "Collectible ownership is not silently equated with an unused right to send mail.",
+    "candidate_parent_disposition": "DEFERRED_EXTERNAL_PROTOCOL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C014",
+    "parent_id": "P03",
+    "name": "Stamp emission and supply reconciliation",
+    "source_basis": "E",
+    "proposed_source_remit": "Track physical sales, authorized digital issuance, outstanding units, and cancellation events for the article's permissioned supply-chain model.",
+    "source_validation_focus": "Recorded issuance, reservations, and cancellations reconcile under defined reversal rules.",
+    "candidate_parent_disposition": "DEFERRED_EXTERNAL_PROTOCOL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C015",
+    "parent_id": "P03",
+    "name": "Mail-preparation reservation and freezing",
+    "source_basis": "E",
+    "proposed_source_remit": "Represent the temporary reservation of tokenized postage while a physical mailing is prepared and awaits postal acceptance.",
+    "source_validation_focus": "Reservation ownership, expiry, cancellation, and concurrent-use behavior are explicit.",
+    "candidate_parent_disposition": "DEFERRED_EXTERNAL_PROTOCOL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C016",
+    "parent_id": "P03",
+    "name": "Authorized cancellation and token burn",
+    "source_basis": "E",
+    "proposed_source_remit": "Bind the postal inspector's acceptance/cancellation authority to the token-burn action described in the source.",
+    "source_validation_focus": "Only the specified authority can consume a reservation, and duplicate consumption is rejected.",
+    "candidate_parent_disposition": "DEFERRED_EXTERNAL_PROTOCOL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C017",
+    "parent_id": "P03",
+    "name": "Time-limited issuance and preparation reversals",
+    "source_basis": "E",
+    "proposed_source_remit": "Specify privileged, cryptographically authorized reversals for the limited lifecycle stages described in the article.",
+    "source_validation_focus": "Reversal cannot silently recreate already-consumed postage or bypass the approval window.",
+    "candidate_parent_disposition": "DEFERRED_EXTERNAL_PROTOCOL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C018",
+    "parent_id": "P03",
+    "name": "CMID and postal-delivery evidence adapter",
+    "source_basis": "E",
+    "proposed_source_remit": "Correlate the source-described CaseMail identifier, tracking updates, content reference, and return-receipt evidence without presuming universal legal effect.",
+    "source_validation_focus": "The record distinguishes provider assertions, cryptographic bindings, and independently observed events.",
+    "candidate_parent_disposition": "DEFERRED_EXTERNAL_PROTOCOL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C019",
+    "parent_id": "P03",
+    "name": "Physical-address hygiene and CASS interface",
+    "source_basis": "E",
+    "proposed_source_remit": "Isolate physical-address validation from email routing and treat the article's CASS score as a referenced external acceptance parameter.",
+    "source_validation_focus": "Postal address quality metrics are not reused as email-address or message-authenticity guarantees.",
+    "candidate_parent_disposition": "DEFERRED_EXTERNAL_PROTOCOL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C020",
+    "parent_id": "P04",
+    "name": "Postage mechanism registry and envelope schema",
+    "source_basis": "D",
+    "proposed_source_remit": "Define a versioned representation for supported stamp types, proof references, declared cost conditions, and the selected economic branch.",
+    "source_validation_focus": "Different postage mechanisms cannot be misinterpreted as interchangeable evidence.",
+    "candidate_parent_disposition": "LOCAL_CORE_PARTIAL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 49,
+      "BLOCKED": 1
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 1,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C021",
+    "parent_id": "P04",
+    "name": "Message, recipient, and stamp binding",
+    "source_basis": "D",
+    "proposed_source_remit": "Specify which message bytes, recipient identifiers, policy conditions, and postage references are cryptographically associated in each selected branch.",
+    "source_validation_focus": "Substituting a recipient, payload, or authorized action invalidates the intended binding.",
+    "candidate_parent_disposition": "LOCAL_CORE_PARTIAL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 46,
+      "BLOCKED": 4
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 4,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C022",
+    "parent_id": "P04",
+    "name": "Value, effort, or stake eligibility resolver",
+    "source_basis": "D",
+    "proposed_source_remit": "Provide a common admission interface while retaining model-specific checks for funded UTXOs, sponsored execution, paid access, or RLN membership.",
+    "source_validation_focus": "An eligible sponsor or membership proof is not mislabeled as a completed payment.",
+    "candidate_parent_disposition": "LOCAL_CORE_PARTIAL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C023",
+    "parent_id": "P04",
+    "name": "Stamp identity, freshness, and replay state",
+    "source_basis": "D",
+    "proposed_source_remit": "Define single-use or bounded-use identifiers, validity windows, and duplicate handling separately for each postage model.",
+    "source_validation_focus": "Permitted repeat use and prohibited replay are unambiguous and testable.",
+    "candidate_parent_disposition": "LOCAL_CORE_PARTIAL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 44,
+      "BLOCKED": 6
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 6,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C024",
+    "parent_id": "P04",
+    "name": "Model-specific postage lifecycle orchestrator",
+    "source_basis": "D",
+    "proposed_source_remit": "Specify only the states applicable to the selected branch, such as issued, reserved, admitted, charged, penalized, expired, or reversed.",
+    "source_validation_focus": "No branch inherits another branch's burn, refund, reservation, or settlement semantics implicitly.",
+    "candidate_parent_disposition": "LOCAL_CORE_PARTIAL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C025",
+    "parent_id": "P04",
+    "name": "Sender, relay, and recipient admission decisions",
+    "source_basis": "D",
+    "proposed_source_remit": "Define where postage is checked, who may accept or reject a message, and the effect of missing, malformed, expired, or invalid evidence.",
+    "source_validation_focus": "The message-delivery outcome and financial outcome are separately observable.",
+    "candidate_parent_disposition": "LOCAL_CORE_PARTIAL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C026",
+    "parent_id": "P04",
+    "name": "Postage and delivery event journal",
+    "source_basis": "D",
+    "proposed_source_remit": "Record auditable transitions for message acceptance, rejection, pending funding, consumption, sponsorship, penalties, and provider-reported delivery.",
+    "source_validation_focus": "A payment or admission event is not automatically represented as recipient delivery or reading.",
+    "candidate_parent_disposition": "LOCAL_CORE_PARTIAL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C027",
+    "parent_id": "P05",
+    "name": "Base transaction and UTXO inventory",
+    "source_basis": "E",
+    "proposed_source_remit": "Create and track the source-described base funding transaction and its collection of candidate stamp outputs.",
+    "source_validation_focus": "Each candidate stamp identifies an exact output and the source of its funding state.",
+    "candidate_parent_disposition": "DEFERRED_EXTERNAL_PROTOCOL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C028",
+    "parent_id": "P05",
+    "name": "Per-recipient stamp-funding allocation",
+    "source_basis": "E",
+    "proposed_source_remit": "Allocate unique stamp backing for the article's recipient-specific pre-signed transaction scheme and track reuse or allocation conflicts.",
+    "source_validation_focus": "Allocation ambiguity cannot be hidden by reusing an untracked funding reference.",
+    "candidate_parent_disposition": "DEFERRED_EXTERNAL_PROTOCOL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C029",
+    "parent_id": "P05",
+    "name": "Pre-signed penalty transaction construction",
+    "source_basis": "E",
+    "proposed_source_remit": "Specify inputs, output scripts, signatures, and fee amounts for the described OP_RETURN-based penalty transaction, preserving unresolved fee-versus-output questions.",
+    "source_validation_focus": "Total input value, output value, and network fees reconcile for every template.",
+    "candidate_parent_disposition": "DEFERRED_EXTERNAL_PROTOCOL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C030",
+    "parent_id": "P05",
+    "name": "X-SpamBat off-chain header codec",
+    "source_basis": "E",
+    "proposed_source_remit": "Implement the article's Base64-encoded transaction carriage as an explicit message-header profile with parsing and size constraints.",
+    "source_validation_focus": "Malformed encodings or ambiguous parsing cannot produce unintended transaction bytes.",
+    "candidate_parent_disposition": "DEFERRED_EXTERNAL_PROTOCOL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C031",
+    "parent_id": "P05",
+    "name": "Recipient stamp-validation engine",
+    "source_basis": "D",
+    "proposed_source_remit": "Validate the proposed transaction's intended recipient binding, spend reference, permitted value exposure, and selected network context before policy evaluation.",
+    "source_validation_focus": "A syntactically valid header is not accepted as proof of unconditionally available collateral.",
+    "candidate_parent_disposition": "DEFERRED_EXTERNAL_PROTOCOL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C032",
+    "parent_id": "P05",
+    "name": "Legitimate-message nonbroadcast path",
+    "source_basis": "E",
+    "proposed_source_remit": "Represent the source's accept-and-ignore behavior without describing it as a refund, payment receipt, or already-finalized settlement.",
+    "source_validation_focus": "Nonbroadcast is distinguishable from release, expiry, invalidation, and later spendability.",
+    "candidate_parent_disposition": "DEFERRED_EXTERNAL_PROTOCOL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C033",
+    "parent_id": "P05",
+    "name": "Spam-complaint broadcast path",
+    "source_basis": "E",
+    "proposed_source_remit": "Define the recipient action that submits a pre-signed penalty transaction and records its subsequent network outcome.",
+    "source_validation_focus": "Classification, submission, inclusion, and final financial effect remain distinct events.",
+    "candidate_parent_disposition": "DEFERRED_EXTERNAL_PROTOCOL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C034",
+    "parent_id": "P05",
+    "name": "Collateral availability and conflicting-spend monitor",
+    "source_basis": "D",
+    "proposed_source_remit": "Investigate whether backing remains spendable, how competing transactions affect the stamp, and what reservation or expiry guarantees are actually achievable.",
+    "source_validation_focus": "Claims about enforceable penalties and honest-sender cost survive explicit conflicting-spend tests.",
+    "candidate_parent_disposition": "DEFERRED_EXTERNAL_PROTOCOL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C035",
+    "parent_id": "P06",
+    "name": "Programmable smart-contract wallet",
+    "source_basis": "E",
+    "proposed_source_remit": "Specify the source-described smart account's permission boundary, operation validation, and relationship to postage authorization.",
+    "source_validation_focus": "Message initiation and authority to spend are separately defined.",
+    "candidate_parent_disposition": "LOCAL_ADAPTATION_ONLY",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C036",
+    "parent_id": "P06",
+    "name": "UserOperation construction and signing",
+    "source_basis": "E",
+    "proposed_source_remit": "Package the selected postage or messaging action into a UserOperation with its account, execution intent, signature, and sponsorship information.",
+    "source_validation_focus": "The signed intent binds the actual action and applicable authorization limits.",
+    "candidate_parent_disposition": "LOCAL_ADAPTATION_ONLY",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C037",
+    "parent_id": "P06",
+    "name": "Alternative mempool submission client",
+    "source_basis": "E",
+    "proposed_source_remit": "Define submission, status tracking, validation errors, and retry behavior for the alternative mempool described by the article.",
+    "source_validation_focus": "Retries do not conceal duplicate execution or ambiguous operation status.",
+    "candidate_parent_disposition": "LOCAL_ADAPTATION_ONLY",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C038",
+    "parent_id": "P06",
+    "name": "Bundler integration",
+    "source_basis": "E",
+    "proposed_source_remit": "Specify how selected bundlers receive operations, assemble transactions, report outcomes, and expose dependency failures.",
+    "source_validation_focus": "The system distinguishes submission acceptance from completed execution.",
+    "candidate_parent_disposition": "LOCAL_ADAPTATION_ONLY",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C039",
+    "parent_id": "P06",
+    "name": "EntryPoint execution boundary",
+    "source_basis": "E",
+    "proposed_source_remit": "Identify the selected EntryPoint interface and define the validation/execution boundary rather than assuming an unspecified universal deployment.",
+    "source_validation_focus": "Wallet, bundler, and Paymaster profiles agree on the same verified interface.",
+    "candidate_parent_disposition": "LOCAL_ADAPTATION_ONLY",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C040",
+    "parent_id": "P06",
+    "name": "Paymaster sponsorship contract",
+    "source_basis": "E",
+    "proposed_source_remit": "Define sponsorship eligibility, approval scope, and payer liability for the optional gas-subsidizing contract described in the source.",
+    "source_validation_focus": "A sponsored operation cannot exceed the exact approved scope and budget.",
+    "candidate_parent_disposition": "LOCAL_ADAPTATION_ONLY",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C041",
+    "parent_id": "P06",
+    "name": "Enterprise subsidy and daily-quota manager",
+    "source_basis": "E",
+    "proposed_source_remit": "Implement the source-described transition between subsidized usage and chargeable usage with explicit per-user or enterprise counters.",
+    "source_validation_focus": "Quota consumption and reset behavior remain consistent under concurrent requests.",
+    "candidate_parent_disposition": "LOCAL_ADAPTATION_ONLY",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C042",
+    "parent_id": "P06",
+    "name": "ERC-20 or stablecoin postage charging",
+    "source_basis": "E",
+    "proposed_source_remit": "Specify the candidate token, permitted charge calculation, authorization, and reconciliation for non-native-asset postage payment.",
+    "source_validation_focus": "A gas subsidy and the user's token charge reconcile as distinct accounting entries.",
+    "candidate_parent_disposition": "LOCAL_ADAPTATION_ONLY",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C043",
+    "parent_id": "P06",
+    "name": "Delegated wallet-spending guardrails",
+    "source_basis": "D",
+    "proposed_source_remit": "Bind automated postage to explicit limits on permitted actions, value, beneficiaries, and revocation conditions.",
+    "source_validation_focus": "A valid email or sponsored transaction alone cannot expand spending authority.",
+    "candidate_parent_disposition": "LOCAL_ADAPTATION_ONLY",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C044",
+    "parent_id": "P06",
+    "name": "Gas exposure and sponsor-balance reconciliation",
+    "source_basis": "D",
+    "proposed_source_remit": "Track sponsor funding, operation-specific gas exposure, execution failures, and the difference between quoted and realized charges.",
+    "source_validation_focus": "Failed or abusive operations cannot create unmeasured sponsor liabilities.",
+    "candidate_parent_disposition": "LOCAL_ADAPTATION_ONLY",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C045",
+    "parent_id": "P07",
+    "name": "Email-as-a-Wallet account association",
+    "source_basis": "E",
+    "proposed_source_remit": "Model the article's wallet-associated email identity and the authority linking an inbox to its financial account.",
+    "source_validation_focus": "Account association cannot silently confer transaction authority on message senders.",
+    "candidate_parent_disposition": "LOCAL_ADAPTATION_ONLY",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C046",
+    "parent_id": "P07",
+    "name": "Recipient Paywall and consent preferences",
+    "source_basis": "E",
+    "proposed_source_remit": "Represent accepted marketing categories, recipient-defined admission conditions, and changes to commercial-message consent.",
+    "source_validation_focus": "Payment alone does not override the recipient's declared acceptance rules.",
+    "candidate_parent_disposition": "LOCAL_ADAPTATION_ONLY",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C047",
+    "parent_id": "P07",
+    "name": "Advertiser paid-admission transaction",
+    "source_basis": "E",
+    "proposed_source_remit": "Define advertiser funding, requested recipient access, policy evaluation, and the financial result of admitted or rejected promotional mail.",
+    "source_validation_focus": "Charge, admission, delivery, and reward eligibility are separate states.",
+    "candidate_parent_disposition": "LOCAL_ADAPTATION_ONLY",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C048",
+    "parent_id": "P07",
+    "name": "EMT-denominated payment adapter",
+    "source_basis": "E",
+    "proposed_source_remit": "Isolate the article-described utility token and chain selection behind a candidate payment profile rather than hard-coding unverified commercial details.",
+    "source_validation_focus": "Asset identifiers, supported chain, and permitted economic role require versioned evidence.",
+    "candidate_parent_disposition": "LOCAL_ADAPTATION_ONLY",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C049",
+    "parent_id": "P07",
+    "name": "Read2Earn engagement accounting",
+    "source_basis": "E",
+    "proposed_source_remit": "Define which consented engagement events count toward rewards, their provenance, and their relation to the advertiser's funding event.",
+    "source_validation_focus": "Automated message opens are not treated as validated human attention by default.",
+    "candidate_parent_disposition": "LOCAL_ADAPTATION_ONLY",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C050",
+    "parent_id": "P07",
+    "name": "Advertising-revenue buyback allocation",
+    "source_basis": "E",
+    "proposed_source_remit": "Represent the article's minimum-50% fiat-revenue allocation as a configurable, source-reported rule requiring reconciliation and review.",
+    "source_validation_focus": "Revenue measurement, allocation timing, and token purchases are independently traceable.",
+    "candidate_parent_disposition": "LOCAL_ADAPTATION_ONLY",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C051",
+    "parent_id": "P07",
+    "name": "Ad Rewards Pool smart contract",
+    "source_basis": "E",
+    "proposed_source_remit": "Specify funded reward balances, authorized allocations, claim constraints, and separation from unrelated operating funds.",
+    "source_validation_focus": "Promised claims do not exceed the explicitly funded and eligible allocation.",
+    "candidate_parent_disposition": "LOCAL_ADAPTATION_ONLY",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C052",
+    "parent_id": "P07",
+    "name": "EMC accrual and proportional EMT claims",
+    "source_basis": "E",
+    "proposed_source_remit": "Model internal points, calculation periods, participant eligibility, and proportional claims for the article's two-stage rewards system.",
+    "source_validation_focus": "Point balances, claim periods, and distributed token totals reconcile without double claims.",
+    "candidate_parent_disposition": "LOCAL_ADAPTATION_ONLY",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C053",
+    "parent_id": "P08",
+    "name": "Multi-chain address and inbox mapping",
+    "source_basis": "E",
+    "proposed_source_remit": "Define mappings among supported blockchain addresses, user accounts, and the unified inbox model described for Web3 messaging.",
+    "source_validation_focus": "Identical-looking identifiers from different chains cannot be silently conflated.",
+    "candidate_parent_disposition": "LOCAL_CORE_PARTIAL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C054",
+    "parent_id": "P08",
+    "name": "ENS and DID resolution",
+    "source_basis": "E",
+    "proposed_source_remit": "Specify the source-named human-readable and decentralized identifier resolution paths and their relationship to verified destinations.",
+    "source_validation_focus": "A resolved name carries an explicit authority and freshness policy.",
+    "candidate_parent_disposition": "LOCAL_CORE_PARTIAL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C055",
+    "parent_id": "P08",
+    "name": "Legacy Web2 email interoperability bridge",
+    "source_basis": "E",
+    "proposed_source_remit": "Separate import, export, addressing, authentication, and delivery behavior when integrating the article's Gmail/Outlook examples with wallet messaging.",
+    "source_validation_focus": "Bridge operation does not silently preserve or invent security properties across protocols.",
+    "candidate_parent_disposition": "LOCAL_CORE_PARTIAL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C056",
+    "parent_id": "P08",
+    "name": "Rich-media HTML and attachment packaging",
+    "source_basis": "E",
+    "proposed_source_remit": "Represent the article-described rich HTML and files with explicit payload boundaries, attachment references, and transport limits.",
+    "source_validation_focus": "Content structure and referenced objects remain consistent across encryption and delivery.",
+    "candidate_parent_disposition": "LOCAL_CORE_PARTIAL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 2,
+    "states": {
+      "NOT_ASSESSED": 48,
+      "BLOCKED": 2
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C057",
+    "parent_id": "P08",
+    "name": "End-to-end encrypted transport adapter",
+    "source_basis": "E",
+    "proposed_source_remit": "Define the message-transport boundary for the source-described Mailchain-like encrypted payload delivery without presuming one shared vendor protocol.",
+    "source_validation_focus": "Adapters state which actors can observe payloads, metadata, and delivery identifiers.",
+    "candidate_parent_disposition": "LOCAL_CORE_PARTIAL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C058",
+    "parent_id": "P08",
+    "name": "Provider capability and compatibility registry",
+    "source_basis": "D",
+    "proposed_source_remit": "Record EtherMail, Mailchain, and the Dmail case study as distinct profiles with verified capabilities, formats, and export constraints to be established later.",
+    "source_validation_focus": "A marketing comparison cannot substitute for tested interoperability.",
+    "candidate_parent_disposition": "LOCAL_CORE_PARTIAL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C059",
+    "parent_id": "P08",
+    "name": "Destination routing and delivery-state coordinator",
+    "source_basis": "D",
+    "proposed_source_remit": "Resolve recipients to the selected transport and track accepted, pending, rejected, retried, and provider-reported delivery states.",
+    "source_validation_focus": "No route is assumed to be local-only or public-network-free without an explicit topology.",
+    "candidate_parent_disposition": "LOCAL_CORE_PARTIAL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C060",
+    "parent_id": "P09",
+    "name": "Encrypted decentralized object-storage adapter",
+    "source_basis": "E",
+    "proposed_source_remit": "Define optional IPFS or Arweave storage profiles for encrypted messages and attachments, preserving their distinct operational assumptions.",
+    "source_validation_focus": "Selecting a storage name is not treated as sufficient evidence of durable retention.",
+    "candidate_parent_disposition": "LOCAL_CORE_PARTIAL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C061",
+    "parent_id": "P09",
+    "name": "Content addressing and ledger-reference binding",
+    "source_basis": "D",
+    "proposed_source_remit": "Specify how a message or attachment reference binds to stored encrypted bytes and, where selected, a ledger record.",
+    "source_validation_focus": "Retrieved objects match the intended reference without exposing unnecessary payload data.",
+    "candidate_parent_disposition": "LOCAL_CORE_PARTIAL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C062",
+    "parent_id": "P09",
+    "name": "Retention funding and replication policy",
+    "source_basis": "D",
+    "proposed_source_remit": "Make the availability obligations, storage costs, replicas, and operator responsibilities explicit for retained encrypted messages.",
+    "source_validation_focus": "Retention claims survive loss of the primary provider under the specified failure model.",
+    "candidate_parent_disposition": "LOCAL_CORE_PARTIAL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C063",
+    "parent_id": "P09",
+    "name": "Mailbox indexing and retrieval service",
+    "source_basis": "D",
+    "proposed_source_remit": "Define searchable metadata boundaries, ownership of indexes, and the lookup path from inbox entries to encrypted objects.",
+    "source_validation_focus": "An intact content store is not mistaken for a recoverable mailbox without indexes and keys.",
+    "candidate_parent_disposition": "LOCAL_CORE_PARTIAL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 4,
+    "states": {
+      "NOT_ASSESSED": 45,
+      "BLOCKED": 5
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 1,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C064",
+    "parent_id": "P09",
+    "name": "Encrypted-mail export and migration tooling",
+    "source_basis": "E",
+    "proposed_source_remit": "Provide the export capability motivated by the source's shutdown example, including payloads, necessary references, and key-related portability requirements.",
+    "source_validation_focus": "A test import reproduces the intended mailbox contents and preserves declared security boundaries.",
+    "candidate_parent_disposition": "LOCAL_CORE_PARTIAL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C065",
+    "parent_id": "P09",
+    "name": "Operator-disappearance and service-exit design",
+    "source_basis": "D",
+    "proposed_source_remit": "Specify which functions remain usable when the original developer, relay service, or storage sponsor stops operating.",
+    "source_validation_focus": "Users can demonstrate the claimed access path without relying on a discontinued provider.",
+    "candidate_parent_disposition": "LOCAL_CORE_PARTIAL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C066",
+    "parent_id": "P10",
+    "name": "MLS group and session lifecycle",
+    "source_basis": "E",
+    "proposed_source_remit": "Decompose the article's MLS-based messaging profile into group establishment, member changes, message protection, and state transitions.",
+    "source_validation_focus": "Group-state transitions are validated against the exact selected implementation and version.",
+    "candidate_parent_disposition": "LOCAL_ADAPTATION_ONLY",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C067",
+    "parent_id": "P10",
+    "name": "Forward-secrecy and post-compromise recovery model",
+    "source_basis": "E",
+    "proposed_source_remit": "Define the compromise scenarios and recovery transitions underlying the security properties attributed to MLS in the article.",
+    "source_validation_focus": "Claims specify which past or future messages, keys, members, and time intervals are covered.",
+    "candidate_parent_disposition": "LOCAL_ADAPTATION_ONLY",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C068",
+    "parent_id": "P10",
+    "name": "Cryptographic suite and version registry",
+    "source_basis": "D",
+    "proposed_source_remit": "Record the article's algorithm names as candidate suite entries and require exact parameters, roles, and compatibility evidence.",
+    "source_validation_focus": "A named primitive is not treated as proof of a complete or post-quantum-secure protocol.",
+    "candidate_parent_disposition": "LOCAL_ADAPTATION_ONLY",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C069",
+    "parent_id": "P10",
+    "name": "XWING KEM Welcome-message profile",
+    "source_basis": "E",
+    "proposed_source_remit": "Specify the hybrid key-encapsulation role assigned to XWING in the article and the Welcome-message boundary it is meant to protect.",
+    "source_validation_focus": "The actual composition and security coverage are verified rather than inferred from the name.",
+    "candidate_parent_disposition": "LOCAL_ADAPTATION_ONLY",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C070",
+    "parent_id": "P10",
+    "name": "HPKEX25519 Welcome and identity-protection profile",
+    "source_basis": "E",
+    "proposed_source_remit": "Preserve the article's HPKEX25519 terminology while defining the intended confidentiality boundary for group invitations and related identities.",
+    "source_validation_focus": "Protocol terminology and supported suite identifiers are independently confirmed before implementation.",
+    "candidate_parent_disposition": "LOCAL_ADAPTATION_ONLY",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C071",
+    "parent_id": "P10",
+    "name": "CHACHA20POLY1305 payload protection",
+    "source_basis": "E",
+    "proposed_source_remit": "Specify the article-named AEAD role, including payload boundaries and associated-data requirements for the selected protocol profile.",
+    "source_validation_focus": "Modified protected bytes or required associated data are rejected in controlled tests.",
+    "candidate_parent_disposition": "LOCAL_ADAPTATION_ONLY",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 49,
+      "BLOCKED": 1
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 1,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C072",
+    "parent_id": "P10",
+    "name": "Ed25519 message and identity signatures",
+    "source_basis": "E",
+    "proposed_source_remit": "Specify the source-named signature role and the exact message or identity objects the selected profile authenticates.",
+    "source_validation_focus": "A valid signature proves only the authority and object defined by that signing domain.",
+    "candidate_parent_disposition": "LOCAL_ADAPTATION_ONLY",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 49,
+      "BLOCKED": 1
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 1,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C073",
+    "parent_id": "P10",
+    "name": "SHA2_256 and SHA3_256 integrity bindings",
+    "source_basis": "E",
+    "proposed_source_remit": "Define where the source-named hashes bind message state, MLS-related values, or multi-wallet identity material.",
+    "source_validation_focus": "Different hash roles and encoded objects cannot be confused across protocol contexts.",
+    "candidate_parent_disposition": "LOCAL_ADAPTATION_ONLY",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C074",
+    "parent_id": "P10",
+    "name": "Multi-wallet identity and key-continuity manager",
+    "source_basis": "D",
+    "proposed_source_remit": "Define how the article's multi-wallet identity structure handles active keys, updates, lost access, and retained-message usability.",
+    "source_validation_focus": "Recovery procedures do not silently invalidate confidentiality or ownership assumptions.",
+    "candidate_parent_disposition": "LOCAL_ADAPTATION_ONLY",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C075",
+    "parent_id": "P11",
+    "name": "Waku relay integration profile",
+    "source_basis": "E",
+    "proposed_source_remit": "Define a candidate Waku transport boundary and explicitly record the unresolved relationship to the article's XMTP architecture.",
+    "source_validation_focus": "Selected protocol versions demonstrate the integration instead of relying on the article's association.",
+    "candidate_parent_disposition": "DEFERRED_EXTERNAL_PROTOCOL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C076",
+    "parent_id": "P11",
+    "name": "RLN stake and membership registration contract",
+    "source_basis": "E",
+    "proposed_source_remit": "Represent the source-described financial deposit, membership admission, and membership-related contract state.",
+    "source_validation_focus": "Membership eligibility and financially exposed funds have unambiguous ownership and authorization.",
+    "candidate_parent_disposition": "DEFERRED_EXTERNAL_PROTOCOL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C077",
+    "parent_id": "P11",
+    "name": "Poseidon membership commitment generation",
+    "source_basis": "E",
+    "proposed_source_remit": "Specify the source-named commitment primitive and the exact private membership material it is intended to commit to.",
+    "source_validation_focus": "Membership secrets are not silently conflated with wallet signing or payment keys.",
+    "candidate_parent_disposition": "DEFERRED_EXTERNAL_PROTOCOL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C078",
+    "parent_id": "P11",
+    "name": "Epoch and publishing allowance scheduler",
+    "source_basis": "E",
+    "proposed_source_remit": "Parameterize membership rate allowances and epoch boundaries, treating the article's 20-second example as non-normative.",
+    "source_validation_focus": "Boundary crossings, clock disagreement, and concurrent publishing have explicit semantics.",
+    "candidate_parent_disposition": "DEFERRED_EXTERNAL_PROTOCOL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C079",
+    "parent_id": "P11",
+    "name": "RLN zero-knowledge proof generation",
+    "source_basis": "E",
+    "proposed_source_remit": "Define the selected circuit's private witness, public inputs, message binding, and membership/rate assertion.",
+    "source_validation_focus": "A proof demonstrates only its specified predicate for the intended message and epoch.",
+    "candidate_parent_disposition": "DEFERRED_EXTERNAL_PROTOCOL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C080",
+    "parent_id": "P11",
+    "name": "Relay-side proof verification and admission",
+    "source_basis": "E",
+    "proposed_source_remit": "Specify relay checks for membership proofs, epoch consistency, message linkage, and rejection behavior before relaying.",
+    "source_validation_focus": "Invalid evidence is rejected before it creates the unbounded relay work being controlled.",
+    "candidate_parent_disposition": "DEFERRED_EXTERNAL_PROTOCOL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C081",
+    "parent_id": "P11",
+    "name": "Over-limit evidence and nullifier analysis",
+    "source_basis": "E",
+    "proposed_source_remit": "Formalize the article's multiple-publication detection mechanism and identify what secret, evidence, or penalty authority is actually recoverable.",
+    "source_validation_focus": "Only defined misuse yields actionable evidence; compliant use does not reveal protected secrets.",
+    "candidate_parent_disposition": "DEFERRED_EXTERNAL_PROTOCOL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C082",
+    "parent_id": "P11",
+    "name": "Stake slashing and membership revocation",
+    "source_basis": "E",
+    "proposed_source_remit": "Specify who may submit violation evidence, what funds are exposed, and how membership changes after an accepted penalty.",
+    "source_validation_focus": "Evidence, penalty, and revocation are linked without granting unspecified wallet authority.",
+    "candidate_parent_disposition": "DEFERRED_EXTERNAL_PROTOCOL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C083",
+    "parent_id": "P11",
+    "name": "Application request quotas and relay latency profile",
+    "source_basis": "E",
+    "proposed_source_remit": "Keep the article's read/write API quotas separate from RLN publishing allowances, and treat its payload/latency figures as benchmark claims.",
+    "source_validation_focus": "Each limit identifies its layer, subject, window, payload, and measurement conditions.",
+    "candidate_parent_disposition": "DEFERRED_EXTERNAL_PROTOCOL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C084",
+    "parent_id": "P12",
+    "name": "Encrypted-metadata L3 appchain interface",
+    "source_basis": "E",
+    "proposed_source_remit": "Define the source-described appchain metadata records and the precise relationship to off-chain encrypted message payloads.",
+    "source_validation_focus": "Metadata confidentiality and message availability are not inferred from settlement alone.",
+    "candidate_parent_disposition": "DEFERRED_EXTERNAL_PROTOCOL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C085",
+    "parent_id": "P12",
+    "name": "L3-to-Base settlement adapter",
+    "source_basis": "E",
+    "proposed_source_remit": "Specify the settlement dependency described in the article and the exact evidence used to determine settlement status.",
+    "source_validation_focus": "Parent-chain security claims are tied to a selected, documented settlement construction.",
+    "candidate_parent_disposition": "DEFERRED_EXTERNAL_PROTOCOL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C086",
+    "parent_id": "P12",
+    "name": "Sequencer interaction and availability boundary",
+    "source_basis": "E",
+    "proposed_source_remit": "Represent sequencing dependencies, submission behavior, and the source-described sequencer economic role.",
+    "source_validation_focus": "The protocol states what remains operational during sequencer unavailability.",
+    "candidate_parent_disposition": "DEFERRED_EXTERNAL_PROTOCOL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C087",
+    "parent_id": "P12",
+    "name": "Node-operated metadata indexing",
+    "source_basis": "E",
+    "proposed_source_remit": "Define the node indexing function described in the article, including index reconstruction and access to settled metadata.",
+    "source_validation_focus": "Node loss or stale indexes have measurable effects and explicit recovery paths.",
+    "candidate_parent_disposition": "DEFERRED_EXTERNAL_PROTOCOL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C088",
+    "parent_id": "P12",
+    "name": "Sequencer and node fee distribution",
+    "source_basis": "E",
+    "proposed_source_remit": "Represent the source-described split of network fees between sequencing and indexing/relay operators.",
+    "source_validation_focus": "Collected and distributed fees reconcile to the selected policy and period.",
+    "candidate_parent_disposition": "DEFERRED_EXTERNAL_PROTOCOL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C089",
+    "parent_id": "P12",
+    "name": "Node staking and token-emission economics",
+    "source_basis": "E",
+    "proposed_source_remit": "Model the source's later-phase staking and emissions as conditional network economics, not assumed deployed incentives.",
+    "source_validation_focus": "Operator solvency and network participation are tested under explicit revenue assumptions.",
+    "candidate_parent_disposition": "DEFERRED_EXTERNAL_PROTOCOL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C090",
+    "parent_id": "P12",
+    "name": "Decentralization phases and surplus buyback/burn",
+    "source_basis": "E",
+    "proposed_source_remit": "Define prerequisites for changing control distribution and for spending genuine fee surplus on the source-described buyback/burn mechanism.",
+    "source_validation_focus": "A roadmap label does not substitute for measured control distribution or funded surplus.",
+    "candidate_parent_disposition": "DEFERRED_EXTERNAL_PROTOCOL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C091",
+    "parent_id": "P13",
+    "name": "Raw-email ingestion and DKIM canonicalization",
+    "source_basis": "E",
+    "proposed_source_remit": "Identify exactly which raw headers and body bytes feed the source's DKIM verification path and how canonicalization is represented.",
+    "source_validation_focus": "The proof input matches the intended authenticated email representation.",
+    "candidate_parent_disposition": "DEFERRED_EXTERNAL_PROTOCOL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C092",
+    "parent_id": "P13",
+    "name": "DNS DKIM-key retrieval and on-chain registry adapter",
+    "source_basis": "E",
+    "proposed_source_remit": "Implement the article's public-key retrieval and registry-mirroring boundary with explicit DNS and registry dependencies.",
+    "source_validation_focus": "The trust source for each accepted domain key is visible and auditable.",
+    "candidate_parent_disposition": "DEFERRED_EXTERNAL_PROTOCOL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C093",
+    "parent_id": "P13",
+    "name": "Domain-key provenance and rotation history",
+    "source_basis": "D",
+    "proposed_source_remit": "Specify how domain, selector, key validity, historical evidence, and key replacement affect an email proof's acceptable authentication context.",
+    "source_validation_focus": "A current key lookup cannot silently stand in for unspecified historical authentication evidence.",
+    "candidate_parent_disposition": "DEFERRED_EXTERNAL_PROTOCOL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C094",
+    "parent_id": "P13",
+    "name": "In-circuit SHA-256 body-hash verification",
+    "source_basis": "E",
+    "proposed_source_remit": "Represent the source's body hashing and hash comparison within the selected zero-knowledge circuit.",
+    "source_validation_focus": "A changed authenticated body fails the intended hash relationship.",
+    "candidate_parent_disposition": "DEFERRED_EXTERNAL_PROTOCOL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C095",
+    "parent_id": "P13",
+    "name": "In-circuit RSA DKIM-signature verification",
+    "source_basis": "E",
+    "proposed_source_remit": "Specify the RSA verification assertion named in the article, with its exact accepted inputs and cryptographic constraints.",
+    "source_validation_focus": "The circuit's authenticated bytes and public key match the declared email proof predicate.",
+    "candidate_parent_disposition": "DEFERRED_EXTERNAL_PROTOCOL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C096",
+    "parent_id": "P13",
+    "name": "Private witness and proving-boundary protection",
+    "source_basis": "D",
+    "proposed_source_remit": "Separate raw email, private extracted fields, domain-key material, and public proof inputs in the proving workflow.",
+    "source_validation_focus": "Private content is not unintentionally exposed through logs, public inputs, or output artifacts.",
+    "candidate_parent_disposition": "DEFERRED_EXTERNAL_PROTOCOL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C097",
+    "parent_id": "P13",
+    "name": "Regex-constrained selective disclosure",
+    "source_basis": "E",
+    "proposed_source_remit": "Define the source-described pattern predicates and which extracted values are public while binding them to the authenticated email data.",
+    "source_validation_focus": "Ambiguous matches or unsigned content cannot silently authorize a different interpretation.",
+    "candidate_parent_disposition": "DEFERRED_EXTERNAL_PROTOCOL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C098",
+    "parent_id": "P13",
+    "name": "ZK-SNARK generation pipeline",
+    "source_basis": "E",
+    "proposed_source_remit": "Orchestrate circuit execution and proof generation with explicit selected circuits, artifacts, input versions, and failure behavior.",
+    "source_validation_focus": "The verifier receives a proof for the intended circuit and public-input encoding.",
+    "candidate_parent_disposition": "DEFERRED_EXTERNAL_PROTOCOL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C099",
+    "parent_id": "P13",
+    "name": "Verification-key management and on-chain verifier",
+    "source_basis": "E",
+    "proposed_source_remit": "Define the selected verification key, contract interface, accepted proof format, and result handling described in the article.",
+    "source_validation_focus": "A proof from a different circuit or authorization domain is rejected.",
+    "candidate_parent_disposition": "DEFERRED_EXTERNAL_PROTOCOL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C100",
+    "parent_id": "P13",
+    "name": "Proof-authorized contract execution and cost adapter",
+    "source_basis": "E",
+    "proposed_source_remit": "Bind successful verification to a narrowly specified action, and expose proving/verification costs for the source's scaling discussion.",
+    "source_validation_focus": "Proof validity alone cannot authorize an unrelated, replayed, or overbroad financial action.",
+    "candidate_parent_disposition": "DEFERRED_EXTERNAL_PROTOCOL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C101",
+    "parent_id": "P14",
+    "name": "Inbox-activation deposit policy",
+    "source_basis": "E",
+    "proposed_source_remit": "Specify the source-described financial activation barrier and its relation to identity creation, withdrawal, and continued inbox use.",
+    "source_validation_focus": "The economic burden on legitimate users and attackers is measured separately.",
+    "candidate_parent_disposition": "LOCAL_ADAPTATION_ONLY",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C102",
+    "parent_id": "P14",
+    "name": "Contribution-based reputation registry",
+    "source_basis": "E",
+    "proposed_source_remit": "Represent the historical contribution and trustworthiness records proposed by the article without assuming reputation is transferable or unforgeable.",
+    "source_validation_focus": "Score inputs, manipulation scenarios, and identity-change effects are explicit.",
+    "candidate_parent_disposition": "LOCAL_ADAPTATION_ONLY",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C103",
+    "parent_id": "P14",
+    "name": "Zero-knowledge identity and uniqueness gate",
+    "source_basis": "E",
+    "proposed_source_remit": "Define the article's candidate private-identity/one-person-one-inbox predicate and the external trust or enrollment assumptions it requires.",
+    "source_validation_focus": "Privacy-preserving proof generation is not equated with established real-person uniqueness.",
+    "candidate_parent_disposition": "LOCAL_ADAPTATION_ONLY",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C104",
+    "parent_id": "P14",
+    "name": "Synthetic-engagement and coordinated-account detection",
+    "source_basis": "D",
+    "proposed_source_remit": "Identify reward-bearing event patterns that the source describes as Sybil farming, with explicit evidence and review boundaries.",
+    "source_validation_focus": "Suspicious activity is distinguishable from proof of abuse and from legitimate automation.",
+    "candidate_parent_disposition": "LOCAL_ADAPTATION_ONLY",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C105",
+    "parent_id": "P14",
+    "name": "Reward-claim fraud review and reconciliation",
+    "source_basis": "D",
+    "proposed_source_remit": "Apply eligibility and duplicate-claim controls before distributing the advertiser-funded rewards described by the article.",
+    "source_validation_focus": "Invalid or duplicated engagement cannot create an unbounded claim on the funded pool.",
+    "candidate_parent_disposition": "LOCAL_ADAPTATION_ONLY",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C106",
+    "parent_id": "P14",
+    "name": "Sybil attack-budget and return model",
+    "source_basis": "D",
+    "proposed_source_remit": "Model identity costs, deposit reuse, engagement fabrication, claim rates, and reward extraction under stated attacker assumptions.",
+    "source_validation_focus": "Resistance claims survive varying attacker cost, scale, and legitimate-user constraints.",
+    "candidate_parent_disposition": "LOCAL_ADAPTATION_ONLY",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C107",
+    "parent_id": "P15",
+    "name": "HTLC-based conditional-postage escrow",
+    "source_basis": "E",
+    "proposed_source_remit": "Specify the article's optional channel-based stamp lock and the conditions for recipient validation, payment, timeout, or release.",
+    "source_validation_focus": "This escrow model is not silently imposed on non-HTLC postage branches.",
+    "candidate_parent_disposition": "LOCAL_ADAPTATION_ONLY",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C108",
+    "parent_id": "P15",
+    "name": "Timelock and liquidity-exposure monitoring",
+    "source_basis": "E",
+    "proposed_source_remit": "Track duration, amount, path exposure, and unresolved locks for the source-described stalling attacks.",
+    "source_validation_focus": "A stalled communication cannot hide the amount and duration of the sender's exposure.",
+    "candidate_parent_disposition": "LOCAL_ADAPTATION_ONLY",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C109",
+    "parent_id": "P15",
+    "name": "HTLC-GP griefing-penalty mechanism",
+    "source_basis": "E",
+    "proposed_source_remit": "Define the candidate bonded penalty and accusation/settlement conditions referenced by the article.",
+    "source_validation_focus": "Penalties target the defined stalling behavior without assuming honest counterparties.",
+    "candidate_parent_disposition": "LOCAL_ADAPTATION_ONLY",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C110",
+    "parent_id": "P15",
+    "name": "Sequential Bayesian adversarial game model",
+    "source_basis": "E",
+    "proposed_source_remit": "Represent sequential decisions, incomplete information, bribe budgets, and route-length choices in the source's griefing analysis.",
+    "source_validation_focus": "Payoffs, information sets, attacker budgets, and equilibrium claims are explicitly stated.",
+    "candidate_parent_disposition": "LOCAL_ADAPTATION_ONLY",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C111",
+    "parent_id": "P15",
+    "name": "Gas-estimation limits and loop caps",
+    "source_basis": "E",
+    "proposed_source_remit": "Specify the resource controls named in the article for computationally bounded message and contract processing.",
+    "source_validation_focus": "Adversarial input cannot trigger work beyond the stated per-operation budget.",
+    "candidate_parent_disposition": "LOCAL_ADAPTATION_ONLY",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C112",
+    "parent_id": "P15",
+    "name": "State-reverting post-call safety checks",
+    "source_basis": "E",
+    "proposed_source_remit": "Define the source's proposed post-call validation and failure behavior around financially consequential operations.",
+    "source_validation_focus": "A failed postcondition does not leave an unintended charge or partially applied action.",
+    "candidate_parent_disposition": "LOCAL_ADAPTATION_ONLY",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C113",
+    "parent_id": "P15",
+    "name": "Time-jacking and clock-assumption controls",
+    "source_basis": "E",
+    "proposed_source_remit": "Document how message windows, contract timeouts, and node timestamps are validated in the article's time-manipulation threat model.",
+    "source_validation_focus": "Clock disagreement cannot silently invalidate the economic or replay policy.",
+    "candidate_parent_disposition": "LOCAL_ADAPTATION_ONLY",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 49,
+      "BLOCKED": 1
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 1,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C114",
+    "parent_id": "P15",
+    "name": "Trusted-provider infrastructure-abuse inspection",
+    "source_basis": "E",
+    "proposed_source_remit": "Separate infrastructure authenticity from recipient safety when reviewing the source's trusted-domain phishing and wallet-connection scenarios.",
+    "source_validation_focus": "A valid domain signature alone is not treated as a verdict that content is safe.",
+    "candidate_parent_disposition": "LOCAL_ADAPTATION_ONLY",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C115",
+    "parent_id": "P15",
+    "name": "Sender/recipient partial-ledger discrepancy analysis",
+    "source_basis": "E",
+    "proposed_source_remit": "Represent the source's Salesforce patent summary as a research candidate requiring exact comparison fields, provenance, and classification rules.",
+    "source_validation_focus": "The comparison distinguishes altered data from missing data, benign transformation, and unsupported attribution.",
+    "candidate_parent_disposition": "LOCAL_ADAPTATION_ONLY",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C116",
+    "parent_id": "P16",
+    "name": "Inbox financial-intent and wallet interface",
+    "source_basis": "E",
+    "proposed_source_remit": "Represent the article's non-custodial inbox-finance scenario with a clear boundary between displaying a message and authorizing an account operation.",
+    "source_validation_focus": "Reading or rendering an email cannot implicitly approve an unrelated spend.",
+    "candidate_parent_disposition": "DEFERRED_EXTERNAL_PROTOCOL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C117",
+    "parent_id": "P16",
+    "name": "Tokenized invoice intake",
+    "source_basis": "E",
+    "proposed_source_remit": "Specify how a received invoice identifies requested value, asset, beneficiary, and supporting message evidence in the proposed application.",
+    "source_validation_focus": "An invoice is treated as a request, not an already-authorized payment instruction.",
+    "candidate_parent_disposition": "DEFERRED_EXTERNAL_PROTOCOL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C118",
+    "parent_id": "P16",
+    "name": "Reply-triggered payment authorization",
+    "source_basis": "E",
+    "proposed_source_remit": "Define the article's reply-to-pay scenario through explicit delegated or interactive approval and action binding.",
+    "source_validation_focus": "The authenticated reply binds the intended invoice and cannot authorize arbitrary follow-on actions.",
+    "candidate_parent_disposition": "DEFERRED_EXTERNAL_PROTOCOL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C119",
+    "parent_id": "P16",
+    "name": "PayMail two-step transfer confirmation",
+    "source_basis": "E",
+    "proposed_source_remit": "Record the article's two-step, zero-gas test-transaction behavior as a candidate transfer-verification flow needing an exact provider profile.",
+    "source_validation_focus": "A test step, user confirmation, and asset transfer have separate outcomes and liabilities.",
+    "candidate_parent_disposition": "DEFERRED_EXTERNAL_PROTOCOL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C120",
+    "parent_id": "P16",
+    "name": "On-chain event notification subscriptions",
+    "source_basis": "E",
+    "proposed_source_remit": "Specify the source's wallet-associated notifications for events such as liquidation alerts and NFT-related announcements.",
+    "source_validation_focus": "Critical notifications have explicit timeliness, routing, and consent requirements rather than assumed delivery.",
+    "candidate_parent_disposition": "DEFERRED_EXTERNAL_PROTOCOL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C121",
+    "parent_id": "P17",
+    "name": "Correspondence and content-commitment registry",
+    "source_basis": "D",
+    "proposed_source_remit": "Define stable references linking messages, content representations, proof artifacts, and external correspondence records.",
+    "source_validation_focus": "A commitment identifies a representation and does not by itself prove delivery or truth.",
+    "candidate_parent_disposition": "LOCAL_CORE_PARTIAL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C122",
+    "parent_id": "P17",
+    "name": "Send, receipt, and delivery-event evidence capture",
+    "source_basis": "D",
+    "proposed_source_remit": "Separate the events the article discusses into explicitly evidenced send, relay acceptance, recipient receipt, and externally reported delivery records.",
+    "source_validation_focus": "Each claimed event names its observing authority and supporting evidence.",
+    "candidate_parent_disposition": "LOCAL_CORE_PARTIAL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C123",
+    "parent_id": "P17",
+    "name": "Selective-disclosure audit evidence",
+    "source_basis": "E",
+    "proposed_source_remit": "Define application-specific audit predicates for correspondence while minimizing disclosure of message content and unrelated parties.",
+    "source_validation_focus": "A proof's public claim is no broader than its authenticated predicate and external evidence.",
+    "candidate_parent_disposition": "LOCAL_CORE_PARTIAL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C124",
+    "parent_id": "P17",
+    "name": "Personal-data placement and visibility register",
+    "source_basis": "D",
+    "proposed_source_remit": "Classify message bodies, headers, account links, receipts, and commitments by proposed on-chain/off-chain placement and access policy.",
+    "source_validation_focus": "Persistent metadata and identifiers are considered, not only message bodies.",
+    "candidate_parent_disposition": "LOCAL_CORE_PARTIAL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 1,
+    "states": {
+      "NOT_ASSESSED": 48,
+      "BLOCKED": 2
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 1,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C125",
+    "parent_id": "P17",
+    "name": "Retention and erasure-request workflow",
+    "source_basis": "E",
+    "proposed_source_remit": "Represent the article's conflict between persistent ledgers and deletion requirements as a lifecycle design and validation workstream.",
+    "source_validation_focus": "Claimed deletion behavior is tested against replicas, exports, indexes, keys, and immutable records.",
+    "candidate_parent_disposition": "LOCAL_CORE_PARTIAL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C126",
+    "parent_id": "P17",
+    "name": "Data Block Matrix candidate integrity layer",
+    "source_basis": "E",
+    "proposed_source_remit": "Preserve the source's proposed erasable off-chain approach as an optional research component with explicitly scoped timestamp and integrity properties.",
+    "source_validation_focus": "Remaining-data integrity and permitted erasure are independently demonstrated for the selected design.",
+    "candidate_parent_disposition": "LOCAL_CORE_PARTIAL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C127",
+    "parent_id": "P17",
+    "name": "Controlled disclosure and discovery export",
+    "source_basis": "D",
+    "proposed_source_remit": "Define approved roles, requested evidence scope, and auditable export of correspondence evidence for the article's institutional-use scenarios.",
+    "source_validation_focus": "A disclosure action exposes only the authorized evidence and records its provenance.",
+    "candidate_parent_disposition": "LOCAL_CORE_PARTIAL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C128",
+    "parent_id": "P17",
+    "name": "Clinical TEFCA and PHI integration profile",
+    "source_basis": "E",
+    "proposed_source_remit": "Keep the article's clinical interoperability example as an optional domain-specific requirements profile requiring separate specialist review.",
+    "source_validation_focus": "No healthcare compliance claim is made solely from blockchain or proof-system selection.",
+    "candidate_parent_disposition": "LOCAL_CORE_PARTIAL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C129",
+    "parent_id": "P18",
+    "name": "Source-claim and protocol-version traceability",
+    "source_basis": "D",
+    "proposed_source_remit": "Map every selected component to the article, candidate primary documentation, version evidence, and unresolved claims without treating bibliography entries as verified facts.",
+    "source_validation_focus": "Reported commercial behavior, dated assertions, and protocol relationships have explicit verification status.",
+    "candidate_parent_disposition": "LOCAL_CORE_PARTIAL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C130",
+    "parent_id": "P18",
+    "name": "Alternative-model selection and compatibility review",
+    "source_basis": "D",
+    "proposed_source_remit": "Choose compatible postage and transport branches, identifying intentionally excluded models and the reasons for each composition decision.",
+    "source_validation_focus": "A build does not accidentally require every example in the article simultaneously.",
+    "candidate_parent_disposition": "LOCAL_CORE_PARTIAL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C131",
+    "parent_id": "P18",
+    "name": "Cryptographic proof-obligation register",
+    "source_basis": "D",
+    "proposed_source_remit": "State exactly what signatures, hashes, ZK proofs, receipts, timestamps, and identity checks prove and what remains outside those proofs.",
+    "source_validation_focus": "Domain authentication is not silently promoted to content truth, human identity, or delivery evidence.",
+    "candidate_parent_disposition": "LOCAL_CORE_PARTIAL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C132",
+    "parent_id": "P18",
+    "name": "Adversarial protocol and transaction test harness",
+    "source_basis": "D",
+    "proposed_source_remit": "Design tests for replay, invalid proofs, hostile recipients, conflicting UTXO spends, sponsor abuse, Sybil rewards, and conditional-lock stalling.",
+    "source_validation_focus": "Each tested attack has a stated invariant, observable result, and reproducible fixture.",
+    "candidate_parent_disposition": "LOCAL_CORE_PARTIAL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 46,
+      "BLOCKED": 4
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 4,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C133",
+    "parent_id": "P18",
+    "name": "Cryptoeconomic solvency and incentive simulation",
+    "source_basis": "D",
+    "proposed_source_remit": "Model postage demand, spammer returns, sponsor depletion, reward obligations, operator costs, and locked collateral for each selected branch.",
+    "source_validation_focus": "Anti-spam and sustainability claims are sensitive to explicit assumptions rather than slogans.",
+    "candidate_parent_disposition": "LOCAL_CORE_PARTIAL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 50
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 0,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C134",
+    "parent_id": "P18",
+    "name": "Capacity, proof cost, and latency evaluation",
+    "source_basis": "D",
+    "proposed_source_remit": "Benchmark the selected system against defined workloads, including message size, proof verification, gas use, quota boundaries, and global-latency claims.",
+    "source_validation_focus": "Source-reported timings and gas figures are treated as claims to test, not achieved results.",
+    "candidate_parent_disposition": "LOCAL_CORE_PARTIAL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 0,
+    "states": {
+      "NOT_ASSESSED": 48,
+      "BLOCKED": 2
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 2,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C135",
+    "parent_id": "P18",
+    "name": "Interoperability, migration, and shutdown exercises",
+    "source_basis": "D",
+    "proposed_source_remit": "Test email/wallet mapping, exports, storage recovery, key continuity, provider loss, and selected cross-protocol boundaries.",
+    "source_validation_focus": "A system passes only the scenarios actually executed under recorded conditions.",
+    "candidate_parent_disposition": "LOCAL_CORE_PARTIAL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 1,
+    "states": {
+      "NOT_ASSESSED": 47,
+      "BLOCKED": 3
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 2,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  },
+  {
+    "component_id": "BVE-C136",
+    "parent_id": "P18",
+    "name": "Reproducible specifications and institutional release review",
+    "source_basis": "D",
+    "proposed_source_remit": "Assemble versioned interfaces, threat decisions, test evidence, unresolved risks, and component ownership into a reviewable acceptance package.",
+    "source_validation_focus": "No implementation, audit, benchmark, or compliance claim is issued without corresponding evidence.",
+    "candidate_parent_disposition": "LOCAL_CORE_PARTIAL",
+    "controls": 50,
+    "runtime_or_design_evidence_packets": 1,
+    "states": {
+      "NOT_ASSESSED": 48,
+      "BLOCKED": 2
+    },
+    "selection": "UNDECIDED",
+    "gate_state": "NOT_EVALUATED",
+    "independent_approval": null,
+    "historical_only_blocked_records": 1,
+    "candidate_version": "2.1.0-local.1",
+    "run_id": "LOCAL127-R03"
+  }
+]

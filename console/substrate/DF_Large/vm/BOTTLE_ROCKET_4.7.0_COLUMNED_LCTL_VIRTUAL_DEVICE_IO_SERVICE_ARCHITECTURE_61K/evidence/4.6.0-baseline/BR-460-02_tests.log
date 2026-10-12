@@ -1,0 +1,3 @@
+COMMAND .build/t460 (lazy allocation/normalization vectors)
+EXIT 0
+PASS Small/zero values allocate no limb buffer; normalization shrinks representation.

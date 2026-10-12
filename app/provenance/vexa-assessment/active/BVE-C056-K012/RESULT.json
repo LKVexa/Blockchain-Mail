@@ -1,0 +1,91 @@
+{
+  "schema": "BVE/CONTROL_ASSESSMENT/1",
+  "control_id": "BVE-C056-K012",
+  "component_id": "BVE-C056",
+  "parent_id": "P08",
+  "source_control_sha256": "2bc6295f1d5b1870671b1ba071a5c2e5eafc22c0956a79d1ea40722727756d80",
+  "source_gate": "G2_TECHNICAL",
+  "candidate_parent_disposition": "LOCAL_CORE_PARTIAL",
+  "candidate_version": "2.1.0-local.1",
+  "candidate_code_tree_sha256": "04fb8e21dece4ae8ee2a7bbeb7666bcc5d563b6ffd6a150761f339b5554c8ac4",
+  "run_id": "LOCAL127-R03",
+  "revision": 3,
+  "mode": "REMEDIATE_AND_VERIFY",
+  "component_selection": "UNDECIDED",
+  "applicability": "UNDECIDED",
+  "status": "BLOCKED",
+  "workflow_execution": "STOPPED",
+  "named_owner": null,
+  "independent_reviewer": null,
+  "reviewed_at": null,
+  "actual_evidence_refs": [
+    {
+      "path": "evidence/delivery/TEST_SUMMARY.json",
+      "sha256": "fe6bb6260db17b893df82b9df8df318c804e89318830a68810fa922af4a6eaf4",
+      "tests": [
+        {
+          "name": "T064 boundary ending in two hyphens has a distinct closing delimiter",
+          "outcome": "PASS"
+        },
+        {
+          "name": "T065 MIME boundary transport padding is tolerated",
+          "outcome": "PASS"
+        },
+        {
+          "name": "T047 SMTP MIME attachment round trip and forged header rejection",
+          "outcome": "PASS"
+        },
+        {
+          "name": "T037 MIME round trip handles Unicode text and binary attachment",
+          "outcome": "PASS"
+        }
+      ]
+    },
+    {
+      "path": "evidence/delivery/TESTS.tap",
+      "sha256": "9d9d90bc034f7b1730b2bbe6642c91ee741097a0030df25dd143d3b37e58ff3c"
+    },
+    {
+      "path": "evidence/continuation/ORACLE.md",
+      "sha256": "a7cbe004ef06274025b00ad5fda56da1df8d49972a99f75863198c94ccd5089a"
+    },
+    {
+      "path": "docs/API.md",
+      "sha256": "e597b599aefea17f39bff9add5a621d6c1bb2675b8d22f3b0cf8fed523ceb2d9"
+    }
+  ],
+  "observed_result": {
+    "kind": "BOUNDED_CONTINUATION_EVIDENCE",
+    "scope": "Valid bounded multipart text/plain-plus-binary-attachment fixtures and delimiter variations parse and round-trip.",
+    "test_outcomes": [
+      {
+        "name": "T064 boundary ending in two hyphens has a distinct closing delimiter",
+        "outcome": "PASS"
+      },
+      {
+        "name": "T065 MIME boundary transport padding is tolerated",
+        "outcome": "PASS"
+      },
+      {
+        "name": "T047 SMTP MIME attachment round trip and forged header rejection",
+        "outcome": "PASS"
+      },
+      {
+        "name": "T037 MIME round trip handles Unicode text and binary attachment",
+        "outcome": "PASS"
+      }
+    ],
+    "complete_source_criterion_claimed": false
+  },
+  "risk_exception": null,
+  "blocking_issues": [
+    "Source component/applicability decisions and required independent review remain unassigned.",
+    "No rich-HTML rendering, complete MIME conformance, vendor interoperability or approved universal schema is claimed."
+  ],
+  "limitations": [
+    "No rich-HTML rendering, complete MIME conformance, vendor interoperability or approved universal schema is claimed.",
+    "Actual local implementation tests are separate from source-control acceptance."
+  ],
+  "next_action": "Have an authorized independent reviewer inspect the preserved exact criterion, current artifact and cited fixtures; close the listed scope/oracle gaps before any full-control PASS.",
+  "evidence_validity": "CURRENT_BOUNDED_PREDICATES_ONLY"
+}

@@ -1,0 +1,9 @@
+{
+  "preflight": "PASS",
+  "node": "v22.16.0",
+  "sqlite": "3.49.1",
+  "platform": "linux",
+  "arch": "x64",
+  "working_root": "/mnt/data/VexaGlyph127_3.0.0",
+  "scope": "Required runtime capabilities only. No network, deployment or independent security certification."
+}

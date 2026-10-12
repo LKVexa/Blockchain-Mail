@@ -1,0 +1,81 @@
+{
+  "schema": "BVE/EVIDENCE/1",
+  "control_id": "BVE-C135-K016",
+  "run_id": "LOCAL127-R03",
+  "candidate_version": "2.1.0-local.1",
+  "candidate_code_tree_sha256": "04fb8e21dece4ae8ee2a7bbeb7666bcc5d563b6ffd6a150761f339b5554c8ac4",
+  "source_record_sha256": "19f76e9ab8905796d3caae32f851a3dedcc8e406e4f415e6b48b1efc634d09c3",
+  "source_instruction": {
+    "control_id": "BVE-C135-K016",
+    "original_member": "BVE_PW_1.0.0/P18/C135/K016.md",
+    "sha256": "2e4ff68faf6f946f946608809f1b2b9bedd25ff51198896d529d13e797c16863",
+    "preserved_verbatim": true
+  },
+  "evidence_required": {
+    "kind": "nominal scenario result with reproducible inputs",
+    "proposed_location": "evidence/C135/K016/",
+    "required_fields": [
+      "control_id",
+      "candidate_version",
+      "applicability_decision",
+      "method",
+      "input_or_scenario_refs",
+      "expected_result",
+      "observed_result",
+      "artifact_refs_and_digests",
+      "limitations",
+      "executor",
+      "independent_reviewer",
+      "reviewed_at"
+    ]
+  },
+  "method": "Local synthetic implementation tests; additional controlled upgrade or mock DOM fixture where explicitly linked. No independent review performed.",
+  "expected_result": "Validate a complete supported migration.",
+  "observed_result": "The separate actual 2.0.0-to-2.1.0 exercise reconciles eight messages/attachments, balances, old checkpoint, retry and old reserved stamp, then restores nine deliveries.",
+  "artifacts": [
+    {
+      "path": "evidence/delivery/TEST_SUMMARY.json",
+      "sha256": "fe6bb6260db17b893df82b9df8df318c804e89318830a68810fa922af4a6eaf4",
+      "tests": [
+        {
+          "name": "T032 private SQLite backup restores to a new location, preserving chain and mail",
+          "outcome": "PASS"
+        },
+        {
+          "name": "T058 candidate schema-2 export preserves mail and refuses source/path mutation",
+          "outcome": "PASS"
+        }
+      ]
+    },
+    {
+      "path": "evidence/delivery/TESTS.tap",
+      "sha256": "9d9d90bc034f7b1730b2bbe6642c91ee741097a0030df25dd143d3b37e58ff3c"
+    },
+    {
+      "path": "evidence/continuation/ORACLE.md",
+      "sha256": "a7cbe004ef06274025b00ad5fda56da1df8d49972a99f75863198c94ccd5089a"
+    },
+    {
+      "path": "docs/UPGRADE_COMPATIBILITY.md",
+      "sha256": "06b2f4fd364bda7171f02dde487c43771aaa48fd8496484db3a464680a84d2b9"
+    },
+    {
+      "path": "evidence/delivery/UPGRADE_SUMMARY.json",
+      "sha256": "46846a819539c40bbe5b9d815b871d5d8d999854b1a929e1738129c0cc2b96bb"
+    }
+  ],
+  "environment": {
+    "node": "v22.16.0",
+    "platform": "linux",
+    "arch": "x64",
+    "cpus": 5
+  },
+  "parameters": "LOCAL127_CREDIT_V1; authored lab defaults and fixture parameters in named test files; institutional approval absent.",
+  "executor": "ChatGPT automated test execution in the working container",
+  "independent_reviewer": null,
+  "recorded_at": "2026-10-06T20:43:14.279217+00:00",
+  "limitations": [
+    "Only the documented same-format synthetic upgrade is validated. Original Grok live-mail import, arbitrary user data, Windows migration and institutional review remain open.",
+    "Actual local implementation tests are separate from source-control acceptance."
+  ]
+}

@@ -1,0 +1,505 @@
+﻿{
+    "status":  "PASS",
+    "total":  67,
+    "passed":  67,
+    "failed":  0,
+    "native_execution":  false,
+    "browser_execution":  false,
+    "network_requests":  false,
+    "os_confinement_verified":  false,
+    "websocket_interception_verified":  false,
+    "managed_source_compile_requested":  false,
+    "source_hashes":  [
+                          {
+                              "path":  "host/JA21VirtualBrowser.cs",
+                              "sha256":  "1d68ad7c34c46e26c0d87ba8de9f96997c89ffc5819e2bcfbc79608d9d632f0b"
+                          },
+                          {
+                              "path":  "host/LiveWebBridge.cs",
+                              "sha256":  "b54fab0c71b3e431a53c5cd5dc2b852c33bee9530f3103077d7581a497857e61"
+                          },
+                          {
+                              "path":  "host/Start-Console.ps1",
+                              "sha256":  "4103a12007a257b42453a56f1e888bb574691a5ab40ab40052fc0005c27c5617"
+                          },
+                          {
+                              "path":  "tools/Test-ConsolePolicy.ps1",
+                              "sha256":  "e1a3a47aa49dec9b08d02eefcad9f62ae738fd6b5f94870c4f05eec0b551d59a"
+                          },
+                          {
+                              "path":  "tools/CONSOLE_HARDENING.txt",
+                              "sha256":  "01000da6b2e99e831fbfed68877a0b0dc1b5afee41e58893d96453ae7e84eede"
+                          }
+                      ],
+    "cases":  [
+                  {
+                      "label":  "C# allow http://127.0.0.1:8788/",
+                      "expected_allowed":  true,
+                      "allowed":  true,
+                      "passed":  true,
+                      "reason":  null
+                  },
+                  {
+                      "label":  "Launcher allow http://127.0.0.1:8788/",
+                      "expected_allowed":  true,
+                      "allowed":  true,
+                      "passed":  true,
+                      "reason":  null
+                  },
+                  {
+                      "label":  "C# allow http://127.0.0.1:8791/api?q=one#two",
+                      "expected_allowed":  true,
+                      "allowed":  true,
+                      "passed":  true,
+                      "reason":  null
+                  },
+                  {
+                      "label":  "Launcher allow http://127.0.0.1:8791/api?q=one#two",
+                      "expected_allowed":  true,
+                      "allowed":  true,
+                      "passed":  true,
+                      "reason":  null
+                  },
+                  {
+                      "label":  "C# deny https://127.0.0.1:8788/",
+                      "expected_allowed":  false,
+                      "allowed":  false,
+                      "passed":  true,
+                      "reason":  "Console addresses must use an explicitly allowed literal 127.0.0.1 HTTP origin."
+                  },
+                  {
+                      "label":  "Launcher deny https://127.0.0.1:8788/",
+                      "expected_allowed":  false,
+                      "allowed":  false,
+                      "passed":  true,
+                      "reason":  "Console addresses must use a literal 127.0.0.1 HTTP origin and a canonical decimal port."
+                  },
+                  {
+                      "label":  "C# deny http://127.0.0.1:8790/",
+                      "expected_allowed":  false,
+                      "allowed":  false,
+                      "passed":  true,
+                      "reason":  "Console addresses must use an explicitly allowed literal 127.0.0.1 HTTP origin."
+                  },
+                  {
+                      "label":  "Launcher deny http://127.0.0.1:8790/",
+                      "expected_allowed":  false,
+                      "allowed":  false,
+                      "passed":  true,
+                      "reason":  "Console start_url is outside the configured local origins."
+                  },
+                  {
+                      "label":  "C# deny http://127.0.0.2:8788/",
+                      "expected_allowed":  false,
+                      "allowed":  false,
+                      "passed":  true,
+                      "reason":  "Console addresses must use an explicitly allowed literal 127.0.0.1 HTTP origin."
+                  },
+                  {
+                      "label":  "Launcher deny http://127.0.0.2:8788/",
+                      "expected_allowed":  false,
+                      "allowed":  false,
+                      "passed":  true,
+                      "reason":  "Console addresses must use a literal 127.0.0.1 HTTP origin and a canonical decimal port."
+                  },
+                  {
+                      "label":  "C# deny http://localhost:8788/",
+                      "expected_allowed":  false,
+                      "allowed":  false,
+                      "passed":  true,
+                      "reason":  "Console addresses must use an explicitly allowed literal 127.0.0.1 HTTP origin."
+                  },
+                  {
+                      "label":  "Launcher deny http://localhost:8788/",
+                      "expected_allowed":  false,
+                      "allowed":  false,
+                      "passed":  true,
+                      "reason":  "Console addresses must use a literal 127.0.0.1 HTTP origin and a canonical decimal port."
+                  },
+                  {
+                      "label":  "C# deny http://example.invalid/",
+                      "expected_allowed":  false,
+                      "allowed":  false,
+                      "passed":  true,
+                      "reason":  "Console addresses must use an explicitly allowed literal 127.0.0.1 HTTP origin."
+                  },
+                  {
+                      "label":  "Launcher deny http://example.invalid/",
+                      "expected_allowed":  false,
+                      "allowed":  false,
+                      "passed":  true,
+                      "reason":  "Console addresses must use a literal 127.0.0.1 HTTP origin and a canonical decimal port."
+                  },
+                  {
+                      "label":  "C# deny https://example.invalid/",
+                      "expected_allowed":  false,
+                      "allowed":  false,
+                      "passed":  true,
+                      "reason":  "Console addresses must use an explicitly allowed literal 127.0.0.1 HTTP origin."
+                  },
+                  {
+                      "label":  "Launcher deny https://example.invalid/",
+                      "expected_allowed":  false,
+                      "allowed":  false,
+                      "passed":  true,
+                      "reason":  "Console addresses must use a literal 127.0.0.1 HTTP origin and a canonical decimal port."
+                  },
+                  {
+                      "label":  "C# deny http://8.8.8.8/",
+                      "expected_allowed":  false,
+                      "allowed":  false,
+                      "passed":  true,
+                      "reason":  "Console addresses must use an explicitly allowed literal 127.0.0.1 HTTP origin."
+                  },
+                  {
+                      "label":  "Launcher deny http://8.8.8.8/",
+                      "expected_allowed":  false,
+                      "allowed":  false,
+                      "passed":  true,
+                      "reason":  "Console addresses must use a literal 127.0.0.1 HTTP origin and a canonical decimal port."
+                  },
+                  {
+                      "label":  "C# deny http://192.168.0.1/",
+                      "expected_allowed":  false,
+                      "allowed":  false,
+                      "passed":  true,
+                      "reason":  "Console addresses must use an explicitly allowed literal 127.0.0.1 HTTP origin."
+                  },
+                  {
+                      "label":  "Launcher deny http://192.168.0.1/",
+                      "expected_allowed":  false,
+                      "allowed":  false,
+                      "passed":  true,
+                      "reason":  "Console addresses must use a literal 127.0.0.1 HTTP origin and a canonical decimal port."
+                  },
+                  {
+                      "label":  "C# deny http://[::1]:8788/",
+                      "expected_allowed":  false,
+                      "allowed":  false,
+                      "passed":  true,
+                      "reason":  "Console addresses must use an explicitly allowed literal 127.0.0.1 HTTP origin."
+                  },
+                  {
+                      "label":  "Launcher deny http://[::1]:8788/",
+                      "expected_allowed":  false,
+                      "allowed":  false,
+                      "passed":  true,
+                      "reason":  "Console addresses must use a literal 127.0.0.1 HTTP origin and a canonical decimal port."
+                  },
+                  {
+                      "label":  "C# deny http://user@127.0.0.1:8788/",
+                      "expected_allowed":  false,
+                      "allowed":  false,
+                      "passed":  true,
+                      "reason":  "Console addresses must use an explicitly allowed literal 127.0.0.1 HTTP origin."
+                  },
+                  {
+                      "label":  "Launcher deny http://user@127.0.0.1:8788/",
+                      "expected_allowed":  false,
+                      "allowed":  false,
+                      "passed":  true,
+                      "reason":  "Console addresses must use a literal 127.0.0.1 HTTP origin and a canonical decimal port."
+                  },
+                  {
+                      "label":  "C# deny http://2130706433:8788/",
+                      "expected_allowed":  false,
+                      "allowed":  false,
+                      "passed":  true,
+                      "reason":  "Console addresses must use an explicitly allowed literal 127.0.0.1 HTTP origin."
+                  },
+                  {
+                      "label":  "Launcher deny http://2130706433:8788/",
+                      "expected_allowed":  false,
+                      "allowed":  false,
+                      "passed":  true,
+                      "reason":  "Console addresses must use a literal 127.0.0.1 HTTP origin and a canonical decimal port."
+                  },
+                  {
+                      "label":  "C# deny http://0x7f000001:8788/",
+                      "expected_allowed":  false,
+                      "allowed":  false,
+                      "passed":  true,
+                      "reason":  "Console addresses must use an explicitly allowed literal 127.0.0.1 HTTP origin."
+                  },
+                  {
+                      "label":  "Launcher deny http://0x7f000001:8788/",
+                      "expected_allowed":  false,
+                      "allowed":  false,
+                      "passed":  true,
+                      "reason":  "Console addresses must use a literal 127.0.0.1 HTTP origin and a canonical decimal port."
+                  },
+                  {
+                      "label":  "C# deny http://127.1:8788/",
+                      "expected_allowed":  false,
+                      "allowed":  false,
+                      "passed":  true,
+                      "reason":  "Console addresses must use an explicitly allowed literal 127.0.0.1 HTTP origin."
+                  },
+                  {
+                      "label":  "Launcher deny http://127.1:8788/",
+                      "expected_allowed":  false,
+                      "allowed":  false,
+                      "passed":  true,
+                      "reason":  "Console addresses must use a literal 127.0.0.1 HTTP origin and a canonical decimal port."
+                  },
+                  {
+                      "label":  "C# deny http://127.0.0.01:8788/",
+                      "expected_allowed":  false,
+                      "allowed":  false,
+                      "passed":  true,
+                      "reason":  "Console addresses must use an explicitly allowed literal 127.0.0.1 HTTP origin."
+                  },
+                  {
+                      "label":  "Launcher deny http://127.0.0.01:8788/",
+                      "expected_allowed":  false,
+                      "allowed":  false,
+                      "passed":  true,
+                      "reason":  "Console addresses must use a literal 127.0.0.1 HTTP origin and a canonical decimal port."
+                  },
+                  {
+                      "label":  "C# deny http://127.0.0.1:08788/",
+                      "expected_allowed":  false,
+                      "allowed":  false,
+                      "passed":  true,
+                      "reason":  "Console addresses must use an explicitly allowed literal 127.0.0.1 HTTP origin."
+                  },
+                  {
+                      "label":  "Launcher deny http://127.0.0.1:08788/",
+                      "expected_allowed":  false,
+                      "allowed":  false,
+                      "passed":  true,
+                      "reason":  "Console addresses must use a literal 127.0.0.1 HTTP origin and a canonical decimal port."
+                  },
+                  {
+                      "label":  "C# deny http://127.0.0.1:0/",
+                      "expected_allowed":  false,
+                      "allowed":  false,
+                      "passed":  true,
+                      "reason":  "Console addresses must use an explicitly allowed literal 127.0.0.1 HTTP origin."
+                  },
+                  {
+                      "label":  "Launcher deny http://127.0.0.1:0/",
+                      "expected_allowed":  false,
+                      "allowed":  false,
+                      "passed":  true,
+                      "reason":  "Console addresses must use a literal 127.0.0.1 HTTP origin and a canonical decimal port."
+                  },
+                  {
+                      "label":  "C# deny http://127.0.0.1:65536/",
+                      "expected_allowed":  false,
+                      "allowed":  false,
+                      "passed":  true,
+                      "reason":  "Invalid URI: Invalid port specified."
+                  },
+                  {
+                      "label":  "Launcher deny http://127.0.0.1:65536/",
+                      "expected_allowed":  false,
+                      "allowed":  false,
+                      "passed":  true,
+                      "reason":  "Console address is invalid or has credentials."
+                  },
+                  {
+                      "label":  "C# deny http://127.0.0.1.:8788/",
+                      "expected_allowed":  false,
+                      "allowed":  false,
+                      "passed":  true,
+                      "reason":  "Console addresses must use an explicitly allowed literal 127.0.0.1 HTTP origin."
+                  },
+                  {
+                      "label":  "Launcher deny http://127.0.0.1.:8788/",
+                      "expected_allowed":  false,
+                      "allowed":  false,
+                      "passed":  true,
+                      "reason":  "Console addresses must use a literal 127.0.0.1 HTTP origin and a canonical decimal port."
+                  },
+                  {
+                      "label":  "C# deny http://127.0.0.1:8788\\@example.invalid/",
+                      "expected_allowed":  false,
+                      "allowed":  false,
+                      "passed":  true,
+                      "reason":  "Invalid URI: Invalid port specified."
+                  },
+                  {
+                      "label":  "Launcher deny http://127.0.0.1:8788\\@example.invalid/",
+                      "expected_allowed":  false,
+                      "allowed":  false,
+                      "passed":  true,
+                      "reason":  "Console addresses must use a literal 127.0.0.1 HTTP origin and a canonical decimal port."
+                  },
+                  {
+                      "label":  "C# deny file:///C:/Windows/win.ini",
+                      "expected_allowed":  false,
+                      "allowed":  false,
+                      "passed":  true,
+                      "reason":  "Console addresses must use an explicitly allowed literal 127.0.0.1 HTTP origin."
+                  },
+                  {
+                      "label":  "Launcher deny file:///C:/Windows/win.ini",
+                      "expected_allowed":  false,
+                      "allowed":  false,
+                      "passed":  true,
+                      "reason":  "Console addresses must use a literal 127.0.0.1 HTTP origin and a canonical decimal port."
+                  },
+                  {
+                      "label":  "C# deny data:text/html,hello",
+                      "expected_allowed":  false,
+                      "allowed":  false,
+                      "passed":  true,
+                      "reason":  "Console addresses must use an explicitly allowed literal 127.0.0.1 HTTP origin."
+                  },
+                  {
+                      "label":  "Launcher deny data:text/html,hello",
+                      "expected_allowed":  false,
+                      "allowed":  false,
+                      "passed":  true,
+                      "reason":  "Console addresses must use a literal 127.0.0.1 HTTP origin and a canonical decimal port."
+                  },
+                  {
+                      "label":  "C# deny ws://127.0.0.1:8788/",
+                      "expected_allowed":  false,
+                      "allowed":  false,
+                      "passed":  true,
+                      "reason":  "Console addresses must use an explicitly allowed literal 127.0.0.1 HTTP origin."
+                  },
+                  {
+                      "label":  "Launcher deny ws://127.0.0.1:8788/",
+                      "expected_allowed":  false,
+                      "allowed":  false,
+                      "passed":  true,
+                      "reason":  "Console addresses must use a literal 127.0.0.1 HTTP origin and a canonical decimal port."
+                  },
+                  {
+                      "label":  "C# deny about:config",
+                      "expected_allowed":  false,
+                      "allowed":  false,
+                      "passed":  true,
+                      "reason":  "Console addresses must use an explicitly allowed literal 127.0.0.1 HTTP origin."
+                  },
+                  {
+                      "label":  "Launcher deny about:config",
+                      "expected_allowed":  false,
+                      "allowed":  false,
+                      "passed":  true,
+                      "reason":  "Console addresses must use a literal 127.0.0.1 HTTP origin and a canonical decimal port."
+                  },
+                  {
+                      "label":  "Exact blank navigation",
+                      "expected_allowed":  true,
+                      "allowed":  true,
+                      "passed":  true,
+                      "reason":  null
+                  },
+                  {
+                      "label":  "Exact blank launcher",
+                      "expected_allowed":  true,
+                      "allowed":  true,
+                      "passed":  true,
+                      "reason":  null
+                  },
+                  {
+                      "label":  "Blank query denied",
+                      "expected_allowed":  false,
+                      "allowed":  false,
+                      "passed":  true,
+                      "reason":  "Console addresses must use an explicitly allowed literal 127.0.0.1 HTTP origin."
+                  },
+                  {
+                      "label":  "Null navigation denied",
+                      "expected_allowed":  false,
+                      "allowed":  false,
+                      "passed":  true,
+                      "reason":  "Console address is not absolute."
+                  },
+                  {
+                      "label":  "Local blob export allowed",
+                      "expected_allowed":  true,
+                      "allowed":  true,
+                      "passed":  true,
+                      "reason":  null
+                  },
+                  {
+                      "label":  "Public blob export denied",
+                      "expected_allowed":  false,
+                      "allowed":  false,
+                      "passed":  true,
+                      "reason":  "Console addresses must use an explicitly allowed literal 127.0.0.1 HTTP origin."
+                  },
+                  {
+                      "label":  "Opaque blob export denied",
+                      "expected_allowed":  false,
+                      "allowed":  false,
+                      "passed":  true,
+                      "reason":  "Console download has no allowed origin."
+                  },
+                  {
+                      "label":  "Data download denied",
+                      "expected_allowed":  false,
+                      "allowed":  false,
+                      "passed":  true,
+                      "reason":  "Console addresses must use an explicitly allowed literal 127.0.0.1 HTTP origin."
+                  },
+                  {
+                      "label":  "File opt-out ignored in console",
+                      "expected_allowed":  false,
+                      "allowed":  false,
+                      "passed":  true,
+                      "reason":  "Console mode does not open local files."
+                  },
+                  {
+                      "label":  "Malformed configured origin denied",
+                      "expected_allowed":  false,
+                      "allowed":  false,
+                      "passed":  true,
+                      "reason":  "Console addresses must use a literal 127.0.0.1 HTTP origin and a canonical decimal port."
+                  },
+                  {
+                      "label":  "Configured origin path denied",
+                      "expected_allowed":  false,
+                      "allowed":  false,
+                      "passed":  true,
+                      "reason":  "A console origin must contain no path, query or fragment."
+                  },
+                  {
+                      "label":  "Configured origin query denied",
+                      "expected_allowed":  false,
+                      "allowed":  false,
+                      "passed":  true,
+                      "reason":  "A console origin must contain no path, query or fragment."
+                  },
+                  {
+                      "label":  "Configured origin fragment denied",
+                      "expected_allowed":  false,
+                      "allowed":  false,
+                      "passed":  true,
+                      "reason":  "A console origin must contain no path, query or fragment."
+                  },
+                  {
+                      "label":  "Absent allowlist denies network",
+                      "expected_allowed":  false,
+                      "allowed":  false,
+                      "passed":  true,
+                      "reason":  "Console addresses must use an explicitly allowed literal 127.0.0.1 HTTP origin."
+                  },
+                  {
+                      "label":  "Full browser public HTTP policy preserved without DNS",
+                      "expected_allowed":  true,
+                      "allowed":  true,
+                      "passed":  true,
+                      "reason":  null
+                  },
+                  {
+                      "label":  "Full browser default localhost block preserved",
+                      "expected_allowed":  false,
+                      "allowed":  false,
+                      "passed":  true,
+                      "reason":  "Addresses on this machine are outside the JA21 network boundary."
+                  },
+                  {
+                      "label":  "Full browser explicit private opt-in preserved",
+                      "expected_allowed":  true,
+                      "allowed":  true,
+                      "passed":  true,
+                      "reason":  null
+                  }
+              ]
+}

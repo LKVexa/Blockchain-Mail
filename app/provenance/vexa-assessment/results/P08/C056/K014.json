@@ -1,0 +1,91 @@
+{
+  "schema": "BVE/CONTROL_ASSESSMENT/1",
+  "control_id": "BVE-C056-K014",
+  "component_id": "BVE-C056",
+  "parent_id": "P08",
+  "source_control_sha256": "9bc5423aa923f9d69f013c8d48619f5350f8bef03db9bfcc85108e0b2799cb77",
+  "source_gate": "G2_TECHNICAL",
+  "candidate_parent_disposition": "LOCAL_CORE_PARTIAL",
+  "candidate_version": "2.1.0-local.1",
+  "candidate_code_tree_sha256": "04fb8e21dece4ae8ee2a7bbeb7666bcc5d563b6ffd6a150761f339b5554c8ac4",
+  "run_id": "LOCAL127-R03",
+  "revision": 3,
+  "mode": "REMEDIATE_AND_VERIFY",
+  "component_selection": "UNDECIDED",
+  "applicability": "UNDECIDED",
+  "status": "BLOCKED",
+  "workflow_execution": "STOPPED",
+  "named_owner": null,
+  "independent_reviewer": null,
+  "reviewed_at": null,
+  "actual_evidence_refs": [
+    {
+      "path": "evidence/delivery/TEST_SUMMARY.json",
+      "sha256": "fe6bb6260db17b893df82b9df8df318c804e89318830a68810fa922af4a6eaf4",
+      "tests": [
+        {
+          "name": "T064 boundary ending in two hyphens has a distinct closing delimiter",
+          "outcome": "PASS"
+        },
+        {
+          "name": "T065 MIME boundary transport padding is tolerated",
+          "outcome": "PASS"
+        },
+        {
+          "name": "T067 quoted-printable UTF-8 byte escapes decode exactly",
+          "outcome": "PASS"
+        },
+        {
+          "name": "T038 MIME duplicate From, missing boundary and HTML-only bodies are rejected",
+          "outcome": "PASS"
+        }
+      ]
+    },
+    {
+      "path": "evidence/delivery/TESTS.tap",
+      "sha256": "9d9d90bc034f7b1730b2bbe6642c91ee741097a0030df25dd143d3b37e58ff3c"
+    },
+    {
+      "path": "evidence/continuation/ORACLE.md",
+      "sha256": "a7cbe004ef06274025b00ad5fda56da1df8d49972a99f75863198c94ccd5089a"
+    },
+    {
+      "path": "docs/LOCAL_PROFILE.md",
+      "sha256": "48751269b81fe4562f9447ee783cce9cf5bec0f08917597213005d35c27c5dbc"
+    }
+  ],
+  "observed_result": {
+    "kind": "BOUNDED_CONTINUATION_EVIDENCE",
+    "scope": "Text-only/no-attachment messages and multipart text without HTML are handled; unsupported HTML-only bodies are rejected.",
+    "test_outcomes": [
+      {
+        "name": "T064 boundary ending in two hyphens has a distinct closing delimiter",
+        "outcome": "PASS"
+      },
+      {
+        "name": "T065 MIME boundary transport padding is tolerated",
+        "outcome": "PASS"
+      },
+      {
+        "name": "T067 quoted-printable UTF-8 byte escapes decode exactly",
+        "outcome": "PASS"
+      },
+      {
+        "name": "T038 MIME duplicate From, missing boundary and HTML-only bodies are rejected",
+        "outcome": "PASS"
+      }
+    ],
+    "complete_source_criterion_claimed": false
+  },
+  "risk_exception": null,
+  "blocking_issues": [
+    "Source component/applicability decisions and required independent review remain unassigned.",
+    "The selected text-only subset is an authored local design. Source facet/schema approval and independent review remain missing."
+  ],
+  "limitations": [
+    "The selected text-only subset is an authored local design. Source facet/schema approval and independent review remain missing.",
+    "Actual local implementation tests are separate from source-control acceptance."
+  ],
+  "next_action": "Have an authorized independent reviewer inspect the preserved exact criterion, current artifact and cited fixtures; close the listed scope/oracle gaps before any full-control PASS.",
+  "evidence_validity": "CURRENT_BOUNDED_PREDICATES_ONLY"
+}

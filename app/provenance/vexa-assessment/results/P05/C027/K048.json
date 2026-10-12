@@ -1,0 +1,30 @@
+{
+  "schema": "BVE/CONTROL_ASSESSMENT/1",
+  "control_id": "BVE-C027-K048",
+  "component_id": "BVE-C027",
+  "parent_id": "P05",
+  "source_control_sha256": "eadfb251d42ab5ae1eb3833af744cab06a9671c5eb7b21985673e2de2e0e3d71",
+  "source_gate": "G5_ACCEPTANCE",
+  "candidate_parent_disposition": "DEFERRED_EXTERNAL_PROTOCOL",
+  "candidate_version": "2.1.0-local.1",
+  "candidate_code_tree_sha256": "04fb8e21dece4ae8ee2a7bbeb7666bcc5d563b6ffd6a150761f339b5554c8ac4",
+  "run_id": "LOCAL127-R03",
+  "revision": 3,
+  "mode": "REMEDIATE_AND_VERIFY",
+  "component_selection": "UNDECIDED",
+  "applicability": "UNDECIDED",
+  "status": "NOT_ASSESSED",
+  "workflow_execution": "NOT_STARTED",
+  "named_owner": null,
+  "independent_reviewer": null,
+  "reviewed_at": null,
+  "actual_evidence_refs": [],
+  "observed_result": null,
+  "risk_exception": null,
+  "blocking_issues": [],
+  "limitations": [
+    "Original source control preserved unchanged. No blanket PASS from shared tests."
+  ],
+  "next_action": "Bind the selected source profile, exact scenario, authority and reviewer before executing this complete item workflow.",
+  "evidence_validity": "NO_CURRENT_ASSESSMENT"
+}

@@ -1,0 +1,108 @@
+{
+  "schema": "CONSOLE-READINESS-TESTS/1",
+  "console_version": "1.0.2",
+  "createdUtc": "2026-10-11T20:49:37.663Z",
+  "status": "PASS",
+  "scope": "EXACT_PRODUCT_JAVASCRIPT_WITH_INERT_DOM_DOUBLES_ONLY",
+  "total": 20,
+  "passed": 20,
+  "failed": 0,
+  "GUI_started": false,
+  "native_presenter_run": false,
+  "webview_constructed": false,
+  "backend_started": false,
+  "network_requests": false,
+  "live_render_acceptance": false,
+  "sourcePins": [
+    {
+      "path": "host/LiveWebBridge.cs",
+      "sha256": "b54fab0c71b3e431a53c5cd5dc2b852c33bee9530f3103077d7581a497857e61"
+    },
+    {
+      "path": "tools/Test-ConsoleReadiness.mjs",
+      "sha256": "0b881e84daa08c578cbaa1fe5c79e961619cbf101cd49cb94ffb92abadc1cfdc"
+    }
+  ],
+  "checks": [
+    {
+      "name": "Loading document is not presentation readiness",
+      "passed": true
+    },
+    {
+      "name": "Protected bootstrap must expose the actual workspace interface",
+      "passed": true
+    },
+    {
+      "name": "Visible error text without mounted application remains unavailable",
+      "passed": true
+    },
+    {
+      "name": "Unhydrated empty root remains unavailable",
+      "passed": true
+    },
+    {
+      "name": "A placeholder element is not the mounted desk",
+      "passed": true
+    },
+    {
+      "name": "Mounted protected desk with rendered text is available",
+      "passed": true
+    },
+    {
+      "name": "Actual desk index route uses the same mount contract",
+      "passed": true
+    },
+    {
+      "name": "Static mailbox login HTML without installed JS handler is unavailable",
+      "passed": true
+    },
+    {
+      "name": "Mounted mailbox login with handler is available",
+      "passed": true
+    },
+    {
+      "name": "Authenticated mailbox shell remains available when login is hidden",
+      "passed": true
+    },
+    {
+      "name": "Hidden mailbox shell and login are not ready",
+      "passed": true
+    },
+    {
+      "name": "Unlock or error text alone cannot substitute for the app mount",
+      "passed": true
+    },
+    {
+      "name": "Every visited DOM node counts toward the512node cap",
+      "passed": true
+    },
+    {
+      "name": "Script/noscript/hidden text does not count as visible application content",
+      "passed": true
+    },
+    {
+      "name": "Invisible nodes do not count as visible application content",
+      "passed": true
+    },
+    {
+      "name": "Visible control can establish mounted-interface availability",
+      "passed": true
+    },
+    {
+      "name": "Only128control candidates are considered",
+      "passed": true
+    },
+    {
+      "name": "Text sample examines at most128characters per node",
+      "passed": true
+    },
+    {
+      "name": "Unsupported document routes cannot masquerade as workspace readiness",
+      "passed": true
+    },
+    {
+      "name": "Pure probe evaluations do not mutate product sources",
+      "passed": true
+    }
+  ]
+}

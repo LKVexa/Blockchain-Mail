@@ -1,0 +1,34 @@
+COMMAND .build/t470 quota exhaustion vectors + BR-410 host-call budget
+EXIT 0
+===== RUN_BR470.log sha256=648701450118bf5746c929982800496df69906dcb5e47b430749665fee16f111 =====
+PASS device_abi_version_ids_caps_flags_order
+PASS generic_device_op_buffers_caps_bounds
+PASS console_clock_entropy_deterministic
+PASS persistent_block_and_monotonic
+PASS bidirectional_owned_mailbox
+PASS calls_bytes_storage_entropy_quotas
+PASS development_apdu_class
+PASS entropy_failure_fail_closed
+PASS optional_wall_clock_extension
+PASS network_absent_by_default
+{"suite":"BR-470","tests":10,"failures":0,"result":"PASS"}
+===== RUN_BR410.log sha256=b24115602e2c0ef7b4a99a9d5e467e4b6cec1471e5d420f0bae403528b72b3e8 =====
+PASS core_selftest
+PASS lc__create_initialize_configure_reset_load_verify_start_step_run_suspend_resume_stop_fault_destroy
+PASS explicit_instance_isolation
+PASS hal_memory_all_16_calls
+PASS hal_deterministic_adapter
+PASS hal_bare_metal_adapter
+PASS hal_smart_card_adapter
+PASS posix_adapter_storage_monotonic
+PASS windows_adapter_portable_contract
+PASS same_brim_three_adapters
+PASS persistence_dual_slot_monotonic_replay
+PASS loader_error_model_abi_isa_integrity_replay
+PASS sandbox_caps_fixed_host_table_bounds_quotas
+PASS per_instance_device_table
+PASS apdu_length_pointer_protocol_rejection
+PASS wide_1048576_bit_stack_roundtrip
+PASS execution_budget_and_cancel
+PASS public_pointer_validation
+{"suite":"BR-410","tests":18,"failures":0,"result":"PASS"}

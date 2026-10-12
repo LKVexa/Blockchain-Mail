@@ -1,0 +1,11 @@
+# TORUS source and network adapter boundary
+
+These selected files are exact bytes from the user-supplied `TORUS_RAMWS_0.3.0.zip`. `SOURCE.json` identifies each archive entry, packaged path, size and SHA-256. The retained original `PACKAGE_MANIFEST.json` describes the full original archive; 49 of its 49 listed files were checked successfully before reuse. This folder intentionally contains only the bounded readers and authoring inputs needed for the topology seam, rather than that full package.
+
+`src/torus-topology.mjs` checks the copied reader and authoring hashes, parses the original LCTL-C and JA reference inputs, and validates the nine coordinates and 36 directed wrap links. `src/torus-mail.mjs` uses those validated coordinates and links for leased mailbox prefixes and route selection. The standalone readers use only Node builtins. This does not execute the authored `hello` message, quantum admission register, JA assertion, a native compiler, or the original in-process host.
+
+The original sources retain their `network=deny`, `policy no_network` and `transport ramws local` declarations. They describe the original local reference program, whose two cryptographic endpoints live in one process. They are not presented as permission or an implementation for remote execution. The user's requested multi-computer mail connection is a separate, explicit adapter in `src/torus-peer.mjs` and `src/torus-mail.mjs`: signed directory leases, separate machine identities, recipient-bound encryption, Tor connections and committed mailbox receipts. Vault keys and account login tokens stay local. The original `TorusHost`, local frame protector and fixed-message runtime are not imported.
+
+The original illustrative 8S numerical context and pending model-score admission are documented by the source archive. This integration does not promote that context into a verified physical model, encryption-strength proof or anonymity guarantee, and does not add it as a cryptographic primitive.
+
+`JA-REFERENCE-LICENSE.txt` is the original Apache-2.0 license from the upstream JA reference suite. It is retained with its original scope; the archive provides no separate top-level license for the custom TORUS host readers. No redistribution license is invented here. The supplied files are preserved for the user's requested local integration.

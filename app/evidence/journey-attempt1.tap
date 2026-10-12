@@ -1,0 +1,28 @@
+TAP version 13
+# (node:1587) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: G001 real server-owned solver -> domain -> two fresh boards -> READY -> atomic actual mail -> idempotent retry
+not ok 1 - G001 real server-owned solver -> domain -> two fresh boards -> READY -> atomic actual mail -> idempotent retry
+  ---
+  duration_ms: 17561.952666
+  type: 'test'
+  location: '/mnt/data/VexaGlyph127_3.0.0/tests/glyphoku-journey.test.mjs:2:1'
+  failureType: 'testCodeFailure'
+  error: 'Preparation {"run_id":"4d90de01006974f31b7ec78a2e9434fb","operation_id":"envelope-first-002","action":"envelope","g":2,"phase":"FAILED","paused":false,"index":0,"total":2,"frame":null,"counts":{"events":0,"guesses":0,"retractions":0,"rendered":0},"preparation_ms":null,"active_ms":0,"note":"PREPARATION","result":null}'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    prepare (file:///mnt/data/VexaGlyph127_3.0.0/tests/glyphoku-helper.mjs:5:283)
+    async run (file:///mnt/data/VexaGlyph127_3.0.0/tests/glyphoku-helper.mjs:8:99)
+    async TestContext.<anonymous> (file:///mnt/data/VexaGlyph127_3.0.0/tests/glyphoku-journey.test.mjs:6:2)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+1..1
+# tests 1
+# suites 0
+# pass 0
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 17631.40361

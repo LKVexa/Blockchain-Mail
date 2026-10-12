@@ -1,0 +1,26 @@
+{
+  "run_id": "LOCAL127-R03",
+  "revision": 3,
+  "mode": "REMEDIATE_AND_VERIFY",
+  "candidate_kind": "IMPLEMENTATION",
+  "candidate_reference": "Vexa127_2.1.0",
+  "candidate_version": "2.1.0-local.1",
+  "candidate_code_tree_sha256": "04fb8e21dece4ae8ee2a7bbeb7666bcc5d563b6ffd6a150761f339b5554c8ac4",
+  "source_archive_sha256": "5b40734a5eba8348a584e9b17e69d9a15b6aa60bf9de204b82cdbe8064362f47",
+  "instruction_library_sha256": "bb5634fea26386048b98f967c342613bc40d9593c07d02a3a39b86efc32611d3",
+  "authorization": "User explicitly requested applying the supplied master prompt/workflow to the candidate to create a blockchain local 127 email server system. Changes confined to a new working copy; experiments use synthetic local identities/data/credits.",
+  "network_policy": "LITERAL_IPV4_LOOPBACK_ONLY",
+  "allowed_runtime_endpoints": [
+    "127.0.0.1, explicit configured HTTP/SMTP ports"
+  ],
+  "live_assets": false,
+  "public_sends": false,
+  "named_institutional_owner": null,
+  "named_independent_reviewer": null,
+  "parameters": "docs/LOCAL_PROFILE.md and src/policy.mjs; new laboratory defaults, independent approval not supplied",
+  "primary_reference_scope": "Runtime API/provisioning documentation checked separately; candidate runtime granted no external access. Article-wide source verification not performed.",
+  "output_root": "Vexa127_2.1.0",
+  "windows_execution": "NOT_PERFORMED",
+  "production_acceptance": "BLOCKED",
+  "authority_continuation": "User asked 'please continue' after the original create/apply request; isolated local remediation and synthetic tests only."
+}

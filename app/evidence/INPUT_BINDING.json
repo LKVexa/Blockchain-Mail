@@ -1,0 +1,35 @@
+{
+  "run_id": "VG127-20261006-01",
+  "mode": "REMEDIATE_AND_VERIFY",
+  "user_authorization": "Execute attached master prompt/workflow to integrate and combine attached blockchain with preceding Vexa127 candidate. Working-copy implementation and synthetic local tests only.",
+  "inputs": [
+    {
+      "file": "Glyphoku_VEM_Candidate_Tailored_PW_v1.1.0(1).zip",
+      "sha256": "166203094bd3af4408791a513c264293ab21a3d76f067656055c1eb508e32873",
+      "bytes": 167346
+    },
+    {
+      "file": "B4PPUPFqdW8lePvv-grok-workspace(1).zip",
+      "sha256": "28313d7f5e05f5fdea31e2f4e615ead2a84aed4c9ae8bb6a28853a791b8b82fd",
+      "bytes": 123088069
+    },
+    {
+      "file": "Vexa127_Local_Blockchain_Email_2.1.0.zip",
+      "sha256": "deb12a5877685a700ab4b34ac2c3a9570e9cd3be56d45a710dc85113399d430d",
+      "bytes": 19917515
+    }
+  ],
+  "root": "/mnt/data/VexaGlyph127_3.0.0",
+  "evidence_root": "/mnt/data/VexaGlyph127_3.0.0/evidence",
+  "output_profile": "GLYPHOKU_VEXA127/2",
+  "retained_puzzle_profile": "GLYPHOKU_VEM_127/1",
+  "source_conflict": "Browser localStorage authority replaced ONLY in new integration profile by Vexa127 transaction-bound encrypted registry. Source contract retained unchanged; original profile is not declared passed.",
+  "origin": "http://127.0.0.1:8787",
+  "test_ports": "Explicit literal loopback ephemeral ports permitted in isolated fixtures; not a startup fallback.",
+  "network": "No application egress; attempted build package metadata DNS failed; no dependencies installed. Vendor recovered from supplied compiled archive.",
+  "runtime": "v22.16.0",
+  "typescript": "Version 5.8.3",
+  "independent_reviewer": null,
+  "windows_execution": "NOT_RUN",
+  "created_at": "2026-10-06T21:13:40.271147+00:00"
+}

@@ -1,0 +1,14 @@
+$ python3 tests/test_420.py
+exit=0
+TEST brir_canonical_opcode_operands_types_immediates PASS
+TEST brir_explicit_capability_provenance PASS
+TEST brir_explicit_cfg_edges PASS
+TEST brir_deterministic_serialization PASS
+TEST brir_safe_optimization PASS
+
+$ make operational
+exit=0
+$ make sanitize
+exit=0
+$ make size
+exit=0

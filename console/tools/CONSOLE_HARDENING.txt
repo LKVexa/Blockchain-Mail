@@ -1,0 +1,48 @@
+Console derivative 1.0.1 - scope of the source hardening
+
+Console mode accepts about:blank and explicitly configured HTTP origins using
+the literal host 127.0.0.1 with canonical decimal ports. Start-Console validates
+configuration before invoking the host launcher. Public hosts, DNS aliases,
+alternate numeric IPv4 spellings, user credentials, unconfigured ports and file
+URLs are refused. The broader opt-ins of full browser mode are ignored in console
+mode. Full browser mode retains its previous address policy and UI.
+
+The live adapter installs the pinned WebView2 SDK's three-argument wildcard
+request filter before allowing navigation. It supplies a 403 response for denied
+intercepted requests, including surfaced iframe, dedicated-worker, shared-worker
+and service-worker HTTP requests. Top/frame navigation, popup redirection,
+external application links, permission elevation and download origin checks are
+handled separately. Downloads accept allowed HTTP origins and browser-created
+blob exports with allowed origins; opaque data/file exports are refused. Failure
+to install the required request policy stops/disposes the live surface.
+
+These are application policy checks, not proof of complete network isolation.
+WebView2 documents WebResourceRequested for file/http/https/custom schemes;
+WebSocket interception is unsupported by this enforcement path. DNS prefetch,
+browser background traffic, ambient WebView proxy routing, previously running
+profiles/worker startup, WebRTC,
+child-process sockets, OS network metadata and a hostile local administrator are
+not certified or prevented by these source checks. No injected JavaScript is used
+as a security boundary. A separately reviewed OS/container network policy or a
+browser/network implementation with complete enforceable coverage is required
+before accepting a complete local-only network claim.
+
+HTTP loopback bodies, browser storage, logs, downloads and application state have
+not been wrapped in the proposed JA21 pipeline. Loopback HTTP remains plaintext.
+The blank console is a portable Windows host with optional WebView2 rendering,
+not a hardware-isolated VM, memory-encryption layer or operating-system sandbox.
+
+Test-ConsolePolicy.ps1 compiles and executes only extracted pure address,
+navigation/download and launcher validation functions against synthetic URLs.
+Its optional CompileWpf switch compiles the five managed source units against the
+pinned SDK without invoking Program.Run, native entries, VEC1, WebView startup,
+DNS, an HTTP request, a launcher or a window. Evidence records those limitations.
+Run under Windows PowerShell 5.x with an explicit external EvidencePath. If a
+per-process ExecutionPolicy Bypass is necessary for this test, it does not change
+the user's persistent policy. The original Verify-Console.ps1 routine is not part
+of this source-only verification because it instantiates substrate/window objects.
+
+Checked primary API references:
+https://learn.microsoft.com/en-us/dotnet/api/microsoft.web.webview2.core.corewebview2.addwebresourcerequestedfilter?view=webview2-dotnet-1.0.4191.47
+https://learn.microsoft.com/en-us/dotnet/api/microsoft.web.webview2.core.corewebview2.webresourcerequested?view=webview2-dotnet-1.0.4191.47
+https://github.com/MicrosoftEdge/WebView2Feedback/issues/4303

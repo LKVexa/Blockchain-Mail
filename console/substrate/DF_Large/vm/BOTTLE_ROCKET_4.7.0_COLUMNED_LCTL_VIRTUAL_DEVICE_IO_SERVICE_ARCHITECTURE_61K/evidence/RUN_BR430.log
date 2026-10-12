@@ -1,0 +1,9 @@
+PASS opcode_positive_41
+PASS opcode_capability_negative_41
+PASS arithmetic_contract
+PASS logical_shift_rotate_contract
+PASS memory_call_abi_contract
+PASS arithmetic_modes_and_traps
+PASS canonical_trap_table_14
+PASS image_abi2_isa11_trap_frame
+{"suite":"BR-430","tests":8,"failures":0,"opcode_positive":41,"opcode_negative":41,"canonical_traps":14,"result":"PASS"}

@@ -1,0 +1,89 @@
+{
+  "schema": "BVE/EVIDENCE/1",
+  "control_id": "BVE-C063-K012",
+  "run_id": "LOCAL127-R03",
+  "candidate_version": "2.1.0-local.1",
+  "candidate_code_tree_sha256": "04fb8e21dece4ae8ee2a7bbeb7666bcc5d563b6ffd6a150761f339b5554c8ac4",
+  "source_record_sha256": "31ee775624c70a8572eb28c57a85a9feb7848e05392363f279e3fa2ad0127ee7",
+  "source_instruction": {
+    "control_id": "BVE-C063-K012",
+    "original_member": "BVE_PW_1.0.0/P09/C063/K012.md",
+    "sha256": "332b6edf4245199cccce9d5c1eaefcc964ddc2dc162c4d7134b26a2221c3228a",
+    "preserved_verbatim": true
+  },
+  "evidence_required": {
+    "kind": "nominal scenario result with reproducible inputs",
+    "proposed_location": "evidence/C063/K012/",
+    "required_fields": [
+      "control_id",
+      "candidate_version",
+      "applicability_decision",
+      "method",
+      "input_or_scenario_refs",
+      "expected_result",
+      "observed_result",
+      "artifact_refs_and_digests",
+      "limitations",
+      "executor",
+      "independent_reviewer",
+      "reviewed_at"
+    ]
+  },
+  "method": "Local synthetic implementation tests; additional controlled upgrade or mock DOM fixture where explicitly linked. No independent review performed.",
+  "expected_result": "Resolve an authorized mailbox entry.",
+  "observed_result": "Authenticated mailbox IDs resolve to the proper owner and retained encrypted objects; the API returns the owner-scoped first page.",
+  "artifacts": [
+    {
+      "path": "evidence/delivery/TEST_SUMMARY.json",
+      "sha256": "fe6bb6260db17b893df82b9df8df318c804e89318830a68810fa922af4a6eaf4",
+      "tests": [
+        {
+          "name": "T073 mailbox pages enumerate 105 messages exactly once, including beyond legacy cap",
+          "outcome": "PASS"
+        },
+        {
+          "name": "T078 page HTTP route preserves ownership and errors on invalid limits",
+          "outcome": "PASS"
+        },
+        {
+          "name": "T006 send commits stamp, encrypted object, Sent and INBOX atomically",
+          "outcome": "PASS"
+        },
+        {
+          "name": "T007 attachment bytes survive encryption and full mailbox export",
+          "outcome": "PASS"
+        },
+        {
+          "name": "T008 invalid token, cross-mailbox read and user admin escalation rejected",
+          "outcome": "PASS"
+        }
+      ]
+    },
+    {
+      "path": "evidence/delivery/TESTS.tap",
+      "sha256": "9d9d90bc034f7b1730b2bbe6642c91ee741097a0030df25dd143d3b37e58ff3c"
+    },
+    {
+      "path": "evidence/continuation/ORACLE.md",
+      "sha256": "a7cbe004ef06274025b00ad5fda56da1df8d49972a99f75863198c94ccd5089a"
+    },
+    {
+      "path": "docs/API.md",
+      "sha256": "e597b599aefea17f39bff9add5a621d6c1bb2675b8d22f3b0cf8fed523ceb2d9"
+    }
+  ],
+  "environment": {
+    "node": "v22.16.0",
+    "platform": "linux",
+    "arch": "x64",
+    "cpus": 5
+  },
+  "parameters": "LOCAL127_CREDIT_V1; authored lab defaults and fixture parameters in named test files; institutional approval absent.",
+  "executor": "ChatGPT automated test execution in the working container",
+  "independent_reviewer": null,
+  "recorded_at": "2026-10-06T20:43:14.279217+00:00",
+  "limitations": [
+    "No decentralized index or multi-provider routing is implemented. Full source-scope approval remains unresolved.",
+    "Actual local implementation tests are separate from source-control acceptance."
+  ]
+}

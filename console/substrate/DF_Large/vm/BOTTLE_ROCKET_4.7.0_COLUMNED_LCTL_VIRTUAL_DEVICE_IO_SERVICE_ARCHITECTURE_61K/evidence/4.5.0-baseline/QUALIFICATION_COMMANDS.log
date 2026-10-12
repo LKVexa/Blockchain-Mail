@@ -1,0 +1,13 @@
+Two clean deterministic builds -> BUILD_A.sha256 / BUILD_B.sha256
+core-scan -> CORE_SCAN.log
+BR-410 -> RUN_BR410.log
+BR-430 -> RUN_BR430.log
+BR-440 -> RUN_BR440.log
+BR-450 -> RUN_BR450.log
+hardware anchor -> RUN_HW_ANCHOR.log
+semantic authority -> RUN_SEMANTIC.log
+independent BRIM verifier -> BRIM_VERIFY.log
+source/image provenance verifier -> PROVENANCE_VERIFY.log
+make size -> SIZE_GATE.log
+ASan/UBSan per-suite component runs -> SANITIZER.log
+python3 tools/qualify450.py --assemble -> ledger/manifests

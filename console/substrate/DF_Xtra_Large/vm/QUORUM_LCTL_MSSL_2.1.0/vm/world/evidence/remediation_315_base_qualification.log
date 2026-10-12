@@ -1,0 +1,12 @@
+{
+  "status": "OPERATIONAL",
+  "production_gate": "PARTIAL",
+  "checks": 15,
+  "workflow_requirements": 957,
+  "counts": {
+    "OPERATIONAL": 928,
+    "PARTIAL": 13,
+    "BLOCKED": 16,
+    "NOT_APPLICABLE": 0
+  }
+}

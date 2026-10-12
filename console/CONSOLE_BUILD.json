@@ -1,0 +1,790 @@
+{
+  "product": "Blank Console",
+  "console_version": "1.0.2",
+  "base_browser_version": "9.8.7",
+  "starts_blank": true,
+  "visible_tabs": false,
+  "search_bar": false,
+  "buttons": false,
+  "default_size": [
+    760,
+    640
+  ],
+  "minimum_size": [
+    420,
+    360
+  ],
+  "original_backup_preserved": true,
+  "simulation_integration": "Prepared empty host; not yet combined with GFM simulation",
+  "source_integrity": "Active runtime verified; 191 pre-existing absent legacy references recorded in provenance/source-audit.json",
+  "validation": {
+    "schema": "CONSOLE-PRESENTATION-TESTS/1",
+    "console_version": "1.0.2",
+    "status": "PASS",
+    "createdUtc": "2026-10-11T20:49:41.0709273Z",
+    "scope": "EXACT_SOURCE_WPF_SDK_COMPILE_AND_PURE_PRESENTATION_MODEL_ONLY",
+    "total": 21,
+    "passed": 21,
+    "failed": 0,
+    "GUI_started": false,
+    "native_presenter_run": false,
+    "webview_constructed": false,
+    "backend_started": false,
+    "network_requests": false,
+    "live_render_acceptance": false,
+    "sourcePins": [
+      {
+        "path": "host/JA21VirtualBrowser.cs",
+        "sha256": "1d68ad7c34c46e26c0d87ba8de9f96997c89ffc5819e2bcfbc79608d9d632f0b"
+      },
+      {
+        "path": "host/Vec1Substrate.cs",
+        "sha256": "1a380926f0397ad43dc1c9d7a0cf656adf78067d7daad09be68dd7c6f2176ce8"
+      },
+      {
+        "path": "host/PortableDesktop.cs",
+        "sha256": "8b96cba412ee124cfaf5f27391cc41bc7709fdd82a0e26ca8022928906be0e03"
+      },
+      {
+        "path": "host/LiveWebContracts.cs",
+        "sha256": "2cc56794befb681eba241afb82ee4a17be3953a3ddbd4838c12729f41de095ae"
+      },
+      {
+        "path": "host/LiveWebBridge.cs",
+        "sha256": "b54fab0c71b3e431a53c5cd5dc2b852c33bee9530f3103077d7581a497857e61"
+      },
+      {
+        "path": "host/Start-JA21Browser.ps1",
+        "sha256": "fa7397e7acd7dd77a0d7d2bef93347203bf2d5647be9b72dfb54ab6ea590ca43"
+      },
+      {
+        "path": "tools/Test-ConsolePresentation.ps1",
+        "sha256": "be963570120185faba565d745496d2a5a804ecf60f142f1071d399241e32ef4b"
+      },
+      {
+        "path": "tools/CONSOLE_PRESENTATION.txt",
+        "sha256": "a8f21bc5202a87de1b163e88ff5774334510ff6d4e274bfd42337e02a11a4128"
+      },
+      {
+        "path": "READ ME - Console.txt",
+        "sha256": "95a743b1030bf478953f9d212d8a7aea87fe1868f613d73c94a3ed50d1002f4e"
+      },
+      {
+        "path": "tools/Test-ConsoleReadiness.mjs",
+        "sha256": "0b881e84daa08c578cbaa1fe5c79e961619cbf101cd49cb94ffb92abadc1cfdc"
+      }
+    ],
+    "checks": [
+      {
+        "name": "Exact five product units compile against pinned standard/composition SDK APIs",
+        "passed": true
+      },
+      {
+        "name": "Complete55file current runtime seal passes actual managedcrypto verifier",
+        "passed": true
+      },
+      {
+        "name": "Fresh model is neither waiting nor ready",
+        "passed": true
+      },
+      {
+        "name": "Begin enables waiting and clears ready",
+        "passed": true
+      },
+      {
+        "name": "Only current generation can commit readiness",
+        "passed": true
+      },
+      {
+        "name": "Readiness completion cannot repeat",
+        "passed": true
+      },
+      {
+        "name": "Failure clears waiting without reporting ready",
+        "passed": true
+      },
+      {
+        "name": "Obsolete failure cannot stop a replacement load",
+        "passed": true
+      },
+      {
+        "name": "Timeout begins at30seconds exactly and redirects cannot extend it",
+        "passed": true
+      },
+      {
+        "name": "A new load after completion receives a new deadline",
+        "passed": true
+      },
+      {
+        "name": "Cancel invalidates pending success/failure and stops waiting",
+        "passed": true
+      },
+      {
+        "name": "Console uses standard WebView2 while full browser retains CompositionControl",
+        "passed": true
+      },
+      {
+        "name": "Status text is attached to transient console notice outside HWND content row",
+        "passed": true
+      },
+      {
+        "name": "Console cannot fall back to inert inspection after live surface creation failure",
+        "passed": true
+      },
+      {
+        "name": "Fixed console status prevents exposing arbitrary engine diagnostics",
+        "passed": true
+      },
+      {
+        "name": "Retry revalidates the same allowed URL and uses the existing navigate gate",
+        "passed": true
+      },
+      {
+        "name": "Presentation probe requires native navigation success and configured request policy",
+        "passed": true
+      },
+      {
+        "name": "Readiness requires mounted protected app and bounds every visited node/control/text sample",
+        "passed": true
+      },
+      {
+        "name": "Policy failures use central idempotent disposal to cancel work and clean owned surface once",
+        "passed": true
+      },
+      {
+        "name": "Original HTTP request deny, frame checks, permissions and devtools restrictions remain",
+        "passed": true
+      },
+      {
+        "name": "Source pins remain unchanged after pure compilation/model checks",
+        "passed": true
+      }
+    ]
+  },
+  "source_console_version": "1.0.1",
+  "source_zip_sha256": "57b0018ccfd2915a1e4102dcb8f08e9a1c57595cd8c449a64153b46ee2426f0f",
+  "obfuscation_pipeline": "NOT_IMPLEMENTED_ENGINE_SOURCE_AND_NUMERICAL_MODEL_REQUIRED",
+  "complete_browser_network_isolation": false,
+  "desktop_window_launch_tested": false,
+  "historical_validation": "provenance/console-1.0.1-build.json",
+  "policy_validation": {
+    "status": "PASS",
+    "total": 67,
+    "passed": 67,
+    "failed": 0,
+    "native_execution": false,
+    "browser_execution": false,
+    "network_requests": false,
+    "os_confinement_verified": false,
+    "websocket_interception_verified": false,
+    "managed_source_compile_requested": false,
+    "source_hashes": [
+      {
+        "path": "host/JA21VirtualBrowser.cs",
+        "sha256": "1d68ad7c34c46e26c0d87ba8de9f96997c89ffc5819e2bcfbc79608d9d632f0b"
+      },
+      {
+        "path": "host/LiveWebBridge.cs",
+        "sha256": "b54fab0c71b3e431a53c5cd5dc2b852c33bee9530f3103077d7581a497857e61"
+      },
+      {
+        "path": "host/Start-Console.ps1",
+        "sha256": "4103a12007a257b42453a56f1e888bb574691a5ab40ab40052fc0005c27c5617"
+      },
+      {
+        "path": "tools/Test-ConsolePolicy.ps1",
+        "sha256": "e1a3a47aa49dec9b08d02eefcad9f62ae738fd6b5f94870c4f05eec0b551d59a"
+      },
+      {
+        "path": "tools/CONSOLE_HARDENING.txt",
+        "sha256": "01000da6b2e99e831fbfed68877a0b0dc1b5afee41e58893d96453ae7e84eede"
+      }
+    ],
+    "cases": [
+      {
+        "label": "C# allow http://127.0.0.1:8788/",
+        "expected_allowed": true,
+        "allowed": true,
+        "passed": true,
+        "reason": null
+      },
+      {
+        "label": "Launcher allow http://127.0.0.1:8788/",
+        "expected_allowed": true,
+        "allowed": true,
+        "passed": true,
+        "reason": null
+      },
+      {
+        "label": "C# allow http://127.0.0.1:8791/api?q=one#two",
+        "expected_allowed": true,
+        "allowed": true,
+        "passed": true,
+        "reason": null
+      },
+      {
+        "label": "Launcher allow http://127.0.0.1:8791/api?q=one#two",
+        "expected_allowed": true,
+        "allowed": true,
+        "passed": true,
+        "reason": null
+      },
+      {
+        "label": "C# deny https://127.0.0.1:8788/",
+        "expected_allowed": false,
+        "allowed": false,
+        "passed": true,
+        "reason": "Console addresses must use an explicitly allowed literal 127.0.0.1 HTTP origin."
+      },
+      {
+        "label": "Launcher deny https://127.0.0.1:8788/",
+        "expected_allowed": false,
+        "allowed": false,
+        "passed": true,
+        "reason": "Console addresses must use a literal 127.0.0.1 HTTP origin and a canonical decimal port."
+      },
+      {
+        "label": "C# deny http://127.0.0.1:8790/",
+        "expected_allowed": false,
+        "allowed": false,
+        "passed": true,
+        "reason": "Console addresses must use an explicitly allowed literal 127.0.0.1 HTTP origin."
+      },
+      {
+        "label": "Launcher deny http://127.0.0.1:8790/",
+        "expected_allowed": false,
+        "allowed": false,
+        "passed": true,
+        "reason": "Console start_url is outside the configured local origins."
+      },
+      {
+        "label": "C# deny http://127.0.0.2:8788/",
+        "expected_allowed": false,
+        "allowed": false,
+        "passed": true,
+        "reason": "Console addresses must use an explicitly allowed literal 127.0.0.1 HTTP origin."
+      },
+      {
+        "label": "Launcher deny http://127.0.0.2:8788/",
+        "expected_allowed": false,
+        "allowed": false,
+        "passed": true,
+        "reason": "Console addresses must use a literal 127.0.0.1 HTTP origin and a canonical decimal port."
+      },
+      {
+        "label": "C# deny http://localhost:8788/",
+        "expected_allowed": false,
+        "allowed": false,
+        "passed": true,
+        "reason": "Console addresses must use an explicitly allowed literal 127.0.0.1 HTTP origin."
+      },
+      {
+        "label": "Launcher deny http://localhost:8788/",
+        "expected_allowed": false,
+        "allowed": false,
+        "passed": true,
+        "reason": "Console addresses must use a literal 127.0.0.1 HTTP origin and a canonical decimal port."
+      },
+      {
+        "label": "C# deny http://example.invalid/",
+        "expected_allowed": false,
+        "allowed": false,
+        "passed": true,
+        "reason": "Console addresses must use an explicitly allowed literal 127.0.0.1 HTTP origin."
+      },
+      {
+        "label": "Launcher deny http://example.invalid/",
+        "expected_allowed": false,
+        "allowed": false,
+        "passed": true,
+        "reason": "Console addresses must use a literal 127.0.0.1 HTTP origin and a canonical decimal port."
+      },
+      {
+        "label": "C# deny https://example.invalid/",
+        "expected_allowed": false,
+        "allowed": false,
+        "passed": true,
+        "reason": "Console addresses must use an explicitly allowed literal 127.0.0.1 HTTP origin."
+      },
+      {
+        "label": "Launcher deny https://example.invalid/",
+        "expected_allowed": false,
+        "allowed": false,
+        "passed": true,
+        "reason": "Console addresses must use a literal 127.0.0.1 HTTP origin and a canonical decimal port."
+      },
+      {
+        "label": "C# deny http://8.8.8.8/",
+        "expected_allowed": false,
+        "allowed": false,
+        "passed": true,
+        "reason": "Console addresses must use an explicitly allowed literal 127.0.0.1 HTTP origin."
+      },
+      {
+        "label": "Launcher deny http://8.8.8.8/",
+        "expected_allowed": false,
+        "allowed": false,
+        "passed": true,
+        "reason": "Console addresses must use a literal 127.0.0.1 HTTP origin and a canonical decimal port."
+      },
+      {
+        "label": "C# deny http://192.168.0.1/",
+        "expected_allowed": false,
+        "allowed": false,
+        "passed": true,
+        "reason": "Console addresses must use an explicitly allowed literal 127.0.0.1 HTTP origin."
+      },
+      {
+        "label": "Launcher deny http://192.168.0.1/",
+        "expected_allowed": false,
+        "allowed": false,
+        "passed": true,
+        "reason": "Console addresses must use a literal 127.0.0.1 HTTP origin and a canonical decimal port."
+      },
+      {
+        "label": "C# deny http://[::1]:8788/",
+        "expected_allowed": false,
+        "allowed": false,
+        "passed": true,
+        "reason": "Console addresses must use an explicitly allowed literal 127.0.0.1 HTTP origin."
+      },
+      {
+        "label": "Launcher deny http://[::1]:8788/",
+        "expected_allowed": false,
+        "allowed": false,
+        "passed": true,
+        "reason": "Console addresses must use a literal 127.0.0.1 HTTP origin and a canonical decimal port."
+      },
+      {
+        "label": "C# deny http://user@127.0.0.1:8788/",
+        "expected_allowed": false,
+        "allowed": false,
+        "passed": true,
+        "reason": "Console addresses must use an explicitly allowed literal 127.0.0.1 HTTP origin."
+      },
+      {
+        "label": "Launcher deny http://user@127.0.0.1:8788/",
+        "expected_allowed": false,
+        "allowed": false,
+        "passed": true,
+        "reason": "Console addresses must use a literal 127.0.0.1 HTTP origin and a canonical decimal port."
+      },
+      {
+        "label": "C# deny http://2130706433:8788/",
+        "expected_allowed": false,
+        "allowed": false,
+        "passed": true,
+        "reason": "Console addresses must use an explicitly allowed literal 127.0.0.1 HTTP origin."
+      },
+      {
+        "label": "Launcher deny http://2130706433:8788/",
+        "expected_allowed": false,
+        "allowed": false,
+        "passed": true,
+        "reason": "Console addresses must use a literal 127.0.0.1 HTTP origin and a canonical decimal port."
+      },
+      {
+        "label": "C# deny http://0x7f000001:8788/",
+        "expected_allowed": false,
+        "allowed": false,
+        "passed": true,
+        "reason": "Console addresses must use an explicitly allowed literal 127.0.0.1 HTTP origin."
+      },
+      {
+        "label": "Launcher deny http://0x7f000001:8788/",
+        "expected_allowed": false,
+        "allowed": false,
+        "passed": true,
+        "reason": "Console addresses must use a literal 127.0.0.1 HTTP origin and a canonical decimal port."
+      },
+      {
+        "label": "C# deny http://127.1:8788/",
+        "expected_allowed": false,
+        "allowed": false,
+        "passed": true,
+        "reason": "Console addresses must use an explicitly allowed literal 127.0.0.1 HTTP origin."
+      },
+      {
+        "label": "Launcher deny http://127.1:8788/",
+        "expected_allowed": false,
+        "allowed": false,
+        "passed": true,
+        "reason": "Console addresses must use a literal 127.0.0.1 HTTP origin and a canonical decimal port."
+      },
+      {
+        "label": "C# deny http://127.0.0.01:8788/",
+        "expected_allowed": false,
+        "allowed": false,
+        "passed": true,
+        "reason": "Console addresses must use an explicitly allowed literal 127.0.0.1 HTTP origin."
+      },
+      {
+        "label": "Launcher deny http://127.0.0.01:8788/",
+        "expected_allowed": false,
+        "allowed": false,
+        "passed": true,
+        "reason": "Console addresses must use a literal 127.0.0.1 HTTP origin and a canonical decimal port."
+      },
+      {
+        "label": "C# deny http://127.0.0.1:08788/",
+        "expected_allowed": false,
+        "allowed": false,
+        "passed": true,
+        "reason": "Console addresses must use an explicitly allowed literal 127.0.0.1 HTTP origin."
+      },
+      {
+        "label": "Launcher deny http://127.0.0.1:08788/",
+        "expected_allowed": false,
+        "allowed": false,
+        "passed": true,
+        "reason": "Console addresses must use a literal 127.0.0.1 HTTP origin and a canonical decimal port."
+      },
+      {
+        "label": "C# deny http://127.0.0.1:0/",
+        "expected_allowed": false,
+        "allowed": false,
+        "passed": true,
+        "reason": "Console addresses must use an explicitly allowed literal 127.0.0.1 HTTP origin."
+      },
+      {
+        "label": "Launcher deny http://127.0.0.1:0/",
+        "expected_allowed": false,
+        "allowed": false,
+        "passed": true,
+        "reason": "Console addresses must use a literal 127.0.0.1 HTTP origin and a canonical decimal port."
+      },
+      {
+        "label": "C# deny http://127.0.0.1:65536/",
+        "expected_allowed": false,
+        "allowed": false,
+        "passed": true,
+        "reason": "Invalid URI: Invalid port specified."
+      },
+      {
+        "label": "Launcher deny http://127.0.0.1:65536/",
+        "expected_allowed": false,
+        "allowed": false,
+        "passed": true,
+        "reason": "Console address is invalid or has credentials."
+      },
+      {
+        "label": "C# deny http://127.0.0.1.:8788/",
+        "expected_allowed": false,
+        "allowed": false,
+        "passed": true,
+        "reason": "Console addresses must use an explicitly allowed literal 127.0.0.1 HTTP origin."
+      },
+      {
+        "label": "Launcher deny http://127.0.0.1.:8788/",
+        "expected_allowed": false,
+        "allowed": false,
+        "passed": true,
+        "reason": "Console addresses must use a literal 127.0.0.1 HTTP origin and a canonical decimal port."
+      },
+      {
+        "label": "C# deny http://127.0.0.1:8788\\@example.invalid/",
+        "expected_allowed": false,
+        "allowed": false,
+        "passed": true,
+        "reason": "Invalid URI: Invalid port specified."
+      },
+      {
+        "label": "Launcher deny http://127.0.0.1:8788\\@example.invalid/",
+        "expected_allowed": false,
+        "allowed": false,
+        "passed": true,
+        "reason": "Console addresses must use a literal 127.0.0.1 HTTP origin and a canonical decimal port."
+      },
+      {
+        "label": "C# deny file:///C:/Windows/win.ini",
+        "expected_allowed": false,
+        "allowed": false,
+        "passed": true,
+        "reason": "Console addresses must use an explicitly allowed literal 127.0.0.1 HTTP origin."
+      },
+      {
+        "label": "Launcher deny file:///C:/Windows/win.ini",
+        "expected_allowed": false,
+        "allowed": false,
+        "passed": true,
+        "reason": "Console addresses must use a literal 127.0.0.1 HTTP origin and a canonical decimal port."
+      },
+      {
+        "label": "C# deny data:text/html,hello",
+        "expected_allowed": false,
+        "allowed": false,
+        "passed": true,
+        "reason": "Console addresses must use an explicitly allowed literal 127.0.0.1 HTTP origin."
+      },
+      {
+        "label": "Launcher deny data:text/html,hello",
+        "expected_allowed": false,
+        "allowed": false,
+        "passed": true,
+        "reason": "Console addresses must use a literal 127.0.0.1 HTTP origin and a canonical decimal port."
+      },
+      {
+        "label": "C# deny ws://127.0.0.1:8788/",
+        "expected_allowed": false,
+        "allowed": false,
+        "passed": true,
+        "reason": "Console addresses must use an explicitly allowed literal 127.0.0.1 HTTP origin."
+      },
+      {
+        "label": "Launcher deny ws://127.0.0.1:8788/",
+        "expected_allowed": false,
+        "allowed": false,
+        "passed": true,
+        "reason": "Console addresses must use a literal 127.0.0.1 HTTP origin and a canonical decimal port."
+      },
+      {
+        "label": "C# deny about:config",
+        "expected_allowed": false,
+        "allowed": false,
+        "passed": true,
+        "reason": "Console addresses must use an explicitly allowed literal 127.0.0.1 HTTP origin."
+      },
+      {
+        "label": "Launcher deny about:config",
+        "expected_allowed": false,
+        "allowed": false,
+        "passed": true,
+        "reason": "Console addresses must use a literal 127.0.0.1 HTTP origin and a canonical decimal port."
+      },
+      {
+        "label": "Exact blank navigation",
+        "expected_allowed": true,
+        "allowed": true,
+        "passed": true,
+        "reason": null
+      },
+      {
+        "label": "Exact blank launcher",
+        "expected_allowed": true,
+        "allowed": true,
+        "passed": true,
+        "reason": null
+      },
+      {
+        "label": "Blank query denied",
+        "expected_allowed": false,
+        "allowed": false,
+        "passed": true,
+        "reason": "Console addresses must use an explicitly allowed literal 127.0.0.1 HTTP origin."
+      },
+      {
+        "label": "Null navigation denied",
+        "expected_allowed": false,
+        "allowed": false,
+        "passed": true,
+        "reason": "Console address is not absolute."
+      },
+      {
+        "label": "Local blob export allowed",
+        "expected_allowed": true,
+        "allowed": true,
+        "passed": true,
+        "reason": null
+      },
+      {
+        "label": "Public blob export denied",
+        "expected_allowed": false,
+        "allowed": false,
+        "passed": true,
+        "reason": "Console addresses must use an explicitly allowed literal 127.0.0.1 HTTP origin."
+      },
+      {
+        "label": "Opaque blob export denied",
+        "expected_allowed": false,
+        "allowed": false,
+        "passed": true,
+        "reason": "Console download has no allowed origin."
+      },
+      {
+        "label": "Data download denied",
+        "expected_allowed": false,
+        "allowed": false,
+        "passed": true,
+        "reason": "Console addresses must use an explicitly allowed literal 127.0.0.1 HTTP origin."
+      },
+      {
+        "label": "File opt-out ignored in console",
+        "expected_allowed": false,
+        "allowed": false,
+        "passed": true,
+        "reason": "Console mode does not open local files."
+      },
+      {
+        "label": "Malformed configured origin denied",
+        "expected_allowed": false,
+        "allowed": false,
+        "passed": true,
+        "reason": "Console addresses must use a literal 127.0.0.1 HTTP origin and a canonical decimal port."
+      },
+      {
+        "label": "Configured origin path denied",
+        "expected_allowed": false,
+        "allowed": false,
+        "passed": true,
+        "reason": "A console origin must contain no path, query or fragment."
+      },
+      {
+        "label": "Configured origin query denied",
+        "expected_allowed": false,
+        "allowed": false,
+        "passed": true,
+        "reason": "A console origin must contain no path, query or fragment."
+      },
+      {
+        "label": "Configured origin fragment denied",
+        "expected_allowed": false,
+        "allowed": false,
+        "passed": true,
+        "reason": "A console origin must contain no path, query or fragment."
+      },
+      {
+        "label": "Absent allowlist denies network",
+        "expected_allowed": false,
+        "allowed": false,
+        "passed": true,
+        "reason": "Console addresses must use an explicitly allowed literal 127.0.0.1 HTTP origin."
+      },
+      {
+        "label": "Full browser public HTTP policy preserved without DNS",
+        "expected_allowed": true,
+        "allowed": true,
+        "passed": true,
+        "reason": null
+      },
+      {
+        "label": "Full browser default localhost block preserved",
+        "expected_allowed": false,
+        "allowed": false,
+        "passed": true,
+        "reason": "Addresses on this machine are outside the JA21 network boundary."
+      },
+      {
+        "label": "Full browser explicit private opt-in preserved",
+        "expected_allowed": true,
+        "allowed": true,
+        "passed": true,
+        "reason": null
+      }
+    ]
+  },
+  "permanent_browser_buttons": false,
+  "transient_recovery_control": "Try again only after failure and only for a revalidated allowed URL",
+  "console_renderer": "Standard WPF WebView2; no inert inspection fallback",
+  "full_browser_renderer": "Original WebView2CompositionControl preserved",
+  "loading_notice": "Transient native row outside content HWND; hidden after SDK DOM availability",
+  "presentation_watchdog_ms": 30000,
+  "live_render_acceptance": "PENDING_SEPARATE_CURRENT_SOURCE_NATIVE_SDK_VERIFICATION",
+  "readiness_validation": {
+    "schema": "CONSOLE-READINESS-TESTS/1",
+    "console_version": "1.0.2",
+    "createdUtc": "2026-10-11T20:49:37.663Z",
+    "status": "PASS",
+    "scope": "EXACT_PRODUCT_JAVASCRIPT_WITH_INERT_DOM_DOUBLES_ONLY",
+    "total": 20,
+    "passed": 20,
+    "failed": 0,
+    "GUI_started": false,
+    "native_presenter_run": false,
+    "webview_constructed": false,
+    "backend_started": false,
+    "network_requests": false,
+    "live_render_acceptance": false,
+    "sourcePins": [
+      {
+        "path": "host/LiveWebBridge.cs",
+        "sha256": "b54fab0c71b3e431a53c5cd5dc2b852c33bee9530f3103077d7581a497857e61"
+      },
+      {
+        "path": "tools/Test-ConsoleReadiness.mjs",
+        "sha256": "0b881e84daa08c578cbaa1fe5c79e961619cbf101cd49cb94ffb92abadc1cfdc"
+      }
+    ],
+    "checks": [
+      {
+        "name": "Loading document is not presentation readiness",
+        "passed": true
+      },
+      {
+        "name": "Protected bootstrap must expose the actual workspace interface",
+        "passed": true
+      },
+      {
+        "name": "Visible error text without mounted application remains unavailable",
+        "passed": true
+      },
+      {
+        "name": "Unhydrated empty root remains unavailable",
+        "passed": true
+      },
+      {
+        "name": "A placeholder element is not the mounted desk",
+        "passed": true
+      },
+      {
+        "name": "Mounted protected desk with rendered text is available",
+        "passed": true
+      },
+      {
+        "name": "Actual desk index route uses the same mount contract",
+        "passed": true
+      },
+      {
+        "name": "Static mailbox login HTML without installed JS handler is unavailable",
+        "passed": true
+      },
+      {
+        "name": "Mounted mailbox login with handler is available",
+        "passed": true
+      },
+      {
+        "name": "Authenticated mailbox shell remains available when login is hidden",
+        "passed": true
+      },
+      {
+        "name": "Hidden mailbox shell and login are not ready",
+        "passed": true
+      },
+      {
+        "name": "Unlock or error text alone cannot substitute for the app mount",
+        "passed": true
+      },
+      {
+        "name": "Every visited DOM node counts toward the512node cap",
+        "passed": true
+      },
+      {
+        "name": "Script/noscript/hidden text does not count as visible application content",
+        "passed": true
+      },
+      {
+        "name": "Invisible nodes do not count as visible application content",
+        "passed": true
+      },
+      {
+        "name": "Visible control can establish mounted-interface availability",
+        "passed": true
+      },
+      {
+        "name": "Only128control candidates are considered",
+        "passed": true
+      },
+      {
+        "name": "Text sample examines at most128characters per node",
+        "passed": true
+      },
+      {
+        "name": "Unsupported document routes cannot masquerade as workspace readiness",
+        "passed": true
+      },
+      {
+        "name": "Pure probe evaluations do not mutate product sources",
+        "passed": true
+      }
+    ]
+  }
+}

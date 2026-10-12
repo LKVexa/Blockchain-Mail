@@ -1,0 +1,12 @@
+$ python3 tests/test_420.py
+exit=0
+TEST pipeline_parse_verify_brir_lower_serialize_hash_deterministic PASS
+TEST pipeline_invalid_fails_before_image PASS
+TEST pipeline_sign_artifact PASS
+
+$ make operational
+exit=0
+$ make sanitize
+exit=0
+$ make size
+exit=0

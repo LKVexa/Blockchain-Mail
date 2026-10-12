@@ -1,0 +1,112 @@
+{
+  "schema": "BVE/CONTROL_ASSESSMENT/1",
+  "control_id": "BVE-C063-K018",
+  "component_id": "BVE-C063",
+  "parent_id": "P09",
+  "source_control_sha256": "a55c19fcafeecd1ba386db04087a05a152a872176b8bea161e003573ad907ee1",
+  "source_gate": "G2_TECHNICAL",
+  "candidate_parent_disposition": "LOCAL_CORE_PARTIAL",
+  "candidate_version": "2.1.0-local.1",
+  "candidate_code_tree_sha256": "04fb8e21dece4ae8ee2a7bbeb7666bcc5d563b6ffd6a150761f339b5554c8ac4",
+  "run_id": "LOCAL127-R03",
+  "revision": 3,
+  "mode": "REMEDIATE_AND_VERIFY",
+  "component_selection": "UNDECIDED",
+  "applicability": "UNDECIDED",
+  "status": "BLOCKED",
+  "workflow_execution": "STOPPED",
+  "named_owner": null,
+  "independent_reviewer": null,
+  "reviewed_at": null,
+  "actual_evidence_refs": [
+    {
+      "path": "evidence/delivery/TEST_SUMMARY.json",
+      "sha256": "fe6bb6260db17b893df82b9df8df318c804e89318830a68810fa922af4a6eaf4",
+      "tests": [
+        {
+          "name": "T035 token rotation revokes old bearer; only one local issuance on replay",
+          "outcome": "PASS"
+        },
+        {
+          "name": "T079 packaged UI discards an attachment download completed after logout",
+          "outcome": "PASS"
+        },
+        {
+          "name": "T080 packaged UI rejects old attachment preparation after an identity change",
+          "outcome": "PASS"
+        },
+        {
+          "name": "T081 logout aborts outstanding packaged API requests and rejects a late response",
+          "outcome": "PASS"
+        },
+        {
+          "name": "T083 new session requests are independent of invalidated controllers",
+          "outcome": "PASS"
+        },
+        {
+          "name": "T085 session changes do not surface obsolete errors on the login screen",
+          "outcome": "PASS"
+        }
+      ]
+    },
+    {
+      "path": "evidence/delivery/TESTS.tap",
+      "sha256": "9d9d90bc034f7b1730b2bbe6642c91ee741097a0030df25dd143d3b37e58ff3c"
+    },
+    {
+      "path": "evidence/continuation/ORACLE.md",
+      "sha256": "a7cbe004ef06274025b00ad5fda56da1df8d49972a99f75863198c94ccd5089a"
+    },
+    {
+      "path": "docs/SECURITY.md",
+      "sha256": "e3409a34dc1d9c23da19b4e276677beb76ebeea59ddcd1ab112aad521de8db98"
+    },
+    {
+      "path": "evidence/delivery/OFFLINE_DOM_SUMMARY.json",
+      "sha256": "66d2a541910f913958f4697560b9c023900b85d2002526f256ce4040a20e7070",
+      "scope": "Mock DOM responses only; no actual browser network delivery."
+    }
+  ],
+  "observed_result": {
+    "kind": "BOUNDED_CONTINUATION_EVIDENCE",
+    "scope": "Session logout/identity change aborts pending requests and rejects late data, file preparation and obsolete UI errors. Server token rotation refuses the old bearer.",
+    "test_outcomes": [
+      {
+        "name": "T035 token rotation revokes old bearer; only one local issuance on replay",
+        "outcome": "PASS"
+      },
+      {
+        "name": "T079 packaged UI discards an attachment download completed after logout",
+        "outcome": "PASS"
+      },
+      {
+        "name": "T080 packaged UI rejects old attachment preparation after an identity change",
+        "outcome": "PASS"
+      },
+      {
+        "name": "T081 logout aborts outstanding packaged API requests and rejects a late response",
+        "outcome": "PASS"
+      },
+      {
+        "name": "T083 new session requests are independent of invalidated controllers",
+        "outcome": "PASS"
+      },
+      {
+        "name": "T085 session changes do not surface obsolete errors on the login screen",
+        "outcome": "PASS"
+      }
+    ],
+    "complete_source_criterion_claimed": false
+  },
+  "risk_exception": null,
+  "blocking_issues": [
+    "Source component/applicability decisions and required independent review remain unassigned.",
+    "Logout is not equivalent to every form of access revocation. Already-downloaded files and all remote/cache races are outside this evidence; no direct browser networking acceptance."
+  ],
+  "limitations": [
+    "Logout is not equivalent to every form of access revocation. Already-downloaded files and all remote/cache races are outside this evidence; no direct browser networking acceptance.",
+    "Actual local implementation tests are separate from source-control acceptance."
+  ],
+  "next_action": "Have an authorized independent reviewer inspect the preserved exact criterion, current artifact and cited fixtures; close the listed scope/oracle gaps before any full-control PASS.",
+  "evidence_validity": "CURRENT_BOUNDED_PREDICATES_ONLY"
+}

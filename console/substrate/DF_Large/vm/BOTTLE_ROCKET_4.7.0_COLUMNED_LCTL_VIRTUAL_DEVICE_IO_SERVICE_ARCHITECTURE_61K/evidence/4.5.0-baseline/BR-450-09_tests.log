@@ -1,0 +1,4 @@
+PASS path_traversal_rejected
+PASS restrictive_file_permissions
+PASS symlink_temp_rejected
+PASS truncated_control_rejected

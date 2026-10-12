@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "sealed_inventories": [
+    {
+      "name": "portable-payload",
+      "files": 15096,
+      "mismatches": []
+    },
+    {
+      "name": "application",
+      "files": 7319,
+      "mismatches": []
+    },
+    {
+      "name": "launch",
+      "files": 7909,
+      "mismatches": []
+    }
+  ],
+  "files": 15125,
+  "text_files_scanned": 15042,
+  "binary_files_outside_text_scan": 83,
+  "prohibited_paths": [],
+  "high_confidence_secret_files": [],
+  "large_files": [
+    {
+      "path": "runtime/node.exe",
+      "bytes": 92825416
+    }
+  ],
+  "scope": "Byte integrity and high-confidence text/path publication checks; not a complete security audit."
+}

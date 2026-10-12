@@ -1,0 +1,5 @@
+{
+  "status": "PASS",
+  "image": "deploy/CORE.signed.brimg",
+  "sha256": "fffce37a3c7107138dfbc1077744a95084a394b9fce0e91f983340d6c9e755b5"
+}

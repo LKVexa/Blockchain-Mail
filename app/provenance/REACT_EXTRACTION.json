@@ -1,0 +1,11 @@
+{
+  "source": ".vercel/output/static/assets/index-DIU9KdTW.js",
+  "source_sha256": "55aad5b22cf3f749e7b1f6cf10592fc021a5a3ee4c45f4021dee0e924909f64c",
+  "start_code_unit": 0,
+  "end_code_unit": 219270,
+  "end_marker": ",_=`__TSS_CONTEXT`",
+  "operation": "Retain unchanged vendor wrapper prefix; append ESM exports only. Do not execute hosted router/auth bootstrap.",
+  "self_reported_version": "19.3.0",
+  "independent_vendor_audit": "NOT_PERFORMED",
+  "output_sha256": "103cf071291bb733fac46079aaf7caa38348b56a8408ae6f46ad52188c67be1a"
+}

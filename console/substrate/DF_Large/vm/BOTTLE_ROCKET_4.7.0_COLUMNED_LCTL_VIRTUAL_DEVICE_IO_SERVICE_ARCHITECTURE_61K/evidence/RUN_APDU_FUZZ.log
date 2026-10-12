@@ -1,0 +1,2 @@
+PASS deterministic_apdu_fuzz_512
+{"suite":"BR-470-APDU-FUZZ","tests":512,"failures":0,"result":"PASS"}

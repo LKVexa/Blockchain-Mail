@@ -1,0 +1,12 @@
+{
+  "name": "Mock initial frame acknowledgment precedes first advance",
+  "body": "OFFLINE UI FIXTURE \u2014 MOCK RESPONSES \u2014 NOT A LIVE EMAIL DELIVERY\nLK / VEXA \u00b7 LOCAL RESEARCH BUILD 3.0.0\nGlyphoku Post Office\n\nOne game for a domain. Two for its envelope. A signed local chain underneath.\n\n127.0.0.1 \u00b7 CONNECTED\nVexa mailbox \u2197\nInstance aaaaaaaaaaaa\nRevision 0\nNext ordinal g = 1\nSigned block 0\nRefresh committed state\nSign out\nTHE CIPHER DESK\nIDLE\n16 \u00d7 16 / 4 \u00d7 4\nBoard 0 / 0\nGIVENS \u2192 SEARCH \u2192 VERIFY\nBold: given\nUnderline: guess\nColor + shape: cipher family\n\nSelect a cell to inspect its current candidates.\n\nEvents / 100 ms\n1\n8\n24\n40\nPause\nResume\nSingle step\nStop\n0\nEVENTS / \u2014\n0\nGUESSES\n0\nRETRACTIONS\n0\nRENDER ACKS\n\nPreparation \u2014 ms \u00b7 active search 0 ms. Complete logical events are retained; a batch is one rendered checkpoint, not one paint per event.\n\n01 / DOMAIN\nA place for your mail\nLocal label\n\nowner@studio.glyphoku.localhost\n\nSolve one board \u00b7 create domain\n02 / ENVELOPE\nWrite, freeze, then solve\nTo\nBcc\nSubject\nMessage\nFreeze exact draft\nCURRENT OUTCOME\n\nNo success is inferred from this error. Refresh the committed state before retrying uncertain work.\n\nLocal inbox\nRead actual mailbox\n\nNo messages fetched. READY alone does not deliver email.\n\nEvidence & ledger\nVerify signed state\nRecent search events\ncrypto.randomUUID is not a function\nLegacy browser registry detected. Its bytes are not trusted as issuance authority and have not been overwritten or imported. Export original bytes\n1 2 3 4 5 6 A B C D E \u2605 \u25c6 \u2660 \u2663 \u2665\n\nSingle local operator. Signed hash-linked blocks, not distributed consensus. Game permits are not money. Server-held storage encryption is not end-to-end encryption. Render acknowledgments demonstrate a cooperative client protocol, not human attention.\n\nGlyphoku source desk + Vexa127 mail authority \u00b7 no browser-state reset \u00b7 no external delivery.",
+  "calls": [
+    {
+      "path": "/api/glyphoku/state",
+      "method": "GET",
+      "body": null
+    }
+  ],
+  "errors": []
+}

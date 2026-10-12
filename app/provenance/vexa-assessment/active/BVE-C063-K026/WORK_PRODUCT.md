@@ -1,0 +1,29 @@
+# BVE-C063-K026 — continuation evidence mapping
+
+**Run:** LOCAL127-R03 · **Candidate:** 2.1.0-local.1 · **Source status:** BLOCKED
+
+## Unchanged source contract
+
+**Requirement:** Handle partial mailbox retrieval with explicit completeness reporting.
+
+**Verification:** Exercise the stated edge, transition, recovery, uncertainty, or sensitivity case using the original approved oracle. Compare before-and-after state or conclusions; retain ordering, timing, and version context where relevant.
+
+**Pass criteria:** The edge-case outcome follows the approved specification, preserves required invariants, and exposes unresolved or partial outcomes instead of fabricating certainty. Any changed assumption is reviewed.
+
+## Actual bounded work
+
+105 retained messages are enumerated exactly once over five 25-item pages. Totals/ranges are explicit; changed heads stop continuation.
+
+The linked domain artifact is `docs/API.md`. Tests are T073, T074, T077, T078; exact outcomes and hashes are in EVIDENCE.json. The synthetic upgrade and offline-DOM reports apply only when explicitly referenced there.
+
+## Scope and evidence limits
+
+No multi-version snapshot storage; any signed mutation requires restart. Partial/corrupt-object scenarios beyond the listed fixtures remain unassessed.
+
+Source context: Article section 5.2–5.3; source ranges [[76, 80]]. Mechanism context, not approval or result evidence.
+
+Owner role: Storage engineering and service continuity. Reviewer role: Independent technical verifier; domain specialist where applicable. Named assignments remain null. No source requirement, criterion, source tag or gate was changed to fit these observations.
+
+## Next action
+
+Have an authorized independent reviewer inspect the preserved exact criterion, current artifact and cited fixtures; close the listed scope/oracle gaps before any full-control PASS.

@@ -1,0 +1,103 @@
+{
+  "schema": "WORKSPACE-PROTECTION-STATUS/2",
+  "version": "3.9.1-local.1",
+  "classification": "PARTIAL_INTEGRATION_CANDIDATE",
+  "integrated": [
+    "unbranded light/dark mailbox and puzzle UI",
+    "one mailbox interface with automatic local/Internet delivery and account-scoped Inbox/Sent",
+    "single-authority signed mail ledger with local127 reservation journal",
+    "protected stored data/private API/backup/export",
+    "hardened blank console1.0.2",
+    "pinned Node24.19.0",
+    "actual native JA21 outer ZIP archive utility",
+    "standalone bounded 8Sphere formula reference module",
+    "full fresh compiled startup integrity checks with progress and cancellation",
+    "private Tor v3 peer mail using the supplied signed nine-node TORUS topology",
+    "encrypted streaming attachments with no fixed byte-size ceiling"
+  ],
+  "implemented": {
+    "vault": "Independent AES-256-GCM/HKDF outer wrapping; canonical inner signatures and codecs retained.",
+    "api": "Authenticated direction/run/request-bound encrypted frames with freshness and replay rejection.",
+    "native_ja21": "Pinned recovered 4.2.4 engine and R12 tuple; actual .ja21pkg protect/open with ordered four-word mapping and private process-checked pipe. Existing live vault/API cipher remains independent.",
+    "native_engine_math_modified": false,
+    "eight_sphere": "All fully defined attachment formulas implemented as a standalone reference module. No complete calibrated model or cipher binding.",
+    "local127": "First login atomically checks the signed address register, allocates an unused rmail@127.0.0.2..254 alias to the authenticated mailbox, and records immutable ownership. Existing 127 mailbox identities are reused. Repeated login preserves identity and credentials; startup verifies reservation and ownership journals.",
+    "inbox": "One mailbox shell at the root and all saved mail/Internet/desk URLs. Authenticated owner-scoped received folders, message retrieval, and combined local/Internet Sent view.",
+    "backup_export": "Authenticated encrypted backups/default exports and independently protected portable ZIP recovery; exclusive new recovery outputs.",
+    "smtp": "Disabled for protected stores.",
+    "console": "Standard WebView2 host; visible loading/failure/retry; protected UI readiness at every saved mail URL. Recoverable subprocess exits preserve the live interface. Main browser/renderer exits fail; unresponsiveness has bounded grace/recovery. Privacy-limited diagnostics rotate in two64KiB files. Origin/resource/frame/permission/devtools restrictions retained. Local mail WebSocket resources use the exact configured literal origin/path. User-initiated FileReadWrite access is limited to an allowed console HTTP origin for streamed file saves.",
+    "startup": "Full launch inventory freshly SHA-256 checked, fresh per-file ancestor checks and independent Node pin. Verifier source bound/checked before compilation. Visible progress/cancel and owned-process cleanup.",
+    "outbound_internet_mail": "Authenticated per-account Internet email. First connection uses the signed assigned 127 sender and bracketed SMTP greeting automatically; ordinary and game mailbox users can send. Sender settings and outbox are owner-scoped. Direct DNS MX/SMTP port25 sends require verified STARTTLS. Encrypted signed durable outbox and immutable retry/crash results preserved.",
+    "outbound_network_scope": "Ordinary runtime DNS/TCP/listener guards retained. A captured, bounded mail capability resolves public recipient MX/A/AAAA and connects only to pinned public SMTP destinations.",
+    "unified_mail": "One compose form automatically classifies local mailbox aliases versus public recipient domains. Authenticated assigned From is used for local and default Internet mail. Quote/send route confirmation and immutable Internet attempt replay retained. No delivery-mode or interface picker.",
+    "private_torus": "One compose workflow automatically selects registered local or Tor peer @127 recipients. Pinned Ed25519 node cards, X25519 destination encryption, signed disjoint prefix leases and immutable durable receipts; nine nodes, no public DNS or SMTP fallback. Account-owned Inbox, Sent and outbox; copied legacy aliases/history retained. Public Internet sending is refused after private-network activation.",
+    "streaming_attachments": "Up to four files per message, no fixed per-file or total file-byte ceiling. Protected 256 KiB chunk upload, scoped AES-GCM file storage, signed manifests and destination-only encrypted Tor chunks. No whole-file buffers; capacity depends on disk and filesystem precision. Signed receipt follows complete file integrity verification and Inbox commit. New backups include encrypted chunk files; own-message streaming downloads and unfinished-transfer cleanup."
+  },
+  "remaining": {
+    "eight_sphere_full_native_integration": "UNRESOLVED: missing native engine source; complete b/v/Classify/Score, parameter/solver/data profile and reversible law-to-byte binding.",
+    "console_end_to_end": "CODE_LEVEL_NATIVE_SDK_PASS: actual rendering/unlock/wrongkey/themes/connect/allboardchecks/address/send/inbox/receipt/signedverify/lockreload. Production PowerShell console/supervisor observer smoke PASS. No Computer Use or visual UI inspection in this revision.",
+    "native_utility_wpf_dialogs": "UNPERFORMED: pure policy and actual CLI/native jobs do not prove all interactive file/key prompt behavior.",
+    "plaintext_migration": "NOT_IMPLEMENTED: old plaintext databases refuse silent conversion.",
+    "whole_os_vm": "NOT_IMPLEMENTED: no whole-OS/VM encryption, metadata concealment or network sandbox.",
+    "global_addresses": "NOT_PROVIDED: register covers this current local history only, not other applications or uncoordinated copied histories. Copies retain authority identity.",
+    "internet_delivery": "Network port25, recipient sender/authentication/reputation policy and return-address reachability remain deployment-dependent. No DKIM signing, receiving mail, remote bounce processing, or Inbox-delivery guarantee. No real email was sent during this update.",
+    "current_native_console_verification": "INCOMPLETE: actual baseline WebView2 construction passed but initial navigation Unknown failed before unlock. Final control executable blocked by Windows Application Control. Exact-source compile/recovery37/37 and readiness28/28 pass; historical screenshot trigger remains unproven. See verification/single-mail-update.json."
+  },
+  "local127_scope": {
+    "single_local_ledger": true,
+    "logical_mailbox_identities": true,
+    "additional_network_listeners": false,
+    "allocation_pool": "127.0.0.2 through127.0.0.254",
+    "maximum_claims": 253,
+    "legacy": "Signed history is preserved. Read-only view exposes earlier127 resources pending signed reconciliation and any blocking conflicts."
+  },
+  "outside_encryption": [
+    "public interface/bootstrap code",
+    "schema/row IDs/index/size and listener metadata",
+    "socket addresses, timing and sizes",
+    "unlocked working memory",
+    "active Windows/WebView profile and logs",
+    "explicitly recovered plaintext ZIP/export files"
+  ],
+  "authority": "One trusted local vault. Key holders can obtain its account credentials. No recipient-held E2E encryption or peer consensus.",
+  "claims": {
+    "Envelope = Coin": "FALSE as a transferable coin: signed one-use local send authorization.",
+    "Sudoku = Mining": "FALSE as consensus/reward mining: local issuance gate.",
+    "global_scarcity": "NOT_PROVIDED: cloned local histories can independently spend."
+  },
+  "nonclaims": [
+    "complete numerical8Sphere cipher",
+    "independent cryptographic certification",
+    "production acceptance"
+  ],
+  "state_packaging": "No live user state, key, database, browser profile or preissued permit. Diagnostic NativeBoundaryProbe is not shipped.",
+  "desktop_quarantine": "All five files match transfer hashes in a fresh read-only check; never written/extracted/executed.",
+  "private_mail_validation": {
+    "status": "PASS",
+    "actual_tor_delivery": {
+      "test": "Automatic startup and one-code registration over two actual Tor v3 onion services",
+      "internet_email_sent": false,
+      "physical_computers_tested": 1,
+      "success": true,
+      "automatic_startup": true,
+      "one_code_join": true,
+      "registration_files_used": false,
+      "separate_prefixes": true,
+      "delivery_status": "DELIVERED",
+      "signed_directory_refresh": true,
+      "own_inbox_and_sent": true,
+      "idempotent_receipt": true,
+      "both_ledgers_verify": true
+    },
+    "large_file_test_bytes": 34603025,
+    "regression": {
+      "tests": 400,
+      "pass": 399,
+      "fail": 0,
+      "skipped": 1
+    },
+    "native_policy_passed": 47,
+    "tor_supervisor_passed": 14,
+    "physical_computers_tested": 1
+  }
+}

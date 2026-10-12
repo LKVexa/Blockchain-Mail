@@ -1,0 +1,42 @@
+# BOTTLE ROCKET 4.0.1 baseline reproduction
+# captured_utc=2026-08-11T03:26:35Z
+# baseline_zip_sha256=be7f1a1f1797ce7d46d3313fb626a18efc10b2c5ada465c0f5dcd53bf1a39a1a
+$ make clean
+rm -rf .build
+$ make operational
+mkdir -p .build
+cc -Isrc -std=c11 -O2 -Wall -Wextra -Werror -fno-common -fstack-protector-strong src/brvm.c tests/test_main.c -o .build/br_tests -lcrypto
+.build/br_tests
+{"suite":"BOTTLE_ROCKET_Q17V3_LCTLC","failures":0,"result":"PASS"}
+cc -Isrc -std=c11 -O2 -Wall -Wextra -Werror -fno-common -fstack-protector-strong src/brvm.c host/brctl.c -o .build/brctl -lcrypto
+python3 tools/qualify.py --lctl-only >/dev/null
+mkdir -p deploy; .build/brctl assemble src/BOOT.lctlc deploy/BOTTLE_ROCKET_SIM_CORE_4.0.1.brimg --factory
+cc -Isrc -std=c11 -O2 -Wall -Wextra -Werror -fno-common -fstack-protector-strong src/brvm.c tools/br_sizes.c -o .build/br_sizes -lcrypto
+test "$(wc -c < deploy/BOTTLE_ROCKET_SIM_CORE_4.0.1.brimg)" -le 51200
+.build/brctl build-image .build/factory.brimg && cmp deploy/BOTTLE_ROCKET_SIM_CORE_4.0.1.brimg .build/factory.brimg
+.build/brctl assemble src/BOOT.lctlc .build/a.brimg --factory && .build/brctl assemble src/BOOT.lctlc .build/b.brimg --factory && cmp .build/a.brimg .build/b.brimg
+.build/brctl run deploy/BOTTLE_ROCKET_SIM_CORE_4.0.1.brimg
+{"status":2,"trap":0,"R2":42}
+.build/br_sizes
+{"record":"BOTTLE_ROCKET.RuntimeMemoryMeasurement","word_bits":1048576,"word_bytes":131072,"register_count":16,"register_requested_bytes":2097152,"register_usable_bytes":2101232,"stack_words":256,"stack_requested_bytes":33554432,"stack_usable_bytes":33558512,"scratch_words":2,"scratch_requested_bytes":262144,"scratch_usable_bytes":266232,"fragment_requested_bytes":51200,"fragment_usable_bytes":51208,"vm_inline_bytes":8888,"heap_requested_bytes":35964928,"heap_usable_bytes":35977184,"allocator_overhead_bytes":12256,"rss_before_init_kib":3420,"rss_idle_kib":3796,"native_stack_limit_bytes":8388608}
+rm -f .build/k .build/p .build/s.brimg .build/state*; .build/brctl keygen .build/k .build/p
+.build/brctl sign-image deploy/BOTTLE_ROCKET_SIM_CORE_4.0.1.brimg .build/s.brimg .build/k
+.build/brctl verify-image .build/s.brimg .build/p && .build/brctl run-signed .build/s.brimg .build/p
+{"image_version":4,"bytes":240,"status":0,"trap":0}
+{"image_version":4,"bytes":240,"status":2,"trap":0}
+{ printf 'LCTLC/1.0\n@unit id=br.alt version=4.0.1 profile=native br_image_version=5 br_request_caps=CONTROL|UPDATE\n@defaults qspace=H basis=computational regime=exact assume=finite_dimension error=exact conf=1.0\n@frame id=F parent=ROOT module=br.alt\nID│LANE│OP│OUT│CTRL│IN│ARG│META\nD0│a│Q│q│_│_│1│p=br:sentinel\n'; i=0; while [ $i -lt 255 ]; do printf 'N%03d│e│NOP│R0│C0│_│br.op=NOP;br.mode=WRAP;br.imm=0│qs=C;p=br:isa\n' $i; i=$((i+1)); done; printf 'H│e│NOP│R0│C0│_│br.op=HALT;br.mode=WRAP;br.imm=0│qs=C;p=br:isa\n@end\n'; } > .build/alt.lctlc
+.build/brctl assemble .build/alt.lctlc .build/alt.brimg && .build/brctl sign-image .build/alt.brimg .build/alt.signed .build/k
+.build/brctl update .build/alt.signed .build/p --state .build/state
+{"update":"PASS","version":5,"generation":1}
+.build/brctl recover-state .build/state .build/p
+{"generation":1,"image_version":5,"txid":1,"slot":1}
+printf '010800000200000000000000\n' | .build/brctl serve --state .build/state .build/p | grep '^9000'
+9000020000000000
+! .build/brctl update .build/s.brimg .build/p --state .build/state
+rm -f .build/k .build/p .build/s.brimg .build/alt* .build/state*
+$ make sanitize
+cc -Isrc -std=c11 -O1 -g -Wall -Wextra -Werror -fsanitize=address,undefined src/brvm.c tests/test_main.c -o .build/san -lcrypto
+ASAN_OPTIONS=detect_leaks=0 .build/san
+{"suite":"BOTTLE_ROCKET_Q17V3_LCTLC","failures":0,"result":"PASS"}
+$ make size
+production_source_bytes=60824 ceiling_lt=61000

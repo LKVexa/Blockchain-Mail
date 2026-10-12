@@ -1,0 +1,177 @@
+{
+  "schema": "WORKSPACE391-FREE-TORUS-VERIFICATION/1",
+  "created_utc": "2026-10-12T21:29:27.375Z",
+  "status": "PASS",
+  "features": {
+    "new_address_prefix": "mail@",
+    "old_rmail_addresses_preserved": true,
+    "credits_required_for_ordinary_mail": false,
+    "one_send_interface": true,
+    "private_identifier_digits": 32,
+    "automatic_identifier_digits": 20,
+    "operational_computers_per_group": 256,
+    "accounts_per_computer": 64,
+    "attachments_fixed_byte_size_cap": false,
+    "mailbox_fixed_storage_quota": false,
+    "connection_handshake_fixed_deadline": false
+  },
+  "regression": {
+    "tests": 437,
+    "pass": 436,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 1
+  },
+  "native_source_checks": {
+    "status": "PASS",
+    "total": 47,
+    "passed": 47,
+    "failed": 0,
+    "GUI_started": false
+  },
+  "windows_archive": {
+    "status": "PASS",
+    "tested_zip": "D:\\Codex\\2026-10-12\\ca\\work\\W391-mail-final-test.zip",
+    "published_zip": "D:\\Codex\\2026-10-12\\ca\\outputs\\W391.zip",
+    "sha256": "3490e7b1ec13c327af3eb28de9bc8fa36976b0be25c0dee60a036bb60dc2d176",
+    "published_bytes_identical_to_tested_candidate": true,
+    "outer_files_verified": 7,
+    "maximum_outer_path_characters": 24,
+    "complete_application_files_preserved": 15097,
+    "application_payload_sha256": "ecee39c316dbb028a21c98dc24eb809ca69ab34a3529de976a0ce0214bfb2a01",
+    "extractor_checks": {
+      "passed": 30,
+      "total": 30
+    },
+    "native_launch_hashes_verified": 7910,
+    "longest_absolute_payload_path": 334,
+    "repeat_open_preserves_private_state": true
+  },
+  "packaged_desktop": {
+    "status": "GUI_NOT_COMPLETED_USER_STOPPED",
+    "GUI_started": null,
+    "send_receive_observed": false,
+    "reason": "The user stopped the interactive desktop test with Escape. No completed desktop sending or receiving observation is claimed.",
+    "manual_recovery_dialog_automated": false
+  },
+  "packaged_API": {
+    "status": "PASS",
+    "shared_protected_mail_API": true,
+    "authentication_scope": "Two disposable QA vaults authenticated through the real protected API; no human authentication dialog automated",
+    "physical_computers_tested": 1,
+    "isolated_real_Tor_nodes_tested": 2,
+    "own_inbox_counts": [
+      1,
+      1
+    ],
+    "own_sent_counts": [
+      1,
+      1
+    ],
+    "other_account_inbox_and_sent_counts": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "zero_credit_balances": [
+      0,
+      0
+    ],
+    "large_attachment_test": {
+      "bytes": 8388625,
+      "delivered": true,
+      "destination_stream_hash_verified": true,
+      "source_sha256": "92ab6a0109373bc42a60abffcec027db433bd3e308a48ba6c5c67f7c646776f2",
+      "destination_sha256": "92ab6a0109373bc42a60abffcec027db433bd3e308a48ba6c5c67f7c646776f2"
+    }
+  },
+  "actual_Tor": {
+    "success": true,
+    "one_code_join": true,
+    "bidirectional_delivery_confirmed": true,
+    "assigned_addresses": [
+      "mail@127.0.0.1:10000000000000000001",
+      "mail@127.0.0.2:10000000000000000002"
+    ],
+    "exact_32_digit_recipient_addresses": [
+      "mail@127.0.0.1:12345678901234567890123456789012",
+      "mail@127.0.0.2:12345678901234567890123456789012"
+    ],
+    "signed_delivery_statuses": [
+      "DELIVERED",
+      "DELIVERED"
+    ],
+    "both_ledgers_verify": true
+  },
+  "owned_Tor_cleanup": [
+    {
+      "stopped": true,
+      "graceful": true,
+      "forced": false
+    },
+    {
+      "stopped": true,
+      "graceful": true,
+      "forced": false
+    }
+  ],
+  "verified_source_and_extracted_component_pins": {
+    "INTEGRATED_BUILD.json": "f56344d5d683c8ee5548c3a86fed3641a368410dd89be6cc578ca45b6dd16d7d",
+    "app/SHA256SUMS.txt": "b80070fa82f1a15a805001d35f8774a3a8ac629cca3a4c1af6708a26c1a2bc7a",
+    "app/src/torus-mail.mjs": "2890440f4b3deb0372914d5b1013418935ca05e131f1c8ae43fabd92615b39b0",
+    "app/src/torus-peer.mjs": "d104dfb134769262bc607b00eee25e78aae88fc5030e7ea455df484bda21cc28",
+    "app/src/torus-onboarding.mjs": "90473cae3cc3de78df047d0110c6edd7919be369465ed1f1988b0305cd0b0e57",
+    "app/src/policy.mjs": "8939756c53ec815ee17dce3bd6422176deebf9251973d2db210e63d40a90b977",
+    "app/src/store.mjs": "a742fa425c78066d1dace59b4eab3dfe49a573bc51e375fe70767206cbe6be13",
+    "app/web/app.js": "cbd072e5f05c985f36d3722e233a387ae1f8aa254682cff41fccf3fc35de3232",
+    "app/web/index.html": "d2f46299dd7402419f303c9c453320730e44d5e486430c39ca7535c16c04d304",
+    "app/src/local127-assignment.mjs": "6b581f08ee6470317f172af89caab469ecc72beeb7307b5781cdf05524b5baa6"
+  },
+  "evidence_sha256": {
+    "source": "a0e05d247137a348a63cdcd87f60169e9b9653929c0efeffd8cc273dedee4ae9",
+    "extraction": "ef15063121f3fe28254daa84a469297a43ae18d6d1f49a943867398d2738dd25",
+    "preparation": "7aae2f95f94ff5a6dbf72f4178ea7a3d068ab1c9ea8b771008c2a0723813a4c1",
+    "actual": "624050c5aade178c18f588d59141691285bdde9173212a6026646fe2da0125d7",
+    "stopped": "35746085a40e3b7591286a2492a1e3eb094914188550c43a513181834be3d743",
+    "desktop_ready": "cc60bcd7fae006002385c0df2843f4796db8cc81bcbe8370b9adb6afc054d81f",
+    "prepared_Bundle.json": "9d60910c32803fdfacc26e915df2e8f1628ef1f668c31ee467bf345c12f2f6f0",
+    "prepared_Extract.cs": "e2cb88d4fa60cff2611d6b201eeb304bb02cd218e51ca1c8a112c16a3098872c",
+    "tested_candidate_zip": "3490e7b1ec13c327af3eb28de9bc8fa36976b0be25c0dee60a036bb60dc2d176"
+  },
+  "release_history": {
+    "retained_packages": [
+      {
+        "file": "W391-previous.zip",
+        "sha256": "835c5273d7331c1b5d2e08fecca51ee4cfcde2aa153745b989680c43623b0ca9",
+        "bytes": 87867192,
+        "previous_delivered_W391": true
+      },
+      {
+        "file": "W391.zip",
+        "sha256": "3490e7b1ec13c327af3eb28de9bc8fa36976b0be25c0dee60a036bb60dc2d176",
+        "bytes": 89184223,
+        "previous_delivered_W391": false
+      },
+      {
+        "file": "Workspace391-Private-Mail-2026-10-12.zip",
+        "sha256": "1128aaf9468e6e06dfba439feda2950d5c18ba7edbce97d06be54bf703307656",
+        "bytes": 89142503,
+        "previous_delivered_W391": false
+      },
+      {
+        "file": "Workspace391-Ready-Private-Mail-2026-10-12.zip",
+        "sha256": "e65036700363dc3b5dcd211bb4f2d8eba300c54316cb2301c35d40e34bdee43a",
+        "bytes": 87846738,
+        "previous_delivered_W391": false
+      }
+    ],
+    "new_release_filename": "W391.zip",
+    "publication_by_this_helper": false,
+    "previous_package_or_user_state_modified_by_this_helper": false
+  },
+  "publication_scope": "Published W391.zip is byte-for-byte identical to the Windows-extracted candidate used for actual protected-API Tor sends. The embedded verification file is the source-only regression report; this external report adds the subsequent archive and real-Tor acceptance results without changing the tested package.",
+  "scope": "Windows ZIP opening and extraction, first application preparation, repeated preparation preserving private state, and actual bidirectional Tor onion delivery through the shared protected mail API with disposable QA accounts were verified on one physical computer. The user stopped the interactive desktop test; no completed GUI sending or receiving observation is claimed. Human recovery-dialog interaction, a second physical computer, public Internet mail delivery and distributed consensus were not tested.",
+  "private_user_state_included": false,
+  "public_email_sent": false
+}

@@ -1,0 +1,3 @@
+COMMAND .build/t460 + inherited BR-410
+EXIT 0
+PASS Register descriptors retain public VM configuration compatibility and deterministic destruction.

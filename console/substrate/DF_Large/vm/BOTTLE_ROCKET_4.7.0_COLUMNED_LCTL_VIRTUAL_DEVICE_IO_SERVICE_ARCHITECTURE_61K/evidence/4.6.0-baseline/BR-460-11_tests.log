@@ -1,0 +1,3 @@
+COMMAND .build/t460 deterministic replay + inherited regressions + build A/B
+EXIT 0
+PASS Inherited semantic/trap suites plus deterministic allocation replay and byte-identical builds prove semantic stability.

@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "brir": "deploy/CORE.brir.json",
+  "brim_payload": "deploy/CORE.payload.json",
+  "source_sha256": "b823da054b05c4ef03f14ef19a6c993806e418572928b1fbc4ac82dbe8083e22",
+  "lctl": "PASS"
+}

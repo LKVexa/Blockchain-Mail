@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "brir": "world/evidence/WORLD_FULL.brir.json",
+  "brim_payload": "world/evidence/WORLD_FULL.payload.json",
+  "source_sha256": "7158e5514bb5b2ed0623e884ea754fdc8241f31c89793eb6ea8fc7b4e9cd8925",
+  "lctl": "PASS"
+}

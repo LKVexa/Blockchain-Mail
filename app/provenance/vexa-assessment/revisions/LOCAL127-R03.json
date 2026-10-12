@@ -1,0 +1,51 @@
+{
+  "schema": "BVE/PROGRAM_CHECKPOINT/1",
+  "run_id": "LOCAL127-R03",
+  "revision": 3,
+  "prepared_at": "2026-10-06T20:43:14.279217+00:00",
+  "candidate_version": "2.1.0-local.1",
+  "candidate_code_tree_sha256": "04fb8e21dece4ae8ee2a7bbeb7666bcc5d563b6ffd6a150761f339b5554c8ac4",
+  "workflow_mode": "REMEDIATE_AND_VERIFY",
+  "execution_disposition": "BOUNDED_DELIVERY_REVIEW_BLOCKED",
+  "source_coverage": {
+    "source_controls": 6800,
+    "source_components": 136,
+    "source_parents": 18,
+    "current_bounded_evidence_packets": 9,
+    "historical_only_blocked_records": 28,
+    "states": {
+      "BLOCKED": 37,
+      "NOT_ASSESSED": 6763
+    },
+    "workflow_states": {
+      "NOT_STARTED": 6791,
+      "STOPPED": 9
+    },
+    "controls_passed": 0,
+    "independently_approved": 0,
+    "source_requirements_changed": 0,
+    "candidate_code_tree_sha256": "04fb8e21dece4ae8ee2a7bbeb7666bcc5d563b6ffd6a150761f339b5554c8ac4",
+    "notice": "All source identities are accounted for, not all executed. Nine current packets remain blocked at full acceptance; 28 earlier blocked records require current re-assessment. 6763 controls remain unassessed/unstarted."
+  },
+  "previous_revision_snapshot": "evidence/history/R02_RELEASE_RECORDS.zip",
+  "previous_revision_snapshot_sha256": "b0631f16e46c16f64bc40256922473edff133b5bca7ebb47e3d1d2ae25907911",
+  "expected_previous_checkpoint_sha256": "ae55331f307163aab66b173175bfb711b4eb22a52fde749b09a2b9405d63a6f2",
+  "source_control_register_sha256": "06c63fd243e8ab0711d99adeb358dd4c21ec9cd85d0daf195a39d013edf07d03",
+  "result_register_sha256": "3be59b783ea840852f8f819ace71ce7ca76276cca94a7c77e704c659d3e78ea8",
+  "pending": [
+    "Actual target-Windows launch, permissions and direct-browser acceptance without disabling policy",
+    "Independent owner/reviewer assignment and profile applicability decisions",
+    "Inspect nine current bounded packets against full original criteria",
+    "Reassess 28 historical-only blocked records for the changed version",
+    "Plan 6763 unstarted controls from the exact source library; select native protocols before enabling them"
+  ],
+  "do_not_replay": [
+    "mail send",
+    "credit issuance",
+    "stamp refund",
+    "quarantine release",
+    "financial or deletion effects"
+  ],
+  "production_acceptance": "BLOCKED",
+  "background_tasks_scheduled": false
+}

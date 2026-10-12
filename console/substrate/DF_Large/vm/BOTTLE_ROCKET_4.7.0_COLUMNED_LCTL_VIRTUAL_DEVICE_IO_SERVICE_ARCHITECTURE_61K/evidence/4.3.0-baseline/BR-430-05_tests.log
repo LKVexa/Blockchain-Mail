@@ -1,0 +1,14 @@
+$ make operational
+exit=0
+$ make sanitize
+exit=0
+$ make size
+exit=0
+$ python3 tests/test_430_semantic.py
+exit=0 tests=19
+$ .build/br_isa_tests
+exit=0 opcode_positive=41 opcode_negative=41 canonical_traps=14
+$ .build/br_tests
+exit=0 tests=18
+PACKAGE_CHECK=41-opcode runtime conformance
+PACKAGE_RESULT=PASS

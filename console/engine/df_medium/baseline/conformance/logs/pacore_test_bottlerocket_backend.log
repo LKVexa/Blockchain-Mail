@@ -1,0 +1,48 @@
+
+-- the firewall: a classical adapter may not claim anything physical ------------------------------
+  [PASS] NEGATIVE: an adapter claiming PHYSICAL_TARGET_AUTHENTICATED is refused an adapter in pacore.adapters may not claim trust domain 'PH
+  [PASS] NEGATIVE: a non-CLASSICAL_ execution label is refused              
+  [PASS] NEGATIVE: a label containing a forbidden token is refused          
+  [PASS] positive: the real adapter constructs                              bottle-rocket-5.0.0-local
+  [PASS] the adapter's trust domain is LOCAL_TRUSTED, not physical          LOCAL_TRUSTED
+  [PASS] the native gate set is empty - the VM realizes no quantum gate     
+  [PASS] every quantum feature classifies UNSUPPORTED                       
+  [PASS] an unstated feature defaults to UNSUPPORTED                        
+
+-- refusal on a missing or unbuilt toolchain ----------------------------------------------------
+  [PASS] NEGATIVE: a missing toolchain root is refused, not faked           
+
+-- native execution and the differential check ---------------------------------------------------
+  [PASS] positive: a verified bundle executes natively on the VM            CLASSICAL_NATIVE_VM_BOUNDED_EXECUTION
+  [PASS] the native VM witness equals the CPython reference witness         17360368901394384785
+  [PASS] the pipeline ran all eight native stages                           
+  [PASS] the executed image was independently BRIM-verified                 
+  [PASS] the executed image was Ed25519-signed and signature-verified       
+
+-- the witness is sensitive to the sealed row sequence -------------------------------------------
+  [PASS] NEGATIVE: swapping two rows changes the witness                    
+  [PASS] NEGATIVE: mutating one cell of one row changes the witness         
+  [PASS] NEGATIVE: dropping a row changes the witness                       
+  [PASS] positive: the same rows give the same witness (deterministic)      
+  [PASS] a different bundle yields a different native witness               
+  [PASS] the second bundle also agrees with its reference witness           
+
+-- stated bounds are refusals, not degradations --------------------------------------------------
+  [PASS] MAX_ROWS is derived from the measured LCTLC instruction ceiling    MAX_ROWS=84
+  [PASS] NEGATIVE: a bundle over MAX_ROWS is refused, not truncated         108 > 84
+  [PASS] NEGATIVE: shots>1 on a deterministic witness is refused            
+  [PASS] NEGATIVE: a QCIR-P2 document with the wrong schema is refused      
+
+-- provenance carries no physical claim ----------------------------------------------------------
+  [PASS] provenance.physical_qpu is False                                   
+  [PASS] provenance.physical_parallel is False                              
+  [PASS] provenance.physical_distributed is False                           
+  [PASS] provenance.quantum_boundary is NOT_CROSSED                         
+  [PASS] provenance.execution_class begins CLASSICAL_                       
+  [PASS] provenance.target_class names a classical VM                       
+
+====================================================================================================
+  TOTAL 30   PASS 30   FAIL 0
+====================================================================================================
+
+ALL CHECKS PASS

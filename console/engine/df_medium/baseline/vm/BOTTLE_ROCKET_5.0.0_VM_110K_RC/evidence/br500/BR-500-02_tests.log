@@ -1,0 +1,32 @@
+COMMAND: make repro roundtrip constant-fold
+.build/brctl lctl-to-brir examples/boot.lctlc .build/a.brir
+LCTL -> BRIR: PASS
+.build/brctl lctl-to-brir examples/boot.lctlc .build/b.brir
+LCTL -> BRIR: PASS
+cmp .build/a.brir .build/b.brir
+.build/brctl compile-lctlc examples/boot.lctlc .build/a.brimg
+Columned LCTL compile: PASS
+.build/brctl compile-lctlc examples/boot.lctlc .build/b.brimg
+Columned LCTL compile: PASS
+cmp .build/a.brimg .build/b.brimg
+.build/brctl verify-lctlc examples/boot.lctlc
+Columned LCTL semantic verify: PASS
+.build/brctl verify-lctlc src/CORE.lctlc
+Columned LCTL semantic verify: PASS
+.build/brctl lctl-to-brir examples/boot.lctlc deploy/BOTTLE_ROCKET_4.7.0_COLUMNED_LCTL_VIRTUAL_DEVICE_IO_SERVICE_ARCHITECTURE.brir
+LCTL -> BRIR: PASS
+.build/brctl compile-lctlc examples/boot.lctlc deploy/BOTTLE_ROCKET_4.7.0_COLUMNED_LCTL_VIRTUAL_DEVICE_IO_SERVICE_ARCHITECTURE.brimg
+Columned LCTL compile: PASS
+python3 tools/provenance.py examples/boot.lctlc deploy/BOTTLE_ROCKET_4.7.0_COLUMNED_LCTL_VIRTUAL_DEVICE_IO_SERVICE_ARCHITECTURE.brir deploy/BOTTLE_ROCKET_4.7.0_COLUMNED_LCTL_VIRTUAL_DEVICE_IO_SERVICE_ARCHITECTURE.brimg deploy/BOTTLE_ROCKET_4.7.0_COLUMNED_LCTL_VIRTUAL_DEVICE_IO_SERVICE_ARCHITECTURE.provenance.json
+Source/Binary provenance: PASS
+.build/brverify deploy/BOTTLE_ROCKET_4.7.0_COLUMNED_LCTL_VIRTUAL_DEVICE_IO_SERVICE_ARCHITECTURE.brimg examples/boot.lctlc deploy/BOTTLE_ROCKET_4.7.0_COLUMNED_LCTL_VIRTUAL_DEVICE_IO_SERVICE_ARCHITECTURE.brir
+independent BRIM verifier: PASS
+test "$(wc -c < deploy/BOTTLE_ROCKET_4.7.0_COLUMNED_LCTL_VIRTUAL_DEVICE_IO_SERVICE_ARCHITECTURE.brimg)" -le 51200
+.build/brverify --disasm deploy/BOTTLE_ROCKET_4.7.0_COLUMNED_LCTL_VIRTUAL_DEVICE_IO_SERVICE_ARCHITECTURE.brimg > .build/disasm.txt
+awk -F'|' 'NR>2 && $1 ~ /^[0-9]+$/ {print $1"|"$3"|"$4"|"$5"|"$6"|"$7"|"$8"|"$9"|"$10"|"$11}' deploy/BOTTLE_ROCKET_4.7.0_COLUMNED_LCTL_VIRTUAL_DEVICE_IO_SERVICE_ARCHITECTURE.brir > .build/brir.semantic
+awk -F'|' '{print $1"|"$2"|"$3"|"$4"|"$5"|"$6"|"$7"|"$8"|"$9"|"$10}' .build/disasm.txt > .build/disasm.semantic
+cmp .build/brir.semantic .build/disasm.semantic
+BRCTL=/mnt/data/br50_work/BOTTLE_ROCKET_4.9.0_RC_110K/.build/bradmin BRVERIFY=/mnt/data/br50_work/BOTTLE_ROCKET_4.9.0_RC_110K/.build/brverify sh tests/constant_fold.sh
+BR-460 constant-expression folding: PASS u64:40+2 -> 42
+
+EXIT_CODE: 0
