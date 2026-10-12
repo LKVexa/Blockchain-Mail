@@ -42,7 +42,7 @@ The executable implementation lives primarily in `app/src/*.mjs` and `app/web/*`
 
 ### 3.1 Verified portable distribution
 
-The verified portable artifact is named `W391.zip`. Obtain it from the accompanying distribution when provided. This README deliberately does not invent a release-download URL: the existence of a source repository is not proof that a corresponding GitHub release artifact has been uploaded.
+The GitHub repository provides the full checkout described in Section 3.2. A separately supplied `W391.zip` portable distribution uses the workflow below; its verified artifact identity and acceptance evidence are recorded in Section 16. The [packaging tools](build-tools/README.md) provide the source for building the short-path portable wrapper.
 
 1. Extract `W391.zip` into a new directory, preferably under a short Windows working root such as `D:\Codex`.
 2. Open the extracted `W391` folder and double-click **Open Workspace.vbs**.
